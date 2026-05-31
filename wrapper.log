@@ -20,3 +20,68 @@ Reseeding from https://reseed.stormycloud.org/i2pseeds.su3?netid=2
 2026/05/31 13:09:45.200 | CRIT [... 1 shutdown] ...2p.router.Router: Shutting down the router...
 2026/05/31 13:09:45.200 | CRIT [... 1 shutdown] ...2p.router.Router: Initiating hard shutdown...
 2026/05/31 13:09:45.303 | CRIT [... 1 shutdown] ...2p.router.Router: Completed hard shutdown
+ERROR - Cannot find I2P installation in /home/bailey/git/vituperative/i2pplus - Will probably be just a router with no apps or console at all!
+WARNING: Resource name [libjcpuid-x86_64-linux.so] not found
+WARNING: Resource name [libjcpuid-x86-linux.so] not found
+WARNING: Native CPUID library jcpuid not loaded - will not be able to read CPU information using CPUID
+INFO: Resource name [libjbigi-linux-none_64.so] was not found
+INFO: Resource name [libjbigi-linux-none.so] was not found
+WARNING: Native BigInteger library jbigi not loaded - using pure Java - poor performance may result - see http://i2p-projekt.i2p/jbigi for help
+Warning - No client apps or router console configured - we are just a router
+Starting Reseed process...
+Reseeding from https://reseed2.i2p.net/i2pseeds.su3?netid=2
+Reseeding from https://reseed.diva.exchange/i2pseeds.su3?netid=2
+Exception in thread "XDH Precalc" java.lang.IllegalStateException: Random is shut down - do you have a static ref?
+	at gnu.crypto.prng.BasePRNGStandalone.nextBytes(BasePRNGStandalone.java:129)
+	at gnu.crypto.prng.BasePRNGStandalone.nextBytes(BasePRNGStandalone.java:112)
+	at net.i2p.util.FortunaRandomSource.nextBytes(FortunaRandomSource.java:183)
+	at net.i2p.crypto.KeyGenerator.generatePKIKeys(KeyGenerator.java:240)
+	at net.i2p.router.transport.crypto.X25519KeyFactory.precalc(X25519KeyFactory.java:130)
+	at net.i2p.router.transport.crypto.X25519KeyFactory.run2(X25519KeyFactory.java:97)
+	at net.i2p.router.transport.crypto.X25519KeyFactory.run(X25519KeyFactory.java:77)
+2026/05/31 18:24:12.438 | CRIT [... 1 shutdown] ...2p.router.Router: Shutting down the router...
+2026/05/31 18:24:12.438 | CRIT [... 1 shutdown] ...2p.router.Router: Initiating hard shutdown...
+2026/05/31 18:24:12.477 | CRIT [... 1 shutdown] ...2p.router.Router: Completed hard shutdown
+ERROR - Cannot find I2P installation in /home/bailey/git/vituperative/i2pplus - Will probably be just a router with no apps or console at all!
+WARNING: Resource name [libjcpuid-x86_64-linux.so] not found
+WARNING: Resource name [libjcpuid-x86-linux.so] not found
+WARNING: Native CPUID library jcpuid not loaded - will not be able to read CPU information using CPUID
+INFO: Resource name [libjbigi-linux-none_64.so] was not found
+INFO: Resource name [libjbigi-linux-none.so] was not found
+WARNING: Native BigInteger library jbigi not loaded - using pure Java - poor performance may result - see http://i2p-projekt.i2p/jbigi for help
+Warning - No client apps or router console configured - we are just a router
+Starting Reseed process...
+Reseeding from https://reseed.i2pgit.org/i2pseeds.su3?netid=2
+Reseeding from https://i2p.novg.net/i2pseeds.su3?netid=2
+2026/05/31 19:02:37.880 | CRIT [... 1 shutdown] ...2p.router.Router: Shutting down the router...
+2026/05/31 19:02:37.880 | CRIT [... 1 shutdown] ...2p.router.Router: Initiating hard shutdown...
+2026/05/31 19:02:37.970 | CRIT [... 1 shutdown] ...2p.router.Router: Completed hard shutdown
+ERROR - Cannot find I2P installation in /home/bailey/git/vituperative/i2pplus - Will probably be just a router with no apps or console at all!
+WARNING: Resource name [libjcpuid-x86_64-linux.so] not found
+WARNING: Resource name [libjcpuid-x86-linux.so] not found
+WARNING: Native CPUID library jcpuid not loaded - will not be able to read CPU information using CPUID
+INFO: Resource name [libjbigi-linux-none_64.so] was not found
+INFO: Resource name [libjbigi-linux-none.so] was not found
+WARNING: Native BigInteger library jbigi not loaded - using pure Java - poor performance may result - see http://i2p-projekt.i2p/jbigi for help
+Warning - No client apps or router console configured - we are just a router
+Starting Reseed process...
+Reseeding from https://i2p.diyarciftci.xyz/i2pseeds.su3?netid=2
+2026/05/31 19:03:28.306 | CRIT [... 1 shutdown] ...2p.router.Router: Shutting down the router...
+2026/05/31 19:03:28.306 | CRIT [... 1 shutdown] ...2p.router.Router: Initiating hard shutdown...
+2026/05/31 19:03:28.362 | ERROR[...Establisher] ...blishmentManager: Error in the establisher
+java.lang.ArrayIndexOutOfBoundsException: Array index out of range: 1572
+	at java.util.Arrays.rangeCheck(Arrays.java:120)
+	at java.util.Arrays.fill(Arrays.java:3008)
+	at net.i2p.router.transport.udp.UDPPacket.init(UDPPacket.java:171)
+	at net.i2p.router.transport.udp.UDPPacket.acquire(UDPPacket.java:479)
+	at net.i2p.router.transport.udp.PacketBuilder2.buildShortPacketHeader(PacketBuilder2.java:933)
+	at net.i2p.router.transport.udp.PacketBuilder2.buildLongPacketHeader(PacketBuilder2.java:919)
+	at net.i2p.router.transport.udp.PacketBuilder2.buildTokenRequestPacket(PacketBuilder2.java:403)
+	at net.i2p.router.transport.udp.EstablishmentManager.sendRequest(EstablishmentManager.java:1369)
+	at net.i2p.router.transport.udp.EstablishmentManager.handleOutbound(EstablishmentManager.java:2191)
+	at net.i2p.router.transport.udp.EstablishmentManager.access$11(EstablishmentManager.java:2139)
+	at net.i2p.router.transport.udp.EstablishmentManager$Establisher.doPass(EstablishmentManager.java:2820)
+	at net.i2p.router.transport.udp.EstablishmentManager$Establisher.run(EstablishmentManager.java:2774)
+	at java.lang.Thread.run(Thread.java:750)
+	at net.i2p.util.I2PThread.run(I2PThread.java:100)
+2026/05/31 19:03:28.408 | CRIT [... 1 shutdown] ...2p.router.Router: Completed hard shutdown

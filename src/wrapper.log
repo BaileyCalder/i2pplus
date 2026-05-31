@@ -1,0 +1,35 @@
+ERROR - Cannot find I2P installation in /home/bailey/git/vituperative/i2pplus/src - Will probably be just a router with no apps or console at all!
+Configuration file /home/bailey/git/vituperative/i2pplus/src/router.config does not exist
+WARNING: Resource name [libjcpuid-x86_64-linux.so] not found
+WARNING: Resource name [libjcpuid-x86-linux.so] not found
+WARNING: Native CPUID library jcpuid not loaded - will not be able to read CPU information using CPUID
+INFO: Resource name [libjbigi-linux-none_64.so] was not found
+INFO: Resource name [libjbigi-linux-none.so] was not found
+WARNING: Native BigInteger library jbigi not loaded - using pure Java - poor performance may result - see http://i2p-projekt.i2p/jbigi for help
+Warning - No client apps or router console configured - we are just a router
+2026/05/31 18:34:23.995 | ERROR[main       ] ....transport.GeoIP: Country file not found: /home/bailey/git/vituperative/i2pplus/src/geoip/countries.txt
+2026/05/31 18:34:26.670 | CRIT [... 1 shutdown] ...2p.router.Router: Shutting down the router...
+2026/05/31 18:36:39.048 | CRIT [... 1 shutdown] ...2p.router.Router: Initiating hard shutdown...
+2026/05/31 18:36:39.050 | ERROR[... 1 shutdown] ...ng.NamingService: Cannot load naming service net.i2p.router.naming.BlockfileNamingService, using HostsTxtNamingService
+java.lang.ClassNotFoundException: net.i2p.router.naming.BlockfileNamingService
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:387)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:352)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at net.i2p.client.naming.NamingService.createInstance(NamingService.java:863)
+	at net.i2p.I2PAppContext.initializeNamingService(I2PAppContext.java:734)
+	at net.i2p.I2PAppContext.namingService(I2PAppContext.java:727)
+	at net.i2p.router.Router.shutdown2(Router.java:1564)
+	at net.i2p.router.tasks.ShutdownHook.run(ShutdownHook.java:79)
+2026/05/31 18:36:39.055 | CRIT [...obQueue 1/1] ...r.JobQueueRunner: Error processing job [Load Local RouterInfo] on thread 0
+java.lang.IllegalStateException: Random is shut down - do you have a static ref?
+	at gnu.crypto.prng.BasePRNGStandalone.nextBytes(BasePRNGStandalone.java:129)
+	at net.i2p.util.FortunaRandomSource.nextBytes(FortunaRandomSource.java:195)
+	at net.i2p.router.startup.CreateRouterInfoJob.createRouterInfo(CreateRouterInfoJob.java:130)
+	at net.i2p.router.startup.RebuildRouterInfoJob.rebuildRouterInfo(RebuildRouterInfoJob.java:146)
+	at net.i2p.router.startup.LoadRouterInfoJob.runJob(LoadRouterInfoJob.java:64)
+	at net.i2p.router.JobQueueRunner.runCurrentJob(JobQueueRunner.java:110)
+	at net.i2p.router.JobQueueRunner.run(JobQueueRunner.java:68)
+2026/05/31 18:36:39.059 | CRIT [... 1 shutdown] ...2p.router.Router: Completed hard shutdown

@@ -1,17 +1,6 @@
-2026/05/31 12:41:41.742 | WARN [...obQueue 1/1] ...oadClientAppsJob: Warning - No client apps or router console configured - we are just a router
-2026/05/31 12:41:41.769 | INFO [...bQueue 4/16] ...ed.ReseedChecker: Downloading peer router information for a new I2P installation...
-2026/05/31 12:41:41.967 | WARN [...eTimer2 4/4] ....FamilyKeyCrypto: No family keys loaded, contact packager
-2026/05/31 12:41:45.874 | ERROR[Reseed     ] ....reseed.Reseeder: Error with downloaded reseed bundle -> Unknown signer: r4sas-reseed@mail.i2p for content type: reseed
-2026/05/31 12:41:51.261 | ^^^ 2 similar messages omitted
-2026/05/31 12:41:53.617 | WARN [Reseed     ] ....reseed.Reseeder: Reseeding failed [coconut.incognet.io] -> SSL certificate verification failed
-2026/05/31 12:41:55.424 | WARN [Reseed     ] ....reseed.Reseeder: Reseeding failed [i2pseed.creativecowpat.net:8443] -> SSL certificate verification failed
-2026/05/31 12:41:59.300 | ERROR[Reseed     ] ....reseed.Reseeder: Error with downloaded reseed bundle -> Unknown signer: igor@novg.net for content type: reseed
-2026/05/31 12:41:59.724 | WARN [Reseed     ] ....reseed.Reseeder: Reseeding failed [reseed2.i2p.net] -> Connection refused (Connection refused)
-2026/05/31 12:42:03.267 | ERROR[Reseed     ] ....reseed.Reseeder: Error with downloaded reseed bundle -> Unknown signer: hankhill19580@gmail.com for content type: reseed
-2026/05/31 12:42:08.827 | ^^^ 1 similar message omitted
-2026/05/31 12:42:14.321 | ^^^ 2 similar messages omitted
-2026/05/31 12:42:15.542 | WARN [Reseed     ] ....reseed.Reseeder: Reseeding failed [reseed.diva.exchange] -> Attempt failed
-2026/05/31 12:42:18.247 | WARN [Reseed     ] ....reseed.Reseeder: Reseeding failed [reseed.sahil.world] -> Connection refused (Connection refused)
-2026/05/31 12:42:42.963 | CRIT [... 1 shutdown] ...2p.router.Router: Shutting down the router...
-2026/05/31 12:42:42.963 | CRIT [... 1 shutdown] ...2p.router.Router: Initiating hard shutdown...
-2026/05/31 12:42:43.068 | CRIT [... 1 shutdown] ...2p.router.Router: Completed hard shutdown
+2026/05/31 18:24:05.340 | WARN [...obQueue 1/1] ...oadClientAppsJob: Warning - No client apps or router console configured - we are just a router
+2026/05/31 18:24:05.567 | INFO [...bQueue 4/16] ...ed.ReseedChecker: Downloading peer router information for a new I2P installation...
+2026/05/31 18:24:06.102 | WARN [Reseed     ] ....reseed.Reseeder: Reseeding failed [reseed2.i2p.net] -> Connection refused (Connection refused)
+2026/05/31 18:24:12.438 | CRIT [... 1 shutdown] ...2p.router.Router: Shutting down the router...
+2026/05/31 18:24:12.438 | CRIT [... 1 shutdown] ...2p.router.Router: Initiating hard shutdown...
+2026/05/31 18:24:12.477 | CRIT [... 1 shutdown] ...2p.router.Router: Completed hard shutdown

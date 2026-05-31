@@ -1,8 +1,21 @@
-2026/05/31 13:09:31.142 | WARN [...obQueue 1/1] ...oadClientAppsJob: Warning - No client apps or router console configured - we are just a router
-2026/05/31 13:09:31.192 | INFO [...bQueue 4/16] ...ed.ReseedChecker: Downloading peer router information for a new I2P installation...
-2026/05/31 13:09:34.951 | WARN [Reseed     ] ....reseed.Reseeder: Reseeding failed [reseed.i2pgit.org] -> Connection refused (Connection refused)
-2026/05/31 13:09:37.946 | WARN [Reseed     ] ....reseed.Reseeder: Reseeding failed [coconut.incognet.io] -> SSL certificate verification failed
-2026/05/31 13:09:41.426 | WARN [Reseed     ] ....reseed.Reseeder: Reseeding failed [reseed.diva.exchange] -> Attempt failed
-2026/05/31 13:09:45.200 | CRIT [... 1 shutdown] ...2p.router.Router: Shutting down the router...
-2026/05/31 13:09:45.200 | CRIT [... 1 shutdown] ...2p.router.Router: Initiating hard shutdown...
-2026/05/31 13:09:45.303 | CRIT [... 1 shutdown] ...2p.router.Router: Completed hard shutdown
+2026/05/31 19:03:25.871 | WARN [...obQueue 1/1] ...oadClientAppsJob: Warning - No client apps or router console configured - we are just a router
+2026/05/31 19:03:26.039 | INFO [...bQueue 4/16] ...ed.ReseedChecker: Downloading peer router information for a new I2P installation...
+2026/05/31 19:03:28.306 | CRIT [... 1 shutdown] ...2p.router.Router: Shutting down the router...
+2026/05/31 19:03:28.306 | CRIT [... 1 shutdown] ...2p.router.Router: Initiating hard shutdown...
+2026/05/31 19:03:28.362 | ERROR[...Establisher] ...blishmentManager: Error in the establisher
+java.lang.ArrayIndexOutOfBoundsException: Array index out of range: 1572
+	at java.util.Arrays.rangeCheck(Arrays.java:120)
+	at java.util.Arrays.fill(Arrays.java:3008)
+	at net.i2p.router.transport.udp.UDPPacket.init(UDPPacket.java:171)
+	at net.i2p.router.transport.udp.UDPPacket.acquire(UDPPacket.java:479)
+	at net.i2p.router.transport.udp.PacketBuilder2.buildShortPacketHeader(PacketBuilder2.java:933)
+	at net.i2p.router.transport.udp.PacketBuilder2.buildLongPacketHeader(PacketBuilder2.java:919)
+	at net.i2p.router.transport.udp.PacketBuilder2.buildTokenRequestPacket(PacketBuilder2.java:403)
+	at net.i2p.router.transport.udp.EstablishmentManager.sendRequest(EstablishmentManager.java:1369)
+	at net.i2p.router.transport.udp.EstablishmentManager.handleOutbound(EstablishmentManager.java:2191)
+	at net.i2p.router.transport.udp.EstablishmentManager.access$11(EstablishmentManager.java:2139)
+	at net.i2p.router.transport.udp.EstablishmentManager$Establisher.doPass(EstablishmentManager.java:2820)
+	at net.i2p.router.transport.udp.EstablishmentManager$Establisher.run(EstablishmentManager.java:2774)
+	at java.lang.Thread.run(Thread.java:750)
+	at net.i2p.util.I2PThread.run(I2PThread.java:100)
+2026/05/31 19:03:28.408 | CRIT [... 1 shutdown] ...2p.router.Router: Completed hard shutdown

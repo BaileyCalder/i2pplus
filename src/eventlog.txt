@@ -1,0 +1,3 @@
+1780209263918 started 2.12.0-2+
+1780209266671 crashed 2.12.0-2+
+1780209399055 stopped hard shutdown
