@@ -1,0 +1,99 @@
+/* ===================================================
+ * JFreeSVG : an SVG library for the Java(tm) platform
+ * ===================================================
+ *
+ * (C)opyright 2013-2020, by Object Refinery Limited.  All rights reserved.
+ *
+ * Project Info:  http://www.jfree.org/jfreesvg/index.html
+ *
+ * Licensed under the GPL version 3 or later.
+ *
+ * If you do not wish to be bound by the terms of the GPL, an alternative
+ * commercial license can be purchased.  For details, please see visit the
+ * JFreeSVG home page:
+ *
+ * http://www.jfree.org/jfreesvg
+ *
+ */
+
+package org.jfree.svg.util;
+
+import java.awt.RadialGradientPaint;
+import java.util.Arrays;
+
+/**
+ * A wrapper for a {@code RadialGradientPaint} that can be used as the key for a {@code Map}
+ * (including a {@code HashMap}). This class is used internally by {@code SVGGraphics2D} to track
+ * and re-use gradient definitions. {@code GradientPaint} itself does not implement the {@code
+ * equals()} and {@code hashCode()} methods, so it doesn't make a good key for a {@code Map}.
+ */
+public class RadialGradientPaintKey {
+
+    private final RadialGradientPaint paint;
+
+    /**
+     * Creates a new instance.
+     *
+     * @param rgp the radial gradient paint ({@code null} not permitted).
+     */
+    public RadialGradientPaintKey(RadialGradientPaint rgp) {
+        Args.nullNotPermitted(rgp, "rgp");
+        this.paint = rgp;
+    }
+
+    /**
+     * Returns the {@code RadialGradientPaint} that was supplied to the constructor.
+     *
+     * @return The {@code RadialGradientPaint} (never {@code null}).
+     */
+    public RadialGradientPaint getPaint() {
+        return this.paint;
+    }
+
+    /**
+     * Tests this instance for equality with an arbitrary object.
+     *
+     * @param obj the object to test ({@code null} permitted).
+     * @return A boolean.
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof RadialGradientPaintKey)) {
+            return false;
+        }
+        RadialGradientPaintKey that = (RadialGradientPaintKey) obj;
+        RadialGradientPaint thatPaint = that.getPaint();
+        if (!this.paint.getCenterPoint().equals(thatPaint.getCenterPoint())) {
+            return false;
+        }
+        if (!this.paint.getFocusPoint().equals(thatPaint.getCenterPoint())) {
+            return false;
+        }
+        if (!Arrays.equals(this.paint.getColors(), thatPaint.getColors())) {
+            return false;
+        }
+        if (!Arrays.equals(this.paint.getFractions(), thatPaint.getFractions())) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Returns a hash code for this instance.
+     *
+     * @return A hash code.
+     */
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 47 * hash + this.paint.getCenterPoint().hashCode();
+        hash = 47 * hash + this.paint.getFocusPoint().hashCode();
+        hash = 47 * hash + Float.floatToIntBits(this.paint.getRadius());
+        hash = 47 * hash + Arrays.hashCode(this.paint.getColors());
+        hash = 47 * hash + Arrays.hashCode(this.paint.getFractions());
+        return hash;
+    }
+}

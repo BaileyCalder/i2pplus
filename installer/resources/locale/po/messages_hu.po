@@ -1,0 +1,144 @@
+# I2P
+# Copyright (C) 2012 The I2P Project
+msgid ""
+msgstr ""
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Failed to load the wrapper"
+msgstr "A behúzó betöltése sikertelen volt"
+
+#, sh-format
+msgid "$APP_LONG_NAME is already running."
+msgstr "$APP_LONG_NAME már fut."
+
+#, sh-format
+msgid "Running $APP_LONG_NAME"
+msgstr "$APP_LONG_NAME futtatása"
+
+#, sh-format
+msgid "Waiting for $APP_LONG_NAME"
+msgstr "$APP_LONG_NAME-re várakozás"
+
+#, sh-format
+msgid "WARNING: $APP_LONG_NAME may have failed to start."
+msgstr "FIGYELEM: $APP_LONG_NAME elindítása sikertelen lehetett."
+
+msgid "Must be root to perform this action."
+msgstr "Ez a művelet végrehajtásához rootnak kell lenni."
+
+#, sh-format
+msgid "Starting $APP_LONG_NAME"
+msgstr "$APP_LONG_NAME indítása"
+
+#, sh-format
+msgid "Stopping $APP_LONG_NAME"
+msgstr "$APP_LONG_NAME megállítása"
+
+#, sh-format
+msgid "$APP_LONG_NAME was not running."
+msgstr "$APP_LONG_NAME nem futott."
+
+#, sh-format
+msgid "Unable to stop $APP_LONG_NAME."
+msgstr "$APP_LONG_NAME megállítása nem lehetséges."
+
+#, sh-format
+msgid "Waiting for $APP_LONG_NAME to exit"
+msgstr "$APP_LONG_NAME kilépésére várakozás"
+
+#, sh-format
+msgid "Failed to stop $APP_LONG_NAME."
+msgstr "$APP_LONG_NAME megállítása sikertelen."
+
+#, sh-format
+msgid "Stopped $APP_LONG_NAME."
+msgstr "$APP_LONG_NAME megállítva."
+
+#, sh-format
+msgid "Stopping $APP_LONG_NAME gracefully"
+msgstr "$APP_LONG_NAME elegáns megállítása"
+
+#, sh-format
+msgid "$APP_LONG_NAME is not running."
+msgstr "$APP_LONG_NAME nem fut."
+
+#, sh-format
+msgid "$APP_LONG_NAME is running: PID:$pid"
+msgstr "$APP_LONG_NAME fut: PID:$pid"
+
+#, sh-format
+msgid "$APP_LONG_NAME is running: PID:$pid, Wrapper:$STATUS, Java:$JAVASTATUS"
+msgstr "$APP_LONG_NAME fut: PID:$pid, Wrapper:$STATUS, Java:$JAVASTATUS"
+
+#, sh-format
+msgid "The $APP_LONG_NAME daemon is already installed."
+msgstr "$APP_LONG_NAME szolgáltatás már telepítve van."
+
+#, sh-format
+msgid "Installing the $APP_LONG_NAME daemon"
+msgstr "$APP_LONG_NAME szolgáltatás telepítése"
+
+#, sh-format
+msgid "Install not currently supported for $DIST_OS"
+msgstr "Telepítés nem támogatott jelenleg a $DIST_OS számára"
+
+#, sh-format
+msgid "Removing $APP_LONG_NAME daemon"
+msgstr "$APP_LONG_NAME szolgáltatás eltávolítása"
+
+#, sh-format
+msgid "The $APP_LONG_NAME daemon is not currently installed."
+msgstr "$APP_LONG_NAME szolgáltatás jelenleg nem telepítve."
+
+#, sh-format
+msgid "Remove not currently supported for $DIST_OS"
+msgstr "Eltávolítás nem támogatott jelenleg a $DIST_OS számára"
+
+msgid "Commands:"
+msgstr "Parancsok:"
+
+msgid "Launch in the current console."
+msgstr "Indítás a jelenlegi konzolban."
+
+msgid "Start in the background as a daemon process."
+msgstr "Szolgáltatásként háttérben indítás."
+
+msgid "Stop if running as a daemon or in another console."
+msgstr "Megállítás, ha szolgáltatásként vagy egy másik konzolban fut."
+
+msgid "Stop gracefully, may take up to 11 minutes or more."
+msgstr "Elegáns megállítás, ez 11 perc vagy több ideig is telhet."
+
+msgid "Restart gracefully, may take up to 11 minutes or more."
+msgstr "Elegáns újraindítás, ez 11 perc vagy több ideig is telhet."
+
+msgid "Stop if running and then start."
+msgstr "Megállítás, ha fut, majd indítás."
+
+msgid "Restart only if already running."
+msgstr "Csak újraindítás, ha már fut."
+
+msgid "Query the current status."
+msgstr "A jelenlegi állapot lekérdezése."
+
+msgid "Install to start automatically when system boots."
+msgstr "Telepítés automatikus indításhoz a rendszer indulásakor."
+
+msgid "Uninstall."
+msgstr "Telepítés visszavonása."
+
+msgid "Request a Java thread dump if running."
+msgstr "Java folyamat dátumát kérje le, ha fut."
+
+msgid "Please edit i2prouter and set the variable RUN_AS_USER"
+msgstr "Kérjük, szerkessze az i2prouter-t és állítsa a RUN_AS_USER változót"
+
+msgid "Running I2P as the root user is *not* recommended."
+msgstr "Az I2P futtatása root felhasználóként *nem ajánlott*."
+
+msgid "To run as root anyway, edit i2prouter and set ALLOW_ROOT=true."
+msgstr "Ha bármivel rootként szeretne futtatni, szerkessze az i2proutert, és állítsa a ALLOW_ROOT értékét igazra."

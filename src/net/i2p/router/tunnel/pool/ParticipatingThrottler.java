@@ -1,0 +1,406 @@
+package net.i2p.router.tunnel.pool;
+
+import net.i2p.data.DataHelper;
+import net.i2p.data.Hash;
+import net.i2p.data.router.RouterAddress;
+import net.i2p.data.router.RouterInfo;
+import net.i2p.router.BanLogger;
+import net.i2p.router.Router;
+import net.i2p.router.RouterContext;
+import net.i2p.router.transport.CommSystemFacadeImpl;
+import net.i2p.util.Log;
+import net.i2p.util.ObjectCounter;
+import net.i2p.util.SimpleTimer;
+import net.i2p.util.SystemVersion;
+import net.i2p.util.VersionComparator;
+
+/**
+ * Count how often we have accepted a tunnel with the peer as the previous or next hop.
+ * We limit each peer to a percentage of all participating tunnels, subject to minimum
+ * and maximum values for the limit.
+ *
+ * This offers basic protection against simple attacks but is not a complete solution,
+ * as by design, we don't know the originator of a tunnel request.
+ *
+ * This also effectively limits the number of tunnels between any given pair of routers,
+ * which probably isn't a bad thing.
+ *
+ * @since 0.8.4
+ */
+class ParticipatingThrottler {
+    private final RouterContext context;
+    private final ObjectCounter<Hash> counter;
+    private final Log _log;
+    private BanLogger _banLogger;
+    private static final boolean isSlow = SystemVersion.isSlow();
+    private static final boolean DEFAULT_BLOCK_OLD_ROUTERS = true;
+    private static final boolean DEFAULT_SHOULD_DISCONNECT = false;
+    private static final boolean DEFAULT_SHOULD_THROTTLE = true;
+    private static final String PROP_BLOCK_OLD_ROUTERS = "router.blockOldRouters";
+    private static final String PROP_SHOULD_DISCONNECT = "router.enableImmediateDisconnect";
+    private static final String PROP_SHOULD_THROTTLE = "router.enableTransitThrottle";
+
+    // Minimum tunnels per peer - prevents decay floor from being too aggressive at low counts
+    private static final int MIN_LIMIT = isSlow ? 40 : 80;
+    // Maximum tunnels per peer - caps individual peer participation
+    private static final int MAX_LIMIT = isSlow ? 150 : 300;
+    // Percentage-based limit for fast peers - ~10% of total tunnels
+    private static final int PERCENT_LIMIT = 10;
+    // Cleanup interval in ms - 90 seconds
+    private static final long CLEAN_TIME = 90 * 1000;
+    private static final String MIN_VERSION = "0.9.66";
+
+    /**
+     * Result of throttling decision for tunnel participation requests.
+     * Determines whether to accept, reject, or drop a tunnel request.
+     */
+    public enum Result { ACCEPT, REJECT, DROP }
+
+    /**
+     * Extract IP address and port from RouterInfo for logging to sessionbans.txt.
+     * Returns IP:PORT format for IPv4 or [IPv6]:PORT format for IPv6.
+     * Uses getCompatibleIP to return an IP for our supported protocols.
+     *
+     * @param router the RouterInfo to extract from
+     * @return IP:PORT string or empty string if not available
+     */
+    private String getRouterIPPort(RouterInfo router) {
+        if (router == null) { return ""; }
+        try {
+            // Try getCompatibleIP first - returns IP for our supported protocols
+            byte[] ip = CommSystemFacadeImpl.getCompatibleIP(router);
+            if (ip != null) {
+                int port = 0;
+                // Find port from addresses
+                for (RouterAddress addr : router.getAddresses()) {
+                    if (addr != null && addr.getIP() != null && java.util.Arrays.equals(addr.getIP(), ip)) {
+                        port = addr.getPort();
+                        break;
+                    }
+                }
+                return formatIPPort(ip, port);
+            }
+            // Fallback to first available
+            for (RouterAddress addr : router.getAddresses()) {
+                if (addr != null && addr.getHost() != null) {
+                    String ipAddr = addr.getHost();
+                    int port = addr.getPort();
+                    if (port > 0) {
+                        if (ipAddr.contains(":") && !ipAddr.startsWith("[")) {
+                            return "[" + ipAddr + "]:" + port;
+                        } else {
+                            return ipAddr + ":" + port;
+                        }
+                    } else {
+                        return ipAddr;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            // Ignore extraction errors
+        }
+        return "";
+    }
+
+    /**
+     * Format IP byte array to string with port.
+     */
+    private String formatIPPort(byte[] ip, int port) {
+        if (ip.length == 4) {
+            return (ip[0] & 0xff) + "." + (ip[1] & 0xff) + "." + (ip[2] & 0xff) + "." + (ip[3] & 0xff) + ":" + port;
+        } else if (ip.length == 16) {
+            StringBuilder sb = new StringBuilder("[");
+            for (int i = 0; i < 16; i += 2) {
+                if (i > 0) sb.append(":");
+                sb.append(String.format("%x", (ip[i] << 8 | ip[i + 1] & 0xff)));
+            }
+            sb.append("]").append(":").append(port);
+            return sb.toString();
+        }
+        return "";
+    }
+
+    ParticipatingThrottler(RouterContext ctx) {
+        this.context = ctx;
+        this.counter = new ObjectCounter<Hash>();
+        this._log = ctx.logManager().getLog(ParticipatingThrottler.class);
+        _banLogger = new BanLogger();
+        _banLogger.initialize(ctx);
+        ctx.simpleTimer2().addPeriodicEvent(new Cleaner(), CLEAN_TIME);
+    }
+
+    /**
+     * Determines whether to throttle tunnel participation for the given router.
+     * Increments the participation count for the router and evaluates conditions
+     * including router version, capabilities, and request count limits to decide
+     * if the tunnel request should be accepted, rejected, or dropped.
+     *
+     * @param h the hash of the router to check
+     * @return the throttling Result (ACCEPT, REJECT, or DROP)
+     */
+    Result shouldThrottle(Hash h) {
+        RouterInfo ri = (RouterInfo) context.netDb().lookupLocallyWithoutValidation(h);
+        Hash us = context.routerHash();
+        String caps = ri != null ? ri.getCapabilities() : "";
+        boolean isUs = ri != null && us.equals(ri.getIdentity().getHash());
+        boolean isUnreachable = ri != null && !isUs && (caps.indexOf(Router.CAPABILITY_UNREACHABLE) >= 0 ||
+                                                        caps.indexOf(Router.CAPABILITY_REACHABLE) < 0);
+        boolean isG = ri != null && !isUs && caps.indexOf(Router.CAPABILITY_NO_TUNNELS) >= 0;
+        boolean isLowShare = ri != null && !isUs && (
+            caps.indexOf(Router.CAPABILITY_BW12) >= 0 ||
+            caps.indexOf(Router.CAPABILITY_BW32) >= 0 ||
+            caps.indexOf(Router.CAPABILITY_BW64) >= 0 || isG);
+        boolean isFast = ri != null && !isUs && (
+            caps.indexOf(Router.CAPABILITY_BW256) >= 0||
+            caps.indexOf(Router.CAPABILITY_BW512) >= 0||
+            caps.indexOf(Router.CAPABILITY_BW_UNLIMITED) >= 0);
+        boolean isLU = isUnreachable && isLowShare;
+        byte[] padding = ri != null ? ri.getIdentity().getPadding() : null;
+        boolean isCompressible = padding != null && padding.length >= 64 && DataHelper.eq(padding, 0, padding, 32, 32);
+        int numTunnels = context.tunnelManager().getParticipatingCount();
+        int limit = calculateLimit(numTunnels, isUnreachable, isLowShare, isFast);
+        int count = counter.increment(h);
+        Result rv;
+        int bantime = isLU || isLowShare || isUnreachable ? 60*60*1000 : 4*60*60*1000;
+        boolean shouldThrottle = context.getProperty(PROP_SHOULD_THROTTLE, DEFAULT_SHOULD_THROTTLE);
+        boolean shouldDisconnect = context.getProperty(PROP_SHOULD_DISCONNECT, DEFAULT_SHOULD_DISCONNECT);
+        boolean shouldBlockOldRouters = context.getProperty(PROP_BLOCK_OLD_ROUTERS, DEFAULT_BLOCK_OLD_ROUTERS);
+        boolean isBanned = context.banlist().isBanlisted(h) ||
+                           context.banlist().isBanlistedHostile(h) ||
+                           context.banlist().isBanlistedForever(h);
+
+        if (!isUs && isBanned) {return Result.DROP;} // return early if router's already banned
+
+        String version = ri != null ? ri.getVersion() : "";
+
+        if (version.equals("0") || version.isEmpty()) {
+            handleNoVersion(shouldDisconnect, h, isBanned, caps, bantime, ri, "none");
+            return Result.DROP;
+        }
+        if (checkVersionAndCompressibility(version, isCompressible, shouldDisconnect, h, isBanned, caps, ri)) return Result.DROP;
+        if (checkLowShareAndVersion(version, isLU, shouldBlockOldRouters, h, shouldDisconnect, isBanned, caps, bantime, ri)) return Result.DROP;
+        if (checkUnreachableAndOld(version, isUnreachable, isFast, shouldBlockOldRouters, h, shouldDisconnect, isBanned, caps)) return Result.DROP;
+
+        rv = evaluateThrottleConditions(count, limit, shouldThrottle, isFast, isLowShare, isUnreachable, h, caps, isBanned, bantime, ri);
+        return rv;
+    }
+
+    /**
+     * Calculates the participation limit for tunnels based on the number of tunnels
+     * and router capabilities such as reachability and bandwidth share.
+     *
+     * @param numTunnels the current count of participating tunnels
+     * @param isUnreachable true if the router is unreachable
+     * @param isLowShare true if the router has low bandwidth share
+     * @param isFast true if the router has high bandwidth share
+     * @return the maximum allowed tunnel participation limit for the router
+     */
+    private int calculateLimit(int numTunnels, boolean isUnreachable, boolean isLowShare, boolean isFast) {
+        if (isUnreachable || isLowShare) {return Math.min(MIN_LIMIT, Math.max(MAX_LIMIT / 20, numTunnels * (PERCENT_LIMIT / 5) / 100));}
+        else if (isSlow) {return Math.min(MIN_LIMIT, Math.max(MAX_LIMIT / 10, numTunnels * (PERCENT_LIMIT / 3) / 100));}
+        return Math.min((MIN_LIMIT * 3), Math.max(MAX_LIMIT / 2, numTunnels * PERCENT_LIMIT / 100));
+    }
+
+    /**
+     * Handles banning and optionally disconnecting routers with no version info.
+     *
+     * @param shouldDisconnect whether to disconnect the router after banning
+     * @param h the router hash
+     * @param isBanned true if already banned
+     * @param caps router capabilities string
+     * @param bantime duration of the ban in milliseconds
+     */
+    private void handleNoVersion(boolean shouldDisconnect, Hash h, boolean isBanned, String caps, int bantime, RouterInfo ri, String version) {
+        if (shouldDisconnect) {context.simpleTimer2().addEvent(new Disconnector(h, version), 11*60*1000);}
+        if (!isBanned && _log.shouldWarn()) {
+            _log.warn("Banning Router [" + h.toBase64().substring(0,6) + "] for " + (bantime / 60000) + "m -> No router version in RouterInfo");
+        }
+        String ipPort = getRouterIPPort(ri);
+        String banReason = "No version in RouterInfo";
+        _banLogger.logBan(h, ipPort, banReason, bantime);
+        context.banlist().banlistRouter(h, "" + banReason, null, null, context.clock().now() + bantime);
+    }
+
+    /**
+     * Checks router version and compressibility of RouterInfo to decide on banning.
+     *
+     * @param version router software version string
+     * @param isCompressible true if RouterInfo data is compressible (potentially suspicious)
+     * @param shouldDisconnect whether to disconnect after banning
+     * @param h router hash
+     * @param isBanned true if already banned
+     * @param caps router capabilities string
+     * @return true if the router should be dropped (banned), false otherwise
+     */
+    private boolean checkVersionAndCompressibility(String version, boolean isCompressible, boolean shouldDisconnect, Hash h, boolean isBanned, String caps, RouterInfo ri) {
+        if (VersionComparator.comp(version, "0.9.57") < 0 && isCompressible) {
+            if (shouldDisconnect) {context.simpleTimer2().addEvent(new Disconnector(h, version), 11*60*1000);}
+            if (!isBanned && _log.shouldWarn()) {
+                _log.warn("Banning Router [" + h.toBase64().substring(0,6) + "] for 24h -> Compressible RouterInfo / " + version);
+            }
+            String ipPort = getRouterIPPort(ri);
+            String banReason = "Compressible RouterInfo & older than 0.9.57";
+            _banLogger.logBan(h, ipPort, banReason, 24*60*60*1000L);
+            context.banlist().banlistRouter(h, "" + banReason, null, null, context.clock().now() + 24*60*60*1000);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Checks if a low-share, old-version router should be banned and disconnected.
+     *
+     * @param version router version string
+     * @param isLU true if router is low share and unreachable
+     * @param shouldBlockOldRouters whether to block old routers
+     * @param h router hash
+     * @param shouldDisconnect whether to disconnect after banning
+     * @param isBanned true if already banned
+     * @param caps router capabilities string
+     * @param bantime ban duration in milliseconds
+     * @return true if the router should be dropped (banned), false otherwise
+     */
+    private boolean checkLowShareAndVersion(String version, boolean isLU, boolean shouldBlockOldRouters, Hash h,
+                                            boolean shouldDisconnect, boolean isBanned, String caps, int bantime, RouterInfo ri) {
+        if (VersionComparator.comp(version, MIN_VERSION) < 0 && isLU && shouldBlockOldRouters) {
+            if (shouldDisconnect) {
+                context.commSystem().forceDisconnect(h, "Old version " + version);
+                if (!isBanned && _log.shouldWarn()) {
+                    _log.warn("Banning Router [" + h.toBase64().substring(0,6) + "] for " + (bantime / 60000) +
+                              "m -> " + version + (caps.isEmpty() ? "" : " / " + caps));
+                }
+            }
+            String ipPort = getRouterIPPort(ri);
+            String banReason = "Old and slow (" + version + ")";
+            _banLogger.logBan(h, ipPort, banReason, bantime);
+            context.banlist().banlistRouter(h, "" + banReason, null, null, context.clock().now() + bantime);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Checks if an unreachable and old router should be banned or ignored.
+     *
+     * @param version router version string
+     * @param isUnreachable true if router is unreachable
+     * @param isFast true if router has high bandwidth
+     * @param shouldBlockOldRouters whether to block old routers
+     * @param h router hash
+     * @param shouldDisconnect whether to disconnect after banning
+     * @param isBanned true if already banned
+     * @param caps router capabilities string
+     * @return true if the router should be dropped (ignored), false otherwise
+     */
+    private boolean checkUnreachableAndOld(String version, boolean isUnreachable, boolean isFast, boolean shouldBlockOldRouters, Hash h,
+                                           boolean shouldDisconnect, boolean isBanned, String caps) {
+        if (VersionComparator.comp(version, MIN_VERSION) < 0 && isUnreachable && shouldBlockOldRouters && !isFast) {
+            if (shouldDisconnect) {context.simpleTimer2().addEvent(new Disconnector(h, version), 11*60*1000);}
+            if (_log.shouldWarn()) {
+                _log.warn("Ignoring Tunnel Request from Router [" + h.toBase64().substring(0,6) + "] -> " + version + (caps.isEmpty() ? "" : " / " + caps));
+            }
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Evaluates whether to accept, reject, or drop tunnel requests based on the
+     * current count relative to the limit and router capabilities.
+     *
+     * @param count current participation count for the router
+     * @param limit maximum allowed participation
+     * @param shouldThrottle true if throttling is enabled
+     * @param isFast true if router is high bandwidth
+     * @param isLowShare true if router is low bandwidth
+     * @param isUnreachable true if router is unreachable
+     * @param h router hash
+     * @param caps router capabilities string
+     * @param isBanned true if router is already banned
+     * @param bantime ban duration in milliseconds
+     * @return Result indicating ACCEPT, REJECT, or DROP action
+     */
+    private Result evaluateThrottleConditions(int count, int limit, boolean shouldThrottle, boolean isFast, boolean isLowShare,
+                                              boolean isUnreachable, Hash h, String caps, boolean isBanned, int bantime, RouterInfo ri) {
+        if (count > limit && shouldThrottle) {
+            if (isFast && !isUnreachable && count > limit * 3) {
+                handleExcessiveRequests(h, caps, count, limit, bantime, ri);
+                return Result.DROP;
+            } else if (!isLowShare && !isUnreachable && count > limit * 2) {
+                handleExcessiveRequests(h, caps, count, limit, bantime, ri);
+                return Result.DROP;
+            } else if (isUnreachable && count > limit + 30) {
+                handleExcessiveRequests(h, caps, count, limit, bantime, ri);
+                return Result.DROP;
+            } else if (isLowShare && count > limit + 20) {
+                handleExcessiveRequests(h, caps, count, limit, bantime, ri);
+                return Result.DROP;
+            } else {
+                _logHighRequestCount(h, caps, count, limit);
+                return Result.REJECT;
+            }
+        }
+        _logAcceptRequest(caps, count);
+        return Result.ACCEPT;
+    }
+
+    /**
+     * Handles excessive tunnel request counts by banning and scheduling disconnect.
+     *
+     * @param h router hash
+     * @param caps router capabilities string
+     * @param count current participation count
+     * @param limit participation limit
+     * @param bantime ban duration in milliseconds
+     */
+    private void handleExcessiveRequests(Hash h, String caps, int count, int limit, int bantime, RouterInfo ri) {
+        String ipPort = getRouterIPPort(ri);
+        String banReason = "Excessive tunnel requests";
+        _banLogger.logBan(h, ipPort, banReason, bantime);
+        context.banlist().banlistRouter(h, "" + banReason, null, null, context.clock().now() + bantime);
+        context.simpleTimer2().addEvent(new Disconnector(h, banReason), 11 * 60 * 1000);
+        if (_log.shouldWarn()) {
+            _log.warn("Banning Router [" + h.toBase64().substring(0,6) + "] for " + (bantime / 60000) +
+                      "m -> Excessive tunnel requests -> Count / Limit: " +
+                      count + " / " + limit + " in 90s");
+        }
+    }
+
+    /** Logs warnings for high count tunnel request rejections. */
+    private void _logHighRequestCount(Hash h, String caps, int count, int limit) {
+        if (_log.shouldWarn()) {
+            _log.warn("Rejecting Tunnel Requests from " + (caps != null ? caps : "") +
+                      " Router [" + h.toBase64().substring(0,6) + "] -> Count / Limit: " +
+                      count + " / " + limit + " in 90s");
+        }
+    }
+
+    /** Logs debug information for accepted tunnel requests. */
+    private void _logAcceptRequest(String caps, int count) {
+        if (_log.shouldDebug()) {
+            _log.debug("Accepting Tunnel Request from " + (!caps.isEmpty() || !caps.isEmpty() ? caps : "") +
+                       " Router -> Count: " + count + " in 90s");
+        }
+    }
+
+    /**
+     * Periodic timer event that clears the participation counts to reset throttling.
+     */
+    private class Cleaner implements SimpleTimer.TimedEvent {
+        @Override
+        public void timeReached() {counter.clear();}
+    }
+
+    /**
+     * Timer event that disconnects a router after a delay.
+     */
+    private class Disconnector implements SimpleTimer.TimedEvent {
+        private final Hash h;
+        private final String version;
+        public Disconnector(Hash h, String version) { this.h = h; this.version = version; }
+        public void timeReached() {
+            String reason = (version == null || version.isEmpty()) ? "Old version" : "Old version (" + version + ")";
+            context.commSystem().forceDisconnect(h, reason);
+        }
+    }
+}

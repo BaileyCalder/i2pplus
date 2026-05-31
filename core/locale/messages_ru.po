@@ -1,0 +1,90 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+#, java-format
+msgid "{0,number,####} ms"
+msgid_plural "{0,number,####} ms"
+msgstr[0] "{0,number,####} мс"
+msgstr[1] "{0,number,####} мс"
+msgstr[2] "{0,number,####} мс"
+
+#, java-format
+msgid "{0} sec"
+msgid_plural "{0} sec"
+msgstr[0] "{0} с."
+msgstr[1] "{0} с."
+msgstr[2] "{0} с"
+
+#, java-format
+msgid "{0} min"
+msgid_plural "{0} min"
+msgstr[0] "{0} мин."
+msgstr[1] "{0} мин."
+msgstr[2] "{0} мин."
+
+#, java-format
+msgid "{0} hour"
+msgid_plural "{0} hours"
+msgstr[0] "{0} час"
+msgstr[1] "{0} часа"
+msgstr[2] "{0} часов"
+
+#, java-format
+msgid "{0} day"
+msgid_plural "{0} days"
+msgstr[0] "{0} день"
+msgstr[1] "{0} дня"
+msgstr[2] "{0} дней"
+
+#, java-format
+msgid "{0} year"
+msgid_plural "{0} years"
+msgstr[0] "{0} год"
+msgstr[1] "{0} года"
+msgstr[2] "{0} лет"
+
+msgid "n/a"
+msgstr "н/д"
+
+#, java-format
+msgid "{0,number,####} ns"
+msgid_plural "{0,number,###} ns"
+msgstr[0] "{0,number,##} нс"
+msgstr[1] "{0,number,###} нс"
+msgstr[2] "{0,number,###} нс"
+
+#, java-format
+msgid "{0,number,####} μs"
+msgid_plural "{0,number,###} μs"
+msgstr[0] "{0,number,##} мкс"
+msgstr[1] "{0,number,###} мкс"
+msgstr[2] "{0,number,###} мкс"
+
+msgid "CRIT"
+msgstr "CRIT"
+
+msgid "DEBUG"
+msgstr "DEBUG"
+
+msgid "ERROR"
+msgstr "ERROR"
+
+msgid "INFO"
+msgstr "INFO"
+
+msgid "WARN"
+msgstr "WARN"
+
+#, java-format
+msgid "{0} similar message omitted"
+msgid_plural "{0} similar messages omitted"
+msgstr[0] "{0} подобное сообщение опущено"
+msgstr[1] "{0} подобных сообщений пропущено"
+msgstr[2] "{0} подобных сообщений пропущено"

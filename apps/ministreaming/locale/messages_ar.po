@@ -1,0 +1,63 @@
+# I2P
+# Copyright (C) 2014 The I2P Project
+msgid ""
+msgstr ""
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+msgid "Message timeout"
+msgstr "نفذ وقت الرسالة"
+
+msgid "Failed delivery to local destination"
+msgstr "فشل التسليم إلى الوجهة المحلية"
+
+msgid "Local router failure"
+msgstr "فشل الموجه المحلي"
+
+msgid "Local network failure"
+msgstr "فشلت الشبكة المحلية"
+
+msgid "Session closed"
+msgstr "الجلسة مغلقة"
+
+msgid "Invalid message"
+msgstr "رسالة غير صالحة"
+
+msgid "Invalid message options"
+msgstr "خيارات الرسائل غير صالحة"
+
+msgid "Buffer overflow"
+msgstr "تجاوز سعة المخزن المؤقت"
+
+msgid "Message expired"
+msgstr "انتهت الرسالة"
+
+msgid "Local lease set invalid"
+msgstr "تعيين العقد المحلي غير صالح"
+
+msgid "No local tunnels"
+msgstr "لا توجد أنفاق محلية"
+
+msgid "Unsupported encryption options"
+msgstr "خيارات التشفير غير مدعومة"
+
+msgid "Invalid destination"
+msgstr "عنوان غير موجود"
+
+msgid "Destination lease set expired"
+msgstr "انتهى تعيين عقد الوجهة"
+
+msgid "Destination lease set not found"
+msgstr "لم يتم العثور على عقد الوجهة"
+
+msgid "Local destination shutdown"
+msgstr "اغلاق الوجهة المحلية"
+
+msgid "Connection was reset"
+msgstr "تمت إعادة ضبط الاتصال"
+
+msgid "Failure code"
+msgstr "فشلت الشفرة"

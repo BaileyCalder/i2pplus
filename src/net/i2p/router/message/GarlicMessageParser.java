@@ -1,0 +1,236 @@
+package net.i2p.router.message;
+/*
+ * free (adj.): unencumbered; not under the control of others
+ * Written by jrandom in 2003 and released into the public domain
+ * with no warranty of any kind, either expressed or implied.
+ * It probably won't make your computer catch on fire, or eat
+ * your children, but it might.  Use at your own risk.
+ *
+ */
+
+import net.i2p.crypto.EncType;
+import net.i2p.crypto.SessionKeyManager;
+import net.i2p.data.Certificate;
+import net.i2p.data.DataFormatException;
+import net.i2p.data.DataHelper;
+import net.i2p.data.PrivateKey;
+import net.i2p.data.PublicKey;
+import net.i2p.data.i2np.GarlicClove;
+import net.i2p.data.i2np.GarlicMessage;
+import net.i2p.router.RouterContext;
+import net.i2p.router.crypto.ratchet.MuxedPQSKM;
+import net.i2p.router.crypto.ratchet.MuxedSKM;
+import net.i2p.router.crypto.ratchet.RatchetSKM;
+import net.i2p.util.Log;
+
+/**
+ *  Read a GarlicMessage, decrypt it, and return the resulting CloveSet.
+ *  Thread-safe, does not contain any state.
+ *  Public as it's now in the RouterContext.
+ */
+public class GarlicMessageParser {
+    private final Log _log;
+    private final RouterContext _context;
+
+    /**
+     *  Huge limit just to reduce chance of trouble. Typ. usage is 3.
+     *  As of 0.9.12. Was 255.
+     */
+    private static final int MAX_CLOVES = 32;
+
+    public GarlicMessageParser(RouterContext context) {
+        _context = context;
+        _log = _context.logManager().getLog(GarlicMessageParser.class);
+    }
+
+    /**
+     *  Supports ELGAMAL_2048, ECIES_X25519, and PQ
+     *
+     *  @param encryptionKey either type TODO need both for muxed
+     *  @param skm use tags from this session key manager
+     *  @return null on error
+     */
+    CloveSet getGarlicCloves(GarlicMessage message, PrivateKey encryptionKey, SessionKeyManager skm) {
+        byte encData[] = message.getData();
+        byte decrData[];
+        boolean debug = _log.shouldDebug();
+        boolean warn = _log.shouldWarn();
+        try {
+            if (debug) {
+                _log.debug("Decrypting with " + encryptionKey + "...");
+            }
+            EncType type = encryptionKey.getType();
+            if (type == EncType.ELGAMAL_2048) {
+                decrData = _context.elGamalAESEngine().decrypt(encData, encryptionKey, skm);
+            } else if (type == EncType.ECIES_X25519) {
+                RatchetSKM rskm;
+                if (skm instanceof RatchetSKM) {rskm = (RatchetSKM) skm;}
+                else if (skm instanceof MuxedSKM) {rskm = ((MuxedSKM) skm).getECSKM();}
+                else if (skm instanceof MuxedPQSKM) {rskm = ((MuxedPQSKM) skm).getECSKM();}
+                else {
+                    if (warn) {_log.warn("No SKM to decrypt ECIES");}
+                    return null;
+                }
+                CloveSet rv = _context.eciesEngine().decrypt(encData, encryptionKey, rskm);
+                if (rv != null) {
+                    if (debug) {
+                        _log.debug("ECIES decryption success, cloves: " + rv.getCloveCount());
+                    }
+                    return rv;
+                } else {return null;}
+            } else if (type.isPQ()) {
+                RatchetSKM rskm;
+                if (skm instanceof RatchetSKM) {
+                    rskm = (RatchetSKM) skm;
+                } else if (skm instanceof MuxedPQSKM) {
+                    rskm = ((MuxedPQSKM) skm).getPQSKM();
+                } else {
+                    if (warn) {_log.warn("No SessionKeyManager to decrypt PQ");}
+                    return null;
+                }
+                CloveSet rv = _context.eciesEngine().decrypt(encData, encryptionKey, rskm);
+                if (rv != null) {
+                    if (debug) {
+                        _log.debug("PQ decryption success -> Cloves: " + rv.getCloveCount());
+                    }
+                    return rv;
+                } else {
+                    if (debug || warn) {
+                        StringBuilder buf = new StringBuilder(256);
+                        buf.append("PQ decryption failed [").append(type).append("]");
+                        if (skm instanceof MuxedPQSKM) {
+                            MuxedPQSKM mpq = (MuxedPQSKM) skm;
+                            if (debug) {
+                                buf.append(" SKM type: MuxedPQSKM");
+                            }
+                            // Convert PrivateKey to PublicKey for tag lookup
+                            PublicKey ecPubKey = encryptionKey.toPublic();
+                            int ecTags = mpq.getECSKM().getAvailableTags(ecPubKey, null);
+                            int pqTags = mpq.getPQSKM().getAvailableTags(ecPubKey, null);
+                            if (debug) {
+                                buf.append(" EC tags: ").append(ecTags);
+                                buf.append(" PQ tags: ").append(pqTags);
+                            }
+                            if (ecTags == 0 && pqTags == 0) {
+                                buf.append(" -> No session tags available");
+                            } else if (pqTags == 0) {
+                                buf.append(" -> No PQ session tags available");
+                            } else if (ecTags == 0) {
+                                buf.append(" -> No EC session tags available");
+                            } else {
+                                buf.append(" -> Decryption failed with available tags");
+                            }
+                        } else if (skm instanceof RatchetSKM) {
+                            // Convert PrivateKey to PublicKey for tag lookup
+                            PublicKey pubKey = encryptionKey.toPublic();
+                            int tags = ((RatchetSKM) skm).getAvailableTags(pubKey, null);
+                            if (debug) {
+                                buf.append(" Tags: ").append(tags);
+                            }
+                            if (tags == 0) {
+                                buf.append(" -> No session tags available");
+                            } else {
+                                buf.append(" -> Decryption failed with available tags");
+                            }
+                            buf.append(" (PQ-only destination)");
+                        } else {
+                            if (debug) {
+                                buf.append(" SKM type: ").append(skm.getClass().getSimpleName());
+                            }
+                            buf.append(" -> Incompatible Session Key Manager");
+                        }
+                        if (debug) {
+                            buf.append(" (Data size: ").append(encData.length).append(")");
+                        }
+                        _log.warn(buf.toString());
+                    }
+                    return null;
+                }
+            } else {
+                if (warn) {_log.warn("Can't decrypt with key type " + type);}
+                return null;
+            }
+        } catch (DataFormatException dfe) {
+            if (debug) {_log.warn("Error decrypting", dfe);}
+            else if (warn) {_log.warn("Error decrypting cloves -> " + dfe.getMessage());}
+            return null;
+        }
+        if (decrData == null) {
+            // This is the usual error path and it's logged at WARN level in GarlicMessageReceiver
+            if (debug) {
+                _log.debug("Decryption of garlic message failed", new Exception("Decrypt fail"));
+            }
+            return null;
+        } else {
+            try {
+                CloveSet rv = readCloveSet(decrData, 0);
+                if (debug) {_log.debug("Got cloves: " + rv.getCloveCount());}
+                return rv;
+            } catch (DataFormatException dfe) {
+                if (warn) {_log.warn("Unable to read cloveSet -> " +  dfe.getMessage());}
+                return null;
+            }
+        }
+    }
+
+    /**
+     *  Supports both ELGAMAL_2048 and ECIES_X25519.
+     *
+     *  @param elgKey must be ElG OR PQ, non-null
+     *  @param ecKey must be EC, non-null
+     *  @param skm use tags from this session key manager
+     *  @return null on error
+     *  @since 0.9.44
+     */
+    CloveSet getGarlicCloves(GarlicMessage message, PrivateKey elgKey, PrivateKey ecKey, SessionKeyManager skm) {
+        byte encData[] = message.getData();
+        CloveSet rv;
+        try {
+            if (skm instanceof MuxedSKM) {
+                MuxedSKM mskm = (MuxedSKM) skm;
+                rv = _context.eciesEngine().decrypt(encData, elgKey, ecKey, mskm);
+            } else if (skm instanceof MuxedPQSKM) {
+                MuxedPQSKM mskm = (MuxedPQSKM) skm;
+                // EC is first
+                rv = _context.eciesEngine().decrypt(encData, ecKey, elgKey, mskm);
+            } else if (skm instanceof RatchetSKM) {
+                // unlikely, if we have two keys we should have a MuxedSKM
+                RatchetSKM rskm = (RatchetSKM) skm;
+                rv = _context.eciesEngine().decrypt(encData, ecKey, rskm);
+            } else {
+                // unlikely, if we have two keys we should have a MuxedSKM
+                byte[] decrData = _context.elGamalAESEngine().decrypt(encData, elgKey, skm);
+                if (decrData != null) {rv = readCloveSet(decrData, 0);}
+                else {rv = null;}
+            }
+        } catch (DataFormatException dfe) {rv = null;}
+        return rv;
+    }
+
+    /**
+     *  ElGamal only
+     *
+     *  @param offset where in data to start
+     *  @return non-null, throws on all errors
+     *  @since public since 0.9.44
+     */
+    public CloveSet readCloveSet(byte data[], int offset) throws DataFormatException {
+        int numCloves = data[offset] & 0xff;
+        offset++;
+        if (numCloves <= 0 || numCloves > MAX_CLOVES) {throw new DataFormatException("Bad clove count " + numCloves);}
+        GarlicClove[] cloves = new GarlicClove[numCloves];
+        for (int i = 0; i < numCloves; i++) {
+            GarlicClove clove = new GarlicClove(_context);
+            offset += clove.readBytes(data, offset);
+            cloves[i] = clove;
+        }
+        Certificate cert = Certificate.create(data, offset);
+        offset += cert.size();
+        long msgId = DataHelper.fromLong(data, offset, 4);
+        offset += 4;
+        long expiration = DataHelper.fromLong(data, offset, 8);
+        CloveSet set = new CloveSet(cloves, cert, msgId, expiration);
+        return set;
+    }
+
+}

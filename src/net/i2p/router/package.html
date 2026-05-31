@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>I2P Router Package</title>
+</head>
+<body>
+<p>
+    The I2P router application handles I2P network communication.
+</p>
+
+<p>
+    It encompasses sending and receiving messages, building up tunnels, encrypting and decrypting (on multiple levels) where applicable, and so on.
+</p>
+
+<p>
+    Classes in this package, sub-packages, and others in router.jar are not for use by apps, clients or plugins (except for routerconsole). Subject to change. Not necessarily maintained as a stable API.
+</p>
+
+<p>
+    For applications bundling I2P router, instantiate Router and call runRouter(), or use Router.main() or RouterLaunch. Most public methods in Router are maintained as a stable I2P for those bundling router.
+</p>
+
+<p>
+    Message flow:
+</p>
+
+<div style="overflow-x: auto; width: 100%;">
+<div class="flow">
+NTCP2 ────────────────────────────── SSU ──────────────────────────────────────
+kernel→NIO→Reader → <span class="ntcp2">NTCP2 PerConn PriQ→Frag</span> → Writer→NIO→Kernel
+                    ↑
+kernel→Reader→CodelQ → <span class="ssu">SSU Reasm→RED→Codel/PriQ→Frag→Win/ReTX→OMF→CodelQ</span> → Writer→Kernel
+                    ↓
+<span class="tunnel">Tunnels / Bandwidth Limiter</span> ↔──────────────┘
+
+Middle Hop: <span class="middle">InNet MsgPool → IBGW RED-Codel/Pri-FragQ → OBEP → OutNet MsgPool</span>
+</div>
+</div>
+</body>
+</html>

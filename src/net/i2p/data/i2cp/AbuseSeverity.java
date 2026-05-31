@@ -1,0 +1,82 @@
+package net.i2p.data.i2cp;
+
+/*
+ * free (adj.): unencumbered; not under the control of others
+ * Written by jrandom in 2003 and released into the public domain
+ * with no warranty of any kind, either expressed or implied.
+ * It probably won't  make your computer catch on fire, or eat
+ * your children, but it might.  Use at your own risk.
+ *
+ */
+
+import net.i2p.data.DataFormatException;
+import net.i2p.data.DataStructureImpl;
+
+import java.io.EOFException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
+/**
+ * Provides a severity level (larger numbers are more severe) in association with
+ * a client reporting abusive behavior to the router or the router reporting it
+ * to the client
+ *
+ * @author jrandom
+ */
+public class AbuseSeverity extends DataStructureImpl {
+    private int _severityId;
+
+    /**
+     * Create a new abuse severity with default value -1.
+     */
+    public AbuseSeverity() {
+        _severityId = -1;
+    }
+
+    /**
+     * Get the severity level.
+     *
+     * @return the severity level
+     */
+    public int getSeverity() {
+        return _severityId;
+    }
+
+    /**
+     * Set the severity level.
+     *
+     * @param id the severity level
+     */
+    public void setSeverity(int id) {
+        _severityId = id;
+    }
+
+    @Override
+    public void readBytes(InputStream in) throws DataFormatException, IOException {
+        _severityId = in.read();
+        if (_severityId < 0) throw new EOFException();
+    }
+
+    @Override
+    public void writeBytes(OutputStream out) throws DataFormatException, IOException {
+        if (_severityId < 0) throw new DataFormatException("Invalid abuse severity: " + _severityId);
+        out.write((byte) _severityId);
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if ((object == null) || !(object instanceof AbuseSeverity)) return false;
+        return _severityId == ((AbuseSeverity) object).getSeverity();
+    }
+
+    @Override
+    public int hashCode() {
+        return _severityId;
+    }
+
+    @Override
+    public String toString() {
+        return "[AbuseSeverity: " + _severityId + "]";
+    }
+}

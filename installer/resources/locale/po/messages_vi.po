@@ -1,0 +1,144 @@
+# I2P
+# Copyright (C) 2012 The I2P Project
+msgid ""
+msgstr ""
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Failed to load the wrapper"
+msgstr "Không thể tải trình bọc."
+
+#, sh-format
+msgid "$APP_LONG_NAME is already running."
+msgstr "$APP_LONG_NAME đang chạy."
+
+#, sh-format
+msgid "Running $APP_LONG_NAME"
+msgstr "Đang chạy $APP_LONG_NAME"
+
+#, sh-format
+msgid "Waiting for $APP_LONG_NAME"
+msgstr "Đang chờ $APP_LONG_NAME"
+
+#, sh-format
+msgid "WARNING: $APP_LONG_NAME may have failed to start."
+msgstr "CẢNH BÁO: $APP_LONG_NAME có thể đã không khởi động thành công."
+
+msgid "Must be root to perform this action."
+msgstr "Phải là root để thực hiện hành động này."
+
+#, sh-format
+msgid "Starting $APP_LONG_NAME"
+msgstr "Khởi động $APP_LONG_NAME"
+
+#, sh-format
+msgid "Stopping $APP_LONG_NAME"
+msgstr "Dừng $APP_LONG_NAME"
+
+#, sh-format
+msgid "$APP_LONG_NAME was not running."
+msgstr "$APP_LONG_NAME không đang chạy."
+
+#, sh-format
+msgid "Unable to stop $APP_LONG_NAME."
+msgstr "Không thể dừng $APP_LONG_NAME."
+
+#, sh-format
+msgid "Waiting for $APP_LONG_NAME to exit"
+msgstr "Đang chờ $APP_LONG_NAME thoát"
+
+#, sh-format
+msgid "Failed to stop $APP_LONG_NAME."
+msgstr "Không thể dừng $APP_LONG_NAME."
+
+#, sh-format
+msgid "Stopped $APP_LONG_NAME."
+msgstr "Đã dừng $APP_LONG_NAME."
+
+#, sh-format
+msgid "Stopping $APP_LONG_NAME gracefully"
+msgstr "Dừng $APP_LONG_NAME một cách nhã nhặn"
+
+#, sh-format
+msgid "$APP_LONG_NAME is not running."
+msgstr "$APP_LONG_NAME không đang chạy."
+
+#, sh-format
+msgid "$APP_LONG_NAME is running: PID:$pid"
+msgstr "$APP_LONG_NAME đang chạy: PID:$pid"
+
+#, sh-format
+msgid "$APP_LONG_NAME is running: PID:$pid, Wrapper:$STATUS, Java:$JAVASTATUS"
+msgstr "$APP_LONG_NAME đang chạy: PID:$pid, Wrapper:$STATUS, Java:$JAVASTATUS"
+
+#, sh-format
+msgid "The $APP_LONG_NAME daemon is already installed."
+msgstr "Quỷ $APP_LONG_NAME đã được cài đặt."
+
+#, sh-format
+msgid "Installing the $APP_LONG_NAME daemon"
+msgstr "Đang cài đặt quỷ $APP_LONG_NAME"
+
+#, sh-format
+msgid "Install not currently supported for $DIST_OS"
+msgstr "Cài đặt không được hỗ trợ cho $DIST_OS hiện tại"
+
+#, sh-format
+msgid "Removing $APP_LONG_NAME daemon"
+msgstr "Loại bỏ quỷ $APP_LONG_NAME"
+
+#, sh-format
+msgid "The $APP_LONG_NAME daemon is not currently installed."
+msgstr "Quỷ $APP_LONG_NAME hiện không được cài đặt."
+
+#, sh-format
+msgid "Remove not currently supported for $DIST_OS"
+msgstr "Xóa không được hỗ trợ cho $DIST_OS hiện tại"
+
+msgid "Commands:"
+msgstr "Lệnh:"
+
+msgid "Launch in the current console."
+msgstr "Khởi chạy trong console hiện tại."
+
+msgid "Start in the background as a daemon process."
+msgstr "Khởi chạy ở nền như một tiến trình quỷ."
+
+msgid "Stop if running as a daemon or in another console."
+msgstr "Dừng nếu đang chạy như một quỷ hoặc trên một console khác."
+
+msgid "Stop gracefully, may take up to 11 minutes or more."
+msgstr "Dừng một cách nhã nhặn, có thể mất đến 11 phút hoặc lâu hơn."
+
+msgid "Restart gracefully, may take up to 11 minutes or more."
+msgstr "Khởi động lại một cách nhã nhặn, có thể mất đến 11 phút hoặc lâu hơn."
+
+msgid "Stop if running and then start."
+msgstr "Dừng nếu đang chạy sau đó bắt đầu."
+
+msgid "Restart only if already running."
+msgstr "Khởi động lại chỉ khi đã đang chạy."
+
+msgid "Query the current status."
+msgstr "Truy vấn trạng thái hiện tại."
+
+msgid "Install to start automatically when system boots."
+msgstr "Cài đặt để tự động khởi động khi hệ thống khởi động."
+
+msgid "Uninstall."
+msgstr "Gỡ cài đặt."
+
+msgid "Request a Java thread dump if running."
+msgstr "Yêu cầu đổ bộ nhớ luồng Java nếu đang chạy."
+
+msgid "Please edit i2prouter and set the variable RUN_AS_USER"
+msgstr "Vui lòng chỉnh sửa i2prouter và đặt biến RUN_AS_USER"
+
+msgid "Running I2P as the root user is *not* recommended."
+msgstr "Chạy I2P dưới dạng người dùng root *không* được khuyến nghị."
+
+msgid "To run as root anyway, edit i2prouter and set ALLOW_ROOT=true."
+msgstr "Để chạy như root bất kể điều gì, chỉnh sửa i2prouter và đặt ALLOW_ROOT=true."

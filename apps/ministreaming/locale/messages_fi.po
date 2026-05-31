@@ -1,0 +1,63 @@
+# I2P
+# Copyright (C) 2014 The I2P Project
+msgid ""
+msgstr ""
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Message timeout"
+msgstr "Viestin aikaraja"
+
+msgid "Failed delivery to local destination"
+msgstr "Toimitus paikalliseen määränpäähän epäonnistui"
+
+msgid "Local router failure"
+msgstr "Paikallisen reitittimen vika"
+
+msgid "Local network failure"
+msgstr "Paikallisverkkovirhe"
+
+msgid "Session closed"
+msgstr "Istunto suljettu"
+
+msgid "Invalid message"
+msgstr "Virheellinen viesti"
+
+msgid "Invalid message options"
+msgstr "Virheelliset viestiasetukset"
+
+msgid "Buffer overflow"
+msgstr "Puskurin ylivuoto"
+
+msgid "Message expired"
+msgstr "Viesti vanhentunut"
+
+msgid "Local lease set invalid"
+msgstr "Paikallinen vuokrasopimus ei kelpaa"
+
+msgid "No local tunnels"
+msgstr "Ei paikallisia tunneleita"
+
+msgid "Unsupported encryption options"
+msgstr "Salausvaihtoehtoja ei tueta"
+
+msgid "Invalid destination"
+msgstr "Virheellinen kohde"
+
+msgid "Destination lease set expired"
+msgstr "Kohteen vuokrasopimus umpeutunut"
+
+msgid "Destination lease set not found"
+msgstr "Vuokrakohdetta ei löydy"
+
+msgid "Local destination shutdown"
+msgstr "Paikallisen kohteen sammutus"
+
+msgid "Connection was reset"
+msgstr "Yhteys nollattiin"
+
+msgid "Failure code"
+msgstr "Vikakoodi"

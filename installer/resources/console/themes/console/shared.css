@@ -1,0 +1,88 @@
+/* I2P+ shared css rules for Router Console themes */
+/* Author: dr|z3d */
+
+.expanded #ffstatus,#ffconf:hover #ffstatus{opacity:0}
+.hasExpandedElement #floodfillconfig{margin-bottom:-1px;display:table!important}
+.jobsCounter {margin:0 0 0 1px;padding:3px 8px;display:inline-block;vertical-align:baseline;line-height:1;font-weight:700;border-radius:3px;box-shadow:var(--bevel);background:var(--badge)}
+.log_level{font-weight:900!important}
+.tIn{background:url(/themes/console/images/inbound.svg) no-repeat 6px center/16px,var(--badge)}
+.tOut{background:url(/themes/console/images/outbound.svg) no-repeat 6px center/16px,var(--badge)}
+.toggle:not(.expanded) .tIn,.toggle:not(.expanded) .tOut{min-width:40px;display:inline-block!important}
+.toggleElementsActive .tIn,.toggleElementsActive .tOut{margin:-3px 0;padding:4px 6px 4px 26px;display:inline-block;box-shadow:var(--bevel)}
+.tunnelwarn th{color:#900}
+#advfilter,#tnlfilter{display:inline-block;position:absolute}
+#advfilter button,#tnlfilter button{margin:0 0 0 -24px;padding:5px;display:inline-block;width:24px;height:26px;min-width:0;font-size:0;border:0;box-shadow:none;background:var(--no) no-repeat center center/10px;mix-blend-mode:luminosity}
+#advfilter button:hover,#advfilter input:focus+button,#tnlfilter button:hover,#tnlfilter input:focus+button{mix-blend-mode:normal}
+#advfilter input[type=text],#tnlfilter input[type=text]{margin:0;padding:4px 24px 3px;width:160px;font-size:85%;background:#0008 var(--filter) no-repeat 7px center/12px;opacity:.75;filter:none}
+#advfilter input[type=text]:focus,#tnlfilter input[type=text]:focus{width:200px;opacity:.85}
+#advconf td.delete{padding:5px 0;width:1%;min-width:35px;text-align:center;vertical-align:middle;font-size:0}
+#advconf .delete::after{width:32px;height:16px;display:inline-block;vertical-align:middle;background:var(--nuke) no-repeat center center/14px;opacity:.8;content:"";filter:grayscale(.5)}
+#advconf .delete:hover::after{opacity:1;filter:none;cursor:pointer}
+#advconf .newKey,#advconf .key{width:1%;min-width:340px;white-space:nowrap;font-weight:500}
+#advconf .newKey:empty:not(:focus)::before{width:12px;height:12px;display:inline-block;vertical-align:middle;background:var(--star) no-repeat center center/12px;content:""}
+#advconf .value{word-break:break-all}
+#advancedconfig{position:relative}
+#banconfig input[type="number"]{width:64px}
+#banconfig input[type="text"]{width:240px}
+#banconfig label,#banconfig .nowrap{display:inline-block}
+#banconfig label{margin:-4px 8px}
+#banconfig label::before{margin:0 0 0 8px;height:50px;display:inline-block;vertical-align:middle;content:""}
+#banconfig input,#banconfig .slider{margin:8px 8px 8px 4px}#banconfig .suboption{min-width:160px;text-align:center}
+#banconfig td{padding:8px}
+#banconfig .optionlist{padding:8px 0;columns:3 420px}
+#banconfig .optionlist+.suboption{margin-top:8px}
+#banconfig .suboption{padding:3px 8px 4px}
+#banconfig .nowrap{margin:0 4px 0 0;min-width:160px;text-align:right}
+#banSummary ul:empty{display:none}
+#compactLookup{margin:-12px auto 16px;width:50%;min-width:500px}
+#compactLookup{margin-top:15px;position:sticky !important;top:-1px;z-index:999;box-shadow:var(--border_table)}
+#compactLookup #netdblookup button,#compactLookup #netdblookup input, #compactLookup #netdblookup select{margin:0 !important;width:calc(100% - 4px);min-width:0!important;display:inline-block;vertical-align:middle}
+#compactLookup #netdblookup td,#compactLookup #netdblookup td:nth-child(2n+1){padding:8px 2px;text-align:center;border:0}
+#compactLookup #netdblookup td:first-child{padding-left:6px;width:15%;min-width:180px}
+#compactLookup #netdblookup td:last-child{padding-right:6px;width:10%;min-width:120px}
+#compactLookup #netdblookup tr{background:var(--th)}
+#netdbSearchCompact{width:100%}
+#netdb .netdbentry th.router{text-align:center}
+#netdb .netdbentry th.router b{display:inline-block;width:24px;height:24px;min-width:unset;vertical-align:middle;font-size:0;color:#0000;background:var(--client) no-repeat center center/24px}
+#netdb .netdbentry th.router:not(.isStandard) b{margin-left:-24px}
+#netdb .netdbentry th.router.isFF b{background:var(--floodfill) no-repeat center center/24px}
+#netdb .netdbentry th.router b::after{margin-left:5px;display:inline-block;width:48px;height:24px;vertical-align:middle}
+#netdb .netdbentry th.router.isFast b::after{background:var(--fast) no-repeat calc(50% + 12px) center/14px;content:""}
+#netdb .netdbentry th.router.isHighCap b::after{background:var(--highcap) no-repeat calc(50% + 12px) center/14px;content:""}
+#netdb .netdbentry th.router.isIntegrated b::after{background:var(--integrated) no-repeat calc(50% + 12px) center/14px;content:""}
+#config_advanced #advconfwrapper:hover{overflow-y:auto}
+#config_advanced #advconfwrapper{overflow:hidden}
+#ffconf.toggle::after{width:12px;display:inline-block;height:12px;position:absolute;right:10px;top:calc(50% - 6px);background:var(--dropdown);content:""}
+#ffconf.toggle:hover{color:var(--hover);cursor:pointer}
+#ffconf.toggle:hover::after{background:var(--dropdown_hover);content:""}
+#ffconf.toggle:not(.expanded){margin-bottom:-1px}
+#ffconf.toggle:not(.expanded)::after{width:12px;display:inline-block;height:12px;position:absolute;right:10px;top:calc(50% - 6px);background:var(--dropdown);content:"";transform:rotate(-90deg)}
+#ffconf.toggle:not(.expanded):hover::after{background:var(--dropdown_hover);content:"";transform:rotate(-90deg)}
+#ffstatus{float:right;font-size:85%;margin:2px 20px 0 0;letter-spacing:0;text-transform:none;opacity:1;transition:ease .2s opacity}
+#pbody .status span{margin:0;padding:0;width:9px;height:9px;display:inline-block;font-size:0;background-position:center center;background-size:9px}
+#pbody .status span.testing{width:10px;height:10px;background-size:10px;animation:pulse 2s ease 0s both infinite;transform-origin:center center}
+#pluginTotals{margin:-2px 24px -2px 8px;padding:3px 8px;float:right;vertical-align:middle;text-align:center;font-size:90%}
+#pluginTotals span{margin:0 6px;display:inline-block;padding:0 0 0 16px}
+#pluginTotals #started{background:var(--start) no-repeat left center/10px}
+#pluginTotals #stopped{margin-left:0;background:var(--stop) no-repeat left center/10px}
+#pconfig:hover #pluginTotals{color:var(--ink)}#.tIn{background:url(/themes/console/images/inbound.svg) no-repeat 6px center/16px,var(--badge)}
+#routerjobqueue #jobs h3 span:not(.dropdown){margin-right:22px;text-transform:none;letter-spacing:0;transform:scale(0.85);transform-origin:right center}#tunnelconfig .tunnelName::before{margin:-4px 6px -4px 0;width:20px;height:20px;display:inline-block;vertical-align:middle;background:url(/themes/console/images/hardhat.svg) no-repeat center center/20px;content:""}
+#sessionBanned th,#sessionBanned td{padding:4px 6px}
+#sessionBanned thead th{font-size:85%;text-align:left}
+#sessionBanned tfoot th{padding:8px 12px;text-align:center}
+#sessionBanned .country{font-size:0}
+#sessionBanned .country,#sessionBanned .expires,#sessionBanned .hostname,#sessionBanned .ip,#sessionBanned .port,#sessionBanned .reason,#sessionBanned .routerversion{text-align:center}
+#sessionBanned .country,#sessionBanned .expiry,#sessionBanned .hash{width:1%;white-space:nowrap}
+#sessionBanned td.expires,#sessionBanned td.hostname,#sessionBanned td.ip,#sessionBanned td.port,#sessionBanned td.reason{font-size:95%}
+#sidebar h3:hover .badge{margin:0;width:0;font-size:0;opacity:0}
+#ssuadv a{display:inline-block;vertical-align:text-top;text-transform:none;letter-spacing:0;font-size:85%}
+#totaljobstats a{float:right}
+#tunnelconfig .tunnelName{margin-right:6px;min-width:240px;display:inline-block}
+#jobstats #statCount #init td{padding:24px;display:table-cell;font-size:0;box-shadow:none;background:var(--update) no-repeat center center/20px;transform:rotate(0);animation:linear spin 3s forwards infinite}
+
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1.1)}50%{opacity:.7;transform:scale(.9)}}
+
+@media (max-width:1199px){
+  #banconfig label::before{margin:0 0 0 -4px;height:32px}
+  #banconfig .nowrap{min-width:0;margin-left:8px}
+}

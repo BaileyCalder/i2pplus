@@ -1,0 +1,117 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#, java-format
+msgid "{0,number,####} ms"
+msgid_plural "{0,number,####} ms"
+msgstr[0] "{0,number,####} ميليسكonde"
+msgstr[1] "{0,number,####} ميليسكوند"
+msgstr[2] "{0,number,####} ميليسكوندين"
+msgstr[3] "{0,number,####} ميليسكوند"
+msgstr[4] "{0,number,####} ميليسكوندين"
+msgstr[5] "{0,number,####} ميليسكوند"
+
+#, java-format
+msgid "{0} sec"
+msgid_plural "{0} sec"
+msgstr[0] "{0} ثانية"
+msgstr[1] "{0} ثانية"
+msgstr[2] "{0} ثانيتان"
+msgstr[3] "{0} ثوان"
+msgstr[4] "{0} ثوان"
+msgstr[5] "{0} ثوان"
+
+#, java-format
+msgid "{0} min"
+msgid_plural "{0} min"
+msgstr[0] "{0} دقيقة"
+msgstr[1] "{0} دقيقة"
+msgstr[2] "{0} دقيقتان"
+msgstr[3] "{0} دقائق"
+msgstr[4] "{0} دقائق"
+msgstr[5] "{0} دقائق"
+
+#, java-format
+msgid "{0} hour"
+msgid_plural "{0} hours"
+msgstr[0] "{0} ساعة"
+msgstr[1] "{0} ساعة"
+msgstr[2] "{0} ساعتان"
+msgstr[3] "{0} ساعات"
+msgstr[4] "{0} ساعات"
+msgstr[5] "{0} ساعات"
+
+#, java-format
+msgid "{0} day"
+msgid_plural "{0} days"
+msgstr[0] "{0} يوم"
+msgstr[1] "{0} يوم"
+msgstr[2] "{0} يومان"
+msgstr[3] "{0} أيام"
+msgstr[4] "{0} أيام"
+msgstr[5] "{0} أيام"
+
+#, java-format
+msgid "{0} year"
+msgid_plural "{0} years"
+msgstr[0] "{0} سنة"
+msgstr[1] "{0} سنة"
+msgstr[2] "{0} سنتان"
+msgstr[3] "{0} سنوات"
+msgstr[4] "{0} سنوات"
+msgstr[5] "{0} سنوات"
+
+msgid "n/a"
+msgstr "غير متوفر"
+
+#, java-format
+msgid "{0,number,####} ns"
+msgid_plural "{0,number,###} ns"
+msgstr[0] "{0,number,####} نانو ثانية"
+msgstr[1] "{0,number,####} نانو ثانية"
+msgstr[2] "{0,number,####} نانو ثانية"
+msgstr[3] "{0,number,####} نانو ثوانٍ"
+msgstr[4] "{0,number,####} نانو ثوانٍ"
+msgstr[5] "{0,number,####} نانو ثوانٍ"
+
+#, java-format
+msgid "{0,number,####} μs"
+msgid_plural "{0,number,###} μs"
+msgstr[0] "{0,number,####} ميكرو ثانية"
+msgstr[1] "{0,number,####} ميكرو ثانية"
+msgstr[2] "{0,number,####} ميكرو ثانية"
+msgstr[3] "{0,number,####} ميكرو ثوانٍ"
+msgstr[4] "{0,number,####} ميكرو ثوانٍ"
+msgstr[5] "{0,number,####} ميكرو ثوانٍ"
+
+msgid "CRIT"
+msgstr "كريت"
+
+msgid "DEBUG"
+msgstr "التصحيح"
+
+msgid "ERROR"
+msgstr "خطأ"
+
+msgid "INFO"
+msgstr "معلومات"
+
+msgid "WARN"
+msgstr "تحذير"
+
+#, java-format
+msgid "{0} similar message omitted"
+msgid_plural "{0} similar messages omitted"
+msgstr[0] "تم تجاهل رسالة مشابهة واحدة"
+msgstr[1] "تم تجاهل رسالة مشابهة واحدة"
+msgstr[2] "تم تجاهل رسالتين مشابهتين"
+msgstr[3] "تم تجاهل {0} رسائل مشابهة"
+msgstr[4] "تم تجاهل {0} رسائل مشابهة"
+msgstr[5] "تم تجاهل {0} رسائل مشابهة"

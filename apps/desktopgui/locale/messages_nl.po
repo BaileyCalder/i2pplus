@@ -1,0 +1,61 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Start I2P"
+msgstr "I2P starten"
+
+msgid "I2P is starting!"
+msgstr "I2P is aan het starten!"
+
+msgid "Starting"
+msgstr "Bezig met starten"
+
+msgid "Launch I2P Browser"
+msgstr "I2P-browser starten"
+
+msgid "Configure I2P System Tray"
+msgstr "I2P-systeemvak configureren"
+
+msgid "Disable system tray"
+msgstr "Schakel het systeemvak uit"
+
+msgid "Restart I2P"
+msgstr "I2P herstarten"
+
+msgid "Stop I2P"
+msgstr "I2P stoppen"
+
+msgid "Restart I2P Immediately"
+msgstr "I2P onmiddellijk herstarten"
+
+msgid "Stop I2P Immediately"
+msgstr "I2P onmiddellijk stoppen"
+
+msgid "Cancel I2P Shutdown"
+msgstr "Afsluiten I2P annuleren"
+
+#, java-format
+msgid "Shutdown in {0}"
+msgstr "Afsluiten over {0}"
+
+msgid "Shutdown imminent"
+msgstr "Wordt zo meteen afgesloten"
+
+msgid "Network"
+msgstr "Netwerk"
+
+msgid "I2P: Right-click for menu"
+msgstr "I2P: rechterklik voor menu"
+
+msgid "Enable notifications"
+msgstr "Notificaties aanzetten"
+
+msgid "Disable notifications"
+msgstr "Meldingen uitschakelen"

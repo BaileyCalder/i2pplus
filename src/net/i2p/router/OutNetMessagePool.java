@@ -1,0 +1,79 @@
+package net.i2p.router;
+/*
+ * free (adj.): unencumbered; not under the control of others
+ * Written by jrandom in 2003 and released into the public domain
+ * with no warranty of any kind, either expressed or implied.
+ * It probably won't make your computer catch on fire, or eat
+ * your children, but it might.  Use at your own risk.
+ *
+ */
+
+import net.i2p.util.Log;
+
+/**
+ * Routes outbound messages to the communication system for delivery. Validates messages, manages reply selectors, and coordinates with the message registry for reliable delivery.
+ *
+ */
+public class OutNetMessagePool {
+    private final Log _log;
+    private final RouterContext _context;
+
+    public OutNetMessagePool(RouterContext context) {
+        _context = context;
+        _log = _context.logManager().getLog(OutNetMessagePool.class);
+    }
+
+    /**
+     * Add a new outbound network message to the pool for delivery.
+     * The message will be validated before being queued.
+     *
+     * @param msg the OutNetMessage to add
+     */
+    public void add(OutNetMessage msg) {
+        if (msg == null) return;
+        MessageSelector selector = msg.getReplySelector();
+        boolean valid = validate(msg);
+        if (!valid) {
+            if (selector != null)
+                _context.messageRegistry().unregisterPending(msg);
+            return;
+        }
+
+        if (_log.shouldDebug())
+            _log.debug("Adding message to OutNetMessagePool" + msg);
+
+        if (selector != null) {
+            _context.messageRegistry().registerPending(msg);
+        }
+        _context.commSystem().processMessage(msg);
+        return;
+    }
+
+    /**
+     * Validate an outbound message before adding it to the pool.
+     *
+     * @param msg the message to validate
+     * @return true if the message is valid and should be processed
+     */
+    private boolean validate(OutNetMessage msg) {
+        if (msg.getMessage() == null) {
+            if (_log.shouldWarn())
+                _log.warn("Null message in the OutNetMessage - expired too soon");
+            return false;
+        }
+        if (msg.getTarget() == null) {
+            _log.error("No target in the OutNetMessage: " + msg, new Exception());
+            return false;
+        }
+        if (msg.getPriority() < 0) {
+            _log.error("Message cannot have a priority of < 0, dropping..." + msg, new Exception());
+            return false;
+        }
+        if (msg.getExpiration() <= _context.clock().now()) {
+            if (_log.shouldWarn())
+                _log.warn("Dropping expired Outbound message" + msg, new Exception());
+            return false;
+        }
+        return true;
+    }
+}

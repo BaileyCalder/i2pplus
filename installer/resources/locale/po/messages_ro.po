@@ -1,0 +1,144 @@
+# I2P
+# Copyright (C) 2012 The I2P Project
+msgid ""
+msgstr ""
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+
+msgid "Failed to load the wrapper"
+msgstr "Încărcarea wrapper-ului a eșuat"
+
+#, sh-format
+msgid "$APP_LONG_NAME is already running."
+msgstr "$APP_LONG_NAME deja rulează."
+
+#, sh-format
+msgid "Running $APP_LONG_NAME"
+msgstr "Pornire $APP_LONG_NAME"
+
+#, sh-format
+msgid "Waiting for $APP_LONG_NAME"
+msgstr "Asteptare $APP_LONG_NAME"
+
+#, sh-format
+msgid "WARNING: $APP_LONG_NAME may have failed to start."
+msgstr "AVERTIZARE: $APP_LONG_NAME posibil nu a reușit să pornească."
+
+msgid "Must be root to perform this action."
+msgstr "Trebuie să fi root pentru a efectua această acțiune."
+
+#, sh-format
+msgid "Starting $APP_LONG_NAME"
+msgstr "Pornire $APP_LONG_NAME"
+
+#, sh-format
+msgid "Stopping $APP_LONG_NAME"
+msgstr "Oprire $APP_LONG_NAME"
+
+#, sh-format
+msgid "$APP_LONG_NAME was not running."
+msgstr "$APP_LONG_NAME  nu rulează."
+
+#, sh-format
+msgid "Unable to stop $APP_LONG_NAME."
+msgstr "Imposibil de a opri $APP_LONG_NAME"
+
+#, sh-format
+msgid "Waiting for $APP_LONG_NAME to exit"
+msgstr "Asteptare oprire $APP_LONG_NAME"
+
+#, sh-format
+msgid "Failed to stop $APP_LONG_NAME."
+msgstr "Oprirea $APP_LONG_NAME a esuat"
+
+#, sh-format
+msgid "Stopped $APP_LONG_NAME."
+msgstr "$APP_LONG_NAME este oprit."
+
+#, sh-format
+msgid "Stopping $APP_LONG_NAME gracefully"
+msgstr "Oprire corectă a $APP_LONG_NAME"
+
+#, sh-format
+msgid "$APP_LONG_NAME is not running."
+msgstr "$APP_LONG_NAME nu este pornit."
+
+#, sh-format
+msgid "$APP_LONG_NAME is running: PID:$pid"
+msgstr "$APP_LONG_NAME este pornit: PID:$pid"
+
+#, sh-format
+msgid "$APP_LONG_NAME is running: PID:$pid, Wrapper:$STATUS, Java:$JAVASTATUS"
+msgstr "$APP_LONG_NAME este pornit: PID:$pid,invelis:$STATUS Java:$JAVASTATUS"
+
+#, sh-format
+msgid "The $APP_LONG_NAME daemon is already installed."
+msgstr "Daemonul $APP_LONG_NAME este deja instalat."
+
+#, sh-format
+msgid "Installing the $APP_LONG_NAME daemon"
+msgstr "Instalare daemon $APP_LONG_NAME"
+
+#, sh-format
+msgid "Install not currently supported for $DIST_OS"
+msgstr "Instalarea nu este suportată în prezent pentru $DIST_OS"
+
+#, sh-format
+msgid "Removing $APP_LONG_NAME daemon"
+msgstr "Ștergere daemon $APP_LONG_NAME"
+
+#, sh-format
+msgid "The $APP_LONG_NAME daemon is not currently installed."
+msgstr "Daemonul $APP_LONG_NAME  nu este instalat."
+
+#, sh-format
+msgid "Remove not currently supported for $DIST_OS"
+msgstr "Ștergerea nu este suportata în prezent pentru $DIST_OS"
+
+msgid "Commands:"
+msgstr "Comenzi:"
+
+msgid "Launch in the current console."
+msgstr "Lansează in consola curentă."
+
+msgid "Start in the background as a daemon process."
+msgstr "Pornește în fundal ca un proces daemon."
+
+msgid "Stop if running as a daemon or in another console."
+msgstr "Oprește dacă rulează ca un daemon sau într-o altă consolă."
+
+msgid "Stop gracefully, may take up to 11 minutes or more."
+msgstr "Oprește-te cu grație, poate dura până la 11 minute."
+
+msgid "Restart gracefully, may take up to 11 minutes or more."
+msgstr "Reporniți bine, poate dura până la 11 minute."
+
+msgid "Stop if running and then start."
+msgstr "Oprește dacă rulează și apoi repornește."
+
+msgid "Restart only if already running."
+msgstr "Repornește numai dacă deja rulează."
+
+msgid "Query the current status."
+msgstr "Interogarea stării curente."
+
+msgid "Install to start automatically when system boots."
+msgstr "Instaleză să pornească automat la pornirea sistemului."
+
+msgid "Uninstall."
+msgstr "Dezinstalează."
+
+msgid "Request a Java thread dump if running."
+msgstr "Solicită Java thread dump dacă rulează."
+
+msgid "Please edit i2prouter and set the variable RUN_AS_USER"
+msgstr "Vă rugăm să editați i2prouter și să setați variabila RUN_AS_USER "
+
+msgid "Running I2P as the root user is *not* recommended."
+msgstr "Rularea I2P ca root *nu* este recomandată."
+
+msgid "To run as root anyway, edit i2prouter and set ALLOW_ROOT=true."
+msgstr "Pentru a rula ca root, oricum, editați i2prouter și setați ALLOW_ROOT=true."

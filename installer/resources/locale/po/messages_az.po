@@ -1,0 +1,144 @@
+# I2P
+# Copyright (C) 2012 The I2P Project
+msgid ""
+msgstr ""
+"Language: az\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Failed to load the wrapper"
+msgstr "Üzlüyü yükləmək alınmadı"
+
+#, sh-format
+msgid "$APP_LONG_NAME is already running."
+msgstr "$APP_LONG_NAME artıq işləyir"
+
+#, sh-format
+msgid "Running $APP_LONG_NAME"
+msgstr "$APP_LONG_NAME işləyir"
+
+#, sh-format
+msgid "Waiting for $APP_LONG_NAME"
+msgstr "$APP_LONG_NAME-i gözləyir"
+
+#, sh-format
+msgid "WARNING: $APP_LONG_NAME may have failed to start."
+msgstr "Xəbərdarlıq: ola bilsin $APP_LONG_NAME başlaya bilmədi"
+
+msgid "Must be root to perform this action."
+msgstr "Bu fəaliyyəti yerinə yetirmək üçün əsas olmalıdır."
+
+#, sh-format
+msgid "Starting $APP_LONG_NAME"
+msgstr "$APP_LONG_NAME başladılır"
+
+#, sh-format
+msgid "Stopping $APP_LONG_NAME"
+msgstr "$APP_LONG_NAME dayandırılır"
+
+#, sh-format
+msgid "$APP_LONG_NAME was not running."
+msgstr "$APP_LONG_NAME işləmir."
+
+#, sh-format
+msgid "Unable to stop $APP_LONG_NAME."
+msgstr "$APP_LONG_NAME-ı dayandırmaq alınmır."
+
+#, sh-format
+msgid "Waiting for $APP_LONG_NAME to exit"
+msgstr "Çıxmaq üçün $APP_LONG_NAME-i gözləyirik."
+
+#, sh-format
+msgid "Failed to stop $APP_LONG_NAME."
+msgstr "$APP_LONG_NAME-i dayandırmaq alınmadı."
+
+#, sh-format
+msgid "Stopped $APP_LONG_NAME."
+msgstr "$APP_LONG_NAME dayandırıldı."
+
+#, sh-format
+msgid "Stopping $APP_LONG_NAME gracefully"
+msgstr "$APP_LONG_NAME düzgün şəkildə dayandırılır"
+
+#, sh-format
+msgid "$APP_LONG_NAME is not running."
+msgstr "$APP_LONG_NAME işləmir."
+
+#, sh-format
+msgid "$APP_LONG_NAME is running: PID:$pid"
+msgstr "$APP_LONG_NAME işləyir: PID:$pid"
+
+#, sh-format
+msgid "$APP_LONG_NAME is running: PID:$pid, Wrapper:$STATUS, Java:$JAVASTATUS"
+msgstr "$APP_LONG_NAME işləyir:  PID:$pid, Wrapper:$STATUS, Java:$JAVASTATUS"
+
+#, sh-format
+msgid "The $APP_LONG_NAME daemon is already installed."
+msgstr "$APP_LONG_NAME işlək proqram artıq quraşdırılıb."
+
+#, sh-format
+msgid "Installing the $APP_LONG_NAME daemon"
+msgstr "$APP_LONG_NAME işlək proqramı quraşdırılır "
+
+#, sh-format
+msgid "Install not currently supported for $DIST_OS"
+msgstr "$DIST_OS üçün quraşdırma hazırda dəstəklənmir "
+
+#, sh-format
+msgid "Removing $APP_LONG_NAME daemon"
+msgstr " $APP_LONG_NAME işlək proqramı silinir"
+
+#, sh-format
+msgid "The $APP_LONG_NAME daemon is not currently installed."
+msgstr " $APP_LONG_NAME işlək proqramı hazırda quraşdırılmayıb. "
+
+#, sh-format
+msgid "Remove not currently supported for $DIST_OS"
+msgstr "$DIST_OS üçün Sil hazırda dəstəklənmir"
+
+msgid "Commands:"
+msgstr "Əmrlər:"
+
+msgid "Launch in the current console."
+msgstr "Hazırkı konsolda işə salın."
+
+msgid "Start in the background as a daemon process."
+msgstr "İşlək proqram olaraq başladın."
+
+msgid "Stop if running as a daemon or in another console."
+msgstr "İşlək proqram olaraq və ya başqa konsolda işləyirsə, dayandırın."
+
+msgid "Stop gracefully, may take up to 11 minutes or more."
+msgstr "Nəzakətlə dayandırın, 11 dəqiqə çəkə bilər."
+
+msgid "Restart gracefully, may take up to 11 minutes or more."
+msgstr "Nəzakətlə yenidən başladın, 11 dəqiqə çəkə bilər."
+
+msgid "Stop if running and then start."
+msgstr "İşləyirsə, dayandırıb daha sonra başladın. "
+
+msgid "Restart only if already running."
+msgstr "Yalnız işləyən zaman yenidən başladın. "
+
+msgid "Query the current status."
+msgstr "Hazırkı statusu sorğulayın."
+
+msgid "Install to start automatically when system boots."
+msgstr "Sistem işə başlayanda avtomatik yüklənəcək şəkildə quraşdırın."
+
+msgid "Uninstall."
+msgstr "Quraşdırmanı ləğv et."
+
+msgid "Request a Java thread dump if running."
+msgstr "İşləyirsə, Java idarəetmə axını dampını tələb edin."
+
+msgid "Please edit i2prouter and set the variable RUN_AS_USER"
+msgstr "i2prouter faylını dəyişin və dəyişkən RUN_AS_USER tənzimləyin"
+
+msgid "Running I2P as the root user is *not* recommended."
+msgstr "I2P-nin əsas istifadəçi kimi işlətməniz tövsiyə \"olunmur\"."
+
+msgid "To run as root anyway, edit i2prouter and set ALLOW_ROOT=true."
+msgstr "Əsas olaraq işlətmək üçün i2prouter faylını dəyişin və ALLOW_ROOT=true tənzimləyin."

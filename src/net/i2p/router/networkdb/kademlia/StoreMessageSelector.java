@@ -1,0 +1,69 @@
+package net.i2p.router.networkdb.kademlia;
+
+import net.i2p.data.Hash;
+import net.i2p.data.i2np.DeliveryStatusMessage;
+import net.i2p.data.i2np.I2NPMessage;
+import net.i2p.data.router.RouterInfo;
+import net.i2p.router.MessageSelector;
+import net.i2p.router.RouterContext;
+import net.i2p.util.Log;
+
+/**
+ * Message selector for matching database store operation confirmations.
+ * <p>
+ * Filters incoming DeliveryStatusMessage responses to identify
+ * acknowledgments for specific store operations. Tracks message
+ * IDs, peer information, and expiration times to correlate
+ * delivery confirmations with pending store jobs.
+ * <p>
+ * Provides logging support for store operation monitoring
+ * and implements simple match-once logic to prevent
+ * duplicate processing of delivery confirmations.
+ */
+class StoreMessageSelector implements MessageSelector {
+    private final Log _log;
+    private final Hash _peer;
+    private final long _storeJobId;
+    private final long _waitingForId;
+    private final long _expiration;
+    private volatile boolean _found;
+
+    /**
+     *  @param storeJobId just for logging
+     *  @param peer just for logging
+     */
+    public StoreMessageSelector(RouterContext ctx, long storeJobId, RouterInfo peer, long waitingForId,
+                                long expiration) {
+        _log = ctx.logManager().getLog(StoreMessageSelector.class);
+        _peer = peer.getIdentity().getHash();
+        _storeJobId = storeJobId;
+        _waitingForId = waitingForId;
+        _expiration = expiration;
+    }
+
+    public boolean continueMatching() { return !_found; }
+
+    public long getExpiration() { return _expiration; }
+
+    public boolean isMatch(I2NPMessage message) {
+        if (message.getType() == DeliveryStatusMessage.MESSAGE_TYPE) {
+            DeliveryStatusMessage msg = (DeliveryStatusMessage)message;
+            if (msg.getMessageId() == _waitingForId) {
+                if (_log.shouldInfo())
+                    _log.info("[Job " + _storeJobId + "] Found match for the key we're waiting for [MsgID " + _waitingForId  + "]");
+                _found = true;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder rv = new StringBuilder(128);
+        rv.append("Waiting for NetDb confirm from ").append(_peer).append(", found? ");
+        rv.append(_found).append(" waiting for [MsgID ").append(_waitingForId).append("]");
+        return rv.toString();
+    }
+}
+

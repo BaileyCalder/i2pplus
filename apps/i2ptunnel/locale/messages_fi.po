@@ -1,0 +1,1575 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "internal"
+msgstr "sisäinen"
+
+#, java-format
+msgid "{0} inbound, {0} outbound tunnel"
+msgid_plural "{0} inbound, {0} outbound tunnels"
+msgstr[0] "{0} lähtevä, {0} tuleva tunneli"
+msgstr[1] "{0} tulevaa, {0} lähtevää tunnelia"
+
+#, java-format
+msgid "{0} inbound tunnel"
+msgid_plural "{0} inbound tunnels"
+msgstr[0] "{0} saapuva tunneli"
+msgstr[1] "{0} saapuvat tunnelit"
+
+#, java-format
+msgid "{0} outbound tunnel"
+msgid_plural "{0} outbound tunnels"
+msgstr[0] "{0} lähtevä tunneli"
+msgstr[1] "{0} lähtevät tunnelit"
+
+msgid "lower bandwidth and reliability"
+msgstr "alhaisempi kaistanleveys ja luotettavuus"
+
+msgid "standard bandwidth and reliability"
+msgstr "vakio kaistanleveys ja luotettavuus"
+
+msgid "higher bandwidth and reliability"
+msgstr "korkeampi kaistanleveys ja luotettavuus"
+
+msgid "Error - tunnels are not initialized yet"
+msgstr "Virhe - tunneleita ei ole vielä alustettu"
+
+msgid "No services configured, cannot restart!"
+msgstr "Yhtään palvelua ei ole määritetty, ei voida käynnistää uudelleen!"
+
+msgid "Stopping tunnel"
+msgstr "Pysäytetään tunneli"
+
+msgid "Starting tunnel"
+msgstr "Käynnistetään tunneli"
+
+msgid "Error restarting tunnel"
+msgstr "Virhe tunnelin uudelleenkäynnistyksessä"
+
+msgid "Restarted all running tunnels"
+msgstr "Käynnistettiin uudelleen kaikki toimivat tunnelit"
+
+msgid "No clients configured, cannot restart!"
+msgstr "Yhtään asiakasta ei ole määritetty, ei voida käynnistää uudelleen!"
+
+msgid "Restarted all running client tunnels"
+msgstr "Käynnistettiin uudelleen kaikki toimivat asiakastunnelit"
+
+msgid "Configuration reloaded for all tunnels"
+msgstr "Asetukset ladattu uudelleen kaikille tunneleille"
+
+msgid "Error: Invalid tunnel"
+msgstr "Virhe: Virheellinen tunneli"
+
+msgid "Started tunnel"
+msgstr "Tunneli käynnistetty"
+
+msgid "Stopped tunnel"
+msgstr "Tunneli pysäytetty"
+
+msgid "Restarting tunnel"
+msgstr "Käynnistetään tunnelia uudelleen"
+
+msgid "Please confirm removal"
+msgstr "Vahvista poisto"
+
+msgid "New Tunnel"
+msgstr "Uusi tunneli"
+
+msgid "Port not set"
+msgstr "Porttia ei ole asetettu"
+
+msgid "Invalid port"
+msgstr "Virheellinen portti"
+
+msgid "Warning - ports less than 1024 are not recommended"
+msgstr "Varoitus - porttinumeroja alle 1024 ei suositella"
+
+msgid "Warning - duplicate port"
+msgstr "Varoitus - portin kaksoiskappale"
+
+msgid "Standard client"
+msgstr "Vakioasiakas"
+
+msgid "HTTP/HTTPS client"
+msgstr "HTTP/HTTPS-asiakas"
+
+msgid "IRC client"
+msgstr "IRC-asiakas"
+
+msgid "Standard server"
+msgstr "Vakiopalvelin"
+
+msgid "HTTP server"
+msgstr "WWW-palvelin"
+
+msgid "SOCKS 4/4a/5 proxy"
+msgstr "SOCKS 4/4a/5-välityspalvelin"
+
+msgid "SOCKS IRC proxy"
+msgstr "SOCKS IRC-välityspalvelin"
+
+msgid "CONNECT/SSL/HTTPS proxy"
+msgstr "CONNECT/SSL/HTTPS-välityspalvelin"
+
+msgid "IRC server"
+msgstr "IRC-palvelin"
+
+msgid "Streamr client"
+msgstr "Streamr-asiakasohjelma"
+
+msgid "Streamr server"
+msgstr "Streamr-palvelin"
+
+msgid "HTTP bidir"
+msgstr "HTTP bidir"
+
+msgid "Host not set"
+msgstr "Verkkotietokonetta ei ole asetettu"
+
+msgid "Invalid address"
+msgstr "Virheellinen osoite"
+
+msgid "Tunnel Manager"
+msgstr "Tunnelin johtaja"
+
+msgid "Edit Client Tunnel"
+msgstr "Muokkaa asiakastunnelia"
+
+msgid "Edit Server Tunnel"
+msgstr "Muokkaa palvelintunnelia"
+
+msgid "Are you sure you want to delete?"
+msgstr "Haluatko varmasti poistaa?"
+
+msgid "required"
+msgstr "tarvittu"
+
+msgid "Tunnel and all other shared client tunnels must be stopped to change this configuration"
+msgstr "Tunneli ja kaikki muut jaetut asiakastunnelit on pysäytettävä, jotta tätä määritystä voidaan muuttaa"
+
+msgid "Tunnel must be stopped to change this configuration"
+msgstr "Tunneli on pysäytettävä, jotta tätä asetusta voidaan muuttaa"
+
+msgid "Configuration"
+msgstr "Kokoonpano"
+
+msgid "New Client Configuration"
+msgstr "Uusi Asiakaskokoonpano"
+
+msgid "Name"
+msgstr "Nimi"
+
+msgid "Auto Start Tunnel"
+msgstr "Automaattinen käynnistystunneli"
+
+msgid "Name of tunnel to be displayed on Tunnel Manager home page and the router console sidebar"
+msgstr "Tunnelin nimi näytettäväksi Tunnel Managerin kotisivulla ja reititinkonsolin sivupalkissa"
+
+msgid "Enable this option to ensure this service is available when the router starts"
+msgstr "Ota tämä vaihtoehto käyttöön varmistaaksesi, että tämä palvelu on saatavilla, kun reititin käynnistyy"
+
+msgid "Automatically start tunnel when router starts"
+msgstr "Käynnistä tunneli automaattisesti, kun reititin käynnistyy"
+
+msgid "Description"
+msgstr "Kuvaus"
+
+msgid "Shared Client"
+msgstr "Jaettu asiakas"
+
+msgid "Description of tunnel to be displayed on Tunnel Manager home page"
+msgstr "Tunnelin kuvaus, joka näytetään Tunnel Managerin kotisivulla"
+
+msgid "Traffic from all clients with this feature enabled will be routed over the same set of tunnels. This will make profiling the tunnels by an adversary more difficult, but will link the clients together."
+msgstr "Liikenne kaikilta asiakkailta, joissa tämä ominaisuus on käytössä, reititetään samojen tunneleiden kautta."
+
+msgid "Share tunnels with other configured clients"
+msgstr "Jaa tunneleita muiden määritettyjen asiakkaiden kanssa"
+
+msgid "Target"
+msgstr "Kohde"
+
+msgid "Access Point"
+msgstr "Yhteyspiste"
+
+msgid "Use Outproxy Plugin"
+msgstr "Käytä Outproxy-laajennusta"
+
+msgid "Enable DCC"
+msgstr "Ota DCC käyttöön"
+
+msgid "Port"
+msgstr "Portti"
+
+msgid "Specify the local port this service should be accessible from"
+msgstr "Määritä paikallinen portti, josta tämän palvelun tulee olla käytettävissä"
+
+msgid "Host"
+msgstr "Verkkotietokone"
+
+msgid "Hostname or IP address of the target server"
+msgstr "Kohdepalvelimen isäntänimi tai IP-osoite"
+
+msgid "Reachable by"
+msgstr "Tavoitettavissa"
+
+msgid "Local interface (ip address) the client tunnel will be reachable from"
+msgstr "Paikallinen käyttöliittymä (ip-osoite), josta asiakastunneli on tavoitettavissa"
+
+msgid "If an outproxy plugin is installed (e.g. Orchid), use this instead of any configured outproxies to access websites outside of I2P"
+msgstr "Jos outproxy-laajennus on asennettu (esim. Orchid), käytä tätä määritettyjen ulkopuolisten välityspalvelinten sijaan päästäksesi I2P:n ulkopuolisille verkkosivustoille"
+
+msgid "Use plugin instead of proxies listed below if available"
+msgstr "Käytä laajennusta alla lueteltujen välityspalvelinten sijasta, jos saatavilla"
+
+msgid "Enables direct chat and file transfers, bypassing I2P. Note that this will compromise your anonymity and is not recommended."
+msgstr "Ottaa käyttöön suoran chatin ja tiedostojen siirron I2P:n ohittaen."
+
+msgid "Enable Direct Client-to-Client protocol"
+msgstr "Ota käyttöön Direct Client-to-Client -protokolla"
+
+msgid "Outproxies"
+msgstr "Outproxies"
+
+msgid "SSL Outproxies"
+msgstr "SSL-välityspalvelimet"
+
+msgid "Specify the .i2p address or destination (b32 or b64) of the outproxy here."
+msgstr "Määritä välityspalvelimen .i2p-osoite tai kohde (b32 tai b64)."
+
+msgid "For a random selection from a pool, separate with commas e.g. server1.i2p,server2.i2p"
+msgstr "Satunnainen valinta uima -altaasta, erillinen pilkuilla, esim. server1.i2p,server2.i2p"
+
+msgid "Outproxy Type"
+msgstr "Välityspalvelimen tyyppi"
+
+msgid "Tunnel Destination"
+msgstr "Tunnelikohde"
+
+msgid "Use SSL"
+msgstr "Käytä SSL:ää"
+
+msgid "Specify the .i2p address or destination (b32 or b64) of the tunnel here."
+msgstr "Määritä tunnelin .i2p-osoite tai kohde (b32 tai b64)."
+
+msgid "name, name:port, or destination"
+msgstr "nimi, name:port, tai kohde"
+
+msgid "If you are accessing a service on a remote I2P router, you may wish to connect with SSL to avoid traffic interception. The client application should be also be configured to use SSL."
+msgstr "Jos käytät palvelua I2P-etäreitittimellä, saatat haluta muodostaa yhteyden SSL:llä välttääksesi liikenteen sieppauksen."
+
+msgid "Clients use SSL to connect to tunnel"
+msgstr "Asiakkaat käyttävät SSL:ää muodostaakseen yhteyden tunneliin"
+
+msgid "Please specify the full b64 destination."
+msgstr "Määritä koko b64-kohde."
+
+msgid "Local destination"
+msgstr "Paikallinen kohde"
+
+msgid "Local Base32"
+msgstr "Paikallinen tukikohta32"
+
+msgid "Read Only: Local Destination (if known)"
+msgstr "Vain luku: Paikallinen kohde (jos tiedossa)"
+
+msgid "Stop"
+msgstr "Pysäytä"
+
+msgid "Start this Tunnel"
+msgstr "Aloita tämä tunneli"
+
+msgid "Start"
+msgstr "Käynnistä"
+
+msgid "Cancel"
+msgstr "Peru"
+
+msgid "Delete this tunnel (cannot be undone)"
+msgstr "Poista tämä tunneli (ei voi kumota)"
+
+msgid "Delete"
+msgstr "Poista"
+
+msgid "Save"
+msgstr "Tallenna"
+
+msgid "Advanced networking options"
+msgstr "Kehittyneet verkkoasetukset"
+
+msgid "Note: When this client is configured to share tunnels, these options apply to all clients configured to share tunnels."
+msgstr "Huomaa: Kun tämä asiakasohjelma on määritetty jakamaan tunneleita, nämä asetukset koskevat kaikkia asiakkaita, jotka on määritetty jakamaan tunneleita."
+
+msgid "Profile"
+msgstr "Profiili"
+
+msgid "Delay Connect"
+msgstr "Viiveyhteys"
+
+msgid "Connection Profile"
+msgstr "Yhteysprofiili"
+
+msgid "interactive connection"
+msgstr "vuorovaikutteinen yhteys"
+
+msgid "bulk connection (downloads/websites/BT)"
+msgstr "joukkoyhteys (lataukset/verkkosivustot/BT)"
+
+msgid "Delay Connection"
+msgstr "Viiveyhteys"
+
+msgid "for request/response connections"
+msgstr "pyyntö/vastaus yhteyksiä varten"
+
+msgid "Router I2CP Address"
+msgstr "Reitittimen I2CP-osoite"
+
+msgid "I2CP Hostname or IP"
+msgstr "I2CP Isäntänimi tai IP"
+
+msgid "I2CP Port Number"
+msgstr "I2CP-portin numero"
+
+msgid "Delay tunnel open until required"
+msgstr "Viivetunneli auki kunnes vaaditaan"
+
+msgid "Signature type"
+msgstr "Allekirjoitustyyppi"
+
+msgid "Conserve resources by only creating tunnels when required"
+msgstr "Säästä resursseja luomalla tunneleita vain tarvittaessa"
+
+msgid "Don't open tunnel until activity is detected on port"
+msgstr "Älä avaa tunnelia ennen kuin portissa havaitaan toimintaa"
+
+msgid "This is the default, recommended option"
+msgstr "Tämä on oletusarvoinen suositeltu vaihtoehto"
+
+msgid "Encryption types"
+msgstr "Salaustyypit"
+
+msgid "Legacy options"
+msgstr "Vanhentuneet asetukset"
+
+msgid "Post Quantum"
+msgstr "Post Quantum"
+
+msgid "Both encryption types"
+msgstr "Molemmat salaustyypit"
+
+msgid "Tunnel Options"
+msgstr "Tunnelivalitsimet"
+
+msgid "Length"
+msgstr "Pituus"
+
+msgid "Count"
+msgstr "Lukumäärä"
+
+msgid "Length of each Tunnel"
+msgstr "Kunkin tunnelin pituus"
+
+msgid "0 hop tunnel (no anonymity)"
+msgstr "0 hop tunneli (ei nimettömyyttä)"
+
+msgid "1 hop tunnel (low anonymity)"
+msgstr "1 hyppytunneli (vähän anonymiteettiä)"
+
+msgid "2 hop tunnel (medium anonymity)"
+msgstr "2 hyppytunneli (keskimääräinen nimettömyys)"
+
+msgid "3 hop tunnel (high anonymity)"
+msgstr "3 hyppytunneli (korkea anonymiteetti)"
+
+#, java-format
+msgid "{0} hop tunnel"
+msgid_plural "{0} hop tunnel"
+msgstr[0] "{0} humalatunneli"
+msgstr[1] "{0} humalatunneli"
+
+msgid "Number of Tunnels in Group"
+msgstr "Tunnelien lukumäärä ryhmässä"
+
+msgid "Disabled for 0 hop tunnels"
+msgstr "Poistettu käytöstä 0 hyppy tunneli"
+
+msgid "Variance"
+msgstr "Varianssi"
+
+msgid "Backup Count"
+msgstr "Varmuuskopioiden määrä"
+
+msgid "Level of Randomization for Tunnel Length"
+msgstr "Tunnelin pituuden satunnaistuksen taso"
+
+msgid "0 hop variance"
+msgstr "0 hyppyvarianssi"
+
+msgid "no randomization, consistent performance"
+msgstr "ei satunnaistamista, tasainen suorituskyky"
+
+msgid "+ 0-1 hop variance"
+msgstr "0-1 hyppyvarianssi"
+
+msgid "medium randomization, lower performance"
+msgstr "keskitasoinen satunnaistaminen, alhaisempi suorituskyky"
+
+msgid "+ 0-2 hop variance"
+msgstr "0-2 hypyn varianssi"
+
+msgid "high randomization, very low performance"
+msgstr "korkea satunnaistaminen, erittäin alhainen suorituskyky"
+
+msgid "+/- 0-1 hop variance"
+msgstr "/- 0-1 hyppyvarianssi"
+
+msgid "standard randomization, standard performance"
+msgstr "vakiosatunnaistaminen, vakiosuorituskyky"
+
+msgid "+/- 0-2 hop variance"
+msgstr "/- 0-2 hypyn varianssi"
+
+msgid "not recommended"
+msgstr "ei suositella"
+
+msgid "hop variance"
+msgstr "hop varianssi"
+
+msgid "Number of Reserve Tunnels"
+msgstr "Varantotunnelien määrä"
+
+#, java-format
+msgid "{0} backup tunnel"
+msgid_plural "{0} backup tunnels"
+msgstr[0] "{0} varmuuskopiotunneli"
+msgstr[1] "{0} varmuuskopiotunnelit"
+
+msgid "no redundancy, no added resource usage"
+msgstr "ei redundanssia, ei lisättyä resurssien käyttöä"
+
+msgid "low redundancy, low resource usage"
+msgstr "alhainen redundanssi, alhainen resurssien käyttö"
+
+msgid "medium redundancy, medium resource usage"
+msgstr "keskitasoinen redundanssi, keskimääräinen resurssien käyttö"
+
+msgid "high redundancy, high resource usage"
+msgstr "suuri redundanssi, suuri resurssien käyttö"
+
+msgid "Reduce tunnel quantity"
+msgstr "Vähennä tunnelin määrää"
+
+msgid "Reduce tunnel count when idle to conserve resources but keep tunnel open (to ensure immediate availability)"
+msgstr "Vähennä tunnelien määrää käyttämättömänä säästääksesi resursseja, mutta pidä tunneli auki (varmistaaksesi välittömän käytettävyyden)"
+
+msgid "Reduce tunnel quantity when idle"
+msgstr "Vähennä tunnelin määrää tyhjäkäynnillä"
+
+msgid "Idle period"
+msgstr "Tyhjäkäyntijakso"
+
+msgid "Reduced Tunnel Idle Time"
+msgstr "Lyhennetty tunnelin joutoaika"
+
+msgid "Reduced count"
+msgstr "Vähentynyt määrä"
+
+msgid "Reduced tunnel count"
+msgstr "Vähentynyt tunnelimäärä"
+
+msgid "Close tunnels when idle"
+msgstr "Sulje tunnelit, kun ne ovat tyhjäkäynnillä"
+
+msgid "To conserve resources, close tunnels when not in use"
+msgstr "Resurssien säästämiseksi sulje tunnelit, kun niitä ei käytetä"
+
+msgid "Close client tunnels after specified idle period"
+msgstr "Sulje asiakastunnelit määritetyn lepotilan jälkeen"
+
+msgid "Close Tunnel Idle Time"
+msgstr "Sulje tunnelin joutoaika"
+
+msgid "New Keys on Reopen"
+msgstr "Uudet avaimet avataan uudelleen"
+
+msgid "Change tunnel identity (destination) when tunnels reopen"
+msgstr "Muuta tunnelin identiteettiä (kohdetta), kun tunnelit avautuvat uudelleen"
+
+msgid "Enable"
+msgstr "Ota käyttöön"
+
+msgid "Retain tunnel identity (destination) when tunnels reopen"
+msgstr "Säilytä tunnelin identiteetti (kohde), kun tunnelit avataan uudelleen"
+
+msgid "Disable"
+msgstr "Poista käytöstä"
+
+msgid "Persistent private key"
+msgstr "Pysyvä yksityinen avain"
+
+msgid "Private key file"
+msgstr "Yksityinen avaintiedosto"
+
+msgid "Enabling this feature will ensure your tunnel identity (destination) remains static, for services offering features based on destination e.g. IRC user authentication"
+msgstr "Tämän ominaisuuden käyttöönotto varmistaa, että tunneli -identiteettisi (määränpää) pysyy staattisena, palvelut, jotka tarjoavat ominaisuuksia määränpäähän, esim. IRC -käyttäjän todennus"
+
+msgid "Generate key to enable persistent client tunnel identity"
+msgstr "Luo avain pysyvän asiakastunnelin identiteetin ottamiseksi käyttöön"
+
+msgid "Path to Private Key File"
+msgstr "Yksityisen avaintiedoston polku"
+
+msgid "HTTP Filtering"
+msgstr "HTTP-suodatus"
+
+msgid "When enabled, the user agent of your web browser or http client will not be spoofed, potentially reducing your anonymity"
+msgstr "Kun tämä on käytössä, verkkoselaimesi tai http-asiakasohjelmasi käyttäjäagenttia ei väärennetä, mikä saattaa heikentää nimettömyyttäsi"
+
+msgid "Do not spoof User-Agent header"
+msgstr "Älä huijaa User-Agent-otsikkoa"
+
+msgid "When enabled, the referer (originating page) of your web requests will not be filtered, potentially reducing your anonymity"
+msgstr "Kun tämä on käytössä, verkkopyyntöjesi viittausta (alkuperäsivua) ei suodateta, mikä saattaa heikentää nimettömyyttäsi"
+
+msgid "Do not block Referer header"
+msgstr "Älä estä viittausotsikkoa"
+
+msgid "When enabled, the accept headers (mime types support) broadcast by your web browser will not be filtered, potentially reducing your anonymity"
+msgstr "Kun tämä on käytössä, verkkoselaimesi lähettämiä hyväksyntäotsikoita (mime-tyyppien tuki) ei suodateta, mikä saattaa heikentää nimettömyyttäsi"
+
+msgid "Do not block Accept headers"
+msgstr "Älä estä Hyväksy otsikot"
+
+msgid "Allow SSL to I2P addresses when enabled"
+msgstr "Salli SSL I2P-osoitteille, kun se on käytössä"
+
+msgid "Allow SSL to I2P addresses"
+msgstr "Salli SSL I2P-osoitteille"
+
+msgid "Local Authorization"
+msgstr "Paikallinen valtuutus"
+
+msgid "Local Credentials"
+msgstr "Paikalliset tunnistetiedot"
+
+msgid "Enable to require a username and password to access this local service (for example if hosting on a LAN)"
+msgstr "Ota käyttöön käyttäjänimen ja salasanan vaatiminen tämän paikallisen palvelun käyttämiseen (esimerkiksi jos isännöinti on lähiverkossa)"
+
+msgid "Require local authorization for this service"
+msgstr "Vaadi paikallista lupaa tälle palvelulle"
+
+msgid "Set username required to access this service"
+msgstr "Aseta tämän palvelun käyttämiseen vaadittava käyttäjätunnus"
+
+msgid "Username"
+msgstr "Käyttäjätunnus"
+
+msgid "Set password required to access this service"
+msgstr "Aseta tämän palvelun käyttämiseen vaadittava salasana"
+
+msgid "Password"
+msgstr "Salasana"
+
+msgid "Outproxy Authorization"
+msgstr "Välityspalvelimen valtuutus"
+
+msgid "Remote Credentials"
+msgstr "Etäkirjautumistiedot"
+
+msgid "Enable if the outproxy a username and password to access"
+msgstr "Ota käyttöön, jos välityspalvelin lähettää käyttäjänimen ja salasanan"
+
+msgid "Outproxy requires authorization"
+msgstr "Outproxy vaatii valtuutuksen"
+
+msgid "Enter username required by outproxy"
+msgstr "Anna ulkovälityspalvelimen edellyttämä käyttäjänimi"
+
+msgid "Enter password required by outproxy"
+msgstr "Anna ulkoisen välityspalvelimen vaatima salasana"
+
+msgid "Jump URL List"
+msgstr "Hyppää verkko-osoiteluetteloon"
+
+msgid "List of helper URLs providing jump links when a host is not found in your addressbook"
+msgstr "Luettelo apu-URL-osoitteista, jotka tarjoavat hyppylinkkejä, kun isäntä ei löydy osoitekirjasta"
+
+msgid "Custom options"
+msgstr "Omat valitsimet"
+
+msgid "Advanced tunnel, streaming, and I2CP options"
+msgstr "Kehittyneet tunneli-, suoratoisto- ja I2CP-asetukset"
+
+msgid "New Server Configuration"
+msgstr "Uusi palvelinkokoonpano"
+
+msgid "Hostname"
+msgstr "Tietokoneen nimi"
+
+msgid "Website Hostname"
+msgstr "Verkkosivuston isäntänimi"
+
+msgid "(leave blank for outproxies)"
+msgstr "(jätä tyhjäksi välityspalvelinta varten)"
+
+msgid "Website Hostname e.g. mysite.i2p"
+msgstr "Verkkosivuston isäntänimi esim. mysite.i2p"
+
+msgid "Specify the port the server is running on"
+msgstr "Määritä portti, jolla palvelin on käynnissä"
+
+msgid "Listening interface (IP address) for client access (normally 127.0.0.1)"
+msgstr "Kuunteluliitäntä (IP-osoite) asiakaskäyttöön (yleensä 127.0.0.1)"
+
+msgid "To avoid traffic sniffing if connecting to a remote server, you can enable an SSL connection. Note that the target server must be configured to accept SSL connections."
+msgstr "Voit ottaa SSL-yhteyden käyttöön, jotta etäpalvelimeen muodostetaan yhteys, jotta vältytään liikenteen haistavilta."
+
+msgid "Use SSL to connect to target"
+msgstr "Käytä SSL:ää yhteyden muodostamiseen kohteeseen"
+
+msgid "Port required to access service (this can be a different port to the port the service is hosted on)"
+msgstr "Palvelun käyttämiseen vaadittava portti (tämä voi olla eri portti kuin palvelua isännöivä portti)"
+
+msgid "Generate a QR Code for this domain"
+msgstr "Luo QR-koodi tälle verkkotunnukselle"
+
+msgid "Generate QR Code"
+msgstr "Luo QR-koodi"
+
+msgid "Add to Private addressbook"
+msgstr "Lisää yksityiseen osoitekirjaan"
+
+msgid "Add to local addressbook"
+msgstr "Lisää paikalliseen osoitekirjaan"
+
+msgid "Register, unregister or change details for hostname"
+msgstr "Rekisteröi, poista rekisteröinti tai muuta isäntänimen tietoja"
+
+msgid "Registration Authentication"
+msgstr "Rekisteröinnin todennus"
+
+msgid "HTTPS configuration"
+msgstr "HTTPS-määritys"
+
+msgid "SSL Wizard"
+msgstr "SSL -velho"
+
+msgid "Note: In order to enable QR code generation or registration authentication, configure the Website Hostname field (for websites) or the Name field (everything else) above with an .i2p suffixed hostname e.g. mynewserver.i2p"
+msgstr "Huomautus: Jotta QR -koodin luominen tai rekisteröinnin todennus voidaan ottaa käyttöön, määritä verkkosivuston isäntänimi -kenttä (verkkosivustoille) tai nimikenttä (kaikki muu) .i2p -jälkiliitteellisellä isäntänimi esim. mynewserver.i2p"
+
+msgid "Absolute path to Private Key File (will be created if it does not exist)"
+msgstr "Yksityisen avaintiedoston absoluuttinen polku (luodaan, jos sitä ei ole olemassa)"
+
+msgid "Alternate private key file"
+msgstr "Vaihtoehtoinen yksityisen avaimen tiedosto"
+
+msgid "Alternate local destination"
+msgstr "Vaihtoehtoinen paikallinen määränpää"
+
+msgid "Absolute path for new key (will be created)"
+msgstr "Absoluuttinen polku uudelle avaimelle (luodaan)"
+
+msgid "Read Only: Alternate Local Destination"
+msgstr "Vain luku: Vaihtoehtoinen paikallinen kohde"
+
+msgid "Specify filename or full path for new key"
+msgstr "Määritä tiedostonimi tai koko polku uudelle avaimelle"
+
+msgid "Configuration cannot be changed after destination is created"
+msgstr "Kokoonpanoa ei voi muuttaa sen jälkeen, kun kohde on luotu"
+
+msgid "Configuration of signature type is only possible when the tunnel is first created. To change, you must create a new tunnel."
+msgstr "Allekirjoitustyypin määrittäminen on mahdollista vain, kun tunneli luodaan ensimmäisen kerran."
+
+msgid "Legacy option, with alternate key configured"
+msgstr "Vanha vaihtoehto, jossa vaihtoehtoinen avain on määritetty"
+
+msgid "Legacy option (deprecated), provided for backward compatibility"
+msgstr "Vanha vaihtoehto (vanhentunut), tarjotaan taaksepäin yhteensopivuutta varten"
+
+msgid "Recommended for blinded and encrypted destinations"
+msgstr "Suositellaan sokoitetuille ja salatuille kohteisiin"
+
+msgid "Inbound"
+msgstr "Sisääntulevia"
+
+msgid "Outbound"
+msgstr "Ulosmeneviä"
+
+msgid "no anonymity"
+msgstr "ei nimettömyyttä"
+
+msgid "low anonymity"
+msgstr "alhainen nimettömyys"
+
+msgid "medium anonymity"
+msgstr "keskimääräinen nimettömyys"
+
+msgid "high anonymity"
+msgstr "korkea nimettömyys"
+
+msgid "Level of Randomization for Tunnel Depth"
+msgstr "Tunnelin syvyyden satunnaistuksen taso"
+
+msgid "very high randomization, very low performance"
+msgstr "erittäin korkea satunnaistaminen, erittäin alhainen suorituskyky"
+
+msgid "+ 0-3 hop variance"
+msgstr "0-3 hypyn varianssi"
+
+msgid "definitely not recommended"
+msgstr "ei ehdottomasti suositella"
+
+msgid "+/- 0-3 hop variance"
+msgstr "/- 0-3 hypyn varianssi"
+
+msgid "backup tunnels"
+msgstr "varmuuskopioi tunnelit"
+
+msgid "Reduce tunnels to conserve resources"
+msgstr "Vähennä tunneleita resurssien säästämiseksi"
+
+msgid "Period of inactivity before tunnel number is reduced"
+msgstr "Epäaktiivisuusjakso, ennen kuin tunnelin lukumäärää pienennetään"
+
+msgid "minutes"
+msgstr "minuuttia"
+
+msgid "Number of tunnels to keep open to maintain availability of service"
+msgstr "Avoinna pidettävien tunnelien lukumäärä palvelun saatavuuden ylläpitämiseksi"
+
+msgid "Server Access Options"
+msgstr "Palvelimen käyttöasetukset"
+
+msgid "Prevent clients from accessing this service via an inproxy"
+msgstr "Estä asiakkaita käyttämästä tätä palvelua välityspalvelimen kautta"
+
+msgid "Block Access via Inproxies"
+msgstr "Estä pääsy välityspalvelinten kautta"
+
+msgid "Block Accesses containing Referers"
+msgstr "Estä viittauksia sisältävät käyttöoikeudet"
+
+msgid "Use unique IP addresses for each connecting client (local non-SSL servers only)"
+msgstr "Käytä yksilöllisiä IP-osoitteita jokaiselle yhteyden muodostavalle asiakkaalle (vain paikalliset ei-SSL-palvelimet)"
+
+msgid "Unique Local Address per Client"
+msgstr "Yksilöllinen paikallinen osoite asiakasta kohti"
+
+msgid "Only enable if you are hosting this service on multiple routers"
+msgstr "Ota käyttöön vain, jos isännöit tätä palvelua useilla reitittimillä"
+
+msgid "Optimize for Multihoming"
+msgstr "Optimoi monikotikäyttöön"
+
+msgid "Deny User-Agents matching these strings (probably from inproxies)"
+msgstr "Estä näitä merkkijonoja vastaavat käyttäjäagentit (todennäköisesti välityspalvelimesta)"
+
+msgid "Block these User-Agents"
+msgstr "Estä nämä käyttäjäagentit"
+
+msgid "comma separated, e.g. Mozilla,Opera (case-sensitive)"
+msgstr "pilkuilla erotettu, esim."
+
+msgid "Encrypt Leaseset"
+msgstr "Salaa vuokrasopimus"
+
+msgid "Optional Lookup Password"
+msgstr "Valinnainen hakusalasana"
+
+msgid "Keyring Manager"
+msgstr "Avaimenperäpäällikkö"
+
+msgid "Allow all clients to connect to this service"
+msgstr "Salli kaikkien asiakkaiden muodostaa yhteys tähän palveluun"
+
+msgid "Send key to all users."
+msgstr "Lähetä avain kaikille käyttäjille."
+
+msgid "Encrypted"
+msgstr "Salattu"
+
+msgid "Prevents server discovery by floodfills"
+msgstr "Estää palvelimen havaitsemisen tulvatäytöillä"
+
+msgid "Blinded"
+msgstr "Sokeutunut"
+
+msgid "Send password to all users."
+msgstr "Lähetä salasana kaikille käyttäjille."
+
+msgid "Blinded with lookup password"
+msgstr "Sokoitettu hakusalasanalla"
+
+msgid "Send key and password to all users."
+msgstr "Lähetä avain ja salasana kaikille käyttäjille."
+
+msgid "Encrypted with lookup password"
+msgstr "Salattu hakusalasanalla"
+
+msgid "Send individual key to each user."
+msgstr "Lähetä yksittäinen avain jokaiselle käyttäjälle."
+
+msgid "Encrypted with per-user key"
+msgstr "Salattu käyttäjäkohtaisella avaimella"
+
+msgid "Encrypted with lookup password and per-user key"
+msgstr "Salattu hakusalasanalla ja käyttäjäkohtaisella avaimella"
+
+msgid "Enter key from each user."
+msgstr "Anna jokaisen käyttäjän avain."
+
+msgid "Encryption Key"
+msgstr "Salausavain"
+
+msgid "Generate New Key"
+msgstr "Luo uusi avain"
+
+msgid "Encryption key required to access this service"
+msgstr "Tämän palvelun käyttämiseen tarvitaan salausavain"
+
+msgid "Generate new encryption key"
+msgstr "Luo uusi salausavain"
+
+msgid "Generate"
+msgstr "Tuota"
+
+msgid "Tunnel must be stopped first"
+msgstr "Tunneli on ensin pysäytettävä"
+
+msgid "Client Manager"
+msgstr "Asiakaspäällikkö"
+
+msgid "Client Name"
+msgstr "Asiakkaan nimi"
+
+msgid "Client Key"
+msgstr "Asiakasavain"
+
+msgid "Revoke"
+msgstr "Peruuta"
+
+msgid "Client"
+msgstr "Asiakas"
+
+msgid "Add"
+msgstr "Lisää"
+
+msgid "Restricted Access List"
+msgstr "Rajoitettujen käyttöoikeuksien luettelo"
+
+msgid "Activate to enable editing"
+msgstr "Ota käyttöön muokkaus"
+
+msgid "Tunnel Filter"
+msgstr "Tunnelisuodatin"
+
+msgid "Help with defining tunnel filters"
+msgstr "Apua tunnelisuodattimien määrittelyyn"
+
+msgid "Prevent listed clients from connecting to this service"
+msgstr "Estä lueteltuja asiakkaita muodostamasta yhteyttä tähän palveluun"
+
+msgid "Blacklist"
+msgstr "Mustalista"
+
+msgid "Only allow listed clients to connect to this service"
+msgstr "Salli vain luetteloitujen asiakkaiden muodostaa yhteys tähän palveluun"
+
+msgid "Whitelist"
+msgstr "Valkoinen lista"
+
+msgid "Absolute path to file containing filter definition"
+msgstr "Absoluuttinen polku tiedostoon, joka sisältää suodattimen määritelmän"
+
+msgid "Absolute path to filter definition"
+msgstr "Absoluuttinen polku suodattimen määrittelyyn"
+
+msgid "Specify client destinations, 1 per line"
+msgstr "Määritä asiakaskohteet, 1 riviä kohden"
+
+msgid "Server Throttling"
+msgstr "Palvelimen kuristus"
+
+msgid "Inbound connection limits"
+msgstr "Saapuvan yhteyden rajoitukset"
+
+msgid "Per Minute"
+msgstr "Per minuutti"
+
+msgid "Per Hour"
+msgstr "Per tunti"
+
+msgid "Per Day"
+msgstr "Per päivä"
+
+msgid "Concurrent"
+msgstr "Samanaikaisesti"
+
+msgid "Per Client"
+msgstr "Per asiakas"
+
+msgid "Maximum number of web page requests per minute for a unique client before access to the server is blocked"
+msgstr "Web-sivupyyntöjen enimmäismäärä minuutissa yksittäiselle asiakkaalle ennen kuin pääsy palvelimeen estetään"
+
+msgid "(0 = unlimited)"
+msgstr "(0 = rajoittamaton)"
+
+msgid "Maximum number of web page requests per hour for a unique client before access to the server is blocked"
+msgstr "Web-sivupyyntöjen enimmäismäärä tunnissa yksittäiselle asiakkaalle ennen kuin pääsy palvelimeen estetään"
+
+msgid "Maximum number of web page requests per day for a unique client before access to the server is blocked"
+msgstr "Web-sivupyyntöjen enimmäismäärä päivässä yksittäiselle asiakkaalle ennen kuin pääsy palvelimeen estetään"
+
+msgid "Total"
+msgstr "Yhteensä"
+
+msgid "Total number of web page requests per minute before access to the server is blocked"
+msgstr "Web-sivupyyntöjen kokonaismäärä minuutissa, ennen kuin pääsy palvelimeen on estetty"
+
+msgid "Total number of web page requests per hour before access to the server is blocked"
+msgstr "Web-sivupyyntöjen kokonaismäärä tunnissa ennen kuin pääsy palvelimeen estetään"
+
+msgid "Total number of web page requests per day before access to the server is blocked"
+msgstr "Web-sivupyyntöjen kokonaismäärä päivässä ennen kuin pääsy palvelimelle estetään"
+
+msgid "Maximum number of simultaneous client connections"
+msgstr "Samanaikaisten asiakasyhteyksien enimmäismäärä"
+
+msgid "POST limits"
+msgstr "POST-rajoitukset"
+
+msgid "Per Period"
+msgstr "Jaksoittain"
+
+msgid "Ban Duration"
+msgstr "Kiellon kesto"
+
+msgid "POST limit period"
+msgstr "POST-rajajakso"
+
+msgid "Maximum number of post requests permitted for a unique client for the configured timespan"
+msgstr "Yksilölliselle asiakkaalle sallittu enimmäismäärä lähetyspyyntöjä määritetyllä aikavälillä"
+
+msgid "If a client exceeds the maximum number of post requests per allocated period, enforce a ban for this number of minutes"
+msgstr "Jos asiakas ylittää lähetyspyyntöjen enimmäismäärän varattua ajanjaksoa kohti, aseta kielto tälle minuuttien määrälle"
+
+msgid "Timespan for the maximum number of post requests to be reached before a ban is triggered"
+msgstr "Postipyyntöjen enimmäismäärän aika, joka saavutetaan ennen kiellon käynnistämistä"
+
+msgid "Total number of post requests permitted for the configured timespan"
+msgstr "Sallittujen lähetyspyyntöjen kokonaismäärä määritetyllä aikavälillä"
+
+msgid "If the maximum number of post requests per allocated period is exceeded, enforce a global access ban for this number of minutes"
+msgstr "Jos lähetyspyyntöjen enimmäismäärä varattua ajanjaksoa kohden ylittyy, pakota yleinen käyttökielto tälle minuuttien määrälle"
+
+msgid "Custom HTTP Headers"
+msgstr "Mukautetut HTTP-otsikot"
+
+msgid "Note: These custom headers will only be enabled for served files that don't have the relevant header already set."
+msgstr "Huomaa: Nämä mukautetut otsikot otetaan käyttöön vain toimitetuille tiedostoille, joille ei ole vielä asetettu vastaavaa otsikkoa."
+
+msgid "Set the Allow header to 'GET, POST, HEAD' for html, xml, json and text files"
+msgstr "Aseta Salli-otsikon arvoksi 'GET, POST, HEAD' html-, xml-, json- ja tekstitiedostoille"
+
+msgid "Allow"
+msgstr "Salli"
+
+msgid "Enable Cache-Control headers (no-cache for html, xml, json and text, immutable for everything else)"
+msgstr "Ota käyttöön Cache-Control-otsikot (ei välimuistia html-, xml-, json- ja tekstitiedostoille, muuttumaton kaikelle muulle)"
+
+msgid "Cache-Control"
+msgstr "Cache-Control"
+
+msgid "Set the Referrer-Policy header to 'same-origin' for html, xml, json and text files"
+msgstr "Aseta Referrer-Policy-otsikon arvoksi \"same-origin\" html-, xml-, json- ja tekstitiedostoille"
+
+msgid "Referrer-Policy"
+msgstr "Viittauskäytäntö"
+
+msgid "Set the X-Content-Type-Options header to 'nosniff'"
+msgstr "Aseta X-Content-Type-Options-otsikon arvoksi \"nosniff\""
+
+msgid "X-Content-Type-Options"
+msgstr "X-Content-Type-Options"
+
+#, java-format
+msgid "Initializing Tunnel Manager{0}"
+msgstr "Tunnelinhallintaa alustetaan{0}"
+
+msgid "Tunnels not initialized yet; please retry in a few moments."
+msgstr "Tunneleita ei vielä alustettu; Ole hyvä ja yritä hetkessä."
+
+msgid "Status Messages"
+msgstr "Tilaviestit"
+
+msgid "Clear"
+msgstr "Nollaa"
+
+msgid "Refresh"
+msgstr "Virkistä"
+
+msgid "Global Tunnel Control"
+msgstr "Globaali tunnelinhallinta"
+
+msgid "Tunnel Wizard"
+msgstr "Tunnelivelho"
+
+msgid "Stop All"
+msgstr "Pysäytä kaikki"
+
+msgid "Start All"
+msgstr "Käynnistä kaikki"
+
+msgid "Restart all running tunnels"
+msgstr "Käynnistä kaikki toimivat tunnelit uudelleen"
+
+msgid "Restart All"
+msgstr "Käynnistä kaikki uudelleen"
+
+msgid "Restart all running server tunnels"
+msgstr "Käynnistä kaikki toimivat palvelin tunnelit uudelleen"
+
+msgid "Restart All Servers"
+msgstr "Käynnistä kaikki palvelimet uudelleen"
+
+msgid "Restart all running client tunnels"
+msgstr "Käynnistä kaikki toimivat asiakas tunnelit uudelleen"
+
+msgid "Restart All Clients"
+msgstr "Käynnistä kaikki asiakkaat uudelleen"
+
+msgid "I2P Server Tunnels"
+msgstr "I2P-palvelin tunnelit"
+
+msgid "Helper"
+msgstr "Apuväline"
+
+msgid "Type"
+msgstr "Tyyppi"
+
+msgid "Points at"
+msgstr "Osoittaa kohteeseen"
+
+msgid "Preview"
+msgstr "Esikatselu"
+
+msgid "Status"
+msgstr "Tila"
+
+msgid "Control"
+msgstr "Hallinta"
+
+msgid "Edit Server Tunnel Settings for"
+msgstr "Muokkaa palvelin tunnelin asetuksia kohteelle"
+
+msgid "Test IRC server, bypassing I2P"
+msgstr "Testaa IRC-palvelin, ohita I2P"
+
+msgid "Test HTTPS server, bypassing I2P"
+msgstr "Testaa HTTPS-palvelinta I2P:n ohituksella"
+
+msgid "Test HTTP server, bypassing I2P"
+msgstr "Testaa HTTP-palvelinta I2P:n ohituksella"
+
+msgid "Test HTTP server through I2P"
+msgstr "Testaa HTTP-palvelinta I2P:n kautta"
+
+msgid "Base32 Address"
+msgstr "Base32-osoite"
+
+msgid "Offline"
+msgstr "Poissa verkosta"
+
+msgid "No Preview"
+msgstr "Ei esikatselua"
+
+msgid "Starting..."
+msgstr "Käynnistetään..."
+
+msgid "Stop this Tunnel"
+msgstr "Pysäytä tämä tunneli"
+
+msgid "Running"
+msgstr "Käynnissä"
+
+msgid "Hops"
+msgstr "Hypyt"
+
+msgid "in"
+msgstr "sisään"
+
+msgid "out"
+msgstr "ulos"
+
+msgid "Restart this Tunnel"
+msgstr "Käynnistä tämä tunneli uudelleen"
+
+msgid "Restart"
+msgstr "Käynnistä uudelleen"
+
+msgid "Stopped"
+msgstr "Pysäytetty"
+
+msgid "Destination"
+msgstr "Kohde"
+
+msgid "Signature"
+msgstr "Allekirjoitus"
+
+msgid "Alternate"
+msgstr "Vaihtoehtoinen"
+
+msgid "Alt Destination"
+msgstr "Vaihtoehtoinen kohde"
+
+msgid "Encryption"
+msgstr "Salaus"
+
+msgid "Supported encryption"
+msgstr "Tuettu salaus"
+
+msgid "New server tunnel"
+msgstr "Uusi palvelintunneli"
+
+msgid "Standard"
+msgstr "Vakio"
+
+msgid "Create"
+msgstr "Luo"
+
+msgid "I2P Client Tunnels"
+msgstr "I2P-asiakastunnelit"
+
+msgid "Interface"
+msgstr "Rajapinta"
+
+msgid "Edit Tunnel Settings for"
+msgstr "Muokkaa tunneliasetuksia kohteelle"
+
+msgid "Standby"
+msgstr "Valmiustila"
+
+msgid "Outproxy"
+msgstr "Välityspalvelin"
+
+msgid "internal plugin"
+msgstr "sisäinen liitännäinen"
+
+msgid "none"
+msgstr "ei mitään"
+
+msgid "New client tunnel"
+msgstr "Uusi asiakastunneli"
+
+msgid "Registration Helper"
+msgstr "Rekisteröintiapu"
+
+msgid "This service uses encrypted leasesets. Registration is not recommended. Registration authentication is disabled."
+msgstr "Tämä palvelu käyttää salattuja vuokrasopimuksia. Rekisteröintiä ei suositella. Rekisteröinnin todennus on vammainen."
+
+msgid "Please be sure to select, copy, and paste the entire contents of the appropriate authentication data into the form of your favorite registration site"
+msgstr "Muista valita, kopioida ja liittää asianmukaisten todennustietojen koko sisältö suosikkirekisteröintisivustosi muotoon"
+
+msgid "Tunnel name"
+msgstr "Tunnelin nimi"
+
+msgid "Website name"
+msgstr "Webbisivuston nimi"
+
+msgid "Local Destination"
+msgstr "Paikallinen kohde"
+
+msgid "Local destination is not available. Start the tunnel."
+msgstr "Paikallinen kohde ei ole käytettävissä."
+
+msgid "To enable registration verification, edit tunnel and set name (or website name) to a valid host name ending in '.i2p'"
+msgstr "Ottaaksesi rekisteröinnin vahvistuksen käyttöön muokkaa tunnelia ja aseta nimeksi (tai verkkosivuston nimeksi) kelvollinen isäntänimi, joka päättyy '.i2p'"
+
+msgid "To enable registration verification, edit tunnel and set name to a valid host name ending in '.i2p'"
+msgstr "Ottaaksesi rekisteröinnin vahvistuksen käyttöön muokkaa tunnelia ja aseta nimeksi kelvollinen isäntänimi, joka päättyy '.i2p'"
+
+msgid "Destination signing key is not available. Start the tunnel."
+msgstr "Kohteen allekirjoitusavain ei ole käytettävissä."
+
+msgid "Destination signing key is offline. Use CLI tools on the offline machine."
+msgstr "Kohteen allekirjoitusavain on offline-tilassa."
+
+#, java-format
+msgid "Authentication for adding host {0}"
+msgstr "Todennus isännän {0} lisäämistä varten"
+
+msgid "Copy and paste this to the registration site"
+msgstr "Kopioi ja liitä tämä rekisteröintisivustolle"
+
+msgid "Advanced authentication strings"
+msgstr "Edistyneet todennusmerkkijonot"
+
+#, java-format
+msgid "Authentication for removing host {0}"
+msgstr "Todennus isännän {0} poistamiseksi"
+
+msgid "Authentication for changing name"
+msgstr "Todennus nimen vaihtamista varten"
+
+#, java-format
+msgid "This will change the name from {0} to {1}, using the same destination"
+msgstr "Tämä muuttaa nimen {0} nimestä {1} käyttäen samaa kohdetta"
+
+msgid "This tunnel must be configured with the new host name."
+msgstr "Tälle tunnelille on määritettävä uusi isäntänimi."
+
+msgid "Enter old hostname below."
+msgstr "Kirjoita vanha isäntänimi alle."
+
+msgid "Authentication for adding alias"
+msgstr "Todennus aliaksen lisäämistä varten"
+
+#, java-format
+msgid "This will add an alias {0} for {1}, using the same destination"
+msgstr "Tämä lisää aliaksen {0} kohteelle {1} käyttäen samaa kohdetta"
+
+msgid "Authentication for changing destination"
+msgstr "Todennus kohteen muuttamiseen"
+
+#, java-format
+msgid "This will change the destination for {0}"
+msgstr "Tämä muuttaa kohteen {0} määränpäätä"
+
+msgid "This tunnel must be configured with the new destination."
+msgstr "Tälle tunnelille on määritettävä uusi kohde."
+
+msgid "Enter old destination below."
+msgstr "Kirjoita vanha määränpää alle."
+
+msgid "Authentication for adding alternate destination"
+msgstr "Todennus vaihtoehtoisen kohteen lisäämiseksi"
+
+#, java-format
+msgid "This will add an alternate destination for {0}"
+msgstr "Tämä lisää vaihtoehtoisen määränpään kohteelle {0}"
+
+msgid "Authentication for adding subdomain"
+msgstr "Todennus aliverkkotunnuksen lisäämistä varten"
+
+#, java-format
+msgid "This will add a subdomain {0} of {1}, with a different destination"
+msgstr "Tämä lisää aliverkkotunnuksen {0} verkkotunnuksesta {1}, jolla on eri kohde"
+
+msgid "This tunnel must be configured with the new subdomain and destination."
+msgstr "Tälle tunnelille on määritettävä uusi aliverkkotunnus ja kohde."
+
+msgid "Enter higher-level domain and destination below."
+msgstr "Syötä ylemmän tason verkkotunnus ja kohde alle."
+
+msgid "Return to Tunnel Configuration"
+msgstr "Palaa tunnelikokoonpanoon"
+
+msgid "Specify old name and destination"
+msgstr "Määritä vanha nimi ja kohde"
+
+msgid "This is only required for advanced authentication."
+msgstr "Tätä vaaditaan vain edistyneessä todennuksessa."
+
+msgid "See above for required items."
+msgstr "Katso yllä vaadittavat kohteet."
+
+msgid "Old / parent hostname "
+msgstr "Vanha / vanhemman isäntänimi "
+
+msgid "Private key file for old destination / sub-domain parent"
+msgstr "Yksityinen avaintiedosto vanhalle kohde-/aliverkkotunnuksen ylätason tiedostolle"
+
+msgid "Generate Authentication"
+msgstr "Luo todennus"
+
+msgid "SSL Helper"
+msgstr "SSL-apuohjelma"
+
+msgid "Invalid form submission, probably because you used the 'back' or 'reload' button on your browser. Please resubmit."
+msgstr "Virheellinen lomakkeen lähetys, luultavasti siksi, että käytit selaimesi 'takaisin'- tai 'reload'-painiketta."
+
+msgid "If the problem persists, verify that you have cookies enabled in your browser."
+msgstr "Jos pulma jatkuu, vahvista, että evästeet ovar käytössä selaimessasi."
+
+msgid "Experts only!"
+msgstr "Vain asiantuntijoille!"
+
+msgid "Base32"
+msgstr "Base32"
+
+msgid "Alt Base32"
+msgstr "Alt Base32"
+
+msgid "Incoming I2P Port Routing"
+msgstr "Saapuvan I2P-portin reititys"
+
+msgid "Virtual Host"
+msgstr "Virtuaalinen isäntä"
+
+msgid "Via SSL?"
+msgstr "SSL:n kautta?"
+
+msgid "Test HTTPS server through I2P"
+msgstr "Testaa HTTPS-palvelinta I2P:n kautta"
+
+msgid "Server"
+msgstr "Palvelin"
+
+msgid "SSL Activation"
+msgstr "SSL-aktivointi"
+
+msgid "I2P webserver (eepsite)"
+msgstr "I2P www-palvelin (eepsite)"
+
+msgid "Disable SSL"
+msgstr "Poista SSL käytöstä"
+
+msgid "Enable SSL"
+msgstr "Ota SSL käyttöön"
+
+msgid "New Certificate Password"
+msgstr "Uusi sertifikaatin salasana"
+
+msgid "Password (required to encrypt the certificate)"
+msgstr "Salasana (tarvitaan varmenteen salaamiseen)"
+
+msgid "Generate new SSL certificate"
+msgstr "Luo uusi SSL-varmenne"
+
+msgid "Generate SSL certificate and enable"
+msgstr "Luo SSL-varmenne ja ota se käyttöön"
+
+#, java-format
+msgid "Cannot configure, no Jetty server found in {0}client configurations{1} that matches this tunnel"
+msgstr "Ei voi määrittää, tätä tunnelia vastaavaa Jetty-palvelinta ei löytynyt {0}asiakasmäärityksistä{1}"
+
+msgid "Support for non-Jetty servers will be added in a future release"
+msgstr "Tuki muille kuin Jetty-palvelimille lisätään tulevassa julkaisussa"
+
+msgid "Return to Tunnel Manager Index"
+msgstr "Palaa Tunnel Manager -hakemistoon"
+
+msgid "Return to Tunnel Editor"
+msgstr "Palaa Tunnelieditoriin"
+
+msgid "I2P Tunnel Manager - Tunnel Creation Wizard"
+msgstr "I2P Tunnel Manager - ohjattu tunnelin luontitoiminto"
+
+msgid "Server or client tunnel?"
+msgstr "Palvelin- vai asiakastunneli?"
+
+msgid "Tunnel type"
+msgstr "Tunnelityyppi"
+
+msgid "Tunnel name and description"
+msgstr "Tunnelinimi ja -kuvaus"
+
+msgid "Tunnel destination"
+msgstr "Tunnelikohde"
+
+msgid "Binding address and port"
+msgstr "Sitova osoite ja portti"
+
+msgid "Tunnel auto-start"
+msgstr "Tunnelin automaattinen käynnistys"
+
+msgid "Wizard completed"
+msgstr "Ohjattu toiminto valmis"
+
+msgid "This wizard will take you through the various options available for creating tunnels in I2P."
+msgstr "Tämä ohjattu toiminto opastaa sinut I2P-tunnelien luomiseen käytettävissä olevien eri vaihtoehtojen läpi."
+
+msgid "The first thing to decide is whether you want to create a server or a client tunnel."
+msgstr "Ensin on päätettävä, haluatko luoda palvelimen vai asiakastunnelin."
+
+msgid "If you need to connect to a remote service, such as an IRC server inside I2P or a code repository, then you will require a CLIENT tunnel."
+msgstr "Jos haluat muodostaa yhteyden etäpalveluun, kuten IRC-palvelimeen I2P:n sisällä tai koodivarastoon, tarvitset CLIENT-tunnelin."
+
+msgid "On the other hand, if you wish to host a service for others to connect to you'll need to create a SERVER tunnel."
+msgstr "Toisaalta, jos haluat isännöidä palvelua, johon muut voivat muodostaa yhteyden, sinun on luotava PALVELINtunneli."
+
+msgid "Server Tunnel"
+msgstr "Palvelintunneli"
+
+msgid "Client Tunnel"
+msgstr "Asiakastunneli"
+
+msgid "There are several types of tunnels to choose from:"
+msgstr "Valittavissa on useita tunneletyyppejä:"
+
+msgid "Basic tunnel for connecting to a single service inside I2P."
+msgstr "Perustunneli, jolla yhdistetään yhteen palveluun I2P:n sisällä."
+
+msgid "Try this if none of the tunnel types below fit your requirements, or you don't know what type of tunnel you need."
+msgstr "Kokeile tätä, jos mikään alla olevista tunnelityypeistä ei vastaa vaatimuksiasi tai et tiedä, minkä tyyppistä tunnelia tarvitset."
+
+msgid "Tunnel that acts as an HTTP proxy for reaching eepsites inside I2P."
+msgstr "Tunneli, joka toimii HTTP-välityspalvelimena I2P:n sisällä olevien eep-sivustojen saavuttamiseksi."
+
+msgid "Set your browser to use this tunnel as an http proxy, or set your \"http_proxy\" environment variable for command-line applications in GNU/Linux."
+msgstr "Aseta selaimesi käyttämään tätä tunnelia http-välityspalvelimena tai aseta \"http_proxy\"-ympäristömuuttuja komentorivisovelluksille GNU/Linuxissa."
+
+msgid "Websites outside I2P can also be reached if an HTTP proxy within I2P is known."
+msgstr "I2P:n ulkopuolisille verkkosivustoille pääsee myös, jos I2P:n sisällä oleva HTTP-välityspalvelin tunnetaan."
+
+msgid "Customised client tunnel specific for IRC connections."
+msgstr "Räätälöity asiakastunneli IRC-yhteyksiä varten."
+
+msgid "With this tunnel type, your IRC client will be able to connect to an IRC network inside I2P."
+msgstr "Tämän tunnelityypin avulla IRC-asiakkaasi voi muodostaa yhteyden IRC-verkkoon I2P:n sisällä."
+
+msgid "Each IRC network in I2P that you wish to connect to will require its own tunnel. (See Also, SOCKS IRC)"
+msgstr "Jokainen I2P:n IRC-verkko, johon haluat muodostaa yhteyden, tarvitsee oman tunnelin."
+
+msgid "A tunnel that implements the SOCKS protocol."
+msgstr "Tunneli, joka toteuttaa SOCKS-protokollan."
+
+msgid "This enables both TCP and UDP connections to be made through a SOCKS outproxy within I2P."
+msgstr "Tämä mahdollistaa sekä TCP- että UDP-yhteyksien muodostamisen SOCKS-välityspalvelimen kautta I2P:n sisällä."
+
+msgid "A client tunnel implementing the SOCKS protocol, which is customised for connecting to IRC networks."
+msgstr "SOCKS-protokollaa toteuttava asiakastunneli, joka on mukautettu IRC-verkkoihin yhdistämistä varten."
+
+msgid "With this tunnel type, IRC networks in I2P can be reached by typing the I2P address into your IRC client, and configuring the IRC client to use this SOCKS tunnel."
+msgstr "Tällä tunnelityypillä I2P:n IRC-verkkoihin päästään kirjoittamalla I2P-osoite IRC-asiakkaallesi ja määrittämällä IRC-asiakas käyttämään tätä SOCKS-tunnelia."
+
+msgid "This means that only one I2P tunnel is required rather than a separate tunnel per IRC network."
+msgstr "Tämä tarkoittaa, että tarvitaan vain yksi I2P-tunneli erillisen tunnelin sijaan IRC-verkkoa kohden."
+
+msgid "IRC networks outside I2P can also be reached if a SOCKS outproxy within I2P is known, though it depends on whether or not the outproxy has been blocked by the IRC network."
+msgstr "IRC-verkot I2P:n ulkopuolella voidaan saavuttaa myös, jos I2P:n sisällä tunnetaan SOCKS-välityspalvelin, vaikka se riippuu siitä, onko IRC-verkko estänyt välityspalvelimen vai ei."
+
+msgid "A basic server tunnel for hosting a generic service inside I2P."
+msgstr "Peruspalvelintunneli yleispalvelun isännöimiseen I2P:n sisällä."
+
+msgid "A server tunnel that is customised for HTTP connections."
+msgstr "Palvelintunneli, joka on mukautettu HTTP-yhteyksiä varten."
+
+msgid "Use this tunnel type if you want to host an eepsite."
+msgstr "Käytä tätä tunnelityyppiä, jos haluat isännöidä eep-sivustoa."
+
+msgid "A customised server tunnel for hosting IRC networks inside I2P."
+msgstr "Räätälöity palvelintunneli IRC-verkkojen isännöintiin I2P:n sisällä."
+
+msgid "Usually, a separate tunnel needs to be created for each IRC server that is to be accessible inside I2P."
+msgstr "Yleensä jokaiselle IRC-palvelimelle on luotava erillinen tunneli, joka on käytettävissä I2P:n sisällä."
+
+msgid "Select tunnel type"
+msgstr "Valitse tunnelin tyyppi"
+
+msgid "Choose a name and description for your tunnel."
+msgstr "Valitse tunnelillesi nimi ja kuvaus."
+
+msgid "These can be anything you want - they are just for ease of identifying the tunnel in the routerconsole."
+msgstr "Nämä voivat olla mitä haluat - ne ovat vain helpottamaan tunnelin tunnistamista reititinkonsolissa."
+
+msgid "If you know of any outproxies for this type of tunnel (either HTTP or SOCKS), fill them in below."
+msgstr "Jos tiedät tämän tyyppisen tunnelin (joko HTTP tai SOCKS) ulkopuolisia lähetyksiä, täytä ne alle."
+
+msgid "Separate multiple proxies with commas."
+msgstr "Erottele useat välityspalvelimet pilkuilla."
+
+msgid "List of I2P outproxy destinations, separated with commas (e.g. proxy1.i2p,proxy2.i2p)"
+msgstr "Luettelo I2P-välityspalvelimen kohteista pilkuilla erotettuna (esim. proxy1.i2p, proxy2.i2p)"
+
+msgid "Type in the I2P destination of the service that this client tunnel should connect to."
+msgstr "Kirjoita sen palvelun I2P-kohde, johon tämän asiakastunnelin tulee muodostaa yhteys."
+
+msgid "This could be the full Base64 destination key, or an I2P URL from your address book."
+msgstr "Tämä voi olla täydellinen Base64-kohdeavain tai I2P-URL-osoite osoitekirjastasi."
+
+msgid "Enter a b64 or .i2p address here"
+msgstr "Kirjoita tähän b64- tai .i2p-osoite"
+
+msgid "This is the IP that your service is running on, this is usually on the same machine so 127.0.0.1 is autofilled."
+msgstr "Tämä on IP-osoite, jolla palvelusi on käynnissä. Tämä on yleensä samassa koneessa, joten 127.0.0.1 täytetään automaattisesti."
+
+msgid "This is the port that the service is accepting connections on."
+msgstr "Tämä on portti, johon palvelu hyväksyy yhteyksiä."
+
+msgid "This is the port that the client tunnel will be accessed from locally."
+msgstr "Tämä on portti, josta asiakastunneliin päästään paikallisesti."
+
+msgid "How do you want this tunnel to be accessed? By just this machine, your entire subnet, or external internet?"
+msgstr "Miten haluat päästä tähän tunneliin?"
+
+msgid "You will most likely want to just allow 127.0.0.1"
+msgstr "Haluat todennäköisesti vain sallia 127.0.0.1"
+
+msgid "The I2P router can automatically start this tunnel for you when the router is started."
+msgstr "I2P-reititin voi käynnistää tämän tunnelin automaattisesti puolestasi, kun reititin käynnistetään."
+
+msgid "This can be useful for frequently-used tunnels (especially server tunnels), but for tunnels that are only used occasionally it would mean that the I2P router is creating and maintaining unnecessary tunnels."
+msgstr "Tästä voi olla hyötyä usein käytetyissä tunneleissa (erityisesti palvelintunneleissa), mutta tunneleissa, joita käytetään vain satunnaisesti, se tarkoittaisi, että I2P-reititin luo ja ylläpitää tarpeettomia tunneleita."
+
+msgid "The wizard has now collected enough information to create your tunnel."
+msgstr "Ohjattu toiminto on nyt kerännyt tarpeeksi tietoa tunnelin luomiseksi."
+
+msgid "Upon clicking the Save button below, the wizard will set up the tunnel, and take you back to the main I2PTunnel page."
+msgstr "Kun napsautat alla olevaa Tallenna-painiketta, ohjattu toiminto määrittää tunnelin ja vie sinut takaisin I2PTunnel-pääsivulle."
+
+msgid "Because you chose to automatically start the tunnel when the router starts, you don't have to do anything further."
+msgstr "Koska valitsit tunnelin käynnistämisen automaattisesti, kun reititin käynnistyy, sinun ei tarvitse tehdä mitään."
+
+msgid "The router will start the tunnel once it has been set up."
+msgstr "Reititin aloittaa tunnelin, kun se on määritetty."
+
+msgid "Because you chose not to automatically start the tunnel, you will have to manually start it."
+msgstr "Koska päätit olla käynnistämättä tunnelia automaattisesti, sinun on käynnistettävä se manuaalisesti."
+
+msgid "You can do this by clicking the Start button on the main page which corresponds to the new tunnel."
+msgstr "Voit tehdä tämän napsauttamalla aloituspainiketta pääsivulla, joka vastaa uutta tunnelia."
+
+msgid "Below is a summary of the options you chose:"
+msgstr "Alla on yhteenveto valitsemistasi vaihtoehdoista:"
+
+msgid "Tunnel description"
+msgstr "Tunnelin kuvaus"
+
+msgid "Binding address"
+msgstr "Sitova osoite"
+
+msgid "Tunnel port"
+msgstr "Tunneliportti"
+
+msgid "Alongside these basic settings, there are a number of advanced options for tunnel configuration."
+msgstr "Näiden perusasetusten lisäksi tunnelin määrittämiseen on useita lisäasetuksia."
+
+msgid "The wizard will set reasonably sensible default values for these, but you can view and/or edit these by clicking on the tunnel's name in the main I2PTunnel page."
+msgstr "Ohjattu toiminto asettaa näille kohtuullisen järkevät oletusarvot, mutta voit tarkastella ja/tai muokata niitä napsauttamalla tunnelin nimeä I2PTunnel-pääsivulla."
+
+msgid "Cancel the wizard and return to Tunnel Manager home page"
+msgstr "Peruuta ohjattu toiminto ja palaa Tunnel Managerin kotisivulle"
+
+msgid "Return to previous page"
+msgstr "Palaa edelliselle sivulle"
+
+msgid "Previous"
+msgstr "Edellinen"
+
+msgid "Save tunnel configuration"
+msgstr "Tallenna tunnelin kokoonpano"
+
+msgid "Save Tunnel"
+msgstr "Tallenna tunneli"
+
+msgid "Finish Wizard and review tunnel settings"
+msgstr "Lopeta ohjattu toiminto ja tarkista tunnelin asetukset"
+
+msgid "Finish"
+msgstr "Loppu"
+
+msgid "Advance to next page"
+msgstr "Siirry seuraavalle sivulle"
+
+msgid "Next"
+msgstr "Seuraava"

@@ -1,0 +1,44 @@
+/*
+ * Created on May 20, 2010
+ * Created by Paul Gardner
+ *
+ * Copyright 2010 Vuze, Inc.  All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details ( see the LICENSE file ).
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
+
+
+
+package com.vuze.plugins.mlab.tools.ndt.swingemu;
+
+/**
+ * Emulation of java.awt.Toolkit for the NDT (Network Diagnostic Tool) plugin.
+ * 
+ * <p>This class provides a minimal stub implementation of the system toolkit
+ * to allow the NDT tool to run in headless environments. The toolkit provides
+ * clipboard access but no actual system integration.</p>
+ * 
+ * <p>All operations return stub implementations, maintaining API compatibility
+ * without requiring an actual graphical display system.</p>
+ * 
+ */
+public class Toolkit {
+
+	public Clipboard
+	getSystemClipboard()
+	{
+		return( new Clipboard());
+	}
+}

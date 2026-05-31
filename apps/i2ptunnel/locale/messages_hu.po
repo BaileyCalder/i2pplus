@@ -1,0 +1,1575 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "internal"
+msgstr "belső"
+
+#, java-format
+msgid "{0} inbound, {0} outbound tunnel"
+msgid_plural "{0} inbound, {0} outbound tunnels"
+msgstr[0] "{0} bejövő, {0} kimenő alagút"
+msgstr[1] "{0} bejövő, {0} kimenő alagút"
+
+#, java-format
+msgid "{0} inbound tunnel"
+msgid_plural "{0} inbound tunnels"
+msgstr[0] "{0} bejövő alagút"
+msgstr[1] "{0} bejövő alagutak"
+
+#, java-format
+msgid "{0} outbound tunnel"
+msgid_plural "{0} outbound tunnels"
+msgstr[0] "{0} kimenő alagút"
+msgstr[1] "{0} kimenő alagút"
+
+msgid "lower bandwidth and reliability"
+msgstr "kisebb sávszélesség és megbízhatóság"
+
+msgid "standard bandwidth and reliability"
+msgstr "szabványos sávszélesség és megbízhatóság"
+
+msgid "higher bandwidth and reliability"
+msgstr "nagyobb sávszélesség és megbízhatóság"
+
+msgid "Error - tunnels are not initialized yet"
+msgstr "Hiba - az alagutak még nem lettek inicializálva"
+
+msgid "No services configured, cannot restart!"
+msgstr "Nincs szolgáltatás konfigurálva, nem lehet újraindítani!"
+
+msgid "Stopping tunnel"
+msgstr "Alagút leállítása"
+
+msgid "Starting tunnel"
+msgstr "Alagút indítása"
+
+msgid "Error restarting tunnel"
+msgstr "Hiba az alagút újraindításakor"
+
+msgid "Restarted all running tunnels"
+msgstr "Minden futó alagút újraindítva"
+
+msgid "No clients configured, cannot restart!"
+msgstr "Nincs kliens konfigurálva, nem lehet újraindítani!"
+
+msgid "Restarted all running client tunnels"
+msgstr "Minden futó kliens alagút újraindítva"
+
+msgid "Configuration reloaded for all tunnels"
+msgstr "Az összes alagútra vonatkozó beállítás újratöltve"
+
+msgid "Error: Invalid tunnel"
+msgstr "Hiba: Érvénytelen alagút"
+
+msgid "Started tunnel"
+msgstr "Alagút elindítva"
+
+msgid "Stopped tunnel"
+msgstr "Alagút leállítva"
+
+msgid "Restarting tunnel"
+msgstr "Alagút újraindítása"
+
+msgid "Please confirm removal"
+msgstr "Kérem erősítse meg a törlést"
+
+msgid "New Tunnel"
+msgstr "Új Alagút"
+
+msgid "Port not set"
+msgstr "Port nincs beállítva"
+
+msgid "Invalid port"
+msgstr "Érvénytelen port"
+
+msgid "Warning - ports less than 1024 are not recommended"
+msgstr "Figyelem – az 1024-nél kisebb portok nem ajánlottak"
+
+msgid "Warning - duplicate port"
+msgstr "Figyelmeztetés – duplikált port"
+
+msgid "Standard client"
+msgstr "Normál kliens"
+
+msgid "HTTP/HTTPS client"
+msgstr "HTTP/HTTPS kliens"
+
+msgid "IRC client"
+msgstr "IRC kliens"
+
+msgid "Standard server"
+msgstr "Normál szerver"
+
+msgid "HTTP server"
+msgstr "HTTP szerver"
+
+msgid "SOCKS 4/4a/5 proxy"
+msgstr "SOCKS 4/4a/5 proxy"
+
+msgid "SOCKS IRC proxy"
+msgstr "SOCKS IRC proxy"
+
+msgid "CONNECT/SSL/HTTPS proxy"
+msgstr "CONNECT/SSL/HTTPS proxy"
+
+msgid "IRC server"
+msgstr "IRC szerver"
+
+msgid "Streamr client"
+msgstr "Streamr kliens"
+
+msgid "Streamr server"
+msgstr "Streamr szerver"
+
+msgid "HTTP bidir"
+msgstr "HTTP bidir"
+
+msgid "Host not set"
+msgstr "Hoszt nincs beállítva"
+
+msgid "Invalid address"
+msgstr "Érvénytelen cím"
+
+msgid "Tunnel Manager"
+msgstr "Alagútkezelő"
+
+msgid "Edit Client Tunnel"
+msgstr "Szerkessze az ügyfél alagútját"
+
+msgid "Edit Server Tunnel"
+msgstr "Szerveralagút szerkesztése"
+
+msgid "Are you sure you want to delete?"
+msgstr "Biztosan törölni akarod?"
+
+msgid "required"
+msgstr "szükséges"
+
+msgid "Tunnel and all other shared client tunnels must be stopped to change this configuration"
+msgstr "Az alagutat és az összes többi megosztott kliens alagutat le kell állítani a konfiguráció módosításához"
+
+msgid "Tunnel must be stopped to change this configuration"
+msgstr "A konfiguráció módosításához az alagutat le kell állítani"
+
+msgid "Configuration"
+msgstr "Konfiguráció"
+
+msgid "New Client Configuration"
+msgstr "Új ügyfélkonfiguráció"
+
+msgid "Name"
+msgstr "Név"
+
+msgid "Auto Start Tunnel"
+msgstr "Alagút automatikus indítása"
+
+msgid "Name of tunnel to be displayed on Tunnel Manager home page and the router console sidebar"
+msgstr "Az alagút neve, amely megjelenik az Tunnel Manager kezdőlapján és a router konzol oldalsávján"
+
+msgid "Enable this option to ensure this service is available when the router starts"
+msgstr "Engedélyezze ezt az opciót annak biztosításához, hogy ez a szolgáltatás elérhető legyen az útválasztó indításakor"
+
+msgid "Automatically start tunnel when router starts"
+msgstr "Alagút automatikus indítása, amikor az útválasztó elindul"
+
+msgid "Description"
+msgstr "Leírás"
+
+msgid "Shared Client"
+msgstr "Megosztott Kliens"
+
+msgid "Description of tunnel to be displayed on Tunnel Manager home page"
+msgstr "Az alagút leírása, amelyet az Tunnel Manager honlapján kell megjeleníteni"
+
+msgid "Traffic from all clients with this feature enabled will be routed over the same set of tunnels. This will make profiling the tunnels by an adversary more difficult, but will link the clients together."
+msgstr "A szolgáltatással rendelkező összes kliens forgalma ugyanazon alagútcsoporton keresztül lesz irányítva."
+
+msgid "Share tunnels with other configured clients"
+msgstr "Az alagutak megosztása más konfigurált kliensekkel"
+
+msgid "Target"
+msgstr "Cél"
+
+msgid "Access Point"
+msgstr "Elérési Pont"
+
+msgid "Use Outproxy Plugin"
+msgstr "Használja az Outproxy beépülő modult"
+
+msgid "Enable DCC"
+msgstr "DCC Engedélyezése"
+
+msgid "Port"
+msgstr "Port"
+
+msgid "Specify the local port this service should be accessible from"
+msgstr "Adja meg azt a helyi portot, amelyről a szolgáltatásnak elérhetőnek kell lennie"
+
+msgid "Host"
+msgstr "Hoszt"
+
+msgid "Hostname or IP address of the target server"
+msgstr "A célkiszolgáló gazdagépneve vagy IP-címe"
+
+msgid "Reachable by"
+msgstr "Elérhető"
+
+msgid "Local interface (ip address) the client tunnel will be reachable from"
+msgstr "Helyi interfész (IP-cím), amelyről a kliens alagút elérhető lesz"
+
+msgid "If an outproxy plugin is installed (e.g. Orchid), use this instead of any configured outproxies to access websites outside of I2P"
+msgstr "Ha outproxy beépülő modul van telepítve (pl. Orchid), használja ezt a konfigurált outproxyk helyett az I2P-n kívüli webhelyek eléréséhez"
+
+msgid "Use plugin instead of proxies listed below if available"
+msgstr "Az alább felsorolt ​​proxyk helyett használjon beépülő modult, ha elérhető"
+
+msgid "Enables direct chat and file transfers, bypassing I2P. Note that this will compromise your anonymity and is not recommended."
+msgstr "Közvetlen csevegést és fájlátvitelt tesz lehetővé, megkerülve az I2P-t."
+
+msgid "Enable Direct Client-to-Client protocol"
+msgstr "Közvetlen ügyfél-ügyfél protokoll engedélyezése"
+
+msgid "Outproxies"
+msgstr "Kimenő Proxyk"
+
+msgid "SSL Outproxies"
+msgstr "SSL Outproxyk"
+
+msgid "Specify the .i2p address or destination (b32 or b64) of the outproxy here."
+msgstr "Itt adja meg a outproxy .i2p címét vagy rendeltetési helyét (b32 vagy b64)."
+
+msgid "For a random selection from a pool, separate with commas e.g. server1.i2p,server2.i2p"
+msgstr "A készletből való véletlenszerű kiválasztáshoz vesszővel válassza el, pl."
+
+msgid "Outproxy Type"
+msgstr "Outproxy típus"
+
+msgid "Tunnel Destination"
+msgstr "Alagút Célállomás"
+
+msgid "Use SSL"
+msgstr "SSL használata"
+
+msgid "Specify the .i2p address or destination (b32 or b64) of the tunnel here."
+msgstr "Itt adja meg az alagút .i2p címét vagy rendeltetési helyét (b32 vagy b64)."
+
+msgid "name, name:port, or destination"
+msgstr "név, név:port vagy rendeltetési hely"
+
+msgid "If you are accessing a service on a remote I2P router, you may wish to connect with SSL to avoid traffic interception. The client application should be also be configured to use SSL."
+msgstr "Ha egy távoli I2P útválasztón egy szolgáltatáshoz fér hozzá, akkor érdemes csatlakozni az SSL -hez, hogy elkerülje a forgalom lehallgatását. Az ügyfélalkalmazást az SSL használatához is konfigurálva kell konfigurálni."
+
+msgid "Clients use SSL to connect to tunnel"
+msgstr "Az ügyfelek SSL-t használnak az alagúthoz való csatlakozáshoz"
+
+msgid "Please specify the full b64 destination."
+msgstr "Adja meg a teljes b64 célállomást."
+
+msgid "Local destination"
+msgstr "Helyi célállomást"
+
+msgid "Local Base32"
+msgstr "Helyi bázis32"
+
+msgid "Read Only: Local Destination (if known)"
+msgstr "Csak olvasható: Helyi cél (ha ismert)"
+
+msgid "Stop"
+msgstr "Leállítás"
+
+msgid "Start this Tunnel"
+msgstr "Indítsa el ezt az alagutat"
+
+msgid "Start"
+msgstr "Indítás"
+
+msgid "Cancel"
+msgstr "Mégse"
+
+msgid "Delete this tunnel (cannot be undone)"
+msgstr "Az alagút törlése (nem vonható vissza)"
+
+msgid "Delete"
+msgstr "Törlés"
+
+msgid "Save"
+msgstr "Mentés"
+
+msgid "Advanced networking options"
+msgstr "Haladó hálózati opciók"
+
+msgid "Note: When this client is configured to share tunnels, these options apply to all clients configured to share tunnels."
+msgstr "Megjegyzés: Ha ez az ügyfél alagutak megosztására van konfigurálva, ezek a beállítások az összes alagutak megosztására konfigurált ügyfélre vonatkoznak."
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Delay Connect"
+msgstr "Csatlakozás Késleltetése"
+
+msgid "Connection Profile"
+msgstr "Csatlakozási profil"
+
+msgid "interactive connection"
+msgstr "interaktív csatlakozás"
+
+msgid "bulk connection (downloads/websites/BT)"
+msgstr "tömeges csatlakozás (letöltések / weboldalak / BitTorrent)"
+
+msgid "Delay Connection"
+msgstr "Késleltetett kapcsolat"
+
+msgid "for request/response connections"
+msgstr "kérés / válasz csatlakozásokhoz"
+
+msgid "Router I2CP Address"
+msgstr "Router I2CP Cím"
+
+msgid "I2CP Hostname or IP"
+msgstr "I2CP gazdagépnév vagy IP"
+
+msgid "I2CP Port Number"
+msgstr "I2CP portszám"
+
+msgid "Delay tunnel open until required"
+msgstr "Az alagút nyitás késleltetése szükségessé válásig"
+
+msgid "Signature type"
+msgstr "Aláírás típusa"
+
+msgid "Conserve resources by only creating tunnels when required"
+msgstr "Takarítson meg erőforrásokat azzal, hogy csak szükség esetén hoz létre alagutak"
+
+msgid "Don't open tunnel until activity is detected on port"
+msgstr "Ne nyissa meg az alagutat, amíg tevékenységet nem észlel a porton"
+
+msgid "This is the default, recommended option"
+msgstr "Ez az alapértelmezett, ajánlott beállítás"
+
+msgid "Encryption types"
+msgstr "Titkosítási típusok"
+
+msgid "Legacy options"
+msgstr "Régi opciók"
+
+msgid "Post Quantum"
+msgstr "Post Quantum"
+
+msgid "Both encryption types"
+msgstr "Mindkét titkosítási típus"
+
+msgid "Tunnel Options"
+msgstr "Alagút Beállítások"
+
+msgid "Length"
+msgstr "Hossz"
+
+msgid "Count"
+msgstr "Mennyiség"
+
+msgid "Length of each Tunnel"
+msgstr "Mindegyik alagút hossza"
+
+msgid "0 hop tunnel (no anonymity)"
+msgstr "0 ugrás alagút (névtelenség nélkül)"
+
+msgid "1 hop tunnel (low anonymity)"
+msgstr "1 ugrás alagút (alacsony anonimitás)"
+
+msgid "2 hop tunnel (medium anonymity)"
+msgstr "2 ugrás alagút (közepes anonimitás)"
+
+msgid "3 hop tunnel (high anonymity)"
+msgstr "3 ugrás alagút (nagy anonimitás)"
+
+#, java-format
+msgid "{0} hop tunnel"
+msgid_plural "{0} hop tunnel"
+msgstr[0] "{0} hop alagút"
+msgstr[1] "{0} hop alagút"
+
+msgid "Number of Tunnels in Group"
+msgstr "Alagutak száma a csoportban"
+
+msgid "Disabled for 0 hop tunnels"
+msgstr "0 hop alagutakhoz letiltva"
+
+msgid "Variance"
+msgstr "Szórás"
+
+msgid "Backup Count"
+msgstr "Mentések Száma"
+
+msgid "Level of Randomization for Tunnel Length"
+msgstr "Véletlenszerűségi szint az alagút hosszához"
+
+msgid "0 hop variance"
+msgstr "0 ugrásvariancia"
+
+msgid "no randomization, consistent performance"
+msgstr "nincs véletlen besorolás, egyenletes teljesítmény"
+
+msgid "+ 0-1 hop variance"
+msgstr "0-1 ugrás szórás"
+
+msgid "medium randomization, lower performance"
+msgstr "közepes randomizáció, alacsonyabb teljesítmény"
+
+msgid "+ 0-2 hop variance"
+msgstr "0-2 ugrás szórás"
+
+msgid "high randomization, very low performance"
+msgstr "nagy véletlenszerűség, nagyon alacsony teljesítmény"
+
+msgid "+/- 0-1 hop variance"
+msgstr "/- 0-1 ugrásvariancia"
+
+msgid "standard randomization, standard performance"
+msgstr "standard randomizálás, szabványos teljesítmény"
+
+msgid "+/- 0-2 hop variance"
+msgstr "/- 0-2 ugrás eltérés"
+
+msgid "not recommended"
+msgstr "nem ajánlott"
+
+msgid "hop variance"
+msgstr "ugrás szórás"
+
+msgid "Number of Reserve Tunnels"
+msgstr "Tartalék alagutak száma"
+
+#, java-format
+msgid "{0} backup tunnel"
+msgid_plural "{0} backup tunnels"
+msgstr[0] "{0} biztonsági alagút"
+msgstr[1] "{0} biztonsági alagút"
+
+msgid "no redundancy, no added resource usage"
+msgstr "nincs redundancia, nincs több erőforrás-felhasználás"
+
+msgid "low redundancy, low resource usage"
+msgstr "alacsony redundancia, alacsony erőforrás-felhasználás"
+
+msgid "medium redundancy, medium resource usage"
+msgstr "közepes redundancia, közepes erőforrás-felhasználás"
+
+msgid "high redundancy, high resource usage"
+msgstr "nagy redundancia, magas erőforrás-felhasználás"
+
+msgid "Reduce tunnel quantity"
+msgstr "Csökkentse az alagút mennyiségét"
+
+msgid "Reduce tunnel count when idle to conserve resources but keep tunnel open (to ensure immediate availability)"
+msgstr "Csökkentse az alagút számát üresjáratban az erőforrások megtakarítása érdekében, de az alagút nyitva maradjon (az azonnali elérhetőség biztosítása érdekében)"
+
+msgid "Reduce tunnel quantity when idle"
+msgstr "Alagutak mennyiségének csökkentése üres állapotban"
+
+msgid "Idle period"
+msgstr "Tétlenségi időszak"
+
+msgid "Reduced Tunnel Idle Time"
+msgstr "Csökkentett alagút tétlenségi idő"
+
+msgid "Reduced count"
+msgstr "Csökkentett szám"
+
+msgid "Reduced tunnel count"
+msgstr "Csökkentett számú alagút"
+
+msgid "Close tunnels when idle"
+msgstr "Alagutak bezárása üresjárat esetén"
+
+msgid "To conserve resources, close tunnels when not in use"
+msgstr "Az erőforrások kímélése érdekében zárja be az alagutakat, amikor nem használja"
+
+msgid "Close client tunnels after specified idle period"
+msgstr "Az ügyfélalagutak bezárása a megadott tétlenségi időszak után"
+
+msgid "Close Tunnel Idle Time"
+msgstr "Zárja be az alagút tétlen időt"
+
+msgid "New Keys on Reopen"
+msgstr "Újranyitáskor Új Kulcsok"
+
+msgid "Change tunnel identity (destination) when tunnels reopen"
+msgstr "Az alagutak azonosítójának (célállomásának) módosítása, amikor az alagutak újra megnyílnak"
+
+msgid "Enable"
+msgstr "Engedélyezés"
+
+msgid "Retain tunnel identity (destination) when tunnels reopen"
+msgstr "Az alagutak azonosítójának (célállomásának) megőrzése az alagutak újranyitásakor"
+
+msgid "Disable"
+msgstr "Kikapcsol"
+
+msgid "Persistent private key"
+msgstr "Állandó privát kulcs"
+
+msgid "Private key file"
+msgstr "Privát kulcsfile"
+
+msgid "Enabling this feature will ensure your tunnel identity (destination) remains static, for services offering features based on destination e.g. IRC user authentication"
+msgstr "A funkció engedélyezése biztosítja, hogy az alagútazonosító (cél) statikus maradjon az olyan szolgáltatások esetében, amelyek a célállomáson alapuló szolgáltatásokat kínálnak, pl."
+
+msgid "Generate key to enable persistent client tunnel identity"
+msgstr "Kulcs létrehozása az állandó ügyfélalagút-identitás engedélyezéséhez"
+
+msgid "Path to Private Key File"
+msgstr "A privát kulcsfájl elérési útja"
+
+msgid "HTTP Filtering"
+msgstr "HTTP szűrés"
+
+msgid "When enabled, the user agent of your web browser or http client will not be spoofed, potentially reducing your anonymity"
+msgstr "Ha engedélyezve van, a webböngésző vagy a http-kliens felhasználói ügynöke nem kerül hamisításra, ami csökkentheti az anonimitását"
+
+msgid "Do not spoof User-Agent header"
+msgstr "Ne hamisítsa meg a User-Agent fejlécet"
+
+msgid "When enabled, the referer (originating page) of your web requests will not be filtered, potentially reducing your anonymity"
+msgstr "Ha engedélyezve van, a webes kérések hivatkozója (eredeti oldala) nem kerül szűrésre, ami csökkentheti az anonimitását"
+
+msgid "Do not block Referer header"
+msgstr "Ne blokkolja a hivatkozó fejlécet"
+
+msgid "When enabled, the accept headers (mime types support) broadcast by your web browser will not be filtered, potentially reducing your anonymity"
+msgstr "Ha engedélyezve van, a webböngésző által sugárzott elfogadó fejlécek (mime típusok támogatása) nem lesznek szűrve, ami csökkentheti az anonimitását"
+
+msgid "Do not block Accept headers"
+msgstr "Ne blokkolja az Elfogad fejléceket"
+
+msgid "Allow SSL to I2P addresses when enabled"
+msgstr "SSL engedélyezése I2P-címekhez, ha engedélyezve van"
+
+msgid "Allow SSL to I2P addresses"
+msgstr "SSL engedélyezése I2P-címekhez"
+
+msgid "Local Authorization"
+msgstr "Helyi Hitelesítés"
+
+msgid "Local Credentials"
+msgstr "Helyi hitelesítő adatok"
+
+msgid "Enable to require a username and password to access this local service (for example if hosting on a LAN)"
+msgstr "Engedélyezi, hogy a helyi szolgáltatás eléréséhez felhasználónévre és jelszóra legyen szükség (például LAN-on történő üzemeltetés esetén)"
+
+msgid "Require local authorization for this service"
+msgstr "Helyi engedély szükséges ehhez a szolgáltatáshoz"
+
+msgid "Set username required to access this service"
+msgstr "A szolgáltatás eléréséhez szükséges felhasználónév beállítása"
+
+msgid "Username"
+msgstr "Felhasználónév"
+
+msgid "Set password required to access this service"
+msgstr "Állítsa be a szolgáltatás eléréséhez szükséges jelszót"
+
+msgid "Password"
+msgstr "Jelszó"
+
+msgid "Outproxy Authorization"
+msgstr "Kimenő proxy Hitelesítés"
+
+msgid "Remote Credentials"
+msgstr "Távoli hitelesítő adatok"
+
+msgid "Enable if the outproxy a username and password to access"
+msgstr "Engedélyezze, ha a outproxy egy felhasználónevet és jelszót szeretne elérni"
+
+msgid "Outproxy requires authorization"
+msgstr "A kimenő proxy engedélyt igényel"
+
+msgid "Enter username required by outproxy"
+msgstr "Adja meg a outproxy által igényelt felhasználónevet"
+
+msgid "Enter password required by outproxy"
+msgstr "Adja meg a outproxy által kért jelszót"
+
+msgid "Jump URL List"
+msgstr "Ugrás URL Lista"
+
+msgid "List of helper URLs providing jump links when a host is not found in your addressbook"
+msgstr "Azon segítő URL-ek listája, amelyek ugróhivatkozásokat biztosítanak, ha a gazdagép nem található a címjegyzékben"
+
+msgid "Custom options"
+msgstr "Egyéni beállítások"
+
+msgid "Advanced tunnel, streaming, and I2CP options"
+msgstr "Speciális alagút-, adatfolyam- és I2CP-beállítások"
+
+msgid "New Server Configuration"
+msgstr "Új kiszolgálókonfiguráció"
+
+msgid "Hostname"
+msgstr "Gépnév"
+
+msgid "Website Hostname"
+msgstr "Webhely gazdagépneve"
+
+msgid "(leave blank for outproxies)"
+msgstr "(hagyd üresen kimenő proxyknak)"
+
+msgid "Website Hostname e.g. mysite.i2p"
+msgstr "Weboldal gazdagépnév pl. mySite.i2p"
+
+msgid "Specify the port the server is running on"
+msgstr "Adja meg a portot, amelyen a szerver fut"
+
+msgid "Listening interface (IP address) for client access (normally 127.0.0.1)"
+msgstr "Figyelő interfész (IP-cím) a kliens eléréséhez (általában 127.0.0.1)"
+
+msgid "To avoid traffic sniffing if connecting to a remote server, you can enable an SSL connection. Note that the target server must be configured to accept SSL connections."
+msgstr "A távoli kiszolgálóhoz való csatlakozáskor a forgalom szippantásának elkerülése érdekében engedélyezheti az SSL-kapcsolatot."
+
+msgid "Use SSL to connect to target"
+msgstr "Használjon SSL-t a célhoz való csatlakozáshoz"
+
+msgid "Port required to access service (this can be a different port to the port the service is hosted on)"
+msgstr "A szolgáltatás eléréséhez szükséges port (ez eltérhet attól a porttól, amelyen a szolgáltatás található)"
+
+msgid "Generate a QR Code for this domain"
+msgstr "Generáljon QR-kódot ehhez a domainhez"
+
+msgid "Generate QR Code"
+msgstr "QR-kód generálása"
+
+msgid "Add to Private addressbook"
+msgstr "Hozzáadás a privát címjegyzékhez"
+
+msgid "Add to local addressbook"
+msgstr "Hozzáadás a helyi címjegyzékhez"
+
+msgid "Register, unregister or change details for hostname"
+msgstr "A gazdagépnév regisztrálása, regisztrációjának törlése vagy módosítása"
+
+msgid "Registration Authentication"
+msgstr "Regisztráció hitelesítése"
+
+msgid "HTTPS configuration"
+msgstr "HTTPS konfiguráció"
+
+msgid "SSL Wizard"
+msgstr "SSL varázsló"
+
+msgid "Note: In order to enable QR code generation or registration authentication, configure the Website Hostname field (for websites) or the Name field (everything else) above with an .i2p suffixed hostname e.g. mynewserver.i2p"
+msgstr "Megjegyzés: A QR-kód generálásának vagy regisztrációs hitelesítésének engedélyezéséhez állítsa be a Webhely gazdagépneve mezőt (webhelyek esetén) vagy a Név mezőt (minden más) .i2p utótagú gazdagépnévvel, pl."
+
+msgid "Absolute path to Private Key File (will be created if it does not exist)"
+msgstr "A privát kulcsfájl abszolút elérési útja (a rendszer létrehozza, ha nem létezik)"
+
+msgid "Alternate private key file"
+msgstr "Alternatív privát kulcs fájl"
+
+msgid "Alternate local destination"
+msgstr "Alternatív helyi cél"
+
+msgid "Absolute path for new key (will be created)"
+msgstr "Az új kulcs abszolút elérési útja (létrejön)"
+
+msgid "Read Only: Alternate Local Destination"
+msgstr "Csak olvasható: Alternatív helyi cél"
+
+msgid "Specify filename or full path for new key"
+msgstr "Adja meg a fájlnevet vagy a teljes elérési utat az új kulcshoz"
+
+msgid "Configuration cannot be changed after destination is created"
+msgstr "A konfiguráció a cél létrehozása után nem módosítható"
+
+msgid "Configuration of signature type is only possible when the tunnel is first created. To change, you must create a new tunnel."
+msgstr "A Signature Type konfigurációja csak akkor lehetséges, ha az alagút először jön létre. A változáshoz új alagútot kell létrehoznia."
+
+msgid "Legacy option, with alternate key configured"
+msgstr "Hagyományos opció, konfigurált alternatív kulccsal"
+
+msgid "Legacy option (deprecated), provided for backward compatibility"
+msgstr "Legacy opció (elavult), a visszafelé kompatibilitás érdekében"
+
+msgid "Recommended for blinded and encrypted destinations"
+msgstr "Vakított és titkosított célállomásokhoz ajánlott"
+
+msgid "Inbound"
+msgstr "Bejövő"
+
+msgid "Outbound"
+msgstr "Kimenő"
+
+msgid "no anonymity"
+msgstr "nincs névtelenség"
+
+msgid "low anonymity"
+msgstr "alacsony névtelenség"
+
+msgid "medium anonymity"
+msgstr "közepes anonimitás"
+
+msgid "high anonymity"
+msgstr "magas anonimitás"
+
+msgid "Level of Randomization for Tunnel Depth"
+msgstr "Véletlenszerűségi szint az alagút mélységéhez"
+
+msgid "very high randomization, very low performance"
+msgstr "nagyon magas randomizáció, nagyon alacsony teljesítmény"
+
+msgid "+ 0-3 hop variance"
+msgstr "0-3 ugrás eltérés"
+
+msgid "definitely not recommended"
+msgstr "határozottan nem ajánlott"
+
+msgid "+/- 0-3 hop variance"
+msgstr "/- 0-3 ugrás eltérés"
+
+msgid "backup tunnels"
+msgstr "mentési alagút"
+
+msgid "Reduce tunnels to conserve resources"
+msgstr "Csökkentse az alagutak számát az erőforrások kímélése érdekében"
+
+msgid "Period of inactivity before tunnel number is reduced"
+msgstr "Inaktivitási időszak az alagút számának csökkentése előtt"
+
+msgid "minutes"
+msgstr "perc"
+
+msgid "Number of tunnels to keep open to maintain availability of service"
+msgstr "A szolgáltatás elérhetőségének fenntartása érdekében nyitva tartandó alagutak száma"
+
+msgid "Server Access Options"
+msgstr "Szerver hozzáférési beállítások"
+
+msgid "Prevent clients from accessing this service via an inproxy"
+msgstr "Megakadályozza, hogy az ügyfelek inproxyn keresztül hozzáférjenek ehhez a szolgáltatáshoz"
+
+msgid "Block Access via Inproxies"
+msgstr "Hozzáférés blokkolása inproxykon keresztül"
+
+msgid "Block Accesses containing Referers"
+msgstr "Hivatkozókat tartalmazó hozzáférések blokkolása"
+
+msgid "Use unique IP addresses for each connecting client (local non-SSL servers only)"
+msgstr "Egyedi IP-címet használjon minden egyes csatlakozó klienshez (csak helyi, nem SSL szerverek esetén)"
+
+msgid "Unique Local Address per Client"
+msgstr "Egyedi helyi cím kliensenként"
+
+msgid "Only enable if you are hosting this service on multiple routers"
+msgstr "Csak akkor engedélyezze, ha ezt a szolgáltatást több útválasztón tárolja"
+
+msgid "Optimize for Multihoming"
+msgstr "Optimalizálás többhominghoz"
+
+msgid "Deny User-Agents matching these strings (probably from inproxies)"
+msgstr "Deny User-Agents, amelyek megfelelnek ezeknek a karakterláncoknak (valószínűleg inproxokból)"
+
+msgid "Block these User-Agents"
+msgstr "Blokkolja ezeket a felhasználói ügynököket"
+
+msgid "comma separated, e.g. Mozilla,Opera (case-sensitive)"
+msgstr "vessző elválasztva, pl. Mozilla,Opera (eset-érzékeny)"
+
+msgid "Encrypt Leaseset"
+msgstr "Bérletkészlet titkosítása"
+
+msgid "Optional Lookup Password"
+msgstr "Opcionális keresési jelszó"
+
+msgid "Keyring Manager"
+msgstr "Kulcstartó menedzser"
+
+msgid "Allow all clients to connect to this service"
+msgstr "Engedélyezze az összes ügyfél számára, hogy csatlakozzon ehhez a szolgáltatáshoz"
+
+msgid "Send key to all users."
+msgstr "Kulcs küldése minden felhasználónak."
+
+msgid "Encrypted"
+msgstr "Titkosított"
+
+msgid "Prevents server discovery by floodfills"
+msgstr "Megakadályozza a kiszolgáló felderítését a floodfill által"
+
+msgid "Blinded"
+msgstr "Vak"
+
+msgid "Send password to all users."
+msgstr "Jelszó küldése minden felhasználónak."
+
+msgid "Blinded with lookup password"
+msgstr "Vak a keresési jelszóval"
+
+msgid "Send key and password to all users."
+msgstr "Kulcs és jelszó küldése minden felhasználónak."
+
+msgid "Encrypted with lookup password"
+msgstr "Keresési jelszóval titkosítva"
+
+msgid "Send individual key to each user."
+msgstr "Külön kulcs küldése minden felhasználónak."
+
+msgid "Encrypted with per-user key"
+msgstr "Felhasználónkénti kulccsal titkosítva"
+
+msgid "Encrypted with lookup password and per-user key"
+msgstr "Keresési jelszóval és felhasználónkénti kulccsal titkosítva"
+
+msgid "Enter key from each user."
+msgstr "Adja meg a kulcsot minden felhasználótól."
+
+msgid "Encryption Key"
+msgstr "Titkosító Kulcs"
+
+msgid "Generate New Key"
+msgstr "Új kulcs létrehozása"
+
+msgid "Encryption key required to access this service"
+msgstr "A szolgáltatás eléréséhez titkosítási kulcs szükséges"
+
+msgid "Generate new encryption key"
+msgstr "Új titkosítási kulcs létrehozása"
+
+msgid "Generate"
+msgstr "Létrehozás"
+
+msgid "Tunnel must be stopped first"
+msgstr "Először meg kell állítani az alagutat"
+
+msgid "Client Manager"
+msgstr "Ügyfélkezelő"
+
+msgid "Client Name"
+msgstr "Ügyfél neve"
+
+msgid "Client Key"
+msgstr "Ügyfélkulcs"
+
+msgid "Revoke"
+msgstr "Visszavonás"
+
+msgid "Client"
+msgstr "Kliens"
+
+msgid "Add"
+msgstr "Hozzáad"
+
+msgid "Restricted Access List"
+msgstr "Korlátozott Elérés Lista"
+
+msgid "Activate to enable editing"
+msgstr "Aktiválja a szerkesztés engedélyezéséhez"
+
+msgid "Tunnel Filter"
+msgstr "Alagútszűrő"
+
+msgid "Help with defining tunnel filters"
+msgstr "Segítség az alagútszűrők meghatározásához"
+
+msgid "Prevent listed clients from connecting to this service"
+msgstr "Megakadályozza, hogy a felsorolt ​​ügyfelek csatlakozzanak ehhez a szolgáltatáshoz"
+
+msgid "Blacklist"
+msgstr "Tiltott-Lista"
+
+msgid "Only allow listed clients to connect to this service"
+msgstr "Csak a listán szereplő ügyfelek csatlakozhatnak ehhez a szolgáltatáshoz"
+
+msgid "Whitelist"
+msgstr "Engedélyezett-Lista"
+
+msgid "Absolute path to file containing filter definition"
+msgstr "A szűrődefiníciót tartalmazó fájl abszolút elérési útja"
+
+msgid "Absolute path to filter definition"
+msgstr "A szűrődefiníció abszolút elérési útja"
+
+msgid "Specify client destinations, 1 per line"
+msgstr "Adja meg az ügyfél célállomásait, soronként 1-et"
+
+msgid "Server Throttling"
+msgstr "Szerver-szabályozás"
+
+msgid "Inbound connection limits"
+msgstr "Bejövő kapcsolat korlátai"
+
+msgid "Per Minute"
+msgstr "Per perc"
+
+msgid "Per Hour"
+msgstr "Per Óra"
+
+msgid "Per Day"
+msgstr "Per nap"
+
+msgid "Concurrent"
+msgstr "Egyidejű"
+
+msgid "Per Client"
+msgstr "Ügyfélenként"
+
+msgid "Maximum number of web page requests per minute for a unique client before access to the server is blocked"
+msgstr "Percenkénti weboldal kérések maximális száma egyedi kliens esetén, mielőtt a szerverhez való hozzáférést blokkolnák"
+
+msgid "(0 = unlimited)"
+msgstr "(0 = korlátlan)"
+
+msgid "Maximum number of web page requests per hour for a unique client before access to the server is blocked"
+msgstr "A weboldal kérések maximális száma óránként egy egyedi ügyfél számára, mielőtt a szerverhez való hozzáférést blokkolnák"
+
+msgid "Maximum number of web page requests per day for a unique client before access to the server is blocked"
+msgstr "A weboldal kérések maximális száma naponta egy egyedi ügyfél számára, mielőtt a szerverhez való hozzáférést blokkolnák"
+
+msgid "Total"
+msgstr "Összesn"
+
+msgid "Total number of web page requests per minute before access to the server is blocked"
+msgstr "A weboldal kérések száma percenként a szerverhez való hozzáférés blokkolása előtt"
+
+msgid "Total number of web page requests per hour before access to the server is blocked"
+msgstr "A weblapkérések teljes száma óránként, mielőtt a szerverhez való hozzáférést blokkolják"
+
+msgid "Total number of web page requests per day before access to the server is blocked"
+msgstr "A weblapkérések teljes száma naponta, mielőtt a szerverhez való hozzáférést blokkolnák"
+
+msgid "Maximum number of simultaneous client connections"
+msgstr "Az egyidejű ügyfélkapcsolatok maximális száma"
+
+msgid "POST limits"
+msgstr "POST korlátozások"
+
+msgid "Per Period"
+msgstr "Period"
+
+msgid "Ban Duration"
+msgstr "Kitiltás időtartama"
+
+msgid "POST limit period"
+msgstr "POST határidő"
+
+msgid "Maximum number of post requests permitted for a unique client for the configured timespan"
+msgstr "Egyedi kliens számára engedélyezett maximális számú közzétételi kérés a beállított időtartamra"
+
+msgid "If a client exceeds the maximum number of post requests per allocated period, enforce a ban for this number of minutes"
+msgstr "Ha egy ügyfél túllépi a feladási kérelmek maximális számát a kijelölt időszakonként, kényszerítsen ki tilalmat erre a percszámra"
+
+msgid "Timespan for the maximum number of post requests to be reached before a ban is triggered"
+msgstr "A közzétételi kérelmek maximális számának elérési ideje a kitiltás kiváltása előtt"
+
+msgid "Total number of post requests permitted for the configured timespan"
+msgstr "A konfigurált időtartamra engedélyezett közzétételi kérelmek teljes száma"
+
+msgid "If the maximum number of post requests per allocated period is exceeded, enforce a global access ban for this number of minutes"
+msgstr "Ha túllépi a kiosztott időszakonkénti közzétételi kérelmek maximális számát, érvényesítse a globális hozzáférési tilalmat erre a percszámra"
+
+msgid "Custom HTTP Headers"
+msgstr "Egyéni HTTP fejlécek"
+
+msgid "Note: These custom headers will only be enabled for served files that don't have the relevant header already set."
+msgstr "Megjegyzés: Ezeket az egyéni fejléceket csak a kiszolgált fájlokhoz engedélyezik, amelyeknek nincs beállítva a releváns fejléc."
+
+msgid "Set the Allow header to 'GET, POST, HEAD' for html, xml, json and text files"
+msgstr "Állítsa be az engedélyezési fejlécet a HTML, XML, JSON és szöveges fájlok „GET, POST, HEAD” -ra"
+
+msgid "Allow"
+msgstr "Megenged"
+
+msgid "Enable Cache-Control headers (no-cache for html, xml, json and text, immutable for everything else)"
+msgstr "Engedélyezze a \"Cache-Control\" fejléceket (HTML, XML, JSON és szöveg nem gyorsítótár, minden más számára változhatatlan)"
+
+msgid "Cache-Control"
+msgstr "Cache-Control"
+
+msgid "Set the Referrer-Policy header to 'same-origin' for html, xml, json and text files"
+msgstr "Állítsa be a Referrer-policy fejlécet az azonos származású 'HTML, XML, JSON és szöveges fájlokhoz"
+
+msgid "Referrer-Policy"
+msgstr "Referrer-Policy"
+
+msgid "Set the X-Content-Type-Options header to 'nosniff'"
+msgstr "Állítsa az X-Content-Type-Options fejlécet „Nosniff” -ra"
+
+msgid "X-Content-Type-Options"
+msgstr "X-Content-Type-Options"
+
+#, java-format
+msgid "Initializing Tunnel Manager{0}"
+msgstr "Alagútkezelő inicializálása{0}"
+
+msgid "Tunnels not initialized yet; please retry in a few moments."
+msgstr "Az alagutak még nem inicializáltak; Kérjük, próbálkozzon újra néhány pillanat alatt."
+
+msgid "Status Messages"
+msgstr "Állapot Üzenetek"
+
+msgid "Clear"
+msgstr "Töröl"
+
+msgid "Refresh"
+msgstr "Frissítés"
+
+msgid "Global Tunnel Control"
+msgstr "Globális alagútvezérlés"
+
+msgid "Tunnel Wizard"
+msgstr "Alagút Varázsló"
+
+msgid "Stop All"
+msgstr "Mindet Leállít"
+
+msgid "Start All"
+msgstr "Mindet Indít"
+
+msgid "Restart all running tunnels"
+msgstr "Minden futó alagút újraindítása"
+
+msgid "Restart All"
+msgstr "Összes újraindítása"
+
+msgid "Restart all running server tunnels"
+msgstr "Minden futó szerver alagút újraindítása"
+
+msgid "Restart All Servers"
+msgstr "Összes szerver újraindítása"
+
+msgid "Restart all running client tunnels"
+msgstr "Minden futó kliens alagút újraindítása"
+
+msgid "Restart All Clients"
+msgstr "Összes kliens újraindítása"
+
+msgid "I2P Server Tunnels"
+msgstr "I2P Szerver Alagutak"
+
+msgid "Helper"
+msgstr "Segéd"
+
+msgid "Type"
+msgstr "Típus"
+
+msgid "Points at"
+msgstr "Rámutat"
+
+msgid "Preview"
+msgstr "Előnézet"
+
+msgid "Status"
+msgstr "Állapot"
+
+msgid "Control"
+msgstr "Vezérlés"
+
+msgid "Edit Server Tunnel Settings for"
+msgstr "Szerver Alagút Beállítások Szerkesztése"
+
+msgid "Test IRC server, bypassing I2P"
+msgstr "IRC szerver tesztelése, I2P megkerülése"
+
+msgid "Test HTTPS server, bypassing I2P"
+msgstr "HTTPS-kiszolgáló tesztelése az I2P megkerülésével"
+
+msgid "Test HTTP server, bypassing I2P"
+msgstr "HTTP szerver tesztelése az I2P megkerülésével"
+
+msgid "Test HTTP server through I2P"
+msgstr "A HTTP-kiszolgáló tesztelése I2P-n keresztül"
+
+msgid "Base32 Address"
+msgstr "Base32 Cím"
+
+msgid "Offline"
+msgstr "Offline"
+
+msgid "No Preview"
+msgstr "Nincs Előnézet"
+
+msgid "Starting..."
+msgstr "Indítás..."
+
+msgid "Stop this Tunnel"
+msgstr "Alagút Leállítása"
+
+msgid "Running"
+msgstr "Fut"
+
+msgid "Hops"
+msgstr "Ugrások"
+
+msgid "in"
+msgstr "be"
+
+msgid "out"
+msgstr "ki"
+
+msgid "Restart this Tunnel"
+msgstr "Alagút újraindítása"
+
+msgid "Restart"
+msgstr "Újraindítás"
+
+msgid "Stopped"
+msgstr "Leállítva"
+
+msgid "Destination"
+msgstr "Célállomás"
+
+msgid "Signature"
+msgstr "Aláírás"
+
+msgid "Alternate"
+msgstr "Alternatív"
+
+msgid "Alt Destination"
+msgstr "Alt Célállomás"
+
+msgid "Encryption"
+msgstr "Titkosítás"
+
+msgid "Supported encryption"
+msgstr "Támogatott titkosítás"
+
+msgid "New server tunnel"
+msgstr "Új szerveralagút"
+
+msgid "Standard"
+msgstr "Normál"
+
+msgid "Create"
+msgstr "Létrehoz"
+
+msgid "I2P Client Tunnels"
+msgstr "I2P Kliens Alagutak"
+
+msgid "Interface"
+msgstr "Felület"
+
+msgid "Edit Tunnel Settings for"
+msgstr "Alagútbeállítások szerkesztése ehhez"
+
+msgid "Standby"
+msgstr "Készenlét"
+
+msgid "Outproxy"
+msgstr "Kimenő proxy"
+
+msgid "internal plugin"
+msgstr "belső bővítmény"
+
+msgid "none"
+msgstr "semmi"
+
+msgid "New client tunnel"
+msgstr "Új kliens alagút"
+
+msgid "Registration Helper"
+msgstr "Regisztrációs Segítő"
+
+msgid "This service uses encrypted leasesets. Registration is not recommended. Registration authentication is disabled."
+msgstr "Ez a szolgáltatás titkosított bérleteket használ. A regisztráció nem ajánlott. A regisztrációs hitelesítés le van tiltva."
+
+msgid "Please be sure to select, copy, and paste the entire contents of the appropriate authentication data into the form of your favorite registration site"
+msgstr "Kérjük, feltétlenül válassza ki, másolja ki és illessze be a megfelelő hitelesítési adatok teljes tartalmát kedvenc regisztrációs webhelyének formájába"
+
+msgid "Tunnel name"
+msgstr "Az alagút neve"
+
+msgid "Website name"
+msgstr "Weboldal neve"
+
+msgid "Local Destination"
+msgstr "Helyi úti cél"
+
+msgid "Local destination is not available. Start the tunnel."
+msgstr "A helyi célállomás nem elérhető."
+
+msgid "To enable registration verification, edit tunnel and set name (or website name) to a valid host name ending in '.i2p'"
+msgstr "A regisztráció ellenőrzésének engedélyezéséhez szerkessze az alagutat, és állítsa be a nevet (vagy a webhely nevét) érvényes gazdagépnévre, amely '.i2p' végződésű."
+
+msgid "To enable registration verification, edit tunnel and set name to a valid host name ending in '.i2p'"
+msgstr "A regisztráció ellenőrzésének engedélyezéséhez szerkessze az alagutat, és állítsa be a nevet egy érvényes, „.i2p” végződésű gazdagépnévre"
+
+msgid "Destination signing key is not available. Start the tunnel."
+msgstr "A cél aláíró kulcs nem érhető el."
+
+msgid "Destination signing key is offline. Use CLI tools on the offline machine."
+msgstr "A cél aláíró kulcs offline állapotban van."
+
+#, java-format
+msgid "Authentication for adding host {0}"
+msgstr "Hitelesítés a(z) {0} gazdagép hozzáadásához"
+
+msgid "Copy and paste this to the registration site"
+msgstr "Másolja ki és illessze be a regisztrációs oldalra"
+
+msgid "Advanced authentication strings"
+msgstr "Speciális hitelesítési karakterláncok"
+
+#, java-format
+msgid "Authentication for removing host {0}"
+msgstr "Hitelesítés a(z) {0} gazdagép eltávolításához"
+
+msgid "Authentication for changing name"
+msgstr "Hitelesítés a név megváltoztatásához"
+
+#, java-format
+msgid "This will change the name from {0} to {1}, using the same destination"
+msgstr "Ez megváltoztatja a nevet {0}-ról {1}-re, ugyanazt a célt használva"
+
+msgid "This tunnel must be configured with the new host name."
+msgstr "Ezt az alagutat az új gazdagépnévvel kell konfigurálni."
+
+msgid "Enter old hostname below."
+msgstr "Írja be alább a régi gazdagépnevet."
+
+msgid "Authentication for adding alias"
+msgstr "Hitelesítés az álnév hozzáadásához"
+
+#, java-format
+msgid "This will add an alias {0} for {1}, using the same destination"
+msgstr "Ez hozzáad egy {0} aliast a következőhöz: {1}, ugyanazzal a céllal"
+
+msgid "Authentication for changing destination"
+msgstr "Hitelesítés a cél megváltoztatásához"
+
+#, java-format
+msgid "This will change the destination for {0}"
+msgstr "Ez megváltoztatja a(z) {0} célállomását"
+
+msgid "This tunnel must be configured with the new destination."
+msgstr "Ezt az alagutat az új céllal kell konfigurálni."
+
+msgid "Enter old destination below."
+msgstr "Írja be alább a régi úti célt."
+
+msgid "Authentication for adding alternate destination"
+msgstr "Hitelesítés az alternatív úti cél hozzáadásához"
+
+#, java-format
+msgid "This will add an alternate destination for {0}"
+msgstr "Ez hozzáad egy másik úti célt a következőhöz: {0}"
+
+msgid "Authentication for adding subdomain"
+msgstr "Hitelesítés az aldomain hozzáadásához"
+
+#, java-format
+msgid "This will add a subdomain {0} of {1}, with a different destination"
+msgstr "Ez hozzáad egy {0} aldomaint a(z) {1} domainhez, más céllal"
+
+msgid "This tunnel must be configured with the new subdomain and destination."
+msgstr "Ezt az alagutat az új aldomainnel és céllal kell konfigurálni."
+
+msgid "Enter higher-level domain and destination below."
+msgstr "Adja meg a magasabb szintű tartományt és a célt alább."
+
+msgid "Return to Tunnel Configuration"
+msgstr "Visszatérés az alagút konfigurációjához"
+
+msgid "Specify old name and destination"
+msgstr "Adja meg a régi nevet és célállomást"
+
+msgid "This is only required for advanced authentication."
+msgstr "Ez csak a speciális hitelesítéshez szükséges."
+
+msgid "See above for required items."
+msgstr "A szükséges tételeket lásd fent."
+
+msgid "Old / parent hostname "
+msgstr "Régi / szülő gazdagépnév "
+
+msgid "Private key file for old destination / sub-domain parent"
+msgstr "Privát kulcsfájl a régi cél/aldomain szülőhöz"
+
+msgid "Generate Authentication"
+msgstr "Hitelesítés generálása"
+
+msgid "SSL Helper"
+msgstr "SSL segítő"
+
+msgid "Invalid form submission, probably because you used the 'back' or 'reload' button on your browser. Please resubmit."
+msgstr "Űrlap küldése sikertelen, valószínűleg a 'vissza' vagy 'újratöltés' gombokat használtad a böngésződben. Kérlek, hogy küldd újra."
+
+msgid "If the problem persists, verify that you have cookies enabled in your browser."
+msgstr "Ha a probléma fennáll, ellenőrizd, hogy a sütik engedélyezve vannak-e a böngésződben."
+
+msgid "Experts only!"
+msgstr "Csak szakértők!"
+
+msgid "Base32"
+msgstr "Base32"
+
+msgid "Alt Base32"
+msgstr "Alt Base32"
+
+msgid "Incoming I2P Port Routing"
+msgstr "Bejövő I2P port-útválasztás"
+
+msgid "Virtual Host"
+msgstr "Virtuális házigazda"
+
+msgid "Via SSL?"
+msgstr "SSL-en keresztül?"
+
+msgid "Test HTTPS server through I2P"
+msgstr "Tesztelje a HTTPS-kiszolgálót I2P-n keresztül"
+
+msgid "Server"
+msgstr "Szerver"
+
+msgid "SSL Activation"
+msgstr "SSL aktiválás"
+
+msgid "I2P webserver (eepsite)"
+msgstr "I2P webszerver (eep oldal)"
+
+msgid "Disable SSL"
+msgstr "Az SSL letiltása"
+
+msgid "Enable SSL"
+msgstr "SSL engedélyezése"
+
+msgid "New Certificate Password"
+msgstr "Új tanúsítványjelszó"
+
+msgid "Password (required to encrypt the certificate)"
+msgstr "Jelszó (a tanúsítvány titkosításához szükséges)"
+
+msgid "Generate new SSL certificate"
+msgstr "Új SSL-tanúsítvány létrehozása"
+
+msgid "Generate SSL certificate and enable"
+msgstr "SSL-tanúsítvány létrehozása és engedélyezése"
+
+#, java-format
+msgid "Cannot configure, no Jetty server found in {0}client configurations{1} that matches this tunnel"
+msgstr "Nem konfigurálható, az alagútnak megfelelő {0}ügyfélkonfigurációkban{1} nem található Jetty-kiszolgáló"
+
+msgid "Support for non-Jetty servers will be added in a future release"
+msgstr "A nem Jetty szerverek támogatása egy jövőbeli kiadásban fog megjelenni"
+
+msgid "Return to Tunnel Manager Index"
+msgstr "Vissza a Tunnel Manager indexhez"
+
+msgid "Return to Tunnel Editor"
+msgstr "Visszatérés az Tunnel Editorhoz"
+
+msgid "I2P Tunnel Manager - Tunnel Creation Wizard"
+msgstr "I2P Alagút Kezelő - Alagút Létrehozása Varázsló"
+
+msgid "Server or client tunnel?"
+msgstr "Szerver vagy kliens alagút?"
+
+msgid "Tunnel type"
+msgstr "Alagút típus"
+
+msgid "Tunnel name and description"
+msgstr "Alagút neve és leírása"
+
+msgid "Tunnel destination"
+msgstr "Alagút célállomása"
+
+msgid "Binding address and port"
+msgstr "Cím és port kötése"
+
+msgid "Tunnel auto-start"
+msgstr "Alagút automatikus indítása"
+
+msgid "Wizard completed"
+msgstr "Varázsló kész"
+
+msgid "This wizard will take you through the various options available for creating tunnels in I2P."
+msgstr "Ez a varázsló végigvezet azokon a különböző lehetőségeken, melyekkel alagutak hozhatók létre az I2P-n belül."
+
+msgid "The first thing to decide is whether you want to create a server or a client tunnel."
+msgstr "Az első eldöntendő kérdés, hogy szerver vagy kliens alagút készüljön."
+
+msgid "If you need to connect to a remote service, such as an IRC server inside I2P or a code repository, then you will require a CLIENT tunnel."
+msgstr "Ha egy távoli szolgáltatáshoz való kapcsolódásra van szükség, úgy mint IRC szerver az I2P-n belül vagy egy programkód szoftvertár, akkor az KLIENS alagúttal működik."
+
+msgid "On the other hand, if you wish to host a service for others to connect to you'll need to create a SERVER tunnel."
+msgstr "Másrészről, annak biztosítására, hogy egy általad futtatott szolgáltatáshoz mások csatlakozhassanak, SZERVER alagútra van szükség."
+
+msgid "Server Tunnel"
+msgstr "Szerver Alagút"
+
+msgid "Client Tunnel"
+msgstr "Kliens Alagút"
+
+msgid "There are several types of tunnels to choose from:"
+msgstr "Létezik néhány különböző fajtájú alagút, melyek közül lehet választani:"
+
+msgid "Basic tunnel for connecting to a single service inside I2P."
+msgstr "Alap alagút egyszerű szolgáltatáshoz való kapcsolódáshoz az I2P-n belül."
+
+msgid "Try this if none of the tunnel types below fit your requirements, or you don't know what type of tunnel you need."
+msgstr "Próbáld ki ezt, ha az alább felsorol alagút fajták közül egy sem felel meg elvárásaidnak vagy ha nem tudod, milyen fajtájú alagútra van szükséged."
+
+msgid "Tunnel that acts as an HTTP proxy for reaching eepsites inside I2P."
+msgstr "Alagút, amely HTTP-proxyként működik az I2P-n belüli eepsite-ok eléréséhez.Alagút, amely HTTP proxyként viselkedik, eep oldalak I2P-n belüli eléréséhez."
+
+msgid "Set your browser to use this tunnel as an http proxy, or set your \"http_proxy\" environment variable for command-line applications in GNU/Linux."
+msgstr "Állítsa be a böngésződet, hogy ezt az alagutat használja HTTP proxyként, vagy állítsd be a \"http_proxy\" környezeti változót a parancssori alkalmazásokhoz GNU/Linux alatt."
+
+msgid "Websites outside I2P can also be reached if an HTTP proxy within I2P is known."
+msgstr "I2P-n kívüli weboldalak is elérhetők, ha I2P-n belüli HTTP proxy ismert."
+
+msgid "Customised client tunnel specific for IRC connections."
+msgstr "Testre szabott kliens alagút, kimondottan IRC csatlakozásokhoz."
+
+msgid "With this tunnel type, your IRC client will be able to connect to an IRC network inside I2P."
+msgstr "Ezzel a típusú alagúttal az IRC kliensed I2P-n belüli IRC hálózathoz képes csatlakozni."
+
+msgid "Each IRC network in I2P that you wish to connect to will require its own tunnel. (See Also, SOCKS IRC)"
+msgstr "Külön alagútra van szüksége minden IRC hálózatnak az I2P-n belül, melyhez csatlakozni akarsz (lásd még SOCKS IRC)"
+
+msgid "A tunnel that implements the SOCKS protocol."
+msgstr "Alagút, mely SOCKS protokolt használ."
+
+msgid "This enables both TCP and UDP connections to be made through a SOCKS outproxy within I2P."
+msgstr "Ez lehetővé teszi mind TCP, mind UDP csatlakozások létrehozását az I2P-n belül SOCKS kimenő proxyn keresztül."
+
+msgid "A client tunnel implementing the SOCKS protocol, which is customised for connecting to IRC networks."
+msgstr "Kliens alagút, mely SOCKS protokolt használ, IRC hálózatokhoz való csatlakozásra alakítva."
+
+msgid "With this tunnel type, IRC networks in I2P can be reached by typing the I2P address into your IRC client, and configuring the IRC client to use this SOCKS tunnel."
+msgstr "Ezzel a típusú alagút lehetővé teszi I2P-n belüli IRC hálózatokhoz való csatlkaozást. Gépeld be az I2P címet az IRC kliensedbe és állítsd be IRC kliensedet, hogy ezt a SOCKS alagutat használja."
+
+msgid "This means that only one I2P tunnel is required rather than a separate tunnel per IRC network."
+msgstr "Ez azt jelenti, hogy mindössze egy I2P alagútra van szükség, az IRC hálózatonkénti külön alagutak helyett."
+
+msgid "IRC networks outside I2P can also be reached if a SOCKS outproxy within I2P is known, though it depends on whether or not the outproxy has been blocked by the IRC network."
+msgstr "I2P-n kívüli IRC hálózatok szintén elérhetők, amennyiben a SOCKS kimenő proxy ismert az I2P-n belül, habár ez annak a függvénye, hogy az IRC hálózat blokkolja a kimenő proxyt vagy sem."
+
+msgid "A basic server tunnel for hosting a generic service inside I2P."
+msgstr "Alap szerver alagút általános szolgáltatás biztosítására az I2P-n belül."
+
+msgid "A server tunnel that is customised for HTTP connections."
+msgstr "Szerver alagút, mely HTTP kapcsolatokra lett kialakítva."
+
+msgid "Use this tunnel type if you want to host an eepsite."
+msgstr "Ezt a típusú alagutat használd, ha eep oldalt szeretnél hosztolni."
+
+msgid "A customised server tunnel for hosting IRC networks inside I2P."
+msgstr "Egyedi szerver alagút IRC hálózatok hosztolására az I2P-n belül."
+
+msgid "Usually, a separate tunnel needs to be created for each IRC server that is to be accessible inside I2P."
+msgstr "Rendszerint külön alagút létrehozása szükséges minden IRC szerver számára, hogy az I2P-n belül elérhetővé váljon."
+
+msgid "Select tunnel type"
+msgstr "Válassza ki az alagút típusát"
+
+msgid "Choose a name and description for your tunnel."
+msgstr "Válassz nevet és leírást az alagútnak."
+
+msgid "These can be anything you want - they are just for ease of identifying the tunnel in the routerconsole."
+msgstr "Lehet bármi, amit szeretnél - ezek csak arra szolgálnak, hogy megkönnyítsék a beazonosítást a router konzolon."
+
+msgid "If you know of any outproxies for this type of tunnel (either HTTP or SOCKS), fill them in below."
+msgstr "Ha ismersz bármilyen kimenő proxyt ehhez az alagútfajtához (vagy HTTP, vagy SOCKS), töltsd ki az alábbi részt."
+
+msgid "Separate multiple proxies with commas."
+msgstr "Több proxy esetén a bejegyzések vesszővel elválasztandóak."
+
+msgid "List of I2P outproxy destinations, separated with commas (e.g. proxy1.i2p,proxy2.i2p)"
+msgstr "Az I2P outproxy célállomások listája, vesszővel elválasztva (pl. proxy1.i2p, proxy2.i2p)"
+
+msgid "Type in the I2P destination of the service that this client tunnel should connect to."
+msgstr "Írd be a szolgáltatás I2P célállomását, melyhez e kliens alagútnak csatlakoznia kell."
+
+msgid "This could be the full Base64 destination key, or an I2P URL from your address book."
+msgstr "Ez lehet a teljes Base64 célkulcs, vagy egy I2P URL a címjegyzékből."
+
+msgid "Enter a b64 or .i2p address here"
+msgstr "Adjon meg itt egy b64 vagy .i2p címet"
+
+msgid "This is the IP that your service is running on, this is usually on the same machine so 127.0.0.1 is autofilled."
+msgstr "Ez az IP, melyen a szolgáltatásod fut, ez rendszerint ugyanazon a gépen van, így a 127.0.0.1 automatikusan beírásra kerül."
+
+msgid "This is the port that the service is accepting connections on."
+msgstr "Ez a port, melyen a szolgáltatás csatlakozásokat fogad."
+
+msgid "This is the port that the client tunnel will be accessed from locally."
+msgstr "Ez az a port, mely a kliens alagút helyi elérését biztosítja."
+
+msgid "How do you want this tunnel to be accessed? By just this machine, your entire subnet, or external internet?"
+msgstr "Milyen elérést szeretnél adni ennek az alagútnak? Csak ez a gép, a teljes alhálózatod vagy külső internet?"
+
+msgid "You will most likely want to just allow 127.0.0.1"
+msgstr "Legvalószínűbb, hogy csak aa 127.0.0.1-et szeretnéd engedélyezni"
+
+msgid "The I2P router can automatically start this tunnel for you when the router is started."
+msgstr "Az I2P útválasztó automatikusan elindíthatja ezt az alagutat az útválasztó indításakor.Az I2P router képes ezt az alagutat automatikusan elindítani a router indulásakor."
+
+msgid "This can be useful for frequently-used tunnels (especially server tunnels), but for tunnels that are only used occasionally it would mean that the I2P router is creating and maintaining unnecessary tunnels."
+msgstr "Ez hasznos lehet gyakorta használt alagutak esetén (ez különösen szerver alagutakra vonatkozik), de azon alagutak számára, melyek csak alkalomszerűen használsz ez azt jelentené, hogy az I2P router felesleges alagutakat hoz létre és tart fenn."
+
+msgid "The wizard has now collected enough information to create your tunnel."
+msgstr "A varázsló elegendő információt gyűjtött össze az alagút létrehozásához.A varázsló elég információt gyűjtött össze, hogy létrehozza az alagutat."
+
+msgid "Upon clicking the Save button below, the wizard will set up the tunnel, and take you back to the main I2PTunnel page."
+msgstr "A lenti Mentés gombra kattintva a varázsló beállítja az alagutat, és visszairányít az I2PAlagút főoldalára."
+
+msgid "Because you chose to automatically start the tunnel when the router starts, you don't have to do anything further."
+msgstr "Mivel azt választottad, hogy az alagút automatikusan induljon a router indításakor, nincs szükség további beavatkozásra."
+
+msgid "The router will start the tunnel once it has been set up."
+msgstr "A router elindítja az alagutat, amint az beállításra kerül."
+
+msgid "Because you chose not to automatically start the tunnel, you will have to manually start it."
+msgstr "Mivel azt választottad, hogy az alagút ne induljon el automatikusan a router indításakor, ezért a jövőben kézi indításra lesz szükség."
+
+msgid "You can do this by clicking the Start button on the main page which corresponds to the new tunnel."
+msgstr "Ez elérhető a fő oldalon az új alagúthoz tartozó Indítás gombra való kattintással."
+
+msgid "Below is a summary of the options you chose:"
+msgstr "Lentebb található egy összegzés a választható opciókról:"
+
+msgid "Tunnel description"
+msgstr "Az alagút leírása"
+
+msgid "Binding address"
+msgstr "Kötési cím"
+
+msgid "Tunnel port"
+msgstr "Alagút port"
+
+msgid "Alongside these basic settings, there are a number of advanced options for tunnel configuration."
+msgstr "Ez alap beállítások mellet számos haladó opció létezik az alagutak beállításához."
+
+msgid "The wizard will set reasonably sensible default values for these, but you can view and/or edit these by clicking on the tunnel's name in the main I2PTunnel page."
+msgstr "A varázsló elég elfogadható alap értékeket állít be ezeknek, azonban ezek az értékek megtekintheteők és/vagy szerkeszthetők, ha az alagút nevére kattintasz az I2PAlagút fő oldalán."
+
+msgid "Cancel the wizard and return to Tunnel Manager home page"
+msgstr "Törölje a varázslót, és térjen vissza az Tunnel Manager kezdőlapjára"
+
+msgid "Return to previous page"
+msgstr "Visszatérés az előző oldalra"
+
+msgid "Previous"
+msgstr "Előző"
+
+msgid "Save tunnel configuration"
+msgstr "Alagútkonfiguráció mentése"
+
+msgid "Save Tunnel"
+msgstr "Alagút Mentése"
+
+msgid "Finish Wizard and review tunnel settings"
+msgstr "Fejezd be a varázslót, és tekintsd át az alagút beállításait"
+
+msgid "Finish"
+msgstr "Befejezés"
+
+msgid "Advance to next page"
+msgstr "Tovább a következő oldalra"
+
+msgid "Next"
+msgstr "Következő"

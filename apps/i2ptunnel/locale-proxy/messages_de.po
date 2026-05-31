@@ -1,0 +1,428 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Website Unknown"
+msgstr "Webseite ist unbekannt"
+
+msgid "Router Console"
+msgstr "Routerkonsole"
+
+msgid "I2P Router Console"
+msgstr "I2P Routerkonsole"
+
+msgid "Addressbook"
+msgstr "Adressbuch"
+
+msgid "Configuration"
+msgstr "Einstellungen"
+
+msgid "Help"
+msgstr "Hilfe"
+
+msgid "Website Not Found in Addressbook"
+msgstr "Webseite wurde nicht im Adressbuch gefunden"
+
+msgid "The website was not found in your router's addressbook."
+msgstr "Die Webseite wurde nicht im Adressbuch ihres I2P Routers gefunden."
+
+msgid "Check the link or find a Base 32 or Base 64 address."
+msgstr "Kontrollieren Sie den Link oder finden Sie eine Base 32, bzw. eine Base 64 Adresse."
+
+#, java-format
+msgid "If you have the Base 64 address, {0}add it to your addressbook{1}."
+msgstr "Haben Sie eine Base 64 Adresse, {0}fügen Sie diese ihrem Adressbuch hinzu{1}."
+
+msgid "Otherwise, find a Base 32 or address helper link, or use a jump service link below."
+msgstr "Finden Sie alternativ eine Base 32 Adresse, einen Adress-Hilfs-Link oder nutzen Sie einen der Jump-Service Links unten."
+
+#, java-format
+msgid "Seeing this page often? See {0}the FAQ{1} for help in {2}adding some subscriptions{3} to your addressbook."
+msgstr "Ist diese Seite oft offline? Schauen Sie in der {0}FAQ{1} nach Hilfe zum {2}Eintragen einger Subscriptionen{3} zu Ihrem Adressbuch."
+
+msgid "Could not find the following destination:"
+msgstr "Das folgende Ziel konnte nicht gefunden werden:"
+
+msgid "Warning: Non-HTTP Protocol"
+msgstr "Warnung: Kein HTTP Protokoll"
+
+msgid "The request uses a bad protocol."
+msgstr "Die Anfrage nutzt ein ungültiges Protokoll."
+
+msgid "The I2P HTTP Proxy supports HTTP and HTTPS requests only."
+msgstr "Der I2P HTTP-Proxy unterstützt nur HTTP- und HTTPS-Anfragen."
+
+msgid "Other protocols such as FTP are not allowed."
+msgstr "Andere Protokolle wie FTP sind nicht erlaubt."
+
+msgid "Error: Request Denied"
+msgstr "Fehler: Anfrage abgelehnt"
+
+msgid "Error: Cannot Access Router Console via I2P Proxy"
+msgstr "Fehler: Auf die Router-Konsole kann nicht über den I2P-Proxy zugegriffen werden"
+
+msgid "Your browser is misconfigured."
+msgstr "Dein Browser unterstützt keine iFrames."
+
+msgid "Do not use the proxy to access the router console, localhost, or local LAN destinations."
+msgstr "Benutzen Sie den Proxy nicht um auf Ihre Router Konsole, Localhost Adressen oder lokale LAN Ziele zuzugreifen."
+
+msgid "You need to prevent 127.0.0.1 (or the address you're accessing the I2P console on) from being routed via I2P's http proxy, usually by excluding the address in your browser's proxy configuration section."
+msgstr "Sie müssen verhindern, dass 127.0.0.1 (oder die Adresse, über die Sie auf die I2P-Konsole zugreifen) über den HTTP-Proxy von I2P weitergeleitet wird, indem Sie normalerweise die Adresse im Proxy-Konfigurationsabschnitt Ihres Browsers ausschließen."
+
+msgid "Warning: Destination Key Conflict"
+msgstr "Warnung: Destinations Schlüssel Konflikt"
+
+msgid "The address helper link you followed specifies a different destination key than the entry in your address book."
+msgstr "Der von Ihnen gefolgte Adresshelfer Link definiert einen anderen Zielschlüssel als der Eintrag in Ihrem Adressbuch."
+
+msgid "Someone could be trying to impersonate another website, or people have given two websites identical names."
+msgstr "Jemand kann versuchen als fremde Webseite aufzuscheinen, oder 2 Personen haben ihrer Webseite den selben Namen gegeben."
+
+msgid "Resolve the conflict by deciding which key you trust, and then either ignore the address helper link, or delete the host entry from your address book and click the address helper link again."
+msgstr "Lösen Sie den Konflikt mit der Auswahl des von Ihnen vertrautem Schlüssels und dem Ignorieren des Helferlinks oder dem Löschen des Eintrags aus Ihrem Adressbuch und anschliessendem nochmaligem Klicken des Helferlinks."
+
+msgid "Connection Reset"
+msgstr "Verbindung zurückgesetzt"
+
+msgid "The connection to the website was reset while the page was loading."
+msgstr "Die Verbindung zu der Webseite wurde zurückgesetzt, während die Seite geladen wurde."
+
+msgid "The website could be temporarily unavailable, too busy, or it has blocked your access."
+msgstr "Die Webseite könnte vorübergehend nicht erreichbar oder zu sehr ausgelastet sein oder hat Ihren Zugang blockiert."
+
+#, java-format
+msgid "You may want to {0}retry{1}."
+msgstr "Sie sollten es noch einmal {0}probieren{1}."
+
+#, java-format
+msgid "If you leave this page open, it will automatically retry connecting to the website every {0} seconds after a failed connection attempt."
+msgstr "Wenn Sie diese Seite geöffnet lassen, wird nach einem fehlgeschlagenen Verbindungsversuch automatisch alle {0} Sekunden erneut versucht, eine Verbindung zur Website herzustellen."
+
+msgid "Website Unreachable"
+msgstr "Webseite unerreichbar"
+
+msgid "The website was not reachable, because it uses encryption options that are not supported by your I2P or Java version."
+msgstr "Die Website war nicht erreichbar, da sie Verschlüsselungsoptionen verwendet, die von Ihrer I2P- oder Java-Version nicht unterstützt werden."
+
+msgid "Could not connect to the following destination:"
+msgstr "Es konnte keine Verbindung zu dem folgenden Ziel aufgebaut werden:"
+
+msgid "The website was not reachable, because its lease set was not found."
+msgstr "Die Webseite ist nicht erreichbar da das Leaseset nicht gefunden wurde."
+
+msgid "The website is probably down, but there could also be network congestion."
+msgstr "Die Webseite ist wahrscheinlich nicht aktiv, es kann aber auch Überlastung im I2P Netzwerk sein."
+
+msgid "The connection to the proxy was reset."
+msgstr "Die Verbindung zu dem Proxy wurde zurückgesetzt."
+
+msgid "The proxy could be temporarily unavailable, too busy, or it has blocked your access."
+msgstr "Der Proxy könnte vorübergehend nicht erreichbar oder zu sehr ausgelastet sein oder hat Ihren Zugang blockiert."
+
+#, java-format
+msgid "You may want to {0}retry{1} as this will randomly reselect an outproxy from the pool you have defined {2}here{3} (if you have more than one configured)."
+msgstr "Sie können es {0}noch einmal versuchen{1}, dieses verwendet einen zufällig aus dem {2}hier definierten{3} Pool Ausgangsproxy (falls Sie mehr als einen eingerichtet haben)."
+
+#, java-format
+msgid "If you continue to have trouble you may want to edit your outproxy list {0}here{1}."
+msgstr "Falls Sie weiterhin Probleme haben, können Sie {0}hier{1} Ihre Liste der Ausgangsproxies ändern."
+
+msgid "Outproxy Unreachable"
+msgstr "Ausgangsproxy ist unerreichbar"
+
+msgid "The HTTP outproxy was not reachable, because it uses encryption options that are not supported by your I2P or Java version."
+msgstr "Der HTTP-Ausgangsproxy war nicht erreichbar, da die verwendeten Verschlüsselungseinstellungen nicht von deiner I2P- oder Java-Version unterstützt werden."
+
+msgid "The website was not reachable."
+msgstr "Die Webseite ist nicht erreichbar."
+
+msgid "The website is offline, there is network congestion, or your router is not yet well-integrated with peers."
+msgstr "Die Webseite ist nicht aktiv, das I2P Netz ist überlastet oder Ihr I2P Router ist noch nicht gut genug ins I2P Netz integriert."
+
+msgid "Warning: No Outproxy Configured"
+msgstr "Warnung: Kein Ausgangsproxy eingerichtet"
+
+msgid "Your request was for a site outside of I2P, but you have no HTTP outproxy configured."
+msgstr "Dieser Seitenaufruf ist nach außerhalb von I2P adressiert aber es ist kein Ausgangsproxy eingestellt."
+
+msgid "Please configure an outproxy in I2PTunnel."
+msgstr "Bitte stelle einen Ausgangsproxy in I2PTunnel ein."
+
+msgid "Outproxy Not Found"
+msgstr "Ausgangsproxy wurde nicht gefunden."
+
+msgid "The HTTP Outproxy was not found."
+msgstr "Der HTTP-Ausgangsproxy wurde nicht gefunden."
+
+msgid "It is offline, there is network congestion, or your router is not yet well-integrated with peers."
+msgstr "Er ist Offline, das Netzwerk ist überlastet oder Ihr Router ist nicht gut ins Netzwerk integriert."
+
+msgid "Information: New Host Name"
+msgstr "Information: Neuer Hostname"
+
+msgid "Information: New Host Name with Address Helper"
+msgstr "Information: Ein neuer Hostname mit Adresshelfer"
+
+msgid "The address helper link you followed is for a new host name that is not in your address book."
+msgstr "Der Adresshelferlink, den du versuchst aufzurufen, ist für einen neuen Adressnamen, welcher nicht in dem Adressbuch ist."
+
+msgid "You may save this host name to your local address book."
+msgstr "Du kannst den Adressnamen in deinem Adressbuch speichern."
+
+msgid "If you save it to your address book, you will not see this message again."
+msgstr "Wenn Sie ihn ins Adressbuch speichern, sehen Sie diese Nachricht nicht noch einmal."
+
+msgid "If you do not save it, the host name will be forgotten after the next router restart."
+msgstr "Speichern Sie ihn nicht, ist der Host Name nach dem nächsten Router Neustart vergessen."
+
+msgid "If you do not wish to visit this host, click the \"back\" button on your browser."
+msgstr "Möchten Sie diesen Host nicht besuchen, klicken Sie auf den \"Zurück\" Knopf ihres Browsers."
+
+msgid "Proxy Authorization Required"
+msgstr "Anmeldung erforderlich"
+
+msgid "I2P HTTP Proxy Authorization Required"
+msgstr "Anmeldung für den I2P-HTTP-Proxy vonnöten"
+
+msgid "This proxy is configured to require a username and password for access."
+msgstr "Dieser Proxy kann nur mit Benutzername und Passwort erreicht werde."
+
+#, java-format
+msgid "Please enter your username and password, or check your {0}router configuration{1} or {2}I2PTunnel configuration{3}."
+msgstr "Bitte Benutzername und Passwort eingeben, oder überprüfe die {0}Router-Einstellungen{1} oder die {2}I2P-Tunnel Einstellungen{3}"
+
+#, java-format
+msgid "To disable authorization, remove the configuration {0}i2ptunnel.proxy.auth=basic{1}, then stop and restart the HTTP Proxy tunnel."
+msgstr "Um die Authorisierung zu deaktivieren, entfernen Sie die Einstellung {0}i2ptunnel.proxy.auth=basic{1}, stoppen und starten Sie dann den HTTP Tunnel neu."
+
+msgid "The HTTP outproxy was not reachable, because its lease set was not found."
+msgstr "Der HTTP-Ausgangsproxy wurde nicht erreicht, da dessen Leaseset nicht gefunden wurde."
+
+msgid "The outproxy is probably down, but there could also be network congestion."
+msgstr "Der Ausgangsproxy ist wahrscheinlich nicht aktiv, aber es kann auch ein Problem im Netzwerk sein."
+
+msgid "Warning: Request Denied"
+msgstr "Warnung: Anfrage abgelehnt"
+
+msgid "This address appears to be malformed. Please verify you have supplied a valid address!"
+msgstr "Diese Adresse scheint falsch formatiert zu sein. Bitte überprüfen Sie, ob Sie eine gültige Adresse angegeben haben!"
+
+msgid "Warning: Bad Address Helper"
+msgstr "Warnung: Ungültiger Adress-Helfer"
+
+#, java-format
+msgid "The helper key in the URL ({0}i2paddresshelper={1}) is not resolvable."
+msgstr "Der Helfer-Schlüssel in der URL  ({0}i2paddresshelper={1}) ist nicht auflösbar."
+
+msgid "It seems to be garbage data, or a mistyped Base 32 address."
+msgstr "Es scheinen Mülldaten oder eine falsch getippte Base 32 Adresse zu sein."
+
+msgid "Check your URL to try and fix the helper key to be a valid Base 32 hostname or Base 64 key."
+msgstr "Kontrollieren Sie die URL und versuchen Sie den Helfer-Schlüssel in einen korrekten Base 32 Hostnamen oder Base 64 Schlüssel zu bringen."
+
+msgid "Warning: Address Blacklisted"
+msgstr ""
+
+msgid "The requested destination is in your blacklist and access has been blocked."
+msgstr ""
+
+msgid "To allow access to this site, remove it from your blacklist on the SusiDNS blacklist management page."
+msgstr ""
+
+msgid "Warning: Invalid Destination"
+msgstr "Warnung: Ungültiges Ziel"
+
+msgid "The website destination specified was not valid, or was otherwise unreachable."
+msgstr "Die Adresse der Webseite ist nicht gültig oder aus einem unbekanntem Grund unerreichbar."
+
+msgid "Perhaps you pasted in the wrong Base 64 string or the link you are following is bad."
+msgstr "Möglicherweise haben Sie einen falschen Base 64 String eingetragen oder der gefolgte Link ist ungültig."
+
+msgid "The I2P host could also be offline."
+msgstr "Der I2P Server kann auch offline sein."
+
+msgid "Warning: Authorization Required"
+msgstr "Warnung: Autorisation Benötigt"
+
+msgid "Warning: Invalid Request URI"
+msgstr "Warnung: Ungültige Anfrage URI"
+
+msgid "The request URI is invalid, and probably contains illegal characters."
+msgstr "Die angefragte URI ist ungültig und enthält möglicherweise nicht erlaubte Zeichen."
+
+msgid "If you clicked a link, check the end of the URI for any characters the browser has mistakenly added on."
+msgstr "Falls Sie einen Link angeklickt hatten, kontrollieren Sie das Ende der URI nach ungültigen Zeichen, die ihr Browser fälschlicherweise angehangen hat."
+
+msgid "The Base32 address is invalid."
+msgstr "Die Base32 Adresse ist ungültig."
+
+msgid "This seems to be a bad destination:"
+msgstr "Dies scheint kein gültiges Ziel zu sein:"
+
+msgid "i2paddresshelper cannot help you with a destination like that!"
+msgstr "Der I2P-Adresshelfer kann dir bei solch einem Ziel nicht helfen!"
+
+#, java-format
+msgid "To visit the destination in your addressbook, click <a href=\"{0}\">here</a>. To visit the conflicting addresshelper destination, click <a href=\"{1}\">here</a>."
+msgstr "Um das Ziel in Ihrem Adressbuch aufzurufen, klicken Sie <a href=\"{0}\">hier</a>. Um das in Konflikt stehende Addresshelper-Ziel aufzurufen, klicken Sie <a href=\"{1}\">hier</a>."
+
+#, java-format
+msgid "Destination for {0} in addressbook"
+msgstr "Ziel für {0} im Adressbuch"
+
+msgid "Conflicting address helper destination"
+msgstr "Anderer Adresshelferlink im Konflikt"
+
+msgid "Corrupt Base32 address"
+msgstr "Ungültige Base32 Addresse"
+
+msgid "Destination LeaseSet not found"
+msgstr "Ziel-LeaseSet nicht gefunden"
+
+msgid "Host"
+msgstr "Host"
+
+msgid "Base32"
+msgstr "Base32"
+
+msgid "Destination"
+msgstr "Ziel"
+
+#, java-format
+msgid "Continue to {0} without saving"
+msgstr "Weiter zu {0}, ohne zu speichern"
+
+msgid "You can browse to the site without saving it to the addressbook. The address will be remembered until you restart your I2P router."
+msgstr "Sie können zur Site navigieren, ohne sie im Adressbuch zu speichern. Die Adresse bleibt gespeichert, bis Sie Ihren I2P-Router neu starten."
+
+msgid "Continue without saving"
+msgstr "Fortsetzen ohne zu Speichern"
+
+#, java-format
+msgid "Save {0} to router address book and continue to website"
+msgstr "Speichern Sie {0} in das I2P Router Adressbuch und besuchen sie diese Webseite"
+
+msgid "This address will be saved to your Router addressbook where your subscription-based addresses are stored."
+msgstr "Diese Adresse wird in Ihrem Router-Adressbuch gespeichert, wo auch Ihre abonnementbasierten Adressen gespeichert sind."
+
+msgid "If you want to keep track of sites you have added manually, add to your Master or Private addressbook instead."
+msgstr "Wenn Sie den Überblick über Websites behalten möchten, die Sie manuell hinzugefügt haben, fügen Sie diese stattdessen zu Ihrem Master- oder privaten Adressbuch hinzu."
+
+msgid "Save & continue"
+msgstr "Speichern & fortsetzen"
+
+#, java-format
+msgid "Save {0} to master addressbook and continue to website"
+msgstr "Speichern Sie {0} im Hauptadressbuch und fahren Sie mit der Website fort"
+
+msgid "This address will be saved to your Master addressbook. Select this option for addresses you wish to keep separate from the main router address book, but don't mind publishing."
+msgstr "Diese Adresse wird in Ihrem Master-Adressbuch gespeichert. Wählen Sie diese Option für Adressen, die Sie vom Hauptadressbuch des Routers getrennt halten möchten, deren Veröffentlichung aber nichts ausmacht."
+
+#, java-format
+msgid "Save {0} to private addressbook and continue to website"
+msgstr "Speichern Sie {0} im privaten Adressbuch und fahren Sie mit der Website fort"
+
+msgid "This address will be saved to your Private addressbook, ensuring it is never published."
+msgstr "Diese Adresse wird in Ihrem privaten Adressbuch gespeichert, um sicherzustellen, dass sie niemals veröffentlicht wird."
+
+msgid "Base32 address requires lookup password"
+msgstr "Die Base32 Adresse erfordert die Eingabe eines Passwortes"
+
+msgid "Base32 address requires encryption key"
+msgstr "Die Base32 Addresse erfordert die Eingabe eines Schlüssels"
+
+msgid "Base32 address requires encryption key and lookup password"
+msgstr "Die Base32 Addresse erfordert die Eingabe eines Schlüssels und eines Passwortes"
+
+msgid "Base32 address decryption failure, check encryption key"
+msgstr "Die Base32 Addresse führte zu einem Fehler bei der Entschlüsselung. Prüfe den Schlüssel"
+
+msgid "Generate"
+msgstr "Erzeugen"
+
+msgid "Encryption key"
+msgstr "Verschlüsselungsschlüssel"
+
+msgid "You must either enter a PSK encryption key provided by the server operator, or generate a DH encryption key and send that to the server operator."
+msgstr "Es muss entweder ein vom Serverbetreiber vorgesehener PSK-Verschlüsselungscode eingegeben werden oder ein DH-Schlüssel generiert werden, der zum Serverbetreiber gesendet wird."
+
+msgid "Ask the server operator for help."
+msgstr "Serverbetreiber um Hilfe bitten."
+
+msgid "Enter PSK encryption key"
+msgstr "PSK-Schlüssel eingeben"
+
+msgid "Generate new DH encryption key"
+msgstr "Neuen DH-Schlüssel generieren"
+
+msgid "Lookup password"
+msgstr "Abfragepasswort"
+
+msgid "You must enter the password provided by the server operator."
+msgstr "Es muss das vom Serverbetreiber vorgesehene Passwort eingegeben werden."
+
+#, java-format
+msgid "Added via address helper from {0}"
+msgstr "Hinzugefüg über den Adressenhelfer von {0}"
+
+msgid "Added via address helper"
+msgstr "Durch Adresshelfer hinzugefügt"
+
+msgid "Missing lookup password"
+msgstr "Fehlendes Abfragepasswort"
+
+msgid "Missing private key"
+msgstr "Fehlender privater Schlüssel"
+
+msgid "Invalid private key"
+msgstr "Ungültiger privater Schlüssel"
+
+msgid "Your new encryption key"
+msgstr "Dein neuer Schlüessel"
+
+msgid "Copy the key and send it to the server operator."
+msgstr "Schlüssel kopieren und zum Serverbetreiber senden."
+
+msgid "After you are granted permission, you may proceed to the website."
+msgstr "Nach der Freigabe kann die Website eingesehen werden."
+
+msgid "Go back and fix the error"
+msgstr "Zurück gehen und den Fehler korrigieren"
+
+msgid "router"
+msgstr "Router"
+
+msgid "master"
+msgstr "Master"
+
+msgid "private"
+msgstr "Privat"
+
+#, java-format
+msgid "Redirecting to {0}"
+msgstr "Weiterleitung zu {0}"
+
+msgid "Redirection in progress"
+msgstr "Umleitung im Gange"
+
+#, java-format
+msgid "Saved {0} to the {1} addressbook, redirecting now."
+msgstr "{0} wurde ins {1} Adressbuch geschrieben.  Du wirst nun weitergeleitet."
+
+#, java-format
+msgid "Failed to save {0} to the {1} addressbook, redirecting now."
+msgstr "Konnte {0} nicht im {1} Adressbuch speichern. Du wirst nun weitergeleitet."
+
+msgid "Click here if you are not redirected automatically."
+msgstr "Klick hier, wenn du nicht automatisch weitergeleitet wirst."
+
+#, java-format
+msgid "Saved the authentication for {0}, redirecting now."
+msgstr "Authentifizierung für {0} gespeichert, leite jetzt um."

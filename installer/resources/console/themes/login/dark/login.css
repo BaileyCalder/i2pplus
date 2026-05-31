@@ -1,0 +1,171 @@
+:root{
+  --highlight: 0 0 0 1px inset #000;
+}
+
+body {
+  background: linear-gradient(135deg, #081808 0%, #000800 100%);
+  user-select: none;
+}
+.login-container {
+  background: #020;
+  box-shadow: 0 0 0 2px #000, 0 0 0 2px #000 inset, 0 0 0 3px #373 inset, 0 4px 20px rgba(0,0,0,0.5);
+  border-radius: 4px;
+  border: 4px solid #131;
+  transform-origin: center center;
+  transform: scale(.85);
+  margin-top: 10px;
+}
+.login-container h1 {
+  color: #0000;
+  display: inline-block;
+  width: calc(100% + 40px);
+  height: 70px;
+  margin: -6px -20px 20px;
+  background: url(logo.svg) no-repeat center center / contain;
+}
+.form-group label {
+  color: #8b8;
+}
+button, input, select {
+  line-height: 1;
+  border-radius: 0;
+}
+.form-group input {
+  background: #111;
+  border: 1px solid #252;
+  color: #8c8;
+}
+.form-group input:focus {
+  border-color: #4a4;
+}
+.form-group select {
+  width: 100%;
+  padding: 0.75rem 24px 0.75rem 0.75rem;
+  line-height: 1.5;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #8c8;
+  box-shadow: var(--highlight);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath fill='%238c8' d='M6 8L1 3h10z'/%3E%3C/svg%3E") no-repeat right 10px center/12px,linear-gradient(180deg, #030,#020 50%,#010 50%);
+  cursor: pointer;
+  appearance: none;
+}
+.form-group select:focus {
+  border-color: #4a4;
+  outline: none;
+}
+.form-group select option {
+  background: #111;
+  color: #8c8;
+}
+button:not(.dropbtn) {
+  margin: 10px 4px 0;
+  width: calc(100% - 8px);
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  color: #595;
+  box-shadow: 0 0 0 1px #151 inset, 0 0 0 2px #000 inset, 0 0 2px 2px #050 inset, 0 0 0 2px #252;
+  background: linear-gradient(180deg, #030,#020 50%,#010 50%);
+  text-shadow: 1px 1px 1px #000a;
+}
+button:not(.dropbtn):hover {
+  background: linear-gradient(180deg, #030,#020 50%,#010 50%);
+  box-shadow: 0 0 0 1px #151 inset, 0 0 0 2px #000 inset, 0 0 2px 2px #070 inset, 0 0 0 2px #373;
+  color: #6a6;
+}
+button:not(.dropbtn):active {
+  background: linear-gradient(0deg, #030, #010);
+  color: #272;
+  text-shadow: -1px -1px 1px #000a;
+  box-shadow: 0 0 0 1px #151 inset, 0 0 0 2px #000 inset, 0 0 2px 2px #070 inset, 5px 5px 5px #000 inset, 0 0 0 2px #373;
+}
+.error, .notice {
+  padding: 8px 8px 12px;
+  line-height: 1.1;
+  border-radius: 0;
+  box-shadow: var(--highlight), 0 0 0 3px #0004 inset, 0 0 0 1px #000;
+}
+.error {
+  color: #900;
+  border: 1px solid #500;
+  background: #000;
+}
+.notice {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 700;
+  color: #ee9;
+  border: 1px solid #ee9;
+  box-shadow: var(--highlight), 0 0 0 3px #0004 inset, 0 0 0 1px #000, 0 0 0 2px #252;
+  background: linear-gradient(180deg, #020, #010);
+  opacity: .75;
+}
+.notice a, .notice a:hover {
+  color: #ee9;
+}
+img[src^="/flags"] {
+  border-radius: 2px;
+}
+#topbar {
+  background: linear-gradient(180deg,#001800,#000);
+  border-bottom: 1px solid #131;
+  box-shadow: 0 2px 2px #0008;
+  z-index: 999;
+}
+button.dropbtn {
+  border-left: 1px solid #131;
+  position: relative;
+  z-index: 999;
+  background: linear-gradient(180deg,#001800,#000);
+}
+.dropdown-content {
+  border: 1px solid #131;
+  top: 36px;
+  z-index: -1;
+  animation: fadein .1s ease .1s both;
+}
+#themeselect .dropdown-content {
+  right: -9px;
+  min-width: 50px;
+  animation: slide .4s ease 0s both;
+}
+#themeselect .dropdown-content a {
+  border-bottom-color: #131;
+}
+.dropdown-content a:hover,
+.dropdown-content a:focus {
+  background: #030;
+  border-radius: 0;
+}
+.dropdown-content a:active {
+  box-shadow: 3px 3px 3px #0008 inset;
+}
+
+.dropdown-content a:active img {
+  transform: scale(0.9);
+}
+#username, #password, #confirmPassword {
+  padding-left: 60px;
+  font-weight: 700;
+}
+#username {
+  background: #111 url(user.webp) no-repeat left center / contain;
+}
+#password, #confirmPassword {
+  background: #111 url(password.webp) no-repeat left center / contain;
+}
+#footer {
+  display: block;
+  text-align: center;
+  border-top: 1px solid #131;
+  background: #000;
+}
+@keyframes slide {
+  from{transform: translateY(-200px);opacity:0}
+  to{transform:translateY(0);opacity:1}
+}
+@keyframes fadein {
+  from{opacity:0}
+  to{opacity:1}
+}

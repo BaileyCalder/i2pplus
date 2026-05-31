@@ -1,0 +1,404 @@
+package net.i2p.data;
+
+/*
+ * free (adj.): unencumbered; not under the control of others
+ * Written by jrandom in 2003 and released into the public domain
+ * with no warranty of any kind, either expressed or implied.
+ * It probably won't make your computer catch on fire, or eat
+ * your children, but it might.  Use at your own risk.
+ *
+ */
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.Arrays;
+
+/**
+ * Extensible certificate system for I2P structures providing metadata and capabilities.
+ *
+ * <p>Certificate offers flexible metadata attachment to I2P identities:</p>
+ * <ul>
+ *   <li><strong>Metadata:</strong> Additional information beyond cryptographic keys</li>
+ *   <li><strong>DoS Protection:</strong> Help manage denial of service attacks</li>
+ *   <li><strong>Network Utilization:</strong> Control resource usage and capabilities</li>
+ *   <li><strong>Extensible:</strong> Support for multiple certificate types and formats</li>
+ *   <li><strong>Optional:</strong> Structures can have NULL certificates for minimal overhead</li>
+ * </ul>
+ *
+ * <p><strong>Supported Certificate Types:</strong></p>
+ * <ul>
+ *   <li>{@link #CERTIFICATE_TYPE_NULL} - No certificate (default)</li>
+ *   <li>{@link #CERTIFICATE_TYPE_HIDDEN} - Service should not be published</li>
+ *   <li>{@link #CERTIFICATE_TYPE_SIGNED} - Signed by certificate authority</li>
+ *   <li>{@link #CERTIFICATE_TYPE_MULTIPLE} - Contains multiple certificates</li>
+ *   <li>{@link #CERTIFICATE_TYPE_KEY} - Specifies key types (KeyCertificate)</li>
+ * </ul>
+ *
+ * <p><strong>Common Use Cases:</strong></p>
+ * <ul>
+ *   <li><strong>Identity Verification:</strong> Prove authenticity of routers/destinations</li>
+ *   <li><strong>Capability Advertising:</strong> Announce supported features and protocols</li>
+ *   <li><strong>Access Control:</strong> Specify service restrictions or requirements</li>
+ *   <li><strong>Resource Management:</strong> Indicate bandwidth or usage limitations</li>
+ *   <li><strong>Trust Establishment:</strong> Certificate authority-based trust chains</li>
+ * </ul>
+ *
+ * <p><strong>Security Considerations:</strong></p>
+ * <ul>
+ *   <li><strong>Anonymous Network:</strong> CA-based certificates may not be appropriate</li>
+ *   <li><strong>Signature Verification:</strong> Always verify certificate signatures</li>
+ *   <li><strong>Trust Validation:</strong> Carefully evaluate certificate authorities</li>
+ *   <li><strong>Privacy Impact:</strong> Consider anonymity implications of certificates</li>
+ * </ul>
+ *
+ * <p><strong>Implementation Notes:</strong></p>
+ * <ul>
+ *   <li><strong>Multiple Certificates:</strong> Support for multiple certificates is planned</li>
+ *   <li><strong>Size Efficiency:</strong> Minimal overhead for NULL certificates</li>
+ *   <li><strong>Flexibility:</strong> Payload can contain arbitrary metadata</li>
+ *   <li><strong>Backward Compatibility:</strong> Existing formats continue to be supported</li>
+ * </ul>
+ *
+ * <p><strong>Related Structures:</strong></p>
+ * <ul>
+ *   <li>{@link Destination} - Uses certificates for service identity</li>
+ *   <li>{@link net.i2p.data.router.RouterIdentity} - Router certificates</li>
+ *   <li>{@link KeyCertificate} - Specialized certificate for key type specification</li>
+ * </ul>
+ *
+ * @author jrandom
+ */
+@SuppressWarnings("PMD.OverrideBothEqualsAndHashcode")
+public class Certificate extends DataStructureImpl {
+    public static final Certificate NULL_CERT = new NullCert();
+
+    protected int _type;
+    protected byte[] _payload;
+
+    /** Specifies a null certificate type with no payload */
+    public static final int CERTIFICATE_TYPE_NULL = 0;
+
+    /** we should not be used for anything (don't use us in the netDb, in tunnels, or tell others about us) */
+    public static final int CERTIFICATE_TYPE_HIDDEN = 2;
+
+    /** Signed with 40-byte Signature and (optional) 32-byte hash */
+    public static final int CERTIFICATE_TYPE_SIGNED = 3;
+
+    public static final int CERTIFICATE_LENGTH_SIGNED_WITH_HASH = Signature.SIGNATURE_BYTES + Hash.HASH_LENGTH;
+
+    /** Contains multiple certs */
+    public static final int CERTIFICATE_TYPE_MULTIPLE = 4;
+
+    /** Key certificate type.
+     * @since 0.9.12 */
+    public static final int CERTIFICATE_TYPE_KEY = 5;
+
+    /**
+     * If null, P256 key, or Ed25519 key cert, return immutable static instance, else create new
+     * @throws DataFormatException if not enough bytes
+     * @since 0.8.3
+     */
+    public static Certificate create(byte[] data, int off) throws DataFormatException {
+        int type;
+        byte[] payload;
+        int length;
+        try {
+            type = data[off] & 0xff;
+            length = (int) DataHelper.fromLong(data, off + 1, 2);
+            if (type == 0 && length == 0) return NULL_CERT;
+            // from here down roughly the same as readBytes() below
+            if (length == 0) return new Certificate(type, null);
+            payload = new byte[length];
+            System.arraycopy(data, off + 3, payload, 0, length);
+        } catch (ArrayIndexOutOfBoundsException aioobe) {
+            throw new DataFormatException("not enough bytes", aioobe);
+        }
+        if (type == CERTIFICATE_TYPE_KEY) {
+            if (length == 4) {
+                if (Arrays.equals(payload, KeyCertificate.Ed25519_PAYLOAD)) return KeyCertificate.ELG_Ed25519_CERT;
+                if (Arrays.equals(payload, KeyCertificate.ECDSA256_PAYLOAD)) return KeyCertificate.ELG_ECDSA256_CERT;
+            }
+            try {
+                return new KeyCertificate(payload);
+            } catch (DataFormatException dfe) {
+                throw new IllegalArgumentException(dfe);
+            }
+        }
+        return new Certificate(type, payload);
+    }
+
+    /**
+     * If null, P256 key, or Ed25519 key cert, return immutable static instance, else create new
+     * @since 0.8.3
+     */
+    public static Certificate create(InputStream in) throws DataFormatException, IOException {
+        // EOF will be thrown in next read
+        int type = in.read();
+        int length = (int) DataHelper.readLong(in, 2);
+        if (type == 0 && length == 0) return NULL_CERT;
+        // from here down roughly the same as readBytes() below
+        if (length == 0) return new Certificate(type, null);
+        byte[] payload = new byte[length];
+        int read = DataHelper.read(in, payload);
+        if (read != length)
+            throw new DataFormatException(
+                    "Not enough bytes for the payload (read: " + read + " length: " + length + ')');
+        if (type == CERTIFICATE_TYPE_KEY) {
+            if (length == 4) {
+                if (Arrays.equals(payload, KeyCertificate.X25519_Ed25519_PAYLOAD))
+                    return KeyCertificate.X25519_Ed25519_CERT;
+                if (Arrays.equals(payload, KeyCertificate.Ed25519_PAYLOAD)) return KeyCertificate.ELG_Ed25519_CERT;
+                if (Arrays.equals(payload, KeyCertificate.ECDSA256_PAYLOAD)) return KeyCertificate.ELG_ECDSA256_CERT;
+            }
+            return new KeyCertificate(payload);
+        }
+        return new Certificate(type, payload);
+    }
+
+    public Certificate() {}
+
+    /**
+     *  @throws IllegalArgumentException if type &lt; 0
+     */
+    public Certificate(int type, byte[] payload) {
+        if (type < 0) throw new IllegalArgumentException();
+        _type = type;
+        _payload = payload;
+    }
+
+    /** Gets the certificate type.
+     */
+    public int getCertificateType() {
+        return _type;
+    }
+
+    /**
+     *  Sets the certificate type.
+     *
+     *  @throws IllegalArgumentException if type &lt; 0
+     *  @throws IllegalStateException if already set
+     */
+    public void setCertificateType(int type) {
+        if (type < 0) throw new IllegalArgumentException();
+        if (_type != 0 && _type != type) throw new IllegalStateException("already set");
+        _type = type;
+    }
+
+    public byte[] getPayload() {
+        return _payload;
+    }
+
+    /**
+     *  Sets the certificate payload.
+     *
+     *  @throws IllegalStateException if already set
+     */
+    public void setPayload(byte[] payload) {
+        if (_payload != null) throw new IllegalStateException("already set");
+        _payload = payload;
+    }
+
+    /**
+     *  @throws IllegalStateException if already set
+     */
+    @Override
+    public void readBytes(InputStream in) throws DataFormatException, IOException {
+        if (_type != 0 || _payload != null) throw new IllegalStateException("already set");
+        // EOF will be thrown in next read
+        _type = in.read();
+        int length = (int) DataHelper.readLong(in, 2);
+        if (length > 0) {
+            _payload = new byte[length];
+            int read = read(in, _payload);
+            if (read != length)
+                throw new DataFormatException(
+                        "Not enough bytes for the payload (read: " + read + " length: " + length + ")");
+        }
+    }
+
+    @Override
+    public void writeBytes(OutputStream out) throws DataFormatException, IOException {
+        if (_type < 0) throw new DataFormatException("Invalid certificate type: " + _type);
+        // if ((_type != 0) && (_payload == null)) throw new DataFormatException("Payload is required for non null
+        // type");
+
+        out.write((byte) _type);
+        if (_payload != null) {
+            DataHelper.writeLong(out, 2, _payload.length);
+            out.write(_payload);
+        } else {
+            DataHelper.writeLong(out, 2, 0L);
+        }
+    }
+
+    /**
+     *  Writes the certificate to the target array.
+     *
+     *  @return the written length (NOT the new offset)
+     */
+    public int writeBytes(byte target[], int offset) {
+        int cur = offset;
+        DataHelper.toLong(target, cur, 1, _type);
+        cur++;
+        if (_payload != null) {
+            DataHelper.toLong(target, cur, 2, _payload.length);
+            cur += 2;
+            System.arraycopy(_payload, 0, target, cur, _payload.length);
+            cur += _payload.length;
+        } else {
+            DataHelper.toLong(target, cur, 2, 0);
+            cur += 2;
+        }
+        return cur - offset;
+    }
+
+    /**
+     *  Reads the certificate from the source array.
+     *
+     *  @throws IllegalStateException if already set
+     */
+    public int readBytes(byte source[], int offset) throws DataFormatException {
+        if (_type != 0 || _payload != null) throw new IllegalStateException("already set");
+        if (source == null) throw new DataFormatException("Cert is null");
+        if (source.length < offset + 3)
+            throw new DataFormatException("Cert is too small [" + source.length + " off=" + offset + "]");
+
+        int cur = offset;
+        _type = source[cur] & 0xff;
+        cur++;
+        int length = (int) DataHelper.fromLong(source, cur, 2);
+        cur += 2;
+        if (length > 0) {
+            if (length + cur > source.length)
+                throw new DataFormatException("Payload on the certificate is insufficient (len=" + source.length
+                        + " off=" + offset + " cur=" + cur + " payloadLen=" + length);
+            _payload = new byte[length];
+            System.arraycopy(source, cur, _payload, 0, length);
+            cur += length;
+        }
+        return cur - offset;
+    }
+
+    public int size() {
+        return 1 + 2 + (_payload != null ? _payload.length : 0);
+    }
+
+    /**
+     *  Up-convert this to a KeyCertificate
+     *
+     *  @throws DataFormatException if cert type != CERTIFICATE_TYPE_KEY
+     *  @since 0.9.12
+     */
+    public KeyCertificate toKeyCertificate() throws DataFormatException {
+        if (_type != CERTIFICATE_TYPE_KEY) throw new DataFormatException("type");
+        return new KeyCertificate(this);
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (object == this) return true;
+        if ((object == null) || !(object instanceof Certificate)) return false;
+        Certificate cert = (Certificate) object;
+        return _type == cert.getCertificateType() && Arrays.equals(_payload, cert.getPayload());
+    }
+
+    @Override
+    public int hashCode() {
+        return _type + DataHelper.hashCode(_payload);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder buf = new StringBuilder(64);
+        buf.append("\n* Certificate: Type: ");
+        if (getCertificateType() == CERTIFICATE_TYPE_NULL) buf.append("Null");
+        else if (getCertificateType() == CERTIFICATE_TYPE_KEY) buf.append("Key");
+        else if (getCertificateType() == CERTIFICATE_TYPE_HIDDEN) buf.append("Hidden");
+        else if (getCertificateType() == CERTIFICATE_TYPE_SIGNED) buf.append("Signed");
+        else buf.append("Unknown type (").append(getCertificateType()).append(')');
+
+        if (_payload == null) {
+            buf.append("; Payload: null");
+        } else {
+            buf.append("; Payload size: ").append(_payload.length);
+
+            if (getCertificateType() == CERTIFICATE_TYPE_SIGNED
+                    && _payload.length == CERTIFICATE_LENGTH_SIGNED_WITH_HASH) {
+                buf.append("; Signed by hash: ")
+                        .append(Base64.encode(_payload, Signature.SIGNATURE_BYTES, Hash.HASH_LENGTH));
+            } else {
+                int len = 32;
+                if (len > _payload.length) len = _payload.length;
+                buf.append(" first ").append(len).append(" bytes: ");
+                buf.append(DataHelper.toString(_payload, len));
+            }
+        }
+        return buf.toString();
+    }
+
+    /**
+     *  An immutable null certificate.
+     *  @since 0.8.3
+     */
+    @SuppressWarnings("checkstyle:EqualsHashCode")
+    private static final class NullCert extends Certificate {
+        private static final int NULL_LENGTH = 1 + 2;
+        private static final byte[] NULL_DATA = new byte[NULL_LENGTH];
+
+        public NullCert() {
+            // zero already
+            // _type = CERTIFICATE_TYPE_NULL;
+        }
+
+        /** @throws RuntimeException always */
+        @Override
+        public void setCertificateType(int type) {
+            throw new RuntimeException("Data already set");
+        }
+
+        /** @throws RuntimeException always */
+        @Override
+        public void setPayload(byte[] payload) {
+            throw new RuntimeException("Data already set");
+        }
+
+        /** @throws RuntimeException always */
+        @Override
+        public void readBytes(InputStream in) throws DataFormatException, IOException {
+            throw new RuntimeException("Data already set");
+        }
+
+        /** Overridden for efficiency */
+        @Override
+        public void writeBytes(OutputStream out) throws IOException {
+            out.write(NULL_DATA);
+        }
+
+        /** Overridden for efficiency */
+        @Override
+        public int writeBytes(byte target[], int offset) {
+            System.arraycopy(NULL_DATA, 0, target, offset, NULL_LENGTH);
+            return NULL_LENGTH;
+        }
+
+        /** @throws RuntimeException always */
+        @Override
+        public int readBytes(byte source[], int offset) throws DataFormatException {
+            throw new RuntimeException("Data already set");
+        }
+
+        /** Overridden for efficiency */
+        @Override
+        public int size() {
+            return NULL_LENGTH;
+        }
+
+        /** Overridden for efficiency */
+        @Override
+        public int hashCode() {
+            // must be the same as type + payload above
+            return 0;
+        }
+    }
+}

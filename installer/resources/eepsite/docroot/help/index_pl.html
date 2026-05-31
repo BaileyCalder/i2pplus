@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+<title>Anonimowy serwer hostingowy I2P</title>
+<link rel="shortcut icon" type="image/svg" href="lib/server.svg">
+<link rel="stylesheet" type="text/css" href="lib/eepsite.css">
+<meta charset="utf-8">
+</head>
+<body>
+
+<div class="main">
+
+<div class="langbar">
+<a href=index.html><img src=lib/us.svg title="English" alt="English"></a>
+<a href=index_ar.html><img src=lib/lang_ar.svg title="العربية" alt="العربية"></a>
+<a href=index_az.html><img src=lib/az.svg title="Azərbaycan" alt="Azərbaycan"></a>
+<a href=index_zh.html><img src=lib/cn.svg title="中文" alt="中文"></a>
+<a href=index_cs.html><img src=lib/cz.svg title="čeština" alt="čeština"></a>
+<a href=index_da.html><img src=lib/dk.svg title="Dansk" alt="Dansk"></a>
+<a href=index_de.html><img src=lib/de.svg title="Deutsch" alt="Deutsch"></a>
+<a href=index_es.html><img src=lib/es.svg title="Español" alt="Español"></a>
+<a href=index_et.html><img src=lib/ee.svg title="eesti" alt="eesti"></a>
+<a href=index_fa.html><img src=lib/ir.svg title="فارسی" alt="فارسی"></a>
+<a href=index_fi.html><img src=lib/fi.svg title="Suomi" alt="Suomi"></a>
+<a href=index_fr.html><img src=lib/fr.svg title="Français" alt="Français"></a>
+<a href=index_hi.html><img src=lib/in.svg title="हिंदी" alt="हिंदी"></a>
+<a href=index_el.html><img src=lib/gr.svg title="Ελληνικά" alt="Ελληνικά"></a>
+<a href=index_hu.html><img src=lib/hu.svg title="Magyar" alt="Magyar"></a>
+<a href=index_in.html><img src=lib/id.svg title="Bahasa Indonesia" alt="Bahasa Indonesia"></a>
+<a href=index_it.html><img src=lib/it.svg title="Italiano" alt="Italiano"></a>
+<a href=index_ja.html><img src=lib/jp.svg title="日本語" alt="日本語"></a>
+<a href=index_ko.html><img src=lib/kr.svg title="한국어" alt="한국어"></a>
+<a href=index_nl.html><img src=lib/nl.svg title="Nederlands" alt="Nederlands"></a>
+<a href=index_nb.html><img src=lib/no.svg title="Norsk bokmål" alt="Norsk bokmål"></a>
+<a href=index_pl.html><img src=lib/pl.svg title="Polski" alt="Polski"></a>
+<a href=index_pt.html><img src=lib/pt.svg title="Português" alt="Português"></a>
+<a href=index_ro.html><img src=lib/ro.svg title="Română" alt="Română"></a>
+<a href=index_ru.html><img src=lib/ru.svg title="русский" alt="русский"></a>
+<a href=index_sl.html><img src=lib/si.svg title="Slovenščina" alt="Slovenščina"></a>
+<a href=index_sv.html><img src=lib/se.svg title="Svenska" alt="Svenska"></a>
+<a href=index_bo.html><img src=lib/xt.svg title="བོད་སྐད" alt="བོད་སྐད"></a>
+<a href=index_tr.html><img src=lib/tr.svg title="Türkçe" alt="Türkçe"></a>
+<a href=index_uk.html><img src=lib/ua.svg title="Українська" alt="Українська"></a>
+<a href=index_vi.html><img src=lib/vn.svg title="Tiếng Việt" alt="Tiếng Việt"></a>
+</div>
+
+<h1>Anonimowy serwer hostingowy I2P</h1>
+
+<h2>Poradnik serwera I2P</h2>
+
+<p>To jest Twój własny serwer stron internetowych w sieci I2P (znanych też pod nazwą „<i>eepsite</i>”). Aby udostępnić swoją treść, po prostu zredaguj pliki w katalogu głównym serwera stron i strona będzie publicznie dostępna po wykonaniu czynności opisanych poniżej.</p>
+
+<p id="dir">Katalog główny serwera stron znajduje się w następującej lokalizacji, zależnie od używanego systemu operacyjnego:</p>
+
+<div class="wrapper">
+<table id="rootdir">
+<tr><td><img src="data:image/svg+xml,%3Csvg fill='%23ffffe0' height='64' width='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m29.4 5.4v24.5c0 .3.24.53.53.53h33.6c.3 0 .53-.24.53-.53v-29.38c0-.15-.07-.3-.18-.4-.12-.1-.27-.14-.42-.12l-33.6 4.9c-.26.04-.45.26-.45.52zm-3.67 53.4c.13 0 .25-.05.34-.13a.53.53 0 0 0 .18-.39v-24.15c0-.3-.24-.53-.53-.53h-25.18c-.14 0-.27.05-.37.15s-.15.23-.15.37v20.7a.52.52 0 0 0 .45.52l25.25 3.45zm-25.18-28.35h25.18c.3 0 .53-.24.53-.53v-23.9c0-.15-.07-.3-.18-.4-.1-.1-.26-.14-.42-.12l-25.2 3.43c-.26.04-.45.26-.45.52l.02 20.48c0 .3.24.53.53.53zm62.97 33.6c.13 0 .25-.05.34-.13.12-.1.18-.24.18-.4l.01-29.4c0-.14-.05-.27-.15-.37s-.23-.15-.37-.15h-33.6c-.3 0-.53.24-.53.53v24.67c0 .26.2.48.45.52l33.6 4.72h.07z'/%3E%3C/svg%3E" alt="Windows" title="Windows"></td><td><code>%APPDATA%\I2P\eepsite\docroot\</code></td></tr>
+<tr><td><img src="data:image/svg+xml,%3Csvg height='64' width='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m18.9 62.77a14.43 14.43 0 0 1 -3.31-3.07c-1.03-1.23-1.97-2.53-2.84-3.87-2.04-3-3.64-6.25-4.74-9.7-1.34-4-1.98-7.84-1.98-11.6 0-4.18.9-7.84 2.67-10.9 1.3-2.4 3.25-4.4 5.6-5.82a14.92 14.92 0 0 1 7.57-2.24c.93 0 1.95.13 3 .4.77.2 1.7.56 2.85 1l2.53 1c.85.32 1.57.45 2.13.45.43 0 1.04-.13 1.72-.35.4-.13 1.12-.37 2.16-.83l2.5-.93c1-.3 1.94-.56 2.8-.7 1.04-.16 2.07-.2 3.06-.13 1.9.13 3.62.53 5.17 1.12 2.72 1.1 4.9 2.8 6.55 5.22a13.11 13.11 0 0 0 -1.93 1.47c-1.3 1.15-2.4 2.5-3.28 4-1.15 2.05-1.73 4.37-1.72 6.72.04 2.9.77 5.42 2.24 7.62 1.03 1.6 2.4 2.97 4.1 4.1.83.56 1.55.95 2.24 1.2-.32 1-.67 1.97-1.08 2.93-.92 2.15-2.03 4.2-3.33 6.16-1.15 1.68-2.06 2.93-2.75 3.76-1.07 1.28-2.1 2.24-3.14 2.92a7 7 0 0 1 -3.87 1.16c-.93.04-1.87-.08-2.76-.34a26.03 26.03 0 0 1 -2.28-.86c-.78-.36-1.6-.66-2.4-.9-1-.27-2.05-.4-3.1-.4-1.07 0-2.1.13-3.1.4-.83.23-1.63.52-2.42.87-1.12.47-1.85.77-2.28.9-.87.25-1.75.4-2.64.46-1.4 0-2.68-.4-3.96-1.2zm18.27-49.2c-1.8.9-3.53 1.3-5.26 1.16-.27-1.72 0-3.5.72-5.43.64-1.65 1.5-3.14 2.66-4.48 1.23-1.38 2.7-2.53 4.35-3.35 1.76-.91 3.44-1.39 5.04-1.47.2 1.8 0 3.6-.67 5.52-.6 1.7-1.5 3.28-2.67 4.7-1.16 1.4-2.6 2.53-4.23 3.36z' fill='%23ffffe0'/%3E%3C/svg%3E" alt="Apple OS X" title="Apple OS X"></td><td><code>/Users/(user)/Library/Application Support/i2p</code></td></tr>
+<tr><td><img src="data:image/svg+xml,%3Csvg height='64' width='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m32.7 0c-2.37 0-4.8.74-6.67 2.03-3.84 2.65-3.33 8.42-3 12.23l.1 1.44c.22 3.74.02 5.7-.24 6.3-4.93 6.85-8.06 9.4-9.65 21.3-.38.27-.94.8-1.4 1.8-.57 1.22-1.73 1.87-4.14 2.33-1.1.23-1.87.7-2.26 1.38-.58 1-.27 2.27.02 3.14.42 1.27.16 2.07-.32 3.53l-.37 1.14c-.2.66-.13 1.26.22 1.8.9 1.4 3.56 1.88 6.3 2.2 1.63.2 3.4.85 5.14 1.48 1.7.6 3.44 1.25 5.03 1.45a5.74 5.74 0 0 0 .71.04c2.4 0 3.48-1.6 3.82-2.24.86-.18 3.84-.74 6.9-.82 3.06-.1 6.02.52 6.86.7.26.5.96 1.65 2.06 2.25.6.33 1.46.52 2.33.52.92 0 2.7-.22 4.08-1.7s4.87-3.36 7.4-4.73l1.56-.85c1.43-.8 2.2-1.92 2.14-3.1-.06-.98-.7-1.84-1.7-2.24-1.87-.77-2.68-1.8-2.6-3.3.08-1.78-.93-3.08-1.4-3.6.28-1.1 1.13-4.92 0-8.24-1.22-3.55-4.94-8.98-8.78-14.3-1.57-2.2-1.64-4.57-1.73-7.33-.08-2.63-.17-5.6-1.64-8.92-1.57-3.62-4.77-5.69-8.77-5.69zm1.84 8.6c1.2 0 2.28.87 2.75 1.95.65 1.38.55 3.1-.33 4.36-.36.38-1.12.12-1.1-.42.02-.42.2-.83.12-1.27-.05-.7-.46-1.48-1.2-1.67-.6-.14-1.2.27-1.45.8-.26.48-.3 1.04-.26 1.56-.08.43-.6.66-.98.46-.42-.12-.56-.6-.62-.97-.32-1.5.15-3.25 1.4-4.22.48-.36 1.07-.58 1.67-.58zm-7.78.4c.9-.01 1.66.62 2.08 1.36.6 1.02.78 2.26.54 3.4-.2.44-.73.68-1.2.6-.4-.1-.67-.5-.63-.9-.06-.64-.37-1.33-1-1.6-.34-.1-.7.15-.8.46-.14.33-.43.64-.8.63-.54.02-1-.57-.82-1.1.17-1.03.7-2.08 1.64-2.6.3-.15.63-.25.97-.24zm3.5 6.54c2.06.35 3.72 1.2 5.07 2.42l-5 3.33-3.97-2.75c.75-1.18 1.73-2.33 3.9-3zm6.74 3.62c.25-.01.48.15.63.34 1.05 1.92 2 3.9 2.88 5.9 1.92 4.8 4.5 9.6 4.4 14.9-.17 1.53.4 3.62-1.6 4.15-1.98.05-1.7 2-1.77 3.5-.12 1.7.43 3.75-1.2 4.92-2.6 2.93-6.6 4.1-10.42 4.1-1.92.2-4.2-.14-5.3-1.95-1.13-1.54 1.46-3.2.28-4.78-1.55-1.58-3.5-2.7-5.12-4.22-2.1-1.52-2.5-4.35-2.1-6.75.65-6.13 5.3-11.32 7.1-16.4 1.2-3.72 2.94-.2 4.77.34 1.6 1 4.48-3.3 7.45-4.08zm-21.48 25.62c1.28.15 1.9 1.58 2.63 2.74a54.73 54.73 0 0 1 .92 1.52l1.9 3.14c.64 1 1.26 1.9 1.6 2.24.4.44.93 1.06 1.34 1.8.4.75.73 1.64.52 2.6-.78 3.2-3.47 2.94-6.25 1.9-1.23-.43-2.46-.95-3.3-1.3l-.25-.1c-.77-.33-2.32-.6-3.8-.84-.6-.1-1.3-.2-1.92-.34-.3-.06-.6-.12-.84-.2-.25-.07-.42-.07-.73-.34a.79.79 0 0 1 -.11-1.06c.43-.6.5-1.6.4-2.8s-.36-2.46-.1-3.64c.2-1.73 3.18-.95 4.94-2.44.85-.74 1.13-2.18 2.48-2.87a1.96 1.96 0 0 1 .59-.01zm28.3 1.15c.3-.02.57.14.7.38.2.7.42 1.47.7 2.15.34 1.08 1.27 1.5 2.3 1.38 1.38-.2 2.6-.9 3.7-1.92.87-.8 1.73-.7 1.94.35-.02.98-.06 1.5.4 2.36.37.94 1.33 1.36 2.15 1.8 1.52.5 1.6 1.64.96 2.1-1.82 1.18-3.85 2.02-5.7 3.14-1.2.6-2.1 1.63-3.12 2.5-1 .75-2.17 1.65-3.5 1.44-1.5-.3-2.25-1.93-2.27-3.33.05-1.6.55-3.17.78-4.77.34-1.77.3-3.6.13-5.37-.1-.77-.23-2.08.8-2.22z' fill='%23ffffe0'/%3E%3C/svg%3E" alt="Linux" title="Linux"></td><td>Normalna instalacja: <code>~/.i2p/eepsite/docroot/</code><br>
+Instalacja z paczek, działa jako usługa: <code>/var/lib/i2p/i2p-config/eepsite/docroot/</code></td></tr>
+</table>
+</div>
+
+<p>W I2P ukryte usługi otrzymują adres Base32 kończący się „.b32.i2p” lub „adres przeznaczenia” reprezentowany jako długi ciąg Base64.
+Adres Base32 można użyć jako nazwy hosta do czasu zarejestrowania własnej nazwy, co jest opisane poniżej.
+Adres przeznaczenia jest jak adres IP, i jest on wyświetlany na <a href="http://127.0.0.1:7657/i2ptunnel/edit?tunnel=3">stronie konfiguracji ukrytych usług</a>.</p>
+
+<p>Następująca instrukcja opisuje w jako sposób przypisać adres „mojadres.i2p” do swojej strony i go rozpropagować.
+Możesz dostać się do swojej strony lokalnie na <a href="http://127.0.0.1:7658/">http://127.0.0.1:7658/</a>.</p>
+
+<h2>Jak skonfigurować i rozpropagować swoją ukrytą usługę</h2>
+
+<p>Serwer stron jest domyślnie włączony, ale nie jest dostępny dla ludzi z zewnątrz przed uruchomieniem tunelu ukrytej usługi.
+Po uruchomieniu tunelu serwera stron I2P będzie trudno innym osobom go znaleźć.
+Można się do strony dostać tylko poprzez długi adres przeznaczenia lub krótszy Base32 (.b32.i2p), który jest sumą kontrolną adresu przeznaczenia.
+Możesz po prostu przekazać innym ten adres, ale na szczęście I2P posiada książkę adresową i inne sposoby na rozpropagowanie swojej strony.
+Poniżej dokładna instrukcja.</p>
+
+<ul>
+<li>Wybierz nazwę dla swojej strony (<i>cośtam</i>.i2p), małymi literami, bez polskich znaków. Najpierw sprawdź w <a href="http://127.0.0.1:7657/susidns/addressbook?book=router&amp;filter=none">książce adresowej</a> swojego węzła, czy wybrana nazwa nie została już zarezerwowana. Wpisz nową nazwę dla swojej strony na <a href="http://127.0.0.1:7657/i2ptunnel/edit?tunnel=3">stronie konfiguracji ukrytej usługi</a> w polu „nazwa strony”. To zastąpi domyślną nazwę „mojastrona.i2p”. Jeżeli chcesz, aby tunel serwera strony internetowej automatycznie uruchamiał się podczas startu I2P, zaznacz pole „automatyczne uruchamianie”. Twoja strona uruchomi się przy każdym uruchomieniu węzła. Kliknij „zapisz”.</li>
+<li>Na <a href="http://127.0.0.1:7657/i2ptunnel/">stronie głównej konfiguracji ukrytych usług</a> kliknij „uruchom” przy tunelu swojej strony internetowej. Powinieneś go zobaczyć w <a href="http://127.0.0.1:7657/">konsoli węzła</a> po lewej stronie w zakładce „lokalne tunele”. Twoja strona jest teraz uruchomiona.</li>
+<li>Zaznacz i skopiuj cały lokalny adres przeznaczenia ze <a href="http://127.0.0.1:7657/i2ptunnel/edit?tunnel=3">strony konfiguracji ukrytej usługi</a>. Upewnij się, że kopiujesz pełny adres, przeszło 500 znaków.</li>
+<li>Wpisz wybraną nazwę i wklej adres przeznaczenia do swojej <a href="http://127.0.0.1:7657/susidns/addressbook?book=router&amp;filter=none">książki adresowej</a>. Kliknij „dodaj”, aby zapisać.</li>
+<li>Wpisz w przeglądarkę nowy adres swojej strony (<i>mojastronka</i>.i2p) i powinna się ona otworzyć. Mamy nadzieję, że to zadziałało!</li>
+<li>Zanim ogłosisz światu swoją nową stronę, powinieneś dodać jakąś treść. Wejdź do katalogu głównego serwera <a href="#dir">wspomnianego powyżej</a> i zamień index.html i stronę przekierowania swoją własną treścią.</li>
+</ul>
+<p>Spisy katalogów także są dostępne, więc można hostować wszystkie pliki z podkatalogu bez udostępniania linków do każdego z plików. Możesz zmienić wygląd katalogu podając zmieniony plik <a href="lib/jetty-dir.css">jetty-dir.css</a> dla każdego katalogu. <a href="lib/">Podkatalog „lib”</a> prezentuje własny styl. <a href="lib/resources">Podkatalog „resources”</a> prezentuje domyślny styl. Jeżeli potrzebujesz szablonu dla prostej strony, możesz zredagować <a href="pagetemplate.html">tę stronę</a> i <a href="lib/">powiązaną zawartość</a>.</p>
+
+<p>Jeżeli ta strona dalej pokazuje się po zredagowaniu zawartości, spróbuj wyczyścić pamięć podręczną przeglądarki:</p>
+
+<ul>
+<li>
+<b>Firefox:</b> Preferencje ➜ Zaawansowane ➜ Sieć ➜ Pamięć podręczna ➜ Wyczyść</li>
+<li>
+<b>Chrome/Chromium:</b> Ustawienia ➜ Zaawansowane ➜ Prywatność ➜ Wyczyść pamięć podręczną</li>
+<li>
+<b>Opera:</b> Ustawienia ➜ Prywatność ➜ Wyczyść pamięć podręczną</li>
+</ul>
+<h2>Rejestracja własnej domeny I2P</h2>
+
+<p>Teraz jest pora dodać swoją stronę do książki adresowej I2P udostępnianej na stronach takich jak <a href="http://stats.i2p/" target=_blank>stats.i2p</a> lub <a href="http://reg.i2p/" target=_blank>reg.i2p</a>.  Będziesz musiał wpisać nazwę strony i adres przeznaczenia (lub ciąg uwierzytelniania rejestracji) na niektórych z tych stron.</p>
+<p>Niektóre strony rejestrujące wymagają adresu przeznaczenia. W tym wypadku, skopiuj cały adres przeznaczenia ze <a href="http://127.0.0.1:7657/i2ptunnel/edit?tunnel=3">strony konfiguracji ukrytej usługi</a>. Upewnij się, że kopiujesz pełny adres, przeszło 500 znaków.</p>
+<p>Niektóre strony rejestrujące – wliczając <a href="http://stats.i2p/i2p/addkey.html" target=_blank>stats.i2p</a> – wymagają ciąg uwierzytelniania rejestracji. Można go znaleźć na <a href="http://127.0.0.1:7657/i2ptunnel/register?tunnel=3">stronie autoryzacji rejestracji</a> dostępnej ze <a href="http://127.0.0.1:7657/i2ptunnel/edit?tunnel=3">strony konfiguracji ukrytej usługi</a>. Skopiuj cały ciąg uwierzytelniania i wklej na stronie rejestracji. Upewnij się, że kopiujesz cały ciąg, przeszło 500 znaków. Jeżeli jest to wymagane, zwięźle opisz swoją stronę. Jeżeli Twoja strona jest usługą HTTP, pozostaw zaznaczone pole, w przeciwnym razie je odznacz.</p>
+<p>Dla wszelkich stron rejestrujących, uważnie przeczytaj warunki użytkowania. Kliknij „dodaj” i poczekaj na rezultat. Ponieważ wiele węzłów regularnie pobiera aktualizacje książki adresowej z tych stron, po kilku godzinach inni ludzie będą mogli odwiedzić Twoją stronę zwyczajnie wpisując jej nazwę w przeglądarkę.</p>
+
+<h2>Dodawanie subskrypcji książki adresowej</h2>
+
+<p>Będąc przy temacie aktualizacji książki adresowej, dobrze byłoby dodać kilka subskrypcji do Twojej książki adresowej. Przejdź na <a href="http://127.0.0.1:7657/susidns/subscriptions">stronę konfiguracji subskrypcji</a> i dodaj jakieś, aby automatycznie aktualizować listę nowych strony w sieci I2P:</p>
+
+<ul>
+<li>
+<code>http://stats.i2p/cgi-bin/newhosts.txt</code> (<a href="http://stats.i2p/cgi-bin/newhosts.txt" target=_blank>stats.i2p</a>)</li>
+<li>
+<code>http://notbob.i2p/hosts.txt</code> (<a href="http://notbob.i2p/hosts.txt" target=_blank>notbob.i2p</a>)</li>
+</ul>
+<p>Jeżeli Ci się spieszy i nie możesz poczekać kilku godzin, poproś ludzi o skorzystanie z „usługi skoków” (jump service). To zadziała po kilku minutach od rejestracji strony na tej samej stronie. Wypróbuj ją wpisując w przeglądarkę <code>http://stats.i2p/cgi-bin/jump.cgi?a=<i>cośtam</i>.i2p</code>. Kiedy to zadziała, powiadom o tym innych użytkowników.</p>
+
+<p>Niektórzy sprawdzają listy stron takie jak <a href=http://identiguy.i2p/ target=_blank>identiguy.i2p</a> lub <a href="http://no.i2p/browse/" target=_blank>no.i2p</a> w poszukiwaniu nowych stron I2P, więc Twoja strona powinna uzyskać kilku gości. Istnieją inne sposoby na rozpropagowanie swojej strony:</p>
+
+<ul>
+<li>Ogłoś się na <a href=http://i2pforum.i2p/ target=_blank>I2P forum</a> i zareklamuj swoją nową stronę!</li>
+<li>Zagadaj ludzi na IRC-u na kanałach #i2p lub #i2p-chat.</li>
+<li>Wrzuć ją na <a href="http://wiki.i2p-projekt.i2p/wiki/index.php/Eepsite/Services" target=_blank>I2P Wiki Eepsite Index</a>.</li>
+</ul>
+<p>Zauważ, że niektóre strony wymagają podania bardzo długiego adresu docelowego. Możesz go podać, ale nie musisz, jeżeli poprawnie zarejestrowałeś swoją stronę, sprawdziłeś ją w usłudze skoków i poczekałeś 24 godziny aż aktualizacje książki adresowej zostały dostarczone dla wszystkich.</p>
+
+<h2>Użycie alternatywnego serwera www do hostowania strony</h2>
+
+<p>Ta strona (i konsola węzła I2P) działa na <a href="https://pl.wikipedia.org/wiki/Jetty" target=_blank>serwerze www Jetty</a>, ale możesz użyć innego serwera, aby hostować swoją stronę. Aby zapewnić anonimowość, upewnij się, że Twój serwer www jest skonfigurowany tak, aby akceptować tylko połączenia z localhost (127.0.0.1) i sprawdź dokumentację, czy nie ogłasza on jakiś detali mogących skompromitować Twoją anonimowość.</p>
+
+<p>Aby skonfigurować swój serwer stron do współpracy z I2P, powinieneś albo skorzystać z istniejącego tunelu i <a href="http://127.0.0.1:7657/configclients">wyłączyć domyślny serwer</a> lub utworzyć nowy serwerowy tunel HTTP w <a href="http://127.0.0.1:7657/i2ptunnelmgr">menadżerze ukrytych usług</a>. Upewnij się, że port nasłuchu Twojego serwera (domyślnie 7658)  jest także skonfigurowany w ustawieniach ukrytej usługi. Przykładowo jeżeli Twój serwer www nasłuchuje na adresie 127.0.0.1, port 80, upewnij się, że port docelowy w menadżerze ukrytych usług także jest ustawiony na 80.</p>
+
+<p>Miej świadomość, że nieprawidłowo skonfigurowany serwer lub aplikacja webowa może potencjalnie wyjawić informacje takie jak adres IP lub detale serwera, co może zmniejszyć Twoją anonimowość lub narazić stronę na atak hakera. Zaleca się użycie domyślnego serwera, chyba że czujesz się ekspertem od administrowania serwerami. Upewnij się, że serwer www jest zabezpieczony przed podłączeniem go do sieci. Jest mnóstwo poradników online, wpisz w wyszukiwarkę „nginx security hardening guide” i przestudiuj wszelkie zalecenia.</p>
+
+<p class="notify warn">Jest pewien problem z serwerem Apache. Moduły Apache <code>mod_status</code> i <code>mod_info</code> są domyślnie włączone na niektórych systemach. Te moduły wyjawiają wewnętrzne dane, które mogą poważnie naruszyć Twoją anonimowość podczas użytku w anonimowej sieci. Usunięcie z pliku konfiguracyjnego linii odpowiedzialnych za ładowanie tych modułów jest najłatwiejszym sposobem, aby temu zapobiec.</p>
+
+<hr>
+
+<div class="notify idea">Ta strona, strona projektu i konsola węzła wymagają tłumaczenia! Prosimy pomóc projektowi się rozwijać oferując <a href="http://i2p-projekt.i2p/pl/get-involved" target=_blank>swój wkład</a> bądź <a href="http://i2p-projekt.i2p/pl/get-involved/guides/new-translators" target=_blank>tłumaczenie</a>.</div>
+</div>
+</body>
+</html>

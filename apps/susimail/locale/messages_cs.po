@@ -1,0 +1,463 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
+
+#, java-format
+msgid "{0} new message"
+msgid_plural "{0} new messages"
+msgstr[0] "{0} nová zpráva"
+msgstr[1] "Nové zprávy: {0}"
+msgstr[2] "Nové zprávy: {0}"
+
+msgid "Email"
+msgstr "E-mail"
+
+#, java-format
+msgid "No encoder found for encoding \\''{0}\\''."
+msgstr "Nebyl nalezen žádný enkodér pro kódování \\''{0}\\''."
+
+msgid "Re:"
+msgstr "Odpovědět:"
+
+msgid "Fwd:"
+msgstr "Přeposlat:"
+
+msgid "Drafts"
+msgstr "Koncepty"
+
+msgid "Sent"
+msgstr "Odesláno"
+
+msgid "Trash"
+msgstr "Koš"
+
+msgid "Bulk Mail"
+msgstr "Hromadná pošta"
+
+msgid "Inbox"
+msgstr "Doručené"
+
+msgid "View message as HTML"
+msgstr "Zobrazit zprávu jako HTML"
+
+msgid "View message as plain text"
+msgstr "Zobrazit zprávu jako prostý text"
+
+msgid "unknown"
+msgstr "neznámý"
+
+msgid "To protect your privacy, SusiMail is blocking Javascript and any remote content contained in this HTML message."
+msgstr "Pro ochranu vaší soukromí blokuje SusiMail JavaScript a jakýkoli vzdálený obsah obsažený v této HTML zprávě."
+
+msgid "Enable Javascript for enhanced presentation and additional features."
+msgstr "Povolte JavaScript pro lepší prezentaci a další funkce."
+
+#, java-format
+msgid "Tracking images removed from message: {0}"
+msgstr "Sledovací obrázky odebrány z zprávy: {0}"
+
+#, java-format
+msgid "Blocked images not displayed: {0}"
+msgstr "Blokované obrázky nejsou zobrazeny: {0}"
+
+#, java-format
+msgid "Charset \\''{0}\\'' not supported."
+msgstr "Znaková sada \\''{0}\\'' není podporována."
+
+#, java-format
+msgid "Part ({0}) not shown, because of {1}"
+msgstr "Část ({0}) nemohla být zobrazena, protože {1}"
+
+msgid "Reloading the page may fix the error."
+msgstr "Chybu může opravit opětovné načtení stránky."
+
+msgid "File"
+msgstr "Soubor"
+
+#, java-format
+msgid "Download attachment {0}"
+msgstr "Stáhnou přílohu {0}"
+
+msgid "File is packed into a zipfile for security reasons."
+msgstr "Soubor je z bezpečnostních důvodů zazipován."
+
+#, java-format
+msgid "Attachment ({0})."
+msgstr "Příloha ({0})."
+
+msgid "Need username for authentication."
+msgstr "K autentizaci je nutno zadat uživatelské jméno (username)."
+
+msgid "Do not include @mail.i2p in the username"
+msgstr "Nezahrnovat @mail.i2p do uživatelského jména"
+
+msgid "Need password for authentication."
+msgstr "K autentizaci je nutno zadat uživatelské jméno (password)."
+
+msgid "Need hostname for connect."
+msgstr "Pro připojení je nutno zadat jméno hosta (hostname)."
+
+msgid "Need port number for pop3 connect."
+msgstr "Zadejte číslo portu pro POP3."
+
+msgid "POP3 port number is not in range 0..65535."
+msgstr "Číslo portu pro POP3 musí být v rozmezí 0 až 65535."
+
+msgid "POP3 port number is invalid."
+msgstr "Číslo POP3 portu je neplatné."
+
+msgid "Need port number for smtp connect."
+msgstr "Zadejte číslo portup pro smtm."
+
+msgid "SMTP port number is not in range 0..65535."
+msgstr "Číslo portu pro SMTP musí být v rozmezí 0 až 65535."
+
+msgid "SMTP port number is invalid."
+msgstr "Číslo SMTP portu je neplatné."
+
+msgid "Cannot connect"
+msgstr "Není možné se připojit"
+
+msgid "Error connecting to server"
+msgstr "Chyba při připojování k serveru"
+
+msgid "Draft saved."
+msgstr "Koncept uložen."
+
+msgid "Unable to save mail."
+msgstr "Nelze uložit poštu."
+
+#, java-format
+msgid "On {0} {1} wrote:"
+msgstr "K {0} {1} napsal:"
+
+#, java-format
+msgid "Error reading uploaded file: {0}"
+msgstr "Chyba při čtení nahraného souboru: {0}"
+
+msgid "begin forwarded mail"
+msgstr "začátek přeposlaného mailu"
+
+msgid "end forwarded mail"
+msgstr "konec přeposlaného mailu"
+
+msgid "Could not fetch mail body."
+msgstr "Nepodařilo se načíst obsah mailu."
+
+msgid "Message id not valid."
+msgstr "Identifikátor zprávy není platný."
+
+msgid "Internal error, lost connection."
+msgstr "Nastala vnitřní chyba, spojení bylo ztraceno."
+
+#, java-format
+msgid "No Encoding found for {0}"
+msgstr "Nebylo nalezeno kódování pro {0}"
+
+msgid "Attachment not found."
+msgstr "Příloha nenalezena"
+
+msgid "Message not found."
+msgstr "E-mail nenalezen."
+
+#, java-format
+msgid "1 message deleted."
+msgid_plural "{0} messages deleted."
+msgstr[0] "Počet smazaných zpráv: 1"
+msgstr[1] "Počet smazaných zpráv: {0}"
+msgstr[2] "Počet smazaných zpráv: {0}"
+
+msgid "No messages marked for deletion."
+msgstr "Žádné zprávy nebyly označeny k smazání."
+
+#, java-format
+msgid "Host unchanged. Edit configation file {0} to change host."
+msgstr "Hostitel nezměněný. Upravte soubor z upravení {0} pro změnu hostitele."
+
+msgid "Configuration saved"
+msgstr "Konfigurace uložena"
+
+msgid "Invalid pagesize number, resetting to default value."
+msgstr "Neplatné hodnota velikosti stránky, použiji výchozí hodnotu."
+
+msgid "Login"
+msgstr "Login"
+
+msgid "Loading messages, please wait..."
+msgstr "Načítání zpráv, čekejte prosím..."
+
+#, java-format
+msgid "1 message"
+msgid_plural "{0} messages"
+msgstr[0] "1 zpráva"
+msgstr[1] "Počet zpráv: {0}"
+msgstr[2] "Počet zpráv: {0}"
+
+msgid "No messages"
+msgstr "Žádné zprávy"
+
+msgid "Show Message"
+msgstr "Ukázat zprávu"
+
+msgid "New Message"
+msgstr "Nová zpráva"
+
+msgid "Configuration"
+msgstr "Konfigurace"
+
+msgid "I2PMail"
+msgstr "I2PMmail"
+
+msgid "No new messages"
+msgstr "Žádné nové zprávy"
+
+#, java-format
+msgid "{0} is an I2P-exclusive service provided by {1}."
+msgstr "{0} je exkluzivní služba I2P poskytovaná společností {1}."
+
+#, java-format
+msgid "{0} webmail client &copy Susi 2004-2005."
+msgstr "{0} webmail client &copy Susi 2004-2005."
+
+msgid "Checking for new messages on server"
+msgstr "Kontrola nových zpráv na serveru"
+
+msgid "Refresh the page for updates"
+msgstr "Obnovte stránku kvůli aktualizacím"
+
+msgid "Removed tracking image placeholder"
+msgstr "Odebrán placeholder sledovacího obrázku"
+
+msgid "no subject"
+msgstr "žádný předmět"
+
+msgid "Found no valid sender address."
+msgstr "Nebyla nalezena platná adresa odesílatele."
+
+#, java-format
+msgid "Found no valid address in \\''{0}\\''."
+msgstr "V \\''{0}\\'' nebyla nalezena platná adresa odesílatele."
+
+msgid "No recipients found."
+msgstr "Nebyli nalezeni žádní příjemci."
+
+#, java-format
+msgid "Email is too large, max is {0}"
+msgstr "E-mail je příliš velký, maximum je {0}"
+
+msgid "Sending mail."
+msgstr "Odesílání pošty."
+
+msgid "Error sending mail"
+msgstr "Chyba při odesílání emailu"
+
+msgid "Mail sent."
+msgstr "Zpráva odeslána."
+
+msgid "Cancel"
+msgstr "Zrušit"
+
+msgid "Save as Draft"
+msgstr "Uložit jako koncept"
+
+msgid "Send"
+msgstr "Odeslat"
+
+msgid "From"
+msgstr "Od"
+
+msgid "To"
+msgstr "Do"
+
+msgid "Cc"
+msgstr "Cc"
+
+msgid "Bcc"
+msgstr "Bcc"
+
+msgid "Subject"
+msgstr "Předmět"
+
+msgid "Add Attachment"
+msgstr "Přidat přílohu"
+
+msgid "Add attachment"
+msgstr "Přidat přílohu"
+
+msgid "Attachments"
+msgstr "Přílohy"
+
+msgid "Delete selected attachments"
+msgstr "Smazat vybrané přílohy"
+
+msgid "I2PMail Login"
+msgstr "I2PMail Login"
+
+msgid "User"
+msgstr "Uživatel"
+
+msgid "Username"
+msgstr "Uživatelské jméno"
+
+msgid "Password"
+msgstr "Heslo"
+
+msgid "Toggle password visibility"
+msgstr "Přepněte viditelnost hesla"
+
+msgid "Host"
+msgstr "Host"
+
+msgid "POP3 Port"
+msgstr "POP3 Port"
+
+msgid "SMTP Port"
+msgstr "SMTP Port"
+
+msgid "Read Mail Offline"
+msgstr "Číst emaily offline"
+
+msgid "Settings"
+msgstr "Nastavení"
+
+msgid "Learn about I2PMail"
+msgstr "Další informace o I2PMail"
+
+msgid "Create Account"
+msgstr "Vytvořit účet"
+
+msgid "New"
+msgstr "Nová"
+
+msgid "Check Mail"
+msgstr "Zkontrolovat mail"
+
+msgid "Refresh Page"
+msgstr "Obnovit stránku"
+
+msgid "Change to Folder"
+msgstr "Změna na složku"
+
+#, java-format
+msgid "1 Message"
+msgid_plural "{0} Messages"
+msgstr[0] "zpráv: 1"
+msgstr[1] "zpráv: {0}"
+msgstr[2] "zpráv: {0}"
+
+msgid "Logout"
+msgstr "Odhlásit"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Size"
+msgstr "Velikost"
+
+msgid "Mark for deletion"
+msgstr "Označit pro smazání"
+
+msgid "Really delete the marked messages?"
+msgstr "Opravdu vymazat označené zprávy?"
+
+msgid "Yes, really delete them!"
+msgstr "Ano, chci je opravdu vymazat!"
+
+msgid "Delete Selected"
+msgstr "Smazat vybrané"
+
+msgid "Mark All"
+msgstr "Označit vše"
+
+msgid "Clear All"
+msgstr "Smazat vše"
+
+msgid "Message contains HTML"
+msgstr "Zpráva obsahuje HTML"
+
+msgid "Message is new"
+msgstr "Zpráva je nová"
+
+msgid "Message is spam"
+msgstr "Zpráva je spam"
+
+msgid "Message body not downloaded"
+msgstr "Tělo zprávy nebylo staženo"
+
+msgid "First"
+msgstr "První"
+
+msgid "Previous"
+msgstr "Předchozí"
+
+msgid "Next"
+msgstr "Další"
+
+msgid "Last"
+msgstr "Poslední"
+
+msgid "Really delete this message?"
+msgstr "Opravdu chcete smazat tuto zprávu?"
+
+msgid "Yes, really delete it!"
+msgstr "Ano, opravdu ji chci smazat!"
+
+msgid "Reply"
+msgstr "Odpovědět"
+
+msgid "Reply All"
+msgstr "Odpovědět všem"
+
+msgid "Forward"
+msgstr "Přeposlat"
+
+msgid "Save As"
+msgstr "Uložit jako"
+
+msgid "Delete"
+msgstr "Smazat"
+
+msgid "Back to Folder"
+msgstr "Zpět do složky"
+
+msgid "Move to Folder"
+msgstr "Přesunout do složky"
+
+msgid "View message in new tab"
+msgstr "Zobrazit zprávu v nové záložce"
+
+msgid "Folder Page Size"
+msgstr "Velikost stránky složky"
+
+msgid "Set"
+msgstr "Nastavit"
+
+msgid "Advanced Configuration"
+msgstr "Pokročilá konfigurace"
+
+msgid "Save Configuration"
+msgstr "Uložit konfiguraci"
+
+msgid "No response from server"
+msgstr "Žádná odpověď od serveru"
+
+msgid "Mail server login failed, wrong username or password."
+msgstr "Přihlášení k poštovnímu serveru se nezdařilo, nesprávné uživatelské jméno nebo heslo."
+
+msgid "Logout and then login again with the correct username and password."
+msgstr "Odhlaste se a poté se znovu přihlaste se správným uživatelským jménem a heslem."
+
+msgid "Login failed"
+msgstr "Přihlášení bylo neúspěšné"
+
+msgid "Server refused connection"
+msgstr "Server odmítá připojení"
+
+msgid "Mail rejected"
+msgstr "Email byl odmítnut"

@@ -1,0 +1,428 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Website Unknown"
+msgstr "Web Sitesi Bilinmiyor"
+
+msgid "Router Console"
+msgstr "Yöneltici Konsolu"
+
+msgid "I2P Router Console"
+msgstr "I2P Yöneltici Konsolu"
+
+msgid "Addressbook"
+msgstr "Adres Defteri"
+
+msgid "Configuration"
+msgstr "Yapılandırma"
+
+msgid "Help"
+msgstr "Yardım"
+
+msgid "Website Not Found in Addressbook"
+msgstr "Web Sitesi Adres Defterinde Bulunamadı"
+
+msgid "The website was not found in your router's addressbook."
+msgstr "Web sitesi yönelticinizin adres defterinde bulunamadı."
+
+msgid "Check the link or find a Base 32 or Base 64 address."
+msgstr "Bağlantıyı denetleyein ya da bir Base 32 / Base 64 adresi bulun."
+
+#, java-format
+msgid "If you have the Base 64 address, {0}add it to your addressbook{1}."
+msgstr "Base 64 adresiniz varsa {0}adres defterinize ekleyin{1}."
+
+msgid "Otherwise, find a Base 32 or address helper link, or use a jump service link below."
+msgstr "Aksi takdirde, Base 32'yi veya adres yardımcı bağlantısını bulun veya aşağıdaki atlama hizmeti bağlantısını kullanın.Yoksa bir Base 32 adres yardımcı bağlantısı bulun ya da aşağıdaki sıçrama hizmeti bağlantısını kullanın."
+
+#, java-format
+msgid "Seeing this page often? See {0}the FAQ{1} for help in {2}adding some subscriptions{3} to your addressbook."
+msgstr "Bu sayfayı sık sık mı görüyorsunuz? Sık sık bu sayfayı görüyorsanız adres defterinize {2}bazı abonelikler eklemek{3} için {0}SSS{1} bölümüne bakın."
+
+msgid "Could not find the following destination:"
+msgstr "Şu hedef bulunamadı:"
+
+msgid "Warning: Non-HTTP Protocol"
+msgstr "Uyarı: HTTP Olmayan İletişim Kuralı"
+
+msgid "The request uses a bad protocol."
+msgstr "İstek kötü bir iletişim kuralı kullanıyor."
+
+msgid "The I2P HTTP Proxy supports HTTP and HTTPS requests only."
+msgstr "I2P HTTP Vekil Sunucusu yalnız HTTP ve HTTPS isteklerini destekler."
+
+msgid "Other protocols such as FTP are not allowed."
+msgstr "FTP gibi diğer iletişim kuralları desteklenmez."
+
+msgid "Error: Request Denied"
+msgstr "Hata: İstek Reddedildi"
+
+msgid "Error: Cannot Access Router Console via I2P Proxy"
+msgstr "Hata: I2P Proxy Üzerinden Yönlendirici Konsoluna Erişilemiyor"
+
+msgid "Your browser is misconfigured."
+msgstr "Web tarayıcınızın ayarları hatalı."
+
+msgid "Do not use the proxy to access the router console, localhost, or local LAN destinations."
+msgstr "Yönlendirici konsoluna, localhost'a veya yerel LAN hedeflerine erişmek için proxy'yi kullanmayın.Yöneltici konsolu, yerel sunucu ya da yerel ağ hedeflerine erişmek için vekil sunucu kullanmayın."
+
+msgid "You need to prevent 127.0.0.1 (or the address you're accessing the I2P console on) from being routed via I2P's http proxy, usually by excluding the address in your browser's proxy configuration section."
+msgstr "127.0.0.1'in (veya I2P konsoluna eriştiğiniz adresin), genellikle tarayıcınızın proxy yapılandırma bölümündeki adresi hariç tutarak I2P'nin http proxy'si aracılığıyla yönlendirilmesini önlemeniz gerekir."
+
+msgid "Warning: Destination Key Conflict"
+msgstr "Uyarı: Hedef Anahtarı Çakışması"
+
+msgid "The address helper link you followed specifies a different destination key than the entry in your address book."
+msgstr "İzlediğiniz adres yardımcı bağlantısı, adres defterinizdeki girişten farklı bir hedef anahtarı belirtiyor.İzlediğiniz adres yardımcı bağlantısı adres defterinizde farklı bir hedef anahtarı belirtilmiş."
+
+msgid "Someone could be trying to impersonate another website, or people have given two websites identical names."
+msgstr "Birisi başka bir web sitesini taklit etmeye çalışıyor olabilir veya insanlar iki web sitesine aynı adı vermiş olabilir.Birisi başka bir web sitesini taklit etmeye çalışıyor olabilir ya da iki farklı kişi iki ayrı web sitesine aynı adı vermiş."
+
+msgid "Resolve the conflict by deciding which key you trust, and then either ignore the address helper link, or delete the host entry from your address book and click the address helper link again."
+msgstr "Hangi anahtara güveneceğinize karar vererek çakışmayı çözün ve ardından adres yardımcı bağlantısını yok sayın veya ana bilgisayar girişini adres defterinizden silin ve adres yardımcı bağlantısına yeniden tıklayın.Bu çakışmayı çözmek için hangi anahtara güveneceğinize karar verin ve diğer adres yardımcısı bağlantısını yok sayın ya da adres defterinizden sunucu kaydını silerek adres yardımcısı bağlantısına yeniden tıklayın."
+
+msgid "Connection Reset"
+msgstr "Bağlantı Sıfırlandı"
+
+msgid "The connection to the website was reset while the page was loading."
+msgstr "Sayfa yüklenirken web sitesi balantısı sıfırlandı."
+
+msgid "The website could be temporarily unavailable, too busy, or it has blocked your access."
+msgstr "Web sitesi geçici olarak kullanılamıyor olabilir, çok meşgul olabilir veya erişiminizi engellemiş olabilir.Web sitesi geçici olarak kullanılamıyor, çok meşgul ya da erişiminizi engellemiş olabilir."
+
+#, java-format
+msgid "You may want to {0}retry{1}."
+msgstr "{0}Yeniden denemek{1} isteyebilirsiniz."
+
+#, java-format
+msgid "If you leave this page open, it will automatically retry connecting to the website every {0} seconds after a failed connection attempt."
+msgstr "Bu sayfayı açık bırakırsanız, başarısız bir bağlantı denemesinden sonra her {0} saniyede bir web sitesine bağlanmayı otomatik olarak yeniden deneyecektir."
+
+msgid "Website Unreachable"
+msgstr "Web Sitesine Erişilemiyor"
+
+msgid "The website was not reachable, because it uses encryption options that are not supported by your I2P or Java version."
+msgstr "I2P veya Java sürümünüz tarafından desteklenmeyen şifreleme seçeneklerini kullandığından web sitesine erişilemedi.Kullanılan şifreleme seçenekleri I2P ya da Java sürümünüz tarafından desteklenmediğinden web sitesine erişilemiyor."
+
+msgid "Could not connect to the following destination:"
+msgstr "Şu hedefe bağlanılamadı:"
+
+msgid "The website was not reachable, because its lease set was not found."
+msgstr "Kiralama kümesi bulunamadığından HTTP web sitesine erişilemiyor."
+
+msgid "The website is probably down, but there could also be network congestion."
+msgstr "Web sitesi muhtemelen kapalı, ancak ağ tıkanıklığı da olabilir.Web sitesi büyük olasılıkla çalışmıyor ancak bir ağ tıkanıklığı da olabilir."
+
+msgid "The connection to the proxy was reset."
+msgstr "Vekil sunucu bağlantısı sıfırlandı."
+
+msgid "The proxy could be temporarily unavailable, too busy, or it has blocked your access."
+msgstr "Proxy geçici olarak kullanılamıyor, çok meşgul olabilir veya erişiminizi engellemiş olabilir.Vekil sunucu geçici olarak kullanılamıyor, çok meşgul ya da erişiminizi engellemiş olabilir."
+
+#, java-format
+msgid "You may want to {0}retry{1} as this will randomly reselect an outproxy from the pool you have defined {2}here{3} (if you have more than one configured)."
+msgstr "{0} yeniden denemek isteyebilirsiniz {1}, bu {2} burada {3} tanımladığınız havuzdan rastgele bir şekilde yeniden seçecektir (birden fazla yapılandırılmışsa)."
+
+#, java-format
+msgid "If you continue to have trouble you may want to edit your outproxy list {0}here{1}."
+msgstr "Sorun yaşamaya devam ederseniz, outproxy listenizi {0}buradan{1} düzenlemek isteyebilirsiniz.Sorun sürerse {0}buradan{1} çıkış vekil sunucu listenizi düzenleyebilirsiniz."
+
+msgid "Outproxy Unreachable"
+msgstr "Çıkış Vekil Sunucusuna Erişilemiyor"
+
+msgid "The HTTP outproxy was not reachable, because it uses encryption options that are not supported by your I2P or Java version."
+msgstr "HTTP proxy'sine ulaşılamadı çünkü I2P veya Java sürümünüz tarafından desteklenmeyen şifreleme seçeneklerini kullanıyor.Kullanılan şifreleme seçenekleri I2P ya da Java sürümünüz tarafından desteklenmediğinden HTTP çıkış vekil sunucusuna erişilemiyor."
+
+msgid "The website was not reachable."
+msgstr "Web sitesine erişilemiyor."
+
+msgid "The website is offline, there is network congestion, or your router is not yet well-integrated with peers."
+msgstr "Web sitesi çevrimdışı, ağ tıkanıklığı var veya yönlendiriciniz henüz eşdüzeylerle iyi bir şekilde entegre edilmemiş.Web sitesi çevrimdışı, bir ağ tıkanıklığı var ya da yönelticiniz henüz eşler ile iyi bütünleşmemiş."
+
+msgid "Warning: No Outproxy Configured"
+msgstr "Uyarı: Herhangi Bir Çıkış Vekil Sunucusu Ayarlanmamış"
+
+msgid "Your request was for a site outside of I2P, but you have no HTTP outproxy configured."
+msgstr "İsteğiniz I2P dışındaki bir site içindi, ancak yapılandırılmış bir HTTP outproxy'niz yok.İsteğiniz I2P dışındaki bir site için ancak ayarlanmış bir HTTP çıkış vekil sunucunuz yok."
+
+msgid "Please configure an outproxy in I2PTunnel."
+msgstr "Lütfen I2PTunnel içinden bir çıkış vekil sunucusu ayarlayın."
+
+msgid "Outproxy Not Found"
+msgstr "Çıkış Vekil Sunucusu Bulunamadı"
+
+msgid "The HTTP Outproxy was not found."
+msgstr "HTTP çıkış vekil sunucusu bulunamadı."
+
+msgid "It is offline, there is network congestion, or your router is not yet well-integrated with peers."
+msgstr "Çevrimdışı, ağ tıkanıklığı var veya yönlendiriciniz henüz eşlerle iyi bir şekilde entegre değil.Çevrimdışı, bir ağ tıkanıklığı var ya da yönelticiniz henüz eşler ile iyi bütünleşmemiş."
+
+msgid "Information: New Host Name"
+msgstr "Bilgi: Yeni Sunucu Adı"
+
+msgid "Information: New Host Name with Address Helper"
+msgstr "Bilgi: Yeni Sunucu Adı ve Adres Yardımcısı"
+
+msgid "The address helper link you followed is for a new host name that is not in your address book."
+msgstr "Takip ettiğiniz adres yardımcı bağlantısı, adres defterinizde olmayan yeni bir ana bilgisayar adı içindir.İzlediğiniz adres yardımcı bağlantısı adres defterinizde bulunmayan yeni bir sunucu adı için."
+
+msgid "You may save this host name to your local address book."
+msgstr "Bu sunucu adını yerel adres defterinize kaydedebilirsiniz."
+
+msgid "If you save it to your address book, you will not see this message again."
+msgstr "Adres defterinize kaydederseniz bu ileti bir daha görüntülenmez."
+
+msgid "If you do not save it, the host name will be forgotten after the next router restart."
+msgstr "Kaydetmezseniz, yönlendiricinin bir sonraki yeniden başlatılmasından sonra ana bilgisayar adı unutulacak.Adres defterinize kaydetmezseniz sunucu adı yöneltici yeniden başlatıldığında unutulur."
+
+msgid "If you do not wish to visit this host, click the \"back\" button on your browser."
+msgstr "Bu ana bilgisayarı ziyaret etmek istemiyorsanız tarayıcınızdaki \"geri\" düğmesini tıklayın.Bu sunucuyu ziyaret etmek istemiyorsanız web tarayıcınızın \"geri\" düğmesine tıklayın."
+
+msgid "Proxy Authorization Required"
+msgstr "Vekil Sunucu Kimlik Doğrulaması Gerekiyor"
+
+msgid "I2P HTTP Proxy Authorization Required"
+msgstr "I2P HTTP Vekil Sunucu Kimlik Doğrulaması Gerekiyor"
+
+msgid "This proxy is configured to require a username and password for access."
+msgstr "Bu proxy erişim için kullanıcı adı ve şifre gerektirecek şekilde yapılandırılmış.Vekil sunucu erişim için bir kullanıcı adı ve parola isteyecek şekilde ayarlanmış."
+
+#, java-format
+msgid "Please enter your username and password, or check your {0}router configuration{1} or {2}I2PTunnel configuration{3}."
+msgstr "Lütfen kullanıcı adınızı ve şifrenizi girin veya {0}yönlendirici yapılandırmanızı{1} ya da {2}I2PTunnel yapılandırmanızı{3} kontrol edin.Lütfen kullanıcı adı ve parolayı yazın ya da {0}yöneltici yapılandırmasını{1} ya da {2}I2PTunnel Yapılandırmasını{3} denetleyin."
+
+#, java-format
+msgid "To disable authorization, remove the configuration {0}i2ptunnel.proxy.auth=basic{1}, then stop and restart the HTTP Proxy tunnel."
+msgstr "Yetkilendirmeyi devre dışı bırakmak için, {0}i2ptunnel.proxy.auth=basic{1} yapılandırmasını kaldırın, ardından HTTP Proxy tünelini durdurup yeniden başlatın.Kimlik doğrulamasını devre dışı bırakmak için {0}i2ptunnel.proxy.auth=basic{1} yapılandırmasını silin ve HTTP vekil sunucu tünelini durdurup yeniden başlatın."
+
+msgid "The HTTP outproxy was not reachable, because its lease set was not found."
+msgstr "Kira kümesi bulunamadığından HTTP outproxy'ye ulaşılamadı.Kiralama kümesi bulunamadığından HTTP çıkış vekil sunucusuna erişilemiyor."
+
+msgid "The outproxy is probably down, but there could also be network congestion."
+msgstr "Outproxy muhtemelen kapalı, ancak ağ tıkanıklığı da olabilir.Çıkış vekil sunucusu büyük çalışmıyor ancak bir ağ tıkanıklığı da olabilir."
+
+msgid "Warning: Request Denied"
+msgstr "Uyarı: İstek Reddedildi"
+
+msgid "This address appears to be malformed. Please verify you have supplied a valid address!"
+msgstr "Bu adres hatalı görünmektedir. Lütfen geçerli bir adres sağladığınızı doğrulayın!"
+
+msgid "Warning: Bad Address Helper"
+msgstr "Uyarı: Kötü Adres Yardımcısı"
+
+#, java-format
+msgid "The helper key in the URL ({0}i2paddresshelper={1}) is not resolvable."
+msgstr "Adresteki ({0}i2paddresshelper={1}) çözümlenemedi."
+
+msgid "It seems to be garbage data, or a mistyped Base 32 address."
+msgstr "Çöp verisi veya yanlış yazılmış Base 32 adresi gibi görünüyor.Anlamsız bir veri ya da hatalı yazılmış bir Base 32 adresi gibi görünüyor."
+
+msgid "Check your URL to try and fix the helper key to be a valid Base 32 hostname or Base 64 key."
+msgstr "Yardımcı anahtarın geçerli bir Base 32 ana bilgisayar adı veya Base 64 anahtarı olmasını sağlamak için URL'nizi kontrol edin.Adresi denetleyip, yardımcı anahtarı geçerli bir Base 32 sunucu adı ya da Base 64 anahtarı olacak şekilde düzeltmeyi deneyin."
+
+msgid "Warning: Address Blacklisted"
+msgstr ""
+
+msgid "The requested destination is in your blacklist and access has been blocked."
+msgstr ""
+
+msgid "To allow access to this site, remove it from your blacklist on the SusiDNS blacklist management page."
+msgstr ""
+
+msgid "Warning: Invalid Destination"
+msgstr "Uyarı: Hedef Geçersiz"
+
+msgid "The website destination specified was not valid, or was otherwise unreachable."
+msgstr "Belirtilen web sitesi hedefi geçersiz ya da bir nedenle erişilemiyor."
+
+msgid "Perhaps you pasted in the wrong Base 64 string or the link you are following is bad."
+msgstr "Belki de yanlış Base 64 dizesini yapıştırdınız veya takip ettiğiniz bağlantı hatalı.Yanlış Base 64 dizgesi yapıştırmış olabilirsiniz ya da izlediğiniz bağlantı sorunlu."
+
+msgid "The I2P host could also be offline."
+msgstr "I2P sunucusu da çevrimdışı olabilir."
+
+msgid "Warning: Authorization Required"
+msgstr "Uyarı: Kimlik Doğrulaması Gerekli"
+
+msgid "Warning: Invalid Request URI"
+msgstr "Uyarı: İstek Adresi Geçersiz"
+
+msgid "The request URI is invalid, and probably contains illegal characters."
+msgstr "İstek URI'si geçersiz ve muhtemelen geçersiz karakterler içeriyor.İstek adresi geçersiz ve büyük olasılıkla uygun olmayan karakterler içeriyor."
+
+msgid "If you clicked a link, check the end of the URI for any characters the browser has mistakenly added on."
+msgstr "Bir bağlantıya tıkladıysanız, tarayıcının yanlışlıkla eklediği karakterler için URI'nin sonunu kontrol edin.Bir bağlantıya tıkladıysanız, adresin sonuna bakarak hatalı eklenmiş karakterler olup olmadığını denetleyin."
+
+msgid "The Base32 address is invalid."
+msgstr "Base32 adresi geçersiz."
+
+msgid "This seems to be a bad destination:"
+msgstr "Hedef kötü görünüyor:"
+
+msgid "i2paddresshelper cannot help you with a destination like that!"
+msgstr "i2paddresshelper bunun gibi bir hedef için size yardımcı olamaz!"
+
+#, java-format
+msgid "To visit the destination in your addressbook, click <a href=\"{0}\">here</a>. To visit the conflicting addresshelper destination, click <a href=\"{1}\">here</a>."
+msgstr "Adres defterinizdeki hedefi ziyaret etmek için <a href=\"{0}\">buradan</a> tıklayın. Çatışan adreshelper hedefini ziyaret etmek için <a href=\"{1}\">buradan</a> tıklayın."
+
+#, java-format
+msgid "Destination for {0} in addressbook"
+msgstr "Adres defterindeki {0} için hedef"
+
+msgid "Conflicting address helper destination"
+msgstr "Çakışan adres yardımcısı hedefi"
+
+msgid "Corrupt Base32 address"
+msgstr "Base32 adresi hatalı"
+
+msgid "Destination LeaseSet not found"
+msgstr "Hedef KiralamaSeti bulunamadı"
+
+msgid "Host"
+msgstr "Sunucu"
+
+msgid "Base32"
+msgstr "Base32"
+
+msgid "Destination"
+msgstr "Hedef"
+
+#, java-format
+msgid "Continue to {0} without saving"
+msgstr "Kaydetmeden {0} sitesine ilerle"
+
+msgid "You can browse to the site without saving it to the addressbook. The address will be remembered until you restart your I2P router."
+msgstr "Adres defterine kaydetmeden siteye göz atabilirsiniz. I2P yönlendiricinizi yeniden başlatana kadar adres hatırlanacaktır."
+
+msgid "Continue without saving"
+msgstr "Kaydetmeden devam et"
+
+#, java-format
+msgid "Save {0} to router address book and continue to website"
+msgstr "Yöneltici adres defterine kaydederek {0} web sitesine ilerle"
+
+msgid "This address will be saved to your Router addressbook where your subscription-based addresses are stored."
+msgstr "Bu adres, aboneliğe dayalı adreslerinizin saklandığı Yönlendirici adres defterinize kaydedilecektir."
+
+msgid "If you want to keep track of sites you have added manually, add to your Master or Private addressbook instead."
+msgstr "Manuel olarak eklediğiniz siteleri takip etmek istiyorsanız, bunun yerine Ana veya Özel adres defterinize ekleyin."
+
+msgid "Save & continue"
+msgstr "Kaydedip devam et"
+
+#, java-format
+msgid "Save {0} to master addressbook and continue to website"
+msgstr "{0} adresini ana adres defterine kaydet ve web sitesine devam et"
+
+msgid "This address will be saved to your Master addressbook. Select this option for addresses you wish to keep separate from the main router address book, but don't mind publishing."
+msgstr "Bu adres ana adres kitabınıza kaydedilecektir. Ana yönlendirici adres defterinden ayrı tutmak istediğiniz adresler için bu seçeneği seçin, ancak yayınlamayı umursamayın."
+
+#, java-format
+msgid "Save {0} to private addressbook and continue to website"
+msgstr "{0}'ı özel adres defterine kaydet ve web sitesine devam et"
+
+msgid "This address will be saved to your Private addressbook, ensuring it is never published."
+msgstr "Bu adres, hiçbir zaman yayınlanmayacağından emin olmak için Özel adres defterinize kaydedilecektir."
+
+msgid "Base32 address requires lookup password"
+msgstr "Base32 adresi için tarama parolası gerekiyor"
+
+msgid "Base32 address requires encryption key"
+msgstr "Base32 adresi için şifreleme anahtarı gerekiyor"
+
+msgid "Base32 address requires encryption key and lookup password"
+msgstr "Base32 adresi için şifreleme anahtarı ve tarama parolası gerekiyor"
+
+msgid "Base32 address decryption failure, check encryption key"
+msgstr "Base32 adresinin şifresi çözülemedi. Şifreleme anahtarını denetleyin"
+
+msgid "Generate"
+msgstr "Üret"
+
+msgid "Encryption key"
+msgstr "Şifreleme anahtarı"
+
+msgid "You must either enter a PSK encryption key provided by the server operator, or generate a DH encryption key and send that to the server operator."
+msgstr "Sunucu operatörü tarafından sağlanan PSK şifreleme anahtarını girmeniz veya DH şifreleme anahtarı oluşturup bunu sunucu operatörüne göndermeniz gerekir.Sunucu işletmesi tarafından sağlanan bir PSK şifreleme anahtarı yazmalı ya da bir DH şifreleme anahtarı üreterek sunucu işletmecisine göndermelisiniz."
+
+msgid "Ask the server operator for help."
+msgstr "Yardım almak için sunucu işletmecisine sorun."
+
+msgid "Enter PSK encryption key"
+msgstr "PSK şifreleme anahtarını yazın"
+
+msgid "Generate new DH encryption key"
+msgstr "Yeni bir DH şifreleme anahtarı üretin"
+
+msgid "Lookup password"
+msgstr "Tarama parolası"
+
+msgid "You must enter the password provided by the server operator."
+msgstr "Sunucu işletmecisi tarafından sağlanan parolayı yazın."
+
+#, java-format
+msgid "Added via address helper from {0}"
+msgstr "Adres yardımcısı ile {0} üzerinden eklendi"
+
+msgid "Added via address helper"
+msgstr "Adres yardımcısı ile eklendi"
+
+msgid "Missing lookup password"
+msgstr "Tarama parolası eksik"
+
+msgid "Missing private key"
+msgstr "Özel anahtar eksik"
+
+msgid "Invalid private key"
+msgstr "Özel anahtar geçersiz"
+
+msgid "Your new encryption key"
+msgstr "Yeni şifreleme anahtarınız"
+
+msgid "Copy the key and send it to the server operator."
+msgstr "Anahtarı kopyala ve sunucu işletmecisine gönder."
+
+msgid "After you are granted permission, you may proceed to the website."
+msgstr "İzin verdikten sonra web sitesine ilerleyebilirsiniz."
+
+msgid "Go back and fix the error"
+msgstr "Geri dön ve sorunu düzelt"
+
+msgid "router"
+msgstr "yöneltici"
+
+msgid "master"
+msgstr "ana"
+
+msgid "private"
+msgstr "kişisel"
+
+#, java-format
+msgid "Redirecting to {0}"
+msgstr "{0} sitesine yönlendiriliyor"
+
+msgid "Redirection in progress"
+msgstr "Yönlendirme devam ediyor"
+
+#, java-format
+msgid "Saved {0} to the {1} addressbook, redirecting now."
+msgstr "{0}, {1} adres defterine kaydedildi, yönlendiriliyor."
+
+#, java-format
+msgid "Failed to save {0} to the {1} addressbook, redirecting now."
+msgstr "{0}, {1} adres defterine kaydedilemedi, yönlendiriliyor."
+
+msgid "Click here if you are not redirected automatically."
+msgstr "Otomatik yönlendirme yapılamazsa buraya tıklayın."
+
+#, java-format
+msgid "Saved the authentication for {0}, redirecting now."
+msgstr "{0} için kimlik doğrulaması kaydedildi, yönlendiriliyor."

@@ -1,0 +1,475 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#, java-format
+msgid "{0} new message"
+msgid_plural "{0} new messages"
+msgstr[0] "{0} رسالة جديدة"
+msgstr[1] "{0} رسالة جديدة"
+msgstr[2] "{0} رسائل جديدة"
+msgstr[3] "{0} رسائل جديدة"
+msgstr[4] "{0} رسائل جديدة"
+msgstr[5] "{0} رسائل جديدة"
+
+msgid "Email"
+msgstr "البريد الإلكتروني."
+
+#, java-format
+msgid "No encoder found for encoding \\''{0}\\''."
+msgstr "لم يتم العثور على برنامج تشفير للتشفير \\''{0}\\''."
+
+msgid "Re:"
+msgstr "Re:"
+
+msgid "Fwd:"
+msgstr "Fwd:"
+
+msgid "Drafts"
+msgstr "المسودات"
+
+msgid "Sent"
+msgstr "أُرسِل"
+
+msgid "Trash"
+msgstr "سلة القمامة"
+
+msgid "Bulk Mail"
+msgstr "البريد بالجملة"
+
+msgid "Inbox"
+msgstr "البريد الوارد"
+
+msgid "View message as HTML"
+msgstr "عرض الرسالة كنص HTML"
+
+msgid "View message as plain text"
+msgstr "عرض الرسالة كنص بسيط"
+
+msgid "unknown"
+msgstr "غير معروف"
+
+msgid "To protect your privacy, SusiMail is blocking Javascript and any remote content contained in this HTML message."
+msgstr "لحماية خصوصيتك، تقوم SusiMail بحظر Javascript وجميع المحتوى البعيد الموجود في هذه الرسالة HTML."
+
+msgid "Enable Javascript for enhanced presentation and additional features."
+msgstr "تفعيل Javascript للعرض المُحسَّن والمتطلبات الإضافية."
+
+#, java-format
+msgid "Tracking images removed from message: {0}"
+msgstr "تم إزالة الصور المُتبعَة من الرسالة: {0}"
+
+#, java-format
+msgid "Blocked images not displayed: {0}"
+msgstr "الصور المحظورة لم يتم عرضها: {0}"
+
+#, java-format
+msgid "Charset \\''{0}\\'' not supported."
+msgstr "مجموعة اﻷحرف \\''{0}\\''  غير مدعوم."
+
+#, java-format
+msgid "Part ({0}) not shown, because of {1}"
+msgstr "الجزء ({0}) لا يظهر، بسبب {1}"
+
+msgid "Reloading the page may fix the error."
+msgstr "إعادة تحميل الصفحة قد يؤدي إلى إصلاح الخطأ."
+
+msgid "File"
+msgstr "ملف"
+
+#, java-format
+msgid "Download attachment {0}"
+msgstr "تنزيل المرفق {0}"
+
+msgid "File is packed into a zipfile for security reasons."
+msgstr "الملف مكتوب بصيغة ملف zip لأسباب أمنية."
+
+#, java-format
+msgid "Attachment ({0})."
+msgstr "مرفق ({0})."
+
+msgid "Need username for authentication."
+msgstr "يحتاج اسم المستخدم للإثبات."
+
+msgid "Do not include @mail.i2p in the username"
+msgstr "لا تشمل @mail.i2p في اسم المستخدم"
+
+msgid "Need password for authentication."
+msgstr "يحتاج كلمة المرور للإثبات."
+
+msgid "Need hostname for connect."
+msgstr "يحتاج اسم المستضيف للاتصال."
+
+msgid "Need port number for pop3 connect."
+msgstr "تحتاج إلى رقم منفذ pop3 للاتصال ."
+
+msgid "POP3 port number is not in range 0..65535."
+msgstr "رقم منفذ POP3 ليس في النطاق 0..65535."
+
+msgid "POP3 port number is invalid."
+msgstr "رقم منفذ POP3 غير صالح."
+
+msgid "Need port number for smtp connect."
+msgstr "تحتاج إلى رقم منفذ smtp للاتصال ."
+
+msgid "SMTP port number is not in range 0..65535."
+msgstr "رقم منفذ SMTP ليس في النطاق 0..65535."
+
+msgid "SMTP port number is invalid."
+msgstr "رقم منفذ SMTP غير صالح."
+
+msgid "Cannot connect"
+msgstr "لا يمكن الاتصال"
+
+msgid "Error connecting to server"
+msgstr "خطأ في الاتصال بالخادم"
+
+msgid "Draft saved."
+msgstr "تم حفظ المسودة."
+
+msgid "Unable to save mail."
+msgstr "غير قادر على حفظ البريد."
+
+#, java-format
+msgid "On {0} {1} wrote:"
+msgstr "في {0} {1} كتب:"
+
+#, java-format
+msgid "Error reading uploaded file: {0}"
+msgstr "خطأ في قراءة الملف الذي تم رفعه: {0}"
+
+msgid "begin forwarded mail"
+msgstr "بدء البريد المعاد"
+
+msgid "end forwarded mail"
+msgstr "إنهاء البريد المعاد"
+
+msgid "Could not fetch mail body."
+msgstr "لا يمكن جلب هيئة البريد."
+
+msgid "Message id not valid."
+msgstr "معرف الرسالة غير صالح."
+
+msgid "Internal error, lost connection."
+msgstr "خطأ داخلي ، فقد الاتصال."
+
+#, java-format
+msgid "No Encoding found for {0}"
+msgstr "لم يتم العثور على تشفير {0}"
+
+msgid "Attachment not found."
+msgstr "لم يتم العثور على المرفق."
+
+msgid "Message not found."
+msgstr "الرسالة غير موجودة."
+
+#, java-format
+msgid "1 message deleted."
+msgid_plural "{0} messages deleted."
+msgstr[0] "رسالة 1 محذوفة."
+msgstr[1] "رسالة 1 محذوفة."
+msgstr[2] "{0} الرسائل المحذوفة."
+msgstr[3] "{0} الرسائل المحذوفة."
+msgstr[4] "{0} الرسائل المحذوفة."
+msgstr[5] "{0} الرسائل المحذوفة."
+
+msgid "No messages marked for deletion."
+msgstr "لم يتم تحديد الرسائل للحذف."
+
+#, java-format
+msgid "Host unchanged. Edit configation file {0} to change host."
+msgstr "المضيف لم يتغير. تحرير ملف التهيئة {0} لتغيير المضيف."
+
+msgid "Configuration saved"
+msgstr "تم حفظ التهيئة"
+
+msgid "Invalid pagesize number, resetting to default value."
+msgstr "رقم غير صالح لحجم الصفحة ، إعادة الضبط إلى القيمة الافتراضية."
+
+msgid "Login"
+msgstr "تسجيل الدخول"
+
+msgid "Loading messages, please wait..."
+msgstr "تحميل رسائل البريد الإلكتروني، يرجى الانتظار..."
+
+#, java-format
+msgid "1 message"
+msgid_plural "{0} messages"
+msgstr[0] "رسالة واحدة"
+msgstr[1] "رسالة واحدة"
+msgstr[2] "{0}الرسائل"
+msgstr[3] "{0}الرسائل"
+msgstr[4] "{0}الرسائل"
+msgstr[5] "{0} الرسائل"
+
+msgid "No messages"
+msgstr "لا رسائل"
+
+msgid "Show Message"
+msgstr "اظهر الرسالة"
+
+msgid "New Message"
+msgstr "رسالة جديدة"
+
+msgid "Configuration"
+msgstr "التهيئة."
+
+msgid "I2PMail"
+msgstr "I2PMail"
+
+msgid "No new messages"
+msgstr "لا توجد رسائل جديدة"
+
+#, java-format
+msgid "{0} is an I2P-exclusive service provided by {1}."
+msgstr "{0} هي خدمة حصرية لـ I2P مقدمة من {1}."
+
+#, java-format
+msgid "{0} webmail client &copy Susi 2004-2005."
+msgstr "{0} webmail client &copy Susi 2004-2005."
+
+msgid "Checking for new messages on server"
+msgstr "التحقق من رسائل البريد الإلكتروني الجديدة على الخادم"
+
+msgid "Refresh the page for updates"
+msgstr "قم بتحديث الصفحة للحصول على التحديثات"
+
+msgid "Removed tracking image placeholder"
+msgstr "تم إزالة مكان الحفظ للصورة المُتبعَة"
+
+msgid "no subject"
+msgstr "لا يوجد عنوان"
+
+msgid "Found no valid sender address."
+msgstr "لم يتم العثور على عنوان مرسل صالح."
+
+#, java-format
+msgid "Found no valid address in \\''{0}\\''."
+msgstr "لم يتم العثور على عنوان صالح في \\''{0}\\''."
+
+msgid "No recipients found."
+msgstr "لم يتم العثور على المستلمين."
+
+#, java-format
+msgid "Email is too large, max is {0}"
+msgstr "البريد الإلكتروني كبير جدًا، الحد الأقصى هو {0}"
+
+msgid "Sending mail."
+msgstr "إرسال البريد."
+
+msgid "Error sending mail"
+msgstr "خطأ في إرسال البريد"
+
+msgid "Mail sent."
+msgstr "تم إرسال البريد."
+
+msgid "Cancel"
+msgstr "الغاء"
+
+msgid "Save as Draft"
+msgstr "حفظ كمسودة"
+
+msgid "Send"
+msgstr "أرسل"
+
+msgid "From"
+msgstr "من"
+
+msgid "To"
+msgstr "إلى"
+
+msgid "Cc"
+msgstr "Cc"
+
+msgid "Bcc"
+msgstr "Bcc"
+
+msgid "Subject"
+msgstr "عنوان"
+
+msgid "Add Attachment"
+msgstr "إضافة مرفق"
+
+msgid "Add attachment"
+msgstr "إضافة مرفق"
+
+msgid "Attachments"
+msgstr "المرفقات"
+
+msgid "Delete selected attachments"
+msgstr "احذف المرفقات المختارة"
+
+msgid "I2PMail Login"
+msgstr "البريد الإلكتروني تسجيل الدخول"
+
+msgid "User"
+msgstr "المستخدم"
+
+msgid "Username"
+msgstr "اسم المستخدم"
+
+msgid "Password"
+msgstr "كلمة السر"
+
+msgid "Toggle password visibility"
+msgstr "تبديل رؤية كلمة المرور"
+
+msgid "Host"
+msgstr "المُضيف"
+
+msgid "POP3 Port"
+msgstr "منفذ POP3"
+
+msgid "SMTP Port"
+msgstr "منفذ SMTP"
+
+msgid "Read Mail Offline"
+msgstr "قراءة البريد دون اتصال"
+
+msgid "Settings"
+msgstr "الإعدادات"
+
+msgid "Learn about I2PMail"
+msgstr "تعرف على بريد I2P"
+
+msgid "Create Account"
+msgstr "إنشاء حساب"
+
+msgid "New"
+msgstr "جديد"
+
+msgid "Check Mail"
+msgstr "فحص البريد"
+
+msgid "Refresh Page"
+msgstr "تحديث الصفحة"
+
+msgid "Change to Folder"
+msgstr "التغيير إلى مجلد"
+
+#, java-format
+msgid "1 Message"
+msgid_plural "{0} Messages"
+msgstr[0] "رسالة واحدة"
+msgstr[1] "رسالة واحدة"
+msgstr[2] "{0}الرسائل"
+msgstr[3] "{0}الرسائل"
+msgstr[4] "{0}الرسائل"
+msgstr[5] "{0} الرسائل"
+
+msgid "Logout"
+msgstr "تسجيل خروج"
+
+msgid "Date"
+msgstr "تاريخ"
+
+msgid "Size"
+msgstr "الحجم"
+
+msgid "Mark for deletion"
+msgstr "اختر للحذف"
+
+msgid "Really delete the marked messages?"
+msgstr "هل تريد حذف الرسائل المحددة حقًا؟"
+
+msgid "Yes, really delete them!"
+msgstr "نعم ، احذفها!"
+
+msgid "Delete Selected"
+msgstr "احذف المختار"
+
+msgid "Mark All"
+msgstr "حدد الكل"
+
+msgid "Clear All"
+msgstr "امسح الكل"
+
+msgid "Message contains HTML"
+msgstr "الرسالة تحتوي على HTML"
+
+msgid "Message is new"
+msgstr "الرسالة جديدة"
+
+msgid "Message is spam"
+msgstr "الرسالة غير مرغوب فيها"
+
+msgid "Message body not downloaded"
+msgstr "نص الرسالة لم يتم تحميله"
+
+msgid "First"
+msgstr "اﻷول"
+
+msgid "Previous"
+msgstr "السابق"
+
+msgid "Next"
+msgstr "التالي"
+
+msgid "Last"
+msgstr "اﻷخير"
+
+msgid "Really delete this message?"
+msgstr "هل تريد حذف هذه الرسالة حقًا؟"
+
+msgid "Yes, really delete it!"
+msgstr "نعم ، احذفها!"
+
+msgid "Reply"
+msgstr "الرد"
+
+msgid "Reply All"
+msgstr "الرد على الجميع"
+
+msgid "Forward"
+msgstr "إلى الأمام"
+
+msgid "Save As"
+msgstr "احفظ كـ"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Back to Folder"
+msgstr "العودة إلى المجلد"
+
+msgid "Move to Folder"
+msgstr "انتقل إلى المجلد"
+
+msgid "View message in new tab"
+msgstr "عرض الرسالة في شريط جديد"
+
+msgid "Folder Page Size"
+msgstr "حجم صفحة المجلد"
+
+msgid "Set"
+msgstr "ضبط"
+
+msgid "Advanced Configuration"
+msgstr "التهيئة المتقدمة"
+
+msgid "Save Configuration"
+msgstr "حفظ التهيئة"
+
+msgid "No response from server"
+msgstr "لا استجابة من الخادم"
+
+msgid "Mail server login failed, wrong username or password."
+msgstr "فشل تسجيل دخول خادم البريد، خطأ في اسم المستخدم أو كلمة المرور."
+
+msgid "Logout and then login again with the correct username and password."
+msgstr "إعادة تسجيل الدخول باستخدام اسم المستخدم وكلمة المرور الصحيحين."
+
+msgid "Login failed"
+msgstr "فشل تسجيل الدخول"
+
+msgid "Server refused connection"
+msgstr "الخادم يرفض الاتصال"
+
+msgid "Mail rejected"
+msgstr "البريد مرفوض"

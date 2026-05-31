@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+  <Match>
+    <Class name="net.metanotion.io.block.index.BSkipSpan"/>
+    <Field name="nextPage"/>
+    <Bug pattern="UR_UNINIT_READ"/>
+  </Match>
+  <!-- Suppress BCEL/FindBugs internal errors that are not actionable code issues -->
+  <Match>
+    <Class name="net.i2p.router.web.helpers.NetDbRenderer$CountryComparator"/>
+    <Bug pattern="FindOpenStream"/>
+  </Match>
+  <!-- Suppress all BCEL ClassFormatException errors as these are internal FindBugs issues -->
+  <Match>
+    <Bug pattern="ClassFormatException"/>
+  </Match>
+  <!-- Suppress problematic JSP classes that cause BCEL parsing errors -->
+  <Match>
+    <Class name="~.*\.jsp.*"/>
+  </Match>
+  <!-- Suppress all Apache Commons classes -->
+  <Match>
+    <Class name="~org\.apache\.commons\..*"/>
+  </Match>
+</FindBugsFilter>

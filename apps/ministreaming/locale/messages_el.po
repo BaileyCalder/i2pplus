@@ -1,0 +1,63 @@
+# I2P
+# Copyright (C) 2014 The I2P Project
+msgid ""
+msgstr ""
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Message timeout"
+msgstr "Απόπειρα λήψης μηνύματος έληξε"
+
+msgid "Failed delivery to local destination"
+msgstr "Αποτυχημένη παράδοση στον τοπικό προορισμό"
+
+msgid "Local router failure"
+msgstr "Αποτυχία του τοπικού διαδρομολόγηση"
+
+msgid "Local network failure"
+msgstr "Αποτυχία του τοπικού δικτύου"
+
+msgid "Session closed"
+msgstr "Η σύνδεση έκλεισε"
+
+msgid "Invalid message"
+msgstr "Μη έγκυρο μήνυμα"
+
+msgid "Invalid message options"
+msgstr "Μη έγκυρες επιλογές μηνύματος"
+
+msgid "Buffer overflow"
+msgstr "Υπερβολή βιβλιοθήκης"
+
+msgid "Message expired"
+msgstr "Έληξε το μήνυμα"
+
+msgid "Local lease set invalid"
+msgstr "Ο τοπικός αριθμός ενοικίασης είναι μη έγκυρος"
+
+msgid "No local tunnels"
+msgstr "Δεν υπάρχουν τοπικές συρμές"
+
+msgid "Unsupported encryption options"
+msgstr "Μη υποστηριζόμενες επιλογές κρυπτογράφησης"
+
+msgid "Invalid destination"
+msgstr "Μη έγκυρος προορισμός"
+
+msgid "Destination lease set expired"
+msgstr "Έληξε η διάρκεια του προορισμού"
+
+msgid "Destination lease set not found"
+msgstr "Δεν βρέθηκε ο αριθμός ενοικίασης προορισμού"
+
+msgid "Local destination shutdown"
+msgstr "Τερματισμός του τοπικού προορισμού"
+
+msgid "Connection was reset"
+msgstr "Η σύνδεση επαναφορτώθηκε"
+
+msgid "Failure code"
+msgstr "Κωδικός αποτυχίας"

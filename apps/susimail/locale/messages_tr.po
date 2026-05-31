@@ -1,0 +1,459 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#, java-format
+msgid "{0} new message"
+msgid_plural "{0} new messages"
+msgstr[0] "{0} yeni ileti"
+msgstr[1] "{0} yeni ileti"
+
+msgid "Email"
+msgstr "E-posta"
+
+#, java-format
+msgid "No encoder found for encoding \\''{0}\\''."
+msgstr "\\''{0}\\'' kodlaması için kullanılacak bir kodlayıcı bulunamadı."
+
+msgid "Re:"
+msgstr "Ynt:"
+
+msgid "Fwd:"
+msgstr "İlt:"
+
+msgid "Drafts"
+msgstr "Taslaklar"
+
+msgid "Sent"
+msgstr "Gönderildi"
+
+msgid "Trash"
+msgstr "Çöp"
+
+msgid "Bulk Mail"
+msgstr "Toplu E-posta"
+
+msgid "Inbox"
+msgstr "Gelen Kutusu"
+
+msgid "View message as HTML"
+msgstr "Mesajı HTML olarak görüntüle"
+
+msgid "View message as plain text"
+msgstr "Mesajı düz metin olarak görüntüle"
+
+msgid "unknown"
+msgstr "bilinmiyor"
+
+msgid "To protect your privacy, SusiMail is blocking Javascript and any remote content contained in this HTML message."
+msgstr "Gizliliğinizi korumak amacıyla, SusiMail bu HTML mesajındaki JavaScript'i ve içerdiği tüm uzak içerikleri engelliyor."
+
+msgid "Enable Javascript for enhanced presentation and additional features."
+msgstr "Daha iyi sunum ve ek özellikler için JavaScript'i etkinleştirin."
+
+#, java-format
+msgid "Tracking images removed from message: {0}"
+msgstr "Mesajtan izleme görselleri kaldırıldı: {0}"
+
+#, java-format
+msgid "Blocked images not displayed: {0}"
+msgstr "Engelli görseller gösterilmedi: {0}"
+
+#, java-format
+msgid "Charset \\''{0}\\'' not supported."
+msgstr "\\''{0}\\'' karakter kümesi desteklenmiyor."
+
+#, java-format
+msgid "Part ({0}) not shown, because of {1}"
+msgstr "{1} nedeniyle ({0}) bölümü görüntülenemiyor"
+
+msgid "Reloading the page may fix the error."
+msgstr "Sayfanın yeniden yüklenmesi hatayı düzeltebilir."
+
+msgid "File"
+msgstr "Dosya"
+
+#, java-format
+msgid "Download attachment {0}"
+msgstr "{0} ekini indir"
+
+msgid "File is packed into a zipfile for security reasons."
+msgstr "Dosya güvenlik nedeniyle zip arşivi içine paketlendi."
+
+#, java-format
+msgid "Attachment ({0})."
+msgstr "Ek ({0})."
+
+msgid "Need username for authentication."
+msgstr "Kimlik doğrulaması için kullanıcı adı gereklidir."
+
+msgid "Do not include @mail.i2p in the username"
+msgstr "Kullanıcı adına @mail.i2p dahil etmeyin"
+
+msgid "Need password for authentication."
+msgstr "Kimlik doğrulaması için parola gereklidir."
+
+msgid "Need hostname for connect."
+msgstr "Bağlanmak için sunucu adı gereklidir."
+
+msgid "Need port number for pop3 connect."
+msgstr "POP3 bağlantısı için kapı numarası gereklidir."
+
+msgid "POP3 port number is not in range 0..65535."
+msgstr "POP3 kapı numarası olması gereken 0..65535 aralığında değil."
+
+msgid "POP3 port number is invalid."
+msgstr "POP3 kapı numarası geçersiz."
+
+msgid "Need port number for smtp connect."
+msgstr "SMTP bağlantısı için kapı numarası gereklidir."
+
+msgid "SMTP port number is not in range 0..65535."
+msgstr "SMTP kapı numarası olması gereken 0..65535 aralığında değil."
+
+msgid "SMTP port number is invalid."
+msgstr "SMTP kapı numarası geçersiz."
+
+msgid "Cannot connect"
+msgstr "Bağlantı kurulamadı"
+
+msgid "Error connecting to server"
+msgstr "Sunucuya bağlanılırken bir sorun çıktı"
+
+msgid "Draft saved."
+msgstr "Taslak kaydedildi."
+
+msgid "Unable to save mail."
+msgstr "E-posta kaydedilemedi."
+
+#, java-format
+msgid "On {0} {1} wrote:"
+msgstr "{0} {1} üzerine yazılan:"
+
+#, java-format
+msgid "Error reading uploaded file: {0}"
+msgstr "Yüklenen dosya okunamadı: {0}"
+
+msgid "begin forwarded mail"
+msgstr "iletilen posta başlangıcı"
+
+msgid "end forwarded mail"
+msgstr "iletilen posta sonu"
+
+msgid "Could not fetch mail body."
+msgstr "Posta metni alınamadı."
+
+msgid "Message id not valid."
+msgstr "İleti kodu geçersiz."
+
+msgid "Internal error, lost connection."
+msgstr "İç hata, bağlantı kesildi."
+
+#, java-format
+msgid "No Encoding found for {0}"
+msgstr "{0} için kodlama bulunamadı"
+
+msgid "Attachment not found."
+msgstr "Ek bulunamadı."
+
+msgid "Message not found."
+msgstr "İleti bulunamadı."
+
+#, java-format
+msgid "1 message deleted."
+msgid_plural "{0} messages deleted."
+msgstr[0] "{0} ileti silindi."
+msgstr[1] "{0} ileti silindi."
+
+msgid "No messages marked for deletion."
+msgstr "Silinmek üzere işaretlenmiş bir ileti yok."
+
+#, java-format
+msgid "Host unchanged. Edit configation file {0} to change host."
+msgstr "Sunucu değiştirilmedi. Sunucuyu değiştirmek için {0} ayar dosyasını düzenleyin."
+
+msgid "Configuration saved"
+msgstr "Yapılandırma kaydedildi"
+
+msgid "Invalid pagesize number, resetting to default value."
+msgstr "Sayfa boyutu sayısı geçersiz, varsayılan değere sıfırlanıyor."
+
+msgid "Login"
+msgstr "Oturum Aç"
+
+msgid "Loading messages, please wait..."
+msgstr "E-postalar yükleniyor, lütfen bekleyin..."
+
+#, java-format
+msgid "1 message"
+msgid_plural "{0} messages"
+msgstr[0] "{0} İleti"
+msgstr[1] "{0} İleti"
+
+msgid "No messages"
+msgstr "Herhangi bir ileti yok"
+
+msgid "Show Message"
+msgstr "İletiyi Görüntüle"
+
+msgid "New Message"
+msgstr "Yeni İleti"
+
+msgid "Configuration"
+msgstr "Yapılandırma"
+
+msgid "I2PMail"
+msgstr "I2PMail"
+
+msgid "No new messages"
+msgstr "Yeni bir ileti yok"
+
+#, java-format
+msgid "{0} is an I2P-exclusive service provided by {1}."
+msgstr "{0}, {1} tarafından sağlanan I2P'ye özel bir hizmettir."
+
+#, java-format
+msgid "{0} webmail client &copy Susi 2004-2005."
+msgstr "{0} webmail client &copy Susi 2004-2005."
+
+msgid "Checking for new messages on server"
+msgstr "Sunucu üzerindeki yeni e-postalar denetleniyor"
+
+msgid "Refresh the page for updates"
+msgstr "Güncellemek için sayfayı yenileyin"
+
+msgid "Removed tracking image placeholder"
+msgstr "İzleme görseli yer tutucusu kaldırıldı"
+
+msgid "no subject"
+msgstr "konu yok"
+
+msgid "Found no valid sender address."
+msgstr "Geçerli bir kullanıcı adresi bulunamadı."
+
+#, java-format
+msgid "Found no valid address in \\''{0}\\''."
+msgstr "\\''{0}\\'' içinde geçerli bir adres bulunamadı."
+
+msgid "No recipients found."
+msgstr "Herhangi bir alıcı bulunamadı."
+
+#, java-format
+msgid "Email is too large, max is {0}"
+msgstr "E-posta çok büyük en fazla {0} olabilir"
+
+msgid "Sending mail."
+msgstr "E-posta gönderiliyor."
+
+msgid "Error sending mail"
+msgstr "Posta gönderilirken bir sorun çıktı"
+
+msgid "Mail sent."
+msgstr "E-posta gönderildi."
+
+msgid "Cancel"
+msgstr "İptal"
+
+msgid "Save as Draft"
+msgstr "Taslak Olarak Kaydet"
+
+msgid "Send"
+msgstr "Gönder"
+
+msgid "From"
+msgstr "Kimden"
+
+msgid "To"
+msgstr "Kime"
+
+msgid "Cc"
+msgstr "Kopya"
+
+msgid "Bcc"
+msgstr "Gizli Kopya"
+
+msgid "Subject"
+msgstr "Konu"
+
+msgid "Add Attachment"
+msgstr "Ek Ekle"
+
+msgid "Add attachment"
+msgstr "Ek Ekle"
+
+msgid "Attachments"
+msgstr "Ekler"
+
+msgid "Delete selected attachments"
+msgstr "Seçilmiş ekleri sil"
+
+msgid "I2PMail Login"
+msgstr "E-posta Oturumu Aç"
+
+msgid "User"
+msgstr "Kullanıcı"
+
+msgid "Username"
+msgstr "Kullanıcı adı"
+
+msgid "Password"
+msgstr "Parola"
+
+msgid "Toggle password visibility"
+msgstr "Şifre görünürlüğünü değiştir"
+
+msgid "Host"
+msgstr "Sunucu"
+
+msgid "POP3 Port"
+msgstr "POP3 Kapısı"
+
+msgid "SMTP Port"
+msgstr "SMTP Kapısı"
+
+msgid "Read Mail Offline"
+msgstr "Postayı Çevrimdışı Oku"
+
+msgid "Settings"
+msgstr "Ayarlar"
+
+msgid "Learn about I2PMail"
+msgstr "I2P Mail Hakkında Bilgiler"
+
+msgid "Create Account"
+msgstr "Hesap Aç"
+
+msgid "New"
+msgstr "Yeni"
+
+msgid "Check Mail"
+msgstr "Postaları Denetle"
+
+msgid "Refresh Page"
+msgstr "Sayfayı Yenile"
+
+msgid "Change to Folder"
+msgstr "Klasörü Değiştir"
+
+#, java-format
+msgid "1 Message"
+msgid_plural "{0} Messages"
+msgstr[0] "{0} İleti"
+msgstr[1] "{0} İleti"
+
+msgid "Logout"
+msgstr "Oturumu Kapat"
+
+msgid "Date"
+msgstr "Tarih"
+
+msgid "Size"
+msgstr "Boyut"
+
+msgid "Mark for deletion"
+msgstr "Silinmek üzere işaretleyin"
+
+msgid "Really delete the marked messages?"
+msgstr "Seçilmiş iletileri gerçekten silmek istiyor musunuz?"
+
+msgid "Yes, really delete them!"
+msgstr "Evet gerçekten silinsin!"
+
+msgid "Delete Selected"
+msgstr "Seçilmişleri Sil"
+
+msgid "Mark All"
+msgstr "Tümünü Seç"
+
+msgid "Clear All"
+msgstr "Tümünü Bırak"
+
+msgid "Message contains HTML"
+msgstr "Mesaj HTML içeriyor"
+
+msgid "Message is new"
+msgstr "İleti yeni"
+
+msgid "Message is spam"
+msgstr "İleti spam"
+
+msgid "Message body not downloaded"
+msgstr "Mesaj gövdesi indirilmedi"
+
+msgid "First"
+msgstr "İlk"
+
+msgid "Previous"
+msgstr "Önceki"
+
+msgid "Next"
+msgstr "Sonraki"
+
+msgid "Last"
+msgstr "Son"
+
+msgid "Really delete this message?"
+msgstr "Bu iletiyi gerçekten silmek istiyor musunuz?"
+
+msgid "Yes, really delete it!"
+msgstr "Evet gerçekten silinsin!"
+
+msgid "Reply"
+msgstr "Yanıtla"
+
+msgid "Reply All"
+msgstr "Tümüne Yanıtla"
+
+msgid "Forward"
+msgstr "İlet"
+
+msgid "Save As"
+msgstr "Farklı Kaydet"
+
+msgid "Delete"
+msgstr "Sil"
+
+msgid "Back to Folder"
+msgstr "Klasöre Geri Dön"
+
+msgid "Move to Folder"
+msgstr "Klasöre Taşı"
+
+msgid "View message in new tab"
+msgstr "Mesajı yeni sekmede görüntüle"
+
+msgid "Folder Page Size"
+msgstr "Klasör Sayfa Boyutu"
+
+msgid "Set"
+msgstr "Ayarla"
+
+msgid "Advanced Configuration"
+msgstr "Gelişmiş Yapılandırma"
+
+msgid "Save Configuration"
+msgstr "Yapılandırmayı Kaydet"
+
+msgid "No response from server"
+msgstr "Sunucudan bir yanıt alınamadı"
+
+msgid "Mail server login failed, wrong username or password."
+msgstr "E-posta sunucusu oturumu açılamadı, kullanıcı adı ya da parola hatalı."
+
+msgid "Logout and then login again with the correct username and password."
+msgstr "Oturumu kapatıp yeniden doğru kullanıcı adı ve parola ile oturum açın."
+
+msgid "Login failed"
+msgstr "Oturum açılamadı"
+
+msgid "Server refused connection"
+msgstr "Sunucu bağlantıyı reddetti"
+
+msgid "Mail rejected"
+msgstr "Posta reddedildi"

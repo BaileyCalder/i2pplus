@@ -1,0 +1,1575 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "internal"
+msgstr "intern"
+
+#, java-format
+msgid "{0} inbound, {0} outbound tunnel"
+msgid_plural "{0} inbound, {0} outbound tunnels"
+msgstr[0] "{0} indgående, {0} udgående tunnel"
+msgstr[1] "{0} indgående, {0} udgående tunneler"
+
+#, java-format
+msgid "{0} inbound tunnel"
+msgid_plural "{0} inbound tunnels"
+msgstr[0] "{0} indgående tunnel"
+msgstr[1] "{0} Indgående tunneler"
+
+#, java-format
+msgid "{0} outbound tunnel"
+msgid_plural "{0} outbound tunnels"
+msgstr[0] "{0} udgående tunnel"
+msgstr[1] "{0} udgående tunneler"
+
+msgid "lower bandwidth and reliability"
+msgstr "lavere båndbredde og pålidelighed"
+
+msgid "standard bandwidth and reliability"
+msgstr "standard båndbredde og pålidelighed"
+
+msgid "higher bandwidth and reliability"
+msgstr "højere båndbredde og pålidelighed"
+
+msgid "Error - tunnels are not initialized yet"
+msgstr "Fejl - tunneler er ikke initialiseret endnu"
+
+msgid "No services configured, cannot restart!"
+msgstr "Ingen tjenester konfigureret, kan ikke genstarte!"
+
+msgid "Stopping tunnel"
+msgstr "Stopper tunnel"
+
+msgid "Starting tunnel"
+msgstr "Starter tunnel"
+
+msgid "Error restarting tunnel"
+msgstr "Fejl ved genstart af tunnel"
+
+msgid "Restarted all running tunnels"
+msgstr "Alle kørende tunneler genstartet"
+
+msgid "No clients configured, cannot restart!"
+msgstr "Ingen klienter konfigureret, kan ikke genstarte!"
+
+msgid "Restarted all running client tunnels"
+msgstr "Alle kørende klienttunneler genstartet"
+
+msgid "Configuration reloaded for all tunnels"
+msgstr "Konfiguration er genindlæst for alle tunneler"
+
+msgid "Error: Invalid tunnel"
+msgstr "Fejl: Ugyldig tunnel"
+
+msgid "Started tunnel"
+msgstr "Tunnel startet"
+
+msgid "Stopped tunnel"
+msgstr "Tunnel stoppet"
+
+msgid "Restarting tunnel"
+msgstr "Genstarter tunnel"
+
+msgid "Please confirm removal"
+msgstr "Bekræft venligst fjernelse"
+
+msgid "New Tunnel"
+msgstr "Ny Tunnel"
+
+msgid "Port not set"
+msgstr "Port er ikke indstillet"
+
+msgid "Invalid port"
+msgstr "Ugyldig port"
+
+msgid "Warning - ports less than 1024 are not recommended"
+msgstr "Advarsel - porte lavere end 1024 frarådes"
+
+msgid "Warning - duplicate port"
+msgstr "Advarsel - duplicate port"
+
+msgid "Standard client"
+msgstr "Standard klient"
+
+msgid "HTTP/HTTPS client"
+msgstr "HTTP/HTTPS-klient"
+
+msgid "IRC client"
+msgstr "Klient for IRC"
+
+msgid "Standard server"
+msgstr "Standard server"
+
+msgid "HTTP server"
+msgstr "HTTP server"
+
+msgid "SOCKS 4/4a/5 proxy"
+msgstr "SOCKS 4/4a/5 proxy"
+
+msgid "SOCKS IRC proxy"
+msgstr "SOCKS IRC proxy"
+
+msgid "CONNECT/SSL/HTTPS proxy"
+msgstr "CONNECT/SSL/HTTPS proxy"
+
+msgid "IRC server"
+msgstr "Server for IRC"
+
+msgid "Streamr client"
+msgstr "Klient for Streamr"
+
+msgid "Streamr server"
+msgstr "Server for Streamr"
+
+msgid "HTTP bidir"
+msgstr "HTTP bidir"
+
+msgid "Host not set"
+msgstr "Vært er ikke indstillet"
+
+msgid "Invalid address"
+msgstr "Ugyldig adresse"
+
+msgid "Tunnel Manager"
+msgstr "Tunnelforvalter"
+
+msgid "Edit Client Tunnel"
+msgstr "Rediger klienttunnel"
+
+msgid "Edit Server Tunnel"
+msgstr "Rediger servertunnel"
+
+msgid "Are you sure you want to delete?"
+msgstr "Er du sikker på, at du vil slette?"
+
+msgid "required"
+msgstr "krævet"
+
+msgid "Tunnel and all other shared client tunnels must be stopped to change this configuration"
+msgstr "Tunnel og alle andre delte klienttunneler skal stoppes for at ændre denne konfiguration"
+
+msgid "Tunnel must be stopped to change this configuration"
+msgstr "Tunnel skal stoppes for at ændre denne konfiguration"
+
+msgid "Configuration"
+msgstr "Konfiguration"
+
+msgid "New Client Configuration"
+msgstr "Ny klientkonfiguration"
+
+msgid "Name"
+msgstr "Navn"
+
+msgid "Auto Start Tunnel"
+msgstr "Auto Start Tunnel"
+
+msgid "Name of tunnel to be displayed on Tunnel Manager home page and the router console sidebar"
+msgstr "Navn på tunnel, der skal vises på Tunnel Manager-hjemmesiden og routerkonsollens sidebjælke"
+
+msgid "Enable this option to ensure this service is available when the router starts"
+msgstr "Aktiver denne mulighed for at sikre, at denne tjeneste er tilgængelig, når routeren starter"
+
+msgid "Automatically start tunnel when router starts"
+msgstr "Start tunnel automatisk, når routeren starter"
+
+msgid "Description"
+msgstr "Beskrivelse"
+
+msgid "Shared Client"
+msgstr "Delt klient"
+
+msgid "Description of tunnel to be displayed on Tunnel Manager home page"
+msgstr "Beskrivelse af tunnel, der skal vises på Tunnel Manager hjemmeside"
+
+msgid "Traffic from all clients with this feature enabled will be routed over the same set of tunnels. This will make profiling the tunnels by an adversary more difficult, but will link the clients together."
+msgstr "Trafik fra alle klienter med denne funktion aktiveret vil blive dirigeret over det samme sæt tunneler."
+
+msgid "Share tunnels with other configured clients"
+msgstr "Del tunneler med andre konfigurerede klienter"
+
+msgid "Target"
+msgstr "Mål"
+
+msgid "Access Point"
+msgstr "Adgangspunkt"
+
+msgid "Use Outproxy Plugin"
+msgstr "Brug Outproxy Plugin"
+
+msgid "Enable DCC"
+msgstr "Aktiver DCC"
+
+msgid "Port"
+msgstr "Port"
+
+msgid "Specify the local port this service should be accessible from"
+msgstr "Specificer den lokale port, denne service skal være tilgængelig fra"
+
+msgid "Host"
+msgstr "Vært"
+
+msgid "Hostname or IP address of the target server"
+msgstr "Værtsnavn eller IP-adresse på målserveren"
+
+msgid "Reachable by"
+msgstr "Kan nås med"
+
+msgid "Local interface (ip address) the client tunnel will be reachable from"
+msgstr "Lokal grænseflade (ip-adresse) klienttunnelen vil være tilgængelig fra"
+
+msgid "If an outproxy plugin is installed (e.g. Orchid), use this instead of any configured outproxies to access websites outside of I2P"
+msgstr "Hvis et outproxy-plugin er installeret (f.eks. Orchid), skal du bruge dette i stedet for eventuelle konfigurerede outproxies til at få adgang til websteder uden for I2P"
+
+msgid "Use plugin instead of proxies listed below if available"
+msgstr "Brug plugin i stedet for proxyer anført nedenfor, hvis de er tilgængelige"
+
+msgid "Enables direct chat and file transfers, bypassing I2P. Note that this will compromise your anonymity and is not recommended."
+msgstr "Muliggør direkte chat og filoverførsler, uden at I2P."
+
+msgid "Enable Direct Client-to-Client protocol"
+msgstr "Aktiver Direct Client-to-Client-protokol"
+
+msgid "Outproxies"
+msgstr "Udgange"
+
+msgid "SSL Outproxies"
+msgstr "SSL Outproxies"
+
+msgid "Specify the .i2p address or destination (b32 or b64) of the outproxy here."
+msgstr "Angiv .i2p-adressen eller destinationen (b32 eller b64) for outproxyen her."
+
+msgid "For a random selection from a pool, separate with commas e.g. server1.i2p,server2.i2p"
+msgstr "For et tilfældigt udvalg fra en pulje, adskilles med kommaer, f.eks."
+
+msgid "Outproxy Type"
+msgstr "Outproxy Type"
+
+msgid "Tunnel Destination"
+msgstr "Tunneldestination"
+
+msgid "Use SSL"
+msgstr "Brug SSL"
+
+msgid "Specify the .i2p address or destination (b32 or b64) of the tunnel here."
+msgstr "Angiv .i2p-adressen eller destinationen (b32 eller b64) for tunnelen her."
+
+msgid "name, name:port, or destination"
+msgstr "navn, navn:havn eller destination"
+
+msgid "If you are accessing a service on a remote I2P router, you may wish to connect with SSL to avoid traffic interception. The client application should be also be configured to use SSL."
+msgstr "Hvis du får adgang til en tjeneste på en ekstern I2P-router, kan du ønske at oprette forbindelse med SSL for at undgå trafikaflytning."
+
+msgid "Clients use SSL to connect to tunnel"
+msgstr "Kunder bruger SSL til at oprette forbindelse til tunnel"
+
+msgid "Please specify the full b64 destination."
+msgstr "Angiv venligst den fulde b64-destination."
+
+msgid "Local destination"
+msgstr "Lokal destination"
+
+msgid "Local Base32"
+msgstr "Lokal Base32"
+
+msgid "Read Only: Local Destination (if known)"
+msgstr "Skrivebeskyttet: Lokal destination (hvis kendt)"
+
+msgid "Stop"
+msgstr "Stop"
+
+msgid "Start this Tunnel"
+msgstr "Start denne tunnel"
+
+msgid "Start"
+msgstr "Start"
+
+msgid "Cancel"
+msgstr "Annuller"
+
+msgid "Delete this tunnel (cannot be undone)"
+msgstr "Slet denne tunnel (kan ikke fortrydes)"
+
+msgid "Delete"
+msgstr "Slet"
+
+msgid "Save"
+msgstr "Gem"
+
+msgid "Advanced networking options"
+msgstr "Avancerede netværksmuligheder"
+
+msgid "Note: When this client is configured to share tunnels, these options apply to all clients configured to share tunnels."
+msgstr "Bemærk: Når denne klient er konfigureret til at dele tunneler, gælder disse muligheder for alle klienter, der er konfigureret til at dele tunneler."
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Delay Connect"
+msgstr "Forsinkelse Connect"
+
+msgid "Connection Profile"
+msgstr "Forbindelsesprofil"
+
+msgid "interactive connection"
+msgstr "interaktiv forbindelse"
+
+msgid "bulk connection (downloads/websites/BT)"
+msgstr "bulkforbindelse (downloads/websteder/BT)"
+
+msgid "Delay Connection"
+msgstr "Forsinket forbindelse"
+
+msgid "for request/response connections"
+msgstr "for anmodning/svar forbindelser"
+
+msgid "Router I2CP Address"
+msgstr "Router I2CP-adresse"
+
+msgid "I2CP Hostname or IP"
+msgstr "I2CP Værtsnavn eller IP"
+
+msgid "I2CP Port Number"
+msgstr "I2CP-portnummer"
+
+msgid "Delay tunnel open until required"
+msgstr "Udskyd tunnel åben indtil nødvendig"
+
+msgid "Signature type"
+msgstr "Signaturtype"
+
+msgid "Conserve resources by only creating tunnels when required"
+msgstr "Bevar ressourcer ved kun at oprette tunneler, når det er nødvendigt"
+
+msgid "Don't open tunnel until activity is detected on port"
+msgstr "Åbn ikke tunnelen, før aktivitet er registreret på havnen"
+
+msgid "This is the default, recommended option"
+msgstr "Dette er den anbefalede standardindstilling"
+
+msgid "Encryption types"
+msgstr "Krypteringstyper"
+
+msgid "Legacy options"
+msgstr "Ældre indstillinger"
+
+msgid "Post Quantum"
+msgstr "Post Quantum"
+
+msgid "Both encryption types"
+msgstr "Begge krypteringstyper"
+
+msgid "Tunnel Options"
+msgstr "Tunnelmuligheder"
+
+msgid "Length"
+msgstr "Længde"
+
+msgid "Count"
+msgstr "Antal"
+
+msgid "Length of each Tunnel"
+msgstr "Længde af hver tunnel"
+
+msgid "0 hop tunnel (no anonymity)"
+msgstr "0 hop tunnel (ingen anonymitet)"
+
+msgid "1 hop tunnel (low anonymity)"
+msgstr "1 hop tunnel (lav anonymitet)"
+
+msgid "2 hop tunnel (medium anonymity)"
+msgstr "2 hop tunnel (medium anonymitet)"
+
+msgid "3 hop tunnel (high anonymity)"
+msgstr "3 hop tunnel (høj anonymitet)"
+
+#, java-format
+msgid "{0} hop tunnel"
+msgid_plural "{0} hop tunnel"
+msgstr[0] "{0} hop tunnel"
+msgstr[1] "{0} hop tunnel"
+
+msgid "Number of Tunnels in Group"
+msgstr "Antal tunneler i gruppe"
+
+msgid "Disabled for 0 hop tunnels"
+msgstr "Deaktiveret for 0 hop tunneler"
+
+msgid "Variance"
+msgstr "Varians"
+
+msgid "Backup Count"
+msgstr "Backup optælling"
+
+msgid "Level of Randomization for Tunnel Length"
+msgstr "Randomiseringsniveau for tunnellængde"
+
+msgid "0 hop variance"
+msgstr "0 hop varians"
+
+msgid "no randomization, consistent performance"
+msgstr "ingen randomisering, konsekvent ydeevne"
+
+msgid "+ 0-1 hop variance"
+msgstr "0-1 hop varians"
+
+msgid "medium randomization, lower performance"
+msgstr "medium randomisering, lavere ydeevne"
+
+msgid "+ 0-2 hop variance"
+msgstr "0-2 hop varians"
+
+msgid "high randomization, very low performance"
+msgstr "høj randomisering, meget lav ydeevne"
+
+msgid "+/- 0-1 hop variance"
+msgstr "/- 0-1 humlevarians"
+
+msgid "standard randomization, standard performance"
+msgstr "standard randomisering, standardydelse"
+
+msgid "+/- 0-2 hop variance"
+msgstr "/- 0-2 humlevarians"
+
+msgid "not recommended"
+msgstr "anbefales ikke"
+
+msgid "hop variance"
+msgstr "hop varians"
+
+msgid "Number of Reserve Tunnels"
+msgstr "Antal reservetunneler"
+
+#, java-format
+msgid "{0} backup tunnel"
+msgid_plural "{0} backup tunnels"
+msgstr[0] "{0} backup tunnel"
+msgstr[1] "{0} backup tunneler"
+
+msgid "no redundancy, no added resource usage"
+msgstr "ingen redundans, intet ekstra ressourceforbrug"
+
+msgid "low redundancy, low resource usage"
+msgstr "lav redundans, lavt ressourceforbrug"
+
+msgid "medium redundancy, medium resource usage"
+msgstr "medium redundans, medium ressourceforbrug"
+
+msgid "high redundancy, high resource usage"
+msgstr "høj redundans, højt ressourceforbrug"
+
+msgid "Reduce tunnel quantity"
+msgstr "Reducer tunnelmængden"
+
+msgid "Reduce tunnel count when idle to conserve resources but keep tunnel open (to ensure immediate availability)"
+msgstr "Reducer tunnelantal, når den er inaktiv for at spare ressourcer, men hold tunnelen åben (for at sikre øjeblikkelig tilgængelighed)"
+
+msgid "Reduce tunnel quantity when idle"
+msgstr "Reducer tunnelmængden i tomgang"
+
+msgid "Idle period"
+msgstr "Tomgangsperiode"
+
+msgid "Reduced Tunnel Idle Time"
+msgstr "Reduceret tunnel-tomgangstid"
+
+msgid "Reduced count"
+msgstr "Reduceret antal"
+
+msgid "Reduced tunnel count"
+msgstr "Reduceret tunnelantal"
+
+msgid "Close tunnels when idle"
+msgstr "Luk tunneler i tomgang"
+
+msgid "To conserve resources, close tunnels when not in use"
+msgstr "For at spare ressourcer skal du lukke tunneler, når de ikke er i brug"
+
+msgid "Close client tunnels after specified idle period"
+msgstr "Luk klienttunneler efter specificeret inaktiv periode"
+
+msgid "Close Tunnel Idle Time"
+msgstr "Luk tunnelens tomgangstid"
+
+msgid "New Keys on Reopen"
+msgstr "Nye nøgler ved genåbning"
+
+msgid "Change tunnel identity (destination) when tunnels reopen"
+msgstr "Skift tunnelidentitet (destination), når tunneler åbner igen"
+
+msgid "Enable"
+msgstr "Aktiver"
+
+msgid "Retain tunnel identity (destination) when tunnels reopen"
+msgstr "Behold tunnelidentitet (destination), når tunneler åbner igen"
+
+msgid "Disable"
+msgstr "Deaktivere"
+
+msgid "Persistent private key"
+msgstr "Vedvarende privat nøgle"
+
+msgid "Private key file"
+msgstr "Privat nøglefil"
+
+msgid "Enabling this feature will ensure your tunnel identity (destination) remains static, for services offering features based on destination e.g. IRC user authentication"
+msgstr "At aktivere denne funktion vil sikre, at din tunnelidentitet (destination) forbliver statisk, for tjenester, der tilbyder funktioner baseret på destination, f.eks"
+
+msgid "Generate key to enable persistent client tunnel identity"
+msgstr "Generer nøgle for at aktivere vedvarende klienttunnelidentitet"
+
+msgid "Path to Private Key File"
+msgstr "Sti til privat nøglefil"
+
+msgid "HTTP Filtering"
+msgstr "HTTP-filtrering"
+
+msgid "When enabled, the user agent of your web browser or http client will not be spoofed, potentially reducing your anonymity"
+msgstr "Når det er aktiveret, vil brugeragenten for din webbrowser eller http-klient ikke blive forfalsket, hvilket potentielt reducerer din anonymitet"
+
+msgid "Do not spoof User-Agent header"
+msgstr "Undlad at forfalske User-Agent-headeren"
+
+msgid "When enabled, the referer (originating page) of your web requests will not be filtered, potentially reducing your anonymity"
+msgstr "Når det er aktiveret, vil referer (oprindelsessiden) af dine webanmodninger ikke blive filtreret, hvilket potentielt reducerer din anonymitet"
+
+msgid "Do not block Referer header"
+msgstr "Bloker ikke Referer-header"
+
+msgid "When enabled, the accept headers (mime types support) broadcast by your web browser will not be filtered, potentially reducing your anonymity"
+msgstr "Når det er aktiveret, vil accept-headerne (understøtter mime-typer), der udsendes af din webbrowser, ikke blive filtreret, hvilket potentielt reducerer din anonymitet"
+
+msgid "Do not block Accept headers"
+msgstr "Bloker ikke Accepter overskrifter"
+
+msgid "Allow SSL to I2P addresses when enabled"
+msgstr "Tillad SSL til I2P-adresser, når det er aktiveret"
+
+msgid "Allow SSL to I2P addresses"
+msgstr "Tillad SSL til I2P-adresser"
+
+msgid "Local Authorization"
+msgstr "Lokal Autorisation"
+
+msgid "Local Credentials"
+msgstr "Lokale legitimationsoplysninger"
+
+msgid "Enable to require a username and password to access this local service (for example if hosting on a LAN)"
+msgstr "Aktiver for at kræve et brugernavn og en adgangskode for at få adgang til denne lokale tjeneste (for eksempel hvis hosting på et LAN)"
+
+msgid "Require local authorization for this service"
+msgstr "Kræv lokal autorisation for denne service"
+
+msgid "Set username required to access this service"
+msgstr "Indstil brugernavn påkrævet for at få adgang til denne tjeneste"
+
+msgid "Username"
+msgstr "Brugernavn"
+
+msgid "Set password required to access this service"
+msgstr "Indstil adgangskode påkrævet for at få adgang til denne tjeneste"
+
+msgid "Password"
+msgstr "Adgangskode"
+
+msgid "Outproxy Authorization"
+msgstr "Outproxy-autorisation"
+
+msgid "Remote Credentials"
+msgstr "Remote legitimationsoplysninger"
+
+msgid "Enable if the outproxy a username and password to access"
+msgstr "Aktiver hvis outproxy et brugernavn og adgangskode for at få adgang"
+
+msgid "Outproxy requires authorization"
+msgstr "Outproxy kræver autorisation"
+
+msgid "Enter username required by outproxy"
+msgstr "Indtast brugernavn påkrævet af outproxy"
+
+msgid "Enter password required by outproxy"
+msgstr "Indtast adgangskode påkrævet af outproxy"
+
+msgid "Jump URL List"
+msgstr "Jump URL Liste"
+
+msgid "List of helper URLs providing jump links when a host is not found in your addressbook"
+msgstr "Liste over hjælpe-URL'er, der giver jump-links, når en vært ikke findes i din adressebog"
+
+msgid "Custom options"
+msgstr "Tilpassede muligheder"
+
+msgid "Advanced tunnel, streaming, and I2CP options"
+msgstr "Avancerede tunnel-, streaming- og I2CP-muligheder"
+
+msgid "New Server Configuration"
+msgstr "Ny serverkonfiguration"
+
+msgid "Hostname"
+msgstr "Hostnavn"
+
+msgid "Website Hostname"
+msgstr "Webstedets værtsnavn"
+
+msgid "(leave blank for outproxies)"
+msgstr "(lad tom for outproxies)"
+
+msgid "Website Hostname e.g. mysite.i2p"
+msgstr "Nazwa hosta witryny, np. mysite.i2p"
+
+msgid "Specify the port the server is running on"
+msgstr "Angiv den port, serveren kører på"
+
+msgid "Listening interface (IP address) for client access (normally 127.0.0.1)"
+msgstr "Lyttegrænseflade (IP-adresse) til klientadgang (normalt 127.0.0.1)"
+
+msgid "To avoid traffic sniffing if connecting to a remote server, you can enable an SSL connection. Note that the target server must be configured to accept SSL connections."
+msgstr "For at undgå trafiksnus, hvis du opretter forbindelse til en ekstern server, kan du aktivere en SSL-forbindelse."
+
+msgid "Use SSL to connect to target"
+msgstr "Brug SSL til at oprette forbindelse til målet"
+
+msgid "Port required to access service (this can be a different port to the port the service is hosted on)"
+msgstr "Port nødvendig for at få adgang til tjenesten (dette kan være en anden port end den port, tjenesten er hostet på)"
+
+msgid "Generate a QR Code for this domain"
+msgstr "Generer en QR-kode for dette domæne"
+
+msgid "Generate QR Code"
+msgstr "Generer QR-kode"
+
+msgid "Add to Private addressbook"
+msgstr "Føj til privat adressebog"
+
+msgid "Add to local addressbook"
+msgstr "Føje til den lokale adressebog"
+
+msgid "Register, unregister or change details for hostname"
+msgstr "Registrer, afregistrer eller rediger detaljer for værtsnavn"
+
+msgid "Registration Authentication"
+msgstr "Registreringsgodkendelse"
+
+msgid "HTTPS configuration"
+msgstr "HTTPS-konfiguration"
+
+msgid "SSL Wizard"
+msgstr "SSL Wizard"
+
+msgid "Note: In order to enable QR code generation or registration authentication, configure the Website Hostname field (for websites) or the Name field (everything else) above with an .i2p suffixed hostname e.g. mynewserver.i2p"
+msgstr "Bemærk: For at aktivere QR-kodegenerering eller registreringsgodkendelse skal du konfigurere feltet Webstedsværtsnavn (til websteder) eller feltet Navn (alt andet) ovenfor med et .i2p-suffikset værtsnavn, f.eks."
+
+msgid "Absolute path to Private Key File (will be created if it does not exist)"
+msgstr "Absolut sti til privat nøglefil (vil blive oprettet, hvis den ikke eksisterer)"
+
+msgid "Alternate private key file"
+msgstr "Alternativ privat nøglefil"
+
+msgid "Alternate local destination"
+msgstr "Alternativ lokal destination"
+
+msgid "Absolute path for new key (will be created)"
+msgstr "Absolut sti til ny nøgle (vil blive oprettet)"
+
+msgid "Read Only: Alternate Local Destination"
+msgstr "Skrivebeskyttet: Alternativ lokal destination"
+
+msgid "Specify filename or full path for new key"
+msgstr "Angiv filnavn eller fuld sti til ny nøgle"
+
+msgid "Configuration cannot be changed after destination is created"
+msgstr "Konfiguration kan ikke ændres, efter at destinationen er oprettet"
+
+msgid "Configuration of signature type is only possible when the tunnel is first created. To change, you must create a new tunnel."
+msgstr "Konfiguration af signaturtype er kun mulig, når tunnelen først oprettes."
+
+msgid "Legacy option, with alternate key configured"
+msgstr "Ældre mulighed, med alternativ nøgle konfigureret"
+
+msgid "Legacy option (deprecated), provided for backward compatibility"
+msgstr "Legacy mulighed (forældet), forudsat for bagudkompatibilitet"
+
+msgid "Recommended for blinded and encrypted destinations"
+msgstr "Anbefales til blindede og krypterede destinationer"
+
+msgid "Inbound"
+msgstr "Indadgående"
+
+msgid "Outbound"
+msgstr "Udadgående"
+
+msgid "no anonymity"
+msgstr "ingen anonymitet"
+
+msgid "low anonymity"
+msgstr "lav anonymitet"
+
+msgid "medium anonymity"
+msgstr "middel anonymitet"
+
+msgid "high anonymity"
+msgstr "høj anonymitet"
+
+msgid "Level of Randomization for Tunnel Depth"
+msgstr "Randomiseringsniveau for tunneldybde"
+
+msgid "very high randomization, very low performance"
+msgstr "meget høj randomisering, meget lav ydeevne"
+
+msgid "+ 0-3 hop variance"
+msgstr "0-3 hop varians"
+
+msgid "definitely not recommended"
+msgstr "anbefales bestemt ikke"
+
+msgid "+/- 0-3 hop variance"
+msgstr "/- 0-3 humlevarians"
+
+msgid "backup tunnels"
+msgstr "backup tunneler"
+
+msgid "Reduce tunnels to conserve resources"
+msgstr "Reducer tunneler for at spare ressourcer"
+
+msgid "Period of inactivity before tunnel number is reduced"
+msgstr "Periode med inaktivitet før tunnelnummer reduceres"
+
+msgid "minutes"
+msgstr "minutter"
+
+msgid "Number of tunnels to keep open to maintain availability of service"
+msgstr "Antal tunneler, der skal holdes åbne for at opretholde tilgængeligheden af ​​service"
+
+msgid "Server Access Options"
+msgstr "Serveradgangsindstillinger"
+
+msgid "Prevent clients from accessing this service via an inproxy"
+msgstr "Forhindrer klienter i at få adgang til denne tjeneste via en inproxy"
+
+msgid "Block Access via Inproxies"
+msgstr "Bloker adgang via inproxies"
+
+msgid "Block Accesses containing Referers"
+msgstr "Blokadgange indeholdende henvisere"
+
+msgid "Use unique IP addresses for each connecting client (local non-SSL servers only)"
+msgstr "Brug unikke IP-adresser for hver tilsluttende klient (kun lokale ikke-SSL-servere)"
+
+msgid "Unique Local Address per Client"
+msgstr "Unik lokal adresse pr. klient"
+
+msgid "Only enable if you are hosting this service on multiple routers"
+msgstr "Aktiver kun, hvis du hoster denne tjeneste på flere routere"
+
+msgid "Optimize for Multihoming"
+msgstr "Optimer til multihoming"
+
+msgid "Deny User-Agents matching these strings (probably from inproxies)"
+msgstr "Nægt brugeragenter, der matcher disse strenge (sandsynligvis fra inproxies)"
+
+msgid "Block these User-Agents"
+msgstr "Bloker disse brugeragenter"
+
+msgid "comma separated, e.g. Mozilla,Opera (case-sensitive)"
+msgstr "kommasepareret, f.eks."
+
+msgid "Encrypt Leaseset"
+msgstr "Krypter lejesæt"
+
+msgid "Optional Lookup Password"
+msgstr "Valgfri opslagsadgangskode"
+
+msgid "Keyring Manager"
+msgstr "Nøgleringsforvalter"
+
+msgid "Allow all clients to connect to this service"
+msgstr "Tillad alle klienter at oprette forbindelse til denne tjeneste"
+
+msgid "Send key to all users."
+msgstr "Send nøgle til alle brugere."
+
+msgid "Encrypted"
+msgstr "Krypteret"
+
+msgid "Prevents server discovery by floodfills"
+msgstr "Forhindrer serveropdagelse ved oversvømmelse"
+
+msgid "Blinded"
+msgstr "Blindet"
+
+msgid "Send password to all users."
+msgstr "Send adgangskode til alle brugere."
+
+msgid "Blinded with lookup password"
+msgstr "Blindet med opslagskode"
+
+msgid "Send key and password to all users."
+msgstr "Send nøgle og adgangskode til alle brugere."
+
+msgid "Encrypted with lookup password"
+msgstr "Krypteret med opslagsadgangskode"
+
+msgid "Send individual key to each user."
+msgstr "Send individuel nøgle til hver bruger."
+
+msgid "Encrypted with per-user key"
+msgstr "Krypteret med per-bruger nøgle"
+
+msgid "Encrypted with lookup password and per-user key"
+msgstr "Krypteret med opslagsadgangskode og per-bruger nøgle"
+
+msgid "Enter key from each user."
+msgstr "Enter nøgle fra hver bruger."
+
+msgid "Encryption Key"
+msgstr "Krybterings nøgle"
+
+msgid "Generate New Key"
+msgstr "Generer ny nøgle"
+
+msgid "Encryption key required to access this service"
+msgstr "Krypteringsnøgle påkrævet for at få adgang til denne tjeneste"
+
+msgid "Generate new encryption key"
+msgstr "Generer ny krypteringsnøgle"
+
+msgid "Generate"
+msgstr "Generer"
+
+msgid "Tunnel must be stopped first"
+msgstr "Tunnel skal stoppes først"
+
+msgid "Client Manager"
+msgstr "Kundechef"
+
+msgid "Client Name"
+msgstr "Kundens navn"
+
+msgid "Client Key"
+msgstr "Klientnøgle"
+
+msgid "Revoke"
+msgstr "Tilbagekald"
+
+msgid "Client"
+msgstr "Klient"
+
+msgid "Add"
+msgstr "Tilføj"
+
+msgid "Restricted Access List"
+msgstr "Liste med begrænset adgang"
+
+msgid "Activate to enable editing"
+msgstr "Aktiver for at aktivere redigering"
+
+msgid "Tunnel Filter"
+msgstr "Tunnelfilter"
+
+msgid "Help with defining tunnel filters"
+msgstr "Hjælp til at definere tunnelfiltre"
+
+msgid "Prevent listed clients from connecting to this service"
+msgstr "Forhindrer anførte klienter i at oprette forbindelse til denne tjeneste"
+
+msgid "Blacklist"
+msgstr "Sortliste"
+
+msgid "Only allow listed clients to connect to this service"
+msgstr "Tillad kun anførte klienter at oprette forbindelse til denne tjeneste"
+
+msgid "Whitelist"
+msgstr "Hvidliste"
+
+msgid "Absolute path to file containing filter definition"
+msgstr "Absolut sti til fil, der indeholder filterdefinition"
+
+msgid "Absolute path to filter definition"
+msgstr "Absolut sti til filterdefinition"
+
+msgid "Specify client destinations, 1 per line"
+msgstr "Angiv klientdestinationer, 1 pr. linje"
+
+msgid "Server Throttling"
+msgstr "Serverregulering"
+
+msgid "Inbound connection limits"
+msgstr "Grænser for indgående forbindelse"
+
+msgid "Per Minute"
+msgstr "Per minut"
+
+msgid "Per Hour"
+msgstr "Per time"
+
+msgid "Per Day"
+msgstr "Pr Dag"
+
+msgid "Concurrent"
+msgstr "Samtidig"
+
+msgid "Per Client"
+msgstr "Per klient"
+
+msgid "Maximum number of web page requests per minute for a unique client before access to the server is blocked"
+msgstr "Maksimalt antal websideanmodninger pr. minut for en unik klient, før adgangen til serveren blokeres"
+
+msgid "(0 = unlimited)"
+msgstr "(0 = ubegrænset)"
+
+msgid "Maximum number of web page requests per hour for a unique client before access to the server is blocked"
+msgstr "Maksimalt antal websideanmodninger pr. time for en unik klient, før adgangen til serveren blokeres"
+
+msgid "Maximum number of web page requests per day for a unique client before access to the server is blocked"
+msgstr "Maksimalt antal websideanmodninger pr. dag for en unik klient, før adgangen til serveren blokeres"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Total number of web page requests per minute before access to the server is blocked"
+msgstr "Samlet antal websideanmodninger pr. minut, før adgangen til serveren blokeres"
+
+msgid "Total number of web page requests per hour before access to the server is blocked"
+msgstr "Samlet antal websideanmodninger pr. time, før adgangen til serveren blokeres"
+
+msgid "Total number of web page requests per day before access to the server is blocked"
+msgstr "Samlet antal websideforespørgsler pr. dag, før adgangen til serveren blokeres"
+
+msgid "Maximum number of simultaneous client connections"
+msgstr "Maksimalt antal samtidige klientforbindelser"
+
+msgid "POST limits"
+msgstr "POST grænser"
+
+msgid "Per Period"
+msgstr "Pr Periode"
+
+msgid "Ban Duration"
+msgstr "Ban Varighed"
+
+msgid "POST limit period"
+msgstr "POST grænseperiode"
+
+msgid "Maximum number of post requests permitted for a unique client for the configured timespan"
+msgstr "Maksimalt antal postanmodninger tilladt for en unik klient i det konfigurerede tidsrum"
+
+msgid "If a client exceeds the maximum number of post requests per allocated period, enforce a ban for this number of minutes"
+msgstr "Hvis en klient overskrider det maksimale antal postanmodninger pr. tildelt periode, håndhæv et forbud i dette antal minutter"
+
+msgid "Timespan for the maximum number of post requests to be reached before a ban is triggered"
+msgstr "Tidsrum for det maksimale antal postanmodninger, der skal nås, før et forbud udløses"
+
+msgid "Total number of post requests permitted for the configured timespan"
+msgstr "Samlet antal postanmodninger tilladt for det konfigurerede tidsrum"
+
+msgid "If the maximum number of post requests per allocated period is exceeded, enforce a global access ban for this number of minutes"
+msgstr "Hvis det maksimale antal postanmodninger pr. tildelt periode overskrides, håndhæv et globalt adgangsforbud i dette antal minutter"
+
+msgid "Custom HTTP Headers"
+msgstr "Tilpassede HTTP-headere"
+
+msgid "Note: These custom headers will only be enabled for served files that don't have the relevant header already set."
+msgstr "Bemærk: Disse brugerdefinerede overskrifter vil kun blive aktiveret for serverede filer, der ikke allerede har den relevante overskrift indstillet."
+
+msgid "Set the Allow header to 'GET, POST, HEAD' for html, xml, json and text files"
+msgstr "Sæt Tillad overskriften til 'GET, POST, HEAD' for html-, xml-, json- og tekstfiler"
+
+msgid "Allow"
+msgstr "Tillad"
+
+msgid "Enable Cache-Control headers (no-cache for html, xml, json and text, immutable for everything else)"
+msgstr "Aktiver Cache-Control headers (ingen cache til html, xml, json og tekst, uforanderlig for alt andet)"
+
+msgid "Cache-Control"
+msgstr "Cache-Control"
+
+msgid "Set the Referrer-Policy header to 'same-origin' for html, xml, json and text files"
+msgstr "Indstil Referrer-Policy-headeren til 'same-origin' for html-, xml-, json- og tekstfiler"
+
+msgid "Referrer-Policy"
+msgstr "Referrer-Policy"
+
+msgid "Set the X-Content-Type-Options header to 'nosniff'"
+msgstr "Sæt X-Content-Type-Options overskriften til 'nosniff'"
+
+msgid "X-Content-Type-Options"
+msgstr "X-Content-Type-Options"
+
+#, java-format
+msgid "Initializing Tunnel Manager{0}"
+msgstr "Initialisering af Tunnel Manager{0}"
+
+msgid "Tunnels not initialized yet; please retry in a few moments."
+msgstr "Tunele jeszcze nie zainicjowane; Proszę o ponowne w ciągu kilku chwil."
+
+msgid "Status Messages"
+msgstr "Statusmeddelelser"
+
+msgid "Clear"
+msgstr "Ryd"
+
+msgid "Refresh"
+msgstr "Genopfrisk"
+
+msgid "Global Tunnel Control"
+msgstr "Global tunnelkontrol"
+
+msgid "Tunnel Wizard"
+msgstr "Tunneltroldmand"
+
+msgid "Stop All"
+msgstr "Stop alt"
+
+msgid "Start All"
+msgstr "Start alt"
+
+msgid "Restart all running tunnels"
+msgstr "Genstart alle kørende tunneler"
+
+msgid "Restart All"
+msgstr "Genstart Alle"
+
+msgid "Restart all running server tunnels"
+msgstr "Genstart alle kørende servertunneler"
+
+msgid "Restart All Servers"
+msgstr "Genstart alle servere"
+
+msgid "Restart all running client tunnels"
+msgstr "Genstart alle kørende klienttunneler"
+
+msgid "Restart All Clients"
+msgstr "Genstart alle klienter"
+
+msgid "I2P Server Tunnels"
+msgstr "I2P Servertunneler"
+
+msgid "Helper"
+msgstr "Hjælper"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Points at"
+msgstr "Peg på"
+
+msgid "Preview"
+msgstr "Preview"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Control"
+msgstr "Kontrol"
+
+msgid "Edit Server Tunnel Settings for"
+msgstr "Rediger Server Tunnelindstillinger for"
+
+msgid "Test IRC server, bypassing I2P"
+msgstr "Test IRC-server, omgå I2P"
+
+msgid "Test HTTPS server, bypassing I2P"
+msgstr "Test HTTPS-server, omgå I2P"
+
+msgid "Test HTTP server, bypassing I2P"
+msgstr "Test HTTP-server, uden om I2P"
+
+msgid "Test HTTP server through I2P"
+msgstr "Test HTTP-server gennem I2P"
+
+msgid "Base32 Address"
+msgstr "Base32 Adresse"
+
+msgid "Offline"
+msgstr "Offline"
+
+msgid "No Preview"
+msgstr "Ingen Preview"
+
+msgid "Starting..."
+msgstr "Starter..."
+
+msgid "Stop this Tunnel"
+msgstr "Stop denne tunnel"
+
+msgid "Running"
+msgstr "Kører"
+
+msgid "Hops"
+msgstr "Hop"
+
+msgid "in"
+msgstr "ind"
+
+msgid "out"
+msgstr "ud"
+
+msgid "Restart this Tunnel"
+msgstr "Genstart denne tunnel"
+
+msgid "Restart"
+msgstr "Genstart"
+
+msgid "Stopped"
+msgstr "Stoppet"
+
+msgid "Destination"
+msgstr "Destination"
+
+msgid "Signature"
+msgstr "Signatur"
+
+msgid "Alternate"
+msgstr "Alternativ"
+
+msgid "Alt Destination"
+msgstr "Alternativ Destination"
+
+msgid "Encryption"
+msgstr "Kryptering"
+
+msgid "Supported encryption"
+msgstr "Understøttet kryptering"
+
+msgid "New server tunnel"
+msgstr "Ny servertunnel"
+
+msgid "Standard"
+msgstr "Standard"
+
+msgid "Create"
+msgstr "Opret"
+
+msgid "I2P Client Tunnels"
+msgstr "I2P klienttunneler"
+
+msgid "Interface"
+msgstr "Grænseflade"
+
+msgid "Edit Tunnel Settings for"
+msgstr "Rediger tunnelindstillinger for"
+
+msgid "Standby"
+msgstr "Stå ved"
+
+msgid "Outproxy"
+msgstr "Udgangsfuldmagt"
+
+msgid "internal plugin"
+msgstr "internt plugin"
+
+msgid "none"
+msgstr "ingen"
+
+msgid "New client tunnel"
+msgstr "Ny klienttunnel"
+
+msgid "Registration Helper"
+msgstr "Indskrivningshjælper"
+
+msgid "This service uses encrypted leasesets. Registration is not recommended. Registration authentication is disabled."
+msgstr "Denne tjeneste bruger krypterede lejesæt."
+
+msgid "Please be sure to select, copy, and paste the entire contents of the appropriate authentication data into the form of your favorite registration site"
+msgstr "Sørg for at vælge, kopiere og indsætte hele indholdet af de relevante autentificeringsdata i form af dit foretrukne registreringssted"
+
+msgid "Tunnel name"
+msgstr "Tunnelnavn"
+
+msgid "Website name"
+msgstr "Hjemmesidenavn"
+
+msgid "Local Destination"
+msgstr "Lokalt rejsemål"
+
+msgid "Local destination is not available. Start the tunnel."
+msgstr "Lokal destination er ikke tilgængelig."
+
+msgid "To enable registration verification, edit tunnel and set name (or website name) to a valid host name ending in '.i2p'"
+msgstr "For at aktivere registreringsbekræftelse skal du redigere tunnelen og sætte navn (eller webstedsnavn) til et gyldigt værtsnavn, der ender på '.i2p'"
+
+msgid "To enable registration verification, edit tunnel and set name to a valid host name ending in '.i2p'"
+msgstr "For at aktivere registreringsbekræftelse skal du redigere tunnelen og indstille navnet til et gyldigt værtsnavn, der ender på '.i2p'"
+
+msgid "Destination signing key is not available. Start the tunnel."
+msgstr "Destinationssigneringsnøgle er ikke tilgængelig."
+
+msgid "Destination signing key is offline. Use CLI tools on the offline machine."
+msgstr "Destinationssigneringsnøgle er offline."
+
+#, java-format
+msgid "Authentication for adding host {0}"
+msgstr "Godkendelse for tilføjelse af vært {0}"
+
+msgid "Copy and paste this to the registration site"
+msgstr "Kopiér og indsæt dette på registreringssiden"
+
+msgid "Advanced authentication strings"
+msgstr "Avancerede autentificeringsstrenge"
+
+#, java-format
+msgid "Authentication for removing host {0}"
+msgstr "Godkendelse til fjernelse af vært {0}"
+
+msgid "Authentication for changing name"
+msgstr "Godkendelse for ændring af navn"
+
+#, java-format
+msgid "This will change the name from {0} to {1}, using the same destination"
+msgstr "Dette vil ændre navnet fra {0} til {1} ​​ved at bruge den samme destination"
+
+msgid "This tunnel must be configured with the new host name."
+msgstr "Denne tunnel skal konfigureres med det nye værtsnavn."
+
+msgid "Enter old hostname below."
+msgstr "Indtast gammelt værtsnavn nedenfor."
+
+msgid "Authentication for adding alias"
+msgstr "Godkendelse for tilføjelse af alias"
+
+#, java-format
+msgid "This will add an alias {0} for {1}, using the same destination"
+msgstr "Dette vil tilføje et alias {0} for {1}, ved at bruge den samme destination"
+
+msgid "Authentication for changing destination"
+msgstr "Godkendelse for ændring af destination"
+
+#, java-format
+msgid "This will change the destination for {0}"
+msgstr "Dette vil ændre destinationen for {0}"
+
+msgid "This tunnel must be configured with the new destination."
+msgstr "Denne tunnel skal konfigureres med den nye destination."
+
+msgid "Enter old destination below."
+msgstr "Indtast gammel destination nedenfor."
+
+msgid "Authentication for adding alternate destination"
+msgstr "Godkendelse for tilføjelse af alternativ destination"
+
+#, java-format
+msgid "This will add an alternate destination for {0}"
+msgstr "Dette vil tilføje en alternativ destination for {0}"
+
+msgid "Authentication for adding subdomain"
+msgstr "Godkendelse for tilføjelse af underdomæne"
+
+#, java-format
+msgid "This will add a subdomain {0} of {1}, with a different destination"
+msgstr "Dette tilføjer et underdomæne {0} af {1} med en anden destination"
+
+msgid "This tunnel must be configured with the new subdomain and destination."
+msgstr "Denne tunnel skal konfigureres med det nye underdomæne og destination."
+
+msgid "Enter higher-level domain and destination below."
+msgstr "Indtast domæne og destination på højere niveau nedenfor."
+
+msgid "Return to Tunnel Configuration"
+msgstr "Tilbage til tunnelkonfiguration"
+
+msgid "Specify old name and destination"
+msgstr "Angiv gammelt navn og destination"
+
+msgid "This is only required for advanced authentication."
+msgstr "Dette er kun nødvendigt for avanceret godkendelse."
+
+msgid "See above for required items."
+msgstr "Se ovenfor for nødvendige varer."
+
+msgid "Old / parent hostname "
+msgstr "Gammelt / overordnet værtsnavn "
+
+msgid "Private key file for old destination / sub-domain parent"
+msgstr "Privat nøglefil til gammel destinations-/underdomæneforælder"
+
+msgid "Generate Authentication"
+msgstr "Generer godkendelse"
+
+msgid "SSL Helper"
+msgstr "SSL-hjælper"
+
+msgid "Invalid form submission, probably because you used the 'back' or 'reload' button on your browser. Please resubmit."
+msgstr "Ugyldig formularindsendelse, sandsynligvis fordi du brugte knappen 'tilbage' eller 'genindlæs' i din browser. Ugyldig formularindsendelse, sandsynligvis fordi du brugte knappen 'tilbage' eller 'genindlæs' i din browser. Ugyldig formularafsendelse, sandsynligvis fordi du brugte 'tilbage' eller 'reload' knappen i din browser. Prøv venligst at sende igen."
+
+msgid "If the problem persists, verify that you have cookies enabled in your browser."
+msgstr "Hvis problemet fortsætter, skal du kontrollere, at du har aktiveret cookies i din browser.Hvis problemet fortsætter, kontrollere, at du har slået cookies til i din browser."
+
+msgid "Experts only!"
+msgstr "Kun eksperter!"
+
+msgid "Base32"
+msgstr "Base32"
+
+msgid "Alt Base32"
+msgstr "Alt Base32"
+
+msgid "Incoming I2P Port Routing"
+msgstr "Routing af indgående I2P-porte"
+
+msgid "Virtual Host"
+msgstr "Virtuel vært"
+
+msgid "Via SSL?"
+msgstr "Via SSL?"
+
+msgid "Test HTTPS server through I2P"
+msgstr "Test HTTPS-server gennem I2P"
+
+msgid "Server"
+msgstr "Server"
+
+msgid "SSL Activation"
+msgstr "SSL-aktivering"
+
+msgid "I2P webserver (eepsite)"
+msgstr "I2P webserver (eepsite)"
+
+msgid "Disable SSL"
+msgstr "Deaktiver SSL"
+
+msgid "Enable SSL"
+msgstr "Aktiver SSL"
+
+msgid "New Certificate Password"
+msgstr "Nyt certifikatkodeord"
+
+msgid "Password (required to encrypt the certificate)"
+msgstr "Adgangskode (påkrævet for at kryptere certifikatet)"
+
+msgid "Generate new SSL certificate"
+msgstr "Generer nyt SSL-certifikat"
+
+msgid "Generate SSL certificate and enable"
+msgstr "Generer SSL-certifikat og aktiver"
+
+#, java-format
+msgid "Cannot configure, no Jetty server found in {0}client configurations{1} that matches this tunnel"
+msgstr "Kan ikke konfigurere, ingen Jetty-server fundet i {0}klientkonfigurationer{1}, der matcher denne tunnel"
+
+msgid "Support for non-Jetty servers will be added in a future release"
+msgstr "Support til ikke-Jetty-servere vil blive tilføjet i en fremtidig udgivelse"
+
+msgid "Return to Tunnel Manager Index"
+msgstr "Tilbage til Tunnel Manager Index"
+
+msgid "Return to Tunnel Editor"
+msgstr "Vend tilbage til Tunnel Editor"
+
+msgid "I2P Tunnel Manager - Tunnel Creation Wizard"
+msgstr "I2P Tunnel Manager - Guiden til oprettelse af tunneler"
+
+msgid "Server or client tunnel?"
+msgstr "Server eller klienttunnel?"
+
+msgid "Tunnel type"
+msgstr "Tunneltype"
+
+msgid "Tunnel name and description"
+msgstr "Tunnelnavn og beskrivelse"
+
+msgid "Tunnel destination"
+msgstr "Tunneldestination"
+
+msgid "Binding address and port"
+msgstr "Bindende adresse og port"
+
+msgid "Tunnel auto-start"
+msgstr "Tunnel autostart"
+
+msgid "Wizard completed"
+msgstr "Wizard afsluttet"
+
+msgid "This wizard will take you through the various options available for creating tunnels in I2P."
+msgstr "Denne guide fører dig gennem de forskellige muligheder, der er tilgængelige for at skabe tunneler i I2P."
+
+msgid "The first thing to decide is whether you want to create a server or a client tunnel."
+msgstr "Den første ting at beslutte er, om du vil oprette en server eller en klienttunnel."
+
+msgid "If you need to connect to a remote service, such as an IRC server inside I2P or a code repository, then you will require a CLIENT tunnel."
+msgstr "Hvis du skal oprette forbindelse til en fjerntjeneste, såsom en IRC-server inde i I2P eller et kodelager, så skal du bruge en KLIENT-tunnel."
+
+msgid "On the other hand, if you wish to host a service for others to connect to you'll need to create a SERVER tunnel."
+msgstr "På den anden side, hvis du ønsker at være vært for en tjeneste, som andre kan oprette forbindelse til, skal du oprette en SERVER-tunnel."
+
+msgid "Server Tunnel"
+msgstr "Servertunnel"
+
+msgid "Client Tunnel"
+msgstr "Klienttunnel"
+
+msgid "There are several types of tunnels to choose from:"
+msgstr "Der er flere typer tunneler at vælge imellem:"
+
+msgid "Basic tunnel for connecting to a single service inside I2P."
+msgstr "Basistunnel til tilslutning til en enkelt tjeneste inde i I2P."
+
+msgid "Try this if none of the tunnel types below fit your requirements, or you don't know what type of tunnel you need."
+msgstr "Prøv dette, hvis ingen af ​​nedenstående tunneltyper passer til dine krav, eller du ikke ved, hvilken type tunnel du har brug for."
+
+msgid "Tunnel that acts as an HTTP proxy for reaching eepsites inside I2P."
+msgstr "Tunnel, der fungerer som en HTTP-proxy til at nå eepsites inde i I2P."
+
+msgid "Set your browser to use this tunnel as an http proxy, or set your \"http_proxy\" environment variable for command-line applications in GNU/Linux."
+msgstr "Indstil din browser til at bruge denne tunnel som en http-proxy, eller indstil din \"http_proxy\" miljøvariabel til kommandolinjeapplikationer i GNU/Linux."
+
+msgid "Websites outside I2P can also be reached if an HTTP proxy within I2P is known."
+msgstr "Websteder uden for I2P kan også nås, hvis en HTTP-proxy inden for I2P er kendt."
+
+msgid "Customised client tunnel specific for IRC connections."
+msgstr "Tilpasset klienttunnel specifik for IRC-forbindelser."
+
+msgid "With this tunnel type, your IRC client will be able to connect to an IRC network inside I2P."
+msgstr "Med denne tunneltype vil din IRC-klient være i stand til at oprette forbindelse til et IRC-netværk inde i I2P."
+
+msgid "Each IRC network in I2P that you wish to connect to will require its own tunnel. (See Also, SOCKS IRC)"
+msgstr "Hvert IRC-netværk i I2P, som du ønsker at oprette forbindelse til, vil kræve sin egen tunnel."
+
+msgid "A tunnel that implements the SOCKS protocol."
+msgstr "En tunnel, der implementerer SOCKS-protokollen."
+
+msgid "This enables both TCP and UDP connections to be made through a SOCKS outproxy within I2P."
+msgstr "Dette gør det muligt at oprette både TCP- og UDP-forbindelser gennem en SOCKS-outproxy inden for I2P."
+
+msgid "A client tunnel implementing the SOCKS protocol, which is customised for connecting to IRC networks."
+msgstr "En klienttunnel, der implementerer SOCKS-protokollen, som er tilpasset til at forbinde til IRC-netværk."
+
+msgid "With this tunnel type, IRC networks in I2P can be reached by typing the I2P address into your IRC client, and configuring the IRC client to use this SOCKS tunnel."
+msgstr "Med denne tunneltype kan IRC-netværk i I2P nås ved at indtaste I2P-adressen i din IRC-klient og konfigurere IRC-klienten til at bruge denne SOCKS-tunnel."
+
+msgid "This means that only one I2P tunnel is required rather than a separate tunnel per IRC network."
+msgstr "Det betyder, at der kun kræves én I2P-tunnel i stedet for en separat tunnel pr. IRC-netværk."
+
+msgid "IRC networks outside I2P can also be reached if a SOCKS outproxy within I2P is known, though it depends on whether or not the outproxy has been blocked by the IRC network."
+msgstr "IRC-netværk uden for I2P kan også nås, hvis en SOCKS-outproxy inden for I2P er kendt, selvom det afhænger af, om outproxyen er blevet blokeret af IRC-netværket."
+
+msgid "A basic server tunnel for hosting a generic service inside I2P."
+msgstr "En grundlæggende servertunnel til hosting af en generisk tjeneste inde i I2P."
+
+msgid "A server tunnel that is customised for HTTP connections."
+msgstr "En servertunnel, der er tilpasset til HTTP-forbindelser."
+
+msgid "Use this tunnel type if you want to host an eepsite."
+msgstr "Brug denne tunneltype, hvis du vil være vært for en eepsite."
+
+msgid "A customised server tunnel for hosting IRC networks inside I2P."
+msgstr "En tilpasset servertunnel til hosting af IRC-netværk inde i I2P."
+
+msgid "Usually, a separate tunnel needs to be created for each IRC server that is to be accessible inside I2P."
+msgstr "Normalt skal der oprettes en separat tunnel for hver IRC-server, der skal være tilgængelig inde i I2P."
+
+msgid "Select tunnel type"
+msgstr "Vælg tunneltype"
+
+msgid "Choose a name and description for your tunnel."
+msgstr "Vælg et navn og en beskrivelse til din tunnel."
+
+msgid "These can be anything you want - they are just for ease of identifying the tunnel in the routerconsole."
+msgstr "Disse kan være alt, hvad du vil - de er kun for at lette identifikation af tunnelen i routerkonsollen."
+
+msgid "If you know of any outproxies for this type of tunnel (either HTTP or SOCKS), fill them in below."
+msgstr "Hvis du kender nogen outproxies til denne type tunnel (enten HTTP eller SOCKS), så udfyld dem nedenfor."
+
+msgid "Separate multiple proxies with commas."
+msgstr "Adskil flere fuldmagter med kommaer."
+
+msgid "List of I2P outproxy destinations, separated with commas (e.g. proxy1.i2p,proxy2.i2p)"
+msgstr "Liste over I2P-outproxydestinationer, adskilt med kommaer (f.eks. proxy1.i2p,proxy2.i2p)"
+
+msgid "Type in the I2P destination of the service that this client tunnel should connect to."
+msgstr "Indtast I2P-destinationen for den tjeneste, som denne klienttunnel skal oprette forbindelse til."
+
+msgid "This could be the full Base64 destination key, or an I2P URL from your address book."
+msgstr "Dette kan være den fulde Base64-destinationsnøgle eller en I2P URL fra din adressebog."
+
+msgid "Enter a b64 or .i2p address here"
+msgstr "Indtast en b64- eller .i2p-adresse her"
+
+msgid "This is the IP that your service is running on, this is usually on the same machine so 127.0.0.1 is autofilled."
+msgstr "Dette er den IP, som din tjeneste kører på, dette er normalt på den samme maskine, så 127.0.0.1 udfyldes automatisk."
+
+msgid "This is the port that the service is accepting connections on."
+msgstr "Dette er den port, som tjenesten accepterer forbindelser på."
+
+msgid "This is the port that the client tunnel will be accessed from locally."
+msgstr "Dette er den port, som klienttunnelen vil få adgang fra lokalt."
+
+msgid "How do you want this tunnel to be accessed? By just this machine, your entire subnet, or external internet?"
+msgstr "Hvordan vil du have adgang til denne tunnel?"
+
+msgid "You will most likely want to just allow 127.0.0.1"
+msgstr "Du vil højst sandsynligt bare tillade 127.0.0.1"
+
+msgid "The I2P router can automatically start this tunnel for you when the router is started."
+msgstr "I2P-routeren kan automatisk starte denne tunnel for dig, når routeren startes."
+
+msgid "This can be useful for frequently-used tunnels (especially server tunnels), but for tunnels that are only used occasionally it would mean that the I2P router is creating and maintaining unnecessary tunnels."
+msgstr "Dette kan være nyttigt for ofte brugte tunneler (især servertunneler), men for tunneler, der kun bruges lejlighedsvis, vil det betyde, at I2P-routeren skaber og vedligeholder unødvendige tunneler."
+
+msgid "The wizard has now collected enough information to create your tunnel."
+msgstr "Guiden har nu indsamlet nok information til at skabe din tunnel."
+
+msgid "Upon clicking the Save button below, the wizard will set up the tunnel, and take you back to the main I2PTunnel page."
+msgstr "Når du klikker på knappen Gem nedenfor, vil guiden konfigurere tunnelen og tage dig tilbage til I2PTunnel-hovedsiden."
+
+msgid "Because you chose to automatically start the tunnel when the router starts, you don't have to do anything further."
+msgstr "Fordi du valgte automatisk at starte tunnelen, når routeren starter, behøver du ikke at gøre mere."
+
+msgid "The router will start the tunnel once it has been set up."
+msgstr "Routeren starter tunnelen, når den er sat op."
+
+msgid "Because you chose not to automatically start the tunnel, you will have to manually start it."
+msgstr "Fordi du har valgt ikke at starte tunnelen automatisk, bliver du nødt til at starte den manuelt."
+
+msgid "You can do this by clicking the Start button on the main page which corresponds to the new tunnel."
+msgstr "Du kan gøre dette ved at klikke på Start-knappen på hovedsiden, som svarer til den nye tunnel."
+
+msgid "Below is a summary of the options you chose:"
+msgstr "Nedenfor er en oversigt over de muligheder, du har valgt:"
+
+msgid "Tunnel description"
+msgstr "Tunnelbeskrivelse"
+
+msgid "Binding address"
+msgstr "Bindende adresse"
+
+msgid "Tunnel port"
+msgstr "Tunnelhavn"
+
+msgid "Alongside these basic settings, there are a number of advanced options for tunnel configuration."
+msgstr "Ud over disse grundlæggende indstillinger er der en række avancerede muligheder for tunnelkonfiguration."
+
+msgid "The wizard will set reasonably sensible default values for these, but you can view and/or edit these by clicking on the tunnel's name in the main I2PTunnel page."
+msgstr "Guiden indstiller rimeligt fornuftige standardværdier for disse, men du kan se og/eller redigere disse ved at klikke på tunnelens navn på hovedsiden I2PTunnel."
+
+msgid "Cancel the wizard and return to Tunnel Manager home page"
+msgstr "Annuller guiden og vend tilbage til Tunnel Manager-hjemmesiden"
+
+msgid "Return to previous page"
+msgstr "Vend tilbage til forrige side"
+
+msgid "Previous"
+msgstr "Foregående"
+
+msgid "Save tunnel configuration"
+msgstr "Gem tunnelkonfiguration"
+
+msgid "Save Tunnel"
+msgstr "Red Tunnel"
+
+msgid "Finish Wizard and review tunnel settings"
+msgstr "Finish Wizard og gennemse tunnelindstillinger"
+
+msgid "Finish"
+msgstr "Afslut"
+
+msgid "Advance to next page"
+msgstr "Gå videre til næste side"
+
+msgid "Next"
+msgstr "Næste"

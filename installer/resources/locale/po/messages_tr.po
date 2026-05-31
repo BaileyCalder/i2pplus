@@ -1,0 +1,144 @@
+# I2P
+# Copyright (C) 2012 The I2P Project
+msgid ""
+msgstr ""
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Failed to load the wrapper"
+msgstr "Kapsayıcı yüklenemedi"
+
+#, sh-format
+msgid "$APP_LONG_NAME is already running."
+msgstr "$APP_LONG_NAME zaten çalışıyor."
+
+#, sh-format
+msgid "Running $APP_LONG_NAME"
+msgstr "$APP_LONG_NAME çalışıyor"
+
+#, sh-format
+msgid "Waiting for $APP_LONG_NAME"
+msgstr "$APP_LONG_NAME bekleniyor"
+
+#, sh-format
+msgid "WARNING: $APP_LONG_NAME may have failed to start."
+msgstr "DİKKAT: $APP_LONG_NAME başlatılamamış olabilir."
+
+msgid "Must be root to perform this action."
+msgstr "Bu işlemi ancak root yapabilir."
+
+#, sh-format
+msgid "Starting $APP_LONG_NAME"
+msgstr "$APP_LONG_NAME başlatılıyor"
+
+#, sh-format
+msgid "Stopping $APP_LONG_NAME"
+msgstr "$APP_LONG_NAME durduruluyor"
+
+#, sh-format
+msgid "$APP_LONG_NAME was not running."
+msgstr "$APP_LONG_NAME çalışmıyordu."
+
+#, sh-format
+msgid "Unable to stop $APP_LONG_NAME."
+msgstr "$APP_LONG_NAME durdurulamıyor."
+
+#, sh-format
+msgid "Waiting for $APP_LONG_NAME to exit"
+msgstr "$APP_LONG_NAME kapanması bekleniyor"
+
+#, sh-format
+msgid "Failed to stop $APP_LONG_NAME."
+msgstr "$APP_LONG_NAME durdurulamadı."
+
+#, sh-format
+msgid "Stopped $APP_LONG_NAME."
+msgstr "$APP_LONG_NAME durduruldu."
+
+#, sh-format
+msgid "Stopping $APP_LONG_NAME gracefully"
+msgstr "$APP_LONG_NAME düzgün şekilde kapatıldı"
+
+#, sh-format
+msgid "$APP_LONG_NAME is not running."
+msgstr "$APP_LONG_NAME çalışmıyor."
+
+#, sh-format
+msgid "$APP_LONG_NAME is running: PID:$pid"
+msgstr "$APP_LONG_NAME çalışıyor: PID:$pid"
+
+#, sh-format
+msgid "$APP_LONG_NAME is running: PID:$pid, Wrapper:$STATUS, Java:$JAVASTATUS"
+msgstr "$APP_LONG_NAME çalışıyor: PID:$pid, Sarıcı:$STATUS, Java:$JAVASTATUS"
+
+#, sh-format
+msgid "The $APP_LONG_NAME daemon is already installed."
+msgstr "$APP_LONG_NAME arka plan hizmeti zaten kurulmuş."
+
+#, sh-format
+msgid "Installing the $APP_LONG_NAME daemon"
+msgstr "$APP_LONG_NAME arka plan hizmeti kuruluyor"
+
+#, sh-format
+msgid "Install not currently supported for $DIST_OS"
+msgstr "$DIST_OS üzerine kurulum desteklenmiyor"
+
+#, sh-format
+msgid "Removing $APP_LONG_NAME daemon"
+msgstr "$APP_LONG_NAME arka plan hizmeti kaldırılıyor"
+
+#, sh-format
+msgid "The $APP_LONG_NAME daemon is not currently installed."
+msgstr "$APP_LONG_NAME arka plan hizmeti kurulmamış."
+
+#, sh-format
+msgid "Remove not currently supported for $DIST_OS"
+msgstr "$DIST_OS üzerinden kaldırma desteklenmiyor"
+
+msgid "Commands:"
+msgstr "Komutlar:"
+
+msgid "Launch in the current console."
+msgstr "Geçerli konsolda başlatın."
+
+msgid "Start in the background as a daemon process."
+msgstr "Arka plan hizmeti olarak başlatın."
+
+msgid "Stop if running as a daemon or in another console."
+msgstr "Arka plan hizmeti olarak ya da başka bir konsolda çalışıyorsa durdurun."
+
+msgid "Stop gracefully, may take up to 11 minutes or more."
+msgstr "Zarifçe durun, 11 dakikaya kadar sürebilir."
+
+msgid "Restart gracefully, may take up to 11 minutes or more."
+msgstr "Zarifçe yeniden başlatın, 11 dakikaya kadar sürebilir."
+
+msgid "Stop if running and then start."
+msgstr "Çalışıyorsa durdurun ve başlatın."
+
+msgid "Restart only if already running."
+msgstr "Yalnız zaten çalışıyorsa yeniden başlatın."
+
+msgid "Query the current status."
+msgstr "Geçerli durumu öğrenin."
+
+msgid "Install to start automatically when system boots."
+msgstr "Sistem açılırken otomatik yüklenecek şekilde kur."
+
+msgid "Uninstall."
+msgstr "Kaldırın."
+
+msgid "Request a Java thread dump if running."
+msgstr "Çalışıyorsa Java iş parçacığı dökümü isteyin."
+
+msgid "Please edit i2prouter and set the variable RUN_AS_USER"
+msgstr "i2prouter dosyasını düzenleyin ve RUN_AS_USER değişkenini ayarlayın"
+
+msgid "Running I2P as the root user is *not* recommended."
+msgstr "I2P yazılımının root olarak çalıştırmanız *önerilmez*."
+
+msgid "To run as root anyway, edit i2prouter and set ALLOW_ROOT=true."
+msgstr "Root olarak çalıştırmak için i2prouter dosyasını düzenleyin ve ALLOW_ROOT=true ayarını yapın."

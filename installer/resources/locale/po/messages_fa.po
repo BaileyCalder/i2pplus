@@ -1,0 +1,144 @@
+# I2P
+# Copyright (C) 2012 The I2P Project
+msgid ""
+msgstr ""
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Failed to load the wrapper"
+msgstr "بارگذاری کننده با شکست مواجه شد"
+
+#, sh-format
+msgid "$APP_LONG_NAME is already running."
+msgstr "$APP_LONG_NAME در حال حاضر در حال اجرا است."
+
+#, sh-format
+msgid "Running $APP_LONG_NAME"
+msgstr "اجرا $APP_LONG_NAME"
+
+#, sh-format
+msgid "Waiting for $APP_LONG_NAME"
+msgstr "در انتظار $APP_LONG_NAME"
+
+#, sh-format
+msgid "WARNING: $APP_LONG_NAME may have failed to start."
+msgstr "هشدار: $APP_LONG_NAME ممکن است با شکست مواجه شده است."
+
+msgid "Must be root to perform this action."
+msgstr "باید روت باشید تا این عملیات را انجام دهید."
+
+#, sh-format
+msgid "Starting $APP_LONG_NAME"
+msgstr "شروع $APP_LONG_NAME"
+
+#, sh-format
+msgid "Stopping $APP_LONG_NAME"
+msgstr "توقف $APP_LONG_NAME"
+
+#, sh-format
+msgid "$APP_LONG_NAME was not running."
+msgstr "$APP_LONG_NAME در حال اجرا نبود."
+
+#, sh-format
+msgid "Unable to stop $APP_LONG_NAME."
+msgstr " قادر به توقف $APP_LONG_NAME نیستم."
+
+#, sh-format
+msgid "Waiting for $APP_LONG_NAME to exit"
+msgstr "در انتظار خروج $APP_LONG_NAME"
+
+#, sh-format
+msgid "Failed to stop $APP_LONG_NAME."
+msgstr "با توقف $APP_LONG_NAME شکست مواجه شد."
+
+#, sh-format
+msgid "Stopped $APP_LONG_NAME."
+msgstr "متوقف شده $APP_LONG_NAME."
+
+#, sh-format
+msgid "Stopping $APP_LONG_NAME gracefully"
+msgstr "توقف نرم $APP_LONG_NAME"
+
+#, sh-format
+msgid "$APP_LONG_NAME is not running."
+msgstr "$APP_LONG_NAME در حال اجرا نیست."
+
+#, sh-format
+msgid "$APP_LONG_NAME is running: PID:$pid"
+msgstr "$APP_LONG_NAME در حال اجرا است: PID:$pid"
+
+#, sh-format
+msgid "$APP_LONG_NAME is running: PID:$pid, Wrapper:$STATUS, Java:$JAVASTATUS"
+msgstr "$APP_LONG_NAME در حال اجرا است: PID:$pid, Wrapper:$STATUS, Java:$JAVASTATUS"
+
+#, sh-format
+msgid "The $APP_LONG_NAME daemon is already installed."
+msgstr "داEMON $APP_LONG_NAME قبلا نصب شده است."
+
+#, sh-format
+msgid "Installing the $APP_LONG_NAME daemon"
+msgstr "نصب داEMON $APP_LONG_NAME"
+
+#, sh-format
+msgid "Install not currently supported for $DIST_OS"
+msgstr "نصب در حال حاضر برای $DIST_OS پشتیبانی نمی شود"
+
+#, sh-format
+msgid "Removing $APP_LONG_NAME daemon"
+msgstr "حذف داEMON $APP_LONG_NAME"
+
+#, sh-format
+msgid "The $APP_LONG_NAME daemon is not currently installed."
+msgstr "داEMON $APP_LONG_NAME در حال حاضر نصب نشده است."
+
+#, sh-format
+msgid "Remove not currently supported for $DIST_OS"
+msgstr "حذف در حال حاضر برای $DIST_OS پشتیبانی نمی شود"
+
+msgid "Commands:"
+msgstr "فرمان ها:"
+
+msgid "Launch in the current console."
+msgstr "انطلاق در کنسول فعلی."
+
+msgid "Start in the background as a daemon process."
+msgstr "در پس زمینه به عنوان فرآیند داEMON شروع."
+
+msgid "Stop if running as a daemon or in another console."
+msgstr "اگر در حال اجرا به عنوان داEMON یا در کنسول دیگری است، متوقف کنید."
+
+msgid "Stop gracefully, may take up to 11 minutes or more."
+msgstr "متوقف کنید به طور سالم، ممکن است تا 11 دقیقه یا بیشتر طول بکشد."
+
+msgid "Restart gracefully, may take up to 11 minutes or more."
+msgstr "با سلامت دوباره راه اندازی کنید، ممکن است تا 11 دقیقه یا بیشتر طول بکشد."
+
+msgid "Stop if running and then start."
+msgstr "اگر در حال اجرا است متوقف کنید و سپس شروع کنید."
+
+msgid "Restart only if already running."
+msgstr "تنها اگر قبلا در حال اجرا بود دوباره راه اندازی کنید."
+
+msgid "Query the current status."
+msgstr "پرسیدن وضعیت فعلی."
+
+msgid "Install to start automatically when system boots."
+msgstr "برای شروع خودکار وقتی سیستم بوت می شود نصب کنید."
+
+msgid "Uninstall."
+msgstr "ان نصب کردن."
+
+msgid "Request a Java thread dump if running."
+msgstr "اگر در حال اجرا است درخواست دمپ رشته Java را ارسال کنید."
+
+msgid "Please edit i2prouter and set the variable RUN_AS_USER"
+msgstr "لطفا i2prouter را ویرایش کنید و متغیر RUN_AS_USER را تنظیم کنید"
+
+msgid "Running I2P as the root user is *not* recommended."
+msgstr "اجرا I2P به عنوان کاربر روت *پیشنهاد نمی شود*."
+
+msgid "To run as root anyway, edit i2prouter and set ALLOW_ROOT=true."
+msgstr "برای اجرا به عنوان روت هر چند، i2prouter را ویرایش کنید و ALLOW_ROOT را به صادق تنظیم کنید."

@@ -1,0 +1,63 @@
+# I2P
+# Copyright (C) 2014 The I2P Project
+msgid ""
+msgstr ""
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Message timeout"
+msgstr "Mensagem expirou"
+
+msgid "Failed delivery to local destination"
+msgstr "Não foi possível entregar no destino local."
+
+msgid "Local router failure"
+msgstr "Falha do roteador local"
+
+msgid "Local network failure"
+msgstr "Falha da rede local"
+
+msgid "Session closed"
+msgstr "Sessão fechada"
+
+msgid "Invalid message"
+msgstr "Mensagem inválida"
+
+msgid "Invalid message options"
+msgstr "Opções de mensagem inválidas"
+
+msgid "Buffer overflow"
+msgstr "Memória intermédia cheia"
+
+msgid "Message expired"
+msgstr "Mensagem expirou"
+
+msgid "Local lease set invalid"
+msgstr "Conjunto de locação local inválido"
+
+msgid "No local tunnels"
+msgstr "Sem túneis locais"
+
+msgid "Unsupported encryption options"
+msgstr "Opções de encripatção não suportadas"
+
+msgid "Invalid destination"
+msgstr "Destino inválido"
+
+msgid "Destination lease set expired"
+msgstr "Conjunto de locação de destino expirou"
+
+msgid "Destination lease set not found"
+msgstr "Conjunto de locação de destino não encontrado"
+
+msgid "Local destination shutdown"
+msgstr "Encerrar destino local"
+
+msgid "Connection was reset"
+msgstr "A ligação foi reiniciada"
+
+msgid "Failure code"
+msgstr "Falha de código"

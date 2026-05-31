@@ -1,0 +1,16 @@
+2026/05/31 12:43:05.043 | WARN [...obQueue 1/1] ...oadClientAppsJob: Warning - No client apps or router console configured - we are just a router
+2026/05/31 12:43:05.072 | INFO [...bQueue 4/16] ...ed.ReseedChecker: Downloading peer router information for a new I2P installation...
+2026/05/31 12:43:05.269 | WARN [...eTimer2 4/4] ....FamilyKeyCrypto: No family keys loaded, contact packager
+2026/05/31 12:43:07.281 | ERROR[Reseed     ] ....reseed.Reseeder: Error with downloaded reseed bundle -> Unknown signer: sahil@mail.i2p for content type: reseed
+2026/05/31 12:43:19.253 | ^^^ 3 similar messages omitted
+2026/05/31 12:43:25.614 | ^^^ 2 similar messages omitted
+2026/05/31 12:43:27.994 | WARN [Reseed     ] ....reseed.Reseeder: Reseeding failed [coconut.incognet.io] -> SSL certificate verification failed
+2026/05/31 12:43:31.136 | ERROR[Reseed     ] ....reseed.Reseeder: Error with downloaded reseed bundle -> Unknown signer: igor@novg.net for content type: reseed
+2026/05/31 12:43:33.739 | WARN [Reseed     ] ....reseed.Reseeder: Reseeding failed [reseed.diva.exchange] -> Attempt failed
+2026/05/31 12:43:36.989 | WARN [Reseed     ] ....reseed.Reseeder: Reseeding failed [reseed-fr.i2pd.xyz] -> Connection refused (Connection refused)
+2026/05/31 12:43:39.070 | ERROR[Reseed     ] ....reseed.Reseeder: Error with downloaded reseed bundle -> Unknown signer: hankhill19580@gmail.com for content type: reseed
+2026/05/31 12:43:40.167 | WARN [Reseed     ] ....reseed.Reseeder: Reseeding failed [reseed2.i2p.net] -> Connection refused (Connection refused)
+2026/05/31 12:43:41.560 | WARN [Reseed     ] ....reseed.Reseeder: Reseeding failed [i2pseed.creativecowpat.net:8443] -> SSL certificate verification failed
+2026/05/31 12:54:55.953 | CRIT [... 1 shutdown] ...2p.router.Router: Shutting down the router...
+2026/05/31 12:54:55.953 | CRIT [... 1 shutdown] ...2p.router.Router: Initiating hard shutdown...
+2026/05/31 12:54:56.061 | CRIT [... 1 shutdown] ...2p.router.Router: Completed hard shutdown

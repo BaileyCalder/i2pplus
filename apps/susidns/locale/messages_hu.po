@@ -1,0 +1,673 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, java-format
+msgid "Host name \"{0}\" contains illegal character {1}"
+msgstr "Hoszt név \"{0}\" helytelen karaktert tartalmaz {1}"
+
+#, java-format
+msgid "Host name cannot start with \"{0}\""
+msgstr "Hoszt név nem kezdődhet a következővel: \"{0}\""
+
+#, java-format
+msgid "Host name cannot end with \"{0}\""
+msgstr "Hoszt név nem végződhet a következővel: \"{0}\""
+
+#, java-format
+msgid "Host name cannot contain \"{0}\""
+msgstr "Hoszt név nem tartalmahatja a következőt: \"{0}\""
+
+#, java-format
+msgid "Host name \"{0}\" requires conversion to ASCII but the conversion library is unavailable in this JVM"
+msgstr "ASCII átalakításra van szükség a következő hoszton \"{0}\", azonban az átalakító könyvtár nem érhető el ezen a Java Virtuális Gépen"
+
+msgid "Source"
+msgstr "Forrás"
+
+msgid "Imported from"
+msgstr "Importálva innen"
+
+msgid "Imported from file"
+msgstr "Fájlból importálva"
+
+msgid "Manually added via SusiDNS"
+msgstr "A SusiDNS-en keresztül manuálisan hozzáadva"
+
+msgid "Manually added"
+msgstr "Manuálisan hozzáadva"
+
+msgid "Added via address helper"
+msgstr "Hozzáadva cím segítségével"
+
+msgid "Via helper"
+msgstr "Segítségen keresztül"
+
+msgid "Via helper from"
+msgstr "Segítségen keresztül innen"
+
+msgid "None"
+msgstr "Semmi"
+
+msgid "Hidden"
+msgstr "Rejtett"
+
+msgid "Signed"
+msgstr "Aláírt"
+
+msgid "Key"
+msgstr "Kulcs"
+
+#, java-format
+msgid "Type {0}"
+msgstr "Típus {0}"
+
+msgid "DSA 1024 bit"
+msgstr "1024 bites DSA"
+
+msgid "ElGamal 2048 bit"
+msgstr "2048 bitest ElGamal"
+
+msgid "Search for <span class=active>"
+msgid_plural "Search for <span class=active>"
+msgstr[0] "Keresse meg a következőt: <span class=active>"
+msgstr[1] "Keresse meg a következőt: <span class=active>"
+
+#, java-format
+msgid "Filtered list contains 1 entry."
+msgid_plural "Filtered list contains {0} entries."
+msgstr[0] "A szűrés után a lista 1 bejegyzést tartalmaz."
+msgstr[1] "A szűrés után a lista {0} bejegyzést tartalmaz."
+
+#, java-format
+msgid "One result for: <span class=active>"
+msgid_plural "{0} results for: <span class=active>"
+msgstr[0] "Egy eredmény a következőre: <span class=active>"
+msgstr[1] "{0} találat a következőre: <span class=active>"
+
+#, java-format
+msgid "Book contains 1 entry"
+msgid_plural "Book contains {0} entries"
+msgstr[0] "A könyv 1 bejegyzést tartalmaz"
+msgstr[1] "A könyv {0} bejegyzést tartalmaz"
+
+msgid "Add"
+msgstr "Hozzáad"
+
+msgid "Replace"
+msgstr "Cserél"
+
+#, java-format
+msgid "Host name {0} is already in address book, unchanged."
+msgstr "Hosztnév {0} már a címjegyzékben, változatlanul hagyva."
+
+#, java-format
+msgid "Host name {0} is already in address book with a different destination. Click \"Replace\" to overwrite."
+msgstr "A {0} host neve már a címjegyzékben van egy másik rendeltetési helygel. A felülíráshoz kattintson a \"Csere\" gombra."
+
+msgid "Unable to resolve Base 32 address"
+msgstr "Nem sikerült feloldani a 32-es alapcímet"
+
+#, java-format
+msgid "Destination added for {0}."
+msgstr "{0} - célállomás hozzáadva."
+
+#, java-format
+msgid "Destination changed for {0}."
+msgstr "{0} - célállomás megváltoztatva."
+
+msgid "Warning - host name does not end with \".i2p\""
+msgstr "Vigyázat - hosztnévnek nincs \".i2p\" végződése"
+
+msgid "Invalid Base 32 host name."
+msgstr "Érvénytelen Base 32 gazdagépnév."
+
+msgid "Invalid Base 64 destination."
+msgstr "Érvénytelen Bázis 64 célállomás."
+
+#, java-format
+msgid "Invalid host name \"{0}\"."
+msgstr "Érvénytelen hosztnév \"{0}\"."
+
+msgid "Please enter a host name and destination"
+msgstr "Kérlek, írd be a hosztnevet és célállomást"
+
+msgid "Delete Entry"
+msgstr "Bejegyzés Törlése"
+
+msgid "Delete Selected"
+msgstr "Kiválasztottak Törlése"
+
+#, java-format
+msgid "Destination {0} deleted."
+msgstr "Célállomás {0} törölve."
+
+#, java-format
+msgid "1 destination deleted."
+msgid_plural "{0} destinations deleted."
+msgstr[0] "1 célállomás törölve."
+msgstr[1] "{0} célállomás törölve."
+
+msgid "No valid entries selected to delete."
+msgstr "Nincs érvényes bejegyzés kiválasztva törlésre."
+
+msgid "Add Alternate"
+msgstr "Alternatív hozzáadása"
+
+msgid "Address book saved."
+msgstr "Címjegyzés elmentve."
+
+msgid "ERROR: Could not write addressbook file."
+msgstr "HIBA: Nem sikerült a címjegyzék-fálj írása."
+
+msgid "Invalid form submission, probably because you used the \"back\" or \"reload\" button on your browser. Please resubmit."
+msgstr "Úrlap küldése sikertelen, valószínűleg a \"vissza\" vagy az \"újratöltés\" gombokat használtad a böngészőben. Kérlek, hogy küldd újra."
+
+msgid "If the problem persists, verify that you have cookies enabled in your browser."
+msgstr "Ha a probléma fennáll, ellenőrizd, hogy a sütik engedélyezve vannak-e a böngésződben."
+
+msgid "Save"
+msgstr "Mentés"
+
+msgid "Blacklist saved."
+msgstr "Blacklist elmentve."
+
+msgid "Reload"
+msgstr "Újratöltés"
+
+msgid "Blacklist reloaded from file."
+msgstr "Blacklist újratöltve a fájlból."
+
+msgid "Configuration saved."
+msgstr "Beállítás elmentve."
+
+msgid "Configuration reloaded."
+msgstr "Beálltások újratöltve."
+
+msgid "New domain"
+msgstr "Új tartomány"
+
+msgid "Subscription log reloaded."
+msgstr "Előfizetési napló újratöltve."
+
+#, java-format
+msgid "{0} address book in {1} database"
+msgstr "{0} címjegyzék a {1} adatbázisban"
+
+#, java-format
+msgid "Host name {0} is not in the address book."
+msgstr "A(z) {0} gazdagépnév nem szerepel a címjegyzékben."
+
+#, java-format
+msgid "Failed to add Destination for {0} to naming service {1}"
+msgstr "{0} Célállomás hozzáadása sikertelen a {1} névszolgáltatóhoz"
+
+#, java-format
+msgid "Failed to delete Destination for {0} from naming service {1}"
+msgstr "{0} Célállomás törlése sikertelen a {1} névszolgáltatóból"
+
+msgid "Blacklist Selected"
+msgstr "Blacklist Kiválasztva"
+
+#, java-format
+msgid "1 destination blacklisted."
+msgid_plural "{0} destinations blacklisted."
+msgstr[0] "1 célállomás a blacklistre került."
+msgstr[1] "{0} célállomás a blacklistre került."
+
+msgid "No valid entries selected to blacklist."
+msgstr "Nincs érvényes bejegyzés kiválasztva a blacklistre helyezéshez."
+
+msgid "Save Notes"
+msgstr "Jegyzetek mentése"
+
+msgid "You must enter a file"
+msgstr "Meg kell adnia egy fájlt"
+
+msgid "No entries found in file"
+msgstr "Nem található bejegyzés a fájlban"
+
+#, java-format
+msgid "Imported from file {0}"
+msgstr "Importálva a(z) {0} fájlból"
+
+#, java-format
+msgid "Loaded {0} entry from file"
+msgid_plural "Loaded {0} entries from file"
+msgstr[0] "{0} bejegyzés betöltve a fájlból"
+msgstr[1] "{0} bejegyzés betöltve a fájlból"
+
+#, java-format
+msgid "Skipped {0} duplicate entry from file"
+msgid_plural "Skipped {0} duplicate entries from file"
+msgstr[0] "{0} ismétlődő bejegyzés kihagyva a fájlból"
+msgstr[1] "{0} ismétlődő bejegyzés kihagyva a fájlból"
+
+msgid "Import from file failed"
+msgstr "Nem sikerült importálni a fájlból"
+
+msgid "Subscriptions saved."
+msgstr "Feliratkozások elmentve."
+
+msgid "Update"
+msgstr "Frissítés"
+
+msgid "Attempting to update addressbook from subscription sources..."
+msgstr "Kísérlet a címjegyzék frissítésére előfizetéses forrásokból..."
+
+msgid "Cannot update subscriptions: HTTP proxy is not running!"
+msgstr "Nem lehet frissíteni az előfizetéseket: A HTTP-proxy nem fut!"
+
+msgid "Subscriptions reloaded."
+msgstr "Feliratkozások újratöltve."
+
+msgid "Import"
+msgstr "Importálás"
+
+msgid "address book"
+msgstr "címjegyzék"
+
+msgid "Router"
+msgstr "Router"
+
+msgid "Master"
+msgstr "Mester"
+
+msgid "Private"
+msgstr "Privát"
+
+msgid "Published"
+msgstr "Közzétett"
+
+msgid "Subscriptions"
+msgstr "Feliratkozások"
+
+msgid "Blacklist"
+msgstr "Blacklist"
+
+msgid "Configuration"
+msgstr "Beállítás"
+
+msgid "Help"
+msgstr "Segítség"
+
+msgid "Book"
+msgstr "Könyv"
+
+msgid "No entries"
+msgstr "Nincs bejegyzés"
+
+msgid "Add new destination"
+msgstr "Új célállomás hozzáadása"
+
+msgid "Import from hosts.txt file"
+msgstr "Importálás a hosts.txt fájlból"
+
+msgid "other"
+msgstr "egyéb"
+
+msgid "Export in hosts.txt format"
+msgstr "Exportálás hosts.txt formátumba"
+
+msgid "Export results in hosts.txt format"
+msgstr "Eredmények exportálása hosts.txt formátumban"
+
+msgid "Export book in hosts.txt format"
+msgstr "Könyv exportálása hosts.txt formátumban"
+
+msgid "Search"
+msgstr "Keresés"
+
+msgid "latest"
+msgstr "legújabb"
+
+msgid "Alive"
+msgstr "Elérhető"
+
+msgid "Dead"
+msgstr "Nem elérhető"
+
+msgid "all"
+msgstr "szűrő törlése"
+
+msgid "Info"
+msgstr "Infó"
+
+msgid "Type"
+msgstr "Típus"
+
+msgid "Hostname"
+msgstr "Gépnév"
+
+msgid "Encryption"
+msgstr "Titkosítás"
+
+msgid "Link (b32)"
+msgstr "Link (b32)"
+
+msgid "Destination"
+msgstr "Célállomás"
+
+msgid "Added"
+msgstr "Hozzáadva"
+
+msgid "Status"
+msgstr "Állapot"
+
+msgid "Select hosts for deletion from addressbook"
+msgstr "Válassza ki a címjegyzékből törölni kívánt gazdagépeket"
+
+msgid "More information on this entry"
+msgstr "Bővebb információ a bejegyzésről"
+
+msgid "unknown"
+msgstr "ismeretlen"
+
+msgid "Base 32 address"
+msgstr "Bázis 32 cím"
+
+msgid "Helper link to share host address with option to add to addressbook"
+msgstr "Segítőhivatkozás a gazdagép címének megosztásához, a címjegyzékhez való hozzáadásának lehetőségével"
+
+msgid "Mark for deletion"
+msgstr "Törlésre kijelöl"
+
+msgid "Cancel"
+msgstr "Mégse"
+
+msgid "This book currently contains no entries."
+msgstr "Ez a könyv jelenleg nem tartalmaz bejegyzéseket."
+
+msgid "e.g. newdomain.i2p"
+msgstr "pl. newdomain.i2p"
+
+msgid "B64 or B32"
+msgstr "B64 vagy B32"
+
+msgid "Full destination or b32 address"
+msgstr "Teljes rendeltetési hely vagy b32-cím"
+
+msgid "Select file"
+msgstr "Válassza ki a fájlt"
+
+msgid "blacklist"
+msgstr "blacklist"
+
+msgid "Blacklist Management"
+msgstr "Blacklist Kezelés"
+
+msgid "File location"
+msgstr "Fájl helye"
+
+msgid "Enter I2P addresses to blacklist (one per line)"
+msgstr "Adja meg az I2P címeket a blacklistre helyezéshez (egy per sor)"
+
+msgid "The blacklist file contains a list of I2P hostnames that should be blocked from access via the HTTP proxy, and excluded from the address book display."
+msgstr "A blacklist fájl I2P hosztnevek listáját tartalmazza, amelyeket blokkolni kell a HTTP proxy-n keresztüli hozzáféréskor, és ki kell zárni a címjegyzék megjelenítéséből."
+
+msgid "configuration"
+msgstr "beállítás"
+
+msgid "Hints"
+msgstr "Tippek"
+
+msgid "File and directory paths here are relative to the addressbook's working directory, which is normally ~/.i2p/addressbook/ (Linux) or %LOCALAPPDATA%\\I2P\\addressbook\\ (Windows)."
+msgstr "A fájl- és könyvtárútvonal itt a címjegyzék munkakönyvtárához viszonyított, amely általában ~/.i2p/addressbook/ (Linux) vagy %LOCALAPPDATA%\\I2P\\addressbook\\ (Windows)."
+
+msgid "If you want to manually add lines to an addressbook, add them to the private or master addressbooks."
+msgstr "Ha kézi hozzáadást szeretnél a címjegyzékhez, add hozzá a privát- vagy a fő címjegyzékhez."
+
+msgid "The router addressbook and the published addressbook are updated by the addressbook application."
+msgstr "A címjegyzék alkalmazás frissítette a router- és a közzétett címjegyzéket."
+
+msgid "When you publish your addressbook, ALL destinations from the master and router addressbooks appear there."
+msgstr "Címjegyzéked közzétételekor MINDEN célállomás a fő és a router címjegyzékből megjelenik ott."
+
+msgid "Use the private addressbook for private destinations, these are not published."
+msgstr "A privát címjegyzéket a privát célállomásokhoz használd, ezek nem kerülnek közlésre."
+
+msgid "Options"
+msgstr "Opciók"
+
+msgid "File containing the list of subscriptions URLs (no need to change)"
+msgstr "A fájl tartalmazza a feliratkozások URL listáját (változtatásra nincs szükség)"
+
+msgid "Update interval in hours"
+msgstr "Frissítési időköz órában"
+
+msgid "Your public hosts.txt file (choose a path within your webserver document root)"
+msgstr "A nyilvános hosts.txt fájlod (válassz elérési utat a webszervered dokumentum főkönyvtárán belül)"
+
+msgid "Your hosts.txt (don't change)"
+msgstr "Saját hosts.txt (ne változtasd)"
+
+msgid "Your personal addressbook, these hosts will be published"
+msgstr "Személyes címjegyzéked, ezek a hosztok közzétételre kerülnek"
+
+msgid "Your private addressbook, it is never published"
+msgstr "Privát címjegyzéked, soha nem kerül közzétéelre"
+
+msgid "Port for your eepProxy (no need to change)"
+msgstr "eepProxy-d portja (nem szükséges változtatni)"
+
+msgid "Hostname for your eepProxy (no need to change)"
+msgstr "eepProxy-d hosztneve (nem szükséges változtatni)"
+
+msgid "Whether to update the published addressbook"
+msgstr "Frissítsem a közzétett címjegyzéket?"
+
+msgid "File containing the etags header from the fetched subscription URLs (no need to change)"
+msgstr "A fájl, mely a leszedett feliratkozási URL-ek e-címkék fejlécét tartalmazza (nincs szükség változtatásra)"
+
+msgid "File containing the modification timestamp for each fetched subscription URL (no need to change)"
+msgstr "A fájl, mely minden leszedett feliratkozási URL módosítási időbélyegzőjét tartalmazza (nincs szükség változtatásra)"
+
+msgid "File to log activity to (change to /dev/null if you like)"
+msgstr "Fájl, ami a működést naplózza (megváltoztathatod /dev/null -ra, ha akarod)"
+
+msgid "Name of override theme to use (defaults to console-selected theme)"
+msgstr "A használandó felülbíráló téma neve (alapértelmezett a konzol által kiválasztott téma)"
+
+msgid "Interval (in hours) for running host checker (default is 8 hours)"
+msgstr "Időköz (órákban) a host ellenőrző futtatásához (alapértelmezett 8 óra)"
+
+msgid "Maximum concurrent pings when running host checker (Default is 12, max is 100)"
+msgstr "Maximum egyidejű ping a host ellenőrző futtatásakor (Alapértelmezett 12, max 100)"
+
+msgid "delete hosts"
+msgstr "hosztok törlése"
+
+msgid "addressbook"
+msgstr "címjegyzék"
+
+msgid "Details"
+msgstr "Részletek"
+
+msgid "Address Helper"
+msgstr "Cím Segítség"
+
+msgid "link"
+msgstr "link"
+
+msgid "Encoded Name"
+msgstr "Kódolt Név"
+
+msgid "Base 32 Address"
+msgstr "Base 32 Cím"
+
+msgid "Base 64 Hash"
+msgstr "Bázis 64 Hash"
+
+msgid "Public Key"
+msgstr "Nyilvános Kulcs"
+
+msgid "Signing Key"
+msgstr "Aláíró Kulcs"
+
+msgid "Certificate"
+msgstr "Tanúsítvány"
+
+msgid "Validated"
+msgstr "Érvényesített"
+
+msgid "no"
+msgstr "nem"
+
+msgid "yes"
+msgstr "igen"
+
+msgid "Added Date"
+msgstr "Hozzáadott Dátum"
+
+msgid "Last Modified"
+msgstr "Utoljára Módosítva"
+
+msgid "Notes"
+msgstr "Jegyzetek"
+
+msgid "Add notes about domain"
+msgstr "Megjegyzések hozzáadása a domainhez"
+
+msgid "Visual Identification for"
+msgstr "Vizuális azonosítás a számára"
+
+msgid "Create your own identification images"
+msgstr "Hozzon létre saját azonosító képeket"
+
+msgid "Launch Image Generator"
+msgstr "Indítsa el a Képgenerátort"
+
+msgid "Introduction"
+msgstr "Bevezetés"
+
+msgid "What is the addressbook?"
+msgstr "Mi a címjegyzék?"
+
+msgid "The addressbook application is part of your I2P installation."
+msgstr "A címjegyzék alkalmazás az I2P installációd része."
+
+msgid "It regularly updates your hosts.txt file from distributed sources or \"subscriptions\"."
+msgstr "Elosztott források vagy \"feliratkozások\" használata a hosts.txt fájlod rendszeres frissítéséhez."
+
+msgid "Subscribing to additional sites is easy, just add them to your <a href=\"subscriptions\">subscriptions</a> file."
+msgstr "További oldalakra való feliratkozás egyszerű, pusztán add hozzá a saját <a href=\"feliratkozások\">feliratkozások</a> fájlodhoz."
+
+msgid "For more information on naming in I2P, see <a href=\"http://i2p-projekt.i2p/naming.html\" target=_blank>the overview</a>."
+msgstr "Az I2P-ben történő elnevezéssel kapcsolatos további információkért tekintse meg az <a href=\"http://i2p-projekt.i2p/naming.html\" target=_blank>áttekintést</a>."
+
+msgid "How does the addressbook application work?"
+msgstr "Hogyan működik a címjegyzék alkalmazás?"
+
+msgid "The addressbook application regularly polls your subscriptions and merges their content into your \"router\" address book."
+msgstr "A címjegyzék alkalmazás rendszeresen meghívja feliratkozásaidat és összevonja őket a saját \"router\" címjegyzékedben."
+
+msgid "Then it merges your \"master\" address book into the router address book as well."
+msgstr "Ezután összevonja saját \"master\" címjegyzékedet is a router címjegyzékedbe."
+
+msgid "If configured, the router address book is now written to the \"published\" address book, which will be publicly available if you are running an eepsite."
+msgstr "Ha be van állítva, a router címjegyzék most a \"közzétett\" címjegyzékbe lesz felírva, mely nyilvánosan hozzáférhető, amennyiben eep oldalt futtatsz."
+
+msgid "The router also uses a private address book, which is not merged or published."
+msgstr "Az útválasztó privát címjegyzéket is használ, amelyet nem egyesít és nem tesz közzé."
+
+msgid "Hosts in the private address book can be accessed by you but their addresses are never distributed to others."
+msgstr "A privát címjegyzékben szereplő hosztok általad elérhetők, de a címeik mások számára soha nem kerülnek közlésre."
+
+msgid "The private address book can also be used for aliases of hosts in your other address books."
+msgstr "A privát címjegyzéked hosztok álneveihez is használható más címjegyzékeidben."
+
+msgid "subscription log"
+msgstr "előfizetési napló"
+
+msgid "Subscription Log"
+msgstr "Előfizetési napló"
+
+msgid "Most recent (excluding bad domains)"
+msgstr "A legújabb (kivéve a rossz domaineket)"
+
+msgid "subscriptions"
+msgstr "feliratkozások"
+
+msgid "The subscription file contains a list of i2p URLs."
+msgstr "A feliratkzoások fájl tartalmaz egy i2p URL listát."
+
+msgid "The addressbook application regularly checks this list for new eepsites."
+msgstr "A címjegyzék alkalmazás rendszeresen átnézi ezt a listát új eep oldalakért."
+
+msgid "Those URLs refer to published hosts.txt files."
+msgstr "Azok az URL-ek közzétett hosts.txt fájlokra hivatkoznak."
+
+msgid "See the FAQ for a list of subscription URLs."
+msgstr "Lásd a GYIK-et feliratkozási URL listáért."
+
+msgid "If SusiDNS is configured to publish your Router address book, the entries will appear in your Published address book and saved to a hosts.txt file for sharing."
+msgstr "Ha a SusiDNS úgy van konfigurálva, hogy közzétegye az útválasztó címjegyzékét, a bejegyzések megjelennek a Közzétett címjegyzékben, és egy hosts.txt fájlba kerülnek megosztás céljából."
+
+msgid "Published Addressbook"
+msgstr "Kiadott címjegyzék"
+
+msgid "To configure SusiDNS to push your Router address book to your Published address book, set 'should_publish=true' on the configuration page."
+msgstr "Ha be szeretné állítani a SusiDNS-t, hogy az útválasztó címjegyzékét a közzétett címjegyzékbe helyezze, állítsa be a 'should_publish=true' értéket a konfigurációs oldalon."
+
+msgid "All hosts derived from subscriptions will appear in this address book, in addition to any you manually add here or to your Master address book."
+msgstr "Az előfizetésekből származó összes gazdagép megjelenik ebben a címjegyzékben, azon kívül, amelyet kézzel hozzáadott ide vagy a fő címjegyzékhez."
+
+msgid "Router Addressbook"
+msgstr "Router címjegyzéke"
+
+msgid "Hosts you manually add here will never be published. You can also add aliases to hosts in other address books here."
+msgstr "Az itt kézzel hozzáadott gazdagépek soha nem lesznek közzétéve. Itt álneveket is hozzáadhat más címjegyzékek gazdagépeihez."
+
+msgid "Private Addressbook"
+msgstr "Privát címjegyzék"
+
+msgid "Local Records"
+msgstr "Helyi Rekordok"
+
+msgid "I2P applications (including the HTTP proxy) use the hosts in your local address books to resolve .i2p hostnames."
+msgstr "Az I2P-alkalmazások (beleértve a HTTP-proxyt is) a helyi címjegyzékekben található gazdagépeket használják az .i2p gazdagépnevek feloldásához."
+
+msgid "Additional subscriptions can be found in the FAQ section of the Router help page."
+msgstr "További előfizetések a Router súgóoldalának GYIK részében találhatók."
+
+msgid "Hosts sourced from your subscriptions are added to your Router address book, and are automatically synced (by default every 12 hours)."
+msgstr "Az előfizetésekből származó gazdagépek hozzáadódnak az útválasztó címjegyzékéhez, és automatikusan szinkronizálódnak (alapértelmezés szerint 12 óránként)."
+
+msgid "Configure Subscriptions"
+msgstr "Előfizetések konfigurálása"
+
+msgid "If you manually add hosts here, they will be included your Published address book (if configured)."
+msgstr "Ha manuálisan adja hozzá a gazdagépeket, akkor azok megjelennek a közzétett címjegyzékében (ha be van állítva)."
+
+msgid "Master Addressbook"
+msgstr "Főcímjegyzék"
+
+msgid "Searchable by"
+msgstr "Kereshető"
+
+msgid "I2P applications"
+msgstr "I2P alkalmazások"
+
+msgid "The Master, Router and Private address books collectively serve as the DNS authority for I2P applications."
+msgstr "A mester, az útválasztó és a privát címjegyzék együttesen az I2P-alkalmazások DNS-hatóságaként szolgál."
+
+msgid "Optional,"
+msgstr "Nem kötelező,"
+
+msgid "for websites"
+msgstr "webhelyekhez"
+
+msgid "If you configure SusiDNS to publish your Router address book, it will export a hosts.txt file containing all the hosts (by default to the root of your eepsite)."
+msgstr "Ha a SusiDNS-t úgy konfigurálja, hogy közzétegye az útválasztó címjegyzékét, akkor exportál egy hosts.txt fájlt, amely tartalmazza az összes gazdagépet (alapértelmezés szerint az eepsite gyökérkönyvtárába)."
+
+msgid "Addresses manually added to your Master address book will merge with your Router address book."
+msgstr "A fő címjegyzékbe kézzel hozzáadott címek egyesülnek az útválasztó címjegyzékével."
+
+msgid "Hosts you receive from your subscriptions will merge with your Router address book."
+msgstr "Az előfizetésekből kapott gazdagépek egyesülnek az útválasztó címjegyzékével."

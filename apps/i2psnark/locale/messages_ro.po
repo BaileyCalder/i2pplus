@@ -1,0 +1,1514 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+
+msgid "No more torrents running."
+msgstr "Nu sunt torrente care rulează."
+
+msgid "I2P tunnel closed."
+msgstr "Tunel I2P închis."
+
+msgid "Magnet"
+msgstr "Magnet"
+
+msgid "Unable to connect to I2P"
+msgstr "Nu se poate conecta la I2P"
+
+msgid "Error connecting to I2P - check your I2CP settings!"
+msgstr "Eroare de conectare la I2P - verificați setările I2CP!"
+
+msgid "Download already running: "
+msgstr "Descărcare deja în execuție: "
+
+msgid "Downloading"
+msgstr "Descărcarea"
+
+msgid "Configuring I2PSnark with I2CP options"
+msgstr "Configurarea I2PSnark cu opțiunile I2CP"
+
+msgid "No write permissions for data directory"
+msgstr "Fără permisiuni de scriere pentru directorul de date"
+
+msgid "Data directory cannot be created"
+msgstr "Directorul de date nu poate fi creat"
+
+#, java-format
+msgid "Total uploaders limit changed to {0}"
+msgstr "Limita totală de incărcare schimbată la {0}"
+
+#, java-format
+msgid "Minimum uploaders limit is {0}"
+msgstr "Limita minimă de încărcători este {0}"
+
+#, java-format
+msgid "Up BW limit changed to {0}KBps"
+msgstr "Limita de incărcare BW schimbată la {0} Kbps"
+
+#, java-format
+msgid "Minimum up bandwidth limit is {0}KBps"
+msgstr "Limita de lățime de bandă minima la incărcarea este {0} Kbps"
+
+#, java-format
+msgid "Maximum download speed changed to {0}KB/s"
+msgstr "Viteza maximă de descărcare schimbată la {0}KB/s"
+
+#, java-format
+msgid "Download speed limit is {0}KB/s"
+msgstr "Limita de viteză descărcare este {0}KB/s"
+
+msgid "Note: You may need to stop and restart your torrents or restart I2PSnark in order to effect this change."
+msgstr "Notă: S-ar putea fi necesar să opriți și să reporniți torrentelele sau să reporniți I2PSnark pentru ca această modificare să aibă efect."
+
+msgid "Enabled +0/1 tunnel hop randomization on Inbound tunnels"
+msgstr "Randomizarea sarelor de tunel +0/1 a fost activată pe tunelurile de intrare"
+
+msgid "Disabled tunnel hop randomization on Inbound tunnels"
+msgstr "Randomizarea sarelor de tunel a fost dezactivată pe tunelurile de intrare"
+
+msgid "Enabled +0/1 tunnel hop randomization on Outbound tunnels"
+msgstr "Randomizarea sarelor de tunel +0/1 a fost activată pe tunelurile de ieșire"
+
+msgid "Disabled tunnel hop randomization on Outbound tunnels"
+msgstr "Randomizarea sarelor de tunel a fost dezactivată pe tunelurile de ieșire"
+
+#, java-format
+msgid "Startup delay changed to {0}"
+msgstr "Pornire întarziată schimbată la {0}"
+
+#, java-format
+msgid "Refresh time changed to {0}"
+msgstr "Timpul de reîmprospătare a fost schimbat la {0}"
+
+msgid "Refresh disabled"
+msgstr "Reîmprospătare dezactivată"
+
+#, java-format
+msgid "Page size changed to {0}"
+msgstr "Dimensiunea paginii schimbată la {0}"
+
+msgid "New files will be publicly readable"
+msgstr "Fișierele noi vor putea fi citite public"
+
+msgid "New files will not be publicly readable"
+msgstr "Fișierele noi nu vor putea fi citite public"
+
+msgid "Stop all torrents before changing data directory"
+msgstr "Opriți toate torrentele înainte de a schimba directorul de date"
+
+msgid "Data directory must be an absolute path"
+msgstr "Directorul de date trebuie să fie o cale absolută"
+
+msgid "Data directory does not exist"
+msgstr "Directorul de date nu există"
+
+msgid "Not a directory"
+msgstr "Nu este un director"
+
+msgid "Unreadable"
+msgstr "Necitibil"
+
+#, java-format
+msgid "Data directory changed to {0}"
+msgstr "Director de date schimbat la {0}"
+
+msgid "I2CP and tunnel changes will take effect after stopping all torrents"
+msgstr "Modificările I2CP și tunelul vor intra în vigoare după oprirea tuturor torențilorModificările asupra I2CP și tunel vor intra în vigoare după oprirea tuturor torrentelelor"
+
+#, java-format
+msgid "I2CP options changed to: {0}"
+msgstr "Opțiunile I2CP schimbate la {0}"
+
+msgid "Disconnecting old I2CP destination"
+msgstr "Deconectez destinația veche I2CP"
+
+msgid "Unable to connect with the new settings, reverting to the old I2CP settings"
+msgstr "Imposibil de conectat cu noile setări, revenind la vechile setări I2CPNu se poate efectua conectarea cu noile setări, revin la setările vechi I2CP"
+
+msgid "Unable to reconnect with the old settings!"
+msgstr "Nu se poate se poate efectua reconectarea cu setările vechi!"
+
+msgid "Reconnected on the new I2CP destination"
+msgstr "Reconectat la noua destinație I2CP"
+
+#, java-format
+msgid "I2CP listener restarted for \"{0}\""
+msgstr "I2CP listener repornit pentru \"{0}\""
+
+msgid "Enabled autostart"
+msgstr "Autopornire activată"
+
+msgid "Disabled autostart"
+msgstr "Autopornire dezactivată"
+
+msgid "Enabled open trackers - torrent restart required to take effect."
+msgstr "Trackere deschise activate - este necesară repornirea torrentului pentru a intra în vigoare.Trackere deschise activate - repornirea torrentui este necesara pentru a avea efect."
+
+msgid "Disabled open trackers - torrent restart required to take effect."
+msgstr "Trackere deschise dezactivate - este necesară repornirea torrentului pentru a intra în vigoare.Trackere deschise dezactivate - repornirea torrentui este necesara pentru a avea efect."
+
+msgid "Enabled DHT."
+msgstr "DHT activat."
+
+msgid "Disabled DHT."
+msgstr "DHT dezactivat."
+
+msgid "DHT change requires tunnel shutdown and reopen"
+msgstr "Schimbarea DHT-ului necesită oprirea tunelului și repornirea lui"
+
+msgid "Enabled Ratings."
+msgstr "Evaluări activate."
+
+msgid "Disabled Ratings."
+msgstr "Evaluări dezactivate."
+
+msgid "Enabled Comments."
+msgstr "Comentarii activate."
+
+msgid "Disabled Comments."
+msgstr "Comentarii dezactivate."
+
+#, java-format
+msgid "Comments name set to {0}."
+msgstr "Numele comentariilor este setat pe {0}."
+
+msgid "Collapsible panels enabled."
+msgstr "Panouri pliabile sunt activate."
+
+msgid "Collapsible panels disabled."
+msgstr "Panourile pliabile sunt dezactivate."
+
+msgid "Torrent filter bar enabled."
+msgstr "Bara de filtrare a torrentului este activată."
+
+msgid "Torrent filter bar disabled."
+msgstr "Bara de filtrare a torrentului este dezactivată."
+
+msgid "Lightbox enabled for image thumbnails."
+msgstr "Caseta luminoasă activată pentru miniaturile imaginilor."
+
+msgid "Lightbox disabled for image thumbnails."
+msgstr "Caseta luminoasă dezactivată pentru miniaturile imaginilor."
+
+msgid "Add and Create sections enabled on all torrent listing pages."
+msgstr "Adăugați și creați secțiuni activate pe toate paginile de listare torrent."
+
+msgid "Add and Create sections to display only on first page of multipage torrent listing pages."
+msgstr "Adăugați și creați secțiuni pentru a fi afișate numai pe prima pagină a paginilor cu listare torrent cu mai multe pagini."
+
+msgid "API key updated."
+msgstr "Cheia API actualizată."
+
+msgid "Open Tracker list changed - torrent restart required to take effect."
+msgstr "Lista Open Tracker a fost schimbată - este necesară repornirea torrentului pentru a intra în vigoare.Lista trackerelor deschise s-a schimbat - repornirea torrentui este necesara pentru a avea efect."
+
+msgid "Private tracker list changed - affects newly created torrents only."
+msgstr "Lista de urmărire privată a fost schimbată - afectează numai torrentele nou create.Lista trackerelor private s-a schimbat - afectează doar nou-createle torrente."
+
+#, java-format
+msgid "Unable to save the config to {0}"
+msgstr "Imposibil de a salva configurarea {0}"
+
+#, java-format
+msgid "Torrent file deleted: {0}"
+msgstr "Fișier torrent șters: {0}"
+
+#, java-format
+msgid "Torrent file moved from {0} to {1}"
+msgstr "Fișier torrent mutat de la {0} la {1}"
+
+#, java-format
+msgid "Error: Could not add torrent: {0}"
+msgstr "Eroare: Nu s-a putut adăuga torrent: {0}"
+
+#, java-format
+msgid "Torrent already running: {0}"
+msgstr "Torrentul deja rulează: {0}"
+
+#, java-format
+msgid "Cannot open \"{0}\""
+msgstr "Nu se poate deschide \"{0}\"."
+
+#, java-format
+msgid "Torrent with this info hash is already running: {0}"
+msgstr "Torrentul cu informațiile acestui hash rulează deja: {0}"
+
+#, java-format
+msgid "Torrent with the same data location is already running: {0}"
+msgstr "Torrent cu aceeași locație de date rulează deja: {0}"
+
+#, java-format
+msgid "Torrent in \"{0}\" is invalid"
+msgstr "Torrent în \"{0}\" este invalid"
+
+#, java-format
+msgid "ERROR - Out of memory, cannot create torrent from {0}"
+msgstr "EROARE - Memorie ram plină, nu se pot crea torrente de la {0}"
+
+msgid "Initializing I2PSnark and opening tunnels"
+msgstr "Inițializarea I2PSnark și deschiderea tunelurilor"
+
+#, java-format
+msgid "Torrent added and started: {0}"
+msgstr "Torrent adăugat și pornit: {0}"
+
+#, java-format
+msgid "Torrent added: {0}"
+msgstr "Torrent adăugat: {0}"
+
+#, java-format
+msgid "ERROR - No I2P trackers in private torrent \"{0}\""
+msgstr "EROARE - Nu sunt trackere I2P in torrent privat \"{0}\""
+
+#, java-format
+msgid "Warning - No I2P trackers in \"{0}\", will announce to I2P open trackers and DHT only."
+msgstr "Avertisment - Nu există dispozitive de urmărire I2P în \"{0}\", vor anunța numai dispozitivele de urmărire deschise I2P și DHT.Avertisment - Nu sunt trackere I2P în \"{0}\", se va anunța numai la trackerele deschise I2P și DHT."
+
+#, java-format
+msgid "Warning - No I2P trackers in \"{0}\", and open trackers are disabled, will announce to DHT only."
+msgstr "Avertisment - Nu există dispozitive de urmărire I2P în \"{0}\", iar dispozitivele de urmărire deschise sunt dezactivate, vor anunța numai DHT.Avertisment - Nu există dispozitive de urmărire I2P în \"{0}\", iar dispozitivele de urmărire deschise sunt dezactivate, vor anunța numai DHT.Avertisment - Nu sunt trackere I2P în \"{0}\", și trackerele deschise sunt dezactivate, se va anunța numai prin DHT."
+
+#, java-format
+msgid "Warning - No I2P trackers in \"{0}\", and DHT and open trackers are disabled, you should enable open trackers or DHT before starting the torrent."
+msgstr "Avertisment - Nu există dispozitive de urmărire I2P în \"{0}\", iar DHT și trackerele deschise sunt dezactivate, ar trebui să activați trackerele deschise sau DHT înainte de a porni torrentul.Avertisment - Nu există dispozitive de urmărire I2P în \"{0}\", iar DHT și trackerele deschise sunt dezactivate, ar trebui să activați trackerele deschise sau DHT înainte de a porni torrentul.Avertisment - Nu sunt trackere I2P în \"{0}\", și DHT și trackerele deschise sunt dezactivate,  ar trebui să permiteți trackere deschise sau DHT înainte de a porni torrentul."
+
+#, java-format
+msgid "Fetching {0}"
+msgstr "Preia {0}"
+
+#, java-format
+msgid "Open trackers are disabled and we have no DHT peers. Fetch of {0} may not succeed until you start another torrent, enable open trackers, or enable DHT."
+msgstr "Trackerele deschise sunt dezactivate și nu avem peer DHT. Trackerele deschise sunt dezactivate și nu avem participanți DHT. Descărcarea din{0} nu poate reuși până când nu veți porni un alt torrent, permite trackere deschise, sau permite DHT."
+
+#, java-format
+msgid "Adding {0}"
+msgstr "Adaugă {0}"
+
+#, java-format
+msgid "Download already running: {0}"
+msgstr "Descărcarea rulează deja: {0}"
+
+#, java-format
+msgid "Failed to copy torrent file to {0}"
+msgstr "Copierea fișierului torrentului în  {0} a eșuat"
+
+msgid " - torrent file already exists"
+msgstr " - fișierul torrent există deja"
+
+#, java-format
+msgid "Too many files in \"{0}\" ({1})!"
+msgstr "Prea multe fișiere în \"{0}\" ({1})!"
+
+#, java-format
+msgid "Torrent file \"{0}\" cannot end in \".torrent\"!"
+msgstr "Fișierul torrentului \"{0}\" nu se poate termina în \".torrent\"!"
+
+#, java-format
+msgid "No pieces in \"{0}\"!"
+msgstr "Nu sunt bucăți în \"{0}\"!"
+
+#, java-format
+msgid "Too many pieces in \"{0}\", limit is {1}!"
+msgstr "Prea multe bucăți în \"{0}\", limita este {1}!"
+
+#, java-format
+msgid "Pieces are too large in \"{0}\" ({1}B)!"
+msgstr "Bucățile sunt prea mari în \"{0}\" ({1}B)!"
+
+#, java-format
+msgid "Limit is {0}B"
+msgstr "Limita este de {0} B"
+
+#, java-format
+msgid "Torrent \"{0}\" has no data!"
+msgstr "Torrentul \"{0}\" nu conține date!"
+
+#, java-format
+msgid "Torrents larger than {0}B are not supported yet \"{1}\"!"
+msgstr "Torrentele mai mari de {0}B nu sunt suportate \"{1}\"!"
+
+#, java-format
+msgid "Error: Could not remove the torrent {0}"
+msgstr "Eroare: Nu am putut șterge torentul {0}"
+
+#, java-format
+msgid "Torrent stopped: {0}"
+msgstr "Torrent oprit: {0}"
+
+#, java-format
+msgid "Torrent removed: {0}"
+msgstr "Torrent sters: \"{0}\""
+
+#, java-format
+msgid "Adding torrents in {0}&hellip;"
+msgstr "Adăugarea de torrente în {0}"
+
+#, java-format
+msgid "Down bandwidth limit is {0} KB/s"
+msgstr "Limita de bandă descărcare este de {0} KBps"
+
+#, java-format
+msgid "Up bandwidth limit is {0} KB/s"
+msgstr "Limita maximă de lățime de bandă este de {0} KBps"
+
+#, java-format
+msgid "Connecting to I2CP port on I2P instance at {0}"
+msgstr "Conectare la portul I2CP pe instanța I2P de la {0}"
+
+msgid "Connecting to I2P"
+msgstr "Se conectează la I2P"
+
+msgid "Connected to I2P at"
+msgstr "Conectat la I2P la"
+
+#, java-format
+msgid "Starting up torrent {0}"
+msgstr "Pornirea torrentului {0}"
+
+#, java-format
+msgid "Upload bandwidth limit is {0} KBps to a maximum of {1} concurrent peers."
+msgstr "Limita lățimii de bandă de încărcare este de {0} KBps până la maximum {1} peer-uri simultane."
+
+#, java-format
+msgid "Storage: {0}GB currently available for downloads on configured data partition"
+msgstr "Stocare: {0}GB disponibil pentru descărcări pe partiția de date configurată"
+
+#, java-format
+msgid "Storage: {0}MB currently available for downloads on configured data partition"
+msgstr "Stocare: În prezent sunt disponibile {0}MB pentru descărcări pe partea de date configurată"
+
+#, java-format
+msgid "Warning - Only {0}MB available for downloads on configured data partition"
+msgstr "Avertisment - Doar {0}MB sunt disponibile pentru descărcări pe partea de date configurată"
+
+#, java-format
+msgid "Download finished: {0}"
+msgstr "Descărcare terminată: {0}"
+
+msgid "I2PSnark"
+msgstr "I2PSnark"
+
+#, java-format
+msgid "Starting torrent: {0}"
+msgstr "Se pornește torrent: {0}"
+
+msgid "Unable to load torrent create file filter config: "
+msgstr "Nu se poate încărca configurația filtrului de fișiere pentru crearea torrentului: "
+
+msgid "Unable to save torrent create file filter config: "
+msgstr "Nu se poate salva configurația filtrului de fișiere pentru crearea torrentului: "
+
+msgid "Torrent not found"
+msgstr "Torrent nu a fost găsit"
+
+msgid "Opening the I2P tunnel"
+msgstr "Deschide tunelul I2P"
+
+msgid "Opening the I2P tunnel and starting all torrents."
+msgstr "Deschiderea tunelului I2P și pornirea tuturor torrentelor."
+
+msgid "Stopping all torrents and closing the I2P tunnel."
+msgstr "Oprirea tuturor torrentelor și inchiderea tunelului I2P."
+
+msgid "Closing I2P tunnel after notifying trackers."
+msgstr "Închiderea tunelului I2P după notificarea trackerelor."
+
+#, java-format
+msgid "Cannot check {0}"
+msgstr "Nu se poate verifica {0}"
+
+msgid "Torrent already started"
+msgstr "Torrentul deja pornit"
+
+msgid "No storage"
+msgstr "Nu există spațiu"
+
+msgid "Starting recheck of {}"
+msgstr "Pornit verificarea de {}"
+
+#, java-format
+msgid "Finished recheck of torrent {0}, now {1} complete"
+msgstr "S-a terminat reverificarea torrentului {0}, acum {1} este finalizat"
+
+#, java-format
+msgid "Finished recheck of torrent {0}, unchanged"
+msgstr "S-a terminat reverificarea torrentului {0}, este nemodificat"
+
+#, java-format
+msgid "Error checking torrent {0}"
+msgstr "Eroare la verificarea torrentului {0}"
+
+msgid "Cannot create diskspace bar"
+msgstr "Nu se poate crea bara de spațiu pe disc"
+
+msgid "Data partition"
+msgstr "Partiția de date"
+
+#, java-format
+msgid "No valid trackers for {0} - enable opentrackers or DHT?"
+msgstr "Nu sunt trackere valabile pentru {0} - permite opentrackers sau DHT?"
+
+msgid "Updating"
+msgstr "Actualizare"
+
+#, java-format
+msgid "Updating from {0}"
+msgstr "Actualizare din {0}"
+
+#, java-format
+msgid "Downloading {0}"
+msgstr "Se descarcă {0}"
+
+#, java-format
+msgid "Requesting torrent file: {0}"
+msgstr "Se solicită fișier torrent: {0}"
+
+#, java-format
+msgid "Failed to retrieve torrent file: {0}"
+msgstr "Nu s-a putut prelua fișierul torrent: {0}"
+
+#, java-format
+msgid "Torrent downloaded from {0}"
+msgstr "Torent descărcat de pe {0}"
+
+#, java-format
+msgid "Torrent already in the queue: {0}"
+msgstr "Torrent deja în coada de așteptare: {0}"
+
+#, java-format
+msgid "Torrent at {0} was not valid"
+msgstr "Torrentul la {0} nu a fost valid"
+
+msgid "Torrents"
+msgstr "Torente"
+
+msgid "Refresh page"
+msgstr "Reîmprospătează pagina"
+
+msgid "Configure"
+msgstr "Configurează"
+
+msgid "Torrent &amp; filesharing forum"
+msgstr "Torent"
+
+msgid "Forum"
+msgstr "Forum"
+
+msgid "Search torrents"
+msgstr "Căutați torente"
+
+msgid "Clear search"
+msgstr "Căutare clară"
+
+msgid "Click \"Add torrent\" button to fetch torrent"
+msgstr "Faceți click pe \"Adaugă torrent\" pentru a descărca torrentul"
+
+msgid "Anonymous BitTorrent Client"
+msgstr "Client BitTorrent Anonim"
+
+msgid "Configuration"
+msgstr "Configurație"
+
+#, java-format
+msgid "Are you sure you want to delete {0} and all downloaded data?"
+msgstr "Sunteți sigur că doriți să ștergeți {0} și toate datele descărcate?"
+
+#, java-format
+msgid "Deleting <b>{0}</b> and all associated data..."
+msgstr "Ștergând <b>{0}</b> și toate datele asociate..."
+
+#, java-format
+msgid "Are you sure you want to delete torrent file {0} and associated metadata?"
+msgstr "Sigur doriți să ștergeți dosarul \\'' {0} \\'' (datele descărcate nu vor fi șterse)?"
+
+msgid "Note: Downloaded data will not be deleted."
+msgstr "Notă: Datelele descărcate nu vor fi șterse."
+
+#, java-format
+msgid "Deleting {0} and associated metadata only..."
+msgstr "Ștergând {0} și doar metadatelele asociate..."
+
+msgid "clear messages"
+msgstr "șterge mesajele"
+
+msgid "Expand"
+msgstr "Extinde"
+
+msgid "Shrink"
+msgstr "Se micșorează"
+
+#, java-format
+msgid "Warning! Javascript is disabled in your browser. If {0} is enabled, you will lose any input in the add/create torrent sections when a refresh occurs."
+msgstr "Avertizare! JavaScript este dezactivat în browserul dvs. Dacă {0} este activat, veți pierde orice intrare în secțiunile ADD/CREATE Torrent atunci când are loc o actualizare."
+
+msgid "page refresh"
+msgstr "Actualizare pagină"
+
+msgid "Warning - No I2P"
+msgstr "AVERTIZARE - NU I2P"
+
+msgid "No torrents found."
+msgstr "Nu au fost găsite torente."
+
+msgid "No torrents loaded."
+msgstr "Nici un torrent încărcat."
+
+msgid "No DHT Peers"
+msgstr "Fără colegi DHT"
+
+msgid "Status"
+msgstr "Stare"
+
+msgid "Torrent"
+msgstr "Torrent"
+
+msgid "File type"
+msgstr "Tip fișier"
+
+msgid "Torrent name"
+msgstr "Numele torrentului"
+
+msgid "ETA"
+msgstr "ETA"
+
+msgid "RX"
+msgstr "RX"
+
+msgid "RX Rate"
+msgstr "RX Rate"
+
+msgid "TX"
+msgstr "TX"
+
+msgid "TX Rate"
+msgstr "TX Rate"
+
+msgid "Start All"
+msgstr "Pornește toate"
+
+msgid "Stop All"
+msgstr "Oprește toate"
+
+msgid "Stop all torrents and the I2P tunnel"
+msgstr "Oprește toate torrentele și tunelul I2P"
+
+msgid "Start all torrents and the I2P tunnel"
+msgstr "Pornește toate torrentele și tunelul I2P"
+
+msgid "Start all stopped torrents"
+msgstr "Pornește toate torrentele oprite"
+
+msgid "Hide Peers"
+msgstr "Ascunde participanți"
+
+msgid "Show Peers"
+msgstr "Arată participanți"
+
+#, java-format
+msgid "Sort by {0}"
+msgstr "Sortează după {0}"
+
+msgid "Up Rate"
+msgstr "Rată de incărcare"
+
+msgid "Total size of loaded torrents"
+msgstr "Dimensiunea totală a torrentelor încărcate"
+
+#, java-format
+msgid "1 connected peer"
+msgid_plural "{0} peer connections"
+msgstr[0] "1 peer conectat"
+msgstr[1] "{0} peer-uri conectate"
+msgstr[2] "{0} de peer-uri conectate"
+
+msgid "Active downloads"
+msgstr "Descărcări active"
+
+msgid "Active uploads"
+msgstr "Încărcări active"
+
+msgid "Active Inbound tunnels"
+msgstr "Tunele de intrare active"
+
+msgid "Active Outbound tunnels"
+msgstr "Tunele de ieșire active"
+
+msgid "Estimated download time for all torrents"
+msgstr "Timpul de descărcare estimat pentru toate torrentele"
+
+msgid "Data downloaded this session"
+msgstr "Date descărcate în această sesiune"
+
+msgid "Total download speed"
+msgstr "Viteza totală de descărcare"
+
+msgid "Total data uploaded (for listed torrents)"
+msgstr "Datele totale încărcate (pentru torentele listate)"
+
+msgid "Total upload speed"
+msgstr "Viteza totală a încărcării"
+
+msgid "Toggle Debug Panel"
+msgstr "Comută panoul de depanare"
+
+msgid "Debug Mode"
+msgstr "Mod de depanare"
+
+msgid "Normal Mode"
+msgstr "Mod normal"
+
+#, java-format
+msgid "1 torrent"
+msgid_plural "{0} torrents"
+msgstr[0] "1 torrent"
+msgstr[1] "{0} torrente"
+msgstr[2] "{0} torrenturi"
+
+msgid "Search"
+msgstr "Căutare"
+
+msgid "Show All"
+msgstr "Arata tot"
+
+msgid "Active"
+msgstr "Activ"
+
+msgid "Inactive"
+msgstr "Inactiv"
+
+msgid "Connected"
+msgstr "Conectat"
+
+msgid "Seeding"
+msgstr "Încărcare"
+
+msgid "Complete"
+msgstr "Complet"
+
+msgid "Incomplete"
+msgstr "Incomplet"
+
+msgid "Stopped"
+msgstr "Oprit"
+
+msgid "First"
+msgstr "Primul"
+
+msgid "First page"
+msgstr "Prima pagină"
+
+msgid "Prev"
+msgstr "Prev"
+
+msgid "Previous page"
+msgstr "Pagină anterioară"
+
+msgid "Next"
+msgstr "Următorul"
+
+msgid "Next page"
+msgstr "Pagina următoare"
+
+msgid "Last"
+msgstr "Ultimul"
+
+msgid "Last page"
+msgstr "Ultima pagină"
+
+msgid "Enter URL or select torrent file"
+msgstr "Introduceți adresa URL sau selectați fișierul torrent"
+
+#, java-format
+msgid "Error uploading the torrent file: {0}"
+msgstr "Eroare la încărcarea fișierului torrent: {0}"
+
+#, java-format
+msgid "Cannot add torrent {0} inside another torrent: {1}"
+msgstr "Nu se poate adăuga torrentul {0} în interiorul altui torrent: {1}"
+
+#, java-format
+msgid "Download from non-I2P location {0} is not supported"
+msgstr "Descărcarea din locația non-I2P {0} nu este acceptată"
+
+msgid "Error: Version 2 info hashes are not supported"
+msgstr "Eroare: Hash-urile de informații versiunea 2 nu sunt acceptate"
+
+#, java-format
+msgid "Invalid URL: Must start with \"{0}\" or \"{1}\""
+msgstr "Adresă URL nevalidă: trebuie să înceapă cu \"{0}\" sau \"{1}\""
+
+#, java-format
+msgid "Magnet deleted: {0}"
+msgstr "Magnet șters: {0}"
+
+#, java-format
+msgid "Torrent file could not be deleted: {0}"
+msgstr "Fișierul Torrent nu a putut fi șters: {0}"
+
+#, java-format
+msgid "Data file deleted: {0}"
+msgstr "Fișier data șters: {0}"
+
+#, java-format
+msgid "Data file could not be deleted: {0}"
+msgstr "Fișierul de date nu a putut fi șters: {0}"
+
+#, java-format
+msgid "Directory could not be deleted: {0}"
+msgstr "Dosarul nu a putut fi șters {0}"
+
+#, java-format
+msgid "Directory deleted: {0}"
+msgstr "Director șters: {0}"
+
+msgid "Error creating torrent - you must specify a file or directory"
+msgstr "Eroare la crearea torrentului - trebuie să introduceți un fișier sau un directorEroare la crearea torrentului - trebuie să introduceți un fișier sau un director"
+
+#, java-format
+msgid "Cannot create a torrent for the nonexistent data: {0}"
+msgstr "Nu se poate crea un torrent pentru datele inexistente: {0}"
+
+#, java-format
+msgid "Cannot add a torrent ending in \".torrent\": {0}"
+msgstr "Nu se poate adăuga un torrent terminat în \".torrent\": {0}"
+
+#, java-format
+msgid "Torrent with this name is already running: {0}"
+msgstr "Torrentul cu acest nume deja rulează: {0}"
+
+#, java-format
+msgid "Cannot add a torrent including an I2P directory: {0}"
+msgstr "Nu se poate adăuga un torrent ce include un director I2P: {0}"
+
+#, java-format
+msgid "Cannot add torrent {0} including another torrent: {1}"
+msgstr "Nu se poate adăuga torrent {0} ce include un alt torrent: {1}"
+
+msgid "Error - Cannot include alternate trackers without a primary tracker"
+msgstr "Eroare - Nu pot conține trackere alternative fără un tracker primar"
+
+msgid "Error - Cannot mix private and public trackers in a torrent"
+msgstr "Eroare - Nu se pot amesteca trackere private și publice într-un torrentEroare - Nu se poate amesteca trackere publice și private într-un torent"
+
+#, java-format
+msgid " files or folders were excluded from \"{0}\" due to filter rules."
+msgstr " fișiere sau foldere au fost excluse din \"{0}\" din cauza regulilor de filtrare."
+
+#, java-format
+msgid "The following files or folders were excluded from \"{0}\" due to filter rules: "
+msgstr "Următoarele fișiere sau foldere au fost excluse din \"{0}\", conform regulilor de filtrare: "
+
+#, java-format
+msgid "Torrent created for \"{0}\""
+msgstr "Torrent creat pentru \"{0}\""
+
+#, java-format
+msgid "Many I2P trackers require you to register new torrents before seeding - please do so before starting \"{0}\""
+msgstr "Multe instrumente de urmărire I2P vă cer să înregistrați noi torrente înainte de a semăna - vă rugăm să faceți acest lucru înainte de a începe \"{0}\"Multe instrumente de urmărire I2P vă cer să înregistrați noi torrente înainte de a semăna - vă rugăm să faceți acest lucru înainte de a începe \"{0}\"Multe trackere I2P cer să vă înregistrați torrentele noi înainte de seeding - vă rugăm să faceți acest lucru înainte de a începe \"{0}\""
+
+#, java-format
+msgid "Error creating a torrent for \"{0}\""
+msgstr "Eroare la crearea unui torrent pentru \"{0}\""
+
+msgid "Delete selected"
+msgstr "Șterge selectat"
+
+msgid "Save tracker configuration"
+msgstr "Salvați configurația trackerului"
+
+msgid "Removed"
+msgstr "Șters"
+
+msgid "Add tracker"
+msgstr "Adaugă tracker"
+
+msgid "Enter valid tracker name and URLs"
+msgstr "Introduceți numele trackerului valid și URL-ul"
+
+msgid "Restore defaults"
+msgstr "Restabiliți la setările de bază"
+
+msgid "Restored default trackers"
+msgstr "Restabiliți la setările de bază trackerele"
+
+msgid "Save Filter Configuration"
+msgstr "Salvare Configurație Filtru"
+
+msgid "Add File Filter"
+msgstr "Adaugă Filtru Fișier"
+
+msgid "Enter valid name and filter pattern"
+msgstr "Introduceți un nume valid și un model de filtru"
+
+msgid "Restored default torrent create filters"
+msgstr "S-au restaurat filtrele implicite pentru crearea torrentelor"
+
+msgid "Torrent details"
+msgstr "Detalii torrent"
+
+msgid "Torrent has comments"
+msgstr "Torrent are comentarii"
+
+msgid "Open file"
+msgstr "Deschide fișier"
+
+msgid "View files"
+msgstr "Vezi fișierele"
+
+msgid "Completed"
+msgstr "Complet"
+
+msgid "Share ratio"
+msgstr "Rată de încărcare"
+
+msgid "Last activity"
+msgstr "Ultima activitate"
+
+msgid "Stop"
+msgstr "Stop"
+
+msgid "Stop torrent"
+msgstr "Oprește torrentul"
+
+msgid "Start"
+msgstr "Start"
+
+msgid "Start torrent"
+msgstr "Pornește torrentul"
+
+msgid "Remove"
+msgstr "Șterge"
+
+msgid "Remove and delete torrent, retaining downloaded files"
+msgstr "Elimină torrentul din lista activă, ștergând fișierul .torrentScoateți torrentul din lista torrentelor active, ștergînd fișierul .torrent"
+
+msgid "Delete"
+msgstr "Șterge"
+
+msgid "Delete .torrent file and associated data files"
+msgstr "Ștergeți fișierul .torrent și fișierele de date asociate"
+
+msgid "Checking"
+msgstr "Se verifică"
+
+msgid "Allocating"
+msgstr "Se alocă"
+
+msgid "Starting"
+msgstr "Pornește"
+
+#, java-format
+msgid "Seeding to {0} peer"
+msgid_plural "Seeding to {0} peers"
+msgstr[0] "Semănatul la {0} coleg"
+msgstr[1] "Semănatul la {0} colegi"
+msgstr[2] "Semănatul la {0} colegi"
+
+#, java-format
+msgid "Connected to {0} of {1} peers in swarm"
+msgstr "Conectat la {0} din {1} colegi în roi"
+
+msgid "Stalled"
+msgstr "Întrerupt"
+
+#, java-format
+msgid "Seeding to {0} peer in swarm"
+msgid_plural "Seeding to {0} peers in swarm"
+msgstr[0] "Semănare la {0} peer în roi"
+msgstr[1] "Semănare la {0} peer-uri în roi"
+msgstr[2] "Semănare la {0} de peer-uri în roi"
+
+#, java-format
+msgid "Downloading from {0} peer"
+msgid_plural "Downloading from {0} peers"
+msgstr[0] "Descărcarea de la {0} coleg"
+msgstr[1] "Descărcarea de la {0} colegi"
+msgstr[2] "Descărcarea de la {0} colegi"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "No Peers"
+msgstr "Nu sunt participanți"
+
+msgid "Peer attached to swarm"
+msgstr "Peer lipit de roi"
+
+msgid "Destination (identity) of peer"
+msgstr "Destinația (identitatea) semenului"
+
+msgid "seconds"
+msgstr "secunde"
+
+msgid "Seed"
+msgstr "Donează"
+
+msgid "Uninteresting (The peer has no pieces we need)"
+msgstr "Neinteresant (partenerul nu are bucățile de care avem nevoie)"
+
+msgid "Choked (The peer is not allowing us to request pieces)"
+msgstr "Asfixiat (partenerul nu ne permite să solicităm bucăți)"
+
+msgid "Peer is interested but currently idle"
+msgstr "Peer este interesat, dar momentan inactiv"
+
+msgid "Uninterested (We have no pieces the peer needs)"
+msgstr "Neinteresat (Nu avem piese de care are nevoie partenerul)"
+
+msgid "Choking (We are not allowing the peer to request pieces)"
+msgstr "Asfixiat (Nu permitem partenerului să solicite bucăți)"
+
+#, java-format
+msgid "Details at {0} tracker"
+msgstr "Detalii la tracker {0}"
+
+msgid "Info"
+msgstr "Info"
+
+msgid "Add Torrent"
+msgstr "Adaugă torrent"
+
+msgid "From URL"
+msgstr "Din URL"
+
+msgid "Enter the torrent file download URL (I2P only), magnet link, or info hash"
+msgstr "Introduceți adresa URL de descărcare a fișierului torrent (numai I2P), linkul magnet sau hash de informații"
+
+msgid "Add torrent"
+msgstr "Adaugă torent"
+
+msgid "Torrent file"
+msgstr "Fișier torrent"
+
+msgid "Data dir"
+msgstr "Dir date"
+
+#, java-format
+msgid "Enter the directory to save the data in (default {0})"
+msgstr "Introdu directorul în care să se salveze datele (default {0})"
+
+msgid "Create Torrent"
+msgstr "Creează un torrent"
+
+msgid "Data to seed"
+msgstr "Date pentru seedare"
+
+#, java-format
+msgid "File or directory to seed (full path or within the directory {0} )"
+msgstr "Fișier sau director de seedare (calea completă sau în director {0} )"
+
+msgid "Create torrent"
+msgstr "Creează un torrent"
+
+msgid "Exclude files from the torrent if they reside in the torrent folder"
+msgstr "Excluderea fișierelor din torrent dacă acestea se află în folderul torrent"
+
+msgid "Content Filters"
+msgstr "Filtre Conținut"
+
+msgid "Trackers"
+msgstr "Trackere"
+
+msgid "Alternates"
+msgstr "Alternativă"
+
+msgid "Primary"
+msgstr "Primar"
+
+msgid "Tracker Type"
+msgstr "Tip Tracker"
+
+msgid "Standard"
+msgstr "Standard"
+
+msgid "Open"
+msgstr "Deschis"
+
+msgid "Private"
+msgstr "Privat"
+
+msgid "none"
+msgstr "nici unul"
+
+msgid "User Interface"
+msgstr "Interfață utilizator"
+
+msgid "Switch to Embedded Mode"
+msgstr "Comutați în modul încorporat"
+
+msgid "Switch to Fullscreen Mode"
+msgstr "Comutați în modul Ecran complet"
+
+msgid "Theme"
+msgstr "Teme"
+
+msgid "To change themes manually, disable universal theming"
+msgstr "Pentru a schimba manual temele, dezactivați tematica universală"
+
+msgid "Universal theming is enabled."
+msgstr "Tematica universală este activată."
+
+msgid "Refresh time"
+msgstr "Timp de reîmprospătare"
+
+msgid "How frequently torrent status is updated on the main page"
+msgstr "Cât de des este actualizat starea de torrent pe pagina principală"
+
+msgid "Never"
+msgstr "Niciodată"
+
+msgid "Page size"
+msgstr "Mărimea paginii"
+
+msgid "Maximum number of torrents to display per page"
+msgstr "Numărul maxim de torenți de afișat pe pagină"
+
+msgid "torrents"
+msgstr "torrente"
+
+msgid "Language"
+msgstr "Limbă"
+
+msgid "Collapsible panels"
+msgstr "Panouri pliabile"
+
+msgid "Your browser does not support this feature."
+msgstr "Browserul dvs. nu acceptă această caracteristică."
+
+msgid "Allow the 'Add Torrent' and 'Create Torrent' panels to be collapsed, and collapse by default in non-embedded mode"
+msgstr "Permiteți restrângerea panourilor „Adăugați torrent” și „Creați torrent” și restrângeți implicit în modul neîncorporatPermiteți panourilor „Adaugă torrent” și „Creați torrent” și se prăbușesc implicit în modul neincorporat"
+
+msgid "Torrent filter bar"
+msgstr "Bară de filtrare torrent"
+
+msgid "Show filter bar above torrents for selective display based on status"
+msgstr "Afișați bara de filtre deasupra torrenților pentru afișare selectivă în funcție de stare"
+
+msgid "requires javascript"
+msgstr "necesită javascript"
+
+msgid "Enable lightbox"
+msgstr "Activează caseta de lumină"
+
+msgid "Use a lightbox to display images when thumbnails are clicked"
+msgstr "Folosiți o casetă luminosă pentru a afișa imagini când se face clic pe miniaturi"
+
+msgid "Persist Add/Create"
+msgstr "Persista adăugarea/crearea"
+
+msgid "Display the 'Add' and 'Create' sections on all torrent listing pages when in multipage mode"
+msgstr "Afișați secțiunile „Adăugați” și „Creați” pe toate paginile de listă torrent când sunteți în modul cu mai multe pagini"
+
+msgid "Comments &amp; Ratings"
+msgstr "Comentarii"
+
+msgid "Enable Ratings"
+msgstr "Activați evaluările"
+
+msgid "Show ratings on torrent pages"
+msgstr "Afișați evaluări pe paginile de torrent"
+
+msgid "Enable Comments"
+msgstr "Activați comentariile"
+
+msgid "Show comments on torrent pages"
+msgstr "Afișați comentarii la paginile de torrent"
+
+msgid "Comment Author"
+msgstr "Autor de comentarii"
+
+msgid "Set the author name for your comments and ratings"
+msgstr "Setați numele autorului pentru comentarii și evaluări"
+
+msgid "Torrent Options"
+msgstr "Opțiuni de torrent"
+
+msgid "Half available bandwidth recommended."
+msgstr "Jumătate de lățime de bandă disponibilă este recomandată."
+
+msgid "Bandwidth limit"
+msgstr "Limită Bandă Largă"
+
+msgid "Maximum bandwidth allocated for downloading"
+msgstr "Bandă largă maximă alocată pentru descărcare"
+
+msgid "Maximum bandwidth allocated for uploading"
+msgstr "Lățime maximă de bandă alocată pentru încărcare"
+
+msgid "View or change router bandwidth"
+msgstr "Vizualizează sau modifică lățimea de bandă a routerului"
+
+msgid "Total uploader limit"
+msgstr "Limită totală de încărcare"
+
+msgid "Maximum number of peers to upload to"
+msgstr "Numărul maxim de colegi de încărcat la"
+
+msgid "peers"
+msgstr "parteneri"
+
+msgid "Use open trackers also"
+msgstr "Utilizați trackere deschise, de asemenea"
+
+msgid "Announce torrents to open trackers as well as trackers listed in the torrent file"
+msgstr "Anunțați torentele pentru trackerele deschise, precum și următorii enumerați în fișierul torrent"
+
+msgid "Enable DHT"
+msgstr "Activează DHT"
+
+msgid "Use DHT to find additional peers"
+msgstr "Folosiți DHT pentru a găsi colegi suplimentari"
+
+msgid "Auto start torrents"
+msgstr "Pornește automat torrentele"
+
+msgid "Automatically start torrents when added and restart torrents when I2PSnark starts"
+msgstr "Porniți automat torrentele când sunt adăugate și reporniți torrentele când pornește I2PSnarkPorniți automat torentele atunci când sunt adăugate și reporniți torrenturile atunci când începe I2PSnark"
+
+msgid "Startup delay"
+msgstr "Întârziere de pornire"
+
+msgid "How long before auto-started torrents are loaded when I2PSnark starts"
+msgstr "Cât timp înainte de a se încarca torrentele pornite automat când pornește I2PSnarkCu cât înainte să se încarce torentele pornite automat când începe I2PSnark"
+
+msgid "minutes"
+msgstr "minute"
+
+msgid "Data Storage"
+msgstr "Stocarea datelor"
+
+msgid "Data directory"
+msgstr "Dosar cu date"
+
+msgid "Directory where torrents and downloaded/shared files are stored"
+msgstr "Directorul în care sunt stocate torrentele și fișierele descărcate/partajateDirector în care sunt stocate torentele și fișierele descărcate / partajate"
+
+msgid "Files readable by all"
+msgstr "Fișiere lizibile de către toți"
+
+msgid "Set file permissions to allow other local users to access the downloaded files"
+msgstr "Setați permisiunile pentru fișiere pentru a permite altor utilizatori locali să acceseze fișierele descărcateSetați permisiunile de fișiere pentru a permite altor utilizatori locali să acceseze fișierele descărcate"
+
+msgid "Max files per torrent"
+msgstr "Max. fișiere per torrent"
+
+msgid "Maximum number of files permitted per torrent - note that trackers may set their own limits, and your OS may limit the number of open files, preventing torrents with many files (and subsequent torrents) from loading"
+msgstr "Numărul maxim de fișiere permise per torrent - rețineți că trackerele își pot stabili propriile limite, iar sistemul de operare poate limita numărul de fișiere deschise, împiedicând încărcarea torrenților cu multe fișiere (și torrentelor ulterioare)"
+
+msgid "Tunnel Configuration"
+msgstr "Configurarea tunelului"
+
+msgid "Our destination (identity) for this session"
+msgstr "Destinația (identitatea) noastră pentru această sesiune"
+
+msgid "Dest."
+msgstr "Dest."
+
+msgid "Inbound Settings"
+msgstr "Setări de intrare"
+
+msgid "Outbound Settings"
+msgstr "Setări de ieșire"
+
+msgid "Vary Tunnel Length"
+msgstr "Variază lungimea tunelului"
+
+msgid "Add 0 or 1 additional hops randomly to Inbound tunnels"
+msgstr "Adaugă 0 sau 1 sare suplimentare în mod aleatoriu la tunelurile de intrare"
+
+msgid "Inbound"
+msgstr "Intrare"
+
+msgid "Add 0 or 1 additional hops randomly to Outbound tunnels"
+msgstr "Adaugă 0 sau 1 sare suplimentare în mod aleatoriu la tunelurile de ieșire"
+
+msgid "Outbound"
+msgstr "Ieșire"
+
+msgid "I2CP host"
+msgstr "Gazdă I2CP"
+
+msgid "I2CP port"
+msgstr "Portul I2CP"
+
+msgid "I2CP options"
+msgstr "Opțiuni I2CP"
+
+msgid "Save configuration"
+msgstr "Salvare configurări"
+
+msgid "Torrent Create File Filtering"
+msgstr "Filtrare Fișiere Creare Torrent"
+
+msgid "Mark filter for deletion"
+msgstr "Marchează filtrul pentru ștergere"
+
+msgid "Name"
+msgstr "Nume"
+
+msgid "Filter Pattern"
+msgstr "Model Filtru"
+
+msgid "Starts With"
+msgstr "Începe cu"
+
+msgid "Contains"
+msgstr "Conține"
+
+msgid "Ends With"
+msgstr "Se termină cu"
+
+msgid "Enabled by Default"
+msgstr "Activat implicit"
+
+msgid "Add"
+msgstr "Adaugă"
+
+msgid "Select trackers for removal from I2PSnark's known list"
+msgstr "Selectați trackerele pentru scoaterea din lista cunoscută a I2PSnark"
+
+msgid "Website URL"
+msgstr "URL website"
+
+msgid "Announce URL"
+msgstr "URL de anunțare"
+
+msgid "Mark tracker for deletion"
+msgstr "Marcați trackerul pentru ștergere"
+
+msgid "Cannot add magnet: Version 2 magnet links are not supported"
+msgstr "Nu se poate adăuga magnet: Linkurile magnet V2 nu sunt susținute"
+
+#, java-format
+msgid "Invalid magnet URL {0}"
+msgstr "URL-ul magnet invalid {0}"
+
+#, java-format
+msgid "1 hop"
+msgid_plural "{0} hops"
+msgstr[0] "1 hop"
+msgstr[1] "{0} hop-uri"
+msgstr[2] "{0} hop-uri"
+
+#, java-format
+msgid "1 tunnel"
+msgid_plural "{0} tunnels"
+msgstr[0] "1 tunel"
+msgstr[1] "{0} tunele"
+msgstr[2] "{0} tunele"
+
+msgid "This configures the maximum number of tunnels to open, determined by the number of connected peers (actual usage may be less)"
+msgstr "Aceasta configurează numărul maxim de tuneluri de deschis, determinat de numărul de peer-uri conectați (utilizarea reală poate fi mai mică)"
+
+msgid "Changing this setting to less than 3 hops may improve speed at the expense of anonymity and is not recommended"
+msgstr "Schimbarea acestei setări la mai puțin de 3 hop poate îmbunătăți viteza în detrimentul anonimatului și nu este recomandată"
+
+msgid "Sequential piece or file order not saved - feature currently broken."
+msgstr "Ordinea secvențială a pieselor sau fișierelor nu a fost salvată - funcționalitatea este momentan defectă."
+
+msgid "Unknown command"
+msgstr "Comandă necunoscut"
+
+msgid "Please retry form submission (bad nonce)"
+msgstr "Vă rugăm să reîncercați trimiterea formularului (nonce invalid)"
+
+msgid "Resource Does Not Exist"
+msgstr "Resursa nu există"
+
+msgid "Resource"
+msgstr "Resursă"
+
+msgid "Base"
+msgstr "Baza"
+
+msgid "Files"
+msgstr "Fișiere"
+
+msgid "Directory"
+msgstr "Dosar"
+
+msgid "Size"
+msgstr "Dimensiune"
+
+msgid "Download Status"
+msgstr "Stare descărcare"
+
+msgid "Remaining"
+msgstr "Rămas"
+
+msgid "Download Priority"
+msgstr "Prioritate pentru descărcare"
+
+msgid "up"
+msgstr "sus"
+
+msgid "Parent directory"
+msgstr "Spre dosarul de nivel superior"
+
+msgid "Audio Playlist"
+msgstr "Playlist audio"
+
+msgid "Not found"
+msgstr "Nu a fost găsit"
+
+msgid "File not found in torrent"
+msgstr "Fișierul nu a fost găsit în torrent?"
+
+msgid "Unrecognized"
+msgstr "Nerecunoscut"
+
+msgid "Preview"
+msgstr "Previzualizare"
+
+msgid "Save priorities"
+msgstr "Salvați priorități"
+
+msgid "Comments"
+msgstr "Comentarii"
+
+msgid "Resource Not found"
+msgstr "Resursă Nu a fost găsită"
+
+msgid "Info hash"
+msgstr "Informație index"
+
+msgid "Created"
+msgstr "Creat"
+
+msgid "Added"
+msgstr "Adăugat"
+
+msgid "Pieces"
+msgstr "Bucăți"
+
+msgid "Average download speed for torrent"
+msgstr "Viteza medie de descărcare pentru torrent"
+
+msgid "Download speed"
+msgstr "Viteză de descărcare"
+
+msgid "Completion"
+msgstr "Completare"
+
+msgid "Skipped"
+msgstr "Omis"
+
+msgid "Only I2P trackers will be used; non-I2P trackers are displayed for informational purposes only"
+msgstr "Doar trackerele I2P vor fi utilizate - urmăritorii non-I2P sunt afișați numai în scop informativ"
+
+msgid "Tracker"
+msgstr "Tracker"
+
+msgid "Web Seeds"
+msgstr "Semințe de web"
+
+msgid "Refresh page for results"
+msgstr "Reîmprospătare pagină pentru rezultate"
+
+msgid "Force Recheck"
+msgstr "Forțează reverificarea"
+
+msgid "Stop the torrent in order to check file integrity"
+msgstr "Opriți torrentul pentru a verifica integritatea fișierului"
+
+msgid "Check integrity of the downloaded files"
+msgstr "Verificați integritatea fișierelor descărcate"
+
+msgid "Download file at high priority"
+msgstr "Descărcați fișierul cu prioritate mare"
+
+msgid "High"
+msgstr "Ridicat"
+
+msgid "Download file at normal priority"
+msgstr "Descărcați fișierul cu prioritate normală"
+
+msgid "Normal"
+msgstr "Normal"
+
+msgid "Do not download this file"
+msgstr "Nu descărcați acest fișier"
+
+msgid "Skip"
+msgstr "Omitere"
+
+msgid "complete"
+msgstr "complet"
+
+msgid "remaining"
+msgstr "rămas"
+
+msgid "Ratings and Comments"
+msgstr "Evaluări și comentarii"
+
+msgid "Author name required to rate or comment"
+msgstr "Numele autorului trebuie să noteze sau să comenteze"
+
+msgid "Your author name for published comments and ratings"
+msgstr "Numele autorului dvs. pentru comentarii și evaluări publicate"
+
+#, java-format
+msgid "1 star"
+msgid_plural "{0} stars"
+msgstr[0] "{0} stea"
+msgstr[1] "{0} stele"
+msgstr[2] "{0} stele"
+
+msgid "No rating"
+msgstr "Fără evaluare"
+
+msgid "Rate and Comment"
+msgstr "Evaluează și comentează"
+
+msgid "Rate Torrent"
+msgstr "Evaluează Torrent"
+
+msgid "Add Comment"
+msgstr "Adauga comentariu"
+
+msgid "My Rating"
+msgstr "Evaluarea mea"
+
+msgid "Average Rating"
+msgstr "Rata medie"
+
+msgid "No community ratings currently available"
+msgstr "În prezent nu există evaluări ale comunității disponibile"
+
+msgid "Submitted"
+msgstr "Demis"
+
+msgid "Mark for deletion"
+msgstr "Marcați pentru ștergere"
+
+msgid "Delete Selected"
+msgstr "Ștergeți selectate"
+
+msgid "File downloading priorities updated for torrent "
+msgstr "Prioritățile de descărcare pentru torrentul "
+
+msgid "Edit Torrent"
+msgstr "Editează torrent"
+
+msgid "Active Trackers"
+msgstr "Trackere active"
+
+msgid "Add Tracker"
+msgstr "Adăugați tracker"
+
+msgid "Torrent Comment"
+msgstr "Comentariu torrent"
+
+msgid "Torrent must be stopped in order to edit"
+msgstr "Torentul trebuie oprit pentru a putea edita"
+
+msgid "Save Changes"
+msgstr "Salvați modificările"
+
+msgid "Torrent must be stopped"
+msgstr "Torentul trebuie oprit"

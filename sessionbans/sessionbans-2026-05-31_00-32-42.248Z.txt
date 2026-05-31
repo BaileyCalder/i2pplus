@@ -1,0 +1,13 @@
+
+############################################################
+# Router started: 2026-05-31T00:32:42.247Z
+############################################################
+
+# Ban event log
+# Format: TIMESTAMP | HASH | IP:PORT | REASON | DURATION
+# TIMESTAMP: ISO 8601 UTC
+# HASH: Router hash (base64) or UNKNOWN
+# IP:PORT: IP address and port or UNKNOWN
+# REASON: Reason for ban
+# DURATION: Duration (e.g., 8h, 24h, FOREVER)
+

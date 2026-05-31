@@ -1,0 +1,228 @@
+#
+#  To add entries to the blocklist, make sure you edit blocklist.txt in I2P's configuration
+#  directory, NOT the installation directory, as the installation directory file will be
+#  overwritten when the router is updated.
+#    * Linux (manual java install): ~/.i2p
+#    * Linux (repo or deb install running as daemon):
+#      - Configuration directory: /var/lib/i2p
+#      - Application directory: /usr/share/i2p
+#    * Windows (as application): %APPDATA%\I2P
+#    * Windows (as service):
+#      - Configuration directory: \ProgramData\i2p
+#      - Install directory: \Program Files\i2p
+#    * MacOS: /Users/(user)/Library/Application Support/i2p
+#
+#  As of release 0.9.18, the router reads and merges the files in the install directory
+#  and the config directory. Additionally, if the advanced configuration
+#  router.blocklist.file=/path/to/otherlist.txt is set, this file will be
+#  read in and merged as well.
+#
+#  If there is no blocklist.txt file in the configuration directory, create it and
+#  add entries as desired.
+#
+#  Blocking is enabled by default.
+#  To disable blocking, set router.blocklist.enable=false in your router.config file in your
+#  i2p configuration folder, or if routerconsole.advanced=true, on http://127.0.0.1:7657/configadvanced
+#
+#  Add additional entries as desired, sorting not required.
+#  Note that this file is only read at router startup.
+#
+#  To manually block a router after startup, use the form on http://127.0.0.1:7657/configpeer
+#  Note that this method will only block the router for the duration of the router session
+#
+#  Warning - a large list will increase memory usage.
+#  Please do not block too broadly, it will segment and harm the network.
+#
+#  We have included the bogons (private ip address segments) from
+#  https://www.team-cymru.com/bogon-reference-http
+#  but you will have to update your blocklist manually if the bogon list changes.
+#  You must update this list yourself, it is not overwritten by the update process.
+#
+#   * Acceptable formats (IPV4 only):
+#   *   #comment (# must be in column 1)
+#   *   comment:IP-IP
+#   *   comment:morecomments:IP-IP
+#   *   (comments also allowed before any of the following)
+#   *   IP-IP
+#   *   IP/masklength
+#   *   IP
+#   *   hostname (DNS looked up at list readin time, not dynamically, so may not be much use)
+#   *   44-byte Base64 router hash
+#   *
+#   * Acceptable formats (IPV6 only):
+#   *   comment:IPv6 (must replace : with ; e.g. abcd;1234;0;12;;ff)
+#   *   IPv6 (must replace : with ; e.g. abcd;1234;0;12;;ff)
+#   *
+#   * No whitespace allowed after the last ':'.
+#   *
+#   * For further information and downloads:
+#   *   http://blocklist.googlepages.com/
+#   *   https://www.team-cymru.com/bogon-reference.html
+#
+# IPv4: https://team-cymru.org/Services/Bogons/bogon-bn-agg.txt
+#
+<a href="https://www.team-cymru.com/bogon-reference.html" target="_blank">Bogon</a>:0.0.0.0/8
+<a href="https://www.team-cymru.com/bogon-reference.html" target="_blank">Bogon</a>:10.0.0.0/8
+<a href="https://www.team-cymru.com/bogon-reference.html" target="_blank">Bogon</a>:100.64.0.0/10
+<a href="https://www.team-cymru.com/bogon-reference.html" target="_blank">Bogon</a>:127.0.0.0/8
+<a href="https://www.team-cymru.com/bogon-reference.html" target="_blank">Bogon</a>:169.254.0.0/16
+<a href="https://www.team-cymru.com/bogon-reference.html" target="_blank">Bogon</a>:172.16.0.0/12
+<a href="https://www.team-cymru.com/bogon-reference.html" target="_blank">Bogon</a>:192.0.0.0/24
+<a href="https://tools.ietf.org/html/rfc6890#ref-2" target="_blank">Bogon</a>:192.0.0.0/29
+<a href="https://www.team-cymru.com/bogon-reference.html" target="_blank">Bogon</a>:192.0.2.0/24
+<a href="https://www.team-cymru.com/bogon-reference.html" target="_blank">Bogon</a>:192.168.0.0/16
+<a href="https://www.team-cymru.com/bogon-reference.html" target="_blank">Bogon</a>:198.18.0.0/15
+<a href="https://www.team-cymru.com/bogon-reference.html" target="_blank">Bogon</a>:198.51.100.0/24
+<a href="https://www.team-cymru.com/bogon-reference.html" target="_blank">Bogon</a>:203.0.113.0/24
+<a href="https://www.team-cymru.com/bogon-reference.html" target="_blank">Bogon</a>:224.0.0.0/3
+# End Team Cymru bogons
+#
+# IPv4
+#
+#
+​31173/Mullvad VPN:185.209.196.0/24
+31173/Mullvad VPN:185.213.155.0/24
+Connection Abuse:46.188.0.0-46.188.63.255
+Connection Abuse:92.124.128.0-92.124.143.255
+Public Web Proxy:93.157.12.0/24
+Russian Sybil:37.228.88.0-37.228.93.255
+Excessive lookups:91.198.115.0/24
+Excessive lookups:162.218.65.0/24
+Sybil:103.149.170.0/23
+Sybil:104.156.254.54
+Sybil:104.207.153.96
+Sybil:108.61.251.143
+Sybil:133.130.124.185
+Sybil:150.95.128.165
+Sybil:150.95.134.159
+Sybil:150.95.144.95
+Sybil:150.95.147.89
+Sybil:150.95.153.220
+Sybil:160.36.130.0/24
+Sybil:163.44.149.31
+Sybil:178.21.164.0/24
+Sybil:185.69.185.0/24
+Sybil:185.69.186.0/24
+Sybil:202.182.126.246
+Sybil:213.142.149.0/24
+Sybil:213.238.166.0/24
+Sybil:45.32.125.149
+Sybil:45.32.152.247
+Sybil:45.32.60.71
+Sybil:45.32.62.37
+Sybil:45.63.50.207
+Sybil:45.63.76.128
+Sybil:45.76.112.208
+Sybil:45.76.129.193
+Sybil:45.76.152.150
+Sybil:45.76.47.3
+Sybil:45.76.98.64
+Sybil:45.77.132.75
+Sybil:45.77.14.112
+Sybil:45.77.250.252
+Sybil:45.77.29.172
+Sybil:47.208.97.112
+Sybil:47.88.136.46
+Sybil:47.88.136.86
+Sybil:47.88.138.200
+Sybil:47.88.159.58
+Sybil:47.88.169.149
+Sybil:47.88.6.66
+Sybil:47.88.7.8
+Sybil:47.89.38.177
+Sybil:47.90.1.15
+Sybil:47.90.120.30
+Sybil:47.90.1.26
+Sybil:51.211.161.115
+Sybil:66.42.58.61
+Sybil:93.171.220.0/23
+Sybil:93.171.222.0/24
+Sybil:95.47.57.0/24
+Sybil:95.85.100.0/22
+Sybil:95.85.104.0/22
+Sybil:95.85.98.0/23
+Tunnel Abuse:139.59.133.151
+Tunnel Abuse:145.239.83.230
+Tunnel Abuse:162.218.65.219
+Tunnel Abuse:162.55.230.167
+Tunnel Abuse:172.6.174.68
+Tunnel Abuse:174.27.149.30
+Tunnel Abuse:176.88.62.2
+# IPv6
+#
+Bogon (IPv6 localhost):;;1
+Bogon (IPv6 default route):0;0;0;0;0;0;0;0
+Sybil:2001;19f0;4400;4376;5400;ff;fe47;bcbd
+Sybil:2001;19f0;5801;1d4;5400;ff;fe38;a26e
+Sybil:2001;19f0;5c01;1df;5400;ff;fe3e;ba8f
+Sybil:2001;19f0;7001;cb;5400;ff;fe47;c952
+Sybil:2001;19f0;7001;d99;5400;ff;fe41;829c
+Sybil:2001;19f0;7402;24d;5400;ff;fe41;9153
+Sybil:2001;df6;b800;1128;a163;44;149;310
+Sybil:2400;8500;1302;802;a133;130;124;1855
+Sybil:2400;8500;1302;816;a150;95;128;165b
+Sybil:2400;8500;1302;819;a150;95;134;1590
+Sybil:2400;8500;1302;824;a150;95;144;951
+Sybil:2400;8500;1302;825;150;95;147;89
+Sybil:2400;8500;1302;828;a150;95;153;2202
+#
+# Router hashes
+#
+Corrupt Message Spammer:m8CkfwwvPF~9xYjfGVIl4d~ypW7VjE0nxFZN1rh48XM=
+Excessive introducers:0gtvqKrgK2AZikJHDupsIj~whqoelmGOtdQUwhlz0zM=
+Excessive introducers:1ovI8Iw2K1amMCymEccbrTZcx4xFiPXIaQETGJTQyzo=
+Excessive introducers:96o-ZOGmqwR6VLJfov1oZregi5paMB4SpDZyTHpdU44=
+Excessive introducers:B2QwtekG0wjvHL1azMsq1IMuOO1H~uh9-1zdurdwZLw=
+Excessive introducers:BHfJcMLTIGJcLXO2jU-vxxHMRcl0dlI~4FcPRKiGeqw=
+Excessive introducers:cOpP-qgrJKAqcxUfuU~eJILllNXAApbLXpSI4cjfh00=
+Excessive introducers:dmLeecZhuY-NEXZ1nZRYOexI8bzzRfrL8rFStCFaUn4=
+Excessive introducers:e~6SZoiykgNiTsUFS2X4b-xkqhQQcZsmkiaqWaK0tyY=
+Excessive introducers:eVC2QYGWmB2kTX8OlGa44LL8hMxxFDL6IqXCnIXo~ZM=
+Excessive introducers:g~GgoVcAf~K4xld0yUJcwlp89wX9XRUAejnXQhasxY8=
+Excessive introducers:iVPf~4UXQqCTbu6Fm8CC-Cx~-~GwYht-DtW6v4rXZIo=
+Excessive introducers:JfkpKG1oogDesjhF6Wl35yNQ70gQreSxosVH65LueXs=
+Excessive introducers:JPePMRU-pzr6xYYfNLQJ7YwXrekCK1bLNUkyV7y8SXQ=
+Excessive introducers:le-SX3V9pHHql8qdomtC5DIP6rQJ0tV9DHF6NFhvq0I=
+Excessive introducers:ndYyBTuF3GLgaFMGug-KOiUmNm2LaJWulLdhn0dpflQ=
+Excessive introducers:nRj0UVNsRn1c9uHr90OgP1LgPY4Gd-ggha89YnFdDRA=
+Excessive introducers:Op-QDVZ1vFqBHFw~ZIY2lTN8y9PyG7~HB70gTym-FIg=
+Excessive introducers:U07yx0dTFWMX8oJbzjocDM8qSIIKvFCm-IXcNx89gQQ=
+Excessive introducers:ukOJh6Tvh457poK1qhu5NC5q~3LQvv4gJ88OVAX3l~4=
+Excessive introducers:UmwTBVrrW6E-tICIipnJc5eQihZJxXr6gBKkewRmIz0=
+Excessive introducers:ZtSmZQeuuzQYVV8QXlDedB721xoN7BfS8jHNB7FgW8w=
+Excessive IP cycling:1jhJoqpi5oFB6yvObMwAiiTi7DT8~WTIAd1zh1XSNEM=
+Excessive IP cycling:2l9Eg2BKOmu8hixe~UyElpu~~2RXkhBOM5j8rSqjsKs=
+Excessive IP cycling:2VLCwzGYz7KYxZ1xTjfBjRdfkKVzJj5BJE1~K0rvNCg=
+Excessive IP cycling:3lgHIOIADdUIoyJjWymzE1Xikx7RojrEBfYT6P7eLzk=
+Excessive IP cycling:6NMfknVMawT~baK0VanEkbXvO2hJCLJ5rreieysRrNE=
+Excessive IP cycling:F~UzS1mTN3XYlnOfidMBv5Z4lHI7dsCZ8N5mxpyc-OU=
+Excessive IP cycling:HcbQyKfOl4usRgc6YqxOvfHKvCnrbNCpDfg~5OUO-FY=
+Excessive IP cycling:i1Viub4WK3l-6KbZHifQCY9aGwhU8JG3u5gg5fVJWlM=
+Excessive IP cycling:iGhAmNE-rfrgQBGVbgiIELaih8lsVUjKfg~oV1w06lk=
+Excessive IP cycling:ixpaFrLz3C-Fo~6~TOKtQIsHRvmdC~hOFtmJenNz3-Y=
+Excessive IP cycling:jDFMFtR3wmtuixX0LajCoW1Ko-fSU8sWTtkuqKM9ti8=
+Excessive IP cycling:jhyiaB9Nd2RRVInrmSi0rquBwJaLhhiPemlqj7HGo7k=
+Excessive IP cycling:MogB-V71uOsLBu5z9gW5sa3zzUfI5GD43selaYiOy4U=
+Excessive IP cycling:nA-DRzbe33yVHcvITENBWKJ~yVVie6hngoQbB~MoYH0=
+Excessive IP cycling:nRTKhTmfXEmpLGe7QmpEPOZr6C3SpX0ke~sgqcX8axA=
+Excessive IP cycling:~SN8k6Hid107ighTnxRSiwTwwPMjEpPbDEyEY--zD~U=
+Excessive IP cycling:tFPtta1sdB7ybYqXjHZnk2jcn2IHxaQUWhWRCVTJ-H0=
+Excessive IP cycling:y8q2xWGfKdUzGVkapSZ~wJbqGWJ1vTaPUz0oChBp99M=
+Excessive IP cycling:yQN8Qt0K0yi89DrMaMa0LhHpQkxj2X3zS0SATe5QAXI=
+Tunnel Abuse:5MAAvwKgnG7hYbi93q0Luro~-AyIjO5xvUbABc2T3IU=
+Tunnel Abuse:6yUKWdxJKF0wtxd3Ro0VfkSlLe74gvM2b0IJbzm~mT0=
+Tunnel Abuse:8ej3XrMgI2IMIwP4X6~h9Nw4vtDV~2yX1nI7u-nOidg=
+Tunnel Abuse:cfhT8b5PNxSIFhmg-6ZvP78W5eD9jtGBLjM~oIRRqoE=
+Tunnel Abuse:CyLg6w8lypk1gnAX-CdG8O4NCR86hq8ifge6QKXAoJg=
+Tunnel Abuse:dT50jTIPtC9fFD7NnXCmz8HGiAZuRT-~re~JagmO6mo=
+Tunnel Abuse:DtQsGzkbeR3nilr6ZvywR2O7-f0XaaV~YfHXohqwjgI=
+Tunnel Abuse:gf5oj7oQxjkCJ25eg54~WueRpT5odU9AduBaGxI2~qI=
+Tunnel Abuse:JbifzqZZqeTXtxK6KDqNUPWaW-phKqeS~tfJT82SIYI=
+Tunnel Abuse:lam824jtkYq4qTiZHT~TkdHoVTVRwnLghgFheZbgDhU=
+Tunnel Abuse:o0N6orDrgfMY29G4Z8Q7CRwhSnvw4LuuKhvadrtDsSE=
+Tunnel Abuse:QPUV1bW6arN2zp3gTBMvOEvgSuKbXUqk2oqHkb~UoSw=
+Tunnel Abuse:QYkhWCudqWhty-TvJ-sFd0z5uLYBXHW5t61L-I6ltJU=
+Tunnel Abuse:tATb9Xe-Tj5QqTm1u1zY1CZlqK0X6Ygn6LjnQBjb55w=
+Tunnel Abuse:wPorvAjMYj6FipnUHruA0dF2K-Xm~GngCY3QDIVlZyU=
+Tunnel Abuse:xnMzPiEhGe2mFuoN8PiB5voV-H2JLk4g5a054mVmFds=
+Tunnel Abuse:yb2KWHXrtLdSGG4G53GXjVRilYXFDj7KzsHMLYCNK3o=

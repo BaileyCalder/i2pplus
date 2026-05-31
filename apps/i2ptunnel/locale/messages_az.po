@@ -1,0 +1,1575 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: az\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "internal"
+msgstr "daxili"
+
+#, java-format
+msgid "{0} inbound, {0} outbound tunnel"
+msgid_plural "{0} inbound, {0} outbound tunnels"
+msgstr[0] "{0} gəlinən, {0} çıxış tünəli"
+msgstr[1] "{0} gəlinən, {0} çıxış tünəlləri"
+
+#, java-format
+msgid "{0} inbound tunnel"
+msgid_plural "{0} inbound tunnels"
+msgstr[0] "{0} gəlinən tünəl"
+msgstr[1] "{0} gəlinən tünəllər"
+
+#, java-format
+msgid "{0} outbound tunnel"
+msgid_plural "{0} outbound tunnels"
+msgstr[0] "{0} çıxış tünəli"
+msgstr[1] "{0} çıxış tünəlləri"
+
+msgid "lower bandwidth and reliability"
+msgstr "aşağı səbət və mənbəyin azalması"
+
+msgid "standard bandwidth and reliability"
+msgstr "standart səbət və mənbə"
+
+msgid "higher bandwidth and reliability"
+msgstr "yüksək səbət və mənbə"
+
+msgid "Error - tunnels are not initialized yet"
+msgstr "Xəta - tunellər hələ başladılmayıb"
+
+msgid "No services configured, cannot restart!"
+msgstr "Xidmət konfiqurasiya edilməyib, yenidən başladıla bilmir!"
+
+msgid "Stopping tunnel"
+msgstr "Tünəlin dayandırılması"
+
+msgid "Starting tunnel"
+msgstr "Tünəl başlamaqdadır"
+
+msgid "Error restarting tunnel"
+msgstr "Tunneli yenidən başlatma xətası"
+
+msgid "Restarted all running tunnels"
+msgstr "Bütün işləyən tunellər yenidən başladıldı"
+
+msgid "No clients configured, cannot restart!"
+msgstr "Klient konfiqurasiya edilməyib, yenidən başladıla bilmir!"
+
+msgid "Restarted all running client tunnels"
+msgstr "Bütün işləyən klient tunelləri yenidən başladıldı"
+
+msgid "Configuration reloaded for all tunnels"
+msgstr "Bütün tünəllər üçün konfigurasiya yenidən yükləndi"
+
+msgid "Error: Invalid tunnel"
+msgstr "Xəta: Yanlış tunnel"
+
+msgid "Started tunnel"
+msgstr "Tunnel başladıldı"
+
+msgid "Stopped tunnel"
+msgstr "Tunnel dayandırıldı"
+
+msgid "Restarting tunnel"
+msgstr "Tunnel yenidən başladılır"
+
+msgid "Please confirm removal"
+msgstr "Silinməni təsdiqləyin"
+
+msgid "New Tunnel"
+msgstr "Yeni Tünəl"
+
+msgid "Port not set"
+msgstr "Port ayarlanmamışdır"
+
+msgid "Invalid port"
+msgstr "Düzgün olmayan port"
+
+msgid "Warning - ports less than 1024 are not recommended"
+msgstr "Xəbərdarlıq - 1024-dən kiçik portlar tövsiyə olunmur"
+
+msgid "Warning - duplicate port"
+msgstr "Xəbərdarlıq - tekrarlanan port"
+
+msgid "Standard client"
+msgstr "Standart müştəri"
+
+msgid "HTTP/HTTPS client"
+msgstr "HTTP/HTTPS müştəri"
+
+msgid "IRC client"
+msgstr "IRC müştəri"
+
+msgid "Standard server"
+msgstr "Standart server"
+
+msgid "HTTP server"
+msgstr "HTTP serveri"
+
+msgid "SOCKS 4/4a/5 proxy"
+msgstr "SOCKS 4/4a/5 proksi"
+
+msgid "SOCKS IRC proxy"
+msgstr "SOCKS IRC proksi"
+
+msgid "CONNECT/SSL/HTTPS proxy"
+msgstr "CONNECT/SSL/HTTPS proksi"
+
+msgid "IRC server"
+msgstr "IRC serveri"
+
+msgid "Streamr client"
+msgstr "Streamr müştəri"
+
+msgid "Streamr server"
+msgstr "Streamr serveri"
+
+msgid "HTTP bidir"
+msgstr "HTTP iki yönlü"
+
+msgid "Host not set"
+msgstr "Məzmun ayarlanmamışdır"
+
+msgid "Invalid address"
+msgstr "Düzgün olmayan ünvan"
+
+msgid "Tunnel Manager"
+msgstr "Tünəl idarəçisi"
+
+msgid "Edit Client Tunnel"
+msgstr "Müştəri Tünəlini Redaktə Et"
+
+msgid "Edit Server Tunnel"
+msgstr "Server Tünəlini Redaktə Et"
+
+msgid "Are you sure you want to delete?"
+msgstr "Siz silmək istədiyinizə əminsiniz?"
+
+msgid "required"
+msgstr "tələb olunur"
+
+msgid "Tunnel and all other shared client tunnels must be stopped to change this configuration"
+msgstr "Bu konfigurasiyanı dəyişmək üçün tünəl və bütün digər paylaşılan müştəri tünəlləri dayandırılmalıdır"
+
+msgid "Tunnel must be stopped to change this configuration"
+msgstr "Bu konfigurasiyanı dəyişmək üçün tünəlin dayandırılması lazımdır"
+
+msgid "Configuration"
+msgstr "Konfigurasiya"
+
+msgid "New Client Configuration"
+msgstr "Yeni Müştəri Konfigurasiyası"
+
+msgid "Name"
+msgstr "Adı"
+
+msgid "Auto Start Tunnel"
+msgstr "Tünəlin avtomatik başlama"
+
+msgid "Name of tunnel to be displayed on Tunnel Manager home page and the router console sidebar"
+msgstr "Tünəlin adı, Tunnel Manager ana səhifəsində və ruter konsolu yan panelində göstəriləcək"
+
+msgid "Enable this option to ensure this service is available when the router starts"
+msgstr "Ruter başlamaqda bu xidmətin mövcud olması üçün bu seçimləri aktiv edin"
+
+msgid "Automatically start tunnel when router starts"
+msgstr "Ruter başladığında tünəlin avtomatik başlama"
+
+msgid "Description"
+msgstr "Açıqlama"
+
+msgid "Shared Client"
+msgstr "Paylaşılan Müştəri"
+
+msgid "Description of tunnel to be displayed on Tunnel Manager home page"
+msgstr "Tunnel Manager ana səhifəsində göstəriləcək tünəlin açıqlaması"
+
+msgid "Traffic from all clients with this feature enabled will be routed over the same set of tunnels. This will make profiling the tunnels by an adversary more difficult, but will link the clients together."
+msgstr "Bu funksiyanı aktiv etmiş bütün müştərilərdən gələn trafik eyni tünəl qrupu ilə yönləndiriləcək. Bu, tünəlləri potensial təhlükəli tərəfdarlar tərəfindən profilleməsini çətinləşdirəcək, lakin müştəriləri bir-biri ilə bağlayacaq."
+
+msgid "Share tunnels with other configured clients"
+msgstr "Digər tənzimlənmiş müştərilərlə tünəlləri paylaşın"
+
+msgid "Target"
+msgstr "Hedef"
+
+msgid "Access Point"
+msgstr "Daxil Olma Noktası"
+
+msgid "Use Outproxy Plugin"
+msgstr "Outproxy Eki Uğurla"
+
+msgid "Enable DCC"
+msgstr "DCC Aktiv Edin"
+
+msgid "Port"
+msgstr "Port"
+
+msgid "Specify the local port this service should be accessible from"
+msgstr "Bu xidmətin hansı yerli porta erişilə biləcəyini göstərin"
+
+msgid "Host"
+msgstr "Müştəri"
+
+msgid "Hostname or IP address of the target server"
+msgstr "Hedef serverin hostname-i və ya IP ünvanı"
+
+msgid "Reachable by"
+msgstr "Erişilə bilər"
+
+msgid "Local interface (ip address) the client tunnel will be reachable from"
+msgstr "Müştəri tünəlinin hansı yerli interfeysdən (ip ünvanı) əl çatdırılacağı"
+
+msgid "If an outproxy plugin is installed (e.g. Orchid), use this instead of any configured outproxies to access websites outside of I2P"
+msgstr "Eğer outproxy eki (məsələn, Orchid) quraşdırılmışsa, I2P-dən başqa web saytlarına giriş etmək üçün bu seçimi tənzimlənmiş outproxylərin əvəzinə istifadə edin"
+
+msgid "Use plugin instead of proxies listed below if available"
+msgstr "Eldə olunduqda aşağıda siyahıya alınmış proksi yerinə eki istifadə edin"
+
+msgid "Enables direct chat and file transfers, bypassing I2P. Note that this will compromise your anonymity and is not recommended."
+msgstr "I2P-ni tərk edərək sadəcə söhbət və fayl köçürməyə icazə verir. Bu, sizin anonimliyinizi təhlükəyə atacağını və məsləhətsiz olduğunu nəzərə alın."
+
+msgid "Enable Direct Client-to-Client protocol"
+msgstr "Sadəcə Müştəri ilə Müştəri protokolunu aktiv edin"
+
+msgid "Outproxies"
+msgstr "Çıxış Proksiləri"
+
+msgid "SSL Outproxies"
+msgstr "SSL Çıxış Proksiləri"
+
+msgid "Specify the .i2p address or destination (b32 or b64) of the outproxy here."
+msgstr "Burada outproxy-nin .i2p ünvanını və ya hedefini (b32 və ya b64) göstərin."
+
+msgid "For a random selection from a pool, separate with commas e.g. server1.i2p,server2.i2p"
+msgstr "Havuzdan təsadüfi seçimin üçün vergül ilə ayırın, məsələn, server1.i2p,server2.i2p"
+
+msgid "Outproxy Type"
+msgstr "Çıxış Proksi Tipi"
+
+msgid "Tunnel Destination"
+msgstr "Tünəl Hedefi"
+
+msgid "Use SSL"
+msgstr "SSL-dən istifadə edin"
+
+msgid "Specify the .i2p address or destination (b32 or b64) of the tunnel here."
+msgstr "Burada tünəlin .i2p ünvanını və ya hedefini (b32 və ya b64) göstərin."
+
+msgid "name, name:port, or destination"
+msgstr "ad, ad:port və ya hedef"
+
+msgid "If you are accessing a service on a remote I2P router, you may wish to connect with SSL to avoid traffic interception. The client application should be also be configured to use SSL."
+msgstr "Eğer siz远程I2P ruterindəki xidməti istifadə edirsinizsiz, trafiğin tətbiq olunmasından qaçmaq üçün SSL ilə bağlanmağı istəyə bilərsiniz. Müştəri proqramı da SSL-dən istifadə etmək üçün tənzimlənməlidir."
+
+msgid "Clients use SSL to connect to tunnel"
+msgstr "Müştərilər SSL ilə tünələ bağlanır"
+
+msgid "Please specify the full b64 destination."
+msgstr "Lütfən tam b64 hedefini göstərin."
+
+msgid "Local destination"
+msgstr "Yerli hedef"
+
+msgid "Local Base32"
+msgstr "Yerli Base32"
+
+msgid "Read Only: Local Destination (if known)"
+msgstr "Yalnız oxuma: Yerli Hedef (eğer bilinir)"
+
+msgid "Stop"
+msgstr "Dayandır"
+
+msgid "Start this Tunnel"
+msgstr "Bu Tünəli Başlat"
+
+msgid "Start"
+msgstr "Başla"
+
+msgid "Cancel"
+msgstr "Ləğv et"
+
+msgid "Delete this tunnel (cannot be undone)"
+msgstr "Bu tünəli silin (geri qaytarıla bilməz)"
+
+msgid "Delete"
+msgstr "Sil"
+
+msgid "Save"
+msgstr "Yadda saxla"
+
+msgid "Advanced networking options"
+msgstr "İqtisadi şəbəkə seçimləri"
+
+msgid "Note: When this client is configured to share tunnels, these options apply to all clients configured to share tunnels."
+msgstr "Qeyd: Bu müştəri tünəlləri paylaşmaq üçün tənzimləndiyində, bu seçimlər bütün tünəlləri paylaşmaq üçün tənzimlənmiş müştərilərə tətbiq olunur."
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Delay Connect"
+msgstr "Qoşulmayı gecikdirmək"
+
+msgid "Connection Profile"
+msgstr "Qoşulma Profili"
+
+msgid "interactive connection"
+msgstr "interaktiv qoşulma"
+
+msgid "bulk connection (downloads/websites/BT)"
+msgstr "topluq qoşulma (yükləmələr/veb-saytlar/BT)"
+
+msgid "Delay Connection"
+msgstr "Qoşulmanın gecikdirilməsi"
+
+msgid "for request/response connections"
+msgstr "tələb/cavab qoşulları üçün"
+
+msgid "Router I2CP Address"
+msgstr "Ruter I2CP Ünvanı"
+
+msgid "I2CP Hostname or IP"
+msgstr "I2CP Hostname və ya IP"
+
+msgid "I2CP Port Number"
+msgstr "I2CP Port Nömrəsi"
+
+msgid "Delay tunnel open until required"
+msgstr "Tələb olunduqca tünəlin açılmasını gecikdirmək"
+
+msgid "Signature type"
+msgstr "İmza növü"
+
+msgid "Conserve resources by only creating tunnels when required"
+msgstr "Tünəlləri yalnız tələb olunduqda yaratmaqla resursları saxlamaq"
+
+msgid "Don't open tunnel until activity is detected on port"
+msgstr "Portda fəaliyyət aşkarlandıqdan əvvəl tünəlin açılmasına icazə vermək"
+
+msgid "This is the default, recommended option"
+msgstr "Bu standart, tövsiyə olunan seçimdir"
+
+msgid "Encryption types"
+msgstr "Şifrələmə növləri"
+
+msgid "Legacy options"
+msgstr "Köhnə seçimlər"
+
+msgid "Post Quantum"
+msgstr "Post-Kvant"
+
+msgid "Both encryption types"
+msgstr "Hər iki şifrələmə növü"
+
+msgid "Tunnel Options"
+msgstr "Tünəl Seçimləri"
+
+msgid "Length"
+msgstr "Uzunluq"
+
+msgid "Count"
+msgstr "Say"
+
+msgid "Length of each Tunnel"
+msgstr "Hər bir tünəlin uzunluğu"
+
+msgid "0 hop tunnel (no anonymity)"
+msgstr "0 hüpf tünəli (anonimliyin yoxluğu)"
+
+msgid "1 hop tunnel (low anonymity)"
+msgstr "1 hüpf tünəli (düşük anonimlik)"
+
+msgid "2 hop tunnel (medium anonymity)"
+msgstr "2 hüpf tünəli (orta anonimlik)"
+
+msgid "3 hop tunnel (high anonymity)"
+msgstr "3 hüpf tünəli (yüksək anonimlik)"
+
+#, java-format
+msgid "{0} hop tunnel"
+msgid_plural "{0} hop tunnel"
+msgstr[0] "{0} hop tüneli"
+msgstr[1] "{0} hop tüneli"
+
+msgid "Number of Tunnels in Group"
+msgstr "Qrupdakı tünəllərin sayı"
+
+msgid "Disabled for 0 hop tunnels"
+msgstr "0 hoplu tunellər üçün deaktivdir"
+
+msgid "Variance"
+msgstr "Fərq"
+
+msgid "Backup Count"
+msgstr "Yedek Say"
+
+msgid "Level of Randomization for Tunnel Length"
+msgstr "Tünəl Uzunluğunun Rastgeleliyin Dərəcəsi"
+
+msgid "0 hop variance"
+msgstr "0 hüpf fərq"
+
+msgid "no randomization, consistent performance"
+msgstr "rastgelelik yoxdur, daimi performans"
+
+msgid "+ 0-1 hop variance"
+msgstr "+ 0-1 hüpf fərq"
+
+msgid "medium randomization, lower performance"
+msgstr "orta rastgelelik, aşağı performans"
+
+msgid "+ 0-2 hop variance"
+msgstr "+ 0-2 hüpf fərq"
+
+msgid "high randomization, very low performance"
+msgstr "yüksək rastgelelik, çox aşağı performans"
+
+msgid "+/- 0-1 hop variance"
+msgstr "+/- 0-1 hüpf fərq"
+
+msgid "standard randomization, standard performance"
+msgstr "standart rastgelelik, standart performans"
+
+msgid "+/- 0-2 hop variance"
+msgstr "+/- 0-2 hüpf fərq"
+
+msgid "not recommended"
+msgstr "təsviyyə olunmur"
+
+msgid "hop variance"
+msgstr "hüpf fərq"
+
+msgid "Number of Reserve Tunnels"
+msgstr "Yedek Tünəllərin Sayı"
+
+#, java-format
+msgid "{0} backup tunnel"
+msgid_plural "{0} backup tunnels"
+msgstr[0] "{0} yedek tünel"
+msgstr[1] "{0} yedek tünnellər"
+
+msgid "no redundancy, no added resource usage"
+msgstr "redondans yoxdur, əlavə resurs istifadəsi yoxdur"
+
+msgid "low redundancy, low resource usage"
+msgstr "düşük redondans, aşağı resurs istifadəsi"
+
+msgid "medium redundancy, medium resource usage"
+msgstr "orta redondans, orta resurs istifadəsi"
+
+msgid "high redundancy, high resource usage"
+msgstr "yüksək redondans, yüksək resurs istifadəsi"
+
+msgid "Reduce tunnel quantity"
+msgstr "Tünəl sayını azalt"
+
+msgid "Reduce tunnel count when idle to conserve resources but keep tunnel open (to ensure immediate availability)"
+msgstr "Resursları qorumaq üçün fəaliyyətsiz olarkən tünəl sayını azaltın, lakin tünəli açıq saxlayın (həmişə hazır olsun)"
+
+msgid "Reduce tunnel quantity when idle"
+msgstr "Fəaliyyətsiz olduğunda tünəl sayını azalt"
+
+msgid "Idle period"
+msgstr "Fəaliyyətsiz dövr"
+
+msgid "Reduced Tunnel Idle Time"
+msgstr "Azaltılmış Tünəl Fəaliyyətsiz Vaxtı"
+
+msgid "Reduced count"
+msgstr "Azaltılmış sayı"
+
+msgid "Reduced tunnel count"
+msgstr "Azaltılmış tünəl sayısı"
+
+msgid "Close tunnels when idle"
+msgstr "Fəaliyyətsiz olduğu zaman tünəlleri bağla"
+
+msgid "To conserve resources, close tunnels when not in use"
+msgstr "Resursları qorumaq üçün, istifadə olunmadığında tünəlleri bağla"
+
+msgid "Close client tunnels after specified idle period"
+msgstr "Belirtilmiş fəaliyyətsiz dövrün sonunda müştəri tünəllərini bağla"
+
+msgid "Close Tunnel Idle Time"
+msgstr "Bağlanmaq üçün Tünəl Fəaliyyətsiz Vaxtı"
+
+msgid "New Keys on Reopen"
+msgstr "Yenidən açıldığında yeni açarlar"
+
+msgid "Change tunnel identity (destination) when tunnels reopen"
+msgstr "Tünəllər yenidən açıldığında tünəl kimliyini (mərhələni) dəyişdirin"
+
+msgid "Enable"
+msgstr "İstifadə et"
+
+msgid "Retain tunnel identity (destination) when tunnels reopen"
+msgstr "Tünəllər yenidən açıldığında tünəl kimliyini (mərhələni) saxla"
+
+msgid "Disable"
+msgstr "Deaktiv et"
+
+msgid "Persistent private key"
+msgstr "Daimi gizli açar"
+
+msgid "Private key file"
+msgstr "Gizli açar faylı"
+
+msgid "Enabling this feature will ensure your tunnel identity (destination) remains static, for services offering features based on destination e.g. IRC user authentication"
+msgstr "Bu funksiyaları aktivləşdirmək sizin tünəl kimliyinizin (mərhələnin) sabit qalmasına əmin olacaq, məsələn, mərhələyə əsaslanan xidmətlər kimi IRC istifadəçi təsdiqləməsi"
+
+msgid "Generate key to enable persistent client tunnel identity"
+msgstr "Daimi müştəri tünəl kimliyini aktivləşdirmək üçün açarı yaradın"
+
+msgid "Path to Private Key File"
+msgstr "Gizli Açar Faylının Yolu"
+
+msgid "HTTP Filtering"
+msgstr "HTTP Filtirləmə"
+
+msgid "When enabled, the user agent of your web browser or http client will not be spoofed, potentially reducing your anonymity"
+msgstr "Aktivləşdirildikdə, internet böyükçünüz və ya http istifadəçi proqramınızın istifadəçi acentası təhlükəsizlik edilməyəcək, bu da anonimliyinizin azalması ehtimalını artırır"
+
+msgid "Do not spoof User-Agent header"
+msgstr "Istifadəçi Agent Başlığı təhlükəsizlik etmə"
+
+msgid "When enabled, the referer (originating page) of your web requests will not be filtered, potentially reducing your anonymity"
+msgstr "Aktivləşdirildikdə, internet sorğularınızın referer'ı (başlangıç səhifəsi) filtrlənməyəcək, bu da anonimliyinizin azalması ehtimalını artırır"
+
+msgid "Do not block Referer header"
+msgstr "Referer başlığını bloklamaq"
+
+msgid "When enabled, the accept headers (mime types support) broadcast by your web browser will not be filtered, potentially reducing your anonymity"
+msgstr "Aktivləşdirildikdə, internet böyükçünüz tərəfindən yayılan qəbul başlıkları (mime növlərinin dəstəyi) filtrlənməyəcək, bu da anonimliyinizin azalması ehtimalını artırır"
+
+msgid "Do not block Accept headers"
+msgstr "Qəbul başlıklarını bloklamaq"
+
+msgid "Allow SSL to I2P addresses when enabled"
+msgstr "Aktivləşdirildikdə I2P ünvanlarına SSL icazə verin"
+
+msgid "Allow SSL to I2P addresses"
+msgstr "I2P ünvanlarına SSL icazə verin"
+
+msgid "Local Authorization"
+msgstr "Yerli rəhbərlik"
+
+msgid "Local Credentials"
+msgstr "Yerli məlumatlar"
+
+msgid "Enable to require a username and password to access this local service (for example if hosting on a LAN)"
+msgstr "LAN-da məzmunlaşdırmaq kimi yerli xidməti istifadə etmək üçün istifadəçi adı və şifrə tələb etmək üçün aktivləşdirin"
+
+msgid "Require local authorization for this service"
+msgstr "Bu xidmət üçün yerli rəhbərlik tələb edin"
+
+msgid "Set username required to access this service"
+msgstr "Bu xidməti istifadə etmək üçün tələb olunan istifadəçi adını təyin edin"
+
+msgid "Username"
+msgstr "İstifadəçi adı"
+
+msgid "Set password required to access this service"
+msgstr "Bu xidməti istifadə etmək üçün tələb olunan şifrəni təyin edin"
+
+msgid "Password"
+msgstr "Şifrə"
+
+msgid "Outproxy Authorization"
+msgstr "Dışarıdan rəhbərlik"
+
+msgid "Remote Credentials"
+msgstr "Uzaq məlumatlar"
+
+msgid "Enable if the outproxy a username and password to access"
+msgstr "Dışa çıxmaq üçün istifadəçi adı və şifrə tələb olunduğunda aktivləşdirin"
+
+msgid "Outproxy requires authorization"
+msgstr "Dışa çıxmaq rəhbərlik tələb edir"
+
+msgid "Enter username required by outproxy"
+msgstr "Dışa çıxmaq tərəfindən tələb olunan istifadəçi adını daxil edin"
+
+msgid "Enter password required by outproxy"
+msgstr "Dışa çıxmaq tərəfindən tələb olunan şifrəni daxil edin"
+
+msgid "Jump URL List"
+msgstr "Atış URL siyahısı"
+
+msgid "List of helper URLs providing jump links when a host is not found in your addressbook"
+msgstr "Ünvan kitabınızda mənzil tapılmadığında atış bağlantıları təqdim edən köməkçi URL siyahısı"
+
+msgid "Custom options"
+msgstr "Özünəməlilər"
+
+msgid "Advanced tunnel, streaming, and I2CP options"
+msgstr "İncəsənətli tunellər, akış və I2CP seçimləri"
+
+msgid "New Server Configuration"
+msgstr "Yeni server təyinatı"
+
+msgid "Hostname"
+msgstr "Ünvan adı"
+
+msgid "Website Hostname"
+msgstr "Veb saytın ünvan adı"
+
+msgid "(leave blank for outproxies)"
+msgstr "(dışa çıxmaq üçün boş bırakın)"
+
+msgid "Website Hostname e.g. mysite.i2p"
+msgstr "Veb saytın ünvan adı məsələn mysite.i2p"
+
+msgid "Specify the port the server is running on"
+msgstr "Servisin çalışdığı porta dair məlumat verin"
+
+msgid "Listening interface (IP address) for client access (normally 127.0.0.1)"
+msgstr "Müştəri giriş üçün dinləmə interfeysi (IP ünvanı) (normal olaraq 127.0.0.1)"
+
+msgid "To avoid traffic sniffing if connecting to a remote server, you can enable an SSL connection. Note that the target server must be configured to accept SSL connections."
+msgstr "Uzaq bir servisə bağlanarkən trafik təhlükəsizliyini qarşısını almaq üçün SSL bağlantısını aktivləşdirə bilərsiniz. Hədəf servisin SSL bağlantıları qəbul etmək üçün konfigurasiya olunmuş olması vacib olduğunu unutmayın."
+
+msgid "Use SSL to connect to target"
+msgstr "Hədəfə bağlanmaq üçün SSL-dən istifadə edin"
+
+msgid "Port required to access service (this can be a different port to the port the service is hosted on)"
+msgstr "Xidməti istifadə etmək üçün tələb olunan porta (bu xidmətin barındırıldığı porta bərabər olmayacaq)"
+
+msgid "Generate a QR Code for this domain"
+msgstr "Bu domen üçün QR kod yaradın"
+
+msgid "Generate QR Code"
+msgstr "QR kod yaradın"
+
+msgid "Add to Private addressbook"
+msgstr "Gizli ünvan kitabına əlavə edin"
+
+msgid "Add to local addressbook"
+msgstr "Yerli ünvan kitabına əlavə edin"
+
+msgid "Register, unregister or change details for hostname"
+msgstr "Ünvan adı üçün qeydiyyatdan keçirin, qeydiyyatdan çıxarın və ya məlumatları dəyişdirin"
+
+msgid "Registration Authentication"
+msgstr "Qeydiyyat təsdiqləməsi"
+
+msgid "HTTPS configuration"
+msgstr "HTTPS konfigurasiyası"
+
+msgid "SSL Wizard"
+msgstr "SSL Sihirbazı"
+
+msgid "Note: In order to enable QR code generation or registration authentication, configure the Website Hostname field (for websites) or the Name field (everything else) above with an .i2p suffixed hostname e.g. mynewserver.i2p"
+msgstr "Diqqət: QR kodun yaratılmasına və ya qeydiyyat təsdiqləməsinin aktiv olunmasına icazə vermək üçün, ünvan adı sahəsini (.i2p bitməsi ilə) məsələn mynewserver.i2p kimi veb saytlar üçün konfiqurasiya edin"
+
+msgid "Absolute path to Private Key File (will be created if it does not exist)"
+msgstr "Gizli Açar Faylının tam yolu (məvcud deyilse yaradılacaq)"
+
+msgid "Alternate private key file"
+msgstr "Alternativ gizli açar faylı"
+
+msgid "Alternate local destination"
+msgstr "Alternativ yerli mərhələ"
+
+msgid "Absolute path for new key (will be created)"
+msgstr "Yeni açar üçün tam yol (yaradılacaq)"
+
+msgid "Read Only: Alternate Local Destination"
+msgstr "Faqat oxu: Alternativ yerli mərhələ"
+
+msgid "Specify filename or full path for new key"
+msgstr "Yeni açar üçün fayl adı və ya tam yolunu təyin edin"
+
+msgid "Configuration cannot be changed after destination is created"
+msgstr "Mərhələ yaradıldıqdan sonra konfigurasiya dəyişdirilə bilməz"
+
+msgid "Configuration of signature type is only possible when the tunnel is first created. To change, you must create a new tunnel."
+msgstr "İmza növünün konfigurasiyası yalnız tünəl ilk yaradıldığında mümkün olur. Dəyişdirmək üçün siz yeni bir tünəl yaratmalısınız."
+
+msgid "Legacy option, with alternate key configured"
+msgstr "Eski seçim, alternativ açar konfiqurasiya edilmiş"
+
+msgid "Legacy option (deprecated), provided for backward compatibility"
+msgstr "Eski seçim (istifadədən çıxarılmış), geri təsirlilik üçün təqdim edilmişdir"
+
+msgid "Recommended for blinded and encrypted destinations"
+msgstr "Körpələnmiş və şifrələnmiş mərhələlər üçün tövsiyə olunur"
+
+msgid "Inbound"
+msgstr "Giriş"
+
+msgid "Outbound"
+msgstr "Çıxış"
+
+msgid "no anonymity"
+msgstr "anonimlik yoxdur"
+
+msgid "low anonymity"
+msgstr "aşağı anonimlik"
+
+msgid "medium anonymity"
+msgstr "orta anonimlik"
+
+msgid "high anonymity"
+msgstr "yüksek anonimlik"
+
+msgid "Level of Randomization for Tunnel Depth"
+msgstr "Tünəl hündürlüyün rəqəmsallaşdırma səviyyəsi"
+
+msgid "very high randomization, very low performance"
+msgstr "çox yüksək rəqəmsallaşdırma, çox aşağı performans"
+
+msgid "+ 0-3 hop variance"
+msgstr "+ 0-3 hopp variansta"
+
+msgid "definitely not recommended"
+msgstr "özür diliyirik, tövsiyə olunmur"
+
+msgid "+/- 0-3 hop variance"
+msgstr "+/- 0-3 hopp variansta"
+
+msgid "backup tunnels"
+msgstr "yedek tünəllər"
+
+msgid "Reduce tunnels to conserve resources"
+msgstr "Resursları qorumaq üçün tünəlləri azaltın"
+
+msgid "Period of inactivity before tunnel number is reduced"
+msgstr "Tünəl sayını azaltmadan əvvəl fəaliyyətsizlik müddəti"
+
+msgid "minutes"
+msgstr "dakika"
+
+msgid "Number of tunnels to keep open to maintain availability of service"
+msgstr "Xidmətin mövcudluğunu saxlamaq üçün açıq saxlamaq istədiyiniz tünəl sayını təyin edin"
+
+msgid "Server Access Options"
+msgstr "Servis daxil olma seçimləri"
+
+msgid "Prevent clients from accessing this service via an inproxy"
+msgstr "Müştərilərin bu xidməti bir inproxy vasitəsilə istifadə etməmələri"
+
+msgid "Block Access via Inproxies"
+msgstr "Inproxies vasitəsilə daxil olmayı bloklamaq"
+
+msgid "Block Accesses containing Referers"
+msgstr "Refererləri içərisində olan daxil olmaqları bloklamaq"
+
+msgid "Use unique IP addresses for each connecting client (local non-SSL servers only)"
+msgstr "Hər bir bağlı müştəri üçün fərqli IP ünvanlarını istifadə edin (yalnız yerli SSL olmayan servislər üçün)"
+
+msgid "Unique Local Address per Client"
+msgstr "Hər bir müştəri üçün fərdi yerli ünvan"
+
+msgid "Only enable if you are hosting this service on multiple routers"
+msgstr "Bu xidməti birdən çox marşrutlayıcıda məzmunlaşdırmağı həyata keçirdiyiniz halda yalnız aktivləşdirin"
+
+msgid "Optimize for Multihoming"
+msgstr "Multihoming üçün optimallaşdır"
+
+msgid "Deny User-Agents matching these strings (probably from inproxies)"
+msgstr "Bu simvolardan uyğun gələn istifadəçi-agentlərinin girişini qadağan edin (ən çox inproxies-dən)"
+
+msgid "Block these User-Agents"
+msgstr "Bu istifadəçi-agentlərinin girişini qadağan edin"
+
+msgid "comma separated, e.g. Mozilla,Opera (case-sensitive)"
+msgstr "virgüllə ayrılmış, məsələn Mozilla, Opera (huruf həssaslığı)"
+
+msgid "Encrypt Leaseset"
+msgstr "Leaseset-i şifrələ"
+
+msgid "Optional Lookup Password"
+msgstr "Seçkin axtarış şifrəsi"
+
+msgid "Keyring Manager"
+msgstr "Açar döşeməsi idarəçisi"
+
+msgid "Allow all clients to connect to this service"
+msgstr "Bu xidməti istifadə etmək üçün hər bir müştərinin girişini icazə verin"
+
+msgid "Send key to all users."
+msgstr "Hər bir istifadəçiyə açarı göndər."
+
+msgid "Encrypted"
+msgstr "Şifrələnmiş"
+
+msgid "Prevents server discovery by floodfills"
+msgstr "Floodfilllər vasitəsilə servisin aşkarlanmasını qadağan edir"
+
+msgid "Blinded"
+msgstr "Körpələnmiş"
+
+msgid "Send password to all users."
+msgstr "Hər bir istifadəçiyə şifrəni göndər."
+
+msgid "Blinded with lookup password"
+msgstr "Axtarış şifrəsi ilə körpələnmiş"
+
+msgid "Send key and password to all users."
+msgstr "Hər bir istifadəçiyə açarı və şifrəni göndər."
+
+msgid "Encrypted with lookup password"
+msgstr "Axtarış şifrəsi ilə şifrələnmiş"
+
+msgid "Send individual key to each user."
+msgstr "Hər bir istifadəçiyə fərdi açarı göndər."
+
+msgid "Encrypted with per-user key"
+msgstr "İstifadəçiyə uyğun açar ilə şifrələnmiş"
+
+msgid "Encrypted with lookup password and per-user key"
+msgstr "Axtarış şifrəsi və istifadəçiyə uyğun açar ilə şifrələnmiş"
+
+msgid "Enter key from each user."
+msgstr "Hər bir istifadəçinin açarını daxil edin."
+
+msgid "Encryption Key"
+msgstr "Şifrələmə açarı"
+
+msgid "Generate New Key"
+msgstr "Yeni açarı yaradın"
+
+msgid "Encryption key required to access this service"
+msgstr "Bu xidməti istifadə etmək üçün tələb olunan şifrələmə açarı"
+
+msgid "Generate new encryption key"
+msgstr "Yeni şifrələmə açarı yaradın"
+
+msgid "Generate"
+msgstr "Yaradın"
+
+msgid "Tunnel must be stopped first"
+msgstr "Öncə tünəlin dayandırılması lazımdır"
+
+msgid "Client Manager"
+msgstr "Müştəri idarəçisi"
+
+msgid "Client Name"
+msgstr "Müştəri adı"
+
+msgid "Client Key"
+msgstr "Müştəri açarı"
+
+msgid "Revoke"
+msgstr "İcazəni qaytar"
+
+msgid "Client"
+msgstr "Müştəri"
+
+msgid "Add"
+msgstr "Əlavə et"
+
+msgid "Restricted Access List"
+msgstr "Məhdudlaşdırılmış daxil olma siyahısı"
+
+msgid "Activate to enable editing"
+msgstr "Düzəlişləri aktivləşdirmək üçün aktivləşdirin"
+
+msgid "Tunnel Filter"
+msgstr "Tünəl filtri"
+
+msgid "Help with defining tunnel filters"
+msgstr "Tünəl filtrlərini təyin etməkdə kömək"
+
+msgid "Prevent listed clients from connecting to this service"
+msgstr "Bu xidməti istifadə etmək üçün siyahıdakı müştərilərin daxil olmamasını qadağan edin"
+
+msgid "Blacklist"
+msgstr "Qara siyahı"
+
+msgid "Only allow listed clients to connect to this service"
+msgstr "Bu xidməti istifadə etmək üçün sadəcə siyahıdakı müştərilərin daxil olmasının icazəsini verin"
+
+msgid "Whitelist"
+msgstr "Açıq siyahı"
+
+msgid "Absolute path to file containing filter definition"
+msgstr "Filtr tərifini əhatə edən faylın tam yolu"
+
+msgid "Absolute path to filter definition"
+msgstr "Filtr tərifinin tam yolu"
+
+msgid "Specify client destinations, 1 per line"
+msgstr "Müştəri mərhələlərini təyin edin, hər bir satırda 1"
+
+msgid "Server Throttling"
+msgstr "Servis limitləşdirməsi"
+
+msgid "Inbound connection limits"
+msgstr "Giriş bağlantısı limitləri"
+
+msgid "Per Minute"
+msgstr "Dakika başına"
+
+msgid "Per Hour"
+msgstr "Saat başına"
+
+msgid "Per Day"
+msgstr "Gün başına"
+
+msgid "Concurrent"
+msgstr "Eyni zamanda"
+
+msgid "Per Client"
+msgstr "Müştəri başına"
+
+msgid "Maximum number of web page requests per minute for a unique client before access to the server is blocked"
+msgstr "Servisə daxil olmaqdan əvvəl hər bir müştəri üçün dəqiqə başına maksimum web səhifə sorğusu sayını təyin edin"
+
+msgid "(0 = unlimited)"
+msgstr "(0 = sınırsız)"
+
+msgid "Maximum number of web page requests per hour for a unique client before access to the server is blocked"
+msgstr "Servisə daxil olmaqdan əvvəl hər bir müştəri üçün saat başına maksimum web səhifə sorğusu sayını təyin edin"
+
+msgid "Maximum number of web page requests per day for a unique client before access to the server is blocked"
+msgstr "Servisə daxil olmaqdan əvvəl hər bir müştəri üçün gün başına maksimum web səhifə sorğusu sayını təyin edin"
+
+msgid "Total"
+msgstr "Cəmi"
+
+msgid "Total number of web page requests per minute before access to the server is blocked"
+msgstr "Servisə daxil olmaqdan əvvəl dəqiqə başına cəmi web səhifə sorğusu sayını təyin edin"
+
+msgid "Total number of web page requests per hour before access to the server is blocked"
+msgstr "Servisə daxil olmaqdan əvvəl saat başına cəmi web səhifə sorğusu sayını təyin edin"
+
+msgid "Total number of web page requests per day before access to the server is blocked"
+msgstr "Servisə daxil olmaqdan əvvəl gün başına cəmi web səhifə sorğusu sayını təyin edin"
+
+msgid "Maximum number of simultaneous client connections"
+msgstr "Eyni zamanda maksimum müştəri bağlantısı sayını təyin edin"
+
+msgid "POST limits"
+msgstr "POST limitləri"
+
+msgid "Per Period"
+msgstr "Dövrə başqa"
+
+msgid "Ban Duration"
+msgstr "Qadağan müddəti"
+
+msgid "POST limit period"
+msgstr "POST limit dövrü"
+
+msgid "Maximum number of post requests permitted for a unique client for the configured timespan"
+msgstr "Konfiqurasiya edilmiş vaxt aralığı üçün hər bir müştəri üçün icazə verilən maksimum post sorğusu sayını təyin edin"
+
+msgid "If a client exceeds the maximum number of post requests per allocated period, enforce a ban for this number of minutes"
+msgstr "Müştəri, təyin edilmiş dövr üçün maksimum post sorğusu sayını aşarsa, bu sayda dəqiqə üçün qadağanı tətbiq edin"
+
+msgid "Timespan for the maximum number of post requests to be reached before a ban is triggered"
+msgstr "Qadağanın işlənməsindən əvvəl maksimum post sorğusu sayını çatmaq üçün vaxt aralığı"
+
+msgid "Total number of post requests permitted for the configured timespan"
+msgstr "Konfiqurasiya edilmiş vaxt aralığı üçün icazə verilən post sorğusu sayını təyin edin"
+
+msgid "If the maximum number of post requests per allocated period is exceeded, enforce a global access ban for this number of minutes"
+msgstr "Təyin edilmiş dövr üçün maksimum post sorğusu sayını aşarsa, bu sayda dəqiqə üçün kütləvi daxil olma qadağanını tətbiq edin"
+
+msgid "Custom HTTP Headers"
+msgstr "Seçkin HTTP başlıqları"
+
+msgid "Note: These custom headers will only be enabled for served files that don't have the relevant header already set."
+msgstr "Diqqət: Bu seçkin başlıqlar sadəcə hələki başlıqları təyin etməmiş fayllar üçün aktiv olacaq."
+
+msgid "Set the Allow header to 'GET, POST, HEAD' for html, xml, json and text files"
+msgstr "HTML, XML, JSON və mətn faylları üçün 'GET, POST, HEAD' olaraq İcazə başlığını təyin edin"
+
+msgid "Allow"
+msgstr "İcazə ver"
+
+msgid "Enable Cache-Control headers (no-cache for html, xml, json and text, immutable for everything else)"
+msgstr "Cache-Control başlıqlarını aktivləşdirin (HTML, XML, JSON və mətn üçün no-cache, digəri üçün dəyişməz)"
+
+msgid "Cache-Control"
+msgstr "Cache kontrol"
+
+msgid "Set the Referrer-Policy header to 'same-origin' for html, xml, json and text files"
+msgstr "HTML, XML, JSON və mətn faylları üçün 'same-origin' olaraq Referrer-Policy başlığını təyin edin"
+
+msgid "Referrer-Policy"
+msgstr "Referrer-siyasiyyəti"
+
+msgid "Set the X-Content-Type-Options header to 'nosniff'"
+msgstr "'nosniff' olaraq X-Content-Type-Options başlığını təyin edin"
+
+msgid "X-Content-Type-Options"
+msgstr "X-Content-Tipi Seçimləri"
+
+#, java-format
+msgid "Initializing Tunnel Manager{0}"
+msgstr "{0} Tunnel İdarəçisi aktivləşdirilir"
+
+msgid "Tunnels not initialized yet; please retry in a few moments."
+msgstr "Tünəllər hələ aktivləşdirilməmişdir; bir neçə dəqiqə sonra yenidən cəhd edin."
+
+msgid "Status Messages"
+msgstr "Status Mesajları"
+
+msgid "Clear"
+msgstr "Təmizlə"
+
+msgid "Refresh"
+msgstr "Təzələ"
+
+msgid "Global Tunnel Control"
+msgstr "Kütləvi Tünəl İdarəetməsi"
+
+msgid "Tunnel Wizard"
+msgstr "Tünəl Sihirbazı"
+
+msgid "Stop All"
+msgstr "Hamısını Dayandır"
+
+msgid "Start All"
+msgstr "Hamısını Başlat"
+
+msgid "Restart all running tunnels"
+msgstr "Bütün işləyən tunelləri yenidən başlat"
+
+msgid "Restart All"
+msgstr "Hamısını Yenidən Başlat"
+
+msgid "Restart all running server tunnels"
+msgstr "Bütün işləyən server tunellərini yenidən başlat"
+
+msgid "Restart All Servers"
+msgstr "Bütün serverləri yenidən başlat"
+
+msgid "Restart all running client tunnels"
+msgstr "Bütün işləyən klient tunellərini yenidən başlat"
+
+msgid "Restart All Clients"
+msgstr "Bütün klientləri yenidən başlat"
+
+msgid "I2P Server Tunnels"
+msgstr "I2P Servis Tünəlləri"
+
+msgid "Helper"
+msgstr "Köməkçi"
+
+msgid "Type"
+msgstr "Növ"
+
+msgid "Points at"
+msgstr "İşarə edir"
+
+msgid "Preview"
+msgstr "Ön izləmə"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Control"
+msgstr "İdarəetmə"
+
+msgid "Edit Server Tunnel Settings for"
+msgstr "Servis Tünəl Ayarlarını Düzəltmək Üçün"
+
+msgid "Test IRC server, bypassing I2P"
+msgstr "Test IRC server, I2P-ni keçərək"
+
+msgid "Test HTTPS server, bypassing I2P"
+msgstr "I2P-ni əməl olmaz qıymalı HTTPS test servisi"
+
+msgid "Test HTTP server, bypassing I2P"
+msgstr "I2P-ni əməl olmaz qıymalı HTTP test servisi"
+
+msgid "Test HTTP server through I2P"
+msgstr "I2P vasitəsilə HTTP test servisi"
+
+msgid "Base32 Address"
+msgstr "Base32 Ünvanı"
+
+msgid "Offline"
+msgstr "Oflayn"
+
+msgid "No Preview"
+msgstr "Ön izləmə yoxdur"
+
+msgid "Starting..."
+msgstr "Başlamaqdadır..."
+
+msgid "Stop this Tunnel"
+msgstr "Bu tünəli dayandırın"
+
+msgid "Running"
+msgstr "İşləyir"
+
+msgid "Hops"
+msgstr "Hoplar"
+
+msgid "in"
+msgstr "daxil"
+
+msgid "out"
+msgstr "çıxış"
+
+msgid "Restart this Tunnel"
+msgstr "Bu tunneli yenidən başlat"
+
+msgid "Restart"
+msgstr "Yenidən başlat"
+
+msgid "Stopped"
+msgstr "Dayandırıldı"
+
+msgid "Destination"
+msgstr "Mərhələ"
+
+msgid "Signature"
+msgstr "İmza"
+
+msgid "Alternate"
+msgstr "Alternativ"
+
+msgid "Alt Destination"
+msgstr "Alternativ mərhələ"
+
+msgid "Encryption"
+msgstr "Şifrələmə"
+
+msgid "Supported encryption"
+msgstr "Dəstəklənən şifrələmə"
+
+msgid "New server tunnel"
+msgstr "Yeni servis tünəli"
+
+msgid "Standard"
+msgstr "Standart"
+
+msgid "Create"
+msgstr "Yarat"
+
+msgid "I2P Client Tunnels"
+msgstr "I2P Müştəri Tünəlləri"
+
+msgid "Interface"
+msgstr "İnterfeys"
+
+msgid "Edit Tunnel Settings for"
+msgstr "Tünəl Ayarlarını Düzəltmək Üçün"
+
+msgid "Standby"
+msgstr "Hazırda"
+
+msgid "Outproxy"
+msgstr "Dışa çıxış proksi"
+
+msgid "internal plugin"
+msgstr "içdən əlavə"
+
+msgid "none"
+msgstr "heç biri"
+
+msgid "New client tunnel"
+msgstr "Yeni müştəri tünəli"
+
+msgid "Registration Helper"
+msgstr "Qeydiyyat köməkçisi"
+
+msgid "This service uses encrypted leasesets. Registration is not recommended. Registration authentication is disabled."
+msgstr "Bu xidmət şifrələnmiş leasesetləri istifadə edir. Qeydiyyat tövsiyə olunmur. Qeydiyyat təsdiqləməsi deaktiv edilib."
+
+msgid "Please be sure to select, copy, and paste the entire contents of the appropriate authentication data into the form of your favorite registration site"
+msgstr "Seçin, uyğun təsdiqləmə məlumatlarının bütün məzmununu sevdikləriniz qeydiyyat saytının formuna kopyalayıb yapışdırmağınız əmin olun"
+
+msgid "Tunnel name"
+msgstr "Tünəl adı"
+
+msgid "Website name"
+msgstr "Veb saytın adı"
+
+msgid "Local Destination"
+msgstr "Yerli mərhələ"
+
+msgid "Local destination is not available. Start the tunnel."
+msgstr "Yerli mərhələ mövcud deyil. Tünəli işə salın."
+
+msgid "To enable registration verification, edit tunnel and set name (or website name) to a valid host name ending in '.i2p'"
+msgstr "Qeydiyyat təsdiqləməsini aktivləşdirmək üçün, tünəli redaktə edin və adı (və ya veb saytın adını) düzgün məzmun adı olaraq ayarlayın ki, bu ad .i2p ilə bitməlidir"
+
+msgid "To enable registration verification, edit tunnel and set name to a valid host name ending in '.i2p'"
+msgstr "Qeydiyyat təsdiqləməsini aktivləşdirmək üçün, tünəli redaktə edin və adı düzgün məzmun adı olaraq ayarlayın ki, bu ad .i2p ilə bitməlidir"
+
+msgid "Destination signing key is not available. Start the tunnel."
+msgstr "Mərhələ imzası açarı mövcud deyil. Tünəli işə salın."
+
+msgid "Destination signing key is offline. Use CLI tools on the offline machine."
+msgstr "Mərhələ imzası açarı internetdən çıxarılmışdır. İnternetdən çıxarılmış maşın üzərində CLI alətlərindən istifadə edin."
+
+#, java-format
+msgid "Authentication for adding host {0}"
+msgstr "{0} məzmun üçün təsdiqləmə"
+
+msgid "Copy and paste this to the registration site"
+msgstr "Bunu qeydiyyat saytına kopyalayıb yapışdırın"
+
+msgid "Advanced authentication strings"
+msgstr "Proqresiv təsdiqləmə simvoları"
+
+#, java-format
+msgid "Authentication for removing host {0}"
+msgstr "{0} məzmunun silinməsi üçün təsdiqləmə"
+
+msgid "Authentication for changing name"
+msgstr "Adı dəyişdirmək üçün təsdiqləmə"
+
+#, java-format
+msgid "This will change the name from {0} to {1}, using the same destination"
+msgstr "Bu {0} adını {1}-ə dəyişdirəcək, eyni mərhələni istifadə edərək"
+
+msgid "This tunnel must be configured with the new host name."
+msgstr "Bu tünəl yeni məzmun adı ilə konfiqurasiya olmalıdır."
+
+msgid "Enter old hostname below."
+msgstr "Aşağıda eskı məzmun adını daxil edin."
+
+msgid "Authentication for adding alias"
+msgstr "Alış adı əlavə etmək üçün təsdiqləmə"
+
+#, java-format
+msgid "This will add an alias {0} for {1}, using the same destination"
+msgstr "Bu {1} üçün {0} alış adı əlavə edəcək, eyni mərhələni istifadə edərək"
+
+msgid "Authentication for changing destination"
+msgstr "Mərhələni dəyişdirmək üçün təsdiqləmə"
+
+#, java-format
+msgid "This will change the destination for {0}"
+msgstr "{0}-nin məqsədini dəyişdirəcək"
+
+msgid "This tunnel must be configured with the new destination."
+msgstr "Bu tünəl yeni məqsəd ilə konfigurasiya olmalıdır."
+
+msgid "Enter old destination below."
+msgstr "Aşağıda eskı məqsədi daxil edin."
+
+msgid "Authentication for adding alternate destination"
+msgstr "Alternativ məqsəd əlavə etmə üçün təsdiqləmə"
+
+#, java-format
+msgid "This will add an alternate destination for {0}"
+msgstr "{0} üçün alternativ məqsəd əlavə edəcək"
+
+msgid "Authentication for adding subdomain"
+msgstr "Alt sahəni əlavə etmə üçün təsdiqləmə"
+
+#, java-format
+msgid "This will add a subdomain {0} of {1}, with a different destination"
+msgstr "Bu, {1}-in alt sahəsi olan {0}-ı əlavə edəcək, fərqli bir məqsəd ilə"
+
+msgid "This tunnel must be configured with the new subdomain and destination."
+msgstr "Bu tünəl yeni alt sahə və məqsəd ilə konfigurasiya olmalıdır."
+
+msgid "Enter higher-level domain and destination below."
+msgstr "Aşağıda yüksək səviyyəli sahə və məqsədi daxil edin."
+
+msgid "Return to Tunnel Configuration"
+msgstr "Tünəl Konfigurasiyasına qayıt"
+
+msgid "Specify old name and destination"
+msgstr "Eski adı və məqsədi göstərin"
+
+msgid "This is only required for advanced authentication."
+msgstr "Bu yalnız mürəkkəb təsdiqləmə üçün tələb olunur."
+
+msgid "See above for required items."
+msgstr "Tələb olunan elementləri yuxarıdan gör."
+
+msgid "Old / parent hostname "
+msgstr "Eski / ana ev adı "
+
+msgid "Private key file for old destination / sub-domain parent"
+msgstr "Eski məqsəd / alt sahənin ana siyahısı üçün məxfi açar faylı"
+
+msgid "Generate Authentication"
+msgstr "Təsdiqləmə yarat"
+
+msgid "SSL Helper"
+msgstr "SSL köməkçisi"
+
+msgid "Invalid form submission, probably because you used the 'back' or 'reload' button on your browser. Please resubmit."
+msgstr "Formun düzgün göndərilməsi, ehtimal ki, sizin brauzerinizdəki 'geri' və ya 'yenilə' düyməsindən istifadə etməyiniz səbəbindir. Lütfən yenidən göndərin."
+
+msgid "If the problem persists, verify that you have cookies enabled in your browser."
+msgstr "Sorğun davam edirsə, brauzerinizdə çerezlərin aktiv olduğunu yoxlayın."
+
+msgid "Experts only!"
+msgstr "Fərqli sahələr üçün!"
+
+msgid "Base32"
+msgstr "Baza32"
+
+msgid "Alt Base32"
+msgstr "Alt Baza32"
+
+msgid "Incoming I2P Port Routing"
+msgstr "Gələn I2P Port Rutingi"
+
+msgid "Virtual Host"
+msgstr "Virtual Ev"
+
+msgid "Via SSL?"
+msgstr "SSL vasitəsilə?"
+
+msgid "Test HTTPS server through I2P"
+msgstr "I2P vasitəsilə HTTPS serveri test et"
+
+msgid "Server"
+msgstr "Server"
+
+msgid "SSL Activation"
+msgstr "SSL Aktivasiyası"
+
+msgid "I2P webserver (eepsite)"
+msgstr "I2P webservisi (eepsite)"
+
+msgid "Disable SSL"
+msgstr "SSL-i söndür"
+
+msgid "Enable SSL"
+msgstr "SSL-yı aktivləşdir"
+
+msgid "New Certificate Password"
+msgstr "Yeni Sertifikat Parolu"
+
+msgid "Password (required to encrypt the certificate)"
+msgstr "Parol (sertifikati şifrələmək üçün tələb olunur)"
+
+msgid "Generate new SSL certificate"
+msgstr "Yeni SSL sertifikatı yarat"
+
+msgid "Generate SSL certificate and enable"
+msgstr "SSL sertifikatı yarat və aktivləşdir"
+
+#, java-format
+msgid "Cannot configure, no Jetty server found in {0}client configurations{1} that matches this tunnel"
+msgstr "Konfigurasiya etmək olmur, bu tünələ uyğun {0}client konfigurasiyalarda{1} Jetty server tapılmadı"
+
+msgid "Support for non-Jetty servers will be added in a future release"
+msgstr "Gələcək buraxılışda Jetty-dan fərqli serverlər üçün dəstək əlavə olunacaq"
+
+msgid "Return to Tunnel Manager Index"
+msgstr "Tünəl İdarəçisi indeksinə qayıt"
+
+msgid "Return to Tunnel Editor"
+msgstr "Tünəl redaktoruğa qayıt"
+
+msgid "I2P Tunnel Manager - Tunnel Creation Wizard"
+msgstr "I2P Tünəl İdarəçisi - Tünəl Yaratma Üstündəkisi"
+
+msgid "Server or client tunnel?"
+msgstr "Server və ya klient tünəli?"
+
+msgid "Tunnel type"
+msgstr "Tünəl növü"
+
+msgid "Tunnel name and description"
+msgstr "Tünəl adı və təsviri"
+
+msgid "Tunnel destination"
+msgstr "Tünəl məqsədi"
+
+msgid "Binding address and port"
+msgstr "Bağlama ünvanı və porta"
+
+msgid "Tunnel auto-start"
+msgstr "Tünəl avtomatik başlama"
+
+msgid "Wizard completed"
+msgstr "Üstündəkisi tamamlandı"
+
+msgid "This wizard will take you through the various options available for creating tunnels in I2P."
+msgstr "Bu üstündəkisi, I2P-da tünəllər yaratmaq üçün mövcud fərqli seçimləri sizə göstərəcək."
+
+msgid "The first thing to decide is whether you want to create a server or a client tunnel."
+msgstr "Qərar vermək üçün ilk şey, sizin server tünəli yaratmaq istədiyiniz və ya klient tünəli yaratmaq istədiyinizdir."
+
+msgid "If you need to connect to a remote service, such as an IRC server inside I2P or a code repository, then you will require a CLIENT tunnel."
+msgstr "Əgər siz I2P-dəki IRC serveri kimi uzaq xidmətlərə və ya kod saxlamaq üçün yaxınlaşdırmaq istəyirsiniz, sonra sizin CLIENT tünəlini tələb edəcəksiniz."
+
+msgid "On the other hand, if you wish to host a service for others to connect to you'll need to create a SERVER tunnel."
+msgstr "Digər tərəfdən, əgər başqaları sizə bağlı olsun istəyirsinizsə, sizin SERVER tünəl yaratmaq lazımdır."
+
+msgid "Server Tunnel"
+msgstr "Server Tünəli"
+
+msgid "Client Tunnel"
+msgstr "Klient Tünəli"
+
+msgid "There are several types of tunnels to choose from:"
+msgstr "Seçmək üçün bir neçə növ tünəl var:"
+
+msgid "Basic tunnel for connecting to a single service inside I2P."
+msgstr "I2P-dəki tək xidmətə bağlanmaq üçün əsas tünəl."
+
+msgid "Try this if none of the tunnel types below fit your requirements, or you don't know what type of tunnel you need."
+msgstr "Aşağıdakı tünəl növləri sizin tələblərinizi yerinə yetirmir və ya hansı növ tünələ ehtiyacınız olduğunu bilmiyorsanız, bunu cəhd edin."
+
+msgid "Tunnel that acts as an HTTP proxy for reaching eepsites inside I2P."
+msgstr "I2P-dəki eepsitelərə çatmaq üçün HTTP proksi kimi işləyən tünəl."
+
+msgid "Set your browser to use this tunnel as an http proxy, or set your \"http_proxy\" environment variable for command-line applications in GNU/Linux."
+msgstr "Brauzerinizi bu tünəli HTTP proksi kimi istifadə etməyə tənzimləyin, və ya GNU/Linux-da komanda satırı proqramları üçün \"http_proxy\" mühit dəyişənini tənzimləyin."
+
+msgid "Websites outside I2P can also be reached if an HTTP proxy within I2P is known."
+msgstr "I2P-dən fərqli veb-saytlar da, əgər I2P-də HTTP proksi məlum olsa, çatılabilir."
+
+msgid "Customised client tunnel specific for IRC connections."
+msgstr "IRC bağlantıları üçün tənzimlənmiş klient tünəli."
+
+msgid "With this tunnel type, your IRC client will be able to connect to an IRC network inside I2P."
+msgstr "Bu tünəl növü ilə, IRC klientiniz I2P-dəki IRC şəbəkəsinə bağlanacaq."
+
+msgid "Each IRC network in I2P that you wish to connect to will require its own tunnel. (See Also, SOCKS IRC)"
+msgstr "I2P-də sizə bağlanmağı istədiyiniz hər IRC şəbəkəsi öz tünəlindən ehtiyac duyacaq. (Həmçinin baxın, SOCKS IRC)"
+
+msgid "A tunnel that implements the SOCKS protocol."
+msgstr "SOCKS protokolunu həyata keçirən tünəl."
+
+msgid "This enables both TCP and UDP connections to be made through a SOCKS outproxy within I2P."
+msgstr "Bu, I2P-də SOCKS outproxy vasitəsilə TCP və UDP bağlantılarının qurulmasını mümkün edir."
+
+msgid "A client tunnel implementing the SOCKS protocol, which is customised for connecting to IRC networks."
+msgstr "IRC şəbəklərinə bağlanmaq üçün tənzimlənmiş SOCKS protokolunu həyata keçirən klient tünəli."
+
+msgid "With this tunnel type, IRC networks in I2P can be reached by typing the I2P address into your IRC client, and configuring the IRC client to use this SOCKS tunnel."
+msgstr "Bu tünəl növü ilə, I2P-dəki IRC şəbəkləri IRC klientiniza I2P ünvanını yazaraq və IRC klientini bu SOCKS tünəlini istifadə etmək üçün tənzimləyərək çatılabilir."
+
+msgid "This means that only one I2P tunnel is required rather than a separate tunnel per IRC network."
+msgstr "Bu, hər IRC şəbəkəsi üçün ayrı tünəl və ya hər IRC şəbəkəsi üçün ayrı tünəl yerinə sadəcə bir I2P tünəlinin tələb olunduğunu deməkdir."
+
+msgid "IRC networks outside I2P can also be reached if a SOCKS outproxy within I2P is known, though it depends on whether or not the outproxy has been blocked by the IRC network."
+msgstr "I2P-dən fərqli IRC şəbəkləri də, əgər I2P-də SOCKS outproxy məlum olsa, çatılabilir; amma bu, outproxy-nin IRC şəbəkəsi tərəfindən bloklanmış olub-olmamasına bağlıdır."
+
+msgid "A basic server tunnel for hosting a generic service inside I2P."
+msgstr "I2P-də ümumi xidməti barədən əsas server tünəli."
+
+msgid "A server tunnel that is customised for HTTP connections."
+msgstr "HTTP bağlantıları üçün tənzimlənmiş server tünəli."
+
+msgid "Use this tunnel type if you want to host an eepsite."
+msgstr "Eepsite barədən bu tünəl növünü istifadə edin."
+
+msgid "A customised server tunnel for hosting IRC networks inside I2P."
+msgstr "I2P-də IRC şəbəkləri barədən tənzimlənmiş server tünəli."
+
+msgid "Usually, a separate tunnel needs to be created for each IRC server that is to be accessible inside I2P."
+msgstr "Həmişə, I2P-də girişə açıq hər IRC serveri üçün ayrı tünəl yaratmaq lazımdır."
+
+msgid "Select tunnel type"
+msgstr "Tünəl növünü seçin"
+
+msgid "Choose a name and description for your tunnel."
+msgstr "Tünəliniz üçün ad və təsvir seçin."
+
+msgid "These can be anything you want - they are just for ease of identifying the tunnel in the routerconsole."
+msgstr "Bunlar sizin istədiyiniz hər şey ola bilər - onlar sadəcə tünəlinin ruter konsolunda tanınıbilməsi üçündir."
+
+msgid "If you know of any outproxies for this type of tunnel (either HTTP or SOCKS), fill them in below."
+msgstr "Bu növ tünəl üçün hər hansı bir outproxy-lər (HTTP və ya SOCKS) biliyirsəniz, aşağıda onları doldurun."
+
+msgid "Separate multiple proxies with commas."
+msgstr "Çoxsaylı proksi-ləri vergülərlə ayırın."
+
+msgid "List of I2P outproxy destinations, separated with commas (e.g. proxy1.i2p,proxy2.i2p)"
+msgstr "Vergülərlə ayrılmış I2P outproxy məqsədlərinin siyahısı (məsələn, proxy1.i2p,proxy2.i2p)"
+
+msgid "Type in the I2P destination of the service that this client tunnel should connect to."
+msgstr "Bu klient tünəlinin bağlanması məqsədində olan xidmətin I2P məqsədini yazın."
+
+msgid "This could be the full Base64 destination key, or an I2P URL from your address book."
+msgstr "Bu tam Base64 məqsəd açarı ola bilər, və ya ünvan kitabınızdan I2P URL'si ola bilər."
+
+msgid "Enter a b64 or .i2p address here"
+msgstr "Burada b64 və ya .i2p ünvanı daxil edin"
+
+msgid "This is the IP that your service is running on, this is usually on the same machine so 127.0.0.1 is autofilled."
+msgstr "Bu sizin xidmətinizin çalışdığı IP-dir, bu həmişə eyni maşında olduğu üçün 127.0.0.1 avtomatik olaraq doldurulur."
+
+msgid "This is the port that the service is accepting connections on."
+msgstr "Bu, xidmətin bağlantıları qəbul etdiyi porta."
+
+msgid "This is the port that the client tunnel will be accessed from locally."
+msgstr "Bu, klient tünəlinin yerli olaraq giriş ediləcəyi porta."
+
+msgid "How do you want this tunnel to be accessed? By just this machine, your entire subnet, or external internet?"
+msgstr "Bu tünəlini necə istəyirsiniz ki istifadə edilsin? Sadəcə bu maşın tərəfindən, bütün subnetiniz tərəfindən, və ya xarici internet tərəfindən?"
+
+msgid "You will most likely want to just allow 127.0.0.1"
+msgstr "Ən çox 127.0.0.1-in icazə verilməsinin istəniləcəyini düşünürəm"
+
+msgid "The I2P router can automatically start this tunnel for you when the router is started."
+msgstr "Ruter başladığında I2P ruteri sizin üçün bu tünəli avtomatik olaraq başlamağa bilər."
+
+msgid "This can be useful for frequently-used tunnels (especially server tunnels), but for tunnels that are only used occasionally it would mean that the I2P router is creating and maintaining unnecessary tunnels."
+msgstr "Bu, tez-tez istifadə olunan tünəllər üçün (əsasən server tünəlləri) faydalı ola bilər, amma yalnız dəfəlik istifadə olunan tünəllər üçün, bu I2P ruterinin gərəksiz tünəlləri yaratması və saxlaması anlamına gəlir."
+
+msgid "The wizard has now collected enough information to create your tunnel."
+msgstr "Üstündəkisi, tünəlinizi yaratmaq üçün artıq yeterli məlumat topladı."
+
+msgid "Upon clicking the Save button below, the wizard will set up the tunnel, and take you back to the main I2PTunnel page."
+msgstr "Aşağıdakı Yadda saxla düyməsini vurmaqdan sonra, üstündəkisi tünəli tənzimləyəcək və sizə əsas I2PTunnel səhifəsinə qayıtacaq."
+
+msgid "Because you chose to automatically start the tunnel when the router starts, you don't have to do anything further."
+msgstr "Ruter başladığında tünəlini avtomatik olaraq başlamaq seçdiyiniz üçün, daha bir şey etməlisiniz deyil."
+
+msgid "The router will start the tunnel once it has been set up."
+msgstr "Ruter, tünəlinin tənzimlənməsindən sonra başlayacaq."
+
+msgid "Because you chose not to automatically start the tunnel, you will have to manually start it."
+msgstr "Tünəlini avtomatik olaraq başlamaq seçmədiyiniz üçün, siz onu əl ilə başlamanız lazımdır."
+
+msgid "You can do this by clicking the Start button on the main page which corresponds to the new tunnel."
+msgstr "Bu, yeni tünələ uyğun olan əsas səhifədəki Başla düyməsini vurmaqla etmək olar."
+
+msgid "Below is a summary of the options you chose:"
+msgstr "Aşağıda siz seçdiyiniz seçimlərin ümumnaməsi var:"
+
+msgid "Tunnel description"
+msgstr "Tünəl təsviri"
+
+msgid "Binding address"
+msgstr "Bağlama ünvanı"
+
+msgid "Tunnel port"
+msgstr "Tünəl porta"
+
+msgid "Alongside these basic settings, there are a number of advanced options for tunnel configuration."
+msgstr "Bu əsas tənzimləmələr yanı sıra, tünəl tənzimləməsi üçün bir neçə mürəkkəb seçim var."
+
+msgid "The wizard will set reasonably sensible default values for these, but you can view and/or edit these by clicking on the tunnel's name in the main I2PTunnel page."
+msgstr "Üstündəkisi, bu seçimlər üçün münasib dəyərləri tənzimləyəcək, amma əsas I2PTunnel səhifəsində tünəlinin adını vurmaqla bunları baxa və ya redaktə edə bilərsiniz."
+
+msgid "Cancel the wizard and return to Tunnel Manager home page"
+msgstr "Üstündəkisi ləğv edin və Tünəl İdarəçisi baş səhifəsinə qayıdın"
+
+msgid "Return to previous page"
+msgstr "Əvvəlki səhifəyə qayıt"
+
+msgid "Previous"
+msgstr "Əvvəlki"
+
+msgid "Save tunnel configuration"
+msgstr "Tünəl tənzimləməsini yadda saxla"
+
+msgid "Save Tunnel"
+msgstr "Tünəli saxla"
+
+msgid "Finish Wizard and review tunnel settings"
+msgstr "Üstündəkisi bitir və tünəl ayarlarını yoxla"
+
+msgid "Finish"
+msgstr "Bitir"
+
+msgid "Advance to next page"
+msgstr "Növbəti səhifəyə keç"
+
+msgid "Next"
+msgstr "Növbəti"

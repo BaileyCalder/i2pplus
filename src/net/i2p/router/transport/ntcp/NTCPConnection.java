@@ -1,0 +1,2058 @@
+package net.i2p.router.transport.ntcp;
+
+import com.southernstorm.noise.protocol.CipherState;
+import java.io.Closeable;
+import java.io.IOException;
+import java.net.Inet6Address;
+import java.net.InetAddress;
+import java.nio.ByteBuffer;
+import java.nio.channels.CancelledKeyException;
+import java.nio.channels.SelectionKey;
+import java.nio.channels.SocketChannel;
+import java.security.GeneralSecurityException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Queue;
+import java.util.Set;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
+import net.i2p.crypto.SipHashInline;
+import net.i2p.data.Base64;
+import net.i2p.data.ByteArray;
+import net.i2p.data.DataFormatException;
+import net.i2p.data.DataHelper;
+import net.i2p.data.Hash;
+import net.i2p.data.SessionKey;
+import net.i2p.data.i2np.DatabaseStoreMessage;
+import net.i2p.data.i2np.I2NPMessage;
+import net.i2p.data.i2np.I2NPMessageException;
+import net.i2p.data.i2np.I2NPMessageHandler;
+import net.i2p.data.router.RouterAddress;
+import net.i2p.data.router.RouterIdentity;
+import net.i2p.data.router.RouterInfo;
+import net.i2p.router.OutNetMessage;
+import net.i2p.router.Router;
+import net.i2p.router.RouterContext;
+import net.i2p.router.BanLogger;
+import net.i2p.router.networkdb.kademlia.FloodfillNetworkDatabaseFacade;
+import net.i2p.router.transport.FIFOBandwidthLimiter;
+import net.i2p.router.transport.FIFOBandwidthLimiter.Request;
+import net.i2p.router.transport.ntcp.NTCP2Payload.Block;
+import net.i2p.router.util.PriBlockingQueue;
+import net.i2p.util.Addresses;
+import net.i2p.util.ByteCache;
+import net.i2p.util.ConcurrentHashSet;
+import net.i2p.util.Log;
+import net.i2p.util.SimpleTimer2;
+import net.i2p.util.SystemVersion;
+
+/**
+ * Coordinates a connection to a single peer using NTCP 1 or NTCP 2 protocols.
+ * Manages the complete connection lifecycle including establishment,
+ * message encryption/decryption, bandwidth management, and graceful shutdown.
+ *
+ * Public only for UI peers page. Not a public API, not for external use.
+ *
+ * @since 0.9.16
+ */
+public class NTCPConnection implements Closeable {
+    private final RouterContext _context;
+    private final Log _log;
+    private final BanLogger _banLogger;
+    private volatile SocketChannel _chan;
+    private volatile SelectionKey _conKey;
+    private final FIFOBandwidthLimiter.CompleteListener _inboundListener;
+    private final FIFOBandwidthLimiter.CompleteListener _outboundListener;
+    /**
+     * queue of ByteBuffer containing data we have read and are ready to process, oldest first
+     * unbounded and lockless
+     */
+    private final Queue<ByteBuffer> _readBufs;
+    /**
+     * list of ByteBuffers containing fully populated and encrypted data, ready to write,
+     * and already cleared through the bandwidth limiter.
+     * unbounded and lockless
+     */
+    private final Queue<ByteBuffer> _writeBufs;
+    /** Requests that were not granted immediately */
+    private final Set<FIFOBandwidthLimiter.Request> _bwInRequests;
+    private final Set<FIFOBandwidthLimiter.Request> _bwOutRequests;
+    private long _establishedOn;
+    private volatile EstablishState _establishState;
+    private final NTCPTransport _transport;
+    private final boolean _isInbound;
+    private final AtomicBoolean _closed = new AtomicBoolean();
+    private final RouterAddress _remAddr;
+    private RouterIdentity _remotePeer;
+    private long _clockSkew; // in seconds
+    /**
+     * pending unprepared OutNetMessage instances
+     */
+    //private final CoDelPriorityBlockingQueue<OutNetMessage> _outbound;
+    private final PriBlockingQueue<OutNetMessage> _outbound;
+    /**
+     *  current prepared OutNetMessages, or empty - synchronize on _writeLock
+     */
+    private final List<OutNetMessage> _currentOutbound;
+    private SessionKey _sessionKey;
+    private byte _prevWriteEnd[];
+    /** current partially read I2NP message */
+    private ReadState _curReadState;
+    private final AtomicInteger _messagesRead = new AtomicInteger();
+    private final AtomicInteger _messagesWritten = new AtomicInteger();
+    private long _lastSendTime;
+    private long _lastReceiveTime;
+    private long _lastRateUpdated;
+    private final long _created;
+    // prevent sending meta before established
+    private long _nextMetaTime = Long.MAX_VALUE;
+    private final AtomicInteger _consecutiveZeroReads = new AtomicInteger();
+    // This lock covers:
+    // _curReadState
+    private final Object _readLock = new Object();
+    // This lock covers:
+    // _writeBufs, _currentOutbound, _outbound, _sendSipk1, _sendSipk2, _sendSipIV, _sender
+    private final Object _writeLock = new Object();
+    // This lock covers:
+    // _bytesReceived, _bytesSent, _lastBytesReceived, _lastBytesSent, _sendBps, _recvBps
+    private final Object _statLock = new Object();
+
+    private static final int BLOCK_SIZE = 16;
+    private static final int META_SIZE = BLOCK_SIZE;
+
+    private boolean _sendingMeta;
+    /** how many consecutive sends were failed due to (estimated) send queue time */
+    //private int _consecutiveBacklog;
+    private long _nextInfoTime;
+    private boolean _mayDisconnect;
+    private final AtomicBoolean _writeInterestPending = new AtomicBoolean(false);
+    private volatile long _lastActiveTime = System.currentTimeMillis();
+    private volatile long _lastZeroReadTime = 0;
+
+    /*
+     *  Update frequency for send/recv rates in console peers page
+     */
+    private static final long STAT_UPDATE_TIME_MS = 60*1000;
+
+    /*
+     *  Should be longer than 2 * EventPumper.MAX_EXPIRE_IDLE_TIME so it doesn't
+     *  interfere with the timeout, at least at first
+     */
+    private static final int META_FREQUENCY = 45*60*1000;
+
+    /** how often we send our routerinfo unsolicited */
+    private static final int INFO_FREQUENCY = 50*60*1000;
+
+    /**
+     *  Why this is 16K, and where it is documented, good question?
+     *  We claim we can do 32K datagrams so this is a problem.
+     *  Needs to be fixed. But SSU can handle it?
+     *  In the meantime, don't let the transport bid on big messages.
+     */
+    static final int BUFFER_SIZE = 16*1024;
+    private static final int MAX_DATA_READ_BUFS = SystemVersion.isSlow() ? 4 : 16;
+    private static final ByteCache _dataReadBufs = ByteCache.getInstance(MAX_DATA_READ_BUFS, BUFFER_SIZE);
+    private static final int INFO_PRIORITY = OutNetMessage.PRIORITY_MY_NETDB_STORE_LOW;
+    private static final String FIXED_RI_VERSION = "0.9.12";
+    private static final AtomicLong __connID = new AtomicLong();
+    private final long _connID = __connID.incrementAndGet();
+    private static final int MAX_HANDLERS = SystemVersion.isSlow() ? 2 : 3;
+
+    //// NTCP2 things
+
+    /** See spec. Max Noise payload 65535,
+     *  minus 16 byte MAC and 3 byte block header.
+     *  Includes 9-byte I2NP header.
+     */
+    static final int NTCP2_MAX_MSG_SIZE = 65516;
+    private static final int PADDING_RAND_MIN = 16;
+    private static final int PADDING_MAX = 64;
+    private static final int SIP_IV_LENGTH = 8;
+    private static final int NTCP2_FAIL_READ = 1024;
+    private static final long NTCP2_FAIL_TIMEOUT = 8*1000;
+    private static final long NTCP2_TERMINATION_CLOSE_DELAY = 50;
+    // don't make combined messages too big, to minimize latency
+    // Tunnel data msgs are 1024 + 4 + 9 + 3 = 1040, allow 5
+    private static final int NTCP2_PREFERRED_PAYLOAD_MAX = 5 * 1040;
+    static final int REASON_UNSPEC = 0;
+    static final int REASON_TERMINATION = 1;
+    static final int REASON_TIMEOUT = 2;
+    static final int REASON_AEAD = 4;
+    static final int REASON_OPTIONS = 5;
+    static final int REASON_SIGTYPE = 6;
+    static final int REASON_SKEW = 7;
+    static final int REASON_PADDING = 8;
+    static final int REASON_FRAMING = 9;
+    static final int REASON_PAYLOAD = 10;
+    static final int REASON_MSG1 = 11;
+    static final int REASON_MSG2 = 12;
+    static final int REASON_MSG3 = 13;
+    static final int REASON_FRAME_TIMEOUT = 14;
+    static final int REASON_SIGFAIL = 15;
+    static final int REASON_S_MISMATCH = 16;
+    static final int REASON_BANNED = 17;
+    static final int PADDING_MIN_DEFAULT_INT = 0;
+    static final int PADDING_MAX_DEFAULT_INT = 1;
+    private static final float PADDING_MIN_DEFAULT = PADDING_MIN_DEFAULT_INT / 16.0f;
+    private static final float PADDING_MAX_DEFAULT = PADDING_MAX_DEFAULT_INT / 16.0f;
+    static final int DUMMY_DEFAULT = 0;
+    static final int DELAY_DEFAULT = 0;
+    private static final NTCP2Options OUR_PADDING = new NTCP2Options(PADDING_MIN_DEFAULT, PADDING_MAX_DEFAULT,
+                                                                     PADDING_MIN_DEFAULT, PADDING_MAX_DEFAULT,
+                                                                     DUMMY_DEFAULT, DUMMY_DEFAULT,
+                                                                     DELAY_DEFAULT, DELAY_DEFAULT);
+    private static final int MIN_PADDING_RANGE = 16;
+    private static final int MAX_PADDING_RANGE = 128;
+    private volatile NTCP2Options _paddingConfig = OUR_PADDING;
+    private int _version;
+    private CipherState _sender;
+    private long _sendSipk1, _sendSipk2;
+    private byte[] _sendSipIV;
+
+    /**
+     * Create an inbound connected (though not established) NTCP connection.
+     * Caller MUST call transport.establishing(this) after construction.
+     * Caller MUST key.attach(this) after construction.
+     */
+    public NTCPConnection(RouterContext ctx, NTCPTransport transport, SocketChannel chan, SelectionKey key) {
+        this(ctx, transport, null, true);
+        _chan = chan;
+        _version = 2;
+        _conKey = key;
+        _establishState = new InboundEstablishState(ctx, transport, this);
+    }
+
+    /**
+     * Create an outbound unconnected NTCP connection.
+     * Caller MUST call transport.establishing(this) after construction.
+     *
+     * @param version must be 2-5
+     * @throws DataFormatException if there's a problem with the address
+     */
+    public NTCPConnection(RouterContext ctx, NTCPTransport transport, RouterIdentity remotePeer,
+                          RouterAddress remAddr, int version) throws DataFormatException {
+        this(ctx, transport, remAddr, false);
+        _remotePeer = remotePeer;
+        _version = version;
+        if (version < 2 || version > 5) {
+            throw new IllegalArgumentException("Bad version " + version);
+        } else {
+            try {
+                _establishState = new OutboundNTCP2State(ctx, transport, this);
+            } catch (IllegalArgumentException iae) {
+                throw new DataFormatException("Bad address? " + remAddr, iae);
+            }
+        }
+    }
+
+    /**
+     * Base constructor in/out
+     * @since 0.9.36
+     */
+    private NTCPConnection(RouterContext ctx, NTCPTransport transport, RouterAddress remAddr, boolean isIn) {
+        _context = ctx;
+        _log = ctx.logManager().getLog(getClass());
+        _banLogger = new BanLogger();
+        _banLogger.initialize(ctx);
+        _created = ctx.clock().now();
+        _transport = transport;
+        _remAddr = remAddr;
+        _lastSendTime = _created;
+        _lastReceiveTime = _created;
+        _lastRateUpdated = _created;
+        _readBufs = new ConcurrentLinkedQueue<ByteBuffer>();
+        _writeBufs = new ConcurrentLinkedQueue<ByteBuffer>();
+//        _bwInRequests = new ConcurrentHashSet<Request>(2);
+//        _bwOutRequests = new ConcurrentHashSet<Request>(8);
+        _bwInRequests = new ConcurrentHashSet<Request>(4);
+        _bwOutRequests = new ConcurrentHashSet<Request>(16);
+        _outbound = new PriBlockingQueue<OutNetMessage>(ctx, "NTCP-Connection", 32);
+        _currentOutbound = new ArrayList<OutNetMessage>(1);
+        _isInbound = isIn;
+        _inboundListener = new InboundListener();
+        _outboundListener = new OutboundListener();
+    }
+
+    /**
+     *  Valid for inbound; valid for outbound shortly after creation
+     */
+    public SocketChannel getChannel() { return _chan; }
+
+    /**
+     *  Valid for inbound; valid for outbound shortly after creation
+     */
+    public SelectionKey getKey() { return _conKey; }
+    public void setChannel(SocketChannel chan) { _chan = chan; }
+    public void setKey(SelectionKey key) { _conKey = key; }
+
+    public boolean isInbound() { return _isInbound; }
+    public boolean isEstablished() { return _establishState.isComplete(); }
+
+    /**
+     *  @since IPv6
+     */
+    public boolean isIPv6() {
+        return _chan != null && _chan.socket().getInetAddress() instanceof Inet6Address;
+    }
+
+    /**
+     *  @return null if unknown
+     *  @since 0.9.53
+     */
+    public byte[] getRemoteIP() {
+        if (_chan == null)
+            return null;
+        InetAddress addr = _chan.socket().getInetAddress();
+        if (addr == null)
+            return null;
+        return addr.getAddress();
+    }
+
+    /**
+     *  @return 0 if unknown
+     *  @since 2.11.0
+     */
+    public int getRemotePort() {
+        if (_chan == null)
+            return 0;
+        return _chan.socket().getPort();
+    }
+
+    /**
+     *  Only valid during establishment;
+     *  replaced with EstablishState.VERIFIED or FAILED afterwards
+     */
+    EstablishState getEstablishState() { return _establishState; }
+
+    /**
+     *  Only valid for outbound; null for inbound
+     */
+    public RouterAddress getRemoteAddress() { return _remAddr; }
+
+    /**
+     *  Valid for outbound; valid for inbound after handshake
+     */
+    public RouterIdentity getRemotePeer() { return _remotePeer; }
+
+    /**
+     *  Valid for outbound; valid for inbound after handshake
+     */
+    public void setRemotePeer(RouterIdentity ident) { _remotePeer = ident; }
+
+    /**
+     * A positive number means our clock is ahead of theirs.
+     *  @return seconds
+     */
+    public long getClockSkew() { return _clockSkew; }
+
+    /** @return milliseconds */
+    public long getUptime() {
+        long establishedOn;
+        synchronized(this) {
+            if (!isEstablished())
+                return getTimeSinceCreated();
+            establishedOn = _establishedOn;
+        }
+        return _context.clock().now() - establishedOn;
+    }
+
+    /**
+     * @since 0.9.55
+     */
+    public long getEstablishedOn() {
+        synchronized(this) {
+            if (!isEstablished())
+                return 0;
+            return _establishedOn;
+        }
+    }
+
+    public int getMessagesSent() { return _messagesWritten.get(); }
+
+    public int getMessagesReceived() { return _messagesRead.get(); }
+
+    public int getOutboundQueueSize() {
+            int queued = _outbound.size();
+            synchronized(_writeLock) {
+                queued += _currentOutbound.size();
+            }
+            return queued;
+    }
+
+    /** @since 0.9.36 */
+    private boolean hasCurrentOutbound() {
+        synchronized(_writeLock) {
+            return ! _currentOutbound.isEmpty();
+        }
+    }
+
+    /**
+     *  Drain any pending outbound messages to a new queue
+     *  @return number drained
+     *  @since 0.9.46
+     */
+    private int drainOutboundTo(Queue<OutNetMessage> to) {
+        int rv = 0;
+        synchronized (_writeLock) {
+            rv = _currentOutbound.size();
+            if (rv > 0) {
+                to.addAll(_currentOutbound);
+                _currentOutbound.clear();
+            }
+            rv += _outbound.drainTo(to);
+        }
+        return rv;
+    }
+
+    /** @return milliseconds */
+    public long getTimeSinceSend() { return _context.clock().now()-_lastSendTime; }
+
+    /**
+     * @return milliseconds
+     * @since 0.9.38
+     */
+    public long getTimeSinceSend(long now) { return now - _lastSendTime; }
+
+    /** @return milliseconds */
+    public long getTimeSinceReceive() { return _context.clock().now()-_lastReceiveTime; }
+
+    /**
+     * @return milliseconds
+     * @since 0.9.38
+     */
+    public long getTimeSinceReceive(long now) { return now - _lastReceiveTime; }
+
+    /** @return milliseconds */
+    public long getTimeSinceCreated() { return _context.clock().now()-_created; }
+
+    /**
+     * @return milliseconds
+     * @since 0.9.38
+     */
+    public long getTimeSinceCreated(long now) { return now -_created; }
+
+    /**
+     *  @return when this connection was created (not established)
+     *  @since 0.9.20
+     */
+    public long getCreated() { return _created; }
+
+    /**
+     *  The NTCP2 version, for the console.
+     *  For outbound, will not change.
+     *  For inbound, defaults to 1, may change to 2 after establishment.
+     *
+     *  @return the version, 1 or 2
+     *  @since 0.9.36
+     */
+    public int getVersion() { return _version; }
+
+    /**
+     *  Set version 2 from InboundEstablishState.
+     *  Just for logging, so we know before finishInboundEstablish() is called.
+     *
+     *  @since 0.9.36
+     */
+    public void setVersion(int ver) { _version = ver; }
+
+    /**
+     * Sets to true.
+     * @since 0.9.24
+     */
+    public void setMayDisconnect() { _mayDisconnect = true; }
+
+    /**
+     * @since 0.9.24
+     */
+    public boolean getMayDisconnect() { return _mayDisconnect; }
+
+    /**
+     *  workaround for EventPumper
+     *  @since 0.8.12
+     */
+    public void clearZeroRead() {
+        _consecutiveZeroReads.set(0);
+        _lastZeroReadTime = 0;
+    }
+
+    /**
+     * Track time of zero-reads to avoid closing healthy connections
+     * @return current count after incrementing
+     */
+    public int gotZeroRead() {
+        long now = System.currentTimeMillis();
+        if (now - _lastZeroReadTime > 1000) {
+            _consecutiveZeroReads.set(0); // reset counter if older than 1s
+        }
+        int count = _consecutiveZeroReads.incrementAndGet();
+        _lastZeroReadTime = now;
+        return count;
+    }
+
+    public long getLastZeroReadTime() {
+        return _lastZeroReadTime;
+    }
+
+    public boolean isClosed() { return _closed.get(); }
+
+    public void close() { close(false); }
+
+    public void close(boolean allowRequeue) {
+        if (!_closed.compareAndSet(false,true)) {
+            _log.logCloseLoop("NTCPConnection", this);
+            return;
+        }
+        String failReason = null;
+        EstablishState es = _establishState;
+        if (es != null) {
+            failReason = es.getFailReason();
+        }
+        NTCPConnection toClose = locked_close(allowRequeue);
+        if (_log.shouldInfo()) {
+            if (failReason != null) {
+                _log.info("Closing " + toString() + " -> " + failReason);
+            } else {
+                _log.info("Closing " + toString());
+            }
+        }
+        if (toClose != null && toClose != this) {
+            // won't happen as of 0.9.37
+            if (_log.shouldWarn())
+                _log.warn("Multiple connections on remove, closing " + toClose + " (already closed " + this + ")");
+            _context.statManager().addRateData("ntcp.multipleCloseOnRemove", toClose.getUptime());
+            toClose.close();
+        }
+    }
+
+    /**
+     *  Close and release EstablishState resources.
+     *  @param e may be null
+     *  @since 0.9.16
+     */
+    void closeOnTimeout(String cause, Exception e) {
+        EstablishState es = _establishState;
+        if (es != null) {
+            es.close(cause, e);
+        }
+        if (_isInbound && !isEstablished()) {
+            byte[] ip = getRemoteIP();
+            if (ip != null) {
+                _transport.getPumper().trackFailedInboundHandshake(ip);
+            }
+        }
+        close();
+    }
+
+    /**
+     * @return usually this, but could be a second connection with the same peer...
+     *         only this or null as of 0.9.37
+     */
+    private synchronized NTCPConnection locked_close(boolean allowRequeue) {
+        if (_chan != null) try { _chan.close(); } catch (IOException ioe) { }
+        if (_conKey != null) _conKey.cancel();
+        _establishState = EstablishBase.FAILED;
+        NTCPConnection old = _transport.removeCon(this);
+        _transport.getReader().connectionClosed(this);
+        _transport.getWriter().connectionClosed(this);
+
+        for (FIFOBandwidthLimiter.Request req :_bwInRequests) {
+            req.abort();
+            // we would like to return read ByteBuffers via EventPumper.releaseBuf(),
+            // but we can't risk releasing it twice
+        }
+        _bwInRequests.clear();
+        for (FIFOBandwidthLimiter.Request req :_bwOutRequests) {
+            req.abort();
+        }
+        _bwOutRequests.clear();
+
+        List<OutNetMessage> pending = new ArrayList<OutNetMessage>();
+        synchronized(_writeLock) {
+        _writeBufs.clear();
+        _outbound.drainTo(pending);
+            if (!_currentOutbound.isEmpty())
+                pending.addAll(_currentOutbound);
+            _currentOutbound.clear();
+            if (_sender != null) {
+                _sender.destroy();
+                _sender = null;
+            }
+            // zero out everything we can
+            _sendSipk1 = 0;
+            _sendSipk2 = 0;
+            if (_sendSipIV != null) {
+                Arrays.fill(_sendSipIV, (byte) 0);
+                _sendSipIV = null;
+            }
+        }
+        for (OutNetMessage msg : pending) {
+            _transport.afterSend(msg, false, allowRequeue, msg.getLifetime());
+        }
+        synchronized(_readLock) {
+            ByteBuffer bb;
+            while ((bb = _readBufs.poll()) != null) {
+                EventPumper.releaseBuf(bb);
+            }
+            if (_curReadState != null) {
+                _curReadState.destroy();
+                _curReadState = null;
+            }
+        }
+        return old;
+    }
+
+    /**
+     * toss the message onto the connection's send queue
+     */
+    public void send(OutNetMessage msg) {
+        if (!_outbound.offer(msg)) {
+            if (_log.shouldWarn())
+                _log.warn("Dropping message: Outbound queue full on " + this + msg);
+            _transport.afterSend(msg, false, false, msg.getLifetime());
+            return;
+        }
+        if (isEstablished() && !hasCurrentOutbound())
+            _transport.getWriter().wantsWrite(this, "enqueued");
+    }
+
+    public boolean isBacklogged() { return _outbound.isBacklogged(); }
+
+    /**
+     * Returns true if the outbound connection is currently too backlogged to accept new messages,
+     * allowing a short grace period after connection establishment and optionally logging details.
+     */
+    public boolean tooBacklogged() {
+        // Allow some slack just after connection establishment
+        if (getUptime() < 15*1000)
+            return false;
+
+        if (!_outbound.isBacklogged())
+            return false;
+
+        int size = _outbound.size();
+
+        if (_log.shouldWarn()) {
+            int writeBufs = _writeBufs.size();
+            boolean currentOutboundSet;
+            long seq;
+
+            synchronized (_writeLock) {
+                currentOutboundSet = !_currentOutbound.isEmpty();
+                seq = currentOutboundSet ? _currentOutbound.get(0).getSeqNum() : -1;
+            }
+
+            try {
+                String writeStatus = _conKey != null ? String.valueOf((_conKey.interestOps() & SelectionKey.OP_WRITE) != 0) : "null_key";
+                _log.warn("Outbound connection too backlogged (Size: " + size +
+                          ") \n* Wants write? " + writeStatus +
+                          "; Current Outbound set? " + currentOutboundSet +
+                          "\n* Write buffers: " + writeBufs + " on " + toString());
+            } catch (RuntimeException ignored) {}
+        }
+
+        return true;
+    }
+
+    /**
+     *  Inject a DatabaseStoreMessage with our RouterInfo. NTCP 1 or 2.
+     *
+     *  Externally, this is only called by NTCPTransport for outbound cons,
+     *  before the con is established, but we know what version it is.
+     *
+     *  Internally, may be called for outbound or inbound, but only after the
+     *  con is established, so we know what the version is.
+     */
+    void enqueueInfoMessage() {
+        if (_isInbound) {
+            // TODO or if outbound and it's not right at the beginning
+            // TODO flood
+            sendOurRouterInfo(false);
+        }
+        // don't need to send for NTCP 2 outbound, it's in msg 3
+    }
+
+    /**
+     * Prepare the next I2NP message for transmission.  This should be run from
+     * the Writer thread pool. NTCP 1 or 2.
+     *
+     * This is the entry point as called from Writer.Runner.run()
+     *
+     * @param prep an instance of PrepBuffer to use as scratch space
+     *
+     */
+    void prepareNextWrite(PrepBuffer prep) {
+        if (_closed.get())
+            return;
+        // Must be established or else session key is null and we can't encrypt
+        // This is normal for OB conns but can happen rarely for IB also.
+        // wantsWrite() is called at end of OB establishment, and
+        // enqueueInfoMessage() is called at end of IB establishment.
+        if (!isEstablished()) {
+            return;
+        }
+
+        synchronized(_writeLock) {
+            prepareNextWriteNTCP2(prep);
+        }
+    }
+
+    /**
+     * Buffer for preparing data to be written to the connection.
+     * Contains unencrypted data that will be encrypted before transmission.
+     */
+    static class PrepBuffer {
+        final byte unencrypted[];
+        //int unencryptedLength;
+        //byte encrypted[];
+
+        public PrepBuffer() {
+            unencrypted = new byte[BUFFER_SIZE];
+        }
+
+        public void init() {
+            //unencryptedLength = 0;
+            //encrypted = null;
+        }
+    }
+
+    /**
+     * Prepare the next I2NP message for transmission.  This should be run from
+     * the Writer thread pool.
+     *
+     * Caller must synchronize on _writeLock.
+     *
+     * @param buf we use buf.enencrypted only
+     * @since 0.9.36
+     */
+    private void prepareNextWriteNTCP2(PrepBuffer buf) {
+        int size = OutboundNTCP2State.MAC_SIZE;
+        List<Block> blocks = new ArrayList<Block>(4);
+        long now = _context.clock().now();
+        /* synchronized (_currentOutbound) */  {
+            if (!_currentOutbound.isEmpty()) {
+                if (_log.shouldInfo())
+                    _log.info("Attempting to send multiple outbound messages with " + _currentOutbound.size() +
+                              " already waiting and " + _outbound.size() + " queued");
+                return;
+            }
+            OutNetMessage msg;
+            while (true) {
+                msg = _outbound.poll();
+                if (msg == null)
+                    return;
+                if (msg.getExpiration() >= now)
+                    break;
+                if (_log.shouldWarn())
+                    _log.warn("Message expired while waiting in send queue, dropping..." + msg + " on " + this);
+                _transport.afterSend(msg, false, false, msg.getLifetime());
+            }
+            _currentOutbound.add(msg);
+            I2NPMessage m = msg.getMessage();
+            Block block = new NTCP2Payload.I2NPBlock(m);
+            blocks.add(block);
+            size += block.getTotalLength();
+            // now add more (maybe)
+            if (size < NTCP2_PREFERRED_PAYLOAD_MAX) {
+                // keep adding as long as we will be under 5 KB
+                while (true) {
+                    msg = _outbound.peek();
+                    if (msg == null)
+                        break;
+                    m = msg.getMessage();
+                    int msz = m.getMessageSize() - 7;
+                    if (size + msz > NTCP2_PREFERRED_PAYLOAD_MAX)
+                        break;
+                    OutNetMessage msg2 = _outbound.poll();
+                    if (msg2 == null)
+                        break;
+                    if (msg2 != msg) {
+                        // if it wasn't the one we sized, put it back
+                        _outbound.offer(msg2);
+                        break;
+                    }
+                    if (msg.getExpiration() >= now) {
+                        _currentOutbound.add(msg);
+                        block = new NTCP2Payload.I2NPBlock(m);
+                        blocks.add(block);
+                        size += NTCP2Payload.BLOCK_HEADER_SIZE + msz;
+                    } else {
+                        if (_log.shouldWarn())
+                            _log.warn("Message expired while waiting in send queue, dropping..." + msg + " on " + this);
+                        _transport.afterSend(msg, false, false, msg.getLifetime());
+                    }
+                }
+            }
+        }
+        if (_nextMetaTime <= now && size + (NTCP2Payload.BLOCK_HEADER_SIZE + 4) <= BUFFER_SIZE) {
+            Block block = new NTCP2Payload.DateTimeBlock(_context);
+            blocks.add(block);
+            size += block.getTotalLength();
+            _nextMetaTime = now + (META_FREQUENCY / 2) + _context.random().nextInt(META_FREQUENCY / 2);
+            if (_log.shouldDebug())
+                _log.debug("Sending NTCP2 datetime block...");
+        }
+        // 1024 is an estimate, do final check below
+        if (_nextInfoTime <= now && size + 1024 <= BUFFER_SIZE) {
+            RouterInfo ri = _context.router().getRouterInfo();
+            Block block = new NTCP2Payload.RIBlock(ri, false);
+            int sz = block.getTotalLength();
+            if (size + sz <= BUFFER_SIZE) {
+                blocks.add(block);
+                size += sz;
+                _nextInfoTime = now + (INFO_FREQUENCY / 2) + _context.random().nextInt(INFO_FREQUENCY);
+                if (_log.shouldDebug())
+                    _log.debug("Sending NTCP2 RouterInfo block...");
+            } // else wait until next time
+        }
+        int availForPad = BUFFER_SIZE - (size + NTCP2Payload.BLOCK_HEADER_SIZE);
+        if (availForPad > 0) {
+            int padlen = getPaddingSize(size, availForPad);
+            // all zeros is fine here
+            //Block block = new NTCP2Payload.PaddingBlock(_context, padlen);
+            Block block = new NTCP2Payload.PaddingBlock(padlen);
+            blocks.add(block);
+            size += block.getTotalLength();
+        }
+        byte[] tmp = size <= BUFFER_SIZE ? buf.unencrypted : new byte[size];
+        sendNTCP2(tmp, blocks);
+    }
+
+    /**
+     *  NTCP2 only
+     *
+     *  @param dataSize the total size of the data we are sending
+     *  @param availForPad the available size for padding, not including padding block header,
+     *                     must be greater than zero
+     *  @return min 0 max availForPad
+     *  @since 0.9.36
+     */
+    private int getPaddingSize(int dataSize, int availForPad) {
+        // since we're calculating with percentages, get at least a
+        // 0-16 range with the default 0% min 6% max,
+        // even for small dataSize.
+        if (dataSize < 256)
+            dataSize = 256;
+        // what we want to send, calculated in proportion to data size
+        int minSend = (int) (dataSize * _paddingConfig.getSendMin());
+        int maxSend = (int) (dataSize * _paddingConfig.getSendMax());
+        // the absolute min and max we can send
+        int min = Math.min(minSend, availForPad);
+        int max = Math.min(maxSend, availForPad);
+        int range = max - min;
+        if (range < MIN_PADDING_RANGE) {
+            // reduce min to enforce minimum range if possible
+            min = Math.max(0, min - (MIN_PADDING_RANGE - range));
+            range = max - min;
+        } else if (range > MAX_PADDING_RANGE) {
+            // Don't send too much, no matter what the config says
+            range = MAX_PADDING_RANGE;
+        }
+        int padlen = min;
+        if (range > 0)
+            padlen += _context.random().nextInt(1 + range);
+        if (_log.shouldDebug())
+            _log.debug("Padding params:" +
+                      " Data size: " + dataSize + "b" +
+                      "; Avail: " + availForPad + "b" +
+                      "; MinSend: " + minSend +
+                      "; MaxSend: " + maxSend +
+                      "; Min: " + min +
+                      "; Max: " + max +
+                      "; Range: " + range +
+                      "; Padlen: " + padlen + "b");
+        return padlen;
+    }
+
+    /**
+     *  NTCP2 only
+     *
+     *  @since 0.9.36, pkg private since 0.9.55 for EventPumper
+     */
+    void sendOurRouterInfo(boolean shouldFlood) {
+        RouterInfo ri = _context.router().getRouterInfo();
+        if (ri == null)
+            return;
+        sendRouterInfo(ri, shouldFlood);
+    }
+
+    /**
+     *  NTCP2 only
+     *
+     *  @since 0.9.36
+     */
+    private void sendRouterInfo(RouterInfo ri, boolean shouldFlood) {
+        // no synch needed, sendNTCP2() is synched
+        if (_log.shouldDebug())
+            _log.debug("Sending router info for: " + ri.getHash() + " flood? " + shouldFlood);
+        List<Block> blocks = new ArrayList<Block>(2);
+        Block block = new NTCP2Payload.RIBlock(ri, shouldFlood);
+        int size = block.getTotalLength();
+        if (size + NTCP2Payload.BLOCK_HEADER_SIZE > BUFFER_SIZE) {
+            if (_log.shouldWarn())
+                _log.warn("RouterInfo [" + ri + "] is too big for buffer (Size: " +
+                          (size + NTCP2Payload.BLOCK_HEADER_SIZE) + " / Max: " + BUFFER_SIZE + ")");
+            return;
+        }
+        blocks.add(block);
+        int availForPad = BUFFER_SIZE - (size + NTCP2Payload.BLOCK_HEADER_SIZE);
+        if (availForPad > 0) {
+            int padlen = getPaddingSize(size, availForPad);
+            // all zeros is fine here
+            //block = new NTCP2Payload.PaddingBlock(_context, padlen);
+            block = new NTCP2Payload.PaddingBlock(padlen);
+            blocks.add(block);
+        }
+        // use a "read buf" for the temp array
+        ByteArray dataBuf = acquireReadBuf();
+        sendNTCP2(dataBuf.getData(), blocks);
+        releaseReadBuf(dataBuf);
+    }
+
+    /**
+     *  NTCP2.
+     *  For NTCP2, sends termination and then closes the connection after a brief delay.
+     *
+     *  @since 0.9.36
+     */
+    void sendTerminationAndClose() {
+        ReadState rs = null;
+        if (isEstablished()) {
+            synchronized (_readLock) {
+                rs = _curReadState;
+            }
+        }
+        if (rs != null)
+            sendTermination(REASON_TIMEOUT, rs.getFramesReceived());
+        else
+            close();
+    }
+
+    /**
+     *  NTCP2 only. Also closes the connection after a brief delay.
+     *
+     *  @since 0.9.36
+     */
+    private void sendTermination(int reason, int validFramesRcvd) {
+        // So we don't get called again by the event pumper idle closer
+        _lastSendTime = _context.clock().now();
+        // TODO add param to clear queues?
+        // no synch needed, sendNTCP2() is synched
+        if (_log.shouldInfo())
+            _log.info("Sending termination, reason: " + reason + "; Valid frames received: " + validFramesRcvd + " on " + this);
+        List<Block> blocks = new ArrayList<Block>(2);
+        Block block = new NTCP2Payload.TerminationBlock(reason, validFramesRcvd);
+        int plen = block.getTotalLength();
+        blocks.add(block);
+        int padlen = getPaddingSize(plen, PADDING_MAX);
+        if (padlen > 0) {
+            // all zeros is fine here
+            //block = new NTCP2Payload.PaddingBlock(_context, padlen);
+            block = new NTCP2Payload.PaddingBlock(padlen);
+            blocks.add(block);
+        }
+        // use a "read buf" for the temp array
+        ByteArray dataBuf = acquireReadBuf();
+        synchronized(_writeLock) {
+            if (_sender != null) {
+                sendNTCP2(dataBuf.getData(), blocks);
+                // sendNTCP2() -> wantsWrite() -> pumper.processWrite() -> fail -> close() -> NPE
+                if (_sender != null) {
+                    _sender.destroy();
+                    // this "plugs" the NTCP2 sender, so sendNTCP2()
+                    // won't send any more after the termination.
+                    _sender = null;
+                    new DelayedCloser();
+                }
+            }
+        }
+        releaseReadBuf(dataBuf);
+    }
+
+    /**
+     *  This constructs the payload from the blocks, using the
+     *  tmp byte array, then encrypts the payload and
+     *  passes it to the pumper for writing.
+     *
+     *  @param tmp to be used for output of NTCP2Payload.writePayload(),
+     *         must have room for block output. May be released immediately on return.
+     *  @since 0.9.36
+     */
+    private void sendNTCP2(byte[] tmp, List<Block> blocks) {
+        int payloadlen = NTCP2Payload.writePayload(tmp, 0, blocks);
+        int framelen = payloadlen + OutboundNTCP2State.MAC_SIZE;
+        // TODO use a buffer
+        byte[] enc = new byte[2 + framelen];
+
+        synchronized(_writeLock) {
+        if (_sender == null) {
+            if (_log.shouldInfo())
+                _log.info("Sender has disappeared", new Exception());
+            return;
+        }
+        try {
+            _sender.encryptWithAd(null, tmp, 0, enc, 2, payloadlen);
+        } catch (GeneralSecurityException gse) {
+            // TODO anything else?
+            _log.error("Data encryption error", gse);
+            return;
+        }
+        // siphash ^ len
+        long sipIV = SipHashInline.hash24(_sendSipk1, _sendSipk2, _sendSipIV);
+            toLong8LE(_sendSipIV, 0, sipIV);
+        enc[0] = (byte) ((framelen >> 8) ^ (sipIV >> 8));
+        enc[1] = (byte) (framelen ^ sipIV);
+            wantsWrite(enc);
+        }
+
+        if (_log.shouldDebug()) {
+            StringBuilder buf = new StringBuilder(256);
+            buf.append("Sending ").append(blocks.size())
+               .append(" blocks in ").append(framelen)
+               .append(" byte NTCP2 frame...");
+            for (int i = 0; i < blocks.size(); i++) {
+                buf.append("\n* Block ").append(i).append(": ").append(blocks.get(i).toString());
+            }
+            _log.debug(buf.toString());
+        }
+    }
+
+    /**
+     * async callback after the outbound connection was completed (this should NOT block,
+     * as it occurs in the selector thread)
+     */
+    synchronized void outboundConnected() {
+        if (_establishState == EstablishBase.FAILED) {
+            _conKey.cancel();
+            try {_chan.close(); } catch (IOException ignored) {}
+            return;
+        }
+        try {
+            if (_conKey != null) {
+                EventPumper.setInterest(_conKey, SelectionKey.OP_READ);
+            }
+        } catch (CancelledKeyException cke) {
+            try {_chan.close(); } catch (IOException ignored) {}
+            return;
+        }
+        // schedule up the beginning of our handshaking by calling prepareNextWrite on the
+        // writer thread pool
+        _transport.getWriter().wantsWrite(this, "outbound connected");
+    }
+
+    /**
+     *  The FifoBandwidthLimiter.CompleteListener callback.
+     *  Does the delayed read.
+     */
+    private class InboundListener implements FIFOBandwidthLimiter.CompleteListener {
+        public void complete(FIFOBandwidthLimiter.Request req) {
+            removeIBRequest(req);
+            ByteBuffer buf = (ByteBuffer)req.attachment();
+            if (_closed.get()) {
+                EventPumper.releaseBuf(buf);
+                return;
+            }
+            _context.statManager().addRateData("ntcp.throttledReadComplete", (_context.clock().now()-req.getRequestTime()));
+            recv(buf);
+            // our reads used to be bw throttled (during which time we were no
+            // longer interested in reading from the network), but we aren't
+            // throttled anymore, so we should resume being interested in reading
+            _transport.getPumper().wantsRead(NTCPConnection.this);
+        }
+    }
+
+    /**
+     *  The FifoBandwidthLimiter.CompleteListener callback.
+     *  Does the delayed write.
+     */
+    private class OutboundListener implements FIFOBandwidthLimiter.CompleteListener {
+        public void complete(FIFOBandwidthLimiter.Request req) {
+            removeOBRequest(req);
+            ByteBuffer buf = (ByteBuffer)req.attachment();
+            if (!_closed.get()) {
+                _context.statManager().addRateData("ntcp.throttledWriteComplete", (_context.clock().now()-req.getRequestTime()));
+                write(buf);
+            }
+        }
+    }
+
+    private void removeIBRequest(FIFOBandwidthLimiter.Request req) {
+        _bwInRequests.remove(req);
+    }
+
+    private void addIBRequest(FIFOBandwidthLimiter.Request req) {
+        _bwInRequests.add(req);
+    }
+
+    private void removeOBRequest(FIFOBandwidthLimiter.Request req) {
+        _bwOutRequests.remove(req);
+    }
+
+    private void addOBRequest(FIFOBandwidthLimiter.Request req) {
+        _bwOutRequests.add(req);
+    }
+
+    /**
+     *  Call when there is data ready to write.
+     *  If we have bandwidth, calls write() which calls EventPumnper.wantsWrite(con).
+     *  If no bandwidth, calls queuedWrite().
+     *
+     *  @since moved from EventPumper in 0.9.52
+     */
+    void wantsWrite(byte data[]) {
+        wantsWrite(data, 0, data.length);
+    }
+
+    /**
+     *  Call when there is data ready to write.
+     *  If we have bandwidth, calls write() which calls EventPumnper.wantsWrite(con).
+     *  If no bandwidth, calls queuedWrite().
+     *
+     *  @since 0.9.35 off/len version, moved from EventPumper in 0.9.52
+     */
+    void wantsWrite(byte data[], int off, int len) {
+        ByteBuffer buf = ByteBuffer.wrap(data, off, len);
+        FIFOBandwidthLimiter.Request req = _context.bandwidthLimiter().requestOutbound(len, 0, "NTCP write");
+        if (req.getPendingRequested() > 0) {
+            if (_log.shouldInfo())
+                _log.info("Queued write on " + toString() + " for " + len);
+            _context.statManager().addRateData("ntcp.wantsQueuedWrite", 1);
+            queuedWrite(buf, req);
+        } else {
+            write(buf);
+        }
+    }
+
+    /**
+     * We have read the data in the buffer, but we can't process it locally yet,
+     * because we're choked by the bandwidth limiter.  Cache the contents of
+     * the buffer (not copy) and register ourselves to be notified when the
+     * contents have been fully allocated
+     */
+    void queuedRecv(ByteBuffer buf, FIFOBandwidthLimiter.Request req) {
+        req.attach(buf);
+        req.setCompleteListener(_inboundListener);
+        addIBRequest(req);
+    }
+
+    /** ditto for writes */
+    private void queuedWrite(ByteBuffer buf, FIFOBandwidthLimiter.Request req) {
+        req.attach(buf);
+        req.setCompleteListener(_outboundListener);
+        addOBRequest(req);
+    }
+
+    /**
+     * The contents of the buffer have been read and can be processed asap.
+     * This should not block, and the NTCP connection now owns the buffer
+     * to do with as it pleases BUT it should eventually copy out the data
+     * and call EventPumper.releaseBuf().
+     */
+    void recv(ByteBuffer buf) {
+        if (isClosed()) {
+            if (_log.shouldWarn())
+                _log.warn("recv() on closed con");
+            return;
+        }
+        synchronized(_statLock) {
+            _bytesReceived += buf.remaining();
+            updateStats();
+        }
+        _readBufs.offer(buf);
+        _transport.getReader().wantsRead(this);
+    }
+
+    /**
+     *  Write lock for pumper delayed writes
+     *
+     *  @since 0.9.53
+     */
+    Object getWriteLock() {
+        return _writeLock;
+    }
+
+    /**
+     * The contents of the buffer have been encrypted / padded / etc and have
+     * been fully allocated for the bandwidth limiter.
+     */
+    private void write(ByteBuffer buf) {
+        _writeBufs.offer(buf);
+        EventPumper pumper = _transport.getPumper();
+        if (_isInbound || isEstablished()) {
+            // Attempt to write directly
+            SelectionKey key = getKey();
+            if (key != null && !pumper.processWrite(this, key)) {
+                if (_log.shouldDebug())
+                    _log.debug("Async write not completed, pending bufs: " + _writeBufs.size() + " on " + this);
+                // queue it up
+                pumper.wantsWrite(this);
+            }
+        } else {
+            // outbound not connected yet
+            pumper.wantsWrite(this);
+        }
+    }
+
+    /** @return null if none available */
+    ByteBuffer getNextReadBuf() {
+        return _readBufs.poll();
+    }
+
+    /**
+     * Replaces getWriteBufCount().
+     * Caller should sync on getWriteLock()
+     *
+     * @since 0.8.12
+     */
+    boolean isWriteBufEmpty() {
+        return _writeBufs.isEmpty();
+    }
+
+    /**
+     * Returns but does not remove the buffer.
+     * Call removeWriteBuf() after write complete.
+     * Caller should sync on getWriteLock()
+     *
+     * @return null if none available
+     */
+    ByteBuffer getNextWriteBuf() {
+        return _writeBufs.peek(); // not remove!  we removeWriteBuf afterwards
+    }
+
+    /**
+     *  Remove the buffer, which _should_ be the one at the head of _writeBufs.
+     *  Caller must sync on _writeLock
+     */
+    void removeWriteBuf(ByteBuffer buf) {
+        // never clear OutNetMessages during establish phase
+        boolean clearMessage = isEstablished();
+        synchronized(_statLock) {
+            _bytesSent += buf.capacity();
+            if (_sendingMeta && (buf.capacity() == META_SIZE)) {
+                _sendingMeta = false;
+                clearMessage = false;
+            }
+            updateStats();
+        }
+        _writeBufs.remove(buf);
+        if (clearMessage) {
+            List<OutNetMessage> msgs = null;
+                if (!_currentOutbound.isEmpty()) {
+                    msgs = new ArrayList<OutNetMessage>(_currentOutbound);
+                    _currentOutbound.clear();
+                }
+            // push through the bw limiter to reach _writeBufs
+            if (!_outbound.isEmpty())
+                _transport.getWriter().wantsWrite(this, "write completed");
+            if (msgs != null) {
+                _lastSendTime = _context.clock().now();
+                // stats once is fine for all of them
+                _context.statManager().addRateData("ntcp.sendTime", msgs.get(0).getSendTime());
+                for (OutNetMessage msg : msgs) {
+                    if (_log.shouldDebug()) {
+                        _log.debug("I2NP message " + _messagesWritten + "/" + msg.getMessageId() + " sent after "
+                                  + msg.getSendTime() + "/"
+                                  + msg.getLifetime()
+                                  + " with " + buf.capacity() + " bytes\n* UniqueID: " + System.identityHashCode(msg) + " on " + toString());
+                    }
+                    _transport.sendComplete(msg);
+                }
+                _messagesWritten.addAndGet(msgs.size());
+            }
+        } else {
+            // push through the bw limiter to reach _writeBufs
+            if (!_outbound.isEmpty())
+                _transport.getWriter().wantsWrite(this, "write completed");
+            if (_log.shouldDebug())
+                _log.debug("I2NP meta message sent completely");
+            // need to increment as EventPumper will close conn if not completed
+            _messagesWritten.incrementAndGet();
+        }
+    }
+
+    // following fields covered by _statLock
+    private long _bytesReceived;
+    private long _bytesSent;
+    /** _bytesReceived when we last updated the rate */
+    private long _lastBytesReceived;
+    /** _bytesSent when we last updated the rate */
+    private long _lastBytesSent;
+    private float _sendBps;
+    private float _recvBps;
+
+    public float getSendRate() { synchronized(_statLock) { return _sendBps; } }
+    public float getRecvRate() { synchronized(_statLock) { return _recvBps; } }
+
+    /**
+     *  Stats only for console
+     */
+    private void updateStats() {
+        synchronized(_statLock) {
+            long now = _context.clock().now();
+            long time = now - _lastRateUpdated;
+            // If enough time has passed...
+            // Perhaps should synchronize, but if so do the time check before synching...
+            // only for console so don't bother....
+            if (time >= STAT_UPDATE_TIME_MS) {
+                long totS = _bytesSent;
+                long totR = _bytesReceived;
+                long sent = totS - _lastBytesSent; // How much we sent meanwhile
+                long recv = totR - _lastBytesReceived; // How much we received meanwhile
+                _lastBytesSent = totS;
+                _lastBytesReceived = totR;
+                _lastRateUpdated = now;
+
+                _sendBps = (0.9f)*_sendBps + (0.1f)*(sent*1000f)/time;
+                _recvBps = (0.9f)*_recvBps + (0.1f)*((float)recv*1000)/time;
+            }
+        }
+    }
+
+    /**
+     * Connection must be established!
+     *
+     * The contents of the buffer include some fraction of one or more
+     * encrypted and encoded I2NP messages.  individual i2np messages are
+     * encoded as "sizeof(data)+data+pad+crc", and those are encrypted
+     * with the session key and the last 16 bytes of the previous encrypted
+     * i2np message.
+     *
+     * The NTCP connection now owns the buffer
+     * BUT it must copy out the data
+     * as reader will call EventPumper.releaseBuf().
+     *
+     * This is the entry point as called from Reader.processRead()
+     */
+    void recvEncryptedI2NP(ByteBuffer buf) {
+        if (isBanned()) {return;}
+        synchronized(_readLock) {
+        if (_curReadState == null)
+            throw new IllegalStateException("not established");
+        _curReadState.receive(buf);
+        }
+    }
+
+    /**
+     *  Handle a received timestamp, NTCP 1 or 2.
+     *  Caller must synch
+     *
+     *  @param ts his timestamp in seconds, NOT ms
+     *  @since 0.9.36 pulled out of readMeta() above
+     */
+    private void receiveTimestamp(long ts) {
+        long ourTs = (_context.clock().now() + 500) / 1000;
+        long newSkew = (ourTs - ts);
+        if (Math.abs(newSkew*1000) > Router.CLOCK_FUDGE_FACTOR) {
+            if (_log.shouldWarn())
+                _log.warn("Peer's skew jumped too far (from " + _clockSkew + "s to " + newSkew + "s): " + toString());
+            _context.statManager().addRateData("ntcp.corruptSkew", newSkew);
+            close();
+            return;
+        }
+        _context.statManager().addRateData("ntcp.receiveMeta", newSkew);
+        if (_log.shouldDebug())
+            _log.debug("Received NTCP metadata, old skew of " + _clockSkew + "s, new skew of " + newSkew + "s");
+        // FIXME does not account for RTT
+        _clockSkew = newSkew;
+    }
+
+    /**
+     *  FIXME static queue mixes handlers from different contexts in multirouter JVM
+     */
+    private final static LinkedBlockingQueue<I2NPMessageHandler> _i2npHandlers = new LinkedBlockingQueue<I2NPMessageHandler>(MAX_HANDLERS);
+
+    private final static I2NPMessageHandler acquireHandler(RouterContext ctx) {
+        I2NPMessageHandler rv = _i2npHandlers.poll();
+        if (rv == null)
+            rv = new I2NPMessageHandler(ctx);
+        return rv;
+    }
+
+    private static void releaseHandler(I2NPMessageHandler handler) {
+        _i2npHandlers.offer(handler);
+    }
+
+    private static ByteArray acquireReadBuf() {
+        return _dataReadBufs.acquire();
+    }
+
+    private static void releaseReadBuf(ByteArray buf) {
+        _dataReadBufs.release(buf, false);
+    }
+
+    /**
+     *  Call at transport shutdown
+     *  @since 0.8.8
+     */
+    static void releaseResources() {
+        _i2npHandlers.clear();
+    }
+
+    private interface ReadState {
+        public void receive(ByteBuffer buf);
+        public void destroy();
+        public int getFramesReceived();
+    }
+
+    /**
+     *  Check if the peer is blocklisted or banned.
+     *  If so, log and close the connection.
+     *
+     *  @return true if banned or blocklisted, false otherwise
+     *  @since 0.9.68+
+     */
+    public boolean isBanned() {
+        if (_remotePeer == null) {return false;}
+
+        Hash peerHash = _remotePeer.calculateHash();
+        if (peerHash == null) {return false;}
+
+        byte[] ip = getRemoteIP();
+        if (ip != null) {
+            if (_context.blocklist().isBlocklisted(ip)) {
+                if (_log.shouldInfo()) {
+                    _log.info("IP address " + Addresses.toString(ip) + " is blocklisted -> Closing connection...");
+                }
+                close();
+                return true;
+            }
+        }
+
+        if (_context.banlist().isBanlisted(peerHash)) {
+            if (_log.shouldInfo()) {
+                _log.info("Router [" + peerHash.toBase64().substring(0,6) + "] is banned -> Closing connection...");
+            }
+            close();
+            return true;
+        }
+
+        return false;
+    }
+
+    //// NTCP2 below here
+
+    /**
+     * We are Alice. NTCP2 only.
+     *
+     * Caller MUST call recvEncryptedI2NP() after, for any remaining bytes in receive buffer
+     *
+     * @param clockSkew OUR clock minus BOB's clock in seconds (may be negative, obviously, but |val| should
+     *                  be under 1 minute)
+     * @param sender use to send to Bob
+     * @param receiver use to receive from Bob
+     * @param sip_ab 24 bytes to init SipHash to Bob
+     * @param sip_ba 24 bytes to init SipHash from Bob
+     * @since 0.9.36
+     */
+    synchronized void finishOutboundEstablishment(CipherState sender, CipherState receiver,
+                                                  byte[] sip_ab, byte[] sip_ba, long clockSkew) {
+        if (isBanned()) {return;}
+        finishEstablishment(sender, receiver, sip_ab, sip_ba, clockSkew);
+        RouterIdentity remote = getRemotePeer();
+        if (remote != null) {
+            _transport.markReachable(remote.calculateHash(), false);
+        }
+        if (!_outbound.isEmpty())
+            _transport.getWriter().wantsWrite(this, "outbound established");
+        // NTCP2 outbound cannot have extra data
+    }
+
+    /**
+     * We are Bob. NTCP2 only.
+     *
+     * Caller MUST call recvEncryptedI2NP() after, for any remaining bytes in receive buffer
+     *
+     * @param clockSkew OUR clock minus ALICE's clock in seconds (may be negative, obviously, but |val| should
+     *                  be under 1 minute)
+     * @param sender use to send to Alice
+     * @param receiver use to receive from Alice
+     * @param sip_ba 24 bytes to init SipHash to Alice
+     * @param sip_ab 24 bytes to init SipHash from Alice
+     * @param hisPadding may be null
+     * @since 0.9.36
+     */
+    synchronized void finishInboundEstablishment(CipherState sender, CipherState receiver,
+                                                 byte[] sip_ba, byte[] sip_ab, long clockSkew,
+                                                 NTCP2Options hisPadding) {
+        if (isBanned()) {return;}
+        finishEstablishment(sender, receiver, sip_ba, sip_ab, clockSkew);
+        if (hisPadding != null) {
+            _paddingConfig = OUR_PADDING.merge(hisPadding);
+            if (_log.shouldDebug())
+                _log.debug("Received padding options:" +
+                          "\n* His padding options: " + hisPadding +
+                          "\n* Our padding options: " + OUR_PADDING +
+                          "\n* Merged config:       " + _paddingConfig);
+        }
+        NTCPConnection toClose = _transport.inboundEstablished(this);
+        if (toClose != null && toClose != this) {
+            int drained = toClose.drainOutboundTo(_outbound);
+            if (_log.shouldDebug())
+                _log.debug("Old connection closed: " + toClose + " replaced by " + this + "; drained " + drained);
+            _context.statManager().addRateData("ntcp.inboundEstablishedDuplicate", toClose.getUptime());
+            toClose.close();
+        }
+        //enqueueInfoMessage();
+    }
+
+    /**
+     * We are Bob. NTCP2 only.
+     * This is only for invalid payload received in message 3. We send a termination and close.
+     * There will be no receiving.
+     *
+     * @param sender use to send to Alice
+     * @param sip_ba 24 bytes to init SipHash to Alice
+     * @since 0.9.36
+     */
+    synchronized void failInboundEstablishment(CipherState sender, byte[] sip_ba, int reason) {
+        byte[] ip = getRemoteIP();
+        _sender = sender;
+        _sendSipk1 = fromLong8LE(sip_ba, 0);
+        _sendSipk2 = fromLong8LE(sip_ba, 8);
+        _sendSipIV = new byte[SIP_IV_LENGTH];
+        System.arraycopy(sip_ba, 16, _sendSipIV, 0, SIP_IV_LENGTH);
+        _establishState = EstablishBase.VERIFIED;
+        _establishedOn = _context.clock().now();
+        _nextMetaTime = Long.MAX_VALUE;
+        _nextInfoTime = Long.MAX_VALUE;
+        _paddingConfig = OUR_PADDING;
+        sendTermination(reason, 0);
+        _transport.getPumper().blockIP(ip);
+    }
+
+    /**
+     * We are Alice or Bob. NTCP2 only.
+     *
+     * @param clockSkew see above
+     * @param sender use to send
+     * @param receiver use to receive
+     * @param sip_send 24 bytes to init SipHash out
+     * @param sip_recv 24 bytes to init SipHash in
+     * @since 0.9.36
+     */
+    private synchronized void finishEstablishment(CipherState sender, CipherState receiver,
+                                                  byte[] sip_send, byte[] sip_recv, long clockSkew) {
+        if (isBanned()) {return;}
+        if (_establishState == EstablishBase.VERIFIED) {
+            IllegalStateException ise = new IllegalStateException("Already finished on " + this);
+            _log.error("Already finished", ise);
+            throw ise;
+        }
+        _sender = sender;
+        _sendSipk1 = fromLong8LE(sip_send, 0);
+        _sendSipk2 = fromLong8LE(sip_send, 8);
+        _sendSipIV = new byte[SIP_IV_LENGTH];
+        System.arraycopy(sip_send, 16, _sendSipIV, 0, SIP_IV_LENGTH);
+        if (_log.shouldDebug())
+            _log.debug("Send SipHash keys: " + _sendSipk1 + ' ' + _sendSipk2 + ' ' + Base64.encode(_sendSipIV));
+        _clockSkew = clockSkew;
+        _establishState = EstablishBase.VERIFIED;
+        _establishedOn = _context.clock().now();
+        _nextMetaTime = _establishedOn + (META_FREQUENCY / 2) + _context.random().nextInt(META_FREQUENCY);
+        _nextInfoTime = _establishedOn + (INFO_FREQUENCY / 2) + _context.random().nextInt(INFO_FREQUENCY);
+        _curReadState = new NTCP2ReadState(receiver, sip_recv);
+    }
+
+    /**
+     * Read the encrypted message
+     *
+     * Call all methods from synchronized parent method.
+     *
+     * @since 0.9.36
+     */
+    private class NTCP2ReadState implements ReadState, NTCP2Payload.PayloadCallback {
+        // temp to read the encrypted lengh into
+        private final byte[] _recvLen = new byte[2];
+        private final long _sipk1, _sipk2;
+        // the siphash ratchet, as a byte array
+        private final byte[] _sipIV = new byte[SIP_IV_LENGTH];
+        private final CipherState _rcvr;
+        // the size of the next frame, only valid if _received >= 0
+        private int _framelen;
+        // bytes received, -2 to _framelen
+        private int _received = -2;
+        private ByteArray _dataBuf;
+        // Valid frames received in data phase
+        private int _frameCount;
+        // for logging only
+        private int _blockCount;
+        private boolean _terminated;
+
+        /**
+         *  @param keyData using first 24 bytes
+         */
+        public NTCP2ReadState(CipherState rcvr, byte[] keyData) {
+            _rcvr = rcvr;
+            _sipk1 = fromLong8LE(keyData, 0);
+            _sipk2 = fromLong8LE(keyData, 8);
+            System.arraycopy(keyData, 16, _sipIV, 0, SIP_IV_LENGTH);
+            if (_log.shouldDebug())
+                _log.debug("Recv SipHash keys: " + _sipk1 + ' ' + _sipk2 + ' ' + Base64.encode(_sipIV));
+        }
+
+        public void receive(ByteBuffer buf) {
+            if (_terminated) {
+                if (_log.shouldWarn())
+                    _log.warn("Received " + buf.remaining() + " after termination on " + NTCPConnection.this);
+                return;
+            }
+            while (buf.hasRemaining()) {
+                if (_received == -2) {
+                    _recvLen[0] = buf.get();
+                    _received++;
+                }
+                if (_received == -1 && buf.hasRemaining()) {
+                    _recvLen[1] = buf.get();
+                    _received++;
+                    long sipIV = SipHashInline.hash24(_sipk1, _sipk2, _sipIV);
+                    _recvLen[0] ^= (byte) (sipIV >> 8);
+                    _recvLen[1] ^= (byte) sipIV;
+                    toLong8LE(_sipIV, 0, sipIV);
+                    _framelen = (int) DataHelper.fromLong(_recvLen, 0, 2);
+                    if (_framelen < OutboundNTCP2State.MAC_SIZE) {
+                        if (_log.shouldWarn())
+                            _log.warn("Short frame length: " + _framelen + " on " + NTCPConnection.this);
+                        destroy();
+                        // set a random length, then close
+                        delayedClose(buf, _frameCount);
+                        return;
+                    }
+                    //if (_log.shouldDebug())
+                    //    _log.debug("Next frame length: " + _framelen);
+                }
+                int remaining = buf.remaining();
+                if (remaining <= 0)
+                    return;
+                if (_received == 0 && remaining >= _framelen) {
+                    // shortcut, zero copy, decrypt directly to the ByteBuffer,
+                    // overwriting the encrypted data
+                    byte[] data = buf.array();
+                    int pos = buf.position();
+                    boolean ok = decryptAndProcess(data, pos);
+                    buf.position(pos + _framelen);
+                    if (!ok) {
+                        // decryptAndProcess called destroy() and set _terminated
+                        delayedClose(buf, _frameCount);
+                        return;
+                    }
+                    continue;
+                }
+
+                // allocate ByteArray,
+                // unless we have one already and it's big enough
+                if (_received == 0 && (_dataBuf == null || _dataBuf.getData().length < _framelen)) {
+                    if (_dataBuf != null && _dataBuf.getData().length == BUFFER_SIZE)
+                        releaseReadBuf(_dataBuf);
+                    if (_framelen > BUFFER_SIZE) {
+                        if (_log.shouldInfo())
+                            _log.info("Allocating big ByteArray: " + _framelen + " bytes");
+                        byte[] data = new byte[_framelen];
+                        _dataBuf = new ByteArray(data);
+                    } else {
+                        _dataBuf = acquireReadBuf();
+                    }
+                }
+
+                // We now have a ByteArray in _dataBuf,
+                // copy from ByteBuffer to ByteArray
+                int toGet = Math.min(buf.remaining(), _framelen - _received);
+                byte[] data = _dataBuf.getData();
+                buf.get(data, _received, toGet);
+                _received += toGet;
+                if (_received < _framelen)
+                    return;
+                // decrypt to the ByteArray, overwriting the encrypted data
+                boolean ok = decryptAndProcess(data, 0);
+                // release buf only if we're not going around again
+                if (!ok || buf.remaining() < 2) {
+                    if (!ok)
+                        delayedClose(buf, _frameCount);
+                    // delayedClose() may have zeroed out _databuf
+                    if (_dataBuf != null) {
+                        if (_dataBuf.getData().length == BUFFER_SIZE)
+                            releaseReadBuf(_dataBuf);
+                        _dataBuf = null;
+                    }
+                    if (!ok)
+                        return;
+                }
+                // go around again
+            }
+        }
+
+        /**
+         *  Decrypts in place.
+         *  Length is _framelen
+         *  Side effects: Sets _received = -2, increments _frameCount and _blockCount if valid,
+         *  calls destroy() and sets _terminated if termination block received or if invalid.
+         *
+         *  Does not call close() on failure. Caller MUST call delayedClose() if this returns false.
+         *
+         *  @return success, false for fatal error (AEAD) only
+         */
+        private boolean decryptAndProcess(byte[] data, int off) {
+            if (isBanned()) {return false;}
+            if (_log.shouldDebug())
+                _log.debug("Decrypting frame " + _frameCount + " with " + _framelen + " bytes");
+            try {
+                _rcvr.decryptWithAd(null, data, off, data, off, _framelen);
+            } catch (GeneralSecurityException gse) {
+                // TODO set a random length, then close
+                if (_log.shouldDebug())
+                    _log.warn("Bad AEAD data phase frame " + _frameCount +
+                              " with " + _framelen + " bytes on " + NTCPConnection.this, gse);
+                else if (_log.shouldWarn())
+                    _log.warn("Bad AEAD data phase frame " + _frameCount +
+                              " with " + _framelen + " bytes on " + NTCPConnection.this);
+                destroy();
+                return false;
+            }
+            // no payload processing errors in the data phase are fatal
+            try {
+                int blocks = NTCP2Payload.processPayload(_context, this, data, off,
+                                                         _framelen - OutboundNTCP2State.MAC_SIZE, false);
+                if (_log.shouldDebug())
+                    _log.debug("Processed " + blocks + " blocks in frame");
+                _blockCount += blocks;
+            } catch (IOException ioe) {
+                if (_log.shouldWarn())
+//                    _log.warn("Payload delivery failure " + NTCPConnection.this + ioe.getMessage());
+                    _log.warn("Payload delivery failure \n* " + ioe.getMessage());
+            } catch (DataFormatException dfe) {
+                if (_log.shouldWarn())
+//                    _log.warn("Payload delivery failure " + NTCPConnection.this + dfe.getMessage());
+                    _log.warn("Payload delivery failure \n* " + dfe.getMessage());
+            } catch (I2NPMessageException ime) {
+                if (_log.shouldDebug())
+//                    _log.warn("Error parsing I2NP message on " + NTCPConnection.this + ime.getMessage());
+                    _log.warn("Error parsing I2NP message \n* " + ime.getMessage());
+                else if (_log.shouldWarn())
+//                    _log.warn("Error parsing I2NP message on " + NTCPConnection.this + "\n* I2NP Message Exception: " + ime.getMessage());
+                    _log.warn("Error parsing I2NP message \n* " + ime.getMessage());
+                _context.statManager().addRateData("ntcp.corruptI2NPIME", 1);
+            }
+            _received = -2;
+            _frameCount++;
+            return true;
+        }
+
+        public void destroy() {
+            if (_log.shouldInfo())
+//                _log.info("NTCP2 read state destroy() on " + NTCPConnection.this, new Exception("I did it"));
+                _log.info("NTCP2 read state destroy() on " + NTCPConnection.this);
+            if (_dataBuf != null && _dataBuf.getData().length == BUFFER_SIZE)
+                releaseReadBuf(_dataBuf);
+            _dataBuf = null;
+            _rcvr.destroy();
+            _terminated = true;
+        }
+
+        public int getFramesReceived() { return _frameCount; }
+
+        //// PayloadCallbacks
+
+        public void gotRI(RouterInfo ri, boolean isHandshake, boolean flood) throws DataFormatException {
+            if (_log.shouldDebug())
+                _log.debug("Received updated RouterInfo");
+            _messagesRead.incrementAndGet();
+            Hash h = ri.getHash();
+            Hash ph = _remotePeer.calculateHash();
+            if (!h.equals(ph)) {
+                if (h.equals(_context.routerHash()))
+                    return;
+                // make a fake DBSM message and send it to the InNetMessagePool
+                DatabaseStoreMessage dbsm = new DatabaseStoreMessage(_context);
+                dbsm.setEntry(ri);
+                dbsm.setMessageExpiration(_context.clock().now() + 10*1000);
+                _transport.messageReceived(dbsm, null, ph, 0, 1000); // fake size
+                return;
+            }
+            try {
+                if (h.equals(_context.routerHash()))
+                    return;
+                RouterInfo old = _context.netDb().store(h, ri);
+                if (flood && !ri.equals(old)) {
+                    FloodfillNetworkDatabaseFacade fndf = (FloodfillNetworkDatabaseFacade) _context.netDb();
+                    if ((old == null || ri.getPublished() > old.getPublished()) &&
+                        fndf.floodConditional(ri)) {
+                        if (_log.shouldDebug())
+                            _log.debug("Flooded the RouterInfo: " + h);
+                    } else {
+                        if (_log.shouldInfo())
+                            _log.info("Flood request but we didn't: " + h);
+                    }
+                }
+            } catch (IllegalArgumentException iae) {
+                if (_log.shouldInfo())
+                    _log.info("RouterInfo store fail: " + ri, iae);
+            }
+        }
+
+        public void gotDateTime(long time) {
+            if (_log.shouldDebug())
+                _log.debug("Received updated datetime block");
+            receiveTimestamp((time + 500) / 1000);
+            // update skew
+        }
+
+        public void gotI2NP(I2NPMessage msg) {
+            if (_log.shouldDebug())
+                _log.debug("Received I2NP message: " + msg);
+            long timeToRecv = 0; // _context.clock().now() - _stateBegin;
+            int size = 100; // FIXME
+            _transport.messageReceived(msg, _remotePeer, null, timeToRecv, size);
+            _lastReceiveTime = _context.clock().now();
+            _messagesRead.incrementAndGet();
+        }
+
+        public void gotOptions(byte[] options, boolean isHandshake) {
+            NTCP2Options hisPadding = NTCP2Options.fromByteArray(options);
+            if (hisPadding == null) {
+                if (_log.shouldWarn())
+                    _log.warn("Received options length " + options.length + " on: " + this);
+                return;
+            }
+            _paddingConfig = OUR_PADDING.merge(hisPadding);
+            if (_log.shouldDebug())
+                _log.debug("Received padding options:" +
+                          "\n* His padding options: " + hisPadding +
+                          "\n* Our padding options: " + OUR_PADDING +
+                          "\n* Merged config: " + _paddingConfig);
+        }
+
+        public void gotTermination(int reason, long lastReceived) {
+            if (_log.shouldInfo())
+                _log.info("Received Termination: " + reason +
+                          "\n* Total received: " + lastReceived + " on " + NTCPConnection.this);
+            // close() calls destroy() sets _terminated
+            close();
+            if (reason == REASON_BANNED && _remotePeer != null) {
+                byte[] ip = getRemoteIP();
+                int port = getRemotePort();
+                String ipPort = (ip != null && ip.length == 4) ?
+                    (ip[0] & 0xff) + "." + (ip[1] & 0xff) + "." + (ip[2] & 0xff) + "." + (ip[3] & 0xff) + ":" + port :
+                    "UNKNOWN";
+                _banLogger.logBan(_remotePeer.calculateHash(), ipPort, "They banned us", 2*60*60*1000);
+                _context.banlist().banlistRouter(_remotePeer.calculateHash(), "They banned us", null, null, _context.clock().now() + 2*60*60*1000);
+            }
+        }
+
+        public void gotUnknown(int type, int len) {
+            if (_log.shouldWarn())
+                _log.warn("Received unknown block type " + type + " length " + len + " on " + NTCPConnection.this);
+        }
+
+        public void gotPadding(int paddingLength, int frameLength) {
+            if (_log.shouldDebug())
+                _log.debug("Received " + paddingLength +
+                          " bytes padding in " + frameLength +
+                          " byte frame: Ratio: " + (((float) paddingLength) / ((float) frameLength)) +
+                          "; Configured min: " + _paddingConfig.getRecvMin() +
+                          "; Configured max: " + _paddingConfig.getRecvMax());
+        }
+    }
+
+    /**
+     * After an AEAD failure, read a random number of bytes,
+     * with a brief timeout, and then fail.
+     * This replaces _curReadState, so no more messages will be received.
+     *
+     * Call this only on data phase AEAD failure.
+     * For other failures, use sendTermination().
+     *
+     * @param buf possibly with data remaining
+     * @param validFramesRcvd to be sent in termination message
+     * @since 0.9.36
+     */
+    private void delayedClose(ByteBuffer buf, int validFramesRcvd) {
+        int toRead = 18 + _context.random().nextInt(NTCP2_FAIL_READ);
+        int remaining = toRead - buf.remaining();
+        if (remaining > 0) {
+            if (_log.shouldWarn())
+                _log.warn("Delayed close, AEAD failure after " + validFramesRcvd +
+                          " good frames, to read: " + toRead + " on " + this); //, new Exception("I did it"));
+            _curReadState = new NTCP2FailState(toRead, validFramesRcvd);
+            _curReadState.receive(buf);
+        } else {
+            if (_log.shouldWarn())
+                _log.warn("Immediate close, AEAD failure after " + validFramesRcvd +
+                          " good frames and reading " + toRead + " on " + this); //, new Exception("I did it"));
+            sendTermination(REASON_AEAD, validFramesRcvd);
+        }
+    }
+
+    /**
+     * After an AEAD failure, read a random number of bytes,
+     * with a brief timeout, and then fail.
+     *
+     * Call all methods from synchronized parent method.
+     *
+     * @since 0.9.36
+     */
+    private class NTCP2FailState extends SimpleTimer2.TimedEvent implements ReadState {
+        private final int _toRead;
+        private final int _validFramesRcvd;
+        private int _read;
+
+        /**
+         *  @param toRead how much left to read
+         *  @param validFramesRcvd to be sent in termination message
+         */
+        public NTCP2FailState(int toRead, int validFramesRcvd) {
+            super(_context.simpleTimer2());
+            _toRead = toRead;
+            _validFramesRcvd = validFramesRcvd;
+            schedule(NTCP2_FAIL_TIMEOUT);
+        }
+
+        public void receive(ByteBuffer buf) {
+            _read += buf.remaining();
+            if (_read >= _toRead) {
+                cancel();
+                // only do this once
+                _read = Integer.MIN_VALUE;
+                if (_log.shouldWarn())
+                    _log.warn("Close after AEAD failure and reading " + _toRead + " on " + NTCPConnection.this);
+                sendTermination(REASON_AEAD, _validFramesRcvd);
+            }
+        }
+
+        public void destroy() {
+            cancel();
+        }
+
+        public void timeReached() {
+            // only do this once
+            _read = Integer.MIN_VALUE;
+            if (_log.shouldWarn())
+                _log.warn("Timeout after AEAD failure waiting for more data on " + NTCPConnection.this);
+            sendTermination(REASON_AEAD, _validFramesRcvd);
+        }
+
+        public int getFramesReceived() { return 0; }
+    }
+
+    /**
+     * Close after a brief timeout.
+     * Construct after sending termination.
+     *
+     * @since 0.9.36
+     */
+    private class DelayedCloser extends SimpleTimer2.TimedEvent {
+
+        /** schedules itself */
+        public DelayedCloser() {
+            super(_context.simpleTimer2());
+            schedule(NTCP2_TERMINATION_CLOSE_DELAY);
+        }
+
+        public void timeReached() {
+            close();
+        }
+    }
+
+    //// Utils
+
+    /**
+     *  XOR a into b. Modifies b. a is unmodified.
+     *  @param a 16 bytes
+     *  @param b 16 bytes
+     *  @since 0.9.36
+     */
+    private static void xor16(byte[] a, byte[] b) {
+        for (int i = 0; i < BLOCK_SIZE; i++) {
+            b[i] ^= a[i];
+        }
+    }
+
+    /**
+     * Little endian.
+     * Same as DataHelper.fromlongLE(src, offset, 8) but allows negative result
+     *
+     * @throws ArrayIndexOutOfBoundsException
+     * @since 0.9.36
+     */
+    private static long fromLong8LE(byte src[], int offset) {
+        long rv = 0;
+        for (int i = offset + 7; i >= offset; i--) {
+            rv <<= 8;
+            rv |= src[i] & 0xFF;
+        }
+        return rv;
+    }
+
+    /**
+     * Little endian.
+     * Same as DataHelper.fromlongLE(target, offset, 8, value) but allows negative value
+     *
+     */
+    private static void toLong8LE(byte target[], int offset, long value) {
+        int limit = offset + 8;
+        for (int i = offset; i < limit; i++) {
+            target[i] = (byte) value;
+            value >>= 8;
+        }
+    }
+
+    public boolean hasWriteInterestPending() {
+        return _writeInterestPending.get();
+    }
+
+    public boolean compareAndSetWriteInterestPending(boolean expected, boolean update) {
+        return _writeInterestPending.compareAndSet(expected, update);
+    }
+
+    public void updateLastActiveTime() {
+        _lastActiveTime = System.currentTimeMillis();
+    }
+
+    public long getLastActiveTime() {
+        return _lastActiveTime;
+    }
+
+    private volatile int _currentInterestOps = 0;
+
+    /**
+     * Check if the given interest op is not already set
+     */
+    public boolean shouldSetInterest(int ops) {
+        return (_currentInterestOps & ops) != ops;
+    }
+
+    /**
+     * Update the cached interest ops
+     */
+    public void updateInterestOps(int ops) {
+        _currentInterestOps = ops;
+    }
+
+    @Override
+    public String toString() {
+        String fromIP;
+        int port = 0;
+        if (_isInbound) {
+            if (_chan != null) {
+                InetAddress addr = _chan.socket().getInetAddress();
+                fromIP = addr != null ? addr.getHostAddress() : "Unknown";
+                port = _chan.socket().getPort();
+            } else {
+                fromIP = "null_channel";
+            }
+        } else {
+            fromIP = null;
+        }
+        return (_isInbound ? (" -> Inbound: " + fromIP + ":" + port + ' ')
+                           : (" -> Outbound: " + _remAddr.getHost() + ":" + _remAddr.getPort() + ' ')) + "[" +
+               (_remotePeer == null ? "Unknown" : _remotePeer.calculateHash().toBase64().substring(0,6)) + "]" +
+               (isEstablished() ? "" : " -> Not established ") +
+               (_log.shouldInfo() ? "\n* Connection [ID " + _connID + "]" +
+               "\n* Created: " + DataHelper.formatDuration(getTimeSinceCreated()) + " ago;" +
+               " Last message sent: " + DataHelper.formatDuration(getTimeSinceSend()) + " ago;" +
+               " Last message received: " + DataHelper.formatDuration(getTimeSinceReceive()) + " ago" +
+               "\n* Messages sent: " + _messagesWritten + ";" +
+               " Messages received: " + _messagesRead + " " : "");
+    }
+}

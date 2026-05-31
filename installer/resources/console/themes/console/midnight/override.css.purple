@@ -1,0 +1,27 @@
+/* Purple override.css for console 'midnight' theme */
+/* Author: dr|z3d */
+
+html, body {
+    scrollbar-color: #304 #101 !important;
+}
+
+html {
+    filter: hue-rotate(30deg);
+}
+
+#tman {
+    filter: hue-rotate(0deg);
+}
+
+body, body:not(old) {
+    background: #060006;
+    background: repeating-linear-gradient(to bottom, #060006, #060006 1px, #100010 2px) #060006;
+}
+
+img:not(.statimage) {
+    filter: hue-rotate(-30deg) !important;
+}
+
+.sb img:first-child {
+    filter: hue-rotate(0) saturate(0.5) !important;
+}

@@ -1,0 +1,428 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: az\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Website Unknown"
+msgstr "Tanınmayan Veb Sayt"
+
+msgid "Router Console"
+msgstr "Ruter Konsolı"
+
+msgid "I2P Router Console"
+msgstr "I2P Ruter Konsolı"
+
+msgid "Addressbook"
+msgstr "Ünvan Defteri"
+
+msgid "Configuration"
+msgstr "Konfigurasiya"
+
+msgid "Help"
+msgstr "Yardım"
+
+msgid "Website Not Found in Addressbook"
+msgstr "Ünvan Defterində Tapılmayan Veb Sayt"
+
+msgid "The website was not found in your router's addressbook."
+msgstr "Veb saytı ruterinizin ünvan defterində tapılmadı."
+
+msgid "Check the link or find a Base 32 or Base 64 address."
+msgstr "Keçidi yoxlayın və ya Base 32 və ya Base 64 ünvanı tapın."
+
+#, java-format
+msgid "If you have the Base 64 address, {0}add it to your addressbook{1}."
+msgstr "Egər sizin Base 64 ünvanınız varsa, {0}ünvan defterinize əlavə edin{1}."
+
+msgid "Otherwise, find a Base 32 or address helper link, or use a jump service link below."
+msgstr "Ya da Base 32 və ya ünvan köməkçisi keçidini tapın, və ya aşağıda ki jump xidməti keçidindən istifadə edin."
+
+#, java-format
+msgid "Seeing this page often? See {0}the FAQ{1} for help in {2}adding some subscriptions{3} to your addressbook."
+msgstr "Bu səhifəni tez-tez görürsünüzsə? {0}Sual-Vəziyyətlər{1}-də kömək üçün {2}ünvan defterinə bəzi abunamentləri əlavə etməkdə{3} yardım tapa bilərsiniz."
+
+msgid "Could not find the following destination:"
+msgstr "Aşağıdakı nöqtəni tapa bilmədim:"
+
+msgid "Warning: Non-HTTP Protocol"
+msgstr "Xəbərdarlıq: HTTP-dən Fərqli Protokol"
+
+msgid "The request uses a bad protocol."
+msgstr "İstəy pis protokolu istifadə edir."
+
+msgid "The I2P HTTP Proxy supports HTTP and HTTPS requests only."
+msgstr "I2P HTTP Proxy yalnız HTTP və HTTPS istəyinə dəstək verir."
+
+msgid "Other protocols such as FTP are not allowed."
+msgstr "FTP kimi digər protokollar icazə verməz."
+
+msgid "Error: Request Denied"
+msgstr "Xəta: Istəy Red Etildi"
+
+msgid "Error: Cannot Access Router Console via I2P Proxy"
+msgstr "Xəta: I2P Proxy vasitəsilə Ruter Konsoluya Daxil Olmaq Mövcud Değildir"
+
+msgid "Your browser is misconfigured."
+msgstr "Brauzeriniz düzgün tənzimlənməmişdir."
+
+msgid "Do not use the proxy to access the router console, localhost, or local LAN destinations."
+msgstr "Ruter konsoluna, localhost-a və ya yerli LAN nöqtələrinə proxy vasitəsilə daxil olmayın."
+
+msgid "You need to prevent 127.0.0.1 (or the address you're accessing the I2P console on) from being routed via I2P's http proxy, usually by excluding the address in your browser's proxy configuration section."
+msgstr "127.0.0.1 (veya I2P konsolu ilə əlaqə saxladığınız ünvan) I2P'nin http proxy vasitəsilə yönlənməsinin qarşısını almaq lazımdır, əsasən brauzerin proxy tənzimləmə bölməsində ünvanı dışarı çıxartmaqla."
+
+msgid "Warning: Destination Key Conflict"
+msgstr "Xəbərdarlıq: Nöqtə Çubuğu Mübahisəsi"
+
+msgid "The address helper link you followed specifies a different destination key than the entry in your address book."
+msgstr "İzlədiyiniz ünvan köməkçisi keçidi, ünvan defterinizdəki qeydən fərqli bir nöqtə açarı təyin edir."
+
+msgid "Someone could be trying to impersonate another website, or people have given two websites identical names."
+msgstr "Kimisinin digər bir veb saytın kimliyini təklik etməyə çalışdığı mümkündür, və ya insanlar iki veb saytın identik adlarını vermiş olabilir."
+
+msgid "Resolve the conflict by deciding which key you trust, and then either ignore the address helper link, or delete the host entry from your address book and click the address helper link again."
+msgstr "Münasibəti həll etmək üçün, hansı açarı əmin olduğunuzu seçin, sonra ünvan köməkçisi keçidini görəməyin, və ya ünvan defterinizdən xost qeydini silin və yenidən ünvan köməkçisi keçidini seçin."
+
+msgid "Connection Reset"
+msgstr "Bağlantı Sıfırlama"
+
+msgid "The connection to the website was reset while the page was loading."
+msgstr "Səhifə yüklənilərkən web saytına olan bağlantı sıfırlandı."
+
+msgid "The website could be temporarily unavailable, too busy, or it has blocked your access."
+msgstr "Web saytı müvəqqit olaraq mövcud deyil ola bilər, çox məşğul ola bilər və ya sizin girişinizi bloklamış ola bilər."
+
+#, java-format
+msgid "You may want to {0}retry{1}."
+msgstr "{0}təkrar cəhd etmək{1} istəyə bilərsiniz."
+
+#, java-format
+msgid "If you leave this page open, it will automatically retry connecting to the website every {0} seconds after a failed connection attempt."
+msgstr "Bu səhifəni açıq buraxsanız, uğursuz bağlantı cəhdinin ardından hər {0} saniyədə avtomatik olaraq yenidən cəhd edəcək."
+
+msgid "Website Unreachable"
+msgstr "Uğurla Mərhələyə Uzaq Veb Sayt"
+
+msgid "The website was not reachable, because it uses encryption options that are not supported by your I2P or Java version."
+msgstr "Veb saytı çatdırıla bilmədi, çünki o, sizin I2P və ya Java sürümünüz tərəfindən dəstəklənməyən şifrələmə seçimlərindən istifadə edir."
+
+msgid "Could not connect to the following destination:"
+msgstr "Aşağıdakı nöqtə ilə əlaqə saxlamaq mümkün olmadı:"
+
+msgid "The website was not reachable, because its lease set was not found."
+msgstr "Veb saytı çatdırıla bilmədi, çünki onun kirayəsi tapılmadı."
+
+msgid "The website is probably down, but there could also be network congestion."
+msgstr "Veb saytı ehtimal ki dayandırılmışdır, amma şəbəkə dolu ola bilər."
+
+msgid "The connection to the proxy was reset."
+msgstr "Proxy ilə olan bağlantı sıfırlandı."
+
+msgid "The proxy could be temporarily unavailable, too busy, or it has blocked your access."
+msgstr "Proxy müvəqqit olaraq mövcud deyil ola bilər, çox məşğul ola bilər, və ya sizin girişinizi bloklamaqdadır."
+
+#, java-format
+msgid "You may want to {0}retry{1} as this will randomly reselect an outproxy from the pool you have defined {2}here{3} (if you have more than one configured)."
+msgstr "{0}təkrar cəhd etmək{1} istəyə bilərsiniz çünki bu, sizin təyin etdiyiniz {2}burada{3} outproxy (əgər siz daha çoxdan birini tənzimləmisinizsə) rast qrupdan yenidən seçməlidir."
+
+#, java-format
+msgid "If you continue to have trouble you may want to edit your outproxy list {0}here{1}."
+msgstr "Əgər siz hələ də problemə uşaqlıqsanız, outproxy siyahınızı {0}burada{1} redaktə etmək istəyə bilərsiniz."
+
+msgid "Outproxy Unreachable"
+msgstr "Uğurla Mərhələyə Uzaq Outproxy"
+
+msgid "The HTTP outproxy was not reachable, because it uses encryption options that are not supported by your I2P or Java version."
+msgstr "HTTP outproxy çatdırıla bilmədi, çünki o, I2P və ya Java sürümünüz tərəfindən dəstəklənməyən şifrələmə seçimlərindən istifadə edir."
+
+msgid "The website was not reachable."
+msgstr "Veb saytı çatdırıla bilmədi."
+
+msgid "The website is offline, there is network congestion, or your router is not yet well-integrated with peers."
+msgstr "Veb saytı internetdən çıxıb, şəbəkə doludur və ya ruteriniz hələ də eşlər ilə yaxşı enteqrasiya etməmişdir."
+
+msgid "Warning: No Outproxy Configured"
+msgstr "Xəbərdarlıq: Yoxlanılmamış Outproxy"
+
+msgid "Your request was for a site outside of I2P, but you have no HTTP outproxy configured."
+msgstr "Istəyiniz I2P-dən başqa bir sayt üçündür, amma sizin HTTP outproxy yoxdur."
+
+msgid "Please configure an outproxy in I2PTunnel."
+msgstr "Lütfən I2PTunnel-da outproxy tənzimləyin."
+
+msgid "Outproxy Not Found"
+msgstr "Tapılmamış Outproxy"
+
+msgid "The HTTP Outproxy was not found."
+msgstr "HTTP Outproxy tapılmadı."
+
+msgid "It is offline, there is network congestion, or your router is not yet well-integrated with peers."
+msgstr "O, internetdən çıxıb, şəbəkə doludur, və ya ruteriniz hələ də eşlər ilə yaxşı enteqrasiya etməmişdir."
+
+msgid "Information: New Host Name"
+msgstr "Məlumat: Yeni Xost Adı"
+
+msgid "Information: New Host Name with Address Helper"
+msgstr "Məlumat: Ünvan Köməkçisi ilə Yeni Xost Adı"
+
+msgid "The address helper link you followed is for a new host name that is not in your address book."
+msgstr "İzlədiyiniz ünvan köməkçisi keçidi, ünvan defterinizdə olmayan yeni bir xost adı üçündür."
+
+msgid "You may save this host name to your local address book."
+msgstr "Bu xost adını yerli ünvan defterinizə saxlamaq olar."
+
+msgid "If you save it to your address book, you will not see this message again."
+msgstr "Əgər bunu ünvan defterinize saxlaysanız, bu mesajı yenidən görməyəcəksiniz."
+
+msgid "If you do not save it, the host name will be forgotten after the next router restart."
+msgstr "Əgər onu saxlamırsanız, xost adı növbəti ruternin yenidən başlamağından sonra unutulacaq."
+
+msgid "If you do not wish to visit this host, click the \"back\" button on your browser."
+msgstr "Bu xostu ziyarət etmək istəmirsəniz, brauzerin \"geri\" düyməsini seçin."
+
+msgid "Proxy Authorization Required"
+msgstr "Proxy Təsdiqləmə Tələb Olunur"
+
+msgid "I2P HTTP Proxy Authorization Required"
+msgstr "I2P HTTP Proxy Təsdiqləmə Tələb Olunur"
+
+msgid "This proxy is configured to require a username and password for access."
+msgstr "Bu proxy, giriş üçün istifadəçi adı və şifrə tələb etmək üçün tənzimlənib."
+
+#, java-format
+msgid "Please enter your username and password, or check your {0}router configuration{1} or {2}I2PTunnel configuration{3}."
+msgstr "Lütfən, istifadəçi adınızı və şifrənizi daxil edin, və ya {0}ruter tənzimləmələrinizi{1} yoxlayın və ya {2}I2PTunnel tənzimləmələrinizi{3} yoxlayın."
+
+#, java-format
+msgid "To disable authorization, remove the configuration {0}i2ptunnel.proxy.auth=basic{1}, then stop and restart the HTTP Proxy tunnel."
+msgstr "Təsdiqləməni söndürmək üçün, tənzimləməni {0}i2ptunnel.proxy.auth=basic{1} silin, sonra HTTP Proxy tuneli dayandırın və yenidən başladın."
+
+msgid "The HTTP outproxy was not reachable, because its lease set was not found."
+msgstr "HTTP outproxy çatdırıla bilmədi, çünki onun kirayəsi tapılmadı."
+
+msgid "The outproxy is probably down, but there could also be network congestion."
+msgstr "Outproxy ehtimal ki dayandırılmışdır, amma həmçinin şəbəkə dolu ola bilər."
+
+msgid "Warning: Request Denied"
+msgstr "Xəbərdarlıq: Istəy Red Etildi"
+
+msgid "This address appears to be malformed. Please verify you have supplied a valid address!"
+msgstr "Bu ünvan səhv görünür. Lütfən, düzgün bir ünvan təmin etdiyinizdən əmin olun!"
+
+msgid "Warning: Bad Address Helper"
+msgstr "Xəbərdarlıq: Pis Ünvan Köməkçisi"
+
+#, java-format
+msgid "The helper key in the URL ({0}i2paddresshelper={1}) is not resolvable."
+msgstr "URL-da ({0}i2paddresshelper={1}) köməkçi açar çözülməzdir."
+
+msgid "It seems to be garbage data, or a mistyped Base 32 address."
+msgstr "Bu, çöp məlumatı kimi görünür, və ya yanlış yazılmış Base 32 ünvanı ola bilər."
+
+msgid "Check your URL to try and fix the helper key to be a valid Base 32 hostname or Base 64 key."
+msgstr "URL-nizi yoxlayın və köməkçi açarı düzgün Base 32 xost adı və ya Base 64 açarı olaraq düzəltməyə çalışın."
+
+msgid "Warning: Address Blacklisted"
+msgstr ""
+
+msgid "The requested destination is in your blacklist and access has been blocked."
+msgstr ""
+
+msgid "To allow access to this site, remove it from your blacklist on the SusiDNS blacklist management page."
+msgstr ""
+
+msgid "Warning: Invalid Destination"
+msgstr "Xəbərdarlıq: Səhv Nöqtə"
+
+msgid "The website destination specified was not valid, or was otherwise unreachable."
+msgstr "Belirtilən veb sayt nöqtəsi düzgün deyil və ya başqa yolla çatdırıla bilmədi."
+
+msgid "Perhaps you pasted in the wrong Base 64 string or the link you are following is bad."
+msgstr "Belə ki, siz yanlış Base 64 simvolı yapışdırıb və ya izlədiyiniz keçid pisdir."
+
+msgid "The I2P host could also be offline."
+msgstr "I2P xost-u həmçinin internetdən çıxıb ola bilər."
+
+msgid "Warning: Authorization Required"
+msgstr "Xəbərdarlıq: Təsdiqləmə Tələb Olunur"
+
+msgid "Warning: Invalid Request URI"
+msgstr "Xəbərdarlıq: Səhv İstəy URI"
+
+msgid "The request URI is invalid, and probably contains illegal characters."
+msgstr "İstəy URI səhvdir və ehtimal ki qanunsuz simvolları əhatə edir."
+
+msgid "If you clicked a link, check the end of the URI for any characters the browser has mistakenly added on."
+msgstr "Əgər siz bir keçidi seçdinizsə, brauzerin yanlış şəkildə əlavə etdiyi simvolları yoxlamaq üçün URI-nin sonunu yoxlayın."
+
+msgid "The Base32 address is invalid."
+msgstr "Base32 ünvanı səhvdir."
+
+msgid "This seems to be a bad destination:"
+msgstr "Bu pis bir nöqtə kimi görünür:"
+
+msgid "i2paddresshelper cannot help you with a destination like that!"
+msgstr "i2paddresshelper belə bir nöqtə ilə sizə kömək edə bilməz!"
+
+#, java-format
+msgid "To visit the destination in your addressbook, click <a href=\"{0}\">here</a>. To visit the conflicting addresshelper destination, click <a href=\"{1}\">here</a>."
+msgstr "Ünvan defterinizdəki nöqtəni ziyarət etmək üçün, <a href=\"{0}\">buraya</a> klikləyin. Mübahisəli ünvan köməkçisi nöqtəsini ziyarət etmək üçün, <a href=\"{1}\">buraya</a> klikləyin."
+
+#, java-format
+msgid "Destination for {0} in addressbook"
+msgstr "Ünvan defterində {0} üçün nöqtə"
+
+msgid "Conflicting address helper destination"
+msgstr "Mübəhiscə ünvan köməkçisi nöqtəsi"
+
+msgid "Corrupt Base32 address"
+msgstr "Hasarlı Base32 ünvanı"
+
+msgid "Destination LeaseSet not found"
+msgstr "Nöqtə Kirayəsi tapılmadı"
+
+msgid "Host"
+msgstr "Xost"
+
+msgid "Base32"
+msgstr "Base32"
+
+msgid "Destination"
+msgstr "Nöqtə"
+
+#, java-format
+msgid "Continue to {0} without saving"
+msgstr "{0}-ə saxlamaq olmadan davam etmək"
+
+msgid "You can browse to the site without saving it to the addressbook. The address will be remembered until you restart your I2P router."
+msgstr "Ünvan defterinə saxlamaq olmadan saytın səhifəsinə getmək olar. Ünvan sizin I2P ruternizi yenidən başlamağa qədər yadda saxlanılacaq."
+
+msgid "Continue without saving"
+msgstr "Saxlamaq olmadan davam etmək"
+
+#, java-format
+msgid "Save {0} to router address book and continue to website"
+msgstr "{0}-i ruter ünvan defterinə saxlamaq və saytın səhifəsinə davam etmək"
+
+msgid "This address will be saved to your Router addressbook where your subscription-based addresses are stored."
+msgstr "Bu ünvan sizin abunament bazası ünvanləriniz saxlanıldığı ruter ünvan defterinə saxlanılacaq."
+
+msgid "If you want to keep track of sites you have added manually, add to your Master or Private addressbook instead."
+msgstr "Manuel olaraq əlavə etdiyiniz saytları izləmək istəyirsinizsə, onları Master və ya Private ünvan defterinə əlavə edin."
+
+msgid "Save & continue"
+msgstr "Saxla və davam et"
+
+#, java-format
+msgid "Save {0} to master addressbook and continue to website"
+msgstr "{0}-i Master ünvan defterinə saxlamaq və saytın səhifəsinə davam etmək"
+
+msgid "This address will be saved to your Master addressbook. Select this option for addresses you wish to keep separate from the main router address book, but don't mind publishing."
+msgstr "Bu ünvan sizin Master ünvan defterinə saxlanılacaq. Bunu əsas ruter ünvan defterindən ayrı saxlamaq istədiyiniz, amma nəşr etməkdən imtina etməyən ünvanlar üçün seçin."
+
+#, java-format
+msgid "Save {0} to private addressbook and continue to website"
+msgstr "{0}-i Private ünvan defterinə saxlamaq və saytın səhifəsinə davam etmək"
+
+msgid "This address will be saved to your Private addressbook, ensuring it is never published."
+msgstr "Bu ünvan sizin Private ünvan defterinə saxlanılacaq, bu da onun hər zaman nəşr olunmamasını təmin edir."
+
+msgid "Base32 address requires lookup password"
+msgstr "Base32 ünvanı axtarış şifrəsinə ehtiyac duyur"
+
+msgid "Base32 address requires encryption key"
+msgstr "Base32 ünvanı şifrələmə açarına ehtiyac duyur"
+
+msgid "Base32 address requires encryption key and lookup password"
+msgstr "Base32 ünvanı şifrələmə açarı və axtarış şifrəsinə ehtiyac duyur"
+
+msgid "Base32 address decryption failure, check encryption key"
+msgstr "Base32 ünvanı şifrələmə açarını yoxlamaq üçün şifrə açma uğursuzluğu"
+
+msgid "Generate"
+msgstr "Yarat"
+
+msgid "Encryption key"
+msgstr "Şifrələmə açarı"
+
+msgid "You must either enter a PSK encryption key provided by the server operator, or generate a DH encryption key and send that to the server operator."
+msgstr "Sizin PSK şifrələmə açarını server operatörü tərəfindən təqdim edilməli, və ya DH şifrələmə açarını yaratmalı və bunu server operatörünə göndərməlisiniz."
+
+msgid "Ask the server operator for help."
+msgstr "Server operatöründən kömək istəyin."
+
+msgid "Enter PSK encryption key"
+msgstr "PSK şifrələmə açarını daxil edin"
+
+msgid "Generate new DH encryption key"
+msgstr "Yeni DH şifrələmə açarını yarat"
+
+msgid "Lookup password"
+msgstr "Axtarış şifrəsi"
+
+msgid "You must enter the password provided by the server operator."
+msgstr "Server operatörünün təqdim etdiyi şifrəni daxil etməlisiniz."
+
+#, java-format
+msgid "Added via address helper from {0}"
+msgstr "{0} ilə ünvan köməkçisi vasitəsilə əlavə edildi"
+
+msgid "Added via address helper"
+msgstr "Ünvan köməkçisi vasitəsilə əlavə edildi"
+
+msgid "Missing lookup password"
+msgstr "Eksik axtarış şifrəsi"
+
+msgid "Missing private key"
+msgstr "Eksik gizli açar"
+
+msgid "Invalid private key"
+msgstr "Səhv gizli açar"
+
+msgid "Your new encryption key"
+msgstr "Yeni şifrələmə açarınız"
+
+msgid "Copy the key and send it to the server operator."
+msgstr "Açarı kopyalayın və server operatörünə göndərin."
+
+msgid "After you are granted permission, you may proceed to the website."
+msgstr "İcazə verildikdən sonra, saytın səhifəsinə getmək olar."
+
+msgid "Go back and fix the error"
+msgstr "Geriyə gedin və səhvə düzəldin"
+
+msgid "router"
+msgstr "ruter"
+
+msgid "master"
+msgstr "master"
+
+msgid "private"
+msgstr "gizli"
+
+#, java-format
+msgid "Redirecting to {0}"
+msgstr "{0}-ə yönləndirilir"
+
+msgid "Redirection in progress"
+msgstr "Yönləndirmə davam edir"
+
+#, java-format
+msgid "Saved {0} to the {1} addressbook, redirecting now."
+msgstr "{0}-i {1} ünvan defterinə saxladıq, indi yönləndiririk."
+
+#, java-format
+msgid "Failed to save {0} to the {1} addressbook, redirecting now."
+msgstr "{0}-i {1} ünvan defterinə saxlamaq uğursuz olduq, indi yönləndiririk."
+
+msgid "Click here if you are not redirected automatically."
+msgstr "Avtomatik olaraq yönləndirilməyəsəniz, buraya klikləyin."
+
+#, java-format
+msgid "Saved the authentication for {0}, redirecting now."
+msgstr "{0} üçün təsdiqləməni saxladık, indi yönləndiririk."

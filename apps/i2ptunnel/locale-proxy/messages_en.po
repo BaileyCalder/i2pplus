@@ -1,0 +1,428 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Website Unknown"
+msgstr ""
+
+msgid "Router Console"
+msgstr ""
+
+msgid "I2P Router Console"
+msgstr ""
+
+msgid "Addressbook"
+msgstr ""
+
+msgid "Configuration"
+msgstr ""
+
+msgid "Help"
+msgstr ""
+
+msgid "Website Not Found in Addressbook"
+msgstr ""
+
+msgid "The website was not found in your router's addressbook."
+msgstr ""
+
+msgid "Check the link or find a Base 32 or Base 64 address."
+msgstr ""
+
+#, java-format
+msgid "If you have the Base 64 address, {0}add it to your addressbook{1}."
+msgstr ""
+
+msgid "Otherwise, find a Base 32 or address helper link, or use a jump service link below."
+msgstr ""
+
+#, java-format
+msgid "Seeing this page often? See {0}the FAQ{1} for help in {2}adding some subscriptions{3} to your addressbook."
+msgstr ""
+
+msgid "Could not find the following destination:"
+msgstr ""
+
+msgid "Warning: Non-HTTP Protocol"
+msgstr ""
+
+msgid "The request uses a bad protocol."
+msgstr ""
+
+msgid "The I2P HTTP Proxy supports HTTP and HTTPS requests only."
+msgstr ""
+
+msgid "Other protocols such as FTP are not allowed."
+msgstr ""
+
+msgid "Error: Request Denied"
+msgstr ""
+
+msgid "Error: Cannot Access Router Console via I2P Proxy"
+msgstr ""
+
+msgid "Your browser is misconfigured."
+msgstr ""
+
+msgid "Do not use the proxy to access the router console, localhost, or local LAN destinations."
+msgstr ""
+
+msgid "You need to prevent 127.0.0.1 (or the address you're accessing the I2P console on) from being routed via I2P's http proxy, usually by excluding the address in your browser's proxy configuration section."
+msgstr ""
+
+msgid "Warning: Destination Key Conflict"
+msgstr ""
+
+msgid "The address helper link you followed specifies a different destination key than the entry in your address book."
+msgstr ""
+
+msgid "Someone could be trying to impersonate another website, or people have given two websites identical names."
+msgstr ""
+
+msgid "Resolve the conflict by deciding which key you trust, and then either ignore the address helper link, or delete the host entry from your address book and click the address helper link again."
+msgstr ""
+
+msgid "Connection Reset"
+msgstr ""
+
+msgid "The connection to the website was reset while the page was loading."
+msgstr ""
+
+msgid "The website could be temporarily unavailable, too busy, or it has blocked your access."
+msgstr ""
+
+#, java-format
+msgid "You may want to {0}retry{1}."
+msgstr ""
+
+#, java-format
+msgid "If you leave this page open, it will automatically retry connecting to the website every {0} seconds after a failed connection attempt."
+msgstr ""
+
+msgid "Website Unreachable"
+msgstr ""
+
+msgid "The website was not reachable, because it uses encryption options that are not supported by your I2P or Java version."
+msgstr ""
+
+msgid "Could not connect to the following destination:"
+msgstr ""
+
+msgid "The website was not reachable, because its lease set was not found."
+msgstr ""
+
+msgid "The website is probably down, but there could also be network congestion."
+msgstr ""
+
+msgid "The connection to the proxy was reset."
+msgstr ""
+
+msgid "The proxy could be temporarily unavailable, too busy, or it has blocked your access."
+msgstr ""
+
+#, java-format
+msgid "You may want to {0}retry{1} as this will randomly reselect an outproxy from the pool you have defined {2}here{3} (if you have more than one configured)."
+msgstr ""
+
+#, java-format
+msgid "If you continue to have trouble you may want to edit your outproxy list {0}here{1}."
+msgstr ""
+
+msgid "Outproxy Unreachable"
+msgstr ""
+
+msgid "The HTTP outproxy was not reachable, because it uses encryption options that are not supported by your I2P or Java version."
+msgstr ""
+
+msgid "The website was not reachable."
+msgstr ""
+
+msgid "The website is offline, there is network congestion, or your router is not yet well-integrated with peers."
+msgstr ""
+
+msgid "Warning: No Outproxy Configured"
+msgstr ""
+
+msgid "Your request was for a site outside of I2P, but you have no HTTP outproxy configured."
+msgstr ""
+
+msgid "Please configure an outproxy in I2PTunnel."
+msgstr ""
+
+msgid "Outproxy Not Found"
+msgstr ""
+
+msgid "The HTTP Outproxy was not found."
+msgstr ""
+
+msgid "It is offline, there is network congestion, or your router is not yet well-integrated with peers."
+msgstr ""
+
+msgid "Information: New Host Name"
+msgstr ""
+
+msgid "Information: New Host Name with Address Helper"
+msgstr ""
+
+msgid "The address helper link you followed is for a new host name that is not in your address book."
+msgstr ""
+
+msgid "You may save this host name to your local address book."
+msgstr ""
+
+msgid "If you save it to your address book, you will not see this message again."
+msgstr ""
+
+msgid "If you do not save it, the host name will be forgotten after the next router restart."
+msgstr ""
+
+msgid "If you do not wish to visit this host, click the \"back\" button on your browser."
+msgstr ""
+
+msgid "Proxy Authorization Required"
+msgstr ""
+
+msgid "I2P HTTP Proxy Authorization Required"
+msgstr ""
+
+msgid "This proxy is configured to require a username and password for access."
+msgstr ""
+
+#, java-format
+msgid "Please enter your username and password, or check your {0}router configuration{1} or {2}I2PTunnel configuration{3}."
+msgstr ""
+
+#, java-format
+msgid "To disable authorization, remove the configuration {0}i2ptunnel.proxy.auth=basic{1}, then stop and restart the HTTP Proxy tunnel."
+msgstr ""
+
+msgid "The HTTP outproxy was not reachable, because its lease set was not found."
+msgstr ""
+
+msgid "The outproxy is probably down, but there could also be network congestion."
+msgstr ""
+
+msgid "Warning: Request Denied"
+msgstr ""
+
+msgid "This address appears to be malformed. Please verify you have supplied a valid address!"
+msgstr ""
+
+msgid "Warning: Bad Address Helper"
+msgstr ""
+
+#, java-format
+msgid "The helper key in the URL ({0}i2paddresshelper={1}) is not resolvable."
+msgstr ""
+
+msgid "It seems to be garbage data, or a mistyped Base 32 address."
+msgstr ""
+
+msgid "Check your URL to try and fix the helper key to be a valid Base 32 hostname or Base 64 key."
+msgstr ""
+
+msgid "Warning: Address Blacklisted"
+msgstr ""
+
+msgid "The requested destination is in your blacklist and access has been blocked."
+msgstr ""
+
+msgid "To allow access to this site, remove it from your blacklist on the SusiDNS blacklist management page."
+msgstr ""
+
+msgid "Warning: Invalid Destination"
+msgstr ""
+
+msgid "The website destination specified was not valid, or was otherwise unreachable."
+msgstr ""
+
+msgid "Perhaps you pasted in the wrong Base 64 string or the link you are following is bad."
+msgstr ""
+
+msgid "The I2P host could also be offline."
+msgstr ""
+
+msgid "Warning: Authorization Required"
+msgstr ""
+
+msgid "Warning: Invalid Request URI"
+msgstr ""
+
+msgid "The request URI is invalid, and probably contains illegal characters."
+msgstr ""
+
+msgid "If you clicked a link, check the end of the URI for any characters the browser has mistakenly added on."
+msgstr ""
+
+msgid "The Base32 address is invalid."
+msgstr ""
+
+msgid "This seems to be a bad destination:"
+msgstr ""
+
+msgid "i2paddresshelper cannot help you with a destination like that!"
+msgstr ""
+
+#, java-format
+msgid "To visit the destination in your addressbook, click <a href=\"{0}\">here</a>. To visit the conflicting addresshelper destination, click <a href=\"{1}\">here</a>."
+msgstr ""
+
+#, java-format
+msgid "Destination for {0} in addressbook"
+msgstr ""
+
+msgid "Conflicting address helper destination"
+msgstr ""
+
+msgid "Corrupt Base32 address"
+msgstr ""
+
+msgid "Destination LeaseSet not found"
+msgstr ""
+
+msgid "Host"
+msgstr ""
+
+msgid "Base32"
+msgstr ""
+
+msgid "Destination"
+msgstr ""
+
+#, java-format
+msgid "Continue to {0} without saving"
+msgstr ""
+
+msgid "You can browse to the site without saving it to the addressbook. The address will be remembered until you restart your I2P router."
+msgstr ""
+
+msgid "Continue without saving"
+msgstr ""
+
+#, java-format
+msgid "Save {0} to router address book and continue to website"
+msgstr ""
+
+msgid "This address will be saved to your Router addressbook where your subscription-based addresses are stored."
+msgstr ""
+
+msgid "If you want to keep track of sites you have added manually, add to your Master or Private addressbook instead."
+msgstr ""
+
+msgid "Save & continue"
+msgstr ""
+
+#, java-format
+msgid "Save {0} to master addressbook and continue to website"
+msgstr ""
+
+msgid "This address will be saved to your Master addressbook. Select this option for addresses you wish to keep separate from the main router address book, but don't mind publishing."
+msgstr ""
+
+#, java-format
+msgid "Save {0} to private addressbook and continue to website"
+msgstr ""
+
+msgid "This address will be saved to your Private addressbook, ensuring it is never published."
+msgstr ""
+
+msgid "Base32 address requires lookup password"
+msgstr ""
+
+msgid "Base32 address requires encryption key"
+msgstr ""
+
+msgid "Base32 address requires encryption key and lookup password"
+msgstr ""
+
+msgid "Base32 address decryption failure, check encryption key"
+msgstr ""
+
+msgid "Generate"
+msgstr ""
+
+msgid "Encryption key"
+msgstr ""
+
+msgid "You must either enter a PSK encryption key provided by the server operator, or generate a DH encryption key and send that to the server operator."
+msgstr ""
+
+msgid "Ask the server operator for help."
+msgstr ""
+
+msgid "Enter PSK encryption key"
+msgstr ""
+
+msgid "Generate new DH encryption key"
+msgstr ""
+
+msgid "Lookup password"
+msgstr ""
+
+msgid "You must enter the password provided by the server operator."
+msgstr ""
+
+#, java-format
+msgid "Added via address helper from {0}"
+msgstr ""
+
+msgid "Added via address helper"
+msgstr ""
+
+msgid "Missing lookup password"
+msgstr ""
+
+msgid "Missing private key"
+msgstr ""
+
+msgid "Invalid private key"
+msgstr ""
+
+msgid "Your new encryption key"
+msgstr ""
+
+msgid "Copy the key and send it to the server operator."
+msgstr ""
+
+msgid "After you are granted permission, you may proceed to the website."
+msgstr ""
+
+msgid "Go back and fix the error"
+msgstr ""
+
+msgid "router"
+msgstr ""
+
+msgid "master"
+msgstr ""
+
+msgid "private"
+msgstr ""
+
+#, java-format
+msgid "Redirecting to {0}"
+msgstr ""
+
+msgid "Redirection in progress"
+msgstr ""
+
+#, java-format
+msgid "Saved {0} to the {1} addressbook, redirecting now."
+msgstr ""
+
+#, java-format
+msgid "Failed to save {0} to the {1} addressbook, redirecting now."
+msgstr ""
+
+msgid "Click here if you are not redirected automatically."
+msgstr ""
+
+#, java-format
+msgid "Saved the authentication for {0}, redirecting now."
+msgstr ""

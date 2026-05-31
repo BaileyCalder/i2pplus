@@ -1,0 +1,119 @@
+/*
+ * CyberUPnP for Java
+ * Copyright (C) Satoshi Konno 2002
+ */
+
+package org.cybergarage.upnp.control;
+
+import org.cybergarage.http.*;
+import org.cybergarage.soap.*;
+import org.cybergarage.upnp.*;
+import org.cybergarage.xml.*;
+
+/**
+ * Represents a UPnP action control response. Extends ControlResponse to provide action-specific
+ * functionality.
+ */
+public class ActionResponse extends ControlResponse {
+    ////////////////////////////////////////////////
+    //	Constructor
+    ////////////////////////////////////////////////
+
+    /** Default constructor */
+    public ActionResponse() {
+        setHeader(HTTP.EXT, "");
+    }
+
+    /**
+     * Constructs an ActionResponse from a SOAP response.
+     *
+     * @param soapRes the SOAP response to wrap
+     */
+    public ActionResponse(SOAPResponse soapRes) {
+        super(soapRes);
+        setHeader(HTTP.EXT, "");
+    }
+
+    ////////////////////////////////////////////////
+    //	Response
+    ////////////////////////////////////////////////
+
+    /**
+     * Sets the response for the specified action.
+     *
+     * @param action the action to set response for
+     */
+    public void setResponse(Action action) {
+        setStatusCode(HTTPStatus.OK);
+
+        Node bodyNode = getBodyNode();
+        Node resNode = createResponseNode(action);
+        bodyNode.addNode(resNode);
+
+        Node envNode = getEnvelopeNode();
+        setContent(envNode);
+    }
+
+    /**
+     * @param action the action to create response node for
+     * @return the created response node
+     */
+    private Node createResponseNode(Action action) {
+        String actionName = action.getName();
+        Node actionNameResNode = new Node(SOAP.METHODNS + SOAP.DELIM + actionName + SOAP.RESPONSE);
+
+        Service service = action.getService();
+        if (service != null) {
+            actionNameResNode.setAttribute("xmlns:" + SOAP.METHODNS, service.getServiceType());
+        }
+
+        ArgumentList argList = action.getArgumentList();
+        int nArgs = argList.size();
+        for (int n = 0; n < nArgs; n++) {
+            Argument arg = argList.getArgument(n);
+            if (arg.isOutDirection() == false) continue;
+            Node argNode = new Node();
+            argNode.setName(arg.getName());
+            argNode.setValue(arg.getValue());
+            actionNameResNode.addNode(argNode);
+        }
+
+        return actionNameResNode;
+    }
+
+    ////////////////////////////////////////////////
+    //	getResponse
+    ////////////////////////////////////////////////
+
+    /**
+     * @return the action response node
+     */
+    private Node getActionResponseNode() {
+        Node bodyNode = getBodyNode();
+        if (bodyNode == null || bodyNode.hasNodes() == false) return null;
+        return bodyNode.getNode(0);
+    }
+
+    /**
+     * Gets the argument list from the response.
+     *
+     * @return the argument list from the response
+     */
+    public ArgumentList getResponse() {
+        ArgumentList argList = new ArgumentList();
+
+        Node resNode = getActionResponseNode();
+        if (resNode == null) return argList;
+
+        int nArgs = resNode.getNNodes();
+        for (int n = 0; n < nArgs; n++) {
+            Node node = resNode.getNode(n);
+            String name = node.getName();
+            String value = node.getValue();
+            Argument arg = new Argument(name, value);
+            argList.add(arg);
+        }
+
+        return argList;
+    }
+}

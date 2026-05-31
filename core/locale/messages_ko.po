@@ -1,0 +1,72 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#, java-format
+msgid "{0,number,####} ms"
+msgid_plural "{0,number,####} ms"
+msgstr[0] "{0,number,####} ms"
+
+#, java-format
+msgid "{0} sec"
+msgid_plural "{0} sec"
+msgstr[0] "{0} 초"
+
+#, java-format
+msgid "{0} min"
+msgid_plural "{0} min"
+msgstr[0] "{0} 분"
+
+#, java-format
+msgid "{0} hour"
+msgid_plural "{0} hours"
+msgstr[0] "{0} 시간"
+
+#, java-format
+msgid "{0} day"
+msgid_plural "{0} days"
+msgstr[0] "{0} 일"
+
+#, java-format
+msgid "{0} year"
+msgid_plural "{0} years"
+msgstr[0] "{0} 년"
+
+msgid "n/a"
+msgstr "n/a"
+
+#, java-format
+msgid "{0,number,####} ns"
+msgid_plural "{0,number,###} ns"
+msgstr[0] "{0,number,###} ns"
+
+#, java-format
+msgid "{0,number,####} μs"
+msgid_plural "{0,number,###} μs"
+msgstr[0] "{0,number,###} μs"
+
+msgid "CRIT"
+msgstr "위험"
+
+msgid "DEBUG"
+msgstr "디버그"
+
+msgid "ERROR"
+msgstr "오류"
+
+msgid "INFO"
+msgstr "정보"
+
+msgid "WARN"
+msgstr "경고"
+
+#, java-format
+msgid "{0} similar message omitted"
+msgid_plural "{0} similar messages omitted"
+msgstr[0] "{0}개의 유사한 메시지가 생략됨"

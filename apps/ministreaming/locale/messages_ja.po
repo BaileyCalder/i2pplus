@@ -1,0 +1,63 @@
+# I2P
+# Copyright (C) 2014 The I2P Project
+msgid ""
+msgstr ""
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Message timeout"
+msgstr "メッセージタイムアウト"
+
+msgid "Failed delivery to local destination"
+msgstr "ローカル宛先への配信失敗"
+
+msgid "Local router failure"
+msgstr "ローカルルーターフェイル"
+
+msgid "Local network failure"
+msgstr "ローカルネットワークエラー"
+
+msgid "Session closed"
+msgstr "セッション閉鎖"
+
+msgid "Invalid message"
+msgstr "無効なメッセージ"
+
+msgid "Invalid message options"
+msgstr "無効なメッセージオプション"
+
+msgid "Buffer overflow"
+msgstr "バッファオーバーフロー"
+
+msgid "Message expired"
+msgstr "メッセージ期限切れ"
+
+msgid "Local lease set invalid"
+msgstr "ローカルリースセット無効"
+
+msgid "No local tunnels"
+msgstr "ローカルトンネルなし"
+
+msgid "Unsupported encryption options"
+msgstr "サポートされていない暗号化オプション"
+
+msgid "Invalid destination"
+msgstr "無効な宛先"
+
+msgid "Destination lease set expired"
+msgstr "宛先リースセット期限切れ"
+
+msgid "Destination lease set not found"
+msgstr "宛先リースセット未発見"
+
+msgid "Local destination shutdown"
+msgstr "ローカル宛先シャットダウン"
+
+msgid "Connection was reset"
+msgstr "接続がリセットされました"
+
+msgid "Failure code"
+msgstr "エラーコード"

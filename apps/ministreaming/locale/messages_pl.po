@@ -1,0 +1,63 @@
+# I2P
+# Copyright (C) 2014 The I2P Project
+msgid ""
+msgstr ""
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+
+msgid "Message timeout"
+msgstr "Limit czasu wiadomości"
+
+msgid "Failed delivery to local destination"
+msgstr "Nieudane dostarczenie do lokalnego adresu"
+
+msgid "Local router failure"
+msgstr "Lokalna awaria węzła"
+
+msgid "Local network failure"
+msgstr "Lokalna awaria sieci"
+
+msgid "Session closed"
+msgstr "Sesja zamknięta"
+
+msgid "Invalid message"
+msgstr "Nieprawidłowa wiadomość"
+
+msgid "Invalid message options"
+msgstr "Nieprawidłowe opcje wiadomości"
+
+msgid "Buffer overflow"
+msgstr "Przepełnienie bufora"
+
+msgid "Message expired"
+msgstr "Wiadomość wygasła"
+
+msgid "Local lease set invalid"
+msgstr "Nieprawidłowy lokalny LeaseSet"
+
+msgid "No local tunnels"
+msgstr "Brak lokalnych tuneli"
+
+msgid "Unsupported encryption options"
+msgstr "Nieobsługiwane opcje szyfrowania"
+
+msgid "Invalid destination"
+msgstr "Nieprawidłowy cel"
+
+msgid "Destination lease set expired"
+msgstr "Adres przeznaczenia LeaseSet wygasł"
+
+msgid "Destination lease set not found"
+msgstr "LeaseSet adresu przeznaczenia nie odnaleziony"
+
+msgid "Local destination shutdown"
+msgstr "Lokalny adres przeznaczenia wyłączony"
+
+msgid "Connection was reset"
+msgstr "Połączenie zostało zresetowane"
+
+msgid "Failure code"
+msgstr "Kod niepowodzenia"

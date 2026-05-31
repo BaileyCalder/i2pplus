@@ -1,0 +1,1575 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "internal"
+msgstr "interno"
+
+#, java-format
+msgid "{0} inbound, {0} outbound tunnel"
+msgid_plural "{0} inbound, {0} outbound tunnels"
+msgstr[0] "{0} tunnel in entrata, {0} in uscita"
+msgstr[1] "{0} tunnel in entrata, {0} in uscita"
+
+#, java-format
+msgid "{0} inbound tunnel"
+msgid_plural "{0} inbound tunnels"
+msgstr[0] "{0} tunnel in ingresso"
+msgstr[1] "{0} tunnel in ingresso"
+
+#, java-format
+msgid "{0} outbound tunnel"
+msgid_plural "{0} outbound tunnels"
+msgstr[0] "{0} tunnel in uscita"
+msgstr[1] "{0} tunnel in uscita"
+
+msgid "lower bandwidth and reliability"
+msgstr "larghezza di banda ed affidabilità minori"
+
+msgid "standard bandwidth and reliability"
+msgstr "larghezza di banda ed affidabilità standard"
+
+msgid "higher bandwidth and reliability"
+msgstr "larghezza di banda e affidabilità maggiori"
+
+msgid "Error - tunnels are not initialized yet"
+msgstr "Errore - i tunnel non sono ancora inizializzati"
+
+msgid "No services configured, cannot restart!"
+msgstr "Nessun servizio configurato, impossibile riavviare!"
+
+msgid "Stopping tunnel"
+msgstr "Fermando tunnel"
+
+msgid "Starting tunnel"
+msgstr "Avviando tunnel"
+
+msgid "Error restarting tunnel"
+msgstr "Errore durante il riavvio del tunnel"
+
+msgid "Restarted all running tunnels"
+msgstr "Tutti i tunnel in esecuzione sono stati riavviati"
+
+msgid "No clients configured, cannot restart!"
+msgstr "Nessun client configurato, impossibile riavviare!"
+
+msgid "Restarted all running client tunnels"
+msgstr "Tutti i tunnel client in esecuzione sono stati riavviati"
+
+msgid "Configuration reloaded for all tunnels"
+msgstr "Configurazione ricaricata per tutti i tunnel"
+
+msgid "Error: Invalid tunnel"
+msgstr "Errore: tunnel non valido"
+
+msgid "Started tunnel"
+msgstr "Tunnel avviato"
+
+msgid "Stopped tunnel"
+msgstr "Tunnel arrestato"
+
+msgid "Restarting tunnel"
+msgstr "Riavvio del tunnel"
+
+msgid "Please confirm removal"
+msgstr "Confermare la rimozione"
+
+msgid "New Tunnel"
+msgstr "Nuovo Tunnel"
+
+msgid "Port not set"
+msgstr "Porta non impostata"
+
+msgid "Invalid port"
+msgstr "Porta non valida"
+
+msgid "Warning - ports less than 1024 are not recommended"
+msgstr "Attenzione - È meglio non utilizzare porte inferiori alla 1024"
+
+msgid "Warning - duplicate port"
+msgstr "Attenzione - porta duplicata"
+
+msgid "Standard client"
+msgstr "Client standard"
+
+msgid "HTTP/HTTPS client"
+msgstr "Client HTTP/HTTPS"
+
+msgid "IRC client"
+msgstr "Client IRC"
+
+msgid "Standard server"
+msgstr "Server standard"
+
+msgid "HTTP server"
+msgstr "Server HTTP"
+
+msgid "SOCKS 4/4a/5 proxy"
+msgstr "Proxy SOCKS 4/4a/5"
+
+msgid "SOCKS IRC proxy"
+msgstr "Proxy SOCKS IRC"
+
+msgid "CONNECT/SSL/HTTPS proxy"
+msgstr "Proxy CONNECT/SSL/HTTPS"
+
+msgid "IRC server"
+msgstr "Server IRC"
+
+msgid "Streamr client"
+msgstr "Client streamr"
+
+msgid "Streamr server"
+msgstr "Server streamr"
+
+msgid "HTTP bidir"
+msgstr "HTTP bidir"
+
+msgid "Host not set"
+msgstr "Host non impostato"
+
+msgid "Invalid address"
+msgstr "Indirizzo non valido"
+
+msgid "Tunnel Manager"
+msgstr "Gestore Tunnel"
+
+msgid "Edit Client Tunnel"
+msgstr "Modifica il Tunnel del client"
+
+msgid "Edit Server Tunnel"
+msgstr "Modifica tunnel del server"
+
+msgid "Are you sure you want to delete?"
+msgstr "Sicuro di volerlo eliminare?"
+
+msgid "required"
+msgstr "necessario"
+
+msgid "Tunnel and all other shared client tunnels must be stopped to change this configuration"
+msgstr "Il tunnel e tutti gli altri tunnel client condivisi devono essere arrestati per modificare questa configurazione"
+
+msgid "Tunnel must be stopped to change this configuration"
+msgstr "Il tunnel deve essere arrestato per modificare questa configurazione"
+
+msgid "Configuration"
+msgstr "Configurazione"
+
+msgid "New Client Configuration"
+msgstr "Configurazione nuovo client"
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "Auto Start Tunnel"
+msgstr "Avvio automatico tunnel"
+
+msgid "Name of tunnel to be displayed on Tunnel Manager home page and the router console sidebar"
+msgstr "Nome del tunnel da visualizzare sulla home page di Tunnel Manager e sulla barra laterale della console del router"
+
+msgid "Enable this option to ensure this service is available when the router starts"
+msgstr "Abilitare questa opzione per garantire che questo servizio sia disponibile all'avvio del router"
+
+msgid "Automatically start tunnel when router starts"
+msgstr "Avvia automaticamente il tunnel all'avvio del router"
+
+msgid "Description"
+msgstr "Descrizione"
+
+msgid "Shared Client"
+msgstr "Client Condiviso"
+
+msgid "Description of tunnel to be displayed on Tunnel Manager home page"
+msgstr "Descrizione del tunnel da visualizzare sulla home page di Tunnel Manager"
+
+msgid "Traffic from all clients with this feature enabled will be routed over the same set of tunnels. This will make profiling the tunnels by an adversary more difficult, but will link the clients together."
+msgstr "Il traffico di tutti i client con questa funzione abilitato verrà instradato sullo stesso set di tunnel. Ciò renderà più difficile la profilazione dei tunnel da parte di un avversario, ma collegherà i clienti."
+
+msgid "Share tunnels with other configured clients"
+msgstr "Condividi tunnel con altri client configurati"
+
+msgid "Target"
+msgstr "Obiettivo"
+
+msgid "Access Point"
+msgstr "Punto di Accesso"
+
+msgid "Use Outproxy Plugin"
+msgstr "Usa plugin del proxy in uscita"
+
+msgid "Enable DCC"
+msgstr "Abilita DCC"
+
+msgid "Port"
+msgstr "Porta"
+
+msgid "Specify the local port this service should be accessible from"
+msgstr "Specificare la porta locale da cui questo servizio dovrebbe essere accessibile"
+
+msgid "Host"
+msgstr "Host"
+
+msgid "Hostname or IP address of the target server"
+msgstr "Nome host o indirizzo IP del server di destinazione"
+
+msgid "Reachable by"
+msgstr "Raggiungibile da"
+
+msgid "Local interface (ip address) the client tunnel will be reachable from"
+msgstr "Interfaccia locale (indirizzo IP) da cui sarà raggiungibile il tunnel client"
+
+msgid "If an outproxy plugin is installed (e.g. Orchid), use this instead of any configured outproxies to access websites outside of I2P"
+msgstr "Se è installato un plug-in outproxy (ad esempio Orchid), utilizzalo al posto di qualsiasi outprox configurato per accedere a siti Web esterni a I2P"
+
+msgid "Use plugin instead of proxies listed below if available"
+msgstr "Utilizza il plugin invece dei proxy elencati di seguito, se disponibili"
+
+msgid "Enables direct chat and file transfers, bypassing I2P. Note that this will compromise your anonymity and is not recommended."
+msgstr "Abilita chat diretta e trasferimenti di file, ignorando I2P."
+
+msgid "Enable Direct Client-to-Client protocol"
+msgstr "Abilita il protocollo diretto da client a client"
+
+msgid "Outproxies"
+msgstr "Outproxy"
+
+msgid "SSL Outproxies"
+msgstr "Proxy di uscita SSL"
+
+msgid "Specify the .i2p address or destination (b32 or b64) of the outproxy here."
+msgstr "Specificare qui l'indirizzo .i2p o la destinazione (b32 o b64) dell'outproxy."
+
+msgid "For a random selection from a pool, separate with commas e.g. server1.i2p,server2.i2p"
+msgstr "Per una selezione casuale da un pool, separare con virgole, ad es. server1.i2p,server2..i2p"
+
+msgid "Outproxy Type"
+msgstr "Tipo proxy esterno"
+
+msgid "Tunnel Destination"
+msgstr "Destinazione tunnel"
+
+msgid "Use SSL"
+msgstr "Utilizza SSL"
+
+msgid "Specify the .i2p address or destination (b32 or b64) of the tunnel here."
+msgstr "Specificare qui l'indirizzo .i2p o la destinazione (b32 o b64) del tunnel."
+
+msgid "name, name:port, or destination"
+msgstr "nome, nome:porta, o destinazione"
+
+msgid "If you are accessing a service on a remote I2P router, you may wish to connect with SSL to avoid traffic interception. The client application should be also be configured to use SSL."
+msgstr "Se stai accedendo a un servizio su un router I2P remoto, potresti voler connetterti con SSL per evitare l'intercettazione del traffico. L'applicazione client deve essere anche configurata per utilizzare SSL."
+
+msgid "Clients use SSL to connect to tunnel"
+msgstr "I client utilizzano SSL per connettersi al tunnel"
+
+msgid "Please specify the full b64 destination."
+msgstr "Specificare la destinazione b64 completa."
+
+msgid "Local destination"
+msgstr "Destinazione locale"
+
+msgid "Local Base32"
+msgstr "Base locale32"
+
+msgid "Read Only: Local Destination (if known)"
+msgstr "Sola lettura: Destinazione locale (se nota)"
+
+msgid "Stop"
+msgstr "Ferma"
+
+msgid "Start this Tunnel"
+msgstr "Avvia tunnel"
+
+msgid "Start"
+msgstr "Avvia"
+
+msgid "Cancel"
+msgstr "Annulla"
+
+msgid "Delete this tunnel (cannot be undone)"
+msgstr "Elimina questo tunnel (non può essere annullato)"
+
+msgid "Delete"
+msgstr "Elimina"
+
+msgid "Save"
+msgstr "Salva"
+
+msgid "Advanced networking options"
+msgstr "Opzioni di rete avanzate"
+
+msgid "Note: When this client is configured to share tunnels, these options apply to all clients configured to share tunnels."
+msgstr "Nota: quando questo client è configurato per condividere i tunnel, queste opzioni si applicano a tutti i client configurati per condividere i tunnel."
+
+msgid "Profile"
+msgstr "Profilo"
+
+msgid "Delay Connect"
+msgstr "Ritarda Connessione"
+
+msgid "Connection Profile"
+msgstr "Profilo connessione"
+
+msgid "interactive connection"
+msgstr "connessione interattiva"
+
+msgid "bulk connection (downloads/websites/BT)"
+msgstr "connessione di massa (download/siti web/BT)"
+
+msgid "Delay Connection"
+msgstr "Ritardo di connessione"
+
+msgid "for request/response connections"
+msgstr "per connessioni richiesta/risposta"
+
+msgid "Router I2CP Address"
+msgstr "Indirizzo I2CP Router"
+
+msgid "I2CP Hostname or IP"
+msgstr "Nome host o IP I2CP"
+
+msgid "I2CP Port Number"
+msgstr "Numero porta I2CP"
+
+msgid "Delay tunnel open until required"
+msgstr "Ritarda l'apertura di tunnel fino a che non è richiesta"
+
+msgid "Signature type"
+msgstr "Tipo firma"
+
+msgid "Conserve resources by only creating tunnels when required"
+msgstr "Conserva le risorse creando tunnel solo quando richiesto"
+
+msgid "Don't open tunnel until activity is detected on port"
+msgstr "Non aprire il tunnel finché non viene rilevata attività sulla porta"
+
+msgid "This is the default, recommended option"
+msgstr "Questa è l'opzione di default, raccomandata"
+
+msgid "Encryption types"
+msgstr "Tipi di crittografia"
+
+msgid "Legacy options"
+msgstr "Opzioni legacy"
+
+msgid "Post Quantum"
+msgstr "Post-quantistico"
+
+msgid "Both encryption types"
+msgstr "Entrambi i tipi di crittografia"
+
+msgid "Tunnel Options"
+msgstr "Opzioni tunnel"
+
+msgid "Length"
+msgstr "Lunghezza"
+
+msgid "Count"
+msgstr "Conteggio"
+
+msgid "Length of each Tunnel"
+msgstr "Lunghezza di ogni tunnel"
+
+msgid "0 hop tunnel (no anonymity)"
+msgstr "0 tunnel  hop (nessun anonimato)"
+
+msgid "1 hop tunnel (low anonymity)"
+msgstr "1 tunnel  hop (anonimato basso)"
+
+msgid "2 hop tunnel (medium anonymity)"
+msgstr "2 tunnel  hop (anonimato medio)"
+
+msgid "3 hop tunnel (high anonymity)"
+msgstr "3 tunnel  hop (anonimato alto)"
+
+#, java-format
+msgid "{0} hop tunnel"
+msgid_plural "{0} hop tunnel"
+msgstr[0] "{0} tunnel hop"
+msgstr[1] "{0} tunnel hop"
+
+msgid "Number of Tunnels in Group"
+msgstr "Numero di tunnel nel gruppo"
+
+msgid "Disabled for 0 hop tunnels"
+msgstr "Disabilitato per tunnel a 0 hop"
+
+msgid "Variance"
+msgstr "Varianza"
+
+msgid "Backup Count"
+msgstr "Conteggio backup"
+
+msgid "Level of Randomization for Tunnel Length"
+msgstr "Livello di randomizzazione per la lunghezza del tunnel"
+
+msgid "0 hop variance"
+msgstr "0 Varianza del luppolo"
+
+msgid "no randomization, consistent performance"
+msgstr "nessuna randomizzazione, prestazioni costanti"
+
+msgid "+ 0-1 hop variance"
+msgstr "varianza del luppolo 0-1"
+
+msgid "medium randomization, lower performance"
+msgstr "randomizzazione media, prestazioni inferiori"
+
+msgid "+ 0-2 hop variance"
+msgstr "varianza di salto 0-2"
+
+msgid "high randomization, very low performance"
+msgstr "randomizzazione elevata, prestazioni molto basse"
+
+msgid "+/- 0-1 hop variance"
+msgstr "/- Variazione del luppolo 0-1"
+
+msgid "standard randomization, standard performance"
+msgstr "randomizzazione standard, prestazione standard"
+
+msgid "+/- 0-2 hop variance"
+msgstr "/- Varianza di luppolo 0-2"
+
+msgid "not recommended"
+msgstr "non consigliato"
+
+msgid "hop variance"
+msgstr "varianza hop"
+
+msgid "Number of Reserve Tunnels"
+msgstr "Numero di tunnel di riserva"
+
+#, java-format
+msgid "{0} backup tunnel"
+msgid_plural "{0} backup tunnels"
+msgstr[0] "{0} tunnel di backup"
+msgstr[1] "{0} tunnel di backup"
+
+msgid "no redundancy, no added resource usage"
+msgstr "nessuna ridondanza, nessun utilizzo di risorse aggiuntive"
+
+msgid "low redundancy, low resource usage"
+msgstr "ridondanza bassa, utilizzo ridotto delle risorse"
+
+msgid "medium redundancy, medium resource usage"
+msgstr "ridondanza media, utilizzo medio delle risorse"
+
+msgid "high redundancy, high resource usage"
+msgstr "ridondanza elevata, utilizzo elevato delle risorse"
+
+msgid "Reduce tunnel quantity"
+msgstr "Ridurre la quantità di tunnel"
+
+msgid "Reduce tunnel count when idle to conserve resources but keep tunnel open (to ensure immediate availability)"
+msgstr "Riduci il conteggio dei tunnel quando inattivo per risparmiare risorse ma mantieni il tunnel aperto (per garantire la disponibilità immediata)"
+
+msgid "Reduce tunnel quantity when idle"
+msgstr "Riduci la quantità di tunnel quando inattivo"
+
+msgid "Idle period"
+msgstr "Periodo di inattività"
+
+msgid "Reduced Tunnel Idle Time"
+msgstr "Tempo di inattività del tunnel ridotto"
+
+msgid "Reduced count"
+msgstr "Conteggio ridotto"
+
+msgid "Reduced tunnel count"
+msgstr "Riduci conteggio tunnel"
+
+msgid "Close tunnels when idle"
+msgstr "Chiudi i tunnel quando inattivo"
+
+msgid "To conserve resources, close tunnels when not in use"
+msgstr "Per risparmiare risorse, chiudi i tunnel quando non sono in uso"
+
+msgid "Close client tunnels after specified idle period"
+msgstr "Chiudi i tunnel client dopo il periodo di inattività specificato"
+
+msgid "Close Tunnel Idle Time"
+msgstr "Chiudi tempo di inattività del tunnel"
+
+msgid "New Keys on Reopen"
+msgstr "Nuove Chiavi alla riapertura"
+
+msgid "Change tunnel identity (destination) when tunnels reopen"
+msgstr "Cambia identità del tunnel (destinazione) alla riapertura dei tunnel"
+
+msgid "Enable"
+msgstr "Abilita"
+
+msgid "Retain tunnel identity (destination) when tunnels reopen"
+msgstr "Conserva l'identità del tunnel (destinazione) quando i tunnel riaprono"
+
+msgid "Disable"
+msgstr "Disabilita"
+
+msgid "Persistent private key"
+msgstr "Chiave privata persistente"
+
+msgid "Private key file"
+msgstr "File chiave privata"
+
+msgid "Enabling this feature will ensure your tunnel identity (destination) remains static, for services offering features based on destination e.g. IRC user authentication"
+msgstr "L'abilitazione di questa funzione garantirà che l'identità del tunnel (destinazione) rimanga statica, per i servizi che offrono funzionalità basate sulla destinazione, ad es. autenticazione utente IRC"
+
+msgid "Generate key to enable persistent client tunnel identity"
+msgstr "Genera chiave per abilitare l'identità del tunnel client persistente"
+
+msgid "Path to Private Key File"
+msgstr "Percorso del file della chiave privata"
+
+msgid "HTTP Filtering"
+msgstr "Filtro HTTP"
+
+msgid "When enabled, the user agent of your web browser or http client will not be spoofed, potentially reducing your anonymity"
+msgstr "Se abilitato, lo user agent del tuo browser web o client http non verrà falsificato, riducendo potenzialmente il tuo anonimato"
+
+msgid "Do not spoof User-Agent header"
+msgstr "Non falsificare l'intestazione User-Agent"
+
+msgid "When enabled, the referer (originating page) of your web requests will not be filtered, potentially reducing your anonymity"
+msgstr "Se abilitato, il referer (pagina di origine) delle tue richieste web non verrà filtrato, riducendo potenzialmente il tuo anonimato"
+
+msgid "Do not block Referer header"
+msgstr "Non bloccare l'intestazione del Referer"
+
+msgid "When enabled, the accept headers (mime types support) broadcast by your web browser will not be filtered, potentially reducing your anonymity"
+msgstr "Quando abilitato, le intestazioni accettate (supporto tipi MIME) trasmesse dal tuo browser web non verranno filtrate, riducendo potenzialmente il tuo anonimato"
+
+msgid "Do not block Accept headers"
+msgstr "Non bloccare le intestazioni Accetta"
+
+msgid "Allow SSL to I2P addresses when enabled"
+msgstr "Consenti SSL agli indirizzi I2P quando abilitato"
+
+msgid "Allow SSL to I2P addresses"
+msgstr "Permetti SSL per gli indirizzi I2P"
+
+msgid "Local Authorization"
+msgstr "Autorizzazione Locale"
+
+msgid "Local Credentials"
+msgstr "Credenziali locali"
+
+msgid "Enable to require a username and password to access this local service (for example if hosting on a LAN)"
+msgstr "Abilita la richiesta di nome utente e password per accedere a questo servizio locale (ad esempio se hosting su LAN)"
+
+msgid "Require local authorization for this service"
+msgstr "Richiedi l'autorizzazione locale per questo servizio"
+
+msgid "Set username required to access this service"
+msgstr "Imposta il nome utente richiesto per accedere a questo servizio"
+
+msgid "Username"
+msgstr "Nome Utente"
+
+msgid "Set password required to access this service"
+msgstr "Imposta la password richiesta per accedere a questo servizio"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Outproxy Authorization"
+msgstr "Autorizzazione Outproxy"
+
+msgid "Remote Credentials"
+msgstr "Credenziali remote"
+
+msgid "Enable if the outproxy a username and password to access"
+msgstr "Abilita se il proxy di uscita fornisce un nome utente e una password per accedere"
+
+msgid "Outproxy requires authorization"
+msgstr "Outproxy richiede l'autorizzazione"
+
+msgid "Enter username required by outproxy"
+msgstr "Inserisci il nome utente richiesto dall'outproxy"
+
+msgid "Enter password required by outproxy"
+msgstr "Inserisci la password richiesta dal proxy out"
+
+msgid "Jump URL List"
+msgstr "Lista URL salto"
+
+msgid "List of helper URLs providing jump links when a host is not found in your addressbook"
+msgstr "Elenco di URL di supporto che forniscono collegamenti di salto quando un host non viene trovato nella tua rubrica"
+
+msgid "Custom options"
+msgstr "Opzioni personalizzate"
+
+msgid "Advanced tunnel, streaming, and I2CP options"
+msgstr "Opzioni avanzate di tunnel, streaming e I2CP"
+
+msgid "New Server Configuration"
+msgstr "Nuova configurazione del server"
+
+msgid "Hostname"
+msgstr "Nome host"
+
+msgid "Website Hostname"
+msgstr "Nome host sito web"
+
+msgid "(leave blank for outproxies)"
+msgstr "(lascia vuoto per gli outproxy)"
+
+msgid "Website Hostname e.g. mysite.i2p"
+msgstr "Nome host sito web, ad es. mysite.i2p"
+
+msgid "Specify the port the server is running on"
+msgstr "Specificare la porta su cui è in esecuzione il server"
+
+msgid "Listening interface (IP address) for client access (normally 127.0.0.1)"
+msgstr "Interfaccia di ascolto (indirizzo IP) per l'accesso client (normalmente 127.0.0.1)"
+
+msgid "To avoid traffic sniffing if connecting to a remote server, you can enable an SSL connection. Note that the target server must be configured to accept SSL connections."
+msgstr "Per evitare lo sniffing del traffico durante la connessione a un server remoto, è possibile abilitare una connessione SSL. Si noti che il server di destinazione deve essere configurato per accettare le connessioni SSL."
+
+msgid "Use SSL to connect to target"
+msgstr "Usa SSL per connetterti alla destinazione"
+
+msgid "Port required to access service (this can be a different port to the port the service is hosted on)"
+msgstr "Porta richiesta per accedere al servizio (può essere una porta diversa da quella su cui è ospitato il servizio)"
+
+msgid "Generate a QR Code for this domain"
+msgstr "Genera un codice QR per questo dominio"
+
+msgid "Generate QR Code"
+msgstr "Genera un codice QR"
+
+msgid "Add to Private addressbook"
+msgstr "Aggiungi alla rubrica privata"
+
+msgid "Add to local addressbook"
+msgstr "Aggiungi alla rubrica locale"
+
+msgid "Register, unregister or change details for hostname"
+msgstr "Registra, annulla la registrazione o modifica i dettagli per il nome host"
+
+msgid "Registration Authentication"
+msgstr "Verifica della registrazione"
+
+msgid "HTTPS configuration"
+msgstr "Configurazione HTTPS"
+
+msgid "SSL Wizard"
+msgstr "Procedura guidata SSL"
+
+msgid "Note: In order to enable QR code generation or registration authentication, configure the Website Hostname field (for websites) or the Name field (everything else) above with an .i2p suffixed hostname e.g. mynewserver.i2p"
+msgstr "Nota: per abilitare la generazione del codice QR o l'autenticazione della registrazione, configurare il campo Nome host sito Web (per i siti Web) o il campo Nome (tutto il resto) sopra con un nome host con suffisso .i2p, ad es. mynewserver.i2p"
+
+msgid "Absolute path to Private Key File (will be created if it does not exist)"
+msgstr "Percorso assoluto al file della chiave privata (verrà creato se non esiste)"
+
+msgid "Alternate private key file"
+msgstr "File di chiave privata alternativo"
+
+msgid "Alternate local destination"
+msgstr "Destinazione locale alternativa"
+
+msgid "Absolute path for new key (will be created)"
+msgstr "Percorso assoluto per la nuova chiave (verrà creata)"
+
+msgid "Read Only: Alternate Local Destination"
+msgstr "Sola lettura: destinazione locale alternativa"
+
+msgid "Specify filename or full path for new key"
+msgstr "Specificare il nome file o il percorso completo per la nuova chiave"
+
+msgid "Configuration cannot be changed after destination is created"
+msgstr "La configurazione non può essere modificata dopo la creazione della destinazione"
+
+msgid "Configuration of signature type is only possible when the tunnel is first created. To change, you must create a new tunnel."
+msgstr "La configurazione del tipo di firma è possibile solo alla prima creazione del tunnel. Per cambiare, è necessario creare un nuovo tunnel."
+
+msgid "Legacy option, with alternate key configured"
+msgstr "Opzione legacy, con chiave alternativa configurata"
+
+msgid "Legacy option (deprecated), provided for backward compatibility"
+msgstr "Opzione legacy (deprecata), fornita per compatibilità con le versioni precedenti"
+
+msgid "Recommended for blinded and encrypted destinations"
+msgstr "Consigliato per destinazioni accecate e crittografate"
+
+msgid "Inbound"
+msgstr "In entrata"
+
+msgid "Outbound"
+msgstr "In uscita"
+
+msgid "no anonymity"
+msgstr "nessun anonimato"
+
+msgid "low anonymity"
+msgstr "basso anonimato"
+
+msgid "medium anonymity"
+msgstr "anonimato medio"
+
+msgid "high anonymity"
+msgstr "alto anonimato"
+
+msgid "Level of Randomization for Tunnel Depth"
+msgstr "Livello di randomizzazione per la profondità del tunnel"
+
+msgid "very high randomization, very low performance"
+msgstr "randomizzazione molto alta, prestazioni molto basse"
+
+msgid "+ 0-3 hop variance"
+msgstr "varianza di luppolo 0-3"
+
+msgid "definitely not recommended"
+msgstr "decisamente sconsigliato"
+
+msgid "+/- 0-3 hop variance"
+msgstr "/- Variazione di luppolo 0-3"
+
+msgid "backup tunnels"
+msgstr "tunnel di backup"
+
+msgid "Reduce tunnels to conserve resources"
+msgstr "Riduci i tunnel per conservare le risorse"
+
+msgid "Period of inactivity before tunnel number is reduced"
+msgstr "Periodo di inattività prima della riduzione del numero di tunnel"
+
+msgid "minutes"
+msgstr "minuti"
+
+msgid "Number of tunnels to keep open to maintain availability of service"
+msgstr "Numero di tunnel da mantenere aperti per mantenere la disponibilità del servizio"
+
+msgid "Server Access Options"
+msgstr "Opzioni di accesso al server"
+
+msgid "Prevent clients from accessing this service via an inproxy"
+msgstr "Impedisci ai client di accedere a questo servizio tramite un proxy in entrata"
+
+msgid "Block Access via Inproxies"
+msgstr "Blocca accessi via Inproxies"
+
+msgid "Block Accesses containing Referers"
+msgstr "Blocca accessi contenenti referer"
+
+msgid "Use unique IP addresses for each connecting client (local non-SSL servers only)"
+msgstr "Utilizza indirizzi IP univoci per ciascun client che si connette (solo server locali non SSL)"
+
+msgid "Unique Local Address per Client"
+msgstr "Indirizzo locale univoco per client"
+
+msgid "Only enable if you are hosting this service on multiple routers"
+msgstr "Abilita solo se stai ospitando questo servizio su più router"
+
+msgid "Optimize for Multihoming"
+msgstr "Ottimizza per il multihoming"
+
+msgid "Deny User-Agents matching these strings (probably from inproxies)"
+msgstr "Nega gli User-Agent che corrispondono a queste stringhe (probabilmente da inproxies)"
+
+msgid "Block these User-Agents"
+msgstr "Blocca questi user agent"
+
+msgid "comma separated, e.g. Mozilla,Opera (case-sensitive)"
+msgstr "separati da virgole, ad es. Mozilla,Opera"
+
+msgid "Encrypt Leaseset"
+msgstr "Codifica Leaseset"
+
+msgid "Optional Lookup Password"
+msgstr "Ricerca password facoltativa"
+
+msgid "Keyring Manager"
+msgstr "Gestione portachiavi"
+
+msgid "Allow all clients to connect to this service"
+msgstr "Consenti a tutti i client di connettersi a questo servizio"
+
+msgid "Send key to all users."
+msgstr "Invia chiave a tutti gli utenti."
+
+msgid "Encrypted"
+msgstr "Codificato"
+
+msgid "Prevents server discovery by floodfills"
+msgstr "Impedisce il rilevamento del server da parte dei riempimenti"
+
+msgid "Blinded"
+msgstr "Accecato"
+
+msgid "Send password to all users."
+msgstr "Invia password a tutti gli utenti."
+
+msgid "Blinded with lookup password"
+msgstr "Accecato dalla ricerca password"
+
+msgid "Send key and password to all users."
+msgstr "Invia chiave e password a tutti gli utenti."
+
+msgid "Encrypted with lookup password"
+msgstr "Crittografato con ricerca password"
+
+msgid "Send individual key to each user."
+msgstr "Invia chiave individuale a ciascun utente."
+
+msgid "Encrypted with per-user key"
+msgstr "Crittografato con chiave per utente"
+
+msgid "Encrypted with lookup password and per-user key"
+msgstr "Crittografato con password di ricerca e chiave per utente"
+
+msgid "Enter key from each user."
+msgstr "Inserisci la chiave di ciascun utente."
+
+msgid "Encryption Key"
+msgstr "Chiave cifratura"
+
+msgid "Generate New Key"
+msgstr "Genera nuova chiave"
+
+msgid "Encryption key required to access this service"
+msgstr "Chiave di crittografia richiesta per accedere a questo servizio"
+
+msgid "Generate new encryption key"
+msgstr "Genera nuova chiave di crittografia"
+
+msgid "Generate"
+msgstr "Genera"
+
+msgid "Tunnel must be stopped first"
+msgstr "Il tunnel deve essere prima fermato"
+
+msgid "Client Manager"
+msgstr "Gestore clienti"
+
+msgid "Client Name"
+msgstr "Nome cliente"
+
+msgid "Client Key"
+msgstr "Chiave cliente"
+
+msgid "Revoke"
+msgstr "Revoca"
+
+msgid "Client"
+msgstr "Client"
+
+msgid "Add"
+msgstr "Aggiungi"
+
+msgid "Restricted Access List"
+msgstr "Lista di accesso ristretto"
+
+msgid "Activate to enable editing"
+msgstr "Attiva per abilitare la modifica"
+
+msgid "Tunnel Filter"
+msgstr "Filtro tunnel"
+
+msgid "Help with defining tunnel filters"
+msgstr "Aiuto con la definizione dei filtri tunnel"
+
+msgid "Prevent listed clients from connecting to this service"
+msgstr "Impedisci ai client elencati di connettersi a questo servizio"
+
+msgid "Blacklist"
+msgstr "Lista Nera"
+
+msgid "Only allow listed clients to connect to this service"
+msgstr "Consenti solo ai client elencati di connettersi a questo servizio"
+
+msgid "Whitelist"
+msgstr "Eccezioni"
+
+msgid "Absolute path to file containing filter definition"
+msgstr "Percorso assoluto al file contenente la definizione del filtro"
+
+msgid "Absolute path to filter definition"
+msgstr "Percorso assoluto per la definizione del filtro"
+
+msgid "Specify client destinations, 1 per line"
+msgstr "Specificare le destinazioni client, 1 per riga"
+
+msgid "Server Throttling"
+msgstr "Limitazione del server"
+
+msgid "Inbound connection limits"
+msgstr "Limiti di connessione in entrata"
+
+msgid "Per Minute"
+msgstr "Per minuto"
+
+msgid "Per Hour"
+msgstr "Per ora"
+
+msgid "Per Day"
+msgstr "Per giorno"
+
+msgid "Concurrent"
+msgstr "Concorrente"
+
+msgid "Per Client"
+msgstr "Per client"
+
+msgid "Maximum number of web page requests per minute for a unique client before access to the server is blocked"
+msgstr "Numero massimo di richieste di pagine web al minuto per un client unico prima che l'accesso al server venga bloccato"
+
+msgid "(0 = unlimited)"
+msgstr "(0 = illimitato)"
+
+msgid "Maximum number of web page requests per hour for a unique client before access to the server is blocked"
+msgstr "Numero massimo di richieste di pagine web all'ora per un client unico prima che l'accesso al server venga bloccato"
+
+msgid "Maximum number of web page requests per day for a unique client before access to the server is blocked"
+msgstr "Numero massimo di richieste di pagine web al giorno per un client unico prima che l'accesso al server venga bloccato"
+
+msgid "Total"
+msgstr "Totale"
+
+msgid "Total number of web page requests per minute before access to the server is blocked"
+msgstr "Numero totale di richieste di pagine Web al minuto prima che l'accesso al server venga bloccato"
+
+msgid "Total number of web page requests per hour before access to the server is blocked"
+msgstr "Numero totale di richieste di pagine Web all'ora prima che l'accesso al server venga bloccato"
+
+msgid "Total number of web page requests per day before access to the server is blocked"
+msgstr "Numero totale di richieste di pagine Web al giorno prima che l'accesso al server venga bloccato"
+
+msgid "Maximum number of simultaneous client connections"
+msgstr "Numero massimo di connessioni client simultanee"
+
+msgid "POST limits"
+msgstr "Limiti POST"
+
+msgid "Per Period"
+msgstr "Per periodo"
+
+msgid "Ban Duration"
+msgstr "Durata del ban"
+
+msgid "POST limit period"
+msgstr "Periodo limite POST"
+
+msgid "Maximum number of post requests permitted for a unique client for the configured timespan"
+msgstr "Numero massimo di richieste di post consentite per un client univoco per l'intervallo di tempo configurato"
+
+msgid "If a client exceeds the maximum number of post requests per allocated period, enforce a ban for this number of minutes"
+msgstr "Se un client supera il numero massimo di richieste di post per periodo assegnato, applica un ban per questo numero di minuti"
+
+msgid "Timespan for the maximum number of post requests to be reached before a ban is triggered"
+msgstr "Tempo entro il quale deve essere raggiunto il numero massimo di richieste di post prima che venga attivato un ban"
+
+msgid "Total number of post requests permitted for the configured timespan"
+msgstr "Numero totale di richieste di post consentite per l'intervallo di tempo configurato"
+
+msgid "If the maximum number of post requests per allocated period is exceeded, enforce a global access ban for this number of minutes"
+msgstr "Se viene superato il numero massimo di richieste di post per periodo assegnato, applica un divieto di accesso globale per questo numero di minuti"
+
+msgid "Custom HTTP Headers"
+msgstr "Intestazioni HTTP personalizzate"
+
+msgid "Note: These custom headers will only be enabled for served files that don't have the relevant header already set."
+msgstr "Nota: queste intestazioni personalizzate verranno abilitate solo per i file serviti che non hanno già impostata l'intestazione pertinente."
+
+msgid "Set the Allow header to 'GET, POST, HEAD' for html, xml, json and text files"
+msgstr "Imposta l'intestazione Consenti su 'GET, POST, HEAD' per file html, xml, json e di testo"
+
+msgid "Allow"
+msgstr "Consenti"
+
+msgid "Enable Cache-Control headers (no-cache for html, xml, json and text, immutable for everything else)"
+msgstr "Abilita intestazioni Cache-Control (nessuna cache per html, xml, json e testo, immutabile per tutto il resto)"
+
+msgid "Cache-Control"
+msgstr "Controllo cache"
+
+msgid "Set the Referrer-Policy header to 'same-origin' for html, xml, json and text files"
+msgstr "Imposta l'intestazione Referrer-Policy su 'same-origin' per file html, xml, json e di testo"
+
+msgid "Referrer-Policy"
+msgstr "Politica di riferimento"
+
+msgid "Set the X-Content-Type-Options header to 'nosniff'"
+msgstr "Imposta l'intestazione X-Content-Type-Options su 'nosniff'"
+
+msgid "X-Content-Type-Options"
+msgstr "Opzioni tipo contenuto X"
+
+#, java-format
+msgid "Initializing Tunnel Manager{0}"
+msgstr "Inizializzazione del Gestore Tunnel{0}"
+
+msgid "Tunnels not initialized yet; please retry in a few moments."
+msgstr "Tunnel non ancora inizializzati; Tunnel non ancora inizializzati; Si prega di riprovare in pochi istanti."
+
+msgid "Status Messages"
+msgstr "Messaggi di stato"
+
+msgid "Clear"
+msgstr "Pulisci"
+
+msgid "Refresh"
+msgstr "Ricarica"
+
+msgid "Global Tunnel Control"
+msgstr "Controllo globale dei tunnel"
+
+msgid "Tunnel Wizard"
+msgstr "Creazione guidata tunnel"
+
+msgid "Stop All"
+msgstr "Ferma tutto"
+
+msgid "Start All"
+msgstr "Avvia tutto"
+
+msgid "Restart all running tunnels"
+msgstr "Riavvia tutti i tunnel in esecuzione"
+
+msgid "Restart All"
+msgstr "Riavvia tutto"
+
+msgid "Restart all running server tunnels"
+msgstr "Riavvia tutti i tunnel server in esecuzione"
+
+msgid "Restart All Servers"
+msgstr "Riavvia tutti i server"
+
+msgid "Restart all running client tunnels"
+msgstr "Riavvia tutti i tunnel client in esecuzione"
+
+msgid "Restart All Clients"
+msgstr "Riavvia tutti i client"
+
+msgid "I2P Server Tunnels"
+msgstr "Tunnel server I2P"
+
+msgid "Helper"
+msgstr "Aiuto"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "Points at"
+msgstr "Punta a"
+
+msgid "Preview"
+msgstr "Anteprima"
+
+msgid "Status"
+msgstr "Stato"
+
+msgid "Control"
+msgstr "Controllo"
+
+msgid "Edit Server Tunnel Settings for"
+msgstr "Modifica impostazioni tunnel server per"
+
+msgid "Test IRC server, bypassing I2P"
+msgstr "Server IRC di test, bypassando I2P"
+
+msgid "Test HTTPS server, bypassing I2P"
+msgstr "Testare il server HTTPS, ignorando I2P"
+
+msgid "Test HTTP server, bypassing I2P"
+msgstr "Testare il server HTTP, ignorando I2P"
+
+msgid "Test HTTP server through I2P"
+msgstr "Verifica del server HTTP tramite I2P"
+
+msgid "Base32 Address"
+msgstr "Indirizzo Base32"
+
+msgid "Offline"
+msgstr "Non in linea"
+
+msgid "No Preview"
+msgstr "Nessuna anteprima"
+
+msgid "Starting..."
+msgstr "In avvio..."
+
+msgid "Stop this Tunnel"
+msgstr "Termina tunnel"
+
+msgid "Running"
+msgstr "In funzione"
+
+msgid "Hops"
+msgstr "Luppolo"
+
+msgid "in"
+msgstr "nel"
+
+msgid "out"
+msgstr "fuori"
+
+msgid "Restart this Tunnel"
+msgstr "Riavvia questo tunnel"
+
+msgid "Restart"
+msgstr "Riavvio"
+
+msgid "Stopped"
+msgstr "Fermato"
+
+msgid "Destination"
+msgstr "Destinazione"
+
+msgid "Signature"
+msgstr "Firma"
+
+msgid "Alternate"
+msgstr "Alternativo"
+
+msgid "Alt Destination"
+msgstr "Destinazione alternativa"
+
+msgid "Encryption"
+msgstr "Crittografia"
+
+msgid "Supported encryption"
+msgstr "Crittografia supportata"
+
+msgid "New server tunnel"
+msgstr "Nuovo tunnel del server"
+
+msgid "Standard"
+msgstr "Standard"
+
+msgid "Create"
+msgstr "Crea"
+
+msgid "I2P Client Tunnels"
+msgstr "Tunnel Client I2P"
+
+msgid "Interface"
+msgstr "Interfaccia"
+
+msgid "Edit Tunnel Settings for"
+msgstr "Modifica impostazioni tunnel per"
+
+msgid "Standby"
+msgstr "Sospensione"
+
+msgid "Outproxy"
+msgstr "Outproxy"
+
+msgid "internal plugin"
+msgstr "plugin interno"
+
+msgid "none"
+msgstr "nessuno"
+
+msgid "New client tunnel"
+msgstr "Nuovo tunnel client"
+
+msgid "Registration Helper"
+msgstr "Assistenza per la registrazione"
+
+msgid "This service uses encrypted leasesets. Registration is not recommended. Registration authentication is disabled."
+msgstr "Questo servizio utilizza leaseset crittografati. La registrazione non è raccomandata. L'autenticazione di registrazione è disabilitata."
+
+msgid "Please be sure to select, copy, and paste the entire contents of the appropriate authentication data into the form of your favorite registration site"
+msgstr "Assicurati di selezionare, copiare e incollare l'intero contenuto dei dati di autenticazione appropriati nel modulo del tuo sito di registrazione preferito"
+
+msgid "Tunnel name"
+msgstr "Nome del tunnel"
+
+msgid "Website name"
+msgstr "Nome sito web"
+
+msgid "Local Destination"
+msgstr "Destinazione locale"
+
+msgid "Local destination is not available. Start the tunnel."
+msgstr "La destinazione locale non è disponibile. Avvia il tunnel."
+
+msgid "To enable registration verification, edit tunnel and set name (or website name) to a valid host name ending in '.i2p'"
+msgstr "Per abilitare la verifica della registrazione, modificare il tunnel e impostare il nome (o il nome del sito web) su un nome host valido che termina con '.i2p'."
+
+msgid "To enable registration verification, edit tunnel and set name to a valid host name ending in '.i2p'"
+msgstr "Per abilitare la verifica della registrazione, modificare il tunnel e impostare il nome su un nome host valido che termina con '.i2p'"
+
+msgid "Destination signing key is not available. Start the tunnel."
+msgstr "La chiave di firma della destinazione non è disponibile. La chiave di firma della destinazione non è disponibile. Avvia il tunnel."
+
+msgid "Destination signing key is offline. Use CLI tools on the offline machine."
+msgstr "La chiave di firma della destinazione è offline. La chiave di firma di destinazione è offline. Usa gli strumenti CLI sulla macchina offline."
+
+#, java-format
+msgid "Authentication for adding host {0}"
+msgstr "Autenticazione per l'aggiunta dell'host {0}"
+
+msgid "Copy and paste this to the registration site"
+msgstr "Copia e incolla questo nel sito di registrazione"
+
+msgid "Advanced authentication strings"
+msgstr "Stringhe di autenticazione avanzata"
+
+#, java-format
+msgid "Authentication for removing host {0}"
+msgstr "Autenticazione per rimuovere lʼhost {0}"
+
+msgid "Authentication for changing name"
+msgstr "Autenticazione per modifica nome"
+
+#, java-format
+msgid "This will change the name from {0} to {1}, using the same destination"
+msgstr "Il nome cambierà da {0} a {1}, utilizzando la stessa destinazioneQuesto cambierà il nome da {0} a {1}, utilizzando la stessa destinazione"
+
+msgid "This tunnel must be configured with the new host name."
+msgstr "Questo tunnel deve essere configurato con il nuovo nome host."
+
+msgid "Enter old hostname below."
+msgstr "Inserisci il vecchio nome host qui sotto."
+
+msgid "Authentication for adding alias"
+msgstr "Autenticazione per aggiunta alias"
+
+#, java-format
+msgid "This will add an alias {0} for {1}, using the same destination"
+msgstr "Questo aggiungerà un alias {0} per {1}, utilizzando la stessa destinazione"
+
+msgid "Authentication for changing destination"
+msgstr "Autenticazione per modifica destinazione"
+
+#, java-format
+msgid "This will change the destination for {0}"
+msgstr "Questo cambierà la destinazione per {0}"
+
+msgid "This tunnel must be configured with the new destination."
+msgstr "Questo tunnel deve essere configurato con la nuova destinazione."
+
+msgid "Enter old destination below."
+msgstr "Inserisci la vecchia destinazione qui sotto."
+
+msgid "Authentication for adding alternate destination"
+msgstr "Autenticazione per l'aggiunta di una destinazione alternativa"
+
+#, java-format
+msgid "This will add an alternate destination for {0}"
+msgstr "Ciò aggiungerà una destinazione alternativa per {0}"
+
+msgid "Authentication for adding subdomain"
+msgstr "Autenticazione per l'aggiunta di sottodominio"
+
+#, java-format
+msgid "This will add a subdomain {0} of {1}, with a different destination"
+msgstr "Questo aggiungerà un sottodominio {0} di {1}, con una destinazione diversa"
+
+msgid "This tunnel must be configured with the new subdomain and destination."
+msgstr "Questo tunnel deve essere configurato con il nuovo sottodominio e destinazione."
+
+msgid "Enter higher-level domain and destination below."
+msgstr "Inserisci il dominio di livello superiore e la destinazione qui sotto."
+
+msgid "Return to Tunnel Configuration"
+msgstr "Ritorno alla configurazione del tunnel"
+
+msgid "Specify old name and destination"
+msgstr "Specificare vecchio nome e destinazione"
+
+msgid "This is only required for advanced authentication."
+msgstr "Richiesto solo per l'autenticazione avanzata."
+
+msgid "See above for required items."
+msgstr "Vedi sopra per gli articoli richiesti."
+
+msgid "Old / parent hostname "
+msgstr "Nome host vecchio / principale "
+
+msgid "Private key file for old destination / sub-domain parent"
+msgstr "File della chiave privata per la vecchia destinazione/sottodominio principale"
+
+msgid "Generate Authentication"
+msgstr "Genera autenticazione"
+
+msgid "SSL Helper"
+msgstr "Assistente SSL"
+
+msgid "Invalid form submission, probably because you used the 'back' or 'reload' button on your browser. Please resubmit."
+msgstr "Invio modulo non valido, probabilmente perché hai utilizzato il pulsante 'Indietro' o 'Ricarica' ​​del tuo browser. Ripetere perfavore."
+
+msgid "If the problem persists, verify that you have cookies enabled in your browser."
+msgstr "Se il problema persiste, verifica di avere i cookies abilitati nel tuo browser."
+
+msgid "Experts only!"
+msgstr "Solo per esperti!"
+
+msgid "Base32"
+msgstr "Base32"
+
+msgid "Alt Base32"
+msgstr "AltBase32"
+
+msgid "Incoming I2P Port Routing"
+msgstr "Routing porta I2P in entrata"
+
+msgid "Virtual Host"
+msgstr "Ospite virtuale"
+
+msgid "Via SSL?"
+msgstr "Tramite SSL?"
+
+msgid "Test HTTPS server through I2P"
+msgstr "Testare il server HTTPS tramite I2P"
+
+msgid "Server"
+msgstr "Server"
+
+msgid "SSL Activation"
+msgstr "Attivazione SSL"
+
+msgid "I2P webserver (eepsite)"
+msgstr "Webserver I2P (eepsite)"
+
+msgid "Disable SSL"
+msgstr "Disabilita SSL"
+
+msgid "Enable SSL"
+msgstr "Abilita SSL"
+
+msgid "New Certificate Password"
+msgstr "Nuova password del certificato"
+
+msgid "Password (required to encrypt the certificate)"
+msgstr "Password (necessaria per crittografare il certificato)"
+
+msgid "Generate new SSL certificate"
+msgstr "Genera nuovo certificato SSL"
+
+msgid "Generate SSL certificate and enable"
+msgstr "Genera certificato SSL e abilita"
+
+#, java-format
+msgid "Cannot configure, no Jetty server found in {0}client configurations{1} that matches this tunnel"
+msgstr "Impossibile configurare, nessun server Jetty trovato nelle {0}configurazioni client{1} che corrisponde a questo tunnel"
+
+msgid "Support for non-Jetty servers will be added in a future release"
+msgstr "Il supporto per i server non Jetty verrà aggiunto in una versione futura"
+
+msgid "Return to Tunnel Manager Index"
+msgstr "Ritorna all'indice del gestore tunnel"
+
+msgid "Return to Tunnel Editor"
+msgstr "Ritorna all'editor del tunnel"
+
+msgid "I2P Tunnel Manager - Tunnel Creation Wizard"
+msgstr "Gestore tunnel I2P - Creazione guidata tunnel"
+
+msgid "Server or client tunnel?"
+msgstr "Server o client tunnel?"
+
+msgid "Tunnel type"
+msgstr "Tipo di tunnel"
+
+msgid "Tunnel name and description"
+msgstr "Nome e descrizione tunnel"
+
+msgid "Tunnel destination"
+msgstr "Destinazione tunnel"
+
+msgid "Binding address and port"
+msgstr "Vincolando indirizzo e porta"
+
+msgid "Tunnel auto-start"
+msgstr "Avvio automatico del tunnel"
+
+msgid "Wizard completed"
+msgstr "Creazione guidata completata"
+
+msgid "This wizard will take you through the various options available for creating tunnels in I2P."
+msgstr "Questo setup wizard ti guiderà attraverso le varie opzioni disponibili per creare tunnel in I2P."
+
+msgid "The first thing to decide is whether you want to create a server or a client tunnel."
+msgstr "La prima cosa da decidere è se vuoi creare un tunnel server o client."
+
+msgid "If you need to connect to a remote service, such as an IRC server inside I2P or a code repository, then you will require a CLIENT tunnel."
+msgstr "Se hai bisogno di collegare un servizio remoto, come un server IRC nell' I2P o un code repository, avrai bisogno di un tunnel CLIENT."
+
+msgid "On the other hand, if you wish to host a service for others to connect to you'll need to create a SERVER tunnel."
+msgstr "D'altra parte, se desideri ospitare un servizio a cui altri possono connettersi, dovrai creare un tunnel SERVER."
+
+msgid "Server Tunnel"
+msgstr "Server Tunnel"
+
+msgid "Client Tunnel"
+msgstr "Client Tunnel"
+
+msgid "There are several types of tunnels to choose from:"
+msgstr "Sono presenti diversi tipi di tunnel da scegliere:"
+
+msgid "Basic tunnel for connecting to a single service inside I2P."
+msgstr "Tunnel base per connettersi a un servizio singolo nell' I2P."
+
+msgid "Try this if none of the tunnel types below fit your requirements, or you don't know what type of tunnel you need."
+msgstr "Prova questo se nessuno dei tipi di tunnel qui sotto corrispondono ai tuoi requisiti, o se non sai che tipo di tunnel necessiti."
+
+msgid "Tunnel that acts as an HTTP proxy for reaching eepsites inside I2P."
+msgstr "Tunnel che agisce come proxy HTTP per raggiungere eepsites nell' I2P."
+
+msgid "Set your browser to use this tunnel as an http proxy, or set your \"http_proxy\" environment variable for command-line applications in GNU/Linux."
+msgstr "Imposta il tuo browser per usare questo tunnel come proxy HTTP, o imposta la variabile d'ambiente \"http_proxy\" per applicazioni in linea di comando su GNU/Linux."
+
+msgid "Websites outside I2P can also be reached if an HTTP proxy within I2P is known."
+msgstr "I siti web esterni a I2P possono essere raggiunti anche se è noto un proxy HTTP all'interno di I2P."
+
+msgid "Customised client tunnel specific for IRC connections."
+msgstr "Client Tunnel personalizzato per connessioni IRC specifiche."
+
+msgid "With this tunnel type, your IRC client will be able to connect to an IRC network inside I2P."
+msgstr "Con questo tipo di tunnel, il tuo client IRC sarà in grado di connettersi a una rete IRC all'interno di I2P.."
+
+msgid "Each IRC network in I2P that you wish to connect to will require its own tunnel. (See Also, SOCKS IRC)"
+msgstr "Ogni rete IRC nell' I2P a cui vuoi connetterti avrà bisogno del suo tunnel personale. (Ndr, SOCKS IRC)"
+
+msgid "A tunnel that implements the SOCKS protocol."
+msgstr "Un tunnel che implementa il protocollo SOCKS."
+
+msgid "This enables both TCP and UDP connections to be made through a SOCKS outproxy within I2P."
+msgstr "Ciò consente di effettuare connessioni TCP e UDP tramite un proxy out SOCKS all'interno di I2P."
+
+msgid "A client tunnel implementing the SOCKS protocol, which is customised for connecting to IRC networks."
+msgstr "Un tunnel client che implementa un protocollo di tipo SOCKS, che è personalizzato per connettersi alla rete IRC."
+
+msgid "With this tunnel type, IRC networks in I2P can be reached by typing the I2P address into your IRC client, and configuring the IRC client to use this SOCKS tunnel."
+msgstr "Con questo tipo di tunnel, le reti IRC in I2P possono essere raggiunte digitando l'indirizzo I2P nel client IRC e configurando il client IRC per utilizzare questo tunnel SOCKS."
+
+msgid "This means that only one I2P tunnel is required rather than a separate tunnel per IRC network."
+msgstr "Ciò significa che è richiesto un solo tunnel I2P anziché un tunnel separato per rete IRC."
+
+msgid "IRC networks outside I2P can also be reached if a SOCKS outproxy within I2P is known, though it depends on whether or not the outproxy has been blocked by the IRC network."
+msgstr "Reti IRC esterne a I2P possono essere raggiunte se viene configurato un outproxy SOCKS all'interno di I2P, ma l'esito varia se l'outproxy è bloccato o meno dalla rete IRC."
+
+msgid "A basic server tunnel for hosting a generic service inside I2P."
+msgstr "Un tunnel server base per ospitare un servizio generico dentro I2P."
+
+msgid "A server tunnel that is customised for HTTP connections."
+msgstr "Un tunnel server personalizzato per connessioni HTTP."
+
+msgid "Use this tunnel type if you want to host an eepsite."
+msgstr "Usa questo tipo di tunnel se vuoi ospitare un eepsite."
+
+msgid "A customised server tunnel for hosting IRC networks inside I2P."
+msgstr "Un tunnel server personalizzato per ospitare reti IRC dentro l' I2P."
+
+msgid "Usually, a separate tunnel needs to be created for each IRC server that is to be accessible inside I2P."
+msgstr "Di solito, è necessario creare un tunnel separato per ciascun server IRC che deve essere accessibile all'interno di I2P."
+
+msgid "Select tunnel type"
+msgstr "Seleziona tipo di tunnel"
+
+msgid "Choose a name and description for your tunnel."
+msgstr "Scegli nome e descrizione per il tuo tunnel."
+
+msgid "These can be anything you want - they are just for ease of identifying the tunnel in the routerconsole."
+msgstr "Questi possono essere ciò che vuoi tu - sono presenti solo per facilitare l'identificazione del tunnel nella console del router."
+
+msgid "If you know of any outproxies for this type of tunnel (either HTTP or SOCKS), fill them in below."
+msgstr "Se conosci qualche outproxy per questo tipo di tunnel (sia HTTP che SOCKS), scrivili quì sotto."
+
+msgid "Separate multiple proxies with commas."
+msgstr "Separa proxy diversi con virgole."
+
+msgid "List of I2P outproxy destinations, separated with commas (e.g. proxy1.i2p,proxy2.i2p)"
+msgstr "Elenco destinazioni outproxy I2P, separate da virgole (es. proxy1.i2p,proxy2.i2p)"
+
+msgid "Type in the I2P destination of the service that this client tunnel should connect to."
+msgstr "Digita la destinazione I2P del servizio a cui questo tunnel client dovrebbe connettersi."
+
+msgid "This could be the full Base64 destination key, or an I2P URL from your address book."
+msgstr "Potrebbe essere la chiave di destinazione Base64 completa o un URL I2P dalla tua rubrica."
+
+msgid "Enter a b64 or .i2p address here"
+msgstr "Inserisci qui un indirizzo b64 o .i2p"
+
+msgid "This is the IP that your service is running on, this is usually on the same machine so 127.0.0.1 is autofilled."
+msgstr "Questo è l'IP che usa il tuo servizio, normalmente nella stessa macchina. Per questo 127.0.0.1 è pre-compilato."
+
+msgid "This is the port that the service is accepting connections on."
+msgstr "Questa è la porta che il servizio usa per accettare connessioni."
+
+msgid "This is the port that the client tunnel will be accessed from locally."
+msgstr "Questa è la porta da cui si accederà al client tunnel localmente."
+
+msgid "How do you want this tunnel to be accessed? By just this machine, your entire subnet, or external internet?"
+msgstr "Come vuoi che venga effettuato l'accesso a questo tunnel? Solo da questa macchina, dalla tua sottorete intera, o dall'Internet esterno?"
+
+msgid "You will most likely want to just allow 127.0.0.1"
+msgstr "Quasi sempre abiliterai semplicemente 127.0.0.1"
+
+msgid "The I2P router can automatically start this tunnel for you when the router is started."
+msgstr "Il router I2P può avviare automaticamente questo tunnel all'avvio del router.Il router I2P può avviare automaticamente questo tunnel all'avvio del router."
+
+msgid "This can be useful for frequently-used tunnels (especially server tunnels), but for tunnels that are only used occasionally it would mean that the I2P router is creating and maintaining unnecessary tunnels."
+msgstr "Questo può essere utile per tunnel usati spesso (specie tunnel server), ma per i tunnel usati solo occasionalmente comporta che il router I2P sta creando e mantenendo tunnel non necessari."
+
+msgid "The wizard has now collected enough information to create your tunnel."
+msgstr "La procedura guidata ha ora raccolto informazioni sufficienti per creare il tuo tunnel."
+
+msgid "Upon clicking the Save button below, the wizard will set up the tunnel, and take you back to the main I2PTunnel page."
+msgstr "Facendo clic sul pulsante Salva in basso, la procedura guidata imposterà il tunnel e ti riporterà alla pagina principale di I2PTunnel."
+
+msgid "Because you chose to automatically start the tunnel when the router starts, you don't have to do anything further."
+msgstr "Poiché hai scelto di avviare automaticamente il tunnel all'avvio del router, non devi fare altro.Dato che hai scelto di far avviare automaticamente il tunnel quando il tuo router viene avviato, non devi fare altro."
+
+msgid "The router will start the tunnel once it has been set up."
+msgstr "Il router avvierà il tunnel una volta che è stato configurato."
+
+msgid "Because you chose not to automatically start the tunnel, you will have to manually start it."
+msgstr "Poiché hai scelto di non avviare automaticamente il tunnel, dovrai avviarlo manualmente.Dato che hai scelto di non avviare il tunnel automaticamente, dovrai avviarlo manualmente."
+
+msgid "You can do this by clicking the Start button on the main page which corresponds to the new tunnel."
+msgstr "Puoi farlo cliccando il pulsante Avvia nella pagina principale che corrisponde al tuo nuovo tunnel."
+
+msgid "Below is a summary of the options you chose:"
+msgstr "Qui sotto il riassunto delle opzioni che hai scelto:"
+
+msgid "Tunnel description"
+msgstr "Descrizione tunnel"
+
+msgid "Binding address"
+msgstr "Indirizzo vincolante"
+
+msgid "Tunnel port"
+msgstr "Porta tunnel"
+
+msgid "Alongside these basic settings, there are a number of advanced options for tunnel configuration."
+msgstr "Accanto a queste impostazioni base, ci sono altre opzioni avanzate per la configurazione del tunnel."
+
+msgid "The wizard will set reasonably sensible default values for these, but you can view and/or edit these by clicking on the tunnel's name in the main I2PTunnel page."
+msgstr "La procedura guidata imposterà valori predefiniti ragionevolmente ragionevoli per questi, ma puoi visualizzarli e/o modificarli facendo clic sul nome del tunnel nella pagina principale di I2PTunnel."
+
+msgid "Cancel the wizard and return to Tunnel Manager home page"
+msgstr "Annulla la procedura guidata e torna alla home page di Tunnel Manager"
+
+msgid "Return to previous page"
+msgstr "Torna alla pagina precedente"
+
+msgid "Previous"
+msgstr "Precedente"
+
+msgid "Save tunnel configuration"
+msgstr "Salvare configurazione tunnel"
+
+msgid "Save Tunnel"
+msgstr "Salva tunnel"
+
+msgid "Finish Wizard and review tunnel settings"
+msgstr "Termina la procedura guidata e rivedi le impostazioni del tunnel"
+
+msgid "Finish"
+msgstr "Termina"
+
+msgid "Advance to next page"
+msgstr "Avanza alla pagina successiva"
+
+msgid "Next"
+msgstr "Avanti"

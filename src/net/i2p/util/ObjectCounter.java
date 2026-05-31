@@ -1,0 +1,104 @@
+package net.i2p.util;
+
+import java.io.Serializable;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
+
+/**
+ * Thread-safe counter for tracking occurrences of objects.
+ *
+ * <p>This class provides a concurrent way to count how many times specific
+ * objects appear. It uses ConcurrentHashMap and AtomicInteger to ensure
+ * thread-safe operations in multi-threaded environments.</p>
+ *
+ * <p>Typical use cases include:</p>
+ * <ul>
+ * <li>Counting message frequencies</li>
+ * <li>Tracking request rates by client</li>
+ * <li>Monitoring event occurrences</li>
+ * <li>Statistical data collection</li>
+ * </ul>
+ *
+ * @author zzz, welterde
+ * @param <K> type of objects being counted
+ */
+public class ObjectCounter<K> implements Serializable {
+    /**
+     * Serializable so it can be passed in an Android Bundle
+     */
+    private static final long serialVersionUID = 3160378641721937421L;
+
+    private final ConcurrentHashMap<K, AtomicInteger> map;
+
+    public ObjectCounter() {
+        this.map = new ConcurrentHashMap<K, AtomicInteger>();
+    }
+
+    /**
+     *  Add one.
+     *  @return count after increment
+     */
+    public int increment(K h) {
+        AtomicInteger i = this.map.putIfAbsent(h, new AtomicInteger(1));
+        if (i != null) return i.incrementAndGet();
+        return 1;
+    }
+
+    /**
+     *  Set a high value
+     *  @since 0.9.56
+     */
+    public void max(K h) {
+        map.put(h, new AtomicInteger(Integer.MAX_VALUE / 2));
+    }
+
+    /**
+     *  @return current count
+     */
+    public int count(K h) {
+        AtomicInteger i = this.map.get(h);
+        if (i != null) return i.get();
+        return 0;
+    }
+
+    /**
+     *  @return set of objects with counts &gt; 0
+     */
+    public Set<K> objects() {
+        return this.map.keySet();
+    }
+
+    /**
+     *  Start over. Reset the count for all keys to zero.
+     *  @since 0.7.11
+     */
+    public void clear() {
+        this.map.clear();
+    }
+
+    /**
+     *  Reset the count for this key to zero
+     *  @since 0.9.36
+     */
+    public void clear(K h) {
+        this.map.remove(h);
+    }
+
+    /**
+     *  Decay all counts by the given factor (integer division).
+     *  Removes entries that decay to zero.
+     *  @param factor divisor for decay (e.g., 2 for 50% decay)
+     *  @since 0.9.69+
+     */
+    public void decay(int factor) {
+        if (factor <= 1) return;
+        this.map.entrySet().removeIf(entry -> {
+            AtomicInteger ai = entry.getValue();
+            int current = ai.get();
+            if (current <= 0) return true;
+            ai.set(current / factor);
+            return ai.get() == 0;
+        });
+    }
+}

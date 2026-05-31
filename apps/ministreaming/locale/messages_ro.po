@@ -1,0 +1,63 @@
+# I2P
+# Copyright (C) 2014 The I2P Project
+msgid ""
+msgstr ""
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+
+msgid "Message timeout"
+msgstr "Mesaj expirat"
+
+msgid "Failed delivery to local destination"
+msgstr "Livrarea la destinație locală a esuat"
+
+msgid "Local router failure"
+msgstr "Eroarea routerului local"
+
+msgid "Local network failure"
+msgstr "Eroarea retelei locale"
+
+msgid "Session closed"
+msgstr "Sesiune e inchisa"
+
+msgid "Invalid message"
+msgstr "Mesaj incorect"
+
+msgid "Invalid message options"
+msgstr "Optiunile mesajului incorecte"
+
+msgid "Buffer overflow"
+msgstr "supraîncărcare memoriei"
+
+msgid "Message expired"
+msgstr "Mesaj expirat"
+
+msgid "Local lease set invalid"
+msgstr "Setul de închiriere locală este nevalid"
+
+msgid "No local tunnels"
+msgstr "Nu sunt tonele locale"
+
+msgid "Unsupported encryption options"
+msgstr "Optiuni de criptare nesuportate"
+
+msgid "Invalid destination"
+msgstr "Destinatie incorecta"
+
+msgid "Destination lease set expired"
+msgstr "Setul de închiriere de destinație expiră"
+
+msgid "Destination lease set not found"
+msgstr "Set de închiriere de destinație nu a fost găsit"
+
+msgid "Local destination shutdown"
+msgstr "Oprirea destinației locale"
+
+msgid "Connection was reset"
+msgstr "Conexiunea a fost resetată"
+
+msgid "Failure code"
+msgstr "Codul erorii"

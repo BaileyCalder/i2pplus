@@ -1,0 +1,673 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, java-format
+msgid "Host name \"{0}\" contains illegal character {1}"
+msgstr "Værtnavnet \"{0}\" inneholder ulovlig tegn {1}"
+
+#, java-format
+msgid "Host name cannot start with \"{0}\""
+msgstr "Værtnavnet kan ikke begynne med \"{0}\""
+
+#, java-format
+msgid "Host name cannot end with \"{0}\""
+msgstr "Værtnavnet kan ikke ende med \"{0}\""
+
+#, java-format
+msgid "Host name cannot contain \"{0}\""
+msgstr "Værtnavnet kan ikke inneholde \"{0}\""
+
+#, java-format
+msgid "Host name \"{0}\" requires conversion to ASCII but the conversion library is unavailable in this JVM"
+msgstr "Værtnavnet \"{0}\" krever konvertering til ASCII, men konverteringsbiblioteket er ikke tilgjengelig i denne JVM"
+
+msgid "Source"
+msgstr "Kilde"
+
+msgid "Imported from"
+msgstr "Importert fra"
+
+msgid "Imported from file"
+msgstr "Importert fra fil"
+
+msgid "Manually added via SusiDNS"
+msgstr "Tilføjet manuelt via SusiDNS"
+
+msgid "Manually added"
+msgstr "Manuelt lagt til"
+
+msgid "Added via address helper"
+msgstr "Lagt til via adressehjelper"
+
+msgid "Via helper"
+msgstr "Via hjelper"
+
+msgid "Via helper from"
+msgstr "Via hjelper fra"
+
+msgid "None"
+msgstr "Ingen"
+
+msgid "Hidden"
+msgstr "Skjult"
+
+msgid "Signed"
+msgstr "Signert"
+
+msgid "Key"
+msgstr "Nøkkel"
+
+#, java-format
+msgid "Type {0}"
+msgstr "Type {0}"
+
+msgid "DSA 1024 bit"
+msgstr "DSA 1024 bit"
+
+msgid "ElGamal 2048 bit"
+msgstr "ElGamal 2048 bit"
+
+msgid "Search for <span class=active>"
+msgid_plural "Search for <span class=active>"
+msgstr[0] "Søk etter <span class=active>"
+msgstr[1] "Søk etter <span class=active>"
+
+#, java-format
+msgid "Filtered list contains 1 entry."
+msgid_plural "Filtered list contains {0} entries."
+msgstr[0] "Filtrert liste har 1 oppføring."
+msgstr[1] "Filtrert liste har {0} oppføringer."
+
+#, java-format
+msgid "One result for: <span class=active>"
+msgid_plural "{0} results for: <span class=active>"
+msgstr[0] "Et resultat for: <span class=active>"
+msgstr[1] "{0} resultater for: <span class=active>"
+
+#, java-format
+msgid "Book contains 1 entry"
+msgid_plural "Book contains {0} entries"
+msgstr[0] "Boken inneholder 1 oppføring"
+msgstr[1] "Boken inneholder {0} oppføringer"
+
+msgid "Add"
+msgstr "Legg til"
+
+msgid "Replace"
+msgstr "Erstatt"
+
+#, java-format
+msgid "Host name {0} is already in address book, unchanged."
+msgstr "Værtnavnet {0} er allerede i adressoboken, ubeskyttet."
+
+#, java-format
+msgid "Host name {0} is already in address book with a different destination. Click \"Replace\" to overwrite."
+msgstr "Værtnavnet {0} er allerede i adressoboken med en annen destinasjon. Klikk \"Erstatt\" for å overskrive."
+
+msgid "Unable to resolve Base 32 address"
+msgstr "Kan ikke løse Base 32-adresse"
+
+#, java-format
+msgid "Destination added for {0}."
+msgstr "Destinasjon lagt til for {0}."
+
+#, java-format
+msgid "Destination changed for {0}."
+msgstr "Destinasjon endret for {0}."
+
+msgid "Warning - host name does not end with \".i2p\""
+msgstr "Advarsel - værtnavnet slutter ikke med \".i2p\""
+
+msgid "Invalid Base 32 host name."
+msgstr "Ugyldig Base 32-værtnavn."
+
+msgid "Invalid Base 64 destination."
+msgstr "Ugyldig Base 64-destinasjon."
+
+#, java-format
+msgid "Invalid host name \"{0}\"."
+msgstr "Ugyldig værtnavn \"{0}\"."
+
+msgid "Please enter a host name and destination"
+msgstr "Angi værtnavn og destinasjon"
+
+msgid "Delete Entry"
+msgstr "Slett oppføring"
+
+msgid "Delete Selected"
+msgstr "Slett valgte"
+
+#, java-format
+msgid "Destination {0} deleted."
+msgstr "Destinasjon {0} slettet."
+
+#, java-format
+msgid "1 destination deleted."
+msgid_plural "{0} destinations deleted."
+msgstr[0] "1 destinasjon slettet."
+msgstr[1] "{0} destinasjoner slettet."
+
+msgid "No valid entries selected to delete."
+msgstr "Ingen gyldige oppføringer valgt for sletting."
+
+msgid "Add Alternate"
+msgstr "Legg til alternativ"
+
+msgid "Address book saved."
+msgstr "Adressbok lagret."
+
+msgid "ERROR: Could not write addressbook file."
+msgstr "FEIL: Kunne ikke skrive til adressoboksfilen."
+
+msgid "Invalid form submission, probably because you used the \"back\" or \"reload\" button on your browser. Please resubmit."
+msgstr "Ugyldig skjemainnsending, sannsynligvis fordi du brukte \"tilbake\"- eller \"last opp\"-knappen i nettleseren din. Vennligst send på nytt."
+
+msgid "If the problem persists, verify that you have cookies enabled in your browser."
+msgstr "Hvis problemet vedvarende, sjekk at du har aktivert kaker in nettleseren din."
+
+msgid "Save"
+msgstr "Lagre"
+
+msgid "Blacklist saved."
+msgstr "Svarteliste lagret."
+
+msgid "Reload"
+msgstr "Last opp igjen"
+
+msgid "Blacklist reloaded from file."
+msgstr "Svarteliste lastet inn på nytt fra fil."
+
+msgid "Configuration saved."
+msgstr "Konfigurasjon lagret."
+
+msgid "Configuration reloaded."
+msgstr "Konfigurasjon lastet opp igjen."
+
+msgid "New domain"
+msgstr "Ny domene"
+
+msgid "Subscription log reloaded."
+msgstr "Abonnementlogg lastet opp igjen."
+
+#, java-format
+msgid "{0} address book in {1} database"
+msgstr "{0} adressbok i {1} database"
+
+#, java-format
+msgid "Host name {0} is not in the address book."
+msgstr "Værtnavnet {0} er ikke i adressoboken."
+
+#, java-format
+msgid "Failed to add Destination for {0} to naming service {1}"
+msgstr "Kunne ikke legge til Destinasjon for {0} til navnetjeneste {1}"
+
+#, java-format
+msgid "Failed to delete Destination for {0} from naming service {1}"
+msgstr "Kunne ikke slette Destinasjon for {0} fra navnetjeneste {1}"
+
+msgid "Blacklist Selected"
+msgstr "Svartelist valgt"
+
+#, java-format
+msgid "1 destination blacklisted."
+msgid_plural "{0} destinations blacklisted."
+msgstr[0] "1 destinasjon svartelistet."
+msgstr[1] "{0} destinasjoner svartelistet."
+
+msgid "No valid entries selected to blacklist."
+msgstr "Ingen gyldige oppføringer valgt for svartelisting."
+
+msgid "Save Notes"
+msgstr "Lagre notater"
+
+msgid "You must enter a file"
+msgstr "Du må angi en fil"
+
+msgid "No entries found in file"
+msgstr "Ingen oppføringer funnet i filen"
+
+#, java-format
+msgid "Imported from file {0}"
+msgstr "Importert fra fil {0}"
+
+#, java-format
+msgid "Loaded {0} entry from file"
+msgid_plural "Loaded {0} entries from file"
+msgstr[0] "Lastet {0} post fra fil"
+msgstr[1] "Lastet {0} poster fra fil"
+
+#, java-format
+msgid "Skipped {0} duplicate entry from file"
+msgid_plural "Skipped {0} duplicate entries from file"
+msgstr[0] "Hoppet over {0} duplikat oppføring fra fil"
+msgstr[1] "Hoppet over {0} duplikate oppføringer fra fil"
+
+msgid "Import from file failed"
+msgstr "Importering fra fil feilet"
+
+msgid "Subscriptions saved."
+msgstr "Abonnementer lagret."
+
+msgid "Update"
+msgstr "Oppdater"
+
+msgid "Attempting to update addressbook from subscription sources..."
+msgstr "Prøver å oppdatere adressoboken fra abonnementkilder..."
+
+msgid "Cannot update subscriptions: HTTP proxy is not running!"
+msgstr "Kan ikke oppdatere abonnementer: HTTP-proxyen kjører ikke!"
+
+msgid "Subscriptions reloaded."
+msgstr "Abonnementer lastet opp igjen."
+
+msgid "Import"
+msgstr "Importer"
+
+msgid "address book"
+msgstr "adressbok"
+
+msgid "Router"
+msgstr "Ruter"
+
+msgid "Master"
+msgstr "Mester"
+
+msgid "Private"
+msgstr "Privat"
+
+msgid "Published"
+msgstr "Publisert"
+
+msgid "Subscriptions"
+msgstr "Abonnementer"
+
+msgid "Blacklist"
+msgstr "Svarteliste"
+
+msgid "Configuration"
+msgstr "Konfigurasjon"
+
+msgid "Help"
+msgstr "Hjelp"
+
+msgid "Book"
+msgstr "Bok"
+
+msgid "No entries"
+msgstr "Ingen oppføringer"
+
+msgid "Add new destination"
+msgstr "Legg til ny destinasjon"
+
+msgid "Import from hosts.txt file"
+msgstr "Importer fra hosts.txt-fil"
+
+msgid "other"
+msgstr "andre"
+
+msgid "Export in hosts.txt format"
+msgstr "Eksporter i hosts.txt format"
+
+msgid "Export results in hosts.txt format"
+msgstr "Eksporter resultater i hosts.txt format"
+
+msgid "Export book in hosts.txt format"
+msgstr "Eksporter bok i hosts.txt format"
+
+msgid "Search"
+msgstr "Søk"
+
+msgid "latest"
+msgstr "siste"
+
+msgid "Alive"
+msgstr "Levende"
+
+msgid "Dead"
+msgstr "Død"
+
+msgid "all"
+msgstr "fjern filter"
+
+msgid "Info"
+msgstr "Info"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Hostname"
+msgstr "Værtnavn"
+
+msgid "Encryption"
+msgstr "Kryptering"
+
+msgid "Link (b32)"
+msgstr "Lenke (b32)"
+
+msgid "Destination"
+msgstr "Destinasjon"
+
+msgid "Added"
+msgstr "Lagt til"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Select hosts for deletion from addressbook"
+msgstr "Velg vertshoster for sletting fra adressoboken"
+
+msgid "More information on this entry"
+msgstr "Mer informasjon om denne oppføringen"
+
+msgid "unknown"
+msgstr "ukjent"
+
+msgid "Base 32 address"
+msgstr "Base 32 adresse"
+
+msgid "Helper link to share host address with option to add to addressbook"
+msgstr "Hjelpe-lenke for å dele vertshostadresse med mulighet til å legge til i adressoboken"
+
+msgid "Mark for deletion"
+msgstr "Marker for sletting"
+
+msgid "Cancel"
+msgstr "Avbryt"
+
+msgid "This book currently contains no entries."
+msgstr "Denne boken inneholder for øyeblikket ingen oppføringer."
+
+msgid "e.g. newdomain.i2p"
+msgstr "f.eks. newdomain.i2p"
+
+msgid "B64 or B32"
+msgstr "B64 eller B32"
+
+msgid "Full destination or b32 address"
+msgstr "Full destinasjon eller b32 adresse"
+
+msgid "Select file"
+msgstr "Velg fil"
+
+msgid "blacklist"
+msgstr "svarteliste"
+
+msgid "Blacklist Management"
+msgstr "Svartelisteadministrasjon"
+
+msgid "File location"
+msgstr "Filplassering"
+
+msgid "Enter I2P addresses to blacklist (one per line)"
+msgstr "Angi I2P-adresser for svartelisting (en per linje)"
+
+msgid "The blacklist file contains a list of I2P hostnames that should be blocked from access via the HTTP proxy, and excluded from the address book display."
+msgstr "Svartelistefilen inneholder en liste over I2P-vertsnavn som skal blokkeres fra tilgang via HTTP-proxyen, og ekskluderes fra adressebokvisningen."
+
+msgid "configuration"
+msgstr "konfigurasjon"
+
+msgid "Hints"
+msgstr "Tips"
+
+msgid "File and directory paths here are relative to the addressbook's working directory, which is normally ~/.i2p/addressbook/ (Linux) or %LOCALAPPDATA%\\I2P\\addressbook\\ (Windows)."
+msgstr "Filer og mappebaner her er relativt til adressobokens arbeidsmappe, som normalt er ~/.i2p/addressbook/ (Linux) eller %LOCALAPPDATA%\\I2P\\addressbook\\ (Windows)."
+
+msgid "If you want to manually add lines to an addressbook, add them to the private or master addressbooks."
+msgstr "Hvis du vil legge til linjer manuelt til en adressobok, legg dem til den private eller mesters adressoboken."
+
+msgid "The router addressbook and the published addressbook are updated by the addressbook application."
+msgstr "Ruterverens adressobok og den publiserte adressoboken oppdateres av adressobok-applikasjonen."
+
+msgid "When you publish your addressbook, ALL destinations from the master and router addressbooks appear there."
+msgstr "Når du publiserer adressoboken din, vises ALLE destinasjoner fra mesters og ruterverens adressoboker der."
+
+msgid "Use the private addressbook for private destinations, these are not published."
+msgstr "Bruk den private adressoboken for private destinasjoner, disse blir ikke publisert."
+
+msgid "Options"
+msgstr "Valg"
+
+msgid "File containing the list of subscriptions URLs (no need to change)"
+msgstr "Fil som inneholder listen over abonnement-URLs (ingen behov for å endre)"
+
+msgid "Update interval in hours"
+msgstr "Oppdateringsintervall i timer"
+
+msgid "Your public hosts.txt file (choose a path within your webserver document root)"
+msgstr "Din offentlige hosts.txt-fil (velg en sti innenfor din webservers dokumentrot)"
+
+msgid "Your hosts.txt (don't change)"
+msgstr "Din hosts.txt (ikke endre)"
+
+msgid "Your personal addressbook, these hosts will be published"
+msgstr "Din personlige adressebok, disse vertene vil bli publisert"
+
+msgid "Your private addressbook, it is never published"
+msgstr "Din private adressebok, den blir aldri publisert"
+
+msgid "Port for your eepProxy (no need to change)"
+msgstr "Port for din eepProxy (ingen behov for å endre)"
+
+msgid "Hostname for your eepProxy (no need to change)"
+msgstr "Vertsnavn for din eepProxy (ingen behov for å endre)"
+
+msgid "Whether to update the published addressbook"
+msgstr "Om publiserte adressebøker skal oppdateres"
+
+msgid "File containing the etags header from the fetched subscription URLs (no need to change)"
+msgstr "Fil som inneholder etag-hodet fra hentede abonnement-URLs (ingen behov for å endre)"
+
+msgid "File containing the modification timestamp for each fetched subscription URL (no need to change)"
+msgstr "Fil som inneholder endrings-tidsstempel for hver hentet abonnement-URL (ingen behov for å endre)"
+
+msgid "File to log activity to (change to /dev/null if you like)"
+msgstr "Fil for logging av aktivitet (endre til /dev/null hvis du ønsker)"
+
+msgid "Name of override theme to use (defaults to console-selected theme)"
+msgstr "Navn på overstyrt tema å bruke (standardverdien er konsollvalgt tema)"
+
+msgid "Interval (in hours) for running host checker (default is 8 hours)"
+msgstr "Intervall (i timer) for kjøring av vertssjekker (standard er 8 timer)"
+
+msgid "Maximum concurrent pings when running host checker (Default is 12, max is 100)"
+msgstr "Maksimalt antall samtidige pings ved kjøring av vertssjekker (standard er 12, maks er 100)"
+
+msgid "delete hosts"
+msgstr "slett verter"
+
+msgid "addressbook"
+msgstr "adressebok"
+
+msgid "Details"
+msgstr "Detaljer"
+
+msgid "Address Helper"
+msgstr "Adressehjelper"
+
+msgid "link"
+msgstr "lenke"
+
+msgid "Encoded Name"
+msgstr "Kodet navn"
+
+msgid "Base 32 Address"
+msgstr "Base 32 Adresse"
+
+msgid "Base 64 Hash"
+msgstr "Base 64 Hash"
+
+msgid "Public Key"
+msgstr "Offentlig nøkkel"
+
+msgid "Signing Key"
+msgstr "Signeringsnøkkel"
+
+msgid "Certificate"
+msgstr "Sertifikat"
+
+msgid "Validated"
+msgstr "Valideret"
+
+msgid "no"
+msgstr "nei"
+
+msgid "yes"
+msgstr "ja"
+
+msgid "Added Date"
+msgstr "Tilleggsdato"
+
+msgid "Last Modified"
+msgstr "Sist endret"
+
+msgid "Notes"
+msgstr "Notater"
+
+msgid "Add notes about domain"
+msgstr "Legg til notater om domene"
+
+msgid "Visual Identification for"
+msgstr "Visuell identifikasjon for"
+
+msgid "Create your own identification images"
+msgstr "Opprett dine egne identifiseringsbilder"
+
+msgid "Launch Image Generator"
+msgstr "Kjør bildegeneratoren"
+
+msgid "Introduction"
+msgstr "Innledning"
+
+msgid "What is the addressbook?"
+msgstr "Hva er adresseboken?"
+
+msgid "The addressbook application is part of your I2P installation."
+msgstr "Adressebok-applikasjonen er en del av din I2P-installasjon."
+
+msgid "It regularly updates your hosts.txt file from distributed sources or \"subscriptions\"."
+msgstr "Den oppdaterer regelbundet din hosts.txt-fil fra distribuerte kilder eller \"abonnementer\"."
+
+msgid "Subscribing to additional sites is easy, just add them to your <a href=\"subscriptions\">subscriptions</a> file."
+msgstr "Subscribing to additional sites is easy, just add them to your <a href=subscriptions>subscriptions</a> file."
+
+msgid "For more information on naming in I2P, see <a href=\"http://i2p-projekt.i2p/naming.html\" target=_blank>the overview</a>."
+msgstr "For mer informasjon om navngiving i I2P, se <a href=http://i2p-projekt.i2p/naming.html target=_blank>oversikten."
+
+msgid "How does the addressbook application work?"
+msgstr "Hva gjør adressebok-applikasjonen?"
+
+msgid "The addressbook application regularly polls your subscriptions and merges their content into your \"router\" address book."
+msgstr "Adressebok-applikasjonen spørjelegger regelmessig dine abonnementer og slår sammen deres innhold med din \"ruter\" adressebok."
+
+msgid "Then it merges your \"master\" address book into the router address book as well."
+msgstr "Deretter slår den sammen din \"hoved\" adressebok med ruteradresseboken også."
+
+msgid "If configured, the router address book is now written to the \"published\" address book, which will be publicly available if you are running an eepsite."
+msgstr "Hvis konfigurert, skrives ruteradresseboken nå til den \"publiserte\" adresseboken, som vil være offentlig tilgjengelig hvis du driver en eepside."
+
+msgid "The router also uses a private address book, which is not merged or published."
+msgstr "Ruteren bruker også en privat adressebok, som ikke slås sammen eller publiseres."
+
+msgid "Hosts in the private address book can be accessed by you but their addresses are never distributed to others."
+msgstr "Vertene i den private adresseboken kan du få tilgang til, men deres adresser deles aldri ut til andre."
+
+msgid "The private address book can also be used for aliases of hosts in your other address books."
+msgstr "Den private adresseboken kan også brukes til alias for vertene i dine andre adressebøker."
+
+msgid "subscription log"
+msgstr "abonnement-logg"
+
+msgid "Subscription Log"
+msgstr "Abonnement Logg"
+
+msgid "Most recent (excluding bad domains)"
+msgstr "Nyeste (uten dårlige domener)"
+
+msgid "subscriptions"
+msgstr "abonnementer"
+
+msgid "The subscription file contains a list of i2p URLs."
+msgstr "Abonnement-filen inneholder en liste over i2p-URLs."
+
+msgid "The addressbook application regularly checks this list for new eepsites."
+msgstr "Adressebok-applikasjonen sjekker denne listen regelmessig etter nye eepsider."
+
+msgid "Those URLs refer to published hosts.txt files."
+msgstr "Disse URLene refererer til publiserte hosts.txt-filer."
+
+msgid "See the FAQ for a list of subscription URLs."
+msgstr "Se FAQ-en for en liste over abonnement-URLs."
+
+msgid "If SusiDNS is configured to publish your Router address book, the entries will appear in your Published address book and saved to a hosts.txt file for sharing."
+msgstr "Hvis SusiDNS er konfigurert til å publisere din Ruter adressebok, vil inntrykkene dukke opp i din Publiserte adressebok og lagres til en hosts.txt-fil for deling."
+
+msgid "Published Addressbook"
+msgstr "Publisert Adressebok"
+
+msgid "To configure SusiDNS to push your Router address book to your Published address book, set 'should_publish=true' on the configuration page."
+msgstr "For å konfigurere SusiDNS til å sende din Ruter adressebok til din Publiserte adressebok, sett 'should_publish=true' på konfigurasjons siden."
+
+msgid "All hosts derived from subscriptions will appear in this address book, in addition to any you manually add here or to your Master address book."
+msgstr "Alle vertene som følger av abonnementer vil dukke opp i denne adresseboken, i tillegg til alle du legger til manuelt her eller i din Hoved adressebok."
+
+msgid "Router Addressbook"
+msgstr "Ruter Adressebok"
+
+msgid "Hosts you manually add here will never be published. You can also add aliases to hosts in other address books here."
+msgstr "Vertene du legger til manuelt her vil aldri bli publisert. Du kan også legge til alias til vertene i andre adressebøker her."
+
+msgid "Private Addressbook"
+msgstr "Privat Adressebok"
+
+msgid "Local Records"
+msgstr "Lokale poster"
+
+msgid "I2P applications (including the HTTP proxy) use the hosts in your local address books to resolve .i2p hostnames."
+msgstr "I2P-applikasjoner (inkludert HTTP-proxyen) bruker vertene i dine lokale adressebøker til å løse opp .i2p vertnavn."
+
+msgid "Additional subscriptions can be found in the FAQ section of the Router help page."
+msgstr "Ekstra abonnementer kan finnes i FAQ-seksjonen på Routerns hjelpeside."
+
+msgid "Hosts sourced from your subscriptions are added to your Router address book, and are automatically synced (by default every 12 hours)."
+msgstr "Vertene som kommer fra dine abonnementer legges til i din Ruter adressebok, og synkroniseres automatisk (som standard hvert 12. time)."
+
+msgid "Configure Subscriptions"
+msgstr "Konfigurer Abonnementer"
+
+msgid "If you manually add hosts here, they will be included your Published address book (if configured)."
+msgstr "Hvis du legger til vertene manuelt her, vil de bli inkludert i din Publiserte adressebok (hvis konfigurert)."
+
+msgid "Master Addressbook"
+msgstr "Hoved Adressebok"
+
+msgid "Searchable by"
+msgstr "Søkbar etter"
+
+msgid "I2P applications"
+msgstr "I2P applikasjoner"
+
+msgid "The Master, Router and Private address books collectively serve as the DNS authority for I2P applications."
+msgstr "Hoved, Ruter og Privat adressebøker tjenestegjør kollektivt som DNS-autoriteten for I2P-applikasjoner."
+
+msgid "Optional,"
+msgstr "Valgfritt,"
+
+msgid "for websites"
+msgstr "for nettsider"
+
+msgid "If you configure SusiDNS to publish your Router address book, it will export a hosts.txt file containing all the hosts (by default to the root of your eepsite)."
+msgstr "Hvis du konfigurerer SusiDNS til å publisere din Ruter adressebok, vil den eksportere en hosts.txt-fil som inneholder alle vertene (som standard til roten av din eepside)."
+
+msgid "Addresses manually added to your Master address book will merge with your Router address book."
+msgstr "Adresser som legges til manuelt i din Hoved adressebok vil bli slått sammen med din Ruter adressebok."
+
+msgid "Hosts you receive from your subscriptions will merge with your Router address book."
+msgstr "Vertene du mottar fra dine abonnementer vil bli slått sammen med din Ruter adressebok."

@@ -1,0 +1,39 @@
+package net.i2p.client.impl;
+
+/*
+ * Released into the public domain
+ * with no warranty of any kind, either expressed or implied.
+ */
+
+import net.i2p.I2PAppContext;
+import net.i2p.data.Destination;
+import net.i2p.data.Hash;
+import net.i2p.data.i2cp.DestReplyMessage;
+import net.i2p.data.i2cp.I2CPMessage;
+
+/**
+ * Handle I2CP dest replies from the router
+ */
+class DestReplyMessageHandler extends HandlerImpl {
+    public DestReplyMessageHandler(I2PAppContext ctx) {
+        super(ctx, DestReplyMessage.MESSAGE_TYPE);
+    }
+
+    @Override
+    public void handleMessage(I2CPMessage message, I2PSessionImpl session) {
+        if (_log.shouldDebug()) {
+            _log.debug("Handling " + message);
+        }
+        DestReplyMessage msg = (DestReplyMessage) message;
+        Destination d = msg.getDestination();
+        if (d != null) {
+            session.destReceived(d);
+        } else {
+            Hash h = msg.getHash();
+            if (h != null) {
+                session.destLookupFailed(h);
+            }
+        }
+        // else let it time out
+    }
+}

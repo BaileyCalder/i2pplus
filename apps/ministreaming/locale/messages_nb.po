@@ -1,0 +1,63 @@
+# I2P
+# Copyright (C) 2014 The I2P Project
+msgid ""
+msgstr ""
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Message timeout"
+msgstr "Meldingsfristutløp"
+
+msgid "Failed delivery to local destination"
+msgstr "Kunne ikke levere til lokal plassering"
+
+msgid "Local router failure"
+msgstr "Lokal rutings-feil"
+
+msgid "Local network failure"
+msgstr "Lokal nettverks-feil"
+
+msgid "Session closed"
+msgstr "Økt lukket"
+
+msgid "Invalid message"
+msgstr "Ugyldig melding"
+
+msgid "Invalid message options"
+msgstr "Ugyldige meldingsvalg"
+
+msgid "Buffer overflow"
+msgstr "Mellomlager gikk fullt"
+
+msgid "Message expired"
+msgstr "Melding utløp"
+
+msgid "Local lease set invalid"
+msgstr "Lokalt oppsatt leie ugyldig"
+
+msgid "No local tunnels"
+msgstr "Ingen lokale tunneler tilgjengelig"
+
+msgid "Unsupported encryption options"
+msgstr "Ustøttede krypteringsvalg"
+
+msgid "Invalid destination"
+msgstr "Ugyldig destinasjon"
+
+msgid "Destination lease set expired"
+msgstr "Oppsatt målleie utløpt"
+
+msgid "Destination lease set not found"
+msgstr "Oppsatt målleie ikke funnet"
+
+msgid "Local destination shutdown"
+msgstr "Nedstengning av lokal destinasjon"
+
+msgid "Connection was reset"
+msgstr "Tilkobling tilbakestilt"
+
+msgid "Failure code"
+msgstr "Feilkode"

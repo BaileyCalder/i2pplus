@@ -1,0 +1,459 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, java-format
+msgid "{0} new message"
+msgid_plural "{0} new messages"
+msgstr[0] "{0} mensaje nuevo"
+msgstr[1] "{0} mensajes nuevos"
+
+msgid "Email"
+msgstr "Correo electrónico "
+
+#, java-format
+msgid "No encoder found for encoding \\''{0}\\''."
+msgstr "No se ha encontrado codificador para la codificación \\''{0}''\\."
+
+msgid "Re:"
+msgstr "Resp:"
+
+msgid "Fwd:"
+msgstr "Reenv:"
+
+msgid "Drafts"
+msgstr "Borradores"
+
+msgid "Sent"
+msgstr "Enviado"
+
+msgid "Trash"
+msgstr "Papelera"
+
+msgid "Bulk Mail"
+msgstr "Correo masivo"
+
+msgid "Inbox"
+msgstr "Bandeja de entrada"
+
+msgid "View message as HTML"
+msgstr "Ver mensaje como HTML"
+
+msgid "View message as plain text"
+msgstr "Ver mensaje como texto plano"
+
+msgid "unknown"
+msgstr "desconocido"
+
+msgid "To protect your privacy, SusiMail is blocking Javascript and any remote content contained in this HTML message."
+msgstr "Para proteger tu privacidad, SusiMail está bloqueando JavaScript y cualquier contenido remoto contenido en este mensaje HTML."
+
+msgid "Enable Javascript for enhanced presentation and additional features."
+msgstr "Activa JavaScript para una presentación mejorada y características adicionales."
+
+#, java-format
+msgid "Tracking images removed from message: {0}"
+msgstr "Imágenes de seguimiento eliminadas del mensaje: {0}"
+
+#, java-format
+msgid "Blocked images not displayed: {0}"
+msgstr "Imágenes bloqueadas no se muestran: {0}"
+
+#, java-format
+msgid "Charset \\''{0}\\'' not supported."
+msgstr "juego de caracteres \\''{0}\\''no soportado."
+
+#, java-format
+msgid "Part ({0}) not shown, because of {1}"
+msgstr "La parte ({0}) no se muestra, debido a {1}"
+
+msgid "Reloading the page may fix the error."
+msgstr "Recargar la página puede solucionar el error."
+
+msgid "File"
+msgstr "Archivo"
+
+#, java-format
+msgid "Download attachment {0}"
+msgstr "Descargar adjunto {0}"
+
+msgid "File is packed into a zipfile for security reasons."
+msgstr "El archivo está empaquetado en un archivo zip por razones de seguridad."
+
+#, java-format
+msgid "Attachment ({0})."
+msgstr "Adjunto ({0})."
+
+msgid "Need username for authentication."
+msgstr "Es necesario un nombre de usuario para la autentificación."
+
+msgid "Do not include @mail.i2p in the username"
+msgstr "No incluya @mail.i2p en el nombre de usuario"
+
+msgid "Need password for authentication."
+msgstr "Es necesaria una contraseña para la autenticación."
+
+msgid "Need hostname for connect."
+msgstr "Es necesario un nombre de host para la conexión."
+
+msgid "Need port number for pop3 connect."
+msgstr "Es necesario el número de puerto para conectar pop3."
+
+msgid "POP3 port number is not in range 0..65535."
+msgstr "El puerto POP3 no está en el rango 0..65535."
+
+msgid "POP3 port number is invalid."
+msgstr "El puerto POP3 no es válido."
+
+msgid "Need port number for smtp connect."
+msgstr "Es necesario el número de puerto para conectar smtp."
+
+msgid "SMTP port number is not in range 0..65535."
+msgstr "El puerto SMTP no está en el rango 0..65535."
+
+msgid "SMTP port number is invalid."
+msgstr "El puerto SMTP no es válido."
+
+msgid "Cannot connect"
+msgstr "No se pudo conectar"
+
+msgid "Error connecting to server"
+msgstr "Error conectando al servidor"
+
+msgid "Draft saved."
+msgstr "Borrador guardado."
+
+msgid "Unable to save mail."
+msgstr "No se puede guardar el correo."
+
+#, java-format
+msgid "On {0} {1} wrote:"
+msgstr "El {0} {1} escribió:"
+
+#, java-format
+msgid "Error reading uploaded file: {0}"
+msgstr "Error al leer el archivo subido: {0}"
+
+msgid "begin forwarded mail"
+msgstr "comenzar correo reenviado"
+
+msgid "end forwarded mail"
+msgstr "final del correo reenviado"
+
+msgid "Could not fetch mail body."
+msgstr "No se pudo obtener el cuerpo del correo."
+
+msgid "Message id not valid."
+msgstr "ID del mensaje no válida."
+
+msgid "Internal error, lost connection."
+msgstr "Error interno, pérdida de conexión."
+
+#, java-format
+msgid "No Encoding found for {0}"
+msgstr "No se ha encontrado codificación para {0}"
+
+msgid "Attachment not found."
+msgstr "Adjunto no encontrado."
+
+msgid "Message not found."
+msgstr "Mensaje no encontrado."
+
+#, java-format
+msgid "1 message deleted."
+msgid_plural "{0} messages deleted."
+msgstr[0] "1 mensaje eliminado."
+msgstr[1] "{0} mensajes eliminados."
+
+msgid "No messages marked for deletion."
+msgstr "No hay mensajes marcados para su eliminación."
+
+#, java-format
+msgid "Host unchanged. Edit configation file {0} to change host."
+msgstr "No se cambió el servidor. Edite el fichero de configuración {0} para cambiar de servidor."
+
+msgid "Configuration saved"
+msgstr "Configuración guardada"
+
+msgid "Invalid pagesize number, resetting to default value."
+msgstr "Tamaño de página no válida, restableciendo los valores predeterminados."
+
+msgid "Login"
+msgstr "Iniciar sesión"
+
+msgid "Loading messages, please wait..."
+msgstr "Cargando correos electrónicos, espere, por favor..."
+
+#, java-format
+msgid "1 message"
+msgid_plural "{0} messages"
+msgstr[0] "1 mensaje"
+msgstr[1] "{0} mensajes"
+
+msgid "No messages"
+msgstr "No hay mensajes"
+
+msgid "Show Message"
+msgstr "Mostrar mensaje"
+
+msgid "New Message"
+msgstr "Nuevo mensaje"
+
+msgid "Configuration"
+msgstr "Configuración"
+
+msgid "I2PMail"
+msgstr "I2PCorreo"
+
+msgid "No new messages"
+msgstr "No hay mensajes nuevos"
+
+#, java-format
+msgid "{0} is an I2P-exclusive service provided by {1}."
+msgstr "{0} es un servicio exclusivo de I2P proporcionado por {1}."
+
+#, java-format
+msgid "{0} webmail client &copy Susi 2004-2005."
+msgstr "{0} webmail client &copy Susi 2004-2005."
+
+msgid "Checking for new messages on server"
+msgstr "Comprobando si hay correos electrónicos nuevos en el servidor"
+
+msgid "Refresh the page for updates"
+msgstr "Actualice la página para actualizar"
+
+msgid "Removed tracking image placeholder"
+msgstr "Se eliminó el marcador de posición de la imagen de seguimiento"
+
+msgid "no subject"
+msgstr "sin asunto"
+
+msgid "Found no valid sender address."
+msgstr "No se ha encontrado una dirección de remitente válida."
+
+#, java-format
+msgid "Found no valid address in \\''{0}\\''."
+msgstr "No se ha encontrado ninguna dirección válida en \\''{0}\\''."
+
+msgid "No recipients found."
+msgstr "No se han encontrado destinatarios."
+
+#, java-format
+msgid "Email is too large, max is {0}"
+msgstr "El correo es demasiado largo, el máximo es {0}"
+
+msgid "Sending mail."
+msgstr "Envío de correo."
+
+msgid "Error sending mail"
+msgstr "Error enviando correo"
+
+msgid "Mail sent."
+msgstr "Correo enviado."
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Save as Draft"
+msgstr "Guardar como borrador"
+
+msgid "Send"
+msgstr "Enviar"
+
+msgid "From"
+msgstr "De"
+
+msgid "To"
+msgstr "A"
+
+msgid "Cc"
+msgstr "Cc"
+
+msgid "Bcc"
+msgstr "Cco"
+
+msgid "Subject"
+msgstr "Asunto"
+
+msgid "Add Attachment"
+msgstr "Añadir adjunto"
+
+msgid "Add attachment"
+msgstr "Añadir adjunto"
+
+msgid "Attachments"
+msgstr "Adjuntos"
+
+msgid "Delete selected attachments"
+msgstr "Borrar adjuntos seleccionados"
+
+msgid "I2PMail Login"
+msgstr "I2PMail Iniciar sesión"
+
+msgid "User"
+msgstr "Usuario"
+
+msgid "Username"
+msgstr "nombre de usuario"
+
+msgid "Password"
+msgstr "Contraseña"
+
+msgid "Toggle password visibility"
+msgstr "alternar visibilidad de contraseña"
+
+msgid "Host"
+msgstr "Host"
+
+msgid "POP3 Port"
+msgstr "Puerto POP3"
+
+msgid "SMTP Port"
+msgstr "Puerto SMTP"
+
+msgid "Read Mail Offline"
+msgstr "Leer correo desconectado"
+
+msgid "Settings"
+msgstr "Configuraciones"
+
+msgid "Learn about I2PMail"
+msgstr "Aprende sobre I2P mail"
+
+msgid "Create Account"
+msgstr "Crear una cuenta"
+
+msgid "New"
+msgstr "Nuevo"
+
+msgid "Check Mail"
+msgstr "Comprobar correo"
+
+msgid "Refresh Page"
+msgstr "Actualizar página"
+
+msgid "Change to Folder"
+msgstr "Cambiar a carpeta"
+
+#, java-format
+msgid "1 Message"
+msgid_plural "{0} Messages"
+msgstr[0] "1 Mensaje"
+msgstr[1] "{0} Mensajes"
+
+msgid "Logout"
+msgstr "Desconectarse"
+
+msgid "Date"
+msgstr "Fecha"
+
+msgid "Size"
+msgstr "Tamaño"
+
+msgid "Mark for deletion"
+msgstr "Marcar para borrado"
+
+msgid "Really delete the marked messages?"
+msgstr "¿Realmente deseas borrar los mensajes marcados?"
+
+msgid "Yes, really delete them!"
+msgstr "Sí, realmente eliminarlos!"
+
+msgid "Delete Selected"
+msgstr "Borrar seleccionados"
+
+msgid "Mark All"
+msgstr "Marcar todos"
+
+msgid "Clear All"
+msgstr "Borrar todos"
+
+msgid "Message contains HTML"
+msgstr "El mensaje contiene HTML"
+
+msgid "Message is new"
+msgstr "El mensaje es nuevo"
+
+msgid "Message is spam"
+msgstr "El mensaje es spam"
+
+msgid "Message body not downloaded"
+msgstr "cuerpo del mensaje no descargado"
+
+msgid "First"
+msgstr "Primero"
+
+msgid "Previous"
+msgstr "Anterior"
+
+msgid "Next"
+msgstr "Siguiente"
+
+msgid "Last"
+msgstr "Última"
+
+msgid "Really delete this message?"
+msgstr "¿Realmente deseas borrar este mensaje?"
+
+msgid "Yes, really delete it!"
+msgstr "Sí, ¡bórralo!"
+
+msgid "Reply"
+msgstr "Responder"
+
+msgid "Reply All"
+msgstr "Responder a todos"
+
+msgid "Forward"
+msgstr "Reenviar"
+
+msgid "Save As"
+msgstr "Guardar como"
+
+msgid "Delete"
+msgstr "Eliminar"
+
+msgid "Back to Folder"
+msgstr "Volver a la carpeta"
+
+msgid "Move to Folder"
+msgstr "Mover a la carpeta"
+
+msgid "View message in new tab"
+msgstr "Ver mensaje en una nueva pestaña"
+
+msgid "Folder Page Size"
+msgstr "Tamaño de página de la carpeta"
+
+msgid "Set"
+msgstr "Establecer"
+
+msgid "Advanced Configuration"
+msgstr "Configuración avanzada"
+
+msgid "Save Configuration"
+msgstr "Guardar configuración"
+
+msgid "No response from server"
+msgstr "No hay respuesta del servidor"
+
+msgid "Mail server login failed, wrong username or password."
+msgstr "Error al iniciar sesión en el servidor de correo, nombre de usuario o contraseña incorrectos."
+
+msgid "Logout and then login again with the correct username and password."
+msgstr "Salga y vuelva a iniciar sesión con el nombre de usuario y la contraseña correctos."
+
+msgid "Login failed"
+msgstr "Fallo al iniciar sesión"
+
+msgid "Server refused connection"
+msgstr "El servidor rechazó la conexión"
+
+msgid "Mail rejected"
+msgstr "Correo rechazado"

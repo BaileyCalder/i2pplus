@@ -1,0 +1,428 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: uk_UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+msgid "Website Unknown"
+msgstr "Веб-сайт невідомий"
+
+msgid "Router Console"
+msgstr "Консоль роутера"
+
+msgid "I2P Router Console"
+msgstr "Консоль роутера I2P"
+
+msgid "Addressbook"
+msgstr "Адресна книга"
+
+msgid "Configuration"
+msgstr "Настройки"
+
+msgid "Help"
+msgstr "Допомога"
+
+msgid "Website Not Found in Addressbook"
+msgstr "Сайт не знайдено в адресній книзі"
+
+msgid "The website was not found in your router's addressbook."
+msgstr "Веб-сайт не знайдено в адресній книзі вашого маршрутизатора."
+
+msgid "Check the link or find a Base 32 or Base 64 address."
+msgstr "Перевірте посилання або знайдіть адресу Base 32 або Base 64."
+
+#, java-format
+msgid "If you have the Base 64 address, {0}add it to your addressbook{1}."
+msgstr "Якщо ви маєте Base 64 адресу, то {0}додайте її до адресної книги{1}."
+
+msgid "Otherwise, find a Base 32 or address helper link, or use a jump service link below."
+msgstr "Інакше знайдіть посилання Base 32 або допоміжного адреса, або скористайтеся посиланням служби переходу нижче."
+
+#, java-format
+msgid "Seeing this page often? See {0}the FAQ{1} for help in {2}adding some subscriptions{3} to your addressbook."
+msgstr "Бачити цю сторінку часто? Див. {0} FAQ {1} для довідки в {2} Додавання деяких підписки {3} до вашої адресної книги."
+
+msgid "Could not find the following destination:"
+msgstr "Не вдалося знайти наступне місце призначення:"
+
+msgid "Warning: Non-HTTP Protocol"
+msgstr "Попередження: протокол не HTTP"
+
+msgid "The request uses a bad protocol."
+msgstr "Запит використовує неправильний протокол."
+
+msgid "The I2P HTTP Proxy supports HTTP and HTTPS requests only."
+msgstr "I2P HTTP Proxy підтримує лише запити HTTP і HTTPS."
+
+msgid "Other protocols such as FTP are not allowed."
+msgstr "Інші протоколи, такі як FTP, заборонені."
+
+msgid "Error: Request Denied"
+msgstr "Помилка: запит відхилено"
+
+msgid "Error: Cannot Access Router Console via I2P Proxy"
+msgstr "Помилка: неможливо отримати доступ до консолі маршрутизатора через проксі-сервер I2P"
+
+msgid "Your browser is misconfigured."
+msgstr "Ваш браузер неправильно налаштований."
+
+msgid "Do not use the proxy to access the router console, localhost, or local LAN destinations."
+msgstr "Не використовуйте проксі для доступу до консолі маршрутизатора, локального хосту або місць призначення локальної локальної мережі.Не використовуйте проксі для доступу до консолі роутеру, localhost чи будь-якого хосту у локальній мережі."
+
+msgid "You need to prevent 127.0.0.1 (or the address you're accessing the I2P console on) from being routed via I2P's http proxy, usually by excluding the address in your browser's proxy configuration section."
+msgstr "Вам потрібно запобігти маршрутизації 127.0.0.1 (або адреси, з якої ви отримуєте доступ до консолі I2P) через http-проксі I2P, як правило, шляхом виключення адреси в розділі налаштування проксі-сервера вашого браузера."
+
+msgid "Warning: Destination Key Conflict"
+msgstr "Попередження: конфлікт ключа призначення"
+
+msgid "The address helper link you followed specifies a different destination key than the entry in your address book."
+msgstr "Допоміжне посилання адреси, за яким ви перейшли, визначає інший ключ призначення, ніж запис у вашій адресній книзі."
+
+msgid "Someone could be trying to impersonate another website, or people have given two websites identical names."
+msgstr "Хтось може намагатися видати себе за інший веб-сайт, або люди дали двом веб-сайтам однакові назви."
+
+msgid "Resolve the conflict by deciding which key you trust, and then either ignore the address helper link, or delete the host entry from your address book and click the address helper link again."
+msgstr "Вирішіть конфлікт, вирішивши, якому ключу ви довіряєте, а потім або проігноруйте посилання допоміжної адреси, або видаліть запис хоста з вашої адресної книги та знову клацніть посилання допоміжної адреси."
+
+msgid "Connection Reset"
+msgstr "Скидання з'єднання"
+
+msgid "The connection to the website was reset while the page was loading."
+msgstr "Під час завантаження сторінки з'єднання з сайтом було обірвано."
+
+msgid "The website could be temporarily unavailable, too busy, or it has blocked your access."
+msgstr "Веб-сайт може бути тимчасово недоступним, занадто зайнятим або він заблокував ваш доступ.Веб-сайт може бути тимчасово недоступний, занадто зайнятий або заблокований."
+
+#, java-format
+msgid "You may want to {0}retry{1}."
+msgstr "Ви можете {0} повторно {1}."
+
+#, java-format
+msgid "If you leave this page open, it will automatically retry connecting to the website every {0} seconds after a failed connection attempt."
+msgstr "Якщо ви залишите цю сторінку відкритою, вона автоматично повторюватиме підключення до веб-сайту кожні {0} секунд після невдалої спроби підключення."
+
+msgid "Website Unreachable"
+msgstr "Сайт недоступний"
+
+msgid "The website was not reachable, because it uses encryption options that are not supported by your I2P or Java version."
+msgstr "Веб-сайт недоступний, оскільки він використовує параметри шифрування, які не підтримуються вашою версією I2P або Java."
+
+msgid "Could not connect to the following destination:"
+msgstr "Не вдалося з'єднатися з наступним пунктом призначення:"
+
+msgid "The website was not reachable, because its lease set was not found."
+msgstr "Веб-сайт недоступний, оскільки його набір оренди не знайдено."
+
+msgid "The website is probably down, but there could also be network congestion."
+msgstr "Веб-сайт, ймовірно, не працює, але також може бути перевантаження мережі."
+
+msgid "The connection to the proxy was reset."
+msgstr "З’єднання з проксі скинуто."
+
+msgid "The proxy could be temporarily unavailable, too busy, or it has blocked your access."
+msgstr "Проксі може бути тимчасово недоступним, занадто зайнятим або заблокував ваш доступ."
+
+#, java-format
+msgid "You may want to {0}retry{1} as this will randomly reselect an outproxy from the pool you have defined {2}here{3} (if you have more than one configured)."
+msgstr "Ви можете {0}повторити спробу{1}, оскільки це призведе до випадкового повторного вибору вихідного проксі-сервера з пулу, який ви визначили {2}тут{3} (якщо у вас налаштовано більше одного)."
+
+#, java-format
+msgid "If you continue to have trouble you may want to edit your outproxy list {0}here{1}."
+msgstr "Якщо проблеми не зникають, ви можете відредагувати свій список проксі-серверів {0}тут{1}."
+
+msgid "Outproxy Unreachable"
+msgstr "Outproxy Недоступний"
+
+msgid "The HTTP outproxy was not reachable, because it uses encryption options that are not supported by your I2P or Java version."
+msgstr "HTTP-проксі-сервер недоступний, оскільки він використовує параметри шифрування, які не підтримуються вашою версією I2P або Java.Вихідний проксі HTTP недоступний, бо використовує опції шифрування, які не підтримуються вашим I2P або версією Java."
+
+msgid "The website was not reachable."
+msgstr "Веб-сайт був недоступний."
+
+msgid "The website is offline, there is network congestion, or your router is not yet well-integrated with peers."
+msgstr "Веб-сайт офлайн, мережа перевантажена, або ваш маршрутизатор ще не добре інтегрований з одноранговими вузлами."
+
+msgid "Warning: No Outproxy Configured"
+msgstr "Попередження: вихідний проксі не налаштовано"
+
+msgid "Your request was for a site outside of I2P, but you have no HTTP outproxy configured."
+msgstr "Ваш запит стосувався сайту за межами I2P, але у вас не налаштовано вихідний проксі HTTP."
+
+msgid "Please configure an outproxy in I2PTunnel."
+msgstr "Будь ласка, налаштуйте вихідний проксі у I2PTunnel."
+
+msgid "Outproxy Not Found"
+msgstr "Outproxy не знайдено"
+
+msgid "The HTTP Outproxy was not found."
+msgstr "Вихідний проксі для HTTP не знайдено."
+
+msgid "It is offline, there is network congestion, or your router is not yet well-integrated with peers."
+msgstr "Він офлайн, мережа перевантажена, або ваш маршрутизатор ще не добре інтегрований з одноранговими вузлами.Він знаходиться в автономному режимі, є перевантаження мережі або ваш маршрутизатор ще не інтегрований з одноранговими пристроями."
+
+msgid "Information: New Host Name"
+msgstr "Інформація: нове ім'я хоста"
+
+msgid "Information: New Host Name with Address Helper"
+msgstr "Інформація: нове ім’я хосту з помічником адрес"
+
+msgid "The address helper link you followed is for a new host name that is not in your address book."
+msgstr "Допоміжне посилання адреси, за яким ви перейшли, призначене для нового імені хоста, якого немає у вашій адресній книзі."
+
+msgid "You may save this host name to your local address book."
+msgstr "Ви можете зберегти це ім'я хоста у вашій локальній адресній книзі."
+
+msgid "If you save it to your address book, you will not see this message again."
+msgstr "Якщо ви збережете його в адресній книзі, ви більше не побачите це повідомлення."
+
+msgid "If you do not save it, the host name will be forgotten after the next router restart."
+msgstr "Якщо ви не збережете його, ім’я хоста буде забуто після наступного перезапуску маршрутизатора."
+
+msgid "If you do not wish to visit this host, click the \"back\" button on your browser."
+msgstr "Якщо ви не бажаєте відвідувати цей хост, натисніть кнопку \"назад\" у вашому браузері."
+
+msgid "Proxy Authorization Required"
+msgstr "Авторизація outproxy"
+
+msgid "I2P HTTP Proxy Authorization Required"
+msgstr "Авторизація outproxy"
+
+msgid "This proxy is configured to require a username and password for access."
+msgstr "Цей проксі-сервер налаштовано на вимогу імені користувача та пароля для доступу.Цей проксі налаштований конечно вимагати ім'я користувача і пароль для доступу."
+
+#, java-format
+msgid "Please enter your username and password, or check your {0}router configuration{1} or {2}I2PTunnel configuration{3}."
+msgstr "Будь ласка, введіть своє ім’я користувача та пароль або перевірте {0}конфігурацію маршрутизатора{1} або {2}конфігурацію I2PTunnel{3}.Будь ласка, ввести ваш логін і пароль, або перевірити {0}router configuration{1} або {2}I2PTunnel configuration{3}."
+
+#, java-format
+msgid "To disable authorization, remove the configuration {0}i2ptunnel.proxy.auth=basic{1}, then stop and restart the HTTP Proxy tunnel."
+msgstr "Щоб вимкнути авторизацію, видаліть конфігурацію {0}i2ptunnel.proxy.auth=basic{1}, а потім зупиніть і перезапустіть тунель HTTP-проксі."
+
+msgid "The HTTP outproxy was not reachable, because its lease set was not found."
+msgstr "Вихідний проксі-сервер HTTP недоступний, оскільки його набір оренди не знайдено."
+
+msgid "The outproxy is probably down, but there could also be network congestion."
+msgstr "Можливо, вихідний проксі не працює, або мережа перенавантажена."
+
+msgid "Warning: Request Denied"
+msgstr "Попередження: запит відхилено"
+
+msgid "This address appears to be malformed. Please verify you have supplied a valid address!"
+msgstr "Ця адреса, здається, є неправильною. Будь ласка, переконайтеся, що ви постачали дійсну адресу!"
+
+msgid "Warning: Bad Address Helper"
+msgstr "Попередження: Помічник неправильної адреси"
+
+#, java-format
+msgid "The helper key in the URL ({0}i2paddresshelper={1}) is not resolvable."
+msgstr "Допоміжний ключ в URL-адресі ({0}i2paddresshelper={1}) не розпізнається."
+
+msgid "It seems to be garbage data, or a mistyped Base 32 address."
+msgstr "Здається, це сміттєві дані або неправильно введена адреса Base 32."
+
+msgid "Check your URL to try and fix the helper key to be a valid Base 32 hostname or Base 64 key."
+msgstr "Перевірте свою URL-адресу, щоб спробувати виправити допоміжний ключ на дійсне ім’я хосту Base 32 або ключ Base 64."
+
+msgid "Warning: Address Blacklisted"
+msgstr ""
+
+msgid "The requested destination is in your blacklist and access has been blocked."
+msgstr ""
+
+msgid "To allow access to this site, remove it from your blacklist on the SusiDNS blacklist management page."
+msgstr ""
+
+msgid "Warning: Invalid Destination"
+msgstr "Локальний адрес призначення"
+
+msgid "The website destination specified was not valid, or was otherwise unreachable."
+msgstr "Вказаний цільовий веб-сайт недійсний або недосяжний з інших причин."
+
+msgid "Perhaps you pasted in the wrong Base 64 string or the link you are following is bad."
+msgstr "Можливо, ви вставили неправильний рядок Base 64 або посилання, за яким ви переходите, неправильне."
+
+msgid "The I2P host could also be offline."
+msgstr "Хост I2P також може бути офлайн."
+
+msgid "Warning: Authorization Required"
+msgstr "Попередження: потрібна авторизація"
+
+msgid "Warning: Invalid Request URI"
+msgstr "Попередження: недійсний URI запиту"
+
+msgid "The request URI is invalid, and probably contains illegal characters."
+msgstr "URI запиту недійсний і, ймовірно, містить недопустимі символи."
+
+msgid "If you clicked a link, check the end of the URI for any characters the browser has mistakenly added on."
+msgstr "Якщо ви клацнули посилання, перевірте кінець URI на наявність символів, які браузер помилково додав."
+
+msgid "The Base32 address is invalid."
+msgstr "Адреса Base32 недійсна."
+
+msgid "This seems to be a bad destination:"
+msgstr "Скоріше всього це поганий адрес призначення:"
+
+msgid "i2paddresshelper cannot help you with a destination like that!"
+msgstr "i2paddresshelper не може допомогти Вам з місцем призначення як це!"
+
+#, java-format
+msgid "To visit the destination in your addressbook, click <a href=\"{0}\">here</a>. To visit the conflicting addresshelper destination, click <a href=\"{1}\">here</a>."
+msgstr "Щоб відвідати пункт призначення у вашій адресній книжці, натисніть <a href=\"{0}\"> тут </a>. Щоб відвідати конфліктну адресу призначення, натисніть <a href=\"{1}\"> тут </a>."
+
+#, java-format
+msgid "Destination for {0} in addressbook"
+msgstr "Призначення для {0} в адресній книзі"
+
+msgid "Conflicting address helper destination"
+msgstr "Конфліктне призначення допоміжної адреси"
+
+msgid "Corrupt Base32 address"
+msgstr "Пошкоджена адреса Base32"
+
+msgid "Destination LeaseSet not found"
+msgstr "Destination LeaseSet не знайдено"
+
+msgid "Host"
+msgstr "Адрес"
+
+msgid "Base32"
+msgstr "База32"
+
+msgid "Destination"
+msgstr "Адреса призначення"
+
+#, java-format
+msgid "Continue to {0} without saving"
+msgstr "Продовжити до {0} без збереження"
+
+msgid "You can browse to the site without saving it to the addressbook. The address will be remembered until you restart your I2P router."
+msgstr "Ви можете переглядати на Сайт, не зберігаючи його до адресної книжки. Адреса запам'ятається, поки ви не перезапустите свій маршрутизатор I2P."
+
+msgid "Continue without saving"
+msgstr "Продовжити без збереження"
+
+#, java-format
+msgid "Save {0} to router address book and continue to website"
+msgstr "Збережіть {0} в адресній книзі маршрутизатора та перейдіть на веб-сайт"
+
+msgid "This address will be saved to your Router addressbook where your subscription-based addresses are stored."
+msgstr "Ця адреса буде збережена в адресній книзі вашого маршрутизатора, де зберігаються ваші адреси на основі підписки."
+
+msgid "If you want to keep track of sites you have added manually, add to your Master or Private addressbook instead."
+msgstr "Якщо ви хочете відстежувати сайти, які ви додали вручну, додайте натомість до вашої головної або приватної адресної книги."
+
+msgid "Save & continue"
+msgstr "Зберегти"
+
+#, java-format
+msgid "Save {0} to master addressbook and continue to website"
+msgstr "Зберегти {0} для майстер -адреси та продовжуйте веб -сайт"
+
+msgid "This address will be saved to your Master addressbook. Select this option for addresses you wish to keep separate from the main router address book, but don't mind publishing."
+msgstr "Ця адреса буде збережена у вашій головній адресній книжці. Виберіть цю опцію для адрес, які ви хочете зберегти окремо від головної адреси маршрутизатора, але не проти публікації."
+
+#, java-format
+msgid "Save {0} to private addressbook and continue to website"
+msgstr "Зберегти {0} до приватної адреси та продовжуйте веб -сайт"
+
+msgid "This address will be saved to your Private addressbook, ensuring it is never published."
+msgstr "Цю адресу буде збережено у вашій приватній адресній книзі, щоб вона ніколи не була опублікована."
+
+msgid "Base32 address requires lookup password"
+msgstr "адреса Base32 потребує пошуку пароля"
+
+msgid "Base32 address requires encryption key"
+msgstr "Адреса Base32 потребує ключа шифрування"
+
+msgid "Base32 address requires encryption key and lookup password"
+msgstr "Aдреса Base32 потребує ключа шифрування та пароля пошуку"
+
+msgid "Base32 address decryption failure, check encryption key"
+msgstr "Помилка дешифрування адреси Base32, перевірте ключ шифрування"
+
+msgid "Generate"
+msgstr "Згенерувати"
+
+msgid "Encryption key"
+msgstr "Ключ шифрування"
+
+msgid "You must either enter a PSK encryption key provided by the server operator, or generate a DH encryption key and send that to the server operator."
+msgstr "Ви повинні або ввести ключ шифрування PSK, наданий оператором сервера, або створити ключ шифрування DH і надіслати його оператору сервера."
+
+msgid "Ask the server operator for help."
+msgstr "Зверніться по допомогу до оператора сервера."
+
+msgid "Enter PSK encryption key"
+msgstr "Введіть ключ шифрування PSK"
+
+msgid "Generate new DH encryption key"
+msgstr "Створити новий ключ шифрування DH"
+
+msgid "Lookup password"
+msgstr "Пошуковий пароль"
+
+msgid "You must enter the password provided by the server operator."
+msgstr "Ви повинні ввести пароль, наданий оператором сервера."
+
+#, java-format
+msgid "Added via address helper from {0}"
+msgstr "Додано через address helper {0}"
+
+msgid "Added via address helper"
+msgstr "Додано через address helper"
+
+msgid "Missing lookup password"
+msgstr "Відсутній пароль пошуку"
+
+msgid "Missing private key"
+msgstr "Відсутній закритий ключ"
+
+msgid "Invalid private key"
+msgstr "Недійсний закритий ключ"
+
+msgid "Your new encryption key"
+msgstr "Ваш новий ключ шифрування"
+
+msgid "Copy the key and send it to the server operator."
+msgstr "Скопіюйте ключ і надішліть його оператору сервера."
+
+msgid "After you are granted permission, you may proceed to the website."
+msgstr "Отримавши дозвіл, ви можете перейти на веб-сайт."
+
+msgid "Go back and fix the error"
+msgstr "Поверніться та виправте помилку"
+
+msgid "router"
+msgstr "роутер"
+
+msgid "master"
+msgstr "основна"
+
+msgid "private"
+msgstr "приватна"
+
+#, java-format
+msgid "Redirecting to {0}"
+msgstr "Перенаправляємо до {0}"
+
+msgid "Redirection in progress"
+msgstr "Триває перенаправлення"
+
+#, java-format
+msgid "Saved {0} to the {1} addressbook, redirecting now."
+msgstr "{0} збережено в {1} адресної книги, перенапрявляємо."
+
+#, java-format
+msgid "Failed to save {0} to the {1} addressbook, redirecting now."
+msgstr "Не вдалось зберегти {0} в {1} адресної книги, перенаправляємо."
+
+msgid "Click here if you are not redirected automatically."
+msgstr "Клацніть тут якщо вас не перенаправило автоматично."
+
+#, java-format
+msgid "Saved the authentication for {0}, redirecting now."
+msgstr "Збережено автентифікацію для {0}, переспрямування зараз."

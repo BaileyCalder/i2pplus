@@ -1,0 +1,67 @@
+package net.i2p.internal;
+
+import net.i2p.I2PAppContext;
+import net.i2p.data.i2cp.I2CPMessage;
+import net.i2p.util.Log;
+
+import java.io.Closeable;
+
+/**
+ * Contains the methods to talk to a router or client via I2CP,
+ * when both are in the same JVM.
+ * This interface contains methods to access two queues,
+ * one for transmission and one for receiving.
+ * The methods are identical to those in java.util.concurrent.BlockingQueue.
+ *
+ * Reading may be done in a thread using the QueuedI2CPMessageReader class.
+ * Non-blocking writing may be done directly with offer().
+ *
+ * @author zzz
+ * @since 0.8.3
+ */
+public abstract class I2CPMessageQueue implements Closeable {
+
+    /**
+     *  Send a message, nonblocking.
+     *  @return success (false if no space available)
+     */
+    public abstract boolean offer(I2CPMessage msg);
+
+    /**
+     *  Send a message, blocking.
+     *  @param timeout how long to wait for space (ms)
+     *  @return success (false if no space available or if timed out)
+     *  @since 0.9.3
+     */
+    public abstract boolean offer(I2CPMessage msg, long timeout) throws InterruptedException;
+
+    /**
+     *  Receive a message, nonblocking.
+     *  Unused for now.
+     *  @return message or null if none available
+     */
+    public abstract I2CPMessage poll();
+
+    /**
+     *  Send a message, blocking until space is available.
+     *  Unused for now.
+     */
+    public abstract void put(I2CPMessage msg) throws InterruptedException;
+
+    /**
+     *  Receive a message, blocking until one is available.
+     *  @return message
+     */
+    public abstract I2CPMessage take() throws InterruptedException;
+
+    /**
+     *  == offer(new PoisonI2CPMessage());
+     */
+    @Override
+    public void close() {
+        if (!offer(new PoisonI2CPMessage())) {
+            Log log = I2PAppContext.getGlobalContext().logManager().getLog(I2CPMessageQueue.class);
+            log.warn("Failed to send close message - queue full");
+        }
+    }
+}

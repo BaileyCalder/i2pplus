@@ -1,0 +1,428 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Website Unknown"
+msgstr "Hjemmeside ukendt"
+
+msgid "Router Console"
+msgstr "Routere-konsollen"
+
+msgid "I2P Router Console"
+msgstr "I2P Routere-konsollen"
+
+msgid "Addressbook"
+msgstr "Adressebog"
+
+msgid "Configuration"
+msgstr "Konfiguration"
+
+msgid "Help"
+msgstr "Hjælp"
+
+msgid "Website Not Found in Addressbook"
+msgstr "Hjemmeside ikke fundet i adressebogen"
+
+msgid "The website was not found in your router's addressbook."
+msgstr "Hjemmesiden blev ikke fundet i din routers adressebog."
+
+msgid "Check the link or find a Base 32 or Base 64 address."
+msgstr "Tjek linket eller find en Base 32 eller Base 64 adresse."
+
+#, java-format
+msgid "If you have the Base 64 address, {0}add it to your addressbook{1}."
+msgstr "Hvis du har Base 64 adressen, {0}tilføj den til din adressebog{1}."
+
+msgid "Otherwise, find a Base 32 or address helper link, or use a jump service link below."
+msgstr "Ellers find en Base 32 eller adresse hjælpe link, eller brug en springe service link nedenfor."
+
+#, java-format
+msgid "Seeing this page often? See {0}the FAQ{1} for help in {2}adding some subscriptions{3} to your addressbook."
+msgstr "Ser denne side ofte? Se {0}FAQ{1} for hjælp med {2}at tilføje nogle abonnementer{3} til din adressebog."
+
+msgid "Could not find the following destination:"
+msgstr "Kunne ikke finde følgende destination:"
+
+msgid "Warning: Non-HTTP Protocol"
+msgstr "Advarsel: Ikke-HTTP Protokol"
+
+msgid "The request uses a bad protocol."
+msgstr "Forespørgslen bruger et dårligt protokol."
+
+msgid "The I2P HTTP Proxy supports HTTP and HTTPS requests only."
+msgstr "I2P HTTP Proxy understøtter kun HTTP og HTTPS forespørgsler."
+
+msgid "Other protocols such as FTP are not allowed."
+msgstr "Andre protokoller som FTP er ikke tilladt."
+
+msgid "Error: Request Denied"
+msgstr "Fejl: Forespørgsel afvist"
+
+msgid "Error: Cannot Access Router Console via I2P Proxy"
+msgstr "Fejl: Kan ikke få adgang til routere-konsollen via I2P Proxy"
+
+msgid "Your browser is misconfigured."
+msgstr "Din browser er misconfigureret."
+
+msgid "Do not use the proxy to access the router console, localhost, or local LAN destinations."
+msgstr "Brug ikke proxyen til at få adgang til routere-konsollen, localhost, eller lokale LAN destinationer."
+
+msgid "You need to prevent 127.0.0.1 (or the address you're accessing the I2P console on) from being routed via I2P's http proxy, usually by excluding the address in your browser's proxy configuration section."
+msgstr "Du skal forhindre 127.0.0.1 (eller adressen, du tilgår I2P konsollen på) fra at blive ruteret via I2Ps http proxy, vanligtvis ved at udelukke adressen i din browsers proxy konfigurations afsnit."
+
+msgid "Warning: Destination Key Conflict"
+msgstr "Advarsel: Konflikt med destination nøgle"
+
+msgid "The address helper link you followed specifies a different destination key than the entry in your address book."
+msgstr "Adresse hjælpe linket du fulgte angiver en anden destination nøgle end det indtastede i din adressebog."
+
+msgid "Someone could be trying to impersonate another website, or people have given two websites identical names."
+msgstr "Nogen kunne forsøge at tage anden hjemmeside til sig, eller folk har givet to hjemmesider identiske navne."
+
+msgid "Resolve the conflict by deciding which key you trust, and then either ignore the address helper link, or delete the host entry from your address book and click the address helper link again."
+msgstr "Løs konflikten ved at afgøre, hvilken nøgle du tillader, og derefter enten ignorere adresse hjælpe linket, eller slet vært indtasting fra din adressebog og klik adresse hjælpe linket igen."
+
+msgid "Connection Reset"
+msgstr "Forbindelse nulstillet"
+
+msgid "The connection to the website was reset while the page was loading."
+msgstr "Forbindelsen til hjemmesiden blev nulstillet mens siden indlæste."
+
+msgid "The website could be temporarily unavailable, too busy, or it has blocked your access."
+msgstr "Hjemmesiden kan være midlertidigt utilgængelig, for meget belasted, eller har blokeret din adgang."
+
+#, java-format
+msgid "You may want to {0}retry{1}."
+msgstr "Du vil måske gerne {0}prøve igen{1}."
+
+#, java-format
+msgid "If you leave this page open, it will automatically retry connecting to the website every {0} seconds after a failed connection attempt."
+msgstr "Hvis du holder denne side åben, vil den automatisk prøve at forbinde til hjemmesiden hvert {0} sekunder efter en mislykket forbindelsesforsøg."
+
+msgid "Website Unreachable"
+msgstr "Hjemmeside udbredbar"
+
+msgid "The website was not reachable, because it uses encryption options that are not supported by your I2P or Java version."
+msgstr "Hjemmesiden kunne ikke nås, fordi den bruger krypteringsmuligheder, der ikke understøttes af din I2P eller Java version."
+
+msgid "Could not connect to the following destination:"
+msgstr "Kunne ikke forbinde til følgende destination:"
+
+msgid "The website was not reachable, because its lease set was not found."
+msgstr "Hjemmesiden kunne ikke nås, da dens leasing sæt ikke kunne findes."
+
+msgid "The website is probably down, but there could also be network congestion."
+msgstr "Hjemmesiden er sandsynligvis nede, men der kunne også være netværks forsinkelse."
+
+msgid "The connection to the proxy was reset."
+msgstr "Forbindelsen til proxyen blev nulstillet."
+
+msgid "The proxy could be temporarily unavailable, too busy, or it has blocked your access."
+msgstr "Proxyen kunne være midlertidigt utilgængelig, for meget optaget, eller den har blokeret din adgang."
+
+#, java-format
+msgid "You may want to {0}retry{1} as this will randomly reselect an outproxy from the pool you have defined {2}here{3} (if you have more than one configured)."
+msgstr "Du vil måske gerne {0}prøve igen{1}, da dette vil tilfældigt genvelge en udproxy fra puljen du har defineret {2}her{3} (hvis du har mere end én konfigureret)."
+
+#, java-format
+msgid "If you continue to have trouble you may want to edit your outproxy list {0}here{1}."
+msgstr "Hvis du fortsat har problemer, vil du måske gerne redigere din udproxy liste {0}her{1}."
+
+msgid "Outproxy Unreachable"
+msgstr "Udproxy ubredbar"
+
+msgid "The HTTP outproxy was not reachable, because it uses encryption options that are not supported by your I2P or Java version."
+msgstr "HTTP udproxyen kunne ikke nås, da den bruger krypteringsmuligheder, der ikke understøttes af din I2P eller Java version."
+
+msgid "The website was not reachable."
+msgstr "Hjemmesiden kunne ikke nås."
+
+msgid "The website is offline, there is network congestion, or your router is not yet well-integrated with peers."
+msgstr "Hjemmesiden er offline, der er netværks forsinkelse, eller din router er endnu ikke godt integreret med medlemmer."
+
+msgid "Warning: No Outproxy Configured"
+msgstr "Advarsel: Ingen udproxy konfigureret"
+
+msgid "Your request was for a site outside of I2P, but you have no HTTP outproxy configured."
+msgstr "Din forespørgsel var for en side uden for I2P, men du har ingen HTTP udproxy konfigureret."
+
+msgid "Please configure an outproxy in I2PTunnel."
+msgstr "Konfigurer venligst en udproxy i I2PTunnel."
+
+msgid "Outproxy Not Found"
+msgstr "Udproxy ikke fundet"
+
+msgid "The HTTP Outproxy was not found."
+msgstr "HTTP Udproxyen blev ikke fundet."
+
+msgid "It is offline, there is network congestion, or your router is not yet well-integrated with peers."
+msgstr "Den er offline, der er netværks forsinkelse, eller din router er endnu ikke godt integreret med medlemmer."
+
+msgid "Information: New Host Name"
+msgstr "Information: Nyt værtsnavn"
+
+msgid "Information: New Host Name with Address Helper"
+msgstr "Information: Nyt værtsnavn med adresse hjælper"
+
+msgid "The address helper link you followed is for a new host name that is not in your address book."
+msgstr "Adresse hjælpe linket du fulgte er for et nyt værtsnavn, der ikke er i din adressebog."
+
+msgid "You may save this host name to your local address book."
+msgstr "Du kan gemme dette værtsnavn i din lokale adressebog."
+
+msgid "If you save it to your address book, you will not see this message again."
+msgstr "Hvis du gemmer det i din adressebog, vil du ikke se denne besked igen."
+
+msgid "If you do not save it, the host name will be forgotten after the next router restart."
+msgstr "Hvis du ikke gemmer det, vil værtsnavnet blive glemt efter næste routergenstart."
+
+msgid "If you do not wish to visit this host, click the \"back\" button on your browser."
+msgstr "Hvis du ikke ønsker at besøge denne vært, klik på \"tilbage\" knappen på din browser."
+
+msgid "Proxy Authorization Required"
+msgstr "Proxy autorisation påkrævet"
+
+msgid "I2P HTTP Proxy Authorization Required"
+msgstr "I2P HTTP Proxy autorisation påkrævet"
+
+msgid "This proxy is configured to require a username and password for access."
+msgstr "Denne proxy er konfigureret til at kræve brugernavn og adgangskode for adgang."
+
+#, java-format
+msgid "Please enter your username and password, or check your {0}router configuration{1} or {2}I2PTunnel configuration{3}."
+msgstr "Indtast venligst dit brugernavn og adgangskode, eller tjek din {0}router konfiguration{1} eller {2}I2PTunnel konfiguration{3}."
+
+#, java-format
+msgid "To disable authorization, remove the configuration {0}i2ptunnel.proxy.auth=basic{1}, then stop and restart the HTTP Proxy tunnel."
+msgstr "For at deaktivere autorisation, fjern konfigurationen {0}i2ptunnel.proxy.auth=basic{1}, så stop og genstart HTTP Proxy tunnel."
+
+msgid "The HTTP outproxy was not reachable, because its lease set was not found."
+msgstr "HTTP udproxyen kunne ikke nås, fordi dens leasing sæt ikke kunne findes."
+
+msgid "The outproxy is probably down, but there could also be network congestion."
+msgstr "Udproxyen er sandsynligvis nede, men der kunne også være netværks forsinkelse."
+
+msgid "Warning: Request Denied"
+msgstr "Advarsel: Forespørgsel afvist"
+
+msgid "This address appears to be malformed. Please verify you have supplied a valid address!"
+msgstr "Denne adresse ser ud til at være misformet. Verificér venligst at du har angivet en gyldig adresse!"
+
+msgid "Warning: Bad Address Helper"
+msgstr "Advarsel: Dårlig adresse hjælper"
+
+#, java-format
+msgid "The helper key in the URL ({0}i2paddresshelper={1}) is not resolvable."
+msgstr "Hjælpe nøglen i URL ({0}i2paddresshelper={1}) kan ikke løses."
+
+msgid "It seems to be garbage data, or a mistyped Base 32 address."
+msgstr "Det ser ud til at være skrald data, eller en fejtastet Base 32 adresse."
+
+msgid "Check your URL to try and fix the helper key to be a valid Base 32 hostname or Base 64 key."
+msgstr "Tjek din URL for at forsøge at rette hjælpe nøglen til at være en gyldig Base 32 værtsnavn eller Base 64 nøgle."
+
+msgid "Warning: Address Blacklisted"
+msgstr ""
+
+msgid "The requested destination is in your blacklist and access has been blocked."
+msgstr ""
+
+msgid "To allow access to this site, remove it from your blacklist on the SusiDNS blacklist management page."
+msgstr ""
+
+msgid "Warning: Invalid Destination"
+msgstr "Advarsel: Ugyldig destination"
+
+msgid "The website destination specified was not valid, or was otherwise unreachable."
+msgstr "Den angivne hjemmeside destination var ikke gyldig, eller var på anden vis ubredbar."
+
+msgid "Perhaps you pasted in the wrong Base 64 string or the link you are following is bad."
+msgstr "Måske har du indsat den forkerte Base 64 streng eller linket, du følger, er dårligt."
+
+msgid "The I2P host could also be offline."
+msgstr "I2P værten kunne også være offline."
+
+msgid "Warning: Authorization Required"
+msgstr "Advarsel: Autorisation påkrævet"
+
+msgid "Warning: Invalid Request URI"
+msgstr "Advarsel: Ugyldig forespørgsels-URI"
+
+msgid "The request URI is invalid, and probably contains illegal characters."
+msgstr "Forespørgsels-URI'en er ugyldig og indeholder sandsynligvis ulovlige tegn."
+
+msgid "If you clicked a link, check the end of the URI for any characters the browser has mistakenly added on."
+msgstr "Hvis du klikker på en link, tjek derefter slutningen af URI'en for eventuelle tegn, som din browser har tilføjet ved et fejl."
+
+msgid "The Base32 address is invalid."
+msgstr "Base32 adressen er ugyldig."
+
+msgid "This seems to be a bad destination:"
+msgstr "Dette ser ud til at være en dårlig destination:"
+
+msgid "i2paddresshelper cannot help you with a destination like that!"
+msgstr "i2paddresshelper kan ikke hjælpe dig med en destination som den!"
+
+#, java-format
+msgid "To visit the destination in your addressbook, click <a href=\"{0}\">here</a>. To visit the conflicting addresshelper destination, click <a href=\"{1}\">here</a>."
+msgstr "For at besøge destinationen i din adressebog, klik <a href=\"{0}\">her</a>. For at besøge den konfliktende adresse hjælpe destination, klik <a href=\"{1}\">her</a>."
+
+#, java-format
+msgid "Destination for {0} in addressbook"
+msgstr "Destination for {0} i adressebogen"
+
+msgid "Conflicting address helper destination"
+msgstr "Konfliktende adresse hjælpe destination"
+
+msgid "Corrupt Base32 address"
+msgstr "Skadet Base32 adresse"
+
+msgid "Destination LeaseSet not found"
+msgstr "Destination LeaseSet ikke fundet"
+
+msgid "Host"
+msgstr "Vært"
+
+msgid "Base32"
+msgstr "Base32"
+
+msgid "Destination"
+msgstr "Destination"
+
+#, java-format
+msgid "Continue to {0} without saving"
+msgstr "Fortset til {0} uden at gemme"
+
+msgid "You can browse to the site without saving it to the addressbook. The address will be remembered until you restart your I2P router."
+msgstr "Du kan blæse til siden uden at gemme den i adressebogen. Adressen vil blive husket indtil du genstarter din I2P router."
+
+msgid "Continue without saving"
+msgstr "Fortset uden at gemme"
+
+#, java-format
+msgid "Save {0} to router address book and continue to website"
+msgstr "Gem {0} i routere adressebog og fortsæt til hjemmesiden"
+
+msgid "This address will be saved to your Router addressbook where your subscription-based addresses are stored."
+msgstr "Denne adresse vil blive gemt i din Routere adressebog hvor dine abonnementsbaserede adresser er gemt."
+
+msgid "If you want to keep track of sites you have added manually, add to your Master or Private addressbook instead."
+msgstr "Hvis du ønsker at holde styr på sider du har tilføjet manuelt, tilføj til din Master eller Private adressebog i stedet."
+
+msgid "Save & continue"
+msgstr "Gem & fortsæt"
+
+#, java-format
+msgid "Save {0} to master addressbook and continue to website"
+msgstr "Gem {0} i hoved adressebog og fortsæt til hjemmesiden"
+
+msgid "This address will be saved to your Master addressbook. Select this option for addresses you wish to keep separate from the main router address book, but don't mind publishing."
+msgstr "Denne adresse vil blive gemt i din Hoved adressebog. Vælg denne mulighed for adresser du ønsker at holde separat fra hoved routere adressebogen, men ikke har noget imod at offentliggøre."
+
+#, java-format
+msgid "Save {0} to private addressbook and continue to website"
+msgstr "Gem {0} i privat adressebog og fortsæt til hjemmesiden"
+
+msgid "This address will be saved to your Private addressbook, ensuring it is never published."
+msgstr "Denne adresse vil blive gemt i din Private adressebog, hvilket sikrer at den aldrig bliver offentliggjort."
+
+msgid "Base32 address requires lookup password"
+msgstr "Base32 adresse kræver opslag adgangskode"
+
+msgid "Base32 address requires encryption key"
+msgstr "Base32 adresse kræver krypteringsnøgle"
+
+msgid "Base32 address requires encryption key and lookup password"
+msgstr "Base32 adresse kræver krypteringsnøgle og opslag adgangskode"
+
+msgid "Base32 address decryption failure, check encryption key"
+msgstr "Base32 adressekryptering fejl, tjek krypteringsnøgle"
+
+msgid "Generate"
+msgstr "Generer"
+
+msgid "Encryption key"
+msgstr "Krypteringsnøgle"
+
+msgid "You must either enter a PSK encryption key provided by the server operator, or generate a DH encryption key and send that to the server operator."
+msgstr "Du skal enten indtaste en PSK krypteringsnøgle levert af serveroperatøren, eller generer en DH krypteringsnøgle og send den til serveroperatøren."
+
+msgid "Ask the server operator for help."
+msgstr "Spørg serveroperatøren om hjælp."
+
+msgid "Enter PSK encryption key"
+msgstr "Indtast PSK krypteringsnøgle"
+
+msgid "Generate new DH encryption key"
+msgstr "Generer ny DH krypteringsnøgle"
+
+msgid "Lookup password"
+msgstr "Opslag adgangskode"
+
+msgid "You must enter the password provided by the server operator."
+msgstr "Du skal indtaste adgangskoden levert af serveroperatøren."
+
+#, java-format
+msgid "Added via address helper from {0}"
+msgstr "Tilføjet via adresse hjælper fra {0}"
+
+msgid "Added via address helper"
+msgstr "Tilføjet via adresse hjælper"
+
+msgid "Missing lookup password"
+msgstr "Mangler opslag adgangskode"
+
+msgid "Missing private key"
+msgstr "Mangler privat nøgle"
+
+msgid "Invalid private key"
+msgstr "Ugyldig privat nøgle"
+
+msgid "Your new encryption key"
+msgstr "Din nye krypteringsnøgle"
+
+msgid "Copy the key and send it to the server operator."
+msgstr "Kopiér nøglen og send den til serveroperatøren."
+
+msgid "After you are granted permission, you may proceed to the website."
+msgstr "Når du er tildelt tilladelse, kan du fortsætte til hjemmesiden."
+
+msgid "Go back and fix the error"
+msgstr "Gå tilbage og ret fejlen"
+
+msgid "router"
+msgstr "router"
+
+msgid "master"
+msgstr "hoved"
+
+msgid "private"
+msgstr "privat"
+
+#, java-format
+msgid "Redirecting to {0}"
+msgstr "Omdirigerer til {0}"
+
+msgid "Redirection in progress"
+msgstr "Omdirigering i gang"
+
+#, java-format
+msgid "Saved {0} to the {1} addressbook, redirecting now."
+msgstr "Gemt {0} i {1} adressebog, omdirigerer nu."
+
+#, java-format
+msgid "Failed to save {0} to the {1} addressbook, redirecting now."
+msgstr "Kunne ikke gemme {0} i {1} adressebog, omdirigerer nu."
+
+msgid "Click here if you are not redirected automatically."
+msgstr "Klik her hvis du ikke automatisk omdiriges."
+
+#, java-format
+msgid "Saved the authentication for {0}, redirecting now."
+msgstr "Gemt godkendelse for {0}, omdirigerer nu."

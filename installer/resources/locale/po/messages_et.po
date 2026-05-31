@@ -1,0 +1,144 @@
+# I2P
+# Copyright (C) 2012 The I2P Project
+msgid ""
+msgstr ""
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Failed to load the wrapper"
+msgstr "Pakendi laadimine ebaõnnestus"
+
+#, sh-format
+msgid "$APP_LONG_NAME is already running."
+msgstr "$APP_LONG_NAME on juba käimas."
+
+#, sh-format
+msgid "Running $APP_LONG_NAME"
+msgstr "$APP_LONG_NAME käivitamine"
+
+#, sh-format
+msgid "Waiting for $APP_LONG_NAME"
+msgstr "$APP_LONG_NAME ootamisel"
+
+#, sh-format
+msgid "WARNING: $APP_LONG_NAME may have failed to start."
+msgstr "HOIATUS: $APP_LONG_NAME võib mitte õnnestunud käivitada."
+
+msgid "Must be root to perform this action."
+msgstr "Peab olema juur kasutaja selle tegevuse tegemiseks."
+
+#, sh-format
+msgid "Starting $APP_LONG_NAME"
+msgstr "$APP_LONG_NAME käivitamine"
+
+#, sh-format
+msgid "Stopping $APP_LONG_NAME"
+msgstr "$APP_LONG_NAME peatamine"
+
+#, sh-format
+msgid "$APP_LONG_NAME was not running."
+msgstr "$APP_LONG_NAME ei olnud käimas."
+
+#, sh-format
+msgid "Unable to stop $APP_LONG_NAME."
+msgstr "$APP_LONG_NAME peatamine ei ole võimalik."
+
+#, sh-format
+msgid "Waiting for $APP_LONG_NAME to exit"
+msgstr "$APP_LONG_NAME vahetamisel ootamine"
+
+#, sh-format
+msgid "Failed to stop $APP_LONG_NAME."
+msgstr "$APP_LONG_NAME peatamine ebaõnnestus."
+
+#, sh-format
+msgid "Stopped $APP_LONG_NAME."
+msgstr "$APP_LONG_NAME on peatatud."
+
+#, sh-format
+msgid "Stopping $APP_LONG_NAME gracefully"
+msgstr "$APP_LONG_NAME õrnalt peatamine"
+
+#, sh-format
+msgid "$APP_LONG_NAME is not running."
+msgstr "$APP_LONG_NAME ei ole käimas."
+
+#, sh-format
+msgid "$APP_LONG_NAME is running: PID:$pid"
+msgstr "$APP_LONG_NAME on käimas: PID:$pid"
+
+#, sh-format
+msgid "$APP_LONG_NAME is running: PID:$pid, Wrapper:$STATUS, Java:$JAVASTATUS"
+msgstr "$APP_LONG_NAME on käimas: PID:$pid, Pakend:$STATUS, Java:$JAVASTATUS"
+
+#, sh-format
+msgid "The $APP_LONG_NAME daemon is already installed."
+msgstr "$APP_LONG_NAME daemon on juba paigaldatud."
+
+#, sh-format
+msgid "Installing the $APP_LONG_NAME daemon"
+msgstr "$APP_LONG_NAME daemoni paigaldamine"
+
+#, sh-format
+msgid "Install not currently supported for $DIST_OS"
+msgstr "Paigaldamine ei ole hetkel toetatud $DIST_OS jaoks"
+
+#, sh-format
+msgid "Removing $APP_LONG_NAME daemon"
+msgstr "$APP_LONG_NAME daemon eemaldamine"
+
+#, sh-format
+msgid "The $APP_LONG_NAME daemon is not currently installed."
+msgstr "$APP_LONG_NAME daemon ei ole hetkel paigaldatud."
+
+#, sh-format
+msgid "Remove not currently supported for $DIST_OS"
+msgstr "Eemaldamine ei ole hetkel toetatud $DIST_OS jaoks"
+
+msgid "Commands:"
+msgstr "Käsklused:"
+
+msgid "Launch in the current console."
+msgstr "Käivita praeguses konsoolis."
+
+msgid "Start in the background as a daemon process."
+msgstr "Alusta taustal kui daemon protsess."
+
+msgid "Stop if running as a daemon or in another console."
+msgstr "Peata kui käimas daemonina või teises konsoolis."
+
+msgid "Stop gracefully, may take up to 11 minutes or more."
+msgstr "Peata õrnalt, võib võtta kuni 11 minutit või rohkem."
+
+msgid "Restart gracefully, may take up to 11 minutes or more."
+msgstr "Taaskäivita õrnalt, võib võtta kuni 11 minutit või rohkem."
+
+msgid "Stop if running and then start."
+msgstr "Peata kui käimas ja seejärel käivita."
+
+msgid "Restart only if already running."
+msgstr "Taaskäivita vaid kui juba käimas."
+
+msgid "Query the current status."
+msgstr "Päring praeguse oleku kohta."
+
+msgid "Install to start automatically when system boots."
+msgstr "Paigalda automaatse käivitamiseks süsteemi käivitamisel."
+
+msgid "Uninstall."
+msgstr "Eemalda."
+
+msgid "Request a Java thread dump if running."
+msgstr "Nõua Java niidi dump kui käimas."
+
+msgid "Please edit i2prouter and set the variable RUN_AS_USER"
+msgstr "Palun muuda i2prouter ja määra muutuja RUN_AS_USER"
+
+msgid "Running I2P as the root user is *not* recommended."
+msgstr "I2P käivitamine juur kasutajana *ei ole* soovitatav."
+
+msgid "To run as root anyway, edit i2prouter and set ALLOW_ROOT=true."
+msgstr "Kui soovite siiski käivitada juurina, muuda i2prouter ja määra ALLOW_ROOT tõene."

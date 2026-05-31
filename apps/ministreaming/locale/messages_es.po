@@ -1,0 +1,63 @@
+# I2P
+# Copyright (C) 2014 The I2P Project
+msgid ""
+msgstr ""
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Message timeout"
+msgstr "Tiempo hasta la expiración del mensaje"
+
+msgid "Failed delivery to local destination"
+msgstr "Fallo en la entrega al destino local"
+
+msgid "Local router failure"
+msgstr "Fallo del router local"
+
+msgid "Local network failure"
+msgstr "Fallo de la red local"
+
+msgid "Session closed"
+msgstr "Sesión cerrada"
+
+msgid "Invalid message"
+msgstr "Mensaje no válido"
+
+msgid "Invalid message options"
+msgstr "Opciones de mensaje no válido"
+
+msgid "Buffer overflow"
+msgstr "Desbordamiento de memoria intermedia (buffer)"
+
+msgid "Message expired"
+msgstr "El mensaje expiró"
+
+msgid "Local lease set invalid"
+msgstr "El lease set (túneles al mismo destino) local no es válido"
+
+msgid "No local tunnels"
+msgstr "No hay túneles locales"
+
+msgid "Unsupported encryption options"
+msgstr "Opciones de cifrado no soportadas"
+
+msgid "Invalid destination"
+msgstr "Destino no válido"
+
+msgid "Destination lease set expired"
+msgstr "El lease set (túneles al mismo destino) del destino expiró"
+
+msgid "Destination lease set not found"
+msgstr "No se encontró el lease set (túneles al mismo destino) del destino"
+
+msgid "Local destination shutdown"
+msgstr "Cierre del destino local"
+
+msgid "Connection was reset"
+msgstr "La conexión fue reiniciada"
+
+msgid "Failure code"
+msgstr "Código de fallo"

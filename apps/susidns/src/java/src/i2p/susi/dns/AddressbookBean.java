@@ -1,0 +1,898 @@
+/*
+ * This file is part of SusDNS project for I2P
+ * Created on Sep 02, 2005
+ * $Revision: 1.2 $
+ * Copyright (C) 2005 <susi23@mail.i2p>
+ * License: GPL2 or later
+ */
+
+package i2p.susi.dns;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Properties;
+import net.i2p.data.DataFormatException;
+import net.i2p.data.DataHelper;
+import net.i2p.data.Destination;
+import net.i2p.util.Log;
+import net.i2p.util.SecureFileOutputStream;
+
+/**
+ * Bean for managing I2P address books.
+ * Provides functionality for loading, filtering, and managing address entries.
+ */
+public class AddressbookBean extends BaseBean {
+    /** Logger instance */
+    private static final Log _log = new Log(AddressbookBean.class);
+
+    /** The address book name */
+    protected String book;
+    /** The filter string */
+    protected String filter;
+    /** The search string */
+    protected String search;
+    /** The hostname */
+    protected String hostname;
+    /** The destination */
+    protected String destination;
+    /** The category filter string */
+    protected String category;
+    /** Valid category names */
+    private static final String[] VALID_CATEGORIES = {
+        "cryptocoin",
+        "drugs",
+        "ebook",
+        "filehost",
+        "fileshare",
+        "forum",
+        "gallery",
+        "game",
+        "git",
+        "help",
+        "humanrights",
+        "i2p",
+        "news",
+        "pastebin",
+        "personal",
+        "radio",
+        "search",
+        "software",
+        "stats",
+        "tool",
+        "tracker",
+        "uhoh",
+        "unknown",
+        "video",
+        "wiki",
+        "wip"
+    };
+    /** Beginning index for pagination */
+    protected int beginIndex;
+    /** Ending index for pagination */
+    protected int endIndex;
+
+    private Properties addressbook;
+    private int trClass;
+    /** List of entries marked for deletion */
+    protected final LinkedList<String> deletionMarks;
+    /** Comparator for sorting addresses */
+    protected static final Comparator<AddressBean> sorter;
+
+    private static final int DISPLAY_SIZE = 100;
+
+    static {
+        sorter = new AddressByNameSorter();
+    }
+    /**
+     * Returns the search string.
+     * @return the search string
+     */
+    public String getSearch() {
+        return search;
+    }
+
+    /**
+     * Sets the search string.
+     * @param s the search string to set
+     */
+    public void setSearch(String s) {
+        search = DataHelper.stripHTML(s).trim(); // XSS
+        if (search.startsWith("http://")) {
+            search = search.substring(7);
+        } else if (search.startsWith("https://")) {
+            search = search.substring(8);
+        }
+        int slash = search.indexOf('/');
+        if (slash > 0) {
+            search = search.substring(0, slash);
+        }
+    }
+
+    /**
+     * Returns whether a filter is active.
+     * @return true if a filter is active
+     */
+    public boolean isHasFilter() {
+        return filter != null && filter.length() > 0;
+    }
+
+    /**
+     * Sets the table row class.
+     * @param trClass table row class
+     */
+    public void setTrClass(int trClass) {
+        this.trClass = trClass;
+    }
+
+    /**
+     * Gets the table row class.
+     * @return the table row class
+     */
+    public int getTrClass() {
+        trClass = 1 - trClass;
+        return trClass;
+    }
+
+    /**
+     * Returns whether the address book is empty.
+     * @return true if the address book is empty
+     */
+    public boolean isIsEmpty() {
+        return !isNotEmpty();
+    }
+
+    /**
+     * Returns whether the address book is not empty.
+     * @return true if the address book is not empty
+     */
+    public boolean isNotEmpty() {
+        return addressbook != null && !addressbook.isEmpty();
+    }
+
+    /**
+     * Default constructor.
+     */
+    public AddressbookBean() {
+        super();
+        deletionMarks = new LinkedList<String>();
+        beginIndex = 0;
+        endIndex = DISPLAY_SIZE - 1;
+    }
+
+    /**
+     * Returns the file name for the address book.
+     * @return the file name
+     */
+    public String getFileName() {
+        loadConfig();
+        String filename = properties.getProperty(getBook() + "_addressbook");
+        File path = new File(addressbookDir(), filename); // clean up the ../ with getCanonicalPath()
+        try {
+            return path.getCanonicalPath();
+        } catch (IOException ioe) {
+        }
+        return filename;
+    }
+
+    /**
+     * Load properties for a hostname from the raw hosts.txt file.
+     * This parses the #! format for properties.
+     * @param bean the AddressBean to set properties on
+     * @param hostname the hostname to find properties for
+     */
+    private void loadPropertiesFromFile(AddressBean bean, String hostname) {
+        try (BufferedReader reader =
+                new BufferedReader(new InputStreamReader(new FileInputStream(getFileName()), "UTF-8"))) {
+            String line;
+            String search = hostname + '=';
+
+            while ((line = reader.readLine()) != null) {
+                if (line.startsWith(search)) {
+                    // Check if this line has properties
+                    int propsIndex = line.indexOf(net.i2p.client.naming.HostTxtEntry.PROPS_SEPARATOR);
+                    if (propsIndex > 0) {
+                        String propsStr = line.substring(propsIndex + 2); // Skip #!
+                        Properties props = new Properties();
+                        // Parse the properties in format key1=value1#key2=value2
+                        String[] propPairs = propsStr.split("#");
+                        for (String pair : propPairs) {
+                            int eqIndex = pair.indexOf('=');
+                            if (eqIndex > 0) {
+                                String key = pair.substring(0, eqIndex);
+                                String value = pair.substring(eqIndex + 1);
+                                props.setProperty(key, value);
+                            }
+                        }
+                        if (!props.isEmpty()) {
+                            bean.setProperties(props);
+                        }
+                    }
+                    break;
+                }
+            }
+        } catch (IOException e) {
+            // Ignore errors, properties will remain empty
+        }
+    }
+
+    /**
+     * Returns the display name for the address book.
+     * @return the display name
+     */
+    public String getDisplayName() {
+        return getFileName();
+    }
+
+    /** Array of address entries */
+    protected AddressBean[] entries;
+
+    /**
+     * Returns the address entries.
+     * @return the address entries
+     */
+    public AddressBean[] getEntries() {
+        return entries;
+    }
+
+    /**
+     * This always returns a valid book, non-null.
+     * @return the book name
+     */
+    public String getBook() {
+        if (book == null
+                || (!book.equalsIgnoreCase("master")
+                        && !book.equalsIgnoreCase("local")
+                        && !book.equalsIgnoreCase("router")
+                        && !book.equalsIgnoreCase("private")
+                        && !book.equalsIgnoreCase("published"))) book = "router";
+        return book;
+    }
+
+    /**
+     * Sets the book name.
+     * @param book the book name to set
+     */
+    public void setBook(String book) {
+        if ("local".equals(book)) {
+            book = "master";
+        }
+        this.book = DataHelper.stripHTML(book); // XSS
+    }
+
+    /**
+     * Load addressbook and apply filter, returning messages about this.
+     * @return messages about loading the address book
+     */
+    public String getLoadBookMessages() {
+        loadConfig(); // Config and addressbook now loaded here, not needed in getMessages()
+        addressbook = new Properties();
+
+        String message = "";
+        FileInputStream fis = null;
+        try {
+            fis = new FileInputStream(getFileName());
+            addressbook.load(fis);
+            LinkedList<AddressBean> list = new LinkedList<AddressBean>();
+            for (Map.Entry<Object, Object> entry : addressbook.entrySet()) {
+                String name = (String) entry.getKey();
+                String destination = (String) entry.getValue();
+
+                // Check category filter first
+                if (category != null) {
+                    String hostCategory = null;
+                    try {
+                        net.i2p.addressbook.HostChecker hostChecker =
+                                net.i2p.addressbook.HostCheckerBridge.getInstance();
+                        if (hostChecker != null) {
+                            hostCategory = hostChecker.getCategory(name);
+                        } else {
+                            _log.warn("HostChecker is null, cannot get category for: " + name);
+                        }
+                    } catch (Exception e) {
+                        _log.error("Error getting category for " + name + ": " + e.getMessage());
+                    }
+                    if (hostCategory == null || !category.equalsIgnoreCase(hostCategory)) {
+                        _log.debug("Skipping " + name + " - category: " + hostCategory + " != filter: " + category);
+                        continue;
+                    }
+                }
+
+                if (filter != null && filter.length() > 0) {
+                    if (filter.equals("0-9")) {
+                        char first = name.charAt(0);
+                        if (first < '0' || first > '9') {
+                            continue;
+                        }
+                    } else if (filter.equals("alive")) {
+                        // Check if host is alive using cached ping results from HostCheckerBridge
+                        boolean isAlive = false;
+                        boolean haveResult = false;
+                        try {
+                            java.util.Map<String, net.i2p.addressbook.HostChecker.PingResult> allResults =
+                                    net.i2p.addressbook.HostCheckerBridge.getAllPingResults();
+                            if (allResults != null && !allResults.isEmpty()) {
+                                haveResult = true;
+                                net.i2p.addressbook.HostChecker.PingResult pingResult = allResults.get(name);
+                                if (pingResult != null && pingResult.reachable) {
+                                    isAlive = true;
+                                }
+                            }
+                        } catch (Exception e) {
+                            // If we can't get status, skip this host for alive filter
+                            continue;
+                        }
+                        if (haveResult && !isAlive) {
+                            continue;
+                        }
+                    } else if (filter.equals("dead")) {
+                        // Check if host is dead using cached ping results from HostCheckerBridge
+                        boolean isDead = false;
+                        boolean haveResult = false;
+                        try {
+                            java.util.Map<String, net.i2p.addressbook.HostChecker.PingResult> allResults =
+                                    net.i2p.addressbook.HostCheckerBridge.getAllPingResults();
+                            if (allResults != null && !allResults.isEmpty()) {
+                                haveResult = true;
+                                net.i2p.addressbook.HostChecker.PingResult pingResult = allResults.get(name);
+                                if (pingResult != null && !pingResult.reachable) {
+                                    isDead = true;
+                                }
+                            }
+                        } catch (Exception e) {
+                            // If we can't get status, skip this host for dead filter
+                            continue;
+                        }
+                        if (haveResult && !isDead) {
+                            continue;
+                        }
+                    } else if (category == null
+                            && !name.toLowerCase(Locale.US).startsWith(filter.toLowerCase(Locale.US))) {
+                        continue;
+                    }
+                }
+                if (search != null && search.length() > 0 && name.indexOf(search) == -1) {
+                    continue;
+                }
+
+                // Check if host is blacklisted
+                BlacklistBean blacklist = new BlacklistBean();
+                boolean isBlacklisted = blacklist.isBlacklisted(name);
+                _log.debug("Addressbook checking host " + name + " - blacklisted: " + isBlacklisted);
+                if (isBlacklisted) {
+                    _log.warn("Addressbook filtering out blacklisted host: " + name);
+                    continue;
+                }
+                AddressBean bean = new AddressBean(name, destination);
+                // For published addressbook, we need to parse properties from the raw file
+                // since Properties.load() doesn't preserve the hosts.txt format with #! properties
+                loadPropertiesFromFile(bean, name);
+                list.addLast(bean);
+            }
+            AddressBean array[] = list.toArray(new AddressBean[list.size()]);
+            // Apply pagination - only apply manual pagination when NOT filtering by category
+            int fromIndex, toIndex;
+            if (category == null) {
+                // Not filtering by category, use manual begin/end pagination
+                Arrays.sort(array, sorter);
+                fromIndex = Math.max(0, Math.min(beginIndex, array.length));
+                toIndex = Math.min(endIndex, array.length - 1);
+                List<AddressBean> paginatedList = Arrays.asList(Arrays.copyOfRange(array, fromIndex, toIndex + 1));
+                entries = paginatedList.toArray(new AddressBean[paginatedList.size()]);
+            } else {
+                // When filtering by category, ensure alphabetical sorting by hostname
+                Arrays.sort(array, new AddressByNameSorter());
+                // Use category filter's own pagination, ignore begin/end from request
+                entries = array;
+            }
+
+            message = generateLoadMessage();
+        } catch (IOException e) {
+            warn(e);
+        } finally {
+            if (fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException ioe) {
+                }
+            }
+        }
+        if (message.length() > 0) {
+            message = "<p id=filtered>" + message + "</p>";
+        }
+        return message;
+    }
+
+    /**
+     * Format a message about filtered addressbook size, and the number of displayed entries
+     * addressbook.jsp catches the case where the whole book is empty.
+     *
+     * @return message about loading
+     */
+    protected String generateLoadMessage() {
+        String message;
+        String filterArg = "";
+        int resultCount = resultSize();
+        if (filter != null && filter.length() > 0) {
+            if (search != null && search.length() > 0) {
+                message = ngettext(
+                        "Search for <span class=active>" + search + "</span> with filter <span class=active>" + filter
+                                + "</span> returned 1 result",
+                        "Search for <span class=active>" + search + "</span> with filter <span class=active>" + filter
+                                + "</span> returned {0} results",
+                        getTotalFilteredCount());
+                message = "</span><span id=results>" + message + "</span>";
+            } else {
+                message = ngettext(
+                                "Filtered list contains 1 entry.",
+                                "Filtered list contains {0} entries.",
+                                getTotalFilteredCount())
+                        .replace(".", "");
+            }
+            filterArg = "&amp;filter=" + filter;
+        } else if (search != null && search.length() > 0) {
+            message = ngettext(
+                    "One result for: " + "<span class=active>" + search + "</span>",
+                    "{0} results for: " + "<span class=active>" + search + "</span>",
+                    resultCount);
+            message = "</span><span id=results>" + message + "</span>";
+        } else if (category != null) {
+            message = ngettext(
+                            "Filtered list contains 1 entry.",
+                            "Filtered list contains {0} entries.",
+                            getTotalFilteredCount())
+                    .replace(".", "");
+        } else {
+            if (resultCount <= 0) {
+                message = "";
+            } // covered in jsp
+            else {
+                message = ngettext("Book contains 1 entry", "Book contains {0} entries", getTotalFilteredCount());
+            }
+        }
+        if (resultCount <= 0 || category != null) {
+        } // nothing to display or category filter
+        else if (getPageBegin() == 0 && getEndInt() >= getTotalFilteredCount() - 1) {
+            message += "</span>";
+        } else {
+            message += "</span><span id=paginate>";
+            int pageBegin = getPageBegin();
+            int totalCount = getTotalFilteredCount();
+            int pageEnd = Math.min(pageBegin + DISPLAY_SIZE - 1, totalCount - 1);
+            if (pageBegin > 0) {
+                int newBegin = Math.max(0, pageBegin - DISPLAY_SIZE);
+                int newEnd = Math.max(0, pageBegin - 1);
+                message += " <span id=prev><a href=\"addressbook?book=" + getBook() + filterArg + "&amp;begin="
+                        + newBegin + "&amp;end=" + newEnd + "\">" + (newBegin + 1) + " - "
+                        + (newEnd + 1) + "</a></span> | ";
+            } else {
+                message += " <span id=prev class=inactive></span> | ";
+            }
+            message += " <span id=current>" + (pageBegin + 1) + " - " + (pageEnd + 1) + "</span>";
+            if (pageEnd < totalCount - 1) {
+                message += " | ";
+                int nextBegin = pageBegin + DISPLAY_SIZE;
+                int nextEnd = Math.min(nextBegin + DISPLAY_SIZE - 1, totalCount - 1);
+                message += "<span id=next><a href=\"addressbook?book=" + getBook() + filterArg + "&amp;begin="
+                        + nextBegin + "&amp;end=" + nextEnd + "\">" + (nextBegin + 1) + " - "
+                        + (nextEnd + 1) + "</a></span>";
+            } else {
+                message += "<span id=next class=inactive></span>";
+            }
+            message += "</span>"; // close #showing span in NamingServiceBean
+        }
+        return message;
+    }
+
+    /**
+     * Perform actions, returning messages about this.
+     * @return messages about the performed actions
+     */
+    public String getMessages() {
+        String message = ""; // Loading config and addressbook moved into getLoadBookMessages()
+        boolean fail = false;
+        if (action != null) {
+            if (serial != null && serial.equals(lastSerial)) {
+                boolean changed = false;
+                if (action.equals(_t("Add")) || action.equals(_t("Replace"))) {
+                    if (addressbook != null && hostname != null && destination != null) {
+                        try {
+                            // throws IAE with translated message
+                            String host = AddressBean.toASCII(hostname);
+                            String displayHost = host.equals(hostname) ? hostname : hostname + " (" + host + ')';
+                            String oldDest = (String) addressbook.get(host);
+                            if (destination.equals(oldDest)) {
+                                message = _t("Host name {0} is already in address book, unchanged.", displayHost);
+                            } else if (oldDest != null && !action.equals(_t("Replace"))) {
+                                message = _t(
+                                        "Host name {0} is already in address book with a different destination. Click"
+                                                + " \"Replace\" to overwrite.",
+                                        displayHost);
+                                fail = true;
+                            } else {
+                                boolean valid = true;
+                                boolean wasB32 = false;
+                                try {
+                                    if (destination.length() >= 516) {
+                                        new Destination(destination);
+                                    } // just to check validity
+                                    else if (destination.contains(".b32.i2p")) {
+                                        wasB32 = true;
+                                        Destination dest;
+                                        if (destination.startsWith("http://") || destination.startsWith("https://")) {
+                                            try { // do them a favor, pull b32 out of pasted URL
+                                                URI uri = new URI(destination);
+                                                String b32 = uri.getHost();
+                                                if (b32 == null || !b32.endsWith(".b32.i2p") || b32.length() < 60) {
+                                                    throw new DataFormatException("");
+                                                }
+                                                dest = _context.namingService().lookup(b32);
+                                                if (dest == null) {
+                                                    throw new DataFormatException(
+                                                            _t("Unable to resolve Base 32 address"));
+                                                }
+                                            } catch (URISyntaxException use) {
+                                                throw new DataFormatException("");
+                                            }
+                                        } else if (destination.endsWith(".b32.i2p") && destination.length() >= 60) {
+                                            dest = _context.namingService().lookup(destination);
+                                            if (dest == null) {
+                                                throw new DataFormatException(_t("Unable to resolve Base 32 address"));
+                                            }
+                                        } else {
+                                            throw new DataFormatException("");
+                                        }
+                                        destination = dest.toBase64();
+                                    } else {
+                                        throw new DataFormatException("");
+                                    }
+                                } catch (DataFormatException dfe) {
+                                    valid = false;
+                                    fail = true;
+                                    String msg = dfe.getMessage();
+                                    if (msg != null) {
+                                        message = msg;
+                                    }
+                                }
+                                if (valid) {
+                                    addressbook.put(host, destination);
+                                    changed = true;
+                                    if (oldDest == null) {
+                                        message = _t("Destination added for {0}.", displayHost);
+                                    } else {
+                                        message = _t("Destination changed for {0}.", displayHost);
+                                    }
+                                    if (!host.endsWith(".i2p")) {
+                                        message += "<br>" + _t("Warning - host name does not end with \".i2p\"");
+                                    }
+                                    // clear form
+                                    hostname = null;
+                                    destination = null;
+                                } else {
+                                    if (message.length() <= 0) {
+                                        if (wasB32) {
+                                            message = _t("Invalid Base 32 host name.");
+                                        } else {
+                                            message = _t("Invalid Base 64 destination.");
+                                        }
+                                        fail = true;
+                                    }
+                                }
+                            }
+                        } catch (IllegalArgumentException iae) {
+                            message = iae.getMessage();
+                            if (message == null) {
+                                message = _t("Invalid host name \"{0}\".", hostname);
+                            }
+                            fail = true;
+                        }
+                    } else {
+                        message = _t("Please enter a host name and destination");
+                    }
+                    search = null; // clear search when adding
+                } else if (action.equals(_t("Delete Selected")) || action.equals(_t("Delete Entry"))) {
+                    String name = null;
+                    int deleted = 0;
+
+                    if (changed) {
+                        if (deleted == 1) {
+                            message = _t("Destination {0} deleted.", name);
+                        } else {
+                            message = ngettext("1 destination deleted.", "{0} destinations deleted.", deleted);
+                        } // parameter will always be >= 2
+                    } else {
+                        message = _t("No valid entries selected to delete.");
+                    }
+                    if (action.equals(_t("Delete Entry"))) {
+                        search = null;
+                    }
+                } else if (action.equals(_t("Add Alternate"))) {
+                    message = "Unsupported";
+                } // button won't be in UI
+                if (changed) {
+                    try {
+                        save();
+                        message += "<br>" + _t("Address book saved.");
+                    } catch (IOException e) {
+                        warn(e);
+                        message += "<br>" + _t("ERROR: Could not write addressbook file.");
+                        fail = true;
+                    }
+                }
+            } else {
+                message = _t("Invalid form submission, probably because you used the \"back\" or \"reload\" button"
+                                + " on your browser. Please resubmit.")
+                        + "<br>" + _t("If the problem persists, verify that you have cookies enabled in your browser.");
+                fail = true;
+            }
+        }
+
+        action = null;
+
+        if (message.length() > 0) {
+            message = "<p class=\"messages" + (fail ? " fail" : "") + "\">" + message + "</p>";
+        }
+        return message;
+    }
+
+    private void save() throws IOException {
+        String filename = properties.getProperty(getBook() + "_addressbook");
+        FileOutputStream fos = null;
+        try {
+            fos = new SecureFileOutputStream(new File(addressbookDir(), filename));
+            addressbook.store(fos, null);
+        } finally {
+            if (fos != null) {
+                try {
+                    fos.close();
+                } catch (IOException ioe) {
+                }
+            }
+        }
+    }
+
+    /**
+     * Returns the filter string.
+     * @return the filter string
+     */
+    public String getFilter() {
+        return filter;
+    }
+
+    /**
+     * Because the following from addressbook.jsp fails parsing in the new EL:
+     * javax.el.ELException: Failed to parse the expression
+     * Can't figure out why, so just replace it with book.validBook:
+     * <pre><code>&lt;c:if test="${book.master || book.router || book.published || book.private}"&gt;</code></pre>
+     *
+     * This always returns true anyway, because getBook() always returns a valid book.
+     *
+     * @return true
+     * @since 0.9.28
+     */
+    public boolean isValidBook() {
+        String s = getBook().toLowerCase(Locale.US);
+        return s.equals("router")
+                || s.equals("master")
+                || s.equals("local")
+                || s.equals("published")
+                || s.equals("private");
+    }
+
+    /**
+     * Sets the filter string.
+     * @param filter filter string to set
+     */
+    public void setFilter(String filter) {
+        if (filter != null && (filter.length() == 0 || filter.equalsIgnoreCase("none"))) {
+            filter = null;
+            search = null;
+        }
+        this.filter = DataHelper.stripHTML(filter); // XSS
+        // Reset category - will be set if filter is a category name
+        this.category = null;
+        // Check if filter is a category name (but not "xn--" which is a letter filter for non-ASCII)
+        if (filter != null && !filter.equals("none") && !filter.equals("xn--")) {
+            for (String validCat : VALID_CATEGORIES) {
+                if (filter.equalsIgnoreCase(validCat)) {
+                    this.category = filter.toLowerCase(Locale.US);
+                    break;
+                }
+            }
+        }
+    }
+
+    /**
+     * Returns the destination string.
+     * @return the destination string
+     */
+    public String getDestination() {
+        return destination;
+    }
+
+    /**
+     * Sets the destination string.
+     * @param destination the destination string to set
+     */
+    public void setDestination(String destination) {
+        this.destination = DataHelper.stripHTML(destination).trim();
+    } // XSS
+
+    /**
+     * Returns the category filter string.
+     * @return the category filter string
+     */
+    public String getCategoryFilter() {
+        return category;
+    }
+
+    /**
+     * Returns the hostname string.
+     * @return the hostname string
+     */
+    public String getHostname() {
+        return hostname;
+    }
+
+    /**
+     * Resets the deletion marks.
+     * @param dummy dummy parameter
+     */
+    public void setResetDeletionMarks(String dummy) {
+        deletionMarks.clear();
+    }
+
+    /**
+     * Marks an entry for deletion.
+     * @param name the name to mark for deletion
+     */
+    public void setMarkedForDeletion(String name) {
+        deletionMarks.addLast(DataHelper.stripHTML(name));
+    } // XSS
+
+    /**
+     * Sets the hostname string.
+     * @param hostname the hostname to set
+     */
+    public void setHostname(String hostname) {
+        this.hostname = DataHelper.stripHTML(hostname).trim();
+    } // XSS
+
+    /**
+     * Returns the beginning index as integer.
+     * @return the beginning index
+     */
+    protected int getBeginInt() {
+        return Math.max(0, Math.min(resultSize() - 1, beginIndex));
+    }
+
+    /**
+     * Returns the beginning index as string.
+     * @return the beginning index as string
+     */
+    public String getBegin() {
+        return Integer.toString(getBeginInt());
+    }
+
+    /**
+     * Gets the beginning index into results for display purposes.
+     * Returns the actual page start index, not clamped to resultSize().
+     * @return the page start index (0-based)
+     * @since 0.9.60
+     */
+    public int getPageBegin() {
+        return beginIndex;
+    }
+
+    /**
+     * Sets the beginning index.
+     * @param s the beginning index as string
+     */
+    public void setBegin(String s) {
+        try {
+            beginIndex = Integer.parseInt(s);
+        } catch (NumberFormatException nfe) {
+        }
+    }
+
+    /**
+     * Returns the ending index as integer.
+     * @return the ending index
+     */
+    protected int getEndInt() {
+        return Math.max(0, Math.max(getBeginInt(), Math.min(resultSize() - 1, endIndex)));
+    }
+
+    /**
+     * Returns the ending index as string.
+     * @return the ending index as string
+     */
+    public String getEnd() {
+        return Integer.toString(getEndInt());
+    }
+
+    /**
+     * Gets the beginning index into results.
+     * @return beginning index into results
+     *  @since 0.8.7
+     */
+    public String getResultBegin() {
+        if (isPrefiltered()) {
+            return "0";
+        }
+        return "0";
+    }
+
+    /**
+     * Gets ending index into results.
+     * @return ending index into results
+     *  @since 0.8.7
+     */
+    public String getResultEnd() {
+        if (isPrefiltered()) {
+            int size = resultSize();
+            return size > 0 ? Integer.toString(size - 1) : "0";
+        }
+        int size = entries != null ? entries.length : 0;
+        return size > 0 ? Integer.toString(size - 1) : "0";
+    }
+
+    /**
+     * Sets the ending index.
+     * @param s the ending index as string
+     */
+    public void setEnd(String s) {
+        try {
+            endIndex = Integer.parseInt(s);
+        } catch (NumberFormatException nfe) {
+        }
+    }
+
+    /**
+     * Checks if entries are pre-filtered.
+     * @return true if pre-filtered
+     * @since 0.8.7
+     */
+    protected boolean isPrefiltered() {
+        return false;
+    }
+
+    /**
+     * Gets the size of the lookup result.
+     * @return the size of the lookup result
+     *  @since 0.8.7
+     */
+    protected int resultSize() {
+        return entries.length;
+    }
+
+    /**
+     * Gets the total count of filtered results for pagination display.
+     * Subclasses can override to return the count before manual pagination.
+     * @return the total count of filtered results
+     * @since 0.9.60
+     */
+    protected int getTotalFilteredCount() {
+        return resultSize();
+    }
+
+    /**
+     * Gets the total size of the address book.
+     * @return the total size of the address book
+     *  @since 0.8.7
+     */
+    protected int totalSize() {
+        return entries.length;
+    }
+}

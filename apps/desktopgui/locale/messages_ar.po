@@ -1,0 +1,61 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+msgid ""
+msgstr ""
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+msgid "Start I2P"
+msgstr "ابدأ I2P"
+
+msgid "I2P is starting!"
+msgstr "جاري تشغيل I2P"
+
+msgid "Starting"
+msgstr "جاري البدأ"
+
+msgid "Launch I2P Browser"
+msgstr " تشغيل متصفح I2P"
+
+msgid "Configure I2P System Tray"
+msgstr "تكوين أيقونة I2P المصغرة "
+
+msgid "Disable system tray"
+msgstr "تعطيل علبة النظام"
+
+msgid "Restart I2P"
+msgstr "اعادة تشغيل"
+
+msgid "Stop I2P"
+msgstr "توقيف I2P"
+
+msgid "Restart I2P Immediately"
+msgstr "إعادة تشغيل I2P على الفور"
+
+msgid "Stop I2P Immediately"
+msgstr "إيقاف تشغيل I2P على الفور"
+
+msgid "Cancel I2P Shutdown"
+msgstr "إلغاء إيقاف تشغيل I2P"
+
+#, java-format
+msgid "Shutdown in {0}"
+msgstr "توقف في مدة {0}"
+
+msgid "Shutdown imminent"
+msgstr "إغلاق وشيك"
+
+msgid "Network"
+msgstr "الشبكة"
+
+msgid "I2P: Right-click for menu"
+msgstr "I2P: أنقر بالزر الأيمن للقائمة"
+
+msgid "Enable notifications"
+msgstr "تمكين الإخطارات"
+
+msgid "Disable notifications"
+msgstr "أوقف التنبيهات"
